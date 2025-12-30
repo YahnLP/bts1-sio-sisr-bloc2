@@ -25,7 +25,7 @@ Construire progressivement les **compétences scientifiques et techniques néces
 
 ---
 
-## 🔵 ETAPE 1 – CONSOLIDATION DES BASES SCIENTIFIQUES
+## 🔵 Etape 1 – Consolidation des bases scientifiques 
 
 *(Séances 1 à 9)*
 
@@ -43,7 +43,7 @@ Construire progressivement les **compétences scientifiques et techniques néces
 
 ---
 
-## 🟠 ETAPE 2 – STRUCTURATION DU RAISONNEMENT SCIENTIFIQUE
+## 🟠 Etape 2 – Structuration du raisonnement scientifique 
 
 *(Séances 10 à 18)*
 
@@ -61,7 +61,7 @@ Construire progressivement les **compétences scientifiques et techniques néces
 
 ---
 
-## 🟢 ETAPE 3 – PRÉPARATION EXPLICITE À L’ÉPREUVE E2
+## 🟢 Etape 3 – Préparation explicite à l'épreuve E2 
 
 *(Séances 19 à 27)*
 
