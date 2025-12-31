@@ -1,5 +1,5 @@
 # Méthodologie – Épreuve E2  
-## BTS MECP – Physique-Chimie appliquée
+
 
 Ce dossier regroupe les **fiches méthodologiques essentielles** pour la réussite à  
 l’**épreuve E2 – Expertise scientifique et technologique** du BTS MECP.

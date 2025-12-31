@@ -3,9 +3,12 @@ author: ELP
 title: 01 📝 Fiche élève
 ---
 
-# 01 Diagnostic : 📝 Fiche élève
+# 01 Diagnostique : 📝 Fiche élève
 
 **Analyse d’un produit cosmétique simple**
+
+> En BTS MECP, on attend des réponses rédigées, justifiées et utilisant un vocabulaire scientifique précis.
+
 
 ### 🎯 Objectifs de la séance
 - Décrire un produit cosmétique de manière scientifique
@@ -107,7 +110,8 @@ Complétez les phrases suivantes :
 
 ### Définitions
 
-Pour vous comment définiriez vous :
+Pour vous, comment définiriez-vous :
+
 
 - **Corps pur** :  
   ..............................................................................

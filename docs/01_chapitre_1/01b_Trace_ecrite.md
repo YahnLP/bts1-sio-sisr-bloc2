@@ -93,6 +93,34 @@ Pour répondre à une question scientifique en BTS :
 
 👉 **La justification est indispensable**.
 
+👉 Cette méthode sera attendue tout au long de l’année et à l’épreuve E2 – Expertise scientifique et technologique.
+
+
+➡️ Voir : [*Fiche méthode 01 – Justifier une réponse en physique-chimie*](https://bts-mecp-physique-chimie-688080.forge.apps.education.fr/Methodologie/01_fiche_methode/)
+
+
+---
+
+### 🧠 Méthode BTS – Classer un produit cosmétique
+
+Pour déterminer la nature d’un produit cosmétique :
+
+1. **Observer** l’aspect du produit (phases visibles ou non)
+2. **Analyser** la composition (nombre d’ingrédients)
+3. **Classer** le produit :
+   - corps pur
+   - mélange homogène
+   - mélange hétérogène
+4. **Justifier** la réponse avec une phrase explicative
+
+---
+
+### ✅ À retenir
+
+- Un produit cosmétique contient généralement **plusieurs substances**
+- L’aspect visuel ne suffit pas : il faut analyser la **composition**
+- Une réponse scientifique doit être **justifiée**
+
 ---
 
 ## 🔗 Transition vers la suite

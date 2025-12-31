@@ -1,14 +1,16 @@
 ---
 author: ELP
-title: 01 🖊️ Evaluation
+title: 01 🖊️ Évaluation diagnostique
 ---
 
-# 01 Diagnostic : 🖊️ Évaluation diagnostique 
+# 01 Diagnostique : 🖊️ Évaluation diagnostique 
 
-**Corps pur et mélanges**
+## Corps pur et mélanges
 
 ⏱️ Durée : 15 à 20 minutes  
-📌 Cette évaluation n’est pas notée. Elle permet de faire le point sur vos acquis.
+
+📌 Cette évaluation n’est pas notée.
+Elle a pour objectif d’identifier vos acquis et vos difficultés afin d’adapter les prochaines séances.
 
 ---
 
