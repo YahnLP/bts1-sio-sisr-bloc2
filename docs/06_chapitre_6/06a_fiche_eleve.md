@@ -54,12 +54,12 @@ Le responsable du laboratoire vous demande d’**expliquer cette différence à 
 
 ## 🧠 Travail 1 – Analyse qualitative de la situation (sans calcul)
 
-1. Citez deux différences de **perception sensorielle** mentionnées dans la situation.
+1\. Citez deux différences de **perception sensorielle** mentionnées dans la situation.
 
    <br>
    <br>
 
-2. Ces différences sont-elles uniquement liées à la composition chimique du produit ?  
+2\. Ces différences sont-elles uniquement liées à la composition chimique du produit ?  
    ☐ oui  ☐ non  
 
 Justifiez brièvement.
@@ -68,7 +68,7 @@ Justifiez brièvement.
    <br>
    <br>
 
-3. Selon vous, une **mesure physique** peut-elle aider à expliquer une sensation perçue par le consommateur ?  
+3\. Selon vous, une **mesure physique** peut-elle aider à expliquer une sensation perçue par le consommateur ?  
 Expliquez en une ou deux phrases.
 
    <br>
@@ -113,12 +113,12 @@ Les mesures de masse volumique ont donné les résultats suivants :
 
 ### Partie A – Lecture et classement
 
-1. Classez les lotions de la **plus faible** à la **plus élevée** masse volumique.
+1\. Classez les lotions de la **plus faible** à la **plus élevée** masse volumique.
 
    <br>
    <br>
 
-2. Quelle lotion contient, à volume égal, la **plus grande quantité de matière** ?
+2\. Quelle lotion contient, à volume égal, la **plus grande quantité de matière** ?
 
    <br>
    <br>
