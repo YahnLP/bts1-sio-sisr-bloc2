@@ -25,7 +25,9 @@ En physique-chimie, un mélange homogène liquide est appelé une **solution**.
 🔹 **Définition**
 
 Une **solution** est un **mélange homogène** constitué :
+
 - d’un **solvant** (constituant majoritaire),
+
 - d’un ou plusieurs **solutés** (constituants minoritaires).
 
 🔹 **Exemple**
@@ -69,13 +71,17 @@ Le **soluté** est une substance **dissoute dans le solvant**, présente en plus
 La **lotion micellaire** :
 
 * est un **mélange homogène liquide**,
+
 * est constituée principalement **d’eau**,
+
 * contient d’autres substances dissoutes.
 
 👉 **Conclusion**
 
 La lotion micellaire est une **solution** :
+
 - le **solvant** est l’**eau**,
+
 - les **solutés** sont la glycérine, les tensioactifs, le parfum, etc.
 
 ---
