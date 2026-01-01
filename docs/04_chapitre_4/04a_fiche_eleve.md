@@ -48,18 +48,18 @@ Avant de réaliser la préparation, le responsable vous demande de **choisir la 
 
 ## 🧠 Travail 1 – Analyse qualitative de la situation (sans calcul)
 
-1. Citez deux contraintes présentes dans la situation professionnelle.
+1\. Citez deux contraintes présentes dans la situation professionnelle.
 
    <br>
    <br>
 
-2. Pourquoi le coût de l’actif est-il un critère important lors d’une dilution ?
+2\. Pourquoi le coût de l’actif est-il un critère important lors d’une dilution ?
 
    <br>
    <br>
    <br>
 
-3. Cette situation nécessite-t-elle :
+3\. Cette situation nécessite-t-elle :
    ☐ uniquement un calcul  
    ☐ uniquement une observation  
    ☐ un **choix raisonné de méthode**
