@@ -27,24 +27,22 @@ Le sérum affiche la mention suivante :
 
 > **« Sérum à 20 % d’acide hyaluronique »**
 
-1. Cette information est-elle :
+1\. Cette information est-elle :
    ☐ qualitative  ☐ quantitative  
 
-2\. Cette indication permet-elle de connaître précisément la concentration massique
-de l’actif ?  
+2\. Cette indication permet-elle de connaître précisément la concentration massique de l’actif ?  
    ☐ Oui  ☐ Non  
 
-3\. Quelles grandeurs scientifiques sont nécessaires pour déterminer
-une concentration massique ?  
+3\. Quelles grandeurs scientifiques sont nécessaires pour déterminer une concentration massique ?  
 
-..............................................................................
-..............................................................................
+<br>
+<br>
 
 4\. Expliquer en une phrase pourquoi l’indication « 20 % » n’est pas suffisante
 d’un point de vue scientifique.
 
-..............................................................................
-..............................................................................
+<br>
+<br>
 
 ---
 
@@ -61,25 +59,25 @@ On prélève un échantillon du sérum.
 ---
 
 1. Identifier le **soluté**.  
-..............................................................................
+<br>
 
 2. Identifier la **masse du soluté**.  
-..............................................................................
+<br>
 
 3. Identifier le **volume de la solution**.  
-..............................................................................
+<br>
 
 4. Convertir le volume en litres.  
-..............................................................................
+<br>
 
 5. Écrire la relation permettant de calculer la concentration massique.  
-..............................................................................
+<br>
 
 6. Calculer la concentration massique de l’actif.  
-..............................................................................
+<br>
 
 7. Donner l’unité du résultat.  
-..............................................................................
+<br>
 
 ---
 
@@ -87,8 +85,8 @@ On prélève un échantillon du sérum.
 
 Rédiger une phrase d’interprétation complète du résultat obtenu à l’exercice 2.
 
-..............................................................................
-..............................................................................
+<br>
+<br>
 
 *Aide : commencez par « La concentration massique de l’actif est de… »*
 
@@ -100,18 +98,17 @@ Un étudiant donne la réponse suivante :
 
 > *« La concentration est 20. »*
 
-1. Cette réponse est-elle suffisante pour un niveau BTS ?  
+1\. Cette réponse est-elle suffisante pour un niveau BTS ?  
    ☐ Oui  ☐ Non  
 
 2\. Citer **deux éléments manquants** dans cette réponse.  
 
-..............................................................................
-..............................................................................
+<br>
+<br>
 
 3\. Proposer une réponse correcte et complète.
-
-..............................................................................
-..............................................................................
+<br>
+<br>
 
 ---
 
@@ -125,4 +122,3 @@ Cochez ce qui vous semble juste :
 ☐ Je sais interpréter un résultat  
 ☐ J’ai encore des difficultés à expliquer par écrit
 
---- 

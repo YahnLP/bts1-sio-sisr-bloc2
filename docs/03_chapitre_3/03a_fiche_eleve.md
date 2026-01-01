@@ -33,7 +33,7 @@ Avant toute validation de formulation ou de communication produit, il est néces
 
 ## 🧴 Produit cosmétique support
 
-![Sérum acide hyaluronique 20 %](serum_hyaluronique_20.jpg)
+![Sérum acide hyaluronique 20 %](serum_hyaluronique_20.jpg){ width=40%; : .center }
 
 *Sérum cosmétique affichant une teneur de 20 % en acide hyaluronique.*
 
@@ -45,8 +45,9 @@ Avant toute validation de formulation ou de communication produit, il est néces
 
 1. Que signifie, selon vous, l’indication **« 20 % »** ?  
 
-   ..............................................................................
-   ..............................................................................
+   <br>
+   <br>
+   <br>
 
 2\. S’agit-il d’une information :
    ☐ qualitative  ☐ quantitative  
@@ -57,8 +58,9 @@ contenue dans le produit ?
 
 Justifiez brièvement votre réponse.
 
-..............................................................................
-..............................................................................
+   <br>
+   <br>
+   <br>
 
 ---
 
@@ -84,17 +86,17 @@ On appelle **concentration massique** la masse de soluté dissoute dans un volum
 
 La relation est :
 
-\[
-C_m = \frac{m}{V}
-\]
+
+$C_m = \frac{m}{V}$
+
 
 avec :
 
-- \( C_m \) : concentration massique (g·L⁻¹)
+- $C_m$ : concentration massique (g·L⁻¹)
 
-- \( m \) : masse du soluté (g)
+- $m$ : masse du soluté (g)
 
-- \( V \) : volume de solution (L)
+- $V$ : volume de solution (L)
 
 ---
 
@@ -103,23 +105,27 @@ avec :
 Un sérum contient **5,0 g d’acide hyaluronique** dissous dans **250 mL** de solution.
 
 1. Identifier le **soluté** :  
-   ..............................................................................
+
+   <br>
 
 2. Identifier la **masse du soluté** :  
-   ..............................................................................
+   <br>
+
 
 3. Identifier le **volume de la solution** :  
-   ..............................................................................
+   <br>
+
 
 4. Convertir le volume en litres :  
-   ..............................................................................
+   <br>
+
 
 5. Calculer la **concentration massique** :  
 
-   ..............................................................................
+   <br>
 
 6. Donner l’unité du résultat :  
-   ..............................................................................
+   <br>
 
 ---
 
@@ -127,8 +133,9 @@ Un sérum contient **5,0 g d’acide hyaluronique** dissous dans **250 mL** de s
 
 Rédigez une phrase d’interprétation complète.
 
-..............................................................................
-..............................................................................
+   <br>
+   <br>
+   <br>
 
 *Aide : commencez par « La concentration massique de l’actif est de… »*
 
@@ -136,19 +143,18 @@ Rédigez une phrase d’interprétation complète.
 
 ## 🧠 Travail 5 – Introduction de la quantité de matière
 
-En chimie, on utilise également la **quantité de matière**, notée \( n \), exprimée en **moles (mol)**.
+En chimie, on utilise également la **quantité de matière**, notée $n$, exprimée en **moles (mol)**.
 
 La relation est :
 
-\[
-n = \frac{m}{M}
-\]
+$n = \frac{m}{M}$
+
 
 où :
 
-- \( m \) est la masse (g),
+- $m$ est la masse (g),
 
-- \( M \) est la masse molaire (g·mol⁻¹).
+- $M$ est la masse molaire (g·mol⁻¹).
 
 👉 Cette notion sera approfondie dans les prochaines séances.
 
@@ -161,10 +167,12 @@ où :
 Pour vous, comment définiriez-vous :
 
 - **Concentration massique** :  
-  ..............................................................................
+   <br>
+   <br>
 
 - **Quantité de matière** :  
-  ..............................................................................
+   <br>
+   <br>
 
 ---
 

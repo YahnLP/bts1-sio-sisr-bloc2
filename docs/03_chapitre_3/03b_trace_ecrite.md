@@ -38,8 +38,7 @@ En cosmétique, il s’agit le plus souvent de l’**eau**.
 
 🔹 **Soluté**
 
-Le **soluté** est la substance **dissoute** dans le solvant
-(exemple : actif cosmétique).
+Le **soluté** est la substance **dissoute** dans le solvant (exemple : actif cosmétique).
 
 ---
 
