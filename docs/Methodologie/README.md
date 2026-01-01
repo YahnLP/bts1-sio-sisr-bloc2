@@ -72,7 +72,8 @@ même si le résultat final est partiellement incorrect.
 
 📘 **Document élève**  
 
-➡️ [Télécharger la fiche justifier une réponse scientifique (PDF)](01_fiche_methode.pdf)
+➡️ [Télécharger la fiche *Justifier une réponse scientifique* (PDF)](01_fiche_methode.pdf)
 
-➡️ [Télécharger la fiche Calculer et interpréter une concentration (PDF)](02_fiche_methode.pdf)
+➡️ [Télécharger la fiche *Calculer et interpréter une concentration* (PDF)](02_fiche_methode.pdf)
 
+➡️ [Télécharger la fiche *Exploiter un TP à l'écrit* (PDF)](03_fiche_methode.pdf)

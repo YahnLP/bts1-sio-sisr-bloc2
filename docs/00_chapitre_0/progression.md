@@ -20,9 +20,9 @@ Construire progressivement les **compétences scientifiques et techniques néces
 
 ---
 
-## 🔵 Etape 1 – Consolidation des bases scientifiques 
+## 🔵 Etape 1 – Bases expérimentales et interprétation (Séances 1 à 8)
 
-*(Séances 1 à 9)*
+
 
 | Séance | Thème / situation professionnelle                   | Notions du référentiel couvertes                | Compétences travaillées                    |
 | ------ | --------------------------------------------------- | ----------------------------------------------- | ------------------------------------------ |
@@ -32,50 +32,52 @@ Construire progressivement les **compétences scientifiques et techniques néces
 
 🧪 TP 1 → Dissolution – Dilution – Échelle de teinte
 
-| Séance | Thème / situation professionnelle                   | Notions du référentiel couvertes                | Compétences travaillées                    |
-| ------ | --------------------------------------------------- | ----------------------------------------------- | ------------------------------------------ |
-| 4      | Dilution en formulation                             | Dilution, conservation de la masse              | Choisir une méthode                        |
-| 5      | Masse volumique et texture                          | Masse volumique, densité                        | Relier valeur ↔ propriété                  |
-| 6      | Cohérence des résultats                             | Unités, ordre de grandeur                       | Vérifier et critiquer                      |
-| 7      | pH des produits cosmétiques                         | pH, ions H₃O⁺ / HO⁻                             | Lire une mesure                            |
-| 8      | pH et efficacité cutanée                            | Acidité / basicité, tampon cutané (intro)       | Interpréter un résultat                    |
-| 9      | Évaluation n°1                                      | Notions séances 1 à 8                           | Calculer, expliquer, rédiger guidé         |
+
+
+| Séance | Thème / situation professionnelle                                  | Notions couvertes                                | Compétences                  |
+| ------ | ------------------------------------------------------------------ | ------------------------------------------------ | ---------------------------- |
+| 4      | Dilution en formulation : choix et justification d’une méthode | Dilution, conservation de la masse               | Choisir et justifier         |
+| 5      | Masse volumique, texture et perception                             | Masse volumique, densité                         | Relier valeur ↔ propriété    |
+| 6      | Cohérence des résultats expérimentaux                        | Unités, ordres de grandeur, incertitudes simples | Vérifier, critiquer          |
+| 7      | pH des produits cosmétiques et efficacité cutanée             | pH, H₃O⁺/HO⁻, acidité/basicité                   | Lire et interpréter          |
+| 8      | Évaluation n°1                                                     | Séances 1 à 7                                    | Calculer, expliquer, rédiger |
+
+
 
 ---
 
-## 🟠 Etape 2 – Structuration du raisonnement scientifique 
+## 🟠 Étape 2 – Structuration du raisonnement scientifique 
 
-*(Séances 10 à 18)*
+| Séance | Thème                                                 | Notions                            | Compétences             |
+| ------ | ----------------------------------------------------- | ---------------------------------- | ----------------------- |
+| 9      | Composition microscopique et structure de l’atome | Atomes, ions, électrons de valence | Identifier              |
+| 10     | Stabilité chimique et représentations                 | Gaz nobles, Lewis                  | Comprendre              |
+| 11     | Interactions moléculaires                             | Polarité, liaisons H               | Interpréter             |
+| 12     | Réactivité et cosmétologie                            | Radicaux, liaisons fragiles        | Justifier               |
+| 13     | Représentations moléculaires                          | Formules, isomérie                 | Identifier              |
+| 14     | Molécules d’intérêt biologique                        | Fonctions chimiques                | Relier structure ↔ rôle |
+| 15     | Évaluation n°2 – Analyse guidée                       | Séances 9 à 14                     | Argumenter              |
+| 16     | Consolidation raisonnement microscopique              | Réinvestissement                   | Structurer              |
 
-| Séance | Thème / situation professionnelle      | Notions du référentiel couvertes                                                                                                                                           | Compétences travaillées                 |
-| ------ | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| 10     | Composition microscopique des produits | Atomes, ions, molécules                                                                                                                                                    | Identifier une entité chimique          |
-| 11     | Structure électronique et ions         | Structure de l’atome, électrons de valence, ions monoatomiques, tableau périodique, électronégativité                                                                      | Relier structure ↔ propriété            |
-| 12     | Évaluation n°2 – Analyse de situation  | Matière microscopique                                                                                                                                                      | Expliquer avec vocabulaire scientifique |
-| 13     | Stabilité des espèces chimiques        | Gaz nobles, configurations électroniques, représentations de Lewis                                                                                                         | Comprendre la stabilité                 |
-| 14     | Interactions moléculaires              | Polarité, liaisons hydrogène, propriétés physico-chimiques                                                                                                                 | Interpréter une interaction             |
-| 15     | Réactivité et cosmétologie             | Espèces radicalaires, liaisons fragiles (O–O, S–S), espèces réactives de l’oxygène                                                                                         | Justifier un choix                      |
-| 16     | Représentations moléculaires           | Formules brute, semi-développée, topologique, isomérie de constitution                                                                                                     | Identifier une structure                |
-| 17     | Molécules d’intérêt biologique         | Alcools, phénols, thiols, éthers, peroxydes, thioéthers, amines, ammoniums quaternaires, aldéhydes, cétones, hémiacétals, acides carboxyliques, esters, amides, phosphates | Relier structure ↔ rôle cosmétique      |
-| 18     | Évaluation n°3 – Raisonnement guidé    | Notions séances 10 à 17                                                                                                                                                    | Argumenter simplement                   |
+
 
 ---
 
-## 🟢 Etape 3 – Préparation explicite à l'épreuve E2 
+## 🟢 Étape 3 – Préparation explicite à l’épreuve E2 
 
-*(Séances 19 à 27)*
+| Séance           | Thème                             | Notions                       | Compétences                   |
+| ---------------- | --------------------------------- | ----------------------------- | ----------------------------- |
+| 17               | Conductivité et émulsions         | Conductivité, ions            | Interpréter                   |
+| 18               | Absorbance et couleur             | Beer-Lambert                  | Relier mesure ↔ concentration |
+| 19               | Produits solaires                 | UV, filtres                   | Argumenter                    |
+| 20               | Transformations chimiques         | Modélisation                  | Analyser                      |
+| 21               | Acide-base et catalyse            | pKa, tampons, enzymes         | Expliquer                     |
+| 22               | Ondes, énergie et sécurité        | Ondes, électricité, thermique | Critiquer                     |
+| 23               | Évaluation type E2 (partielle)    | Exploitation de résultats     | Structurer                    |
+| 24               | Évaluation type E2 (complète) | Sujet transversal             | Argumenter comme à l’épreuve  |
+| 25  | Bilan méthodologique              | Méthodes E2                   | Consolider                    |
 
-| Séance | Thème / situation professionnelle | Notions du référentiel couvertes                                                                             | Compétences travaillées        |
-| ------ | --------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------ |
-| 19     | Conductivité et émulsions         | Conductivité, interactions ioniques                                                                          | Interpréter une mesure         |
-| 20     | Absorbance et couleur             | Absorbance, transmittance, loi de Beer-Lambert                                                               | Relier couleur ↔ concentration |
-| 21     | Produits solaires                 | Rayonnements UV, filtres solaires                                                                            | Argumenter un choix technique  |
-| 22     | Transformations chimiques         | Transformations chimiques, modélisation                                                                      | Analyser un mécanisme          |
-| 23     | Acide-base et catalyse            | Couples acide-base, pKa, solutions tampons, catalyse enzymatique                                             | Expliquer un rôle              |
-| 24     | Évaluation type E2 (partielle)    | Exploitation de résultats, moyenne, dispersion, histogramme                                                  | Structurer une réponse         |
-| 25     | Ondes et appareils esthétiques    | Ondes acoustiques, ondes électromagnétiques (IR, UV)                                                         | Relier onde ↔ usage            |
-| 26     | Énergie, électricité et sécurité  | Intensité, tension, puissance, transferts thermiques, température, pression, sécurité électrique et chimique | Critiquer une pratique         |
-| 27     | Bilan annuel – Méthodologie E2    | Réinvestissement global                                                                                      | Argumenter comme à l’épreuve   |
+
 
 ---
 
@@ -83,7 +85,7 @@ Construire progressivement les **compétences scientifiques et techniques néces
 
 Les TP sont intégrés comme **supports d’expertise scientifique** :
 
-* TP solutions, dilution, concentration
+* TP Dissolution – Dilution – Échelle de teinte
 * TP pH et conductivité
 * TP absorbance
 * TP stabilité / formulation
