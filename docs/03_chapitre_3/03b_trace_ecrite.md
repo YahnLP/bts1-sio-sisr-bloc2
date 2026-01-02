@@ -99,6 +99,16 @@ Cette méthode est **explicitement attendue** à l’épreuve **E2 – Expertise
 
 ---
 
+
+## 🔧 Outil méthodologique associé
+
+Pour calculer et interpréter correctement une concentration dans un contexte cosmétique, se référer à :
+
+➡️ [**Fiche méthode 02 – Calculer et interpréter une concentration**](https://bts-mecp-physique-chimie-688080.forge.apps.education.fr/Methodologie/02_fiche_methode/)
+
+---
+
+
 ## 🔗 Transition vers la suite de la progression
 
 Lors de la prochaine séance, nous verrons pourquoi, en chimie, **la masse seule ne suffit pas toujours** pour caractériser un actif cosmétique et comment aller plus loin dans l’analyse des formulations.
