@@ -52,14 +52,14 @@ Construire progressivement les **compétences scientifiques et techniques néces
 
 | Séance | Thème                                                 | Notions                            | Compétences             |
 | ------ | ----------------------------------------------------- | ---------------------------------- | ----------------------- |
-| 10      | Composition microscopique et structure de l’atome | Atomes, ions, électrons de valence | Identifier              |
-| 11     | Stabilité chimique et représentations                 | Gaz nobles, Lewis                  | Comprendre              |
-| 12     | Interactions moléculaires                             | Polarité, liaisons H               | Interpréter             |
-| 13     | Réactivité et cosmétologie                            | Radicaux, liaisons fragiles        | Justifier               |
-| 14     | Représentations moléculaires                          | Formules, isomérie                 | Identifier              |
-| 15     | Molécules d’intérêt biologique                        | Fonctions chimiques                | Relier structure ↔ rôle |
-| 15     | Évaluation n°2 – Analyse guidée                       | Séances 9 à 14                     | Argumenter              |
-| 16     | Consolidation raisonnement microscopique              | Réinvestissement                   | Structurer              |
+| 13      | Composition microscopique et structure de l’atome | Atomes, ions, électrons de valence | Identifier              |
+| 14     | Stabilité chimique et représentations                 | Gaz nobles, Lewis                  | Comprendre              |
+| 15     | Interactions moléculaires                             | Polarité, liaisons H               | Interpréter             |
+| 16     | Réactivité et cosmétologie                            | Radicaux, liaisons fragiles        | Justifier               |
+| 17     | Représentations moléculaires                          | Formules, isomérie                 | Identifier              |
+| 18     | Molécules d’intérêt biologique                        | Fonctions chimiques                | Relier structure ↔ rôle |
+| 19     | Évaluation n°2 – Analyse guidée                       | Séances 9 à 14                     | Argumenter              |
+| 20     | Consolidation raisonnement microscopique              | Réinvestissement                   | Structurer              |
 
 
 
@@ -69,15 +69,14 @@ Construire progressivement les **compétences scientifiques et techniques néces
 
 | Séance           | Thème                             | Notions                       | Compétences                   |
 | ---------------- | --------------------------------- | ----------------------------- | ----------------------------- |
-| 17               | Conductivité et émulsions         | Conductivité, ions            | Interpréter                   |
-| 18               | Absorbance et couleur             | Beer-Lambert                  | Relier mesure ↔ concentration |
-| 19               | Produits solaires                 | UV, filtres                   | Argumenter                    |
-| 20               | Transformations chimiques         | Modélisation                  | Analyser                      |
-| 21               | Acide-base et catalyse            | pKa, tampons, enzymes         | Expliquer                     |
-| 22               | Ondes, énergie et sécurité        | Ondes, électricité, thermique | Critiquer                     |
-| 23               | Évaluation type E2 (partielle)    | Exploitation de résultats     | Structurer                    |
-| 24               | Évaluation type E2 (complète) | Sujet transversal             | Argumenter comme à l’épreuve  |
-| 25  | Bilan méthodologique              | Méthodes E2                   | Consolider                    |
+| 21               | Conductivité et émulsions         | Conductivité, ions            | Interpréter                   |
+| 22               | Absorbance et couleur             | Beer-Lambert                  | Relier mesure ↔ concentration |
+| 23               | Produits solaires                 | UV, filtres                   | Argumenter                    |
+| 24               | Transformations chimiques         | Modélisation                  | Analyser                      |
+| 25               | Acide-base et catalyse            | pKa, tampons, enzymes         | Expliquer                     |
+| 26               | Ondes, énergie et sécurité        | Ondes, électricité, thermique | Critiquer                     |
+| 27               | Évaluation type E2 (complète) | Sujet transversal             | Argumenter comme à l’épreuve  |
+| 28  | Bilan méthodologique              | Méthodes E2                   | Consolider                    |
 
 
 
