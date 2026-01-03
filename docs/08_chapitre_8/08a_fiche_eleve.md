@@ -1,23 +1,26 @@
 ---
 author: ELP
-title: 07 📝 Fiche élève
+title: 08 📝 Fiche élève
 ---
 
-# 07 Cohérence des résultats expérimentaux : 📝 Fiche élève
+# 08 – Cohérence des résultats expérimentaux : 📝 Fiche élève
 
 **Unités – Ordres de grandeur – Incertitudes simples – Vérifier et critiquer un résultat**
 
-> En BTS MECP, un résultat expérimental n’est jamais accepté tel quel : il doit être **vérifié**, **mis en cohérence** avec le produit étudié  et **critiqué scientifiquement**, comme à l’épreuve **E2 – Expertise scientifique et technologique**.
+> En BTS MECP, un résultat expérimental n’est jamais accepté tel quel :  
+> il doit être **vérifié**, **mis en cohérence avec le produit étudié** et **critiqué scientifiquement**, comme à l’épreuve **E2 – Expertise scientifique et technologique**.
 
 ---
 
-### 🎯 Objectifs de la séance
+## 🎯 Objectifs de la séance
 
-- Comprendre l’importance des **unités** et des **ordres de grandeur**
-- Identifier un **résultat cohérent** ou **aberrant**
-- Introduire la notion d’**incertitude simple**
-- Développer une **posture critique** face à un résultat expérimental
-- Vérifier et **argumenter la validité d’un résultat** dans un contexte cosmétique
+À l’issue de cette séance, vous serez capables de :
+
+- **utiliser** correctement les **unités** et les **ordres de grandeur**,
+- identifier un **résultat cohérent** ou **aberrant**,
+- **exploiter** la notion d’**incertitude simple**,
+- adopter une **posture critique** face à un résultat expérimental fourni,
+- **argumenter** la validité (ou non) d’un résultat dans un contexte cosmétique.
 
 ---
 
@@ -33,31 +36,24 @@ Lors d’une série de mesures, un technicien obtient les valeurs suivantes pour
 
 Le responsable du laboratoire vous demande de **vérifier la cohérence de ces résultats** avant validation.
 
+⚠️ Les valeurs sont **fournies** : aucune manipulation n’est demandée.
+
 ---
 
 ## 🧠 Travail 1 – Première analyse (réflexion qualitative)
 
 1\. Parmi les trois valeurs proposées, certaines vous semblent-elles **surprenantes** ?  
-   Justifiez brièvement votre réponse.
+Justifiez brièvement votre réponse.
 
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+<br><br><br><br><br><br>
 
 2\. Selon vous, peut-on accepter un résultat expérimental **sans le vérifier** ?  
-   ☐ oui  ☐ non  
+
+☐ oui  ☐ non  
 
 Expliquez votre choix.
 
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+<br><br><br><br><br><br>
 
 ---
 
@@ -65,29 +61,21 @@ Expliquez votre choix.
 
 On rappelle que la masse volumique de l’**eau** est voisine de **1,0 g·mL⁻¹**.
 
-1\. La valeur **980 g·L⁻¹** correspond-elle à une valeur proche de 0,98 g·mL⁻¹ ?  
-   ☐ oui  ☐ non  
+1\. La valeur **980 g·L⁻¹** correspond-elle à une valeur proche de **0,98 g·mL⁻¹** ?  
 
-Justifiez.
+☐ oui  ☐ non  
 
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+Justifiez votre réponse.
 
-2\. Une masse volumique de **8,2 g·mL⁻¹** est-elle réaliste pour une lotion aqueuse ?  
-   ☐ oui  ☐ non  
+<br><br><br><br><br><br>
+
+2\. Une masse volumique de **8,2 g·mL⁻¹** est-elle réaliste pour une lotion aqueuse ?
+
+☐ oui  ☐ non  
 
 Expliquez votre raisonnement à l’aide d’un **ordre de grandeur connu**.
 
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+<br><br><br><br><br><br>
 
 ---
 
@@ -97,20 +85,18 @@ Un résultat expérimental peut être incohérent pour différentes raisons.
 
 1\. Citez **deux causes possibles** pouvant expliquer une valeur aberrante mesurée en laboratoire.
 
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+<br><br><br><br><br><br>
 
 2\. Associez chaque type d’erreur à un exemple possible :
 
-- erreur d’unité :  
-- erreur de saisie ou de lecture :  
-- erreur de mesure expérimentale :  
+- **Erreur d’unité** :  
+<br><br>
 
+- **Erreur de saisie ou de lecture** :  
+<br><br>
 
+- **Erreur de mesure expérimentale** :  
+<br><br>
 
 ---
 
@@ -122,20 +108,12 @@ Un technicien indique le résultat suivant :
 
 1\. Que signifie l’écriture « ± 0,03 » ?
 
-   <br>
-   <br>
-   <br>
+<br><br><br>
 
 2\. Cette valeur est-elle **compatible** avec une lotion aqueuse ?  
-   Justifiez votre réponse.
+Justifiez votre réponse.
 
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+<br><br><br><br><br><br><br>
 
 ---
 
@@ -149,49 +127,25 @@ Rédigez une **conclusion argumentée** (4 à 5 lignes) permettant de dire si le
 - de l’ordre de grandeur,
 - du contexte cosmétique.
 
-*Aide : commencez par « Le résultat mesuré est cohérent / non cohérent car… »*
+*Aide : commencez par*  
+**« Le résultat mesuré est cohérent / non cohérent car… »**
 
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-
+<br><br><br><br><br><br><br><br>
 
 ---
 
-## 🧾 Trace écrite
-
-### À compléter
+## 🧾 Trace écrite – À compléter (logique E2)
 
 Pour vous, que signifie :
 
 - **Vérifier la cohérence d’un résultat expérimental** :  
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+<br><br><br><br><br><br>
 
 - **Ordre de grandeur** :  
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+<br><br><br><br><br><br>
 
 - **Pourquoi une incertitude est indispensable en laboratoire cosmétique** :  
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+<br><br><br><br><br><br>
 
 ---
 
@@ -200,5 +154,5 @@ Pour vous, que signifie :
 La capacité à **vérifier, critiquer et argumenter** un résultat expérimental sera réutilisée lors des prochaines séances pour :
 
 - interpréter des mesures de **pH**, de **conductivité** ou de **stabilité**,
-- analyser des résultats expérimentaux complexes,
-- et répondre aux attendus de l’épreuve **E2 – Expertise scientifique et technologique**.
+- analyser des résultats expérimentaux plus complexes,
+- répondre aux attendus de l’épreuve **E2 – Expertise scientifique et technologique**.
