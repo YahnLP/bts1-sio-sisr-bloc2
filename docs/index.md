@@ -60,7 +60,7 @@ Chaque séance est conçue à partir de **situations professionnelles issues de 
 
 ## 📂 Accéder aux contenus
 
-➡️ Commencez par la **Séance 1 – Diagnostic : corps pur et mélanges**, puis suivez la progression indiquée dans le dossier *Progression annuelle*.
+➡️ Commencez par la **Séance 1 – Corps pur et mélanges**, puis suivez la progression indiquée dans le dossier *Progression annuelle*.
 
 ---
 
