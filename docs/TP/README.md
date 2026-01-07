@@ -1,4 +1,4 @@
-# Travaux Pratiques – Physique-Chimie appliquée BTS MECP ⚗️
+# Cadre des TP et ressources ⚗️
 
 Ce dossier regroupe les **travaux pratiques de physique-chimie appliquée** réalisés en BTS MECP (1ʳᵉ et 2ᵉ année).
 
