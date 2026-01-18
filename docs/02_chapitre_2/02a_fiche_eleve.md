@@ -40,10 +40,10 @@ Le produit étudié est le même que lors de la séance précédente :
 
 ## 🔍 Travail 1 – Rappel et analyse qualitative
 
-1. Le produit étudié est-il un mélange homogène ?  
+1\. Le produit étudié est-il un mélange homogène ?  
    ☐ Oui  ☐ Non  
 
-2. Justifiez brièvement votre réponse.  
+2\. Justifiez brièvement votre réponse.  
 
    <br>
    <br>
@@ -59,10 +59,10 @@ On appelle **solution** un mélange homogène constitué :
 
 - d’un ou plusieurs **solutés** (constituants minoritaires).
 
-1. Le produit étudié peut-il être considéré comme une **solution** ?  
+1\. Le produit étudié peut-il être considéré comme une **solution** ?  
    ☐ Oui  ☐ Non  
 
-2. Justifiez votre réponse.  
+2\. Justifiez votre réponse.  
 
    <br>
    <br>
@@ -74,19 +74,19 @@ On appelle **solution** un mélange homogène constitué :
 
 À partir de la composition du produit (vue lors de la séance précédente) :
 
-1. Quel est le **solvant** de la lotion micellaire ?  
+1\. Quel est le **solvant** de la lotion micellaire ?  
 
    <br>
    <br>
    <br>
 
-2. Citez **un ou deux solutés** présents dans la lotion micellaire.  
+2\. Citez **un ou deux solutés** présents dans la lotion micellaire.  
 
       <br>
    <br>
    <br>
 
-3. Justifiez votre choix à l’aide de la définition d’une solution.  
+3\. Justifiez votre choix à l’aide de la définition d’une solution.  
 
       <br>
    <br>
@@ -102,6 +102,30 @@ Complétez les phrases suivantes :
 - Le solvant de cette solution est ................................................  
 - Les solutés présents sont ......................................................  
 - En effet, une solution est ......................................................  
+
+---
+
+## 🧪 Travail 5 – Stabilité d’une solution cosmétique : solubilité et miscibilité
+
+En formulation, un produit homogène doit aussi être **stable** (rester homogène dans le temps).
+
+1\. Miscibilité (liquides)
+Compléter :
+
+- Deux liquides sont **miscibles** s’ils se mélangent **sans** _______________________.
+- Exemple : eau + glycérine → ☐ miscibles ☐ non miscibles
+- Exemple : eau + huile → ☐ miscibles ☐ non miscibles
+
+2\. Solubilité (solide ou actif dissous)
+Compléter :
+
+- Un soluté est **soluble** s’il peut _______________________ dans le solvant.
+- Si on ajoute “trop” de soluté et qu’il ne se dissout plus, on peut observer :
+  ☐ un dépôt / cristaux   ☐ une séparation en 2 phases   ☐ rien du tout
+
+3\. Conclusion professionnelle (2–3 lignes)
+Expliquez, avec des mots simples, pourquoi **solubilité** et **miscibilité** sont importantes pour obtenir un produit cosmétique **stable**.
+<br><br><br>
 
 ---
 

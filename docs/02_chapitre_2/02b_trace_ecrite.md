@@ -66,6 +66,9 @@ Le **soluté** est une substance **dissoute dans le solvant**, présente en plus
 * Tensioactifs  
 * Parfum hydrosoluble  
 
+**Solution cosmétique stable** : solution homogène qui **reste homogène** (pas de dépôt, pas de séparation de phases).
+
+
 ---
 
 ## 4️⃣ Application au produit étudié
