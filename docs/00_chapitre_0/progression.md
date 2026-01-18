@@ -17,7 +17,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-## 🧩 Principes structurants (alignement E2)
+### 🧩 Principes structurants (alignement E2)
 
 - Logique constante : **documents fournis → analyse → interprétation → argumentation → décision professionnelle**.  
 - Progression **spiralée** : les notions reviennent sous des formats de plus en plus proches d’E2.  
@@ -31,7 +31,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-## 🧾 Légende des statuts
+### 🧾 Légende des statuts
 
 - 🧱 **Installation** : acquisition/structuration d’un concept ou d’un outil  
 - 🧪 **TP** : expérimentation ou exploitation de résultats (posture E2)  
@@ -41,7 +41,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-# 🔵 Étape 1 — Bases expérimentales et interprétation *(S01 → S11)*
+### 🔵 Étape 1 — Bases expérimentales et interprétation *(S01 → S11)*
 
 > **Finalité E2 :** installer les outils de base *(solutions, concentrations, pH)*, apprendre à exploiter des résultats et conclure sur une **décision qualité**.
 
@@ -61,7 +61,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-# 🟠 Étape 2 — Structuration du raisonnement microscopique *(S12 → S15)*
+### 🟠 Étape 2 — Structuration du raisonnement microscopique *(S12 → S15)*
 
 > **Finalité E2 :** justifier des propriétés macroscopiques *(solubilité, compatibilité, stabilité)* par des éléments microscopiques **lisibles dans un dossier**.
 
@@ -74,13 +74,13 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-# 🟢 Étape 3 — Consolider l’expertise *(S16 → S26)*
+### 🟢 Étape 3 — Consolider l’expertise *(S16 → S26)*
 
 > **Finalité E2 :** intégrer des notions “à forte valeur E2” *(variabilité, absorbance, ondes, thermique, électricité, transformations)* par le **sens professionnel**.
 
 ---
 
-## 🧪 Bloc A — Fiabilité de la mesure *(métrologie minimale E2)*
+#### 🧪 Bloc A — Fiabilité de la mesure *(métrologie minimale E2)*
 
 | Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
 |------:|----------------------------|--------------------|:------:|-----------------------------------|
@@ -88,7 +88,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-## 🔥 Bloc B — Thermique / états / énergie *(procédé & sécurité)*
+#### 🔥 Bloc B — Thermique / états / énergie *(procédé & sécurité)*
 
 | Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
 |------:|----------------------------|--------------------|:------:|-----------------------------------|
@@ -97,7 +97,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-## 🧬 Bloc C — Chimie organique utile *(lecture de formule et sens cosmétique)*
+#### 🧬 Bloc C — Chimie organique utile *(lecture de formule et sens cosmétique)*
 
 | Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
 |------:|----------------------------|--------------------|:------:|-----------------------------------|
@@ -106,7 +106,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-## ⚡ Bloc D — Conductivité & CMC *(TP mutualisé avec la cosmétologie)*
+#### ⚡ Bloc D — Conductivité & CMC *(TP mutualisé avec la cosmétologie)*
 
 | Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
 |------:|----------------------------|--------------------|:------:|-----------------------------------|
@@ -115,7 +115,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-## 🎨 Bloc E — Absorbance / Beer-Lambert *(couleur & dosage)*
+#### 🎨 Bloc E — Absorbance / Beer-Lambert *(couleur & dosage)*
 
 | Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
 |------:|----------------------------|--------------------|:------:|-----------------------------------|
@@ -123,7 +123,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-## 🌈 Bloc F — Ondes *(UV/visible + rappel acoustique) — dossier E2 guidé*
+#### 🌈 Bloc F — Ondes *(UV/visible + rappel acoustique) — dossier E2 guidé*
 
 | Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
 |------:|----------------------------|--------------------|:------:|-----------------------------------|
@@ -131,7 +131,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-## 🔌 Bloc G — Électricité + sécurité + éco-responsabilité *(appareils)*
+#### 🔌 Bloc G — Électricité + sécurité + éco-responsabilité *(appareils)*
 
 | Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
 |------:|----------------------------|--------------------|:------:|-----------------------------------|
@@ -139,7 +139,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-## 🧪 Bloc H — Transformations chimiques & catalyse *(stabilité produit)*
+#### 🧪 Bloc H — Transformations chimiques & catalyse *(stabilité produit)*
 
 | Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
 |------:|----------------------------|--------------------|:------:|-----------------------------------|
@@ -147,7 +147,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-# 🟣 Étape 4 — Préparation E2 : remédiation → évaluation complète *(S27 → S28)*
+### 🟣 Étape 4 — Préparation E2 : remédiation → évaluation complète *(S27 → S28)*
 
 > **Finalité E2 :** sécuriser les points à forte valeur ajoutée *(acide-base/tampons)* puis réaliser une **évaluation E2 complète**.
 
@@ -158,7 +158,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-# 🧪 Bilan des TP 
+### 🧪 Bilan des TP 
 
 - **TP1 (S05)** : Dissolution / Dilution / Échelle de teinte  
 - **TP2 (S10)** : pH-métrie (exploitation de résultats fournis)  
@@ -167,7 +167,7 @@ Construire progressivement les **compétences attendues à l’épreuve E2** *(3
 
 ---
 
-# 👩‍🔬 Attendus opérationnels en fin d’année (profil “E2”)
+### 👩‍🔬 Attendus opérationnels en fin d’année (profil “E2”)
 
 - Lire un dossier (INCI, fiche technique, protocole, tableau de résultats) et **extraire les données utiles**.  
 - Justifier une analyse avec des notions **macroscopiques** (solutions, pH, concentration…) et **microscopiques** (interactions, polarité…).  
