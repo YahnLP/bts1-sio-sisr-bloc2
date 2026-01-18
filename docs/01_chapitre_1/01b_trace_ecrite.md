@@ -77,8 +77,12 @@ La **lotion micellaire** :
 * présente **un aspect limpide et uniforme**,
 * ne permet pas de distinguer les constituants à l’œil nu.
 
-👉 **Conclusion**
+**Note (niveau macroscopique)** : on classe ici **selon l’observation** (1 phase visible).  
+Une eau micellaire peut être une **dispersion très fine**, mais ce détail n’est **pas exigé** à ce stade.
+
+👉 **Conclusion**  
 La lotion micellaire est **un mélange homogène**.
+
 
 ---
 

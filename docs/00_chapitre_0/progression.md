@@ -3,106 +3,176 @@ author: ELP
 title: Progression
 ---
 
-# 🛣️ Progression
+# 📘 Progression annuelle – Physique-Chimie appliquée (BTS MECP 1re année)
 
 ### 🎯 Objectif
 
-Construire progressivement les **compétences scientifiques et techniques nécessaires à l’épreuve E2 – Expertise scientifique et technologique**, en s’appuyant sur des **situations professionnelles issues de la cosmétologie**, et en tenant compte du **profil hétérogènes** des étudiants.
-
----
-
-## 🧩 Principes pédagogiques structurants
-
-* Progression **spiralée** : les notions sont **réinvesties plusieurs fois**.
-* Entrée systématique par **situations professionnelles**.
-* Développement progressif du **raisonnement scientifique**, de la **rédaction argumentée** et du **vocabulaire technique**.
-* Articulation explicite **cours / TP / E2**.
-
----
-
-
-## 🔵 Étape 1 – Bases expérimentales et interprétation 
-
-
-
-
-| Séance | Thème / situation professionnelle                                      | Notions du référentiel couvertes                 | Compétences travaillées                    |
-| ------ | ---------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------ |
-| 1      | Diagnostic – Analyse d’un produit cosmétique simple                    | Corps pur, mélange homogène / hétérogène         | Lire une situation, identifier les données |
-| 2      | Solutions cosmétiques                                                  | Solutions, dissolution, solubilité, miscibilité  | Décrire un système                         |
-| 3      | Concentration d’un actif                                               | Concentration massique                           | Calculer, interpréter                      |
-| 4  | Quantité de matière : sens, usage et décision cosmétique           | Quantité de matière, lien masse ↔ entités        | Donner du sens, raisonner                  |
-| 5  | Dilution en formulation : choix et justification d’une méthode         | Dilution, conservation de la masse               | Choisir et justifier                       |
-| TP 1   | Dissolution – Dilution – Échelle de teinte                             | Notions S2 à S4                                  | Observer, exploiter                        |
-| 6  | Évaluation n°1                                               | Séances 1 à 5                                    | Calculer, interpréter, justifier           |
-| 7  | Masse volumique, texture et perception                                 | Masse volumique, densité                         | Relier valeur ↔ propriété                  |
-| 8  | Cohérence des résultats expérimentaux                                  | Unités, ordres de grandeur                       | Vérifier, critiquer                        |
-| 9  | pH des produits cosmétiques et efficacité cutanée                      | pH, H₃O⁺ / HO⁻, acidité / basicité               | Lire et interpréter une mesure             |
-| 10 | Exploitation d’un ensemble de résultats expérimentaux en cosmétique    | Comparaison de résultats, cohérence, tendances   | Analyser, comparer, argumenter             |
-| TP 2   | TP pH-métrie : exploitation et interprétation de résultats fournis     | Acido-basicité, pH-métrie                        | Exploiter, interpréter, conclure           |
-| 11 | Évaluation n°2 type E2 – Expertise scientifique et technologique | Mobilisation transversale des notions de l’étape | Analyser, interpréter, argumenter          |
+Construire progressivement les **compétences attendues à l’épreuve E2** *(3 h, coeff. 4)* :  
+- **Mobiliser** des connaissances scientifiques/technologiques pertinentes  
+- **Analyser** un dossier (documents, protocoles, résultats)  
+- **Interpréter** des résultats (cohérence, tendances, limites)  
+- **Argumenter** une recommandation professionnelle  
+- **Communiquer** avec un vocabulaire rigoureux et professionnel  
 
 
 ---
 
-## 🟠 Étape 2 – Structuration du raisonnement scientifique 
+## 🧩 Principes structurants (alignement E2)
 
-> Cette étape vise à donner aux étudiants les outils microscopiques nécessaires pour comprendre, interpréter et argumenter face à des dossiers scientifiques et technologiques tels que ceux rencontrés à l’épreuve E2.
-
-|   Séance | Thème / situation professionnelle                                | Notions                       | Compétences travaillées                |
-| -------: | ---------------------------------------------------------------- | ------------------------------------------------------ | -------------------------------------- |
-|       12 | Composition microscopique et structure de l’atome                | Atomes, ions, électrons de valence                     | Identifier                             |
-|       13 | Stabilité chimique et représentations                            | Gaz nobles, représentations de Lewis                   | Comprendre                             |
-|       14 | Interactions moléculaires                                        | Polarité, liaisons hydrogène                           | Interpréter                            |
-| TP 3 | Exploitation de représentations moléculaires en cosmétologie | Lewis fournie, polarité, interactions moléculaires | Exploiter, interpréter, argumenter |
-|       15 | Réactivité et cosmétologie                                       | Radicaux, liaisons fragiles                            | Justifier                              |
-|       16 | Représentations moléculaires                                     | Formules, isomérie de constitution                     | Identifier                             |
-|       17 | Molécules d’intérêt biologique                                   | Fonctions chimiques                                    | Relier structure ↔ rôle                |
-|       18 | Évaluation n°3 – Analyse guidée (type E2)                        | Séances 12 à 17                                        | Argumenter                             |
-|       19 | Consolidation du raisonnement microscopique                      | Réinvestissement transversal                           | Structurer                             |
-
-
-
+- Logique constante : **documents fournis → analyse → interprétation → argumentation → décision professionnelle**.  
+- Progression **spiralée** : les notions reviennent sous des formats de plus en plus proches d’E2.  
+- **TP** : 4 TP sur l’année *(dont 1 TP mutualisé avec la cosmétologie)*.  
+- Chaque séance a un **statut didactique** explicite :  
+  - **Installation** *(construction d’outils / concepts)*  
+  - **TP** *(manipulation ou exploitation de résultats)*  
+  - **Entraînement E2 guidé** *(dossier structuré)*  
+  - **Évaluation** *(format E2 partiel ou complet)*  
+  - **Remédiation** *(consolidation ciblée et défendable à l’oral)*  
 
 ---
 
-## 🟢 Étape 3 – Préparation explicite et approfondie à l’épreuve E2 
+## 🧾 Légende des statuts
 
-*réinvestissement des compétences déjà travaillées*
-
-| Séance           | Thème                             | Notions                       | Compétences                   |
-| ---------------- | --------------------------------- | ----------------------------- | ----------------------------- |
-| 20               | Conductivité et émulsions         | Conductivité, ions            | Interpréter                   |
-| 21               | Absorbance et couleur             | Beer-Lambert                  | Relier mesure ↔ concentration |
-| 22               | Produits solaires                 | UV, filtres                   | Argumenter                    |
-| 23               | Transformations chimiques         | Modélisation                  | Analyser                      |
-| 24               | Acide-base et catalyse            | pKa, tampons, enzymes         | Expliquer                     |
-| 25               | Ondes, énergie et sécurité        | Ondes, électricité, thermique | Critiquer                     |
-| 26               | Évaluation type E2 (complète) | Sujet transversal             | Argumenter comme à l’épreuve  |
-| 27  | Bilan méthodologique              | Méthodes E2                   | Consolider                    |
-
-
+- 🧱 **Installation** : acquisition/structuration d’un concept ou d’un outil  
+- 🧪 **TP** : expérimentation ou exploitation de résultats (posture E2)  
+- 🧭 **Entraînement E2 guidé** : dossier type E2 avec guidage progressif  
+- ✅ **Évaluation** : production notée (partielle ou complète)  
+- 🛠️ **Remédiation** : consolidation des points à forte valeur ajoutée pour E2  
 
 ---
 
-## 🔬 Place des TP 
+# 🔵 Étape 1 — Bases expérimentales et interprétation *(S01 → S11)*
 
-Les TP sont intégrés comme **supports d’expertise scientifique** :
+> **Finalité E2 :** installer les outils de base *(solutions, concentrations, pH)*, apprendre à exploiter des résultats et conclure sur une **décision qualité**.
 
-* TP Dissolution – Dilution – Échelle de teinte
-* TP pHmétrie 
-* TP conductivité
-* TP absorbance
-* TP stabilité / formulation
-
-Chaque TP donne lieu à une **exploitation écrite structurée** (intro – résultats – interprétation – conclusion), conforme aux attendus de l’épreuve E2.
+| Séance | Situation professionnelle (fil rouge) | Notions mobilisées | Statut | Justification E2 |
+|------:|----------------------------------------|--------------------|:------:|------------------|
+| S01 | Diagnostic d’un produit cosmétique (lecture dossier) | Corps pur / mélanges | 🧱 | Identifier infos utiles, structurer une analyse |
+| S02 | Formuler une solution cosmétique stable | Dissolution, solubilité, miscibilité | 🧱 | Mobiliser notions pour interpréter une composition |
+| S03 | Dosage “sens” d’un actif : pertinence d’une concentration | Concentration massique, quantité de matière (sens) | 🧱 | Interpréter un calcul (pas seulement calculer) |
+| S04 | Dilution en formulation : méthode et justification | Dilution, conservation de masse | 🧱 | Argumenter un choix de méthode |
+| **S05 (TP1)** | Dissolution / dilution / échelle de teinte | S02–S04 + observation couleur | 🧪 | Exploiter résultats et conclure (CQ) |
+| S06 | Évaluation 1 | S01–S05 | ✅ | Vérifier mobilisation + communication |
+| S07 | Texture / perception : relier une mesure à une propriété | Masse volumique, densité | 🧱 | Argumenter lien mesure ↔ qualité |
+| S08 | Cohérence de résultats : valider/écarter une donnée | Unités, ordres de grandeur, comparaison de séries | 🧱 | Critiquer un jeu de résultats (posture E2) |
+| S09 | pH d’un produit : tolérance, efficacité, conservation | pH, H₃O⁺/HO⁻ (niveau décision) | 🧱 | Interpréter une mesure dans un cahier des charges |
+| **S10 (TP2)** | pH-métrie : exploitation de résultats fournis | pH-métrie, calibration (principe) | 🧪 | Exploiter, comparer, conclure conformité |
+| S11 | Évaluation type E2 (guidée) | Transversal | ✅ | Dossier → analyse → synthèse (format entraînement) |
 
 ---
 
+# 🟠 Étape 2 — Structuration du raisonnement microscopique *(S12 → S15)*
 
-> « L’ensemble des notions du référentiel de physique-chimie appliquée est couvert dans la progression annuelle, de manière contextualisée, spiralée et orientée vers l’épreuve E2. 
-> La progression tient compte du profil des étudiants et vise une montée progressive en autonomie et en raisonnement scientifique. »
+> **Finalité E2 :** justifier des propriétés macroscopiques *(solubilité, compatibilité, stabilité)* par des éléments microscopiques **lisibles dans un dossier**.
 
+| Séance | Situation professionnelle (fil rouge) | Notions mobilisées | Statut | Justification E2 |
+|------:|----------------------------------------|--------------------|:------:|------------------|
+| S12 | Comprendre “ce qu’on mesure” en CQ | Atome, ions, e⁻ de valence, tableau périodique ; charges usuelles ; électroneutralité (cations/anions) ; composés ioniques | 🧱 | Mobiliser un modèle simple pour interpréter |
+| S13 | Stabilité chimique : lecture de Lewis | Gaz nobles ; Lewis (lecture) ; lacunes / e⁻ célibataires ; ROS ; liaisons fragiles O–O / S–S | 🧱 | Conclure stabilité/risque à partir d’une représentation |
+| S14 | Interactions et compatibilités | Polarité, liaisons H, interactions | 🧱 | Expliquer solubilité/compatibilité |
+| **S15 (TP3)** | Dossier moléculaire (sans manip) : choix d’actifs/excipients | Lewis fournie + interactions + rôle | 🧪 | Exploiter docs, argumenter et décider (E2-like) |
 
 ---
 
+# 🟢 Étape 3 — Consolider l’expertise *(S16 → S26)*
+
+> **Finalité E2 :** intégrer des notions “à forte valeur E2” *(variabilité, absorbance, ondes, thermique, électricité, transformations)* par le **sens professionnel**.
+
+---
+
+## 🧪 Bloc A — Fiabilité de la mesure *(métrologie minimale E2)*
+
+| Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
+|------:|----------------------------|--------------------|:------:|-----------------------------------|
+| S16 | Peut-on faire confiance à une valeur de CQ ? | Variabilité de mesure | 🧱 | dispersion, histogramme, moyenne, écart-type ; justesse vs fidélité (qualitatif) |
+
+---
+
+## 🔥 Bloc B — Thermique / états / énergie *(procédé & sécurité)*
+
+| Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
+|------:|----------------------------|--------------------|:------:|-----------------------------------|
+| S17 | Stockage/transport : changement d’aspect d’un corps pur | Diagramme d’état (lecture), changements d’état | 🧱 | lire un diagramme ; interpréter un changement d’état |
+| S18 | Procédé de fabrication : chauffer/refroidir sans dégrader | Transferts thermiques / énergie, T°, pression | 🧱 | conduction/convection/rayonnement ; effet T° sur solubilité/viscosité |
+
+---
+
+## 🧬 Bloc C — Chimie organique utile *(lecture de formule et sens cosmétique)*
+
+| Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
+|------:|----------------------------|--------------------|:------:|-----------------------------------|
+| S19 | Lire INCI + fiche technique : identifier structures clés | Représentations (brute, semi-développée, topo), isomérie | 🧱 | reconnaître une famille ; relier à propriété |
+| S20 | Fonctions d’intérêt cosmétique/biologique (sélection raisonnée) | Fonctions chimiques (liste référentiel) | 🧱 | 6–8 familles mobilisées par dossier ; liste rencontrée au fil des cas (pas d’encyclopédisme) |
+
+---
+
+## ⚡ Bloc D — Conductivité & CMC *(TP mutualisé avec la cosmétologie)*
+
+| Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
+|------:|----------------------------|--------------------|:------:|-----------------------------------|
+| S21 | Interpréter une mesure de conductivité (CQ) | Conductivité, ions, composition ↔ signal ; mesure d’une émulsion | 🧱 | rôle des ions ; comparaison d’échantillons |
+| **S22 (TP4 mutualisé)** | **CMC par conductivité** (tensioactifs) | Conductivité, CMC, exploitation graphique | 🧪 | tracer σ=f(C) ; rupture de pente ; conclusion technique |
+
+---
+
+## 🎨 Bloc E — Absorbance / Beer-Lambert *(couleur & dosage)*
+
+| Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
+|------:|----------------------------|--------------------|:------:|-----------------------------------|
+| S23 | Objectiver une teinte / contrôler un actif | Absorbance, transmittance, Beer-Lambert, spectres | 🧱 | lecture spectre ; exploitation A=f(C) ; conclusion conformité |
+
+---
+
+## 🌈 Bloc F — Ondes *(UV/visible + rappel acoustique) — dossier E2 guidé*
+
+| Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
+|------:|----------------------------|--------------------|:------:|-----------------------------------|
+| S24 | UV/visible : interpréter irradiance/spectre et conclure *(rappel : ondes acoustiques)* | Ondes (T, f, λ, célérité), EM, UV/visible, nombre d’onde ; infrasons/ultrasons ; synthèse additive/soustractive | 🧭 | relier λ ↔ type UV ; exploiter courbes ; argumenter une recommandation |
+
+---
+
+## 🔌 Bloc G — Électricité + sécurité + éco-responsabilité *(appareils)*
+
+| Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
+|------:|----------------------------|--------------------|:------:|-----------------------------------|
+| S25 | Choisir et sécuriser un appareil (institut/labo) | U, I, P ; énergie ; normes énergétiques ; sécurité électrique/thermique/optique/acoustique ; sécurité chimique (danger/risque) ; gestion déchets/péremption | 🧱 | P=UI ; E=Pt ; danger vs risque ; choix matériel raisonné |
+
+---
+
+## 🧪 Bloc H — Transformations chimiques & catalyse *(stabilité produit)*
+
+| Séance | Situation professionnelle | Notions mobilisées | Statut | Sous-notions  |
+|------:|----------------------------|--------------------|:------:|-----------------------------------|
+| S26 | Stabilité/dégradation : expliquer et recommander | Modélisation (équation), transformations chimiques, catalyse enzymatique | 🧱 | facteurs (T, pH, lumière, O₂) ; actions correctives |
+
+---
+
+# 🟣 Étape 4 — Préparation E2 : remédiation → évaluation complète *(S27 → S28)*
+
+> **Finalité E2 :** sécuriser les points à forte valeur ajoutée *(acide-base/tampons)* puis réaliser une **évaluation E2 complète**.
+
+| Séance | Format | Notions mobilisées | Statut | Justification E2 |
+|------:|--------|--------------------|:------:|------------------|
+| S27 | Remédiation structurante + entraînement guidé | Ka/pKa, amphotères, diagramme de prédominance, solutions tampons | 🛠️ | Dossier → décision argumentée (pH cible / tampon) |
+| S28 | Évaluation E2 complète (type examen) | Mobilisation transversale | ✅ | Analyse + interprétation + argumentation + synthèse pro |
+
+---
+
+# 🧪 Bilan des TP 
+
+- **TP1 (S05)** : Dissolution / Dilution / Échelle de teinte  
+- **TP2 (S10)** : pH-métrie (exploitation de résultats fournis)  
+- **TP3 (S15)** : TP documentaire (représentations moléculaires, sans manipulation)  
+- **TP4 (S22)** : **CMC par conductivité – mutualisé avec cosmétologie**  
+
+---
+
+# 👩‍🔬 Attendus opérationnels en fin d’année (profil “E2”)
+
+- Lire un dossier (INCI, fiche technique, protocole, tableau de résultats) et **extraire les données utiles**.  
+- Justifier une analyse avec des notions **macroscopiques** (solutions, pH, concentration…) et **microscopiques** (interactions, polarité…).  
+- Exploiter des séries de mesures : **moyenne, écart-type, cohérence** et **décision** (valider/rejeter/refaire).  
+- Interpréter des données instrumentales : **conductivité**, **absorbance/spectres**, **irradiance UV**.  
+- Formuler une conclusion professionnelle structurée : **analyse → interprétation → recommandation**.
+
+---
