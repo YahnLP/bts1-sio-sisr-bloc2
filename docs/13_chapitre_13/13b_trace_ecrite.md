@@ -3,127 +3,135 @@ author: ELP
 title: 13 📖 Trace écrite
 ---
 
-# 13 – Stabilité chimique et représentations de Lewis en cosmétologie : 📖 Trace écrite
-
-**Stabilité chimique – Gaz nobles – Électrons de valence – Représentations de Lewis – Lecture microscopique**
-
----
-
-## 1️⃣ Pourquoi s’intéresser à la stabilité chimique en cosmétologie et en E2
-
-En cosmétologie, certains actifs se **dégradent rapidement**, tandis que d’autres se **conservent durablement**.
-
-Ces différences ne sont pas uniquement liées aux conditions expérimentales : elles s’expliquent aussi par la **stabilité chimique des espèces**, à l’échelle microscopique.
-
-À l’épreuve **E2 – Expertise scientifique et technologique**, le candidat doit être capable de :
-
-- comprendre un **choix de formulation**,
-- expliquer pourquoi une espèce est utilisée sous une **forme plus stable**,
-- **argumenter scientifiquement** à partir d’un dossier.
-
-👉 La stabilité chimique est donc un **outil d’analyse**, pas une notion théorique isolée.
+# 13 – Stabilité chimique : lecture de Lewis 🧴🧪  
+**Gaz nobles – Lewis – Octet – Lacunes / e⁻ célibataires – ROS – Liaisons fragiles O–O / S–S**
 
 ---
 
-## 2️⃣ Notion de stabilité chimique
+## 1️⃣ Pourquoi parler de stabilité en cosmétologie (et en E2)
 
-Une espèce chimique est dite **stable** lorsqu’elle :
+En cosmétique, la qualité d’un produit dépend de sa **stabilité** :
+- maintien de l’odeur, de la couleur, de l’efficacité,
+- absence de dégradation dangereuse,
+- cohérence des résultats CQ (stabilité, sécurité, conservation).
 
-- ne présente pas de tendance marquée à réagir,
-- ne se transforme pas facilement dans les conditions considérées.
+À l’épreuve **E2**, on attend une démarche :
+**document → indice scientifique → interprétation → décision professionnelle**.
 
-À l’inverse, une espèce **réactive** peut se transformer plus facilement.
-
-👉 La stabilité ou la réactivité sont des **propriétés chimiques** qui doivent être **comprises et maîtrisées** en formulation cosmétique.
-
----
-
-## 3️⃣ Les gaz nobles : une référence de stabilité
-
-Les **gaz nobles** constituent une famille d’éléments chimiques caractérisés par une **très faible réactivité**.
-
-Ils sont utilisés comme **référence de stabilité chimique**, car :
-
-- ils ne réagissent quasiment pas dans les conditions usuelles,
-- ils illustrent un état microscopique particulièrement stable.
-
-👉 Les gaz nobles servent de **modèle explicatif**, sans être un objectif d’apprentissage en soi.
+👉 Les représentations de **Lewis** permettent de relier la structure microscopique à un risque de **réactivité / oxydation**.
 
 ---
 
-## 4️⃣ Rôle des électrons de valence dans la stabilité
+## 2️⃣ Stabilité des gaz nobles (repère)
 
-La stabilité chimique d’une espèce dépend en grande partie de la **répartition de ses électrons de valence**.
+![Gaz nobles](gaz_nobles.jpg){ width=90% .center }
 
-Ces électrons :
+Les **gaz nobles** (He, Ne, Ar…) sont très stables car leur **couche externe** est **saturée** en électrons :
+- duet pour He,
+- octet pour la plupart des autres.
 
-- interviennent dans les **liaisons chimiques**,
-- influencent la stabilité ou la réactivité d’une molécule,
-- expliquent pourquoi certaines espèces ont tendance à se transformer.
+👉 Une couche externe “complète” = faible tendance à réagir.
 
-👉 À ce stade, seule une **compréhension qualitative** est attendue.
+![Ne et Cl](bohr_Ne_Cl.png){ width=90% .center } 
+
+Schéma “couche externe saturée” : 
+
+**Ne** avec couche externe pleine,  **Cl** avec 7 e⁻ de valence
+
 
 ---
 
-## 5️⃣ Représentations de Lewis : un outil de lecture microscopique
+## 3️⃣ Représentation de Lewis : ce que l’on lit
 
-Les **représentations de Lewis** permettent de :
+Une représentation de Lewis montre :
 
-- visualiser les **électrons de valence**,
-- représenter les **liaisons chimiques**,
-- analyser des situations de **stabilité ou d’instabilité**.
+- **Doublet liant** : trait entre deux atomes (liaison)
 
-👉 En BTS MECP, ces représentations sont utilisées comme des **outils de lecture et de compréhension**, et non comme des schémas à construire ou à mémoriser.
+- **Doublet non liant** : deux points autour de l’atome (parfois un petit trait près de l’atome, mais jamais entre deux atomes). ⚠️ Ce n’est pas une liaison : une liaison est un trait entre deux atomes.
 
----
+- et permet de vérifier un repère :
 
-## 6️⃣ Stabilité chimique et cosmétologie
+  - H vise un **duet** (2 e⁻ sur sa couche externe),
+  - les autres atomes visent souvent l’**octet** (8 e⁻ sur sa couche externe).
 
-En cosmétologie :
-
-- une espèce chimiquement stable se **conserve mieux**,
-- une espèce réactive peut nécessiter une **forme stabilisée**,
-- la réactivité n’est pas un défaut, mais une **propriété à maîtriser**.
-
-👉 Comprendre la stabilité chimique permet de **justifier des choix de formulation** dans une analyse scientifique.
+✅ En E2, on attend surtout :
+- savoir **repérer** doublets,
+- vérifier “octet / duet”,
+- conclure “plutôt stable” ou “potentiellement réactif” (avec justification).
 
 ---
 
-## 7️⃣ Ce qui est attendu en E2 à ce stade
+## 4️⃣ Trois indices microscopiques de réactivité (niveau BTS MECP)
 
-À l’épreuve E2, il n’est pas attendu :
-- de réciter des règles de stabilité,
-- de construire des schémas de Lewis,
-- d’entrer dans des détails théoriques avancés.
+### Indice 1 : octet incomplet (lacune électronique)
+Une espèce dont un atome a un **octet incomplet** cherche souvent à réagir pour se stabiliser.
 
-En revanche, il est attendu de :
+![lacune](lacune.png){ width=40% .center }
 
-- **comprendre** la notion de stabilité chimique,
-- **lire** une représentation de Lewis simple,
-- **expliquer** un choix de formulation à l’aide d’arguments microscopiques,
-- **adopter une posture d’analyse experte**.
+### Indice 2 : électron célibataire (radical)
+Le symbole **•** indique un **électron célibataire**.
+➡️ Les radicaux sont **très réactifs** et peuvent déclencher des réactions en chaîne (oxydation).
 
-👉 La stabilité chimique est un **levier d’argumentation scientifique**.
+![radical](radical.png){ width=40% .center }
 
----
+### Indice 3 : liaisons fragiles (O–O / S–S)
 
+- **O–O** : liaisons des **peroxydes** (ex. H₂O₂) → rupture possible → espèces réactives (ROS).
+- **S–S** : ponts **disulfures** (kératine) → rupture / réarrangement possible (coiffure : permanente/défrisage).
 
-## 🔧 Outil méthodologique associé
-
-Pour **lire, interpréter et exploiter une représentation microscopique** (représentation de Lewis, schéma moléculaire) dans une situation professionnelle et dans une analyse de type **E2**, se référer à :
-
-➡️ [**Fiche méthode 05 – Lire une représentation microscopique dans un dossier scientifique**](https://bts-mecp-physique-chimie-688080.forge.apps.education.fr/Methodologie/05_fiche_methode/)
+👉 Ces indices microscopiques aident à comprendre :
+- les risques d’**oxydation** (parfums, lipides, actifs),
+- la fragilisation de structures biologiques (cheveux),
+- et la cohérence de consignes CQ (lumière/chaleur/métaux).
 
 ---
 
+## 5️⃣ Espèces réactives de l’oxygène (ROS) – À connaître qualitativement
 
+Exemples :
+- HO• (radical hydroxyle)
+- O₂•⁻ (superoxyde)
+
+📌 Point clé : la présence d’un **électron célibataire** explique la forte réactivité.
+
+Conséquences cosmétiques possibles :
+- rancissement (phase huileuse),
+- changement de couleur,
+- dégradation d’actifs,
+- altération d’odeur.
+
+---
+
+## 6️⃣ Ce qui est attendu en E2 (repère)
+
+✅ Attendu :
+- lire une représentation (Lewis),
+- repérer un indice de réactivité (lacune / radical / O–O / S–S),
+- relier à un risque (stabilité/sécurité),
+- formuler une **décision** argumentée.
+
+❌ Pas attendu :
+- des schémas Lewis complexes,
+- des explications encyclopédiques,
+- des calculs lourds.
+
+---
+
+## 🔧 Outils méthodologiques associés
+
+➡️ Voir : [*Fiche méthode 05 – Lire une représentation microscopique dans un dossier scientifique (E2)*](https://bts-mecp-physique-chimie-688080.forge.apps.education.fr/Methodologie/05_fiche_methode/)
+
+➡️ Voir : [*Fiche méthode 01 – Justifier une réponse en physique-chimie*](https://bts-mecp-physique-chimie-688080.forge.apps.education.fr/Methodologie/01_fiche_methode/)
+
+---
 
 ## 🔗 Pour la suite…
 
-Cette séance prépare directement :
-
-- l’étude des **interactions moléculaires** (polarité, liaisons hydrogène),
-- la compréhension des phénomènes de **solubilité et de pénétration cutanée**,
-- l’analyse complète de **dossiers scientifiques E2** nécessitant une justification microscopique.
+Cette séance prépare **S14 – Interactions et compatibilités** :
+- polarité,
+- liaisons H,
+- compatibilité des mélanges / solubilité / stabilité.
 
 ---
+
+

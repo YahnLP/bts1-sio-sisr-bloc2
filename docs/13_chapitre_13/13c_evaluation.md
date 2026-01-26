@@ -3,220 +3,87 @@ author: ELP
 title: 13 🖊️ Évaluation formative
 ---
 
-# 13 – Stabilité chimique et représentations de Lewis en cosmétologie  
-
-**Comprendre – Lire – Relier – Justifier un choix de formulation**
+# 13 – Stabilité chimique : Lewis 🧴🧪  
+**Identifier – Interpréter – Argumenter – Décider (logique E2)**
 
 ⏱️ Durée : 25–30 minutes  
-🎯 Objectif : vérifier la capacité à **comprendre la stabilité chimique**, **lire une représentation de Lewis simple**, et **argumenter un choix de formulation**, conformément aux attendus de l’épreuve   **E2 – Expertise scientifique et technologique**.  
-📌 Évaluation formative – barème indicatif
+🎯 Objectif : vérifier la capacité à **lire une représentation de Lewis**, repérer des **indices de stabilité/réactivité**, et produire une **recommandation professionnelle** conforme aux attendus **E2**.
+
+📌 Évaluation formative – barème indicatif /20
 
 ---
 
 ## 🧴 Contexte scientifique (type E2)
 
-Un laboratoire cosmétique étudie la **stabilité d’un actif** intégré dans une lotion.
-
-Le dossier scientifique précise que l’actif est utilisé sous une **forme chimiquement plus stable** afin de limiter sa dégradation au cours du stockage.
-
-Avant d’exploiter des résultats expérimentaux, il est nécessaire de **comprendre la notion de stabilité chimique** et de savoir l’interpréter à l’échelle microscopique.
-
-
+Un laboratoire contrôle la stabilité d’un produit de coiffure (neutralisant oxydant) et souhaite vérifier la compréhension des **indices microscopiques de réactivité**.
 
 ---
 
-## 📄 Document 1 – Notion de stabilité chimique
+## 📄 Document 1 – Représentations simplifiées (lecture)
 
-Une espèce chimique est dite **stable** lorsqu’elle ne présente pas de tendance marquée à réagir ou à se transformer dans les conditions considérées.
+**A – Eau H₂O**
 
----
+![H2O](h2o.png)
 
-## 📄 Document 2 – Représentation de Lewis d’une molécule stable
 
-Une représentation de Lewis simple d’une molécule utilisée en cosmétologie est fournie.
 
----
+**B – Peroxyde d’hydrogène H₂O₂**
 
-## 📄 Document 3 – Position des gaz nobles dans le tableau périodique
-![Gaz nobles – tableau périodique](gaz_nobles.jpg)
+![H2O2](h2o2.png)
 
-Les gaz nobles constituent une famille d’éléments chimiques caractérisée par une très faible réactivité.  
-Ils sont utilisés comme **référence de stabilité chimique**.
+**C – Radical (exemple) : HO•**
+> Le symbole **•** indique un électron célibataire.
 
 ---
 
-## 📄 Document 4 – Représentation de Lewis d’une molécule stable
+## Exercice 1 – Lire Lewis : doublets / liaisons (5 points)
 
+1\. Dans A (H₂O), citer :
+- un **doublet liant** : ______________________  
+- un **doublet non liant** : __________________  
 
+2\. Dans B (H₂O₂), combien y a-t-il de liaisons entre les deux atomes d’oxygène ? ____  
 
-<p align="center">
-  <img src="../H2O-lewis.jpg" alt="eau" width="40%"><br>
-  <em>eau H<sub>2</sub>O</em><br>
-  <img src="../Co2.png" alt="dioxyde de carbone" width="60%"><br>
-  <em>dioxyde de carbone CO<sub>2</sub></em><br>
- <img src="../NH3-lewis.jpg" alt="ammoniaque" width="70%"><br>
-    <em>ammoniaque NH<sub>3</sub></em>
-</p>
-
-Cette représentation de Lewis permet de visualiser les **électrons de valence** et les **liaisons chimiques** afin de comprendre la **stabilité chimique** de la molécule.
+3\. Dans B, entourer (ou citer) la liaison “fragile” associée à la réactivité : __________
 
 ---
 
+## Exercice 2 – Stabilité / réactivité : repérer l’indice (5 points)
 
+4\. Parmi A, B et C, laquelle correspond à une espèce **radicalaire** ? ____  
 
-## 📘 Document 5 - Lexique anglais → français
+5\. Quel indice microscopique rend cette espèce très réactive ? (1 phrase)  
+<br><br><br>
 
-
-
-### 🔹 Atomes et électrons
-
-| Anglais          | Français            |
-| ---------------- | ------------------- |
-| atom             | atome               |
-| nucleus          | noyau               |
-| electron         | électron            |
-| valence electron | électron de valence |
-| electron shell   | couche électronique |
-| outer shell      | couche externe      |
-| electron pair    | paire d’électrons   |
-| lone pair        | doublet non liant   |
-| shared electrons | électrons partagés  |
-
-
-
-### 🔹 Liaisons chimiques (Lewis)
-
-| Anglais             | Français                 |
-| ------------------- | ------------------------ |
-| chemical bond       | liaison chimique         |
-| single bond         | liaison simple           |
-| double bond         | liaison double           |
-| covalent bond       | liaison covalente        |
-| bond line           | trait de liaison         |
-| Lewis structure     | représentation de Lewis  |
-| Lewis dot structure | schéma de Lewis (points) |
-
-
-
-### 🔹 Stabilité et réactivité
-
-| Anglais            | Français           |
-| ------------------ | ------------------ |
-| chemical stability | stabilité chimique |
-| stable molecule    | molécule stable    |
-| unstable molecule  | molécule instable  |
-| reactivity         | réactivité         |
-| low reactivity     | faible réactivité  |
-| highly reactive    | très réactif       |
-| degradation        | dégradation        |
-| oxidation          | oxydation          |
-
-
-
-### 🔹 Gaz nobles / tableau périodique
-
-| Anglais            | Français                   |
-| ------------------ | -------------------------- |
-| periodic table     | tableau périodique         |
-| noble gases        | gaz nobles                 |
-| group / column     | groupe / colonne           |
-| element            | élément                    |
-| chemical family    | famille chimique           |
-| inert gas          | gaz inerte                 |
-| full valence shell | couche de valence complète |
-
-
-
-### 🔹 Lecture de document scientifique (E2)
-
-| Anglais             | Français               |
-| ------------------- | ---------------------- |
-| diagram             | schéma                 |
-| representation      | représentation         |
-| shows / represents  | montre / représente    |
-| illustrates         | illustre               |
-| explains            | explique               |
-| helps to understand | aide à comprendre      |
-| used to explain     | utilisé pour expliquer |
-
-
-
-## 🧠 Version « phrase-type E2 » (utile pour les élèves)
-
-Voici quelques **phrases-types en anglais**, fréquemment rencontrées dans les documents :
-
-* **“This Lewis structure shows the valence electrons.”**
-  → Cette représentation de Lewis montre les électrons de valence.
-
-* **“Noble gases have low reactivity.”**
-  → Les gaz nobles ont une faible réactivité.
-
-* **“The molecule is chemically stable.”**
-  → La molécule est chimiquement stable.
-
-* **“This bond represents shared electrons.”**
-  → Cette liaison représente des électrons partagés.
-
----
-
-
-
-## Exercice 1 – Comprendre la stabilité chimique (6 points)
-
-1\. Reformuler la notion de **stabilité chimique** à l’aide du document 1.  
+6\. Expliquer pourquoi B (H₂O₂) est généralement plus “à risque” qu’A (H₂O) en termes de réactivité (2–3 lignes).  
 <br><br><br><br>
 
-2\. Expliquer pourquoi la stabilité chimique est un critère important pour un **actif cosmétique**.  
-<br><br><br><br>
-
-🔎 *Compétences évaluées : comprendre – relier à une situation professionnelle*
-
 ---
 
-## Exercice 2 – Lecture d’une représentation de Lewis (6 points)
+## Exercice 3 – Application E2 : argumenter et décider (10 points)
 
-3\. Indiquer ce que représentent les **traits** et les **doublets** sur une représentation de Lewis.  
+### 📄 Document 2 – Extrait de dossier CQ
+
+> « Le neutralisant contient du H₂O₂.  
+> Consignes fabricant : conserver à l’abri de la chaleur et de la lumière, utiliser un matériel compatible, éviter certaines contaminations. »
+
+7\. Justifier scientifiquement ces consignes (4–6 lignes).  
+📌 Attendu : au moins **2 arguments** (liaison O–O / formation ROS / radical…).  
+<br><br><br><br><br><br><br>
+
+8\. Proposer **2 recommandations professionnelles** (CQ/sécurité) adaptées :  
+- Reco 1 : ____________________________________________  
+- Reco 2 : ____________________________________________  
 <br><br><br><br>
-
-4\. Expliquer en quoi cette représentation permet de **mieux comprendre la stabilité** de la molécule.  
-<br><br><br><br>
-
-🔎 *Compétences évaluées : lire un document scientifique – comprendre*
-
----
-
-## Exercice 3 – Stabilité chimique et choix de formulation (8 points)
-
-5\. Expliquer pourquoi un laboratoire peut choisir d’utiliser une **forme plus stable** d’un actif, même si plusieurs formes existent.  
-<br><br><br><br>
-
-6\. En quoi la compréhension de la stabilité chimique aide-t-elle à **justifier scientifiquement** ce choix dans une analyse de type E2 ?  
-<br><br><br><br><br>
-
-🔎 *Compétences évaluées : analyser – justifier*
-
----
-
-## Exercice 4 – Posture critique (attendus E2) (8 points)
-
-Un technicien affirme :
-
-> *« Si un actif est efficace, sa stabilité chimique n’a pas vraiment d’importance. »*
-
-7\. Cette affirmation est-elle scientifiquement acceptable en BTS MECP ?  
-☐ Oui  ☐ Non  
-
-Justifier votre réponse (4 à 5 lignes) en vous appuyant sur les notions de **stabilité chimique** et de **formulation cosmétique**.
-
-<br><br><br><br><br><br>
-
-🔎 *Compétences évaluées : analyser – argumenter – communiquer*
 
 ---
 
 ## 🧠 Auto-évaluation (métacognition)
 
-☐ Je comprends ce que signifie la stabilité chimique  
-☐ Je sais lire une représentation de Lewis simple  
-☐ Je comprends le lien entre stabilité et formulation cosmétique  
-☐ Je me sens capable de justifier un choix scientifique en E2
+☐ Je sais lire une représentation de Lewis (liaisons / doublets)  
+☐ Je sais repérer une liaison O–O (peroxyde) et expliquer le risque  
+☐ Je sais reconnaître le signe d’un radical (•)  
+☐ Je sais produire une justification courte de type E2  
+☐ Je sais proposer une recommandation professionnelle cohérente
+
+---

@@ -3,147 +3,251 @@ author: ELP
 title: 13 📝 Fiche élève
 ---
 
-# 13 – Stabilité chimique et représentations de Lewis en cosmétologie : 📝 Fiche élève
+# 13 – Stabilité chimique : lecture de Lewis 🧴🧪  
+**Gaz nobles – Représentations de Lewis – Lacunes / e⁻ célibataires – ROS – Liaisons fragiles O–O / S–S**
 
-**Stabilité chimique – Gaz nobles – Électrons de valence – Représentations de Lewis – Lecture d’un dossier scientifique**
-
-> En BTS MECP, l’analyse d’un dossier scientifique ne repose pas uniquement sur des résultats expérimentaux.
-> Elle nécessite également de **comprendre la stabilité chimique des espèces** afin d’**expliquer**, **justifier** et **argumenter** des choix de formulation, comme à l’épreuve **E2 – Expertise scientifique et technologique**.
+> En E2, on ne te demande pas “de réciter Lewis”.  
+> On te demande de **lire une représentation**, d’en déduire un **niveau de stabilité / risque**, puis de **justifier une décision professionnelle** (CQ, sécurité, stabilité).
 
 ---
 
 ## 🎯 Objectifs de la séance
 
-* Comprendre la notion de **stabilité chimique** à l’échelle microscopique
-* Identifier pourquoi certaines espèces sont **stables** et d’autres **réactives**
-* Utiliser une **représentation de Lewis** comme **outil de lecture**
-* Relier stabilité chimique et **conservation des actifs cosmétiques**
-* Préparer l’argumentation scientifique attendue en **E2**
+- Comprendre pourquoi les **gaz nobles** sont stables  
+- Lire une **représentation de Lewis** (liaisons + doublets non liants)  
+- Repérer des indices de **réactivité** :  
+
+  - **octet incomplet** (lacune),  
+  - **électron célibataire** (radical),  
+  - **liaisons fragiles** : **O–O** et **S–S**  
+
+- Relier ces indices à une situation cosmétique (stabilité / oxydation / sécurité)
 
 ---
 
 ## 🧴 Situation professionnelle
 
-Vous travaillez dans un laboratoire de **formulation cosmétique**.
+Vous êtes technicien(ne) dans un laboratoire cosmétique.
 
-Un dossier scientifique indique que certains actifs sont formulés sous une **forme chimiquement plus stable**, afin de limiter leur dégradation au cours du stockage ou de l’utilisation du produit.
+Un responsable CQ vous demande d’analyser des documents concernant :
 
-Avant d’analyser les résultats d’efficacité ou de stabilité, il est nécessaire de **comprendre ce que signifie “stabilité chimique”** et comment elle peut être interprétée à l’échelle microscopique.
+- un **neutralisant** utilisé en coiffure (oxydant),
+- et la **stabilité** de certains ingrédients sensibles à l’oxydation.
 
----
+Vous devez justifier, à partir d’indices microscopiques, si certaines espèces sont :
 
-## 🧠 Travail 1 – Comprendre la notion de stabilité chimique
-
-### Document 1 – Notion de stabilité chimique
-
-Une espèce chimique est dite **stable** lorsqu’elle ne présente pas de tendance marquée à réagir ou à se transformer dans les conditions considérées.
-
-1\. Reformuler avec vos mots ce que signifie la **stabilité chimique**.  
-<br><br><br><br>
-
-2\. Expliquer pourquoi la stabilité chimique est un critère important en cosmétologie.  
-<br><br><br><br>
+- **stables**,
+- ou **potentiellement réactives** (donc à risque).
 
 ---
 
-## 🧠 Travail 2 – Les gaz nobles : une référence de stabilité
+# 🧠 Travail 1 – Stabilité des gaz nobles : “couche externe saturée”
 
-### Document 2 – Position des gaz nobles dans le tableau périodique
+### Document 1 – Repère (gaz nobles)
 
-Les **gaz nobles** sont des éléments chimiques connus pour leur très faible réactivité.
+![Gaz nobles](gaz_nobles.jpg){ width=90% .center }
+
+Les gaz nobles (He, Ne, Ar…) sont réputés **très stables**.
+
+📌 Idée centrale :
+- ils possèdent une **couche externe saturée** en électrons (stabilité).
+
+1\. Expliquer en 2 lignes maximum pourquoi un gaz noble est chimiquement stable.  
+<br><br><br><br>
+
+2\. Faire le lien avec la séance précédente  : quel rôle jouent les **électrons de valence** ? 
+
+![Ne et Cl](bohr_Ne_Cl.png){ width=90% .center } 
+
+Schéma “couche externe saturée” : 
+
+**Ne** avec couche externe pleine,  **Cl** avec 7 e⁻ de valence
+
+<br><br><br><br>
+
+---
+
+# 🧩 Travail 2 – Lire une représentation de Lewis (sans complexifier)
+
+### Document 2 – Rappels visuels (Lewis)
+
+**Convention Lewis :**
+
+- **Doublet liant** : trait entre deux atomes (liaison)
+
+- **Doublet non liant** : deux points autour de l’atome (parfois un petit trait près de l’atome, mais jamais entre deux atomes). ⚠️ Ce n’est pas une liaison : une liaison est un trait entre deux atomes.
+
+- règle simple (repère) :
+
+  - H vise un **duet** (2 e⁻)
+  - la plupart des autres atomes visent l’**octet** (8 e⁻ autour d’eux)
+
+![Légende de Lewis](legende_Lewis.png){ width=95% .center }
+
+*Schéma de Lewis d'atomes courants*
+
+![Schéma de Lewis d'atomes](lewis.gif){ width=75% .center }
 
 
-### Document 3 - Classification périodique 
+**Exemples (lecture) :**
 
-![Tableau périodique](tableau_periodique.png)
+**(A) Eau H₂O**
+
+![H₂O](h2o.png){ width=30% .center }
 
 
-3\. Identifier les éléments appelés **gaz nobles** dans le tableau périodique.  
+
+**(B) Dichlore Cl₂**
+
+![Cl₂](cl2.png){ width=30% .center }
+
+
+**(C) Dioxygène O₂ (liaison double)**
+
+![O₂](o2.png){ width=30% .center }
+
+3\. Sur l’exemple (A) H₂O :
+- entourer (ou citer) le **doublet liant**  
+- entourer (ou citer) un **doublet non liant**  
 <br><br><br>
 
-4\. Expliquer pourquoi les gaz nobles sont utilisés comme **référence de stabilité chimique**.  
+4\. Sur (C) O₂ :
+- combien y a-t-il de **liaisons** entre les deux O ?  
+- quel est l’intérêt de cette double liaison pour l’octet ?  
 <br><br><br><br>
 
 ---
 
-## 🔍 Travail 3 – Représentations de Lewis : un outil de lecture
+# ⚠️ Travail 3 – Repérer la réactivité : lacune / électron célibataire / liaisons fragiles
 
-### Document 3 – Représentations de Lewis simples (fournies)
+### Document 3 – Trois signaux d’alerte “réactivité” (niveau BTS)
 
-Les **représentations de Lewis** permettent de visualiser :
-- les **électrons de valence**,
-- les **liaisons chimiques**,
-- certaines situations de **stabilité ou d’instabilité**.
+**Signal 1 : octet incomplet (lacune électronique)**  
+→ l’espèce cherche à “compléter” son octet, donc elle est souvent réactive.
+
+![lacune](lacune.png){ width=40% .center }
+
+**Signal 2 : électron célibataire (radical)**  
+→ très réactif (réactions en chaîne, oxydation…).
+
+![radical](radical.png){ width=40% .center }
+
+**Signal 3 : liaison fragile**  
+→ certaines liaisons se rompent plus facilement :
+- **O–O** (peroxydes)  
+- **S–S** (ponts disulfures)
+
+> **Liaison fragile » (ex : O–O, S–S)** → se casse facilement → forme des radicaux / réagit
+>
+> Certaines liaisons sont faibles (énergie de liaison plus basse) → elles cassent plus facilement, notamment sous :
+>
+> - chaleur,
+> - lumière UV,
+> - présence de métaux,
+> - pH, etc.
+>
+> **Pourquoi c’est un signal d’alerte ?**
+> Quand une liaison fragile casse, elle peut casser :
+> 
+> - pour donner 2 radicaux (très réactifs),
+> - pour donner ions réactifs.
 
 
-<p align="center">
-  <img src="../h2o.png" alt="eau" width="50%"><br>
-  <em>eau H<sub>2</sub>O</em><br>
-  <img src="../Co2.png" alt="dioxyde de carbone" width="60%"><br>
-  <em>dioxyde de carbone CO<sub>2</sub></em><br>
- <img src="../nh3.jpg" alt="ammoniaque" width="35%"><br>
-    <em>ammoniaque NH<sub>3</sub></em>
-</p>
 
+---
 
-5\. À quoi correspondent les **traits** et les **doublets** sur une représentation de Lewis ?  
+## 3A – Liaison O–O : peroxydes
+
+### Document 4 – Exemple de peroxyde (liaison O–O)
+
+**Peroxyde d’hydrogène H₂O₂** (neutralisant / oxydant en coiffure)
+
+Représentation simplifiée (lecture) :
+
+![H₂O₂](h2o2.png){ width=30% .center }
+
+5\. Repérer la liaison considérée comme “fragile” dans H₂O₂ : ____________  
+<br><br>
+
+6\. Expliquer en 2–3 lignes pourquoi la présence d’une liaison O–O peut être un indice de réactivité / risque d’oxydation.  
 <br><br><br><br>
 
-6\. Expliquer ce que la représentation de Lewis permet de comprendre sur la **stabilité** d’une molécule.  
+---
+
+## 3B – Espèces réactives de l’oxygène (ROS)
+
+### Document 5 – ROS (à connaître qualitativement)
+
+Dans certains contextes (lumière, chaleur, traces de métaux…), des espèces très réactives peuvent apparaître :
+
+- **radical hydroxyle** : HO•  
+- **superoxyde** : O₂•⁻  
+
+📌 Point clé : le symbole **•** indique un **électron célibataire**.
+
+7\. Quel est l’indice microscopique qui rend une espèce “radicalaire” ?  
+<br><br><br>
+
+8\. Citer un risque cosmétique lié aux ROS (un exemple concret) :  
+(ex : oxydation d’un parfum, rancissement d’une phase huileuse, dégradation d’un actif, changement de couleur…)  
+<br><br><br><br>
+
+---
+
+## 3C – Liaison S–S : ponts disulfures (cheveux)
+
+### Document 6 – Pont disulfure (keratine)
+
+Dans la fibre capillaire, la kératine contient des **ponts disulfures** :
+
+![Pont disulfure](pont_disulfure.png){ width=60% .center }
+
+En permanente / défrisage, un réducteur peut transformer ces ponts (rupture/formation), puis un oxydant “fixe” la nouvelle forme.
+
+9\. Repérer la liaison fragile dans ce document : ____________  
+<br><br>
+
+10\. Donner une conséquence possible si l’on fragilise trop les ponts S–S (professionnel) :  
+<br><br><br><br>
+
+---
+
+# 🧪 Travail 4 – Mini dossier type E2 : “permanente / neutralisant”
+
+### Document 7 – Extrait de dossier (simplifié)
+
+> « Le protocole utilise une crème réductrice (action sur les ponts disulfures S–S) puis un neutralisant contenant du peroxyde (liaison O–O).  
+> Le fabricant indique : *conserver à l’abri de la chaleur et de la lumière* et *éviter le contact avec certains métaux*. »
+
+11\. À partir des documents, expliquer pourquoi ces précautions (chaleur/lumière/métaux) sont cohérentes scientifiquement (4–6 lignes).  
+📌 Attendu E2 : au moins **2 arguments microscopiques** (O–O / radicaux / ROS…).  
+<br><br><br><br><br><br><br>
+
+12\. Proposer **2 recommandations professionnelles** (CQ/sécurité) pour limiter les risques lors du stockage / utilisation.  
+- Recommandation 1 : ________________________________  
+- Recommandation 2 : ________________________________  
+<br><br><br><br>
+
+---
+
+## ✍️ Synthèse personnelle (brouillon E2 – 6 lignes max)
+
+Avec tes mots, explique :
+- ce que “montre” une représentation de **Lewis**,
+- 2 indices de **réactivité** vus aujourd’hui,
+- un lien avec la **stabilité** d’un produit cosmétique.
+
+**Mots obligatoires à placer** :  
+**Lewis – doublet – octet – réactivité – O–O ou S–S – décision**
+
 <br><br><br><br><br>
-
-> ⚠️ **Remarque**  
-> Les représentations de Lewis sont utilisées ici comme **outils de lecture et de compréhension**.  
-> Aucune construction de schéma de Lewis n’est attendue à ce stade.
-
----
-
-## ⚖️ Travail 4 – Stabilité et réactivité en cosmétologie
-
-Une espèce chimiquement **réactive** peut se transformer plus facilement qu’une espèce stable.
-
-En cosmétologie :
-- une espèce stable se **conserve mieux**,
-- une espèce réactive peut nécessiter une **forme stabilisée**.
-
-7\. Expliquer pourquoi la stabilité chimique d’un actif est importante pour un produit cosmétique.  
-<br><br><br><br><br>
-
-8\. Pourquoi la réactivité chimique n’est-elle pas forcément un défaut, mais une **propriété à maîtriser** ?  
-<br><br><br><br>
-
----
-
-## 🧪 Travail 5 – Lecture d’un extrait de dossier scientifique (logique E2)
-
-### Document 4 – Extrait de dossier
-
-> *« L’actif est formulé sous une forme chimiquement plus stable afin de limiter sa dégradation lors du stockage. »*
-
-9\. Expliquer pourquoi le laboratoire a fait le choix d’une **forme plus stable** de l’actif.  
-<br><br><br><br>
-
-10\. En quoi une lecture microscopique permet-elle de **justifier ce choix** dans une analyse scientifique de type E2 ?  
-<br><br><br><br>
-
----
-
-## 🧾 Trace écrite – À compléter
-
-* **Stabilité chimique** : <br><br><br><br>
-
-* **Rôle des électrons de valence dans la stabilité** : <br><br><br><br>
-
-* **Intérêt des représentations de Lewis** : <br><br><br>
 
 ---
 
 ## 🔗 Pour la suite…
 
 Cette séance prépare directement :
-
-* l’étude des **interactions moléculaires** (liaisons hydrogène, polarité),
-* la compréhension de la **solubilité et de la pénétration cutanée**,
-* l’analyse approfondie de **dossiers scientifiques E2** nécessitant une justification microscopique.
+- **S14 – Interactions et compatibilités** (polarité, liaison H, compatibilité des mélanges),
+- l’analyse de **dossiers E2** où l’on doit expliquer stabilité / incompatibilités.
 
 ---
