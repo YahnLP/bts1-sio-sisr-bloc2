@@ -1,6 +1,6 @@
 # Cadre des TP et ressources 
 
-Ce dossier regroupe les **travaux pratiques de physique-chimie appliquée** réalisés en BTS MECP (1ʳᵉ et 2ᵉ année).
+Ce dossier regroupe les **travaux pratiques de physique-chimie appliquée** réalisés en BTS MECP (1ʳᵉ et 2ᵉ année). 
 
 Les TP ont pour objectif de donner du **sens concret** aux notions vues en cours et de développer les compétences expérimentales attendues à l’**épreuve E2 – Expertise scientifique et technologique**.
 
