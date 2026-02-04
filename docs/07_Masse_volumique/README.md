@@ -1,4 +1,4 @@
-# 07 – Masse volumique et densité : Objectifs et ressources
+# 07 – Objectifs et ressources
 
 Cette séance introduit deux grandeurs physiques fondamentales pour le contrôle qualité en cosmétique : la **masse volumique** et la **densité**. Ces mesures simples permettent de vérifier la conformité d'un produit et de détecter d'éventuelles anomalies de fabrication.
 

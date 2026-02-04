@@ -1,6 +1,6 @@
 ---
 author: ELP
-title: 07 ✅ Évaluation formative
+title: 07 🖋️ Évaluation formative
 ---
 
 # S07 – Évaluation formative : Masse volumique et densité
