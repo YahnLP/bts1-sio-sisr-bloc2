@@ -269,4 +269,4 @@ Les liens vers les vidéos sont fournis à titre indicatif et peuvent évoluer. 
 
 ---
 
-*Document mis à jour : 2025*
+*Document mis à jour : 2026*
