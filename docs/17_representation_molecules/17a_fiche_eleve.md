@@ -293,8 +293,8 @@ On vous donne : **C₆H₁₄** (hexane).
 | Molécule cosmétique | Formule topologique | Type de chaîne | Justification |
 |---------------------|:-------------------:|:--------------:|---------------|
 | **Acide laurique** (C₁₂) |  <img src="/17_representation_molecules/images/acide_laurique.png" alt="Acide laurique" style="width:90%;"> | _______ | _______ |
-| **Squalane** | <img src="/17_representation_molecules/images/squalane.png"> | _______ | _______ |
-| **Menthol** | <img src="/17_representation_molecules/images/menthol_.png" style="width:60%;"> | _______ | _______ |
+| **Squalane** | <img src="/17_representation_molecules/images/squalane.png" style="width:60%;"> | _______ | _______ |
+| **Menthol** | <img src="/17_representation_molecules/images/menthol_.png" style="width:30%;"> | _______ | _______ |
 
 
 
