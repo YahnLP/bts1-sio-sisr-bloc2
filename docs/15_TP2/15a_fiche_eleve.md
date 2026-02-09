@@ -1,6 +1,6 @@
 ---
 author: ELP
-title: "15 📝 Fiche élève – Installation titrage et tampons"
+title: 15 📝 Fiche élève 
 ---
 
 # S15 – Titrage acido-basique et solutions tampons 📝
@@ -99,7 +99,7 @@ $$\boxed{n(acide) = n(base) = C_{titrante} \times V_E}$$
 |:-------:|----------|:-----:|
 | n(acide) | Quantité de matière d'acide dans le bécher | mol |
 | C_titrante | Concentration de la solution titrante (connue) | mol/L |
-| $V_E$ | Volume à l'équivalence (lu sur la courbe) | **L** (attention : convertir les mL !) |
+| V_E | Volume à l'équivalence (lu sur la courbe) | **L** (attention : convertir les mL !) |
 
 #### Pour trouver la masse
 
@@ -176,7 +176,7 @@ Un laboratoire titre l'allantoïne (acide, noté HA) par une solution de NaOH.
 - $V_E$ = 12,0 mL (déterminé sur la courbe)
 - M(allantoïne) = 158 g/mol
 
-**B1.** Convertissez $V_E$ en litres :
+**B1.** Convertissez V_E en litres :
 
 > $V_E$ = _______ mL = _______ L
 
@@ -219,7 +219,7 @@ Avant de passer à la manipulation, vérifiez :
 | Identifier les 3 zones sur une courbe pH = f(V) | ☐ |
 | Écrire la relation à l'équivalence | ☐ |
 | Convertir $V_E$ de mL en L | ☐ |
-| Calculer n puis m à partir de $V_E$| ☐ |
+| Calculer n puis m à partir de $V_E $| ☐ |
 | Définir une solution tampon | ☐ |
 
 > 💡 Si vous avez coché toutes les cases, vous êtes prêt(e) pour le TP !
