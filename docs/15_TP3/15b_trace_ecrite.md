@@ -53,15 +53,15 @@ $$\boxed{n(acide) = n(base) = C_{titrante} \times V_E}$$
 │                                                             │
 │   📌 À RETENIR :                                           │
 │                                                             │
-│   n(acide) = C(titrante) × V_E                              │
+│   n(acide) = C(titrante) × VE                              │
 │   m(acide) = n × M                                          │
 │                                                             │
-│   ⚠️ V_E doit être en LITRES dans la formule               │
+│   ⚠️ VE doit être en LITRES dans la formule               │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-### Détermination de V_E
+### Détermination de $V_E$
 
 | Méthode | Principe | Quand l'utiliser |
 |---------|----------|:----------------:|
@@ -129,7 +129,7 @@ $$\boxed{pH_{tampon} \approx pK_a \pm 1}$$
 
 Décrire les 3 zones, repérer le saut de pH.
 
-### Étape 2 – Déterminer V_E
+### Étape 2 – Déterminer $V_E$
 
 Par la méthode des tangentes ou de la dérivée.
 
@@ -151,7 +151,7 @@ $$n = C_{titrante} \times V_E \qquad \text{puis} \qquad m = n \times M$$
 
 | Formule | Utilisation |
 |---------|-------------|
-| n = C × V_E | Quantité de matière à l'équivalence |
+| n = C × $V_E$ | Quantité de matière à l'équivalence |
 | m = n × M | Masse de l'espèce titrée |
 | C = n / V | Concentration (si volume connu) |
 
@@ -163,7 +163,7 @@ $$n = C_{titrante} \times V_E \qquad \text{puis} \qquad m = n \times M$$
 | **Solution titrante** | Solution de concentration connue (dans la burette) |
 | **Solution titrée** | Solution à doser (dans le bécher) |
 | **Équivalence** | Réactifs en proportions stœchiométriques |
-| **V_E** | Volume versé à l'équivalence |
+| **$V_E$** | Volume versé à l'équivalence |
 | **Solution tampon** | Solution dont le pH varie peu |
 
 ---

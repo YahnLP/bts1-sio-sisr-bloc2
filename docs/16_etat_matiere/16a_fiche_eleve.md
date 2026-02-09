@@ -52,9 +52,8 @@ Un **diagramme d'état** (ou diagramme de phase) est un graphique qui représent
 
 #### Lecture du diagramme
 
-<p align="center">
-  <img src=".\images\Diag_eau.svg.png" alt="Diagramme d'état de l'eau" width="80%"><br>
-</p>
+<img src="./images/Diag_eau.svg.png" alt="Diagramme d'état de l'eau" width="80%"><br>
+
 
 
 | Zone | État | Exemple |
