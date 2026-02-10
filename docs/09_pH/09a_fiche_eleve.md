@@ -18,7 +18,8 @@ title: 09 📝 Fiche élève
 
 - **définir** le pH et son échelle de 0 à 14
 - **classer** une solution comme acide, neutre ou basique
-- **relier** le pH à la concentration en ions H⁺
+- **relier** le pH à la concentration en ions **H₃O⁺** (ions oxonium)
+- **comprendre** que l’échelle de pH est **logarithmique** (variation par facteurs 10)
 - **interpréter** une mesure de pH dans un contexte cosmétique
 - **argumenter** sur la conformité d'un produit par rapport à son pH
 
@@ -67,6 +68,14 @@ $$\boxed{pH = -\log[H_3O^+]}$$
 **Remarque :** En BTS MECP, on n'utilise pas directement cette formule. On retient que :
 - Plus [$H_3O^+$] est **élevée**, plus le pH est **bas** (solution acide)
 - Plus [$H_3O^+$] est **faible**, plus le pH est **élevé** (solution basique)
+
+> ✅ **À retenir (niveau BTS, sans calculs complexes)**
+>
+> - En solution aqueuse, on parle surtout des ions **H₃O⁺** (oxonium).
+> - Le pH est une **échelle logarithmique** :
+>   - si la concentration en **H₃O⁺** est multipliée par **10**, alors le pH **diminue de 1**.
+>   - si la concentration en **H₃O⁺** est divisée par **10**, alors le pH **augmente de 1**.
+
 
 ---
 
@@ -180,17 +189,20 @@ Placez les produits suivants sur l'échelle de pH :
 
 ---
 
-### 1.3 – Lien pH et ions H⁺
+### 1.3 – Lien pH et ions H₃O⁺
+
 
 Complétez les phrases avec « augmente », « diminue », « acide » ou « basique » :
 
-1\. Quand le pH diminue, la concentration en ions H⁺ _________________.
+1\. Quand le pH diminue, la concentration en ions **H₃O⁺** _________________.
+2\. Quand le pH augmente, la concentration en ions **H₃O⁺** _________________.
+3\. Une solution avec beaucoup d'ions **H₃O⁺** est _________________.
+4\. Une solution avec peu d'ions **H₃O⁺** est _________________.
 
-2\. Quand le pH augmente, la concentration en ions H⁺ _________________.
+**Mini-question (échelle logarithmique) :**  
+5. Si la concentration en **H₃O⁺** est multipliée par 10, le pH :
+☐ augmente de 1 ☐ diminue de 1 ☐ ne change pas
 
-3\. Une solution avec beaucoup d'ions H⁺ est _________________.
-
-4\. Une solution avec peu d'ions H⁺ est _________________.
 
 ---
 
@@ -267,6 +279,13 @@ $$\bar{x} = \frac{5,42 + 5,45 + 5,40 + 5,38 + 5,45}{5} = \frac{.........}{5} = .
 ☐ Oui ☐ Non
 
 **3.4** Rédigez une conclusion professionnelle (méthode O.A.C.J.) :
+
+> 🔒 **Méthode obligatoire (O.A.C.J.)**
+> - **O (Observation)** : je cite la moyenne et l’intervalle du cahier des charges.
+> - **A (Analyse)** : je compare (dans / hors intervalle).
+> - **C (Conclusion)** : conforme / non conforme.
+> - **J (Justification / décision CQ)** : je propose l’action (libérer / ajuster / rejeter) et je justifie (tolérance cutanée, sécurité, qualité).
+
 
 **Observation :**
 
@@ -446,8 +465,10 @@ Avant de rendre votre travail, vérifiez :
 ## 🔗 Pour la suite de la progression
 
 Dans les **séances suivantes**, vous découvrirez :
-- **S10** : Évaluation type E2 (S01-S09)
+
+- **S10** : Évaluation type E2 (bilan des notions installées sur les séances précédentes)
 - **S14** : Acido-basicité appliquée à la cosmétique (couples, pKa, diagramme de prédominance)
+
 
 
 ---

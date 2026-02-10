@@ -14,9 +14,9 @@ title: 09 🖋️ Évaluation formative
 
 ---
 
-## Exercice 1 – Connaissances (4 points)
+## Exercice 1 – Connaissances (5 points)
 
-### A) Compléter les phrases (2 points)
+### A) Compléter les phrases (2,5 points)
 
 1\. Le pH mesure l'_____________ ou la _____________ d'une solution.
 
@@ -26,7 +26,10 @@ title: 09 🖋️ Évaluation formative
 
 4\. Le pH physiologique de la peau est d'environ _____________.
 
-### B) QCM (2 points)
+5\. En solution aqueuse, l’acidité est liée à la présence d’ions _____________ (appelés ions oxonium).
+
+
+### B) QCM (2,5 points)
 
 **1.** Une solution de pH = 9 est :
 
@@ -43,6 +46,15 @@ title: 09 🖋️ Évaluation formative
 ☐ Proche du pH physiologique de la peau (environ 5,5)
 
 ☐ Égal à 7 (neutre)
+
+**3.** Si la concentration en ions **H₃O⁺** est multipliée par 10, alors le pH :
+
+☐ augmente de 1
+
+☐ diminue de 1
+
+☐ ne change pas
+
 
 ---
 
@@ -94,7 +106,15 @@ Le laboratoire contrôle un lot de **crème hydratante** (lot n°2025-118).
 
 <br><br><br>
 
-**3.5** Rédigez une conclusion professionnelle pour ce lot (2-3 lignes). (1,5 pt)
+**3.5** Rédigez une conclusion professionnelle **structurée en O.A.C.J.** (2-3 lignes). (1,5 pt)
+
+- **O – Observation** : moyenne + intervalle du cahier des charges
+- **A – Analyse** : comparaison (dans / hors intervalle)
+- **C – Conclusion** : conforme / non conforme
+- **J – Justification / décision CQ** : action recommandée + justification (tolérance cutanée, qualité)
+
+
+
 
 <br><br><br><br>
 
@@ -126,7 +146,7 @@ Produit : _______
 
 ---
 
-## Exercice 5 – Interprétation d'un écart (4 points)
+## Exercice 5 – Interprétation d'un écart (3 points)
 
 ### Situation
 
@@ -138,11 +158,16 @@ Un lot de **shampooing doux** présente un pH de **7,5** alors que le cahier des
 
 <br><br>
 
-**5.2** Quelles pourraient être les conséquences de ce pH trop élevé sur le cheveu et le cuir chevelu ? (1,5 pt)
+**5.2** Quelles pourraient être les conséquences de ce pH trop élevé sur le cheveu et le cuir chevelu ? (1 pt)
 
 <br><br><br>
 
-**5.3** Quelle action recommandez-vous ? Justifiez votre choix. (1,5 pt)
+**5.2bis** Expliquez en une phrase pourquoi un écart de **2 unités de pH** n’est pas “petit” (indice : échelle logarithmique). (0,5 pt)
+
+<br><br>
+
+
+**5.3** Quelle action recommandez-vous ? Justifiez votre choix. (0,5 pt)
 
 ☐ Libérer le lot tel quel
 
@@ -163,11 +188,11 @@ Justification :
 
 | Exercice | Points obtenus | Points max |
 |----------|:--------------:|:----------:|
-| Exercice 1 | | /4 |
+| Exercice 1 | | /5 |
 | Exercice 2 | | /3 |
 | Exercice 3 | | /6 |
 | Exercice 4 | | /3 |
-| Exercice 5 | | /4 |
+| Exercice 5 | | /3 |
 | **TOTAL** | | **/20** |
 
 ### Interprétation

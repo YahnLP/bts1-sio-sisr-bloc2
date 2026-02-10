@@ -1,6 +1,8 @@
 # 09 – Objectifs et ressources
 
-Cette séance introduit le **pH**, paramètre fondamental en cosmétique pour évaluer la compatibilité cutanée d'un produit et vérifier sa conformité. Les élèves apprennent à interpréter une valeur de pH et à l'utiliser dans un contexte de contrôle qualité.
+Cette séance introduit le **pH**, paramètre fondamental en cosmétique pour évaluer la **compatibilité cutanée** d’un produit et vérifier sa **conformité**. Les étudiants apprennent à **interpréter** une valeur de pH et à l’utiliser dans une logique de **contrôle qualité** (mesure → comparaison au cahier des charges → décision).
+
+ 
 
 ---
 
@@ -15,6 +17,8 @@ Cette séance introduit le **pH**, paramètre fondamental en cosmétique pour é
 | **pH physiologique** | pH naturel de la peau (4,5-5,5) |
 | **Compatibilité cutanée** | Tolérance d'un produit selon son pH |
 | **Conformité** | Comparaison au cahier des charges |
+| **H₃O⁺ (oxonium)** | Ion responsable de l’acidité en solution aqueuse (lien avec le pH) |
+
 
 ### Compétences E2 travaillées
 
@@ -24,6 +28,14 @@ Cette séance introduit le **pH**, paramètre fondamental en cosmétique pour é
 | **Interpréter** | Donner du sens à une valeur de pH |
 | **Argumenter** | Justifier un choix de produit |
 | **Communiquer** | Rédiger une conclusion professionnelle |
+
+
+---
+
+## 🧱 Statut didactique et justification E2
+
+- **Statut didactique :** installation d’un concept fondamental (pH) + premiers automatismes d’argumentation en CQ.
+- **Lien direct avec l’épreuve E2 :** exploitation de données (mesures), **interprétation scientifique**, **argumentation** et **décision** (conforme / non conforme ; compatible peau / risque d’irritation).
 
 ---
 
@@ -55,6 +67,12 @@ Cette séance introduit le **pH**, paramètre fondamental en cosmétique pour é
                       PEAU  Eau
                     (4,5-5,5) pure
 ```
+
+> ✅ **Repère BTS – Échelle logarithmique :**  
+> Le pH dépend de la concentration en ions **H₃O⁺** (oxonium).  
+> - si \([H_3O^+]\) est multipliée par **10**, le pH **diminue de 1** ;  
+> - si \([H_3O^+]\) est divisée par **10**, le pH **augmente de 1**.
+
 
 ---
 
@@ -100,5 +118,5 @@ Cette séance introduit le **pH**, paramètre fondamental en cosmétique pour é
 
 ⬅️ Séance précédente : [S08 – Cohérence des résultats](../08_Coherence/)
 
-➡️ Séance suivante : [S10 – Évaluation type E2](../10_Evaluation/)
+➡️ Séance suivante : [S10 – Évaluation type E2](../10_Evaluation2/)
 

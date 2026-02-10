@@ -13,18 +13,24 @@ title: 09 📖 Trace écrite
 
 Le **pH** (potentiel Hydrogène) est une grandeur qui caractérise l'**acidité** ou la **basicité** d'une solution aqueuse.
 
-### Lien avec les ions H⁺
+### Lien avec les ions H₃O⁺ (oxonium)
 
-Le pH est lié à la concentration en **ions hydrogène H⁺** (aussi notés H₃O⁺ et appelés ions oxonium) présents dans la solution.:
+En solution aqueuse, l’acidité est liée à la concentration en ions **H₃O⁺** (ions oxonium).
 
-$$\boxed{pH = -\log[H_3O^+]}$$
+$$\boxed{pH = -\log\left([H_3O^+]\right)}$$
+
+✅ **Échelle logarithmique (repère BTS) :**  
+- si \([H_3O^+]\) est multipliée par **10**, alors le pH **diminue de 1** ;  
+- si \([H_3O^+]\) est divisée par **10**, alors le pH **augmente de 1**.
+
 
 **En pratique, on retient :**
 
-| Concentration en H⁺ | pH | Caractère |
-|:-------------------:|:--:|:---------:|
+| Concentration en **H₃O⁺** | pH | Caractère |
+|:-------------------------:|:--:|:---------:|
 | **Élevée** | **Bas** | Acide |
 | **Faible** | **Élevé** | Basique |
+
 
 ---
 
@@ -46,9 +52,10 @@ Le pH s'exprime par un **nombre sans unité**, généralement compris entre **0 
 
 | Domaine | Valeur du pH | Caractéristique |
 |---------|:------------:|-----------------|
-| **Acide** | pH < 7 | Excès d'ions H⁺ |
-| **Neutre** | pH = 7 | Équilibre H⁺ / OH⁻ |
-| **Basique** (alcalin) | pH > 7 | Excès d'ions OH⁻ |
+| **Acide** | pH < 7 | Excès d'ions **H₃O⁺** |
+| **Neutre** | pH = 7 | Équilibre **H₃O⁺ / OH⁻** |
+| **Basique** (alcalin) | pH > 7 | Excès d'ions **OH⁻** |
+
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -228,6 +235,8 @@ Un **système tampon** stabilise le pH d'une formulation :
 | pH < 7 = acide | Plus d'ions H⁺ |
 | pH > 7 = basique | Plus d'ions OH⁻ |
 | Conformité | Comparer au cahier des charges |
+| O.A.C.J. | Structurer la conclusion : Observation → Analyse → Conclusion → Justification/décision |
+
 
 ### Vocabulaire à maîtriser
 
