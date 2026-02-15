@@ -45,7 +45,7 @@ Cette troisième évaluation est la première **épreuve transversale type E2** 
 
 ### 📋 Pour préparer l'évaluation
 
-➡️ [**Checklist E2 – Évaluation n°3**](22b_checklist_E2.pdf)
+➡️ [**Checklist E2 – Évaluation n°4**](22b_checklist_E2.pdf)
 
 > 🎯 **À utiliser :**
 > - Pour réviser (vérifier qu'on maîtrise chaque point)
@@ -94,7 +94,7 @@ Cette troisième évaluation est la première **épreuve transversale type E2** 
 
 ## 🆕 Nouveautés par rapport aux évaluations précédentes
 
-| Notion | Éval 1 | Éval 2 | Éval 3 |
+| Notion | Éval 1 | Éval 2 | Éval 4 |
 |--------|:------:|:------:|:------:|
 | Mélanges, solutions, INCI | ✓ | ✓ | ✓ |
 | Concentration massique | ✓ | ✓ | ✓ |
@@ -153,15 +153,15 @@ Cette troisième évaluation est la première **épreuve transversale type E2** 
 
 ## 📈 Évolution des évaluations
 
-| Critère | Éval 1 (S06) | Éval 2 (S10) | Éval 3 (S22) |
-|---------|:------------:|:------------:|:------------:|
-| **Durée** | 1h30 | 2h | 2h |
-| **Séances** | S01-S05 | S01-S09 | S01-S21 |
-| **Blocs** | Bloc 1 | Bloc 1 | Blocs 1+2+3 |
-| **Transversalité** | Faible | Moyenne | **Forte** ★★★ |
-| **Arguments requis** | 1 | 1-2 | **2 minimum** |
-| **Synthèse** | 8-10 lignes | 10-12 lignes | 12-15 lignes |
-| **Difficulté** | ★★☆ | ★★★ | ★★★★ |
+| Critère | Éval 1 (S06) | Éval 2 (S10) | Epreuve Blanche  |Éval 4 (S22) |
+|---------|:------------:|:------------:|:------------:|:------------:|
+| **Durée** | 2h | 2h | 3h |2h |
+| **Séances** | S01-S05 | S01-S09 | S01-S15/16 |S01-S21|
+| **Blocs** | Bloc 1 | Bloc 1 | Blocs 1+2+3 |Blocs 1+2+3 |
+| **Transversalité** | Faible | Moyenne | **Forte** ★★★ |**Forte** ★★★ |
+| **Arguments requis** | 1 | 1-2 | **2 minimum** |**2 minimum** |
+| **Synthèse** | 8-10 lignes | 10-12 lignes | 12-15 lignes |12-15 lignes |
+| **Difficulté** | ★★☆ | ★★★ | ★★★★ |★★★★ |
 
 ---
 

@@ -73,14 +73,17 @@ Un soluté peut être :
 │                        SOLUTION                             │
 │                  (mélange homogène)                         │
 │                                                             │
-│    ┌──────────────┐         ┌──────────────────────────┐   │
-│    │   SOLVANT    │    +    │        SOLUTÉ(S)         │   │
-│    │ (majoritaire)│         │    (minoritaires)        │   │
-│    │              │         │                          │   │
-│    │  Ex : Eau    │         │  Ex : Glycérine, actifs  │   │
-│    └──────────────┘         └──────────────────────────┘   │
+│    ┌──────────────┐         ┌──────────────────────────┐    │
+│    │   SOLVANT    │    +    │        SOLUTÉ(S)         │    │
+│    │ (majoritaire)│         │    (minoritaires)        │    │
+│    │              │         │                          │    │
+│    │  Ex : Eau    │         │  Ex : Glycérine, actifs  │    │
+│    └──────────────┘         └──────────────────────────┘    │
 └─────────────────────────────────────────────────────────────┘
 ```
+
+![Schéma de synthèse – Solutions (S02)](./images/schema_solutions_s02.png){.img-center width="95%"}
+
 
 ---
 
@@ -235,6 +238,8 @@ Pour décrire scientifiquement une solution cosmétique :
 1. **Température** (↑T° → ↑solubilité en général)
 2. **Nature du solvant** (eau ≠ huile ≠ éthanol)
 3. **Nature du soluté** (chaque substance a sa propre solubilité)
+4. **Cas des gaz** : la solubilité des gaz **diminue souvent quand la température augmente** et **augmente quand la pression augmente** (ex : CO₂).
+
 
 ### ✅ Vocabulaire à maîtriser
 

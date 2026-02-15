@@ -3,7 +3,7 @@ author: ELP
 title: 22 📋 Checklist E2 – Évaluation n°4
 ---
 
-# 📋 Checklist E2 – Évaluation n°3
+# 📋 Checklist E2 – Évaluation n°4
 
 **Séances évaluées : S01 → S21 + TP4**
 
