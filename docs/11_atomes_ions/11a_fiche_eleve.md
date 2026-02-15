@@ -225,15 +225,15 @@ $$\boxed{\text{Somme des charges positives} + \text{Somme des charges négatives
 
 ### Document 6 – Ions courants en cosmétique
 
-| Ion | Formule | Nom INCI associé | Rôle en cosmétique |
+| Ion | Formule | Exemples de noms INCI | Rôle en cosmétique |
 |-----|:-------:|------------------|-------------------|
-| Sodium | Na⁺ | Sodium... | Conservateurs, tensioactifs |
-| Potassium | K⁺ | Potassium... | Régulateurs, émollients |
-| Calcium | Ca²⁺ | Calcium... | Reminéralisant, durcisseur |
-| Magnésium | Mg²⁺ | Magnesium... | Actif, stabilisant |
-| Chlorure | Cl⁻ | ...Chloride | Sel, ajusteur de viscosité |
-| Hydroxyde | OH⁻ | ...Hydroxide | Ajusteur de pH (bases) |
-| Hydronium | H₃O⁺ | – | Responsable de l'acidité |
+| Sodium | Na⁺ | Sodium (ex : Sodium Chloride, Sodium Benzoate) | Conservateurs, tensioactifs |
+| Potassium | K⁺ | Potassium (ex : Potassium Sorbate, Potassium Chloride) | Régulateurs, émollients |
+| Calcium | Ca²⁺ | Calcium (ex : Calcium Chloride, Calcium Gluconate) | Reminéralisant, durcisseur |
+| Magnésium | Mg²⁺ | Magnesium (ex : Magnesium Sulfate, Magnesium Chloride) | Actif, stabilisant |
+| Chlorure | Cl⁻ | Chloride (ex : Sodium Chloride, Magnesium Chloride) | Sel, ajusteur de viscosité |
+| Hydroxyde | OH⁻ | Hydroxide (ex : Sodium Hydroxide, Potassium Hydroxide) | Ajusteur de pH (bases) |
+| Hydronium | H₃O⁺ | — | Présent en solution (pH) |
 
 ---
 
@@ -494,14 +494,14 @@ Une eau du robinet a typiquement une conductivité de 200 à 800 µS/cm.
 
 Certains ions sont formés de **plusieurs atomes** liés entre eux. On les appelle **ions polyatomiques**.
 
-| Ion | Formule | Nom INCI | Utilisation |
+| Ion | Formule | Exemples de noms INCI | Utilisation |
 |-----|:-------:|----------|-------------|
-| Hydroxyde | OH⁻ | ...Hydroxide | Ajusteur de pH |
-| Sulfate | SO₄²⁻ | ...Sulfate | Tensioactifs (SLS) |
-| Phosphate | PO₄³⁻ | ...Phosphate | Tampons, émulsifiants |
-| Nitrate | NO₃⁻ | ...Nitrate | Conservateurs |
-| Carbonate | CO₃²⁻ | ...Carbonate | Effervescents, pH |
-| Citrate | C₆H₅O₇³⁻ | ...Citrate | Tampons, chélateurs |
+| Hydroxyde | OH⁻ | Hydroxide (ex : Sodium Hydroxide, Potassium Hydroxide) | Ajusteur de pH |
+| Sulfate | SO₄²⁻ | Sulfate (ex : Sodium Lauryl Sulfate, Magnesium Sulfate) | Tensioactifs (SLS) |
+| Phosphate | PO₄³⁻ | Phosphate (ex : Sodium Phosphate, Potassium Phosphate) | Tampons, émulsifiants |
+| Nitrate | NO₃⁻ | Nitrate (ex : Sodium Nitrate) | Conservateurs |
+| Carbonate | CO₃²⁻ | Carbonate (ex : Sodium Bicarbonate) | Effervescents, pH |
+| Citrate | C₆H₅O₇³⁻ | Citrate (ex : Sodium Citrate) | Tampons, chélateurs |
 
 ### Questions
 
