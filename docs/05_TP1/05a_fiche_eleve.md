@@ -122,7 +122,11 @@ Réalisez les étapes suivantes et cochez au fur et à mesure :
 | 10 | Transvaser dans un bécher de 250 mL | ☐ |
 | 11 | Étiqueter : "Solution mère colorant - 100 g/L " | ☐ |
 
-![Protocole de dissolution](./images/protocole_dissolution.png)
+<p align="center">
+  <img src="./images/protocole_dissolution.png" alt="Protocole de dissolution" width="95%">
+  <br><em>Protocole de dissolution (solution mère)</em>
+</p>
+
 
 ---
 
@@ -197,7 +201,11 @@ Pour chaque solution S1 à S5, réalisez :
 | 5 | Transvaser dans un bécher de 100 mL | ☐ |
 | 6 | Étiqueter (S1, S2... avec la concentration) | ☐ |
 
-![Protocole de dilution](./images/protocole_dilution.png)
+<p align="center">
+  <img src="./images/protocole_dilution.png" alt="Protocole de dilution" width="95%">
+  <br><em>Protocole de dilution (solutions filles)</em>
+</p>
+
 
 ---
 
