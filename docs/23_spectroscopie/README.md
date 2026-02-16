@@ -73,6 +73,6 @@ Cette séance est de type **🧭 Culture appareils** : elle introduit les concep
 
 ## 🔗 Navigation
 
-⬅️ Séance précédente : [S22 – Évaluation n°3](../22_evaluation_3/)
+⬅️ Séance précédente : [S22 – Évaluation n°4](../22_Evaluation4/)
 
 ➡️ Séance suivante : [S24 – Ondes électromagnétiques (lumière, UV, IR)](../24_absorbance/)

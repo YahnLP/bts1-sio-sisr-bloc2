@@ -451,6 +451,6 @@ Rédigez une synthèse de **8 à 12 lignes** qui explique ce qu'est un ultrason,
 
 ## 🔗 Lien avec la suite
 
-⬅️ Séance précédente : [S22 – Évaluation n°3](../22_evaluation_3/)
+⬅️ Séance précédente : [S22 – Évaluation n°4](../22_Evaluation4/)
 
 ➡️ Séance suivante : [S24 – Ondes électromagnétiques (lumière, UV, IR)](../24_absorbance/)
