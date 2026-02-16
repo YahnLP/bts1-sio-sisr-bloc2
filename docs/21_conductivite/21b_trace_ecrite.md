@@ -21,6 +21,17 @@ La **conductivité** (notée **σ**, lettre grecque « sigma ») mesure la **cap
 
 **Conversion :** 1 S/m = 10 000 µS/cm
 
+**Pièges d’unités et de mesure :**
+- 1 mS/cm = 1000 µS/cm
+- **σ dépend de la température** : comparer uniquement des mesures réalisées à **température identique**.
+
+**Conductance, conductivité et constante de cellule :**
+- La **conductance** (notée **G**, en **S**) dépend de la cellule de mesure : **G = 1/R**.
+- La **conductivité** (σ) est une propriété de la solution : **σ = K × G**.
+- **K** est la **constante de cellule** (géométrie des électrodes) : **K = ℓ/A** (en m⁻¹ ou cm⁻¹).
+- La **résistivité** (ρ) est l’inverse de la conductivité : **ρ = 1/σ** (en Ω·m).
+- Selon les documents, la conductivité peut aussi être notée **κ**.
+ 
 ---
 
 ### Principe de mesure
@@ -273,8 +284,8 @@ Pour un tensioactif **ionique**  :
 |--------|---------------------|:-----:|----------------------|
 | **Conductivité σ** | Capacité à conduire le courant | S/m ou µS/cm | CQ, type d'émulsion |
 | **Porteur de charge** | Ion en solution (cation / anion) | — | σ ↑ quand plus d'ions |
-| **Émulsion H/E** | Phase continue = eau | σ > 50 µS/cm | Crèmes légères, laits |
-| **Émulsion E/H** | Phase continue = huile | σ < 10 µS/cm | Baumes, cold cream |
+| **Émulsion H/E** | Phase continue = eau | σ **élevée** (ordre de grandeur > 50 µS/cm) | Crèmes légères, laits |
+| **Émulsion E/H** | Phase continue = huile | σ **faible** (ordre de grandeur < 10 µS/cm) | Baumes, cold cream |
 | **Inversion de phase** | Changement H/E ↔ E/H | Chute ou hausse brutale de σ | Instabilité, déstabilisation |
 | **CMC** | Concentration micellaire critique | mmol/L | Rupture de pente sur σ = f(C) |
 | **Micelle** | Agrégat de tensioactifs | — | Solubilisation des corps gras |
@@ -299,8 +310,9 @@ Pour un tensioactif **ionique**  :
 | Règle | Application |
 |-------|-------------|
 | Plus d'ions → σ plus élevée | Interpréter une mesure de σ |
-| σ > 50 µS/cm → émulsion H/E | Identifier le type d'émulsion |
-| σ < 10 µS/cm → émulsion E/H | Identifier le type d'émulsion |
+| σ élevée (ordre de grandeur > 50 µS/cm) → émulsion H/E | Identifier le type d'émulsion (à T constante, selon formulation) |
+| σ faible (ordre de grandeur < 10 µS/cm) → émulsion E/H | Identifier le type d'émulsion (à T constante, selon formulation) |
+| Toujours relier σ à la phase continue | σ élevée ↔ phase aqueuse continue ; σ faible ↔ phase huileuse continue |
 | Chute brutale de σ → inversion de phase | Suivre la stabilité |
 | Rupture de pente → CMC | Déterminer la CMC par conductimétrie |
 | Toujours noter la température | Comparer des mesures CQ |

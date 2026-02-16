@@ -105,6 +105,8 @@ Vous mesurez : **σ = 620 µS/cm**.
 | **H/E** (huile dans eau) | Eau (contient des ions) | Gouttelettes d'huile | **Élevée** (> 50 µS/cm) |
 | **E/H** (eau dans huile) | Huile (pas d'ions) | Gouttelettes d'eau | **Faible** (< 10 µS/cm) |
 
+> ⚠️ **Remarque :** Les seuils « > 50 µS/cm » et « < 10 µS/cm » sont des **ordres de grandeur** : ils dépendent de la teneur en eau et en électrolytes. Conclure **à température identique** et en cohérence avec l’aspect / l’usage.
+
 #### Données CQ
 
 | Produit | σ mesurée (µS/cm) | Aspect | Utilisation |
