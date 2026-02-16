@@ -64,13 +64,10 @@ Cette séance est de type **🧭 Culture appareils** : elle introduit les concep
 
 ---
 
-## 💡 Points d'attention pédagogiques
+## 💡 Points d'attention 
 
-Cette séance est plus **accessible** que les précédentes (pas de chimie organique, pas de calculs complexes). Elle permet aux élèves en difficulté de reprendre confiance, tout en maintenant l'exigence E2 via les cas pratiques de sécurité et les analyses de fiches techniques.
 
-**Leviers de motivation :** Le lien direct avec les appareils d'institut est un fort levier d'engagement. Beaucoup d'élèves ont déjà vu ou utilisé ces appareils en stage. Exploiter cette expérience pour ancrer les notions physiques.
-
-**Pièges courants :** Confusion onde mécanique / onde électromagnétique ; inversion du lien fréquence-pénétration (« plus c'est fort, plus ça pénètre ») ; oubli des conversions MHz → Hz.
+**Pièges courants :** Confusion onde mécanique / onde électromagnétique ; inversion du lien fréquence-pénétration (« plus c'est fort, plus ça pénètre » c'est l'inverse!) ; oubli des conversions MHz → Hz.
 
 ---
 

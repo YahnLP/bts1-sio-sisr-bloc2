@@ -73,17 +73,11 @@ Cette séance est de type **🧱 Soutien** : elle construit les bases de sécuri
 
 ---
 
-## 💡 Points d'attention pédagogiques
+## 💡 Points d'attention 
 
-**Séance de soutien concrète :** Cette séance 🧱 reconstruit des bases souvent fragiles chez les élèves issus de filières esthétiques. L'analogie du circuit d'eau est efficace pour les grandeurs électriques. L'accroche « ouvrir son institut » mobilise fortement.
+**Séance de soutien concrète :** Cette séance 🧱 reconstruit des bases souvent fragiles. L'analogie du circuit d'eau est efficace pour les grandeurs électriques.
 
-**Confusion danger / risque :** C'est la distinction conceptuelle la plus difficile. Les élèves pensent souvent qu'un appareil « non dangereux » existe. Insister : le courant 230 V est **toujours** un danger ; c'est le **risque** qu'on réduit par les protections et les bonnes pratiques.
-
-**Lien stages :** La plupart des élèves ont manipulé des appareils en stage sans comprendre la plaque signalétique. Cette séance donne du sens à leur expérience pratique. Demander aux élèves de prendre en photo les plaques signalétiques des appareils en stage.
-
-**Éco-responsabilité :** Thématique de plus en plus présente dans les référentiels et les sujets E2. Les DEEE et la gestion des déchets chimiques sont des connaissances attendues en contexte professionnel.
-
-**Éval formative :** Le cas pratique de l'exercice 3 (câble dénudé) est volontairement réaliste — ce type de situation arrive régulièrement en institut. L'exercice 4 (choix d'appareil) exige de croiser des critères, ce qui prépare à l'argumentation E2.
+**Confusion danger / risque :** Le courant 230 V est **toujours** un danger ; c'est le **risque** qu'on réduit par les protections et les bonnes pratiques.
 
 ---
 

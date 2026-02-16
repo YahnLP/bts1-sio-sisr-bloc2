@@ -70,17 +70,16 @@ Cette séance est de type **🧭 Culture appareils** : elle introduit la spectro
 
 
 
-## 💡 Points d'attention pédagogiques
+## 💡 Points d'attention 
 
-**Séance pivot :** Beer-Lambert est une formule qui sera réinvestie dans les évaluations E2 suivantes. Il est essentiel que tous les élèves maîtrisent le calcul C = A / (ε × l) et la lecture graphique d'une courbe d'étalonnage.
+**Séance pivot :** Beer-Lambert est une formule qui sera réinvestie dans les évaluations E2 suivantes. Elle est essentielle d'être maîtriser par le calcul C = A / (ε × l) et par la lecture graphique d'une courbe d'étalonnage.
 
 **Lien avec S05 :** La courbe d'étalonnage reprend exactement le même principe que l'échelle de teinte vue en S05 (plus c'est concentré, plus c'est « foncé »), mais de manière quantitative. Faire ce rappel explicite aide les élèves à ancrer la notion.
 
-**Confusion fréquente UV / ultrasons :** La proximité des noms (ultra-violet / ultra-sons) et la séquence S23 → S24 crée une confusion fréquente. Insister dès le début : UV = onde EM (pas de milieu, pas de gel), US = onde mécanique (milieu et gel obligatoires).
+**Confusion fréquente UV / ultrasons :** UV = onde EM (pas de milieu, pas de gel), US = onde mécanique (milieu et gel obligatoires).
 
-**Pièges calcul :** Les unités de ε (L·mol⁻¹·cm⁻¹) déstabilisent. Le triangle mnémotechnique est un outil précieux pour les élèves fragiles.
+**Pièges calcul :** Les unités de ε (L·mol⁻¹·cm⁻¹) déstabilisent.
 
-**Éval formative :** Le cas de non-conformité (panthenol surdosé) est délibéré — il oblige l'élève à conclure « non conforme », ce qui est moins intuitif que « conforme ».
 
 ---
 

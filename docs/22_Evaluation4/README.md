@@ -1,6 +1,6 @@
 # 22 – Objectifs et ressources
 
-Cette troisième évaluation est la première **épreuve transversale type E2** : elle couvre l'ensemble des **trois blocs** de notions (S01-S21) et intègre les résultats expérimentaux du TP4 (CMC par conductimétrie).
+Cette évaluation est une **épreuve transversale type E2** : elle couvre l'ensemble des **trois blocs** de notions (S01-S21) et intègre les résultats expérimentaux du TP4 (CMC par conductimétrie).
 
 ---
 
@@ -65,30 +65,9 @@ Cette troisième évaluation est la première **épreuve transversale type E2** 
 | 07 | Déterminer une CMC par conductimétrie | **T.D.L.** |
 | 08 | Identifier les fonctions organiques | **M.N.L.** |
 
----
 
-## ⏱️ Informations pratiques
 
-| Information | Détail |
-|-------------|--------|
-| **Durée** | 2h |
-| **Format** | Écrit individuel, type E2 |
-| **Calculatrice** | Autorisée |
-| **Documents** | Non autorisés |
-| **Dossier** | 8 documents fournis |
 
----
-
-## 📊 Structure de l'épreuve
-
-| Partie | Contenu | Points |
-|--------|---------|:------:|
-| **A** | Analyse du produit et fonctions organiques | /4 |
-| **B** | Conductivité et type d'émulsion | /4 |
-| **C** | Stabilité et CMC | /5 |
-| **D** | pH et conformité CQ | /4 |
-| **E** | Synthèse professionnelle | /3 |
-| **Total** | | **/20** |
 
 ---
 
