@@ -62,29 +62,29 @@ En institut comme en laboratoire CQ, vous travaillez quotidiennement avec des ap
 | **Tension** | U | volt (V) | Pression de l'eau |
 | **Intensité** | I | ampère (A) | Débit de l'eau |
 | **Puissance** | P | watt (W) | Force du jet |
-| **Énergie** | E | joule (J) ou kilowattheure (kWh) | Quantité totale d'eau utilisée |
+| **Énergie** | E | joule (J) ou wattheure (Wh) / kilowattheure (kWh) | Quantité totale d'eau utilisée |
 
 #### Relations fondamentales
 
 ```
 ┌─────────────────────────────────────────────────┐
 │                                                 │
-│   P = U × I                                    │
+│   P = U × I                                     │
 │                                                 │
-│   P : puissance (W)                            │
-│   U : tension (V)                              │
-│   I : intensité (A)                            │
+│   P : puissance (W)                             │
+│   U : tension (V)                               │
+│   I : intensité (A)                             │
 │                                                 │
 │   Relations dérivées :                          │
-│   I = P / U        U = P / I                   │
+│   I = P / U        U = P / I                    │
 │                                                 │
 ├─────────────────────────────────────────────────┤
 │                                                 │
-│   E = P × t                                    │
+│   E = P × t                                     │
 │                                                 │
-│   E : énergie (J si t en s, ou kWh si t en h)  │
-│   P : puissance (W ou kW)                      │
-│   t : temps (s ou h)                           │
+│   E : énergie (J si t en s ; Wh/kWh si t en h)  │
+│   P : puissance (W ou kW)                       │
+│   t : temps (s ou h)                            │
 │                                                 │
 └─────────────────────────────────────────────────┘
 ```
@@ -165,7 +165,7 @@ En institut comme en laboratoire CQ, vous travaillez quotidiennement avec des ap
 | Dispositif | Rôle | Comment ça protège |
 |------------|------|-------------------|
 | **Prise de terre** (fil vert/jaune) | Évacuer le courant de fuite vers le sol | Le courant passe par la terre au lieu du corps |
-| **Disjoncteur différentiel** (30 mA) | Couper le courant en cas de fuite | Détecte une différence de courant → coupure en 30 ms |
+| **Disjoncteur différentiel** (30 mA) | Couper le courant en cas de fuite | Détecte une différence de courant → coupure très rapide (ms à 0,3 s) |
 | **Fusible** | Couper le circuit si intensité trop forte | Fond quand I > calibre → protège contre surcharge |
 
 #### Classes de protection
@@ -180,7 +180,7 @@ En institut comme en laboratoire CQ, vous travaillez quotidiennement avec des ap
 
 | Marquage | Signification |
 |:--------:|---------------|
-| **CE** | Conforme aux normes européennes |
+| **CE** | Conformité aux exigences européennes (déclaration du fabricant) |
 | **NF** | Conforme aux normes françaises (volontaire) |
 | **🗑️ barré** | DEEE : ne pas jeter avec les ordures ménagères |
 | **IP xx** | Indice de protection (1er chiffre : solides, 2e : eau) |
@@ -399,6 +399,6 @@ Rédigez une synthèse de **8 à 12 lignes** qui explique comment choisir et sé
 
 ## 🔗 Lien avec la suite
 
-⬅️ Séance précédente : [S24 – UV-Visible : spectres et absorbance](../24_UV_visible/)
+⬅️ Séance précédente : [S24 – UV-Visible : spectres et absorbance](../24_absorbance/)
 
-➡️ Séance suivante : [S26 – TP Spectrophotométrie (dosage d'un actif)](../26_TP_spectrophotometrie/)
+➡️ Séance suivante : [S26 – Stabilité/dégradation : expliquer et recommander](../26_stabilite/)

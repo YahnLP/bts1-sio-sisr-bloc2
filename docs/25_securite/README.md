@@ -59,8 +59,8 @@ Cette séance est de type **🧱 Soutien** : elle construit les bases de sécuri
 
 | Séance antérieure | Notion réinvestie en S25 |
 |-------------------|--------------------------|
-| **S23** | Appareils US → ici : sécurité électrique de ces appareils, plaque signalétique |
-| **S24** | Spectrophotomètre → ici : sécurité en labo CQ, gestion des déchets chimiques |
+| **S23** | Appareils  →  sécurité électrique de ces appareils, plaque signalétique |
+| **S24** | Spectrophotomètre →  sécurité en labo CQ, gestion des déchets chimiques |
 
 ### Liens avec la cosmétologie
 
@@ -83,6 +83,6 @@ Cette séance est de type **🧱 Soutien** : elle construit les bases de sécuri
 
 ## 🔗 Navigation
 
-⬅️ Séance précédente : [S24 – UV-Visible : spectres et absorbance](../24_UV_visible/)
+⬅️ Séance précédente : [S24 – UV-Visible : spectres et absorbance](../24_absorbance/)
 
-➡️ Séance suivante : [S26 – Stabilité/dégradation : expliquer et recommander](../26_TP_stabilite/)
+➡️ Séance suivante : [S26 – Stabilité/dégradation : expliquer et recommander](../26_stabilite/)

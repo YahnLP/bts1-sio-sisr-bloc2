@@ -16,7 +16,7 @@ title: 25 📖 Trace écrite
 | **Tension** | U | volt (V) | Pression de l'eau |
 | **Intensité** | I | ampère (A) | Débit de l'eau |
 | **Puissance** | P | watt (W) | Force du jet |
-| **Énergie** | E | joule (J) ou kilowattheure (kWh) | Quantité totale d'eau utilisée |
+| **Énergie** | E | joule (J) ou wattheure (Wh) / kilowattheure (kWh) | Quantité totale d'eau utilisée |
 
 ### Relations fondamentales
 
@@ -131,7 +131,7 @@ Le courant électrique 230 V est **toujours** un danger. Le risque d'accident va
 | Dispositif | Rôle | Protection contre |
 |------------|------|-------------------|
 | **Prise de terre** (fil vert/jaune) | Évacue le courant de fuite vers le sol | Électrisation / électrocution |
-| **Disjoncteur différentiel** (30 mA) | Coupe le courant si fuite détectée (en 30 ms) | Électrisation / électrocution |
+| **Disjoncteur différentiel** (30 mA) | Coupe le courant si fuite détectée (très rapidement, ms à 0,3 s) | Électrisation / électrocution |
 | **Fusible** | Fond si I trop forte → coupe le circuit | Surcharge / court-circuit / incendie |
 
 ### Classes de protection des appareils
@@ -250,9 +250,8 @@ Le courant électrique 230 V est **toujours** un danger. Le risque d'accident va
 
 | Séance | Réinvestissement |
 |--------|------------------|
-| **S23** | Appareils US → ici : sécurité électrique de ces appareils |
-| **S24** | Spectrophotomètre UV-vis → ici : sécurité labo, déchets chimiques |
-| **S26** | TP spectrophotométrie → appliquer les règles de sécurité en labo |
+| **S23** | Appareils →  sécurité électrique de ces appareils |
+| **S24** | Spectrophotomètre UV-vis →  sécurité labo, déchets chimiques |
 | **COSMÉTO S05** | Sécurité au poste de travail → sécurité électrique |
 | **COSMÉTO S22 / S29** | Dossier professionnel → choix raisonné, éco-responsabilité |
 
