@@ -1,1 +1,1 @@
-Rendu du site : [https://bts-mecp-physique-chimie-688080.forge.apps.education.fr/](https://bts-mecp-physique-chimie-688080.forge.apps.education.fr/)
+Rendu du site : https://e-leprettre.github.io/bts-mecp-physique-chimie/
