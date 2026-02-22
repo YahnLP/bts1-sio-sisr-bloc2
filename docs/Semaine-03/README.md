@@ -1,41 +1,43 @@
 # 01 – Informations Générales
 
-| **Champ** | **Détail** |
-|-----------|-----------|
-| **Semaine** | S3 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
-| **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — troisième semaine |
-| **Modalité** | Présentiel — salle de cours |
-| **Prérequis** | S1 (présentation BTS SIO), S2 (gestion de parc) |
+| **Élément** | **Détails** |
+|-------------|-------------|
+| **Semaine** | S3 - Année 1 |
+| **Bloc** | Bloc 2 - Infrastructure, Systèmes & Réseaux |
+| **Durée** | 4 heures (1 séance) |
+| **Phase** | Phase 1 - Découverte de la machine et fondamentaux absolus |
+| **Public** | Apprentis BTS SIO SISR (hétérogène : Bac Pro CIEL + débutants) |
+| **Prérequis** | S1 (composants PC), S2 (serveurs, BIOS, installation Windows en VM) |
 
 
 ---
 
 ## 🎯 Objectifs
 
-**ITIL :**
-- ✅ Définir ce qu'est un **service IT** et expliquer la notion de **valeur** qu'il crée
-- ✅ Citer les **4 dimensions** d'un service ITIL 4
-- ✅ Distinguer **incident**, **problème**, **changement** et **demande de service**
-- ✅ Expliquer les composantes d'un **SLA** (Service Level Agreement)
-- ✅ Positionner les principales **pratiques ITIL 4** dans le cycle de vie d'un service
+**À l'issue de cette séance, l'apprenant sera capable de :**
 
-**Centre de Services :**
-- ✅ Décrire le rôle et les missions d'un **centre de services** (Service Desk)
-- ✅ Expliquer la **logique des niveaux N1, N2, N3** et les critères d'escalade
-- ✅ Rédiger un **ticket d'incident** complet et exploitable
-- ✅ Utiliser le vocabulaire professionnel de la **relation de service** (MTTR, MTBF, taux de résolution N1...)
+1. **Expliquer** le rôle d'un système d'exploitation et ses composants (noyau, interface, gestion des ressources)
+2. **Différencier** les principaux OS (Windows, Linux, macOS) et leurs cas d'usage professionnels
+3. **Créer et gérer** des comptes utilisateurs locaux dans Windows (création, modification, suppression)
+4. **Distinguer** les types de comptes (Administrateur vs Utilisateur standard) et leurs privilèges
+5. **Configurer** les permissions NTFS sur fichiers et dossiers (lecture, écriture, modification, contrôle total)
+6. **Comprendre** la différence entre comptes locaux et comptes de domaine (introduction Active Directory)
+7. **Appliquer** le principe du moindre privilège dans un contexte professionnel
+
+### Prérequis
+
+- Installation de Windows 10/11 en VM (acquis S2)
+- Compréhension de la hiérarchie logicielle (Hardware → OS → Applications, vue en S1)
+- Navigation dans l'interface Windows
 ---
 
 ## 🧠 Compétences travaillées
 
-| **Code** | **Intitulé de la compétence** | **Niveau visé** |
-|----------|-------------------------------|-----------------|
-| **B1.2** | Exploiter des référentiels, normes et standards adoptés par la DSI | Acquisition |
-| **B1.3** | Mettre en place et exploiter des outils de support et d'assistance | Découverte |
-| **B3.3** | Participer à la gestion et au suivi d'un projet | Découverte |
-
-> 📌 **S3 est la séance qui installe le cadre conceptuel commun** à toutes les séances suivantes. Chaque fois que le cours dira "en ITIL" ou "selon les bonnes pratiques DSI", ce cadre de référence sera mobilisé. Investir du soin dans S3 paie des dividendes pendant 2 ans.
+| **Code Compétence** | **Libellé** | **Niveau de Maîtrise** |
+|---------------------|-------------|------------------------|
+| **B1.2** | Mettre à disposition des utilisateurs un service informatique - Gérer des utilisateurs et des droits | **Application** |
+| **B2.1** | Administrer les services d'un système d'exploitation serveur | Initiation |
+| **B2.2** | Installer, tester et déployer une solution d'infrastructure réseau | Consolidation |
+| **B3.1** | Protéger les données à caractère personnel - Gestion des droits d'accès | Initiation |
 
 ---
