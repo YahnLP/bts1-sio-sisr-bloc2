@@ -24,9 +24,3 @@
 
 
 ---
-
-## 🔗 Navigation
-
-⬅️ Séance précédente : 
-
-➡️ Séance suivante : 
