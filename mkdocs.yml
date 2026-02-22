@@ -36,7 +36,7 @@ theme:
 
   # ⚠️ Si ces fichiers n'existent pas dans docs/images/, commente ces 2 lignes
   favicon: images/favicon.png
-  logo: images/logo-b1.png
+  logo: images/logo-b2.png
 
   # ⚠️ Si ce dossier n'existe pas à la racine, commente cette ligne
   custom_dir: my_theme_customizations/
