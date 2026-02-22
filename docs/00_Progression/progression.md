@@ -1,87 +1,88 @@
 # 🛣️ Progression 
-## BTS SIO SISR – BLOC 1
-### Année 1 – Support et mise à disposition de services informatiques (20 semaines – 400h)
+## BTS SIO SISR – BLOC 2
+### Année 1 – Infrastructure, Systèmes et Réseaux (20 semaines – 400h)
 
 ---
 
 ## 🎯 Objectif
 
-Construire les compétences fondamentales du **Bloc 1** :
+Construire les compétences techniques fondamentales du **Bloc 2** :
 
-- Gérer le patrimoine informatique
-- Répondre aux incidents et demandes d’assistance
-- Mettre à disposition un service informatique
-- Installer, configurer et maintenir un environnement poste et serveur
-- Documenter une intervention technique
-- Préparer progressivement l’épreuve E4 (oral professionnel)
+- Installer et configurer des équipements réseau
+- Mettre en œuvre les services d’infrastructure (DHCP, DNS, AD)
+- Administrer des systèmes Linux et Windows Server
+- Concevoir un plan d’adressage structuré
+- Segmenter et sécuriser une infrastructure
+- Préparer progressivement l’épreuve E5 (oral professionnel technique)
 
 ---
 
 ## 🧩 Principes structurants
 
 - Logique constante :  
-  **Situation professionnelle → Diagnostic → Mise en œuvre → Vérification → Documentation**
-- Alternance systématique : manipulation technique + formalisation écrite
-- Progression spiralée : complexification progressive des infrastructures
-- Entraînement régulier à la communication professionnelle
+  **Analyse du besoin → Conception → Configuration → Tests → Documentation**
+- Manipulation réelle ou virtualisée systématique
+- Complexification progressive des architectures
+- Documentation technique obligatoire
+- Entraînement régulier à la justification technique
 
 ---
 
 ## 🧾 Légende
 
-- 🧱 Installation (apprentissage d’une compétence)
+- 🧱 Installation / Découverte
 - 🛠️ TP (mise en situation professionnelle)
-- 🧭 Entraînement E4 (formalisation situation pro)
+- 🧭 Entraînement E5 (formalisation technique)
 - ✅ Évaluation
 - ⭐ Projet
 
 ---
 
-# 🔵 PHASE 1 – Découverte et fondamentaux du support (S1 à S5)
+# 🔵 PHASE 1 – Fondamentaux matériels et réseaux (S1 à S5)
 
-| Semaine | Situation professionnelle | Compétences Bloc 1 | Statut | Livrable attendu |
+| Semaine | Situation professionnelle | Compétences Bloc 2 | Statut | Livrable attendu |
 |----------|--------------------------|--------------------|:------:|------------------|
-| S1 | Comprendre l’environnement professionnel SISR | Identifier le rôle du support IT | 🧱 | Synthèse métiers / posture professionnelle |
-| S2 | Inventorier un poste informatique | Gestion du patrimoine matériel et logiciel | 🛠️ | Fiche d’inventaire complète |
-| S3 | Configurer un poste Windows | Création comptes, gestion droits locaux | 🛠️ | Procédure de configuration poste |
-| S4 | Résoudre des incidents simples | Gestion ticket (cycle ouverture → résolution → clôture) | 🛠️ | Compte rendu d’intervention |
-| S5 | Centraliser l’inventaire avec OCS | Découverte outil gestion de parc | 🛠️ | Rapport d’inventaire exporté |
+| S1 | Identifier les composants d’un PC | Comprendre architecture matérielle | 🛠️ | Fiche d’inventaire matériel |
+| S2 | Installer un OS en VM | Paramétrer BIOS / installer Windows | 🛠️ | Procédure installation OS |
+| S3 | Configurer un poste | Gérer comptes et droits NTFS | 🛠️ | Compte rendu configuration |
+| S4 | Comprendre un réseau local | Modèle OSI, câblage RJ45 | 🛠️ | Schéma réseau simple |
+| S5 | Configurer IP manuellement | IPv4, masque, ping, Linux CLI | 🛠️ | Fiche configuration IP |
 
 ---
 
-# 🟠 PHASE 2 – Services réseau et assistance (S6 à S10)
+# 🟠 PHASE 2 – Services réseau et segmentation (S6 à S10)
 
-| Semaine | Situation professionnelle | Compétences Bloc 1 | Statut | Livrable attendu |
+| Semaine | Situation professionnelle | Compétences Bloc 2 | Statut | Livrable attendu |
 |----------|--------------------------|--------------------|:------:|------------------|
-| S6 | Déployer GLPI | Gestion des incidents et tickets | 🛠️ | Ticket complet documenté |
-| S7 | Mettre à disposition un service utilisateur | Déploiement d’un service réseau simple | 🧱 | Fiche service + procédure |
-| S8 | Adapter sa communication au client | Support utilisateur / relation client | 🧱 | Simulation échange support |
-| S9 | Formaliser un catalogue de services | Structuration offre IT | 🧭 | Catalogue simplifié |
-| S10 | Sauvegarder une configuration | Maintien en condition opérationnelle | ✅ | TP noté + documentation |
+| S6 | Configurer un switch Cisco | CLI, table MAC, config de base | 🛠️ | Config sauvegardée |
+| S7 | Segmenter un réseau | VLAN, trunk 802.1Q | 🛠️ | Schéma VLAN + config |
+| S8 | Relier deux réseaux | Routage statique | 🛠️ | Table de routage documentée |
+| S9 | Déployer DNS | Installation Bind9 + zones | 🛠️ | Fichier zone validé |
+| S10 | Déployer DHCP multi-VLAN | DHCP + agent relais | ✅ | TP intégré noté |
 
 ---
 
-# 🟡 PHASE 3 – Windows Server et mise à disposition de services (S11 à S15)
+# 🟡 PHASE 3 – Windows Server & Services avancés (S11 à S15)
 
-| Semaine | Situation professionnelle | Compétences Bloc 1 | Statut | Livrable attendu |
+| Semaine | Situation professionnelle | Compétences Bloc 2 | Statut | Livrable attendu |
 |----------|--------------------------|--------------------|:------:|------------------|
-| S11 | Installer un contrôleur de domaine | Mise en place Active Directory | 🛠️ | Procédure installation AD |
-| S12 | Appliquer des stratégies de groupe | Gestion des accès (GPO) | 🛠️ | Rapport paramétrage GPO |
-| S13 | Déployer un serveur de fichiers | Gestion droits NTFS & partages | 🛠️ | Arborescence sécurisée documentée |
-| S14 | Automatiser une tâche d’administration | Script de création utilisateurs | 🛠️ | Script commenté + notice |
-| S15 | Formaliser une situation réelle | Entraînement Portfolio E4 #2 | 🧭 | Situation professionnelle rédigée |
+| S11 | Installer Active Directory | Domaine, OU, utilisateurs | 🛠️ | Procédure AD |
+| S12 | Appliquer des GPO | Sécurité + environnement | 🛠️ | Rapport paramétrage |
+| S13 | Déployer serveur fichiers | Droits NTFS / partages | 🛠️ | Arborescence sécurisée |
+| S14 | Mettre en place routage inter-VLAN | Router-on-a-stick | 🛠️ | Schéma + config Cisco |
+| S15 | Automatiser sous Linux | Script Bash admin | 🛠️ | Script commenté |
 
 ---
 
 # 🟢 PHASE 4 – Projet de synthèse Année 1 (S16 à S20)
 
-| Semaine | Situation professionnelle | Compétences Bloc 1 | Statut | Livrable attendu |
+| Semaine | Situation professionnelle | Compétences Bloc 2 | Statut | Livrable attendu |
 |----------|--------------------------|--------------------|:------:|------------------|
-| S16 | Documenter une infrastructure | Rédaction technique (wiki / DAT simplifié) | 🛠️ | Documentation d’équipe |
-| S17 | ⭐ PROJET 1 – Déploiement PME | Déploiement complet (AD + DHCP + DNS + partages) | ⭐ | Infrastructure fonctionnelle |
-| S18 | Formaliser le projet | Rédaction DAT (Dossier Architecture Technique) | 🧭 | DAT structuré |
-| S19 | Simulation orale E4 | Communication professionnelle | 🧭 | Passage oral blanc |
-| S20 | Examen blanc E4 | Évaluation certificative | ✅ | Oral simulé + grille |
+| S16 | Administrer via PowerShell | Scripts AD en masse | 🛠️ | Script CSV + doc |
+| S17 | ⭐ PROJET 1 – Infra PME | AD + DHCP + DNS + VLAN | ⭐ | Infra complète fonctionnelle |
+| S18 | Formaliser l’architecture | DAT simplifié | 🧭 | Dossier Architecture |
+| S19 | Simulation orale E5 | Présenter infra déployée | 🧭 | Oral blanc |
+| S20 | Examen blanc E5 | Épreuve pratique simulée | ✅ | Évaluation certificative |
 
 ---
 
@@ -89,32 +90,32 @@ Construire les compétences fondamentales du **Bloc 1** :
 
 ## Compétences techniques
 
-- Installer un serveur Windows
+- Configurer un switch Cisco
+- Mettre en place VLAN et routage statique
+- Installer un serveur DHCP/DNS
 - Déployer Active Directory
-- Configurer des GPO
-- Mettre en place un serveur de fichiers sécurisé
-- Utiliser un outil de gestion de parc
-- Gérer des tickets d’incident
-- Documenter une intervention
+- Configurer GPO et partages sécurisés
+- Automatiser une tâche en Bash ou PowerShell
+- Documenter une infrastructure
 
 ## Compétences professionnelles
 
-- Rédiger une procédure claire
-- Structurer un dossier technique
-- Argumenter un choix technique
-- Présenter une situation professionnelle à l’oral
+- Concevoir un plan d’adressage cohérent
+- Justifier un choix technique
+- Rédiger un dossier d’architecture
+- Présenter une infrastructure à l’oral
 
 ---
 
-# 📋 Correspondance Référentiel Bloc 1 ↔ Progression Année 1
+# 📋 Correspondance Référentiel Bloc 2 ↔ Progression Année 1
 
 | Compétence référentiel | Séquences concernées |
 |------------------------|----------------------|
-| Gérer le patrimoine informatique | S2, S5, S6 |
-| Répondre aux incidents et demandes | S4, S6, S8 |
-| Mettre à disposition un service | S7, S11 à S15 |
-| Maintenir un service en condition opérationnelle | S10, S17 |
-| Documenter et formaliser | S16, S18 |
-| Communiquer en contexte professionnel | S8, S19, S20 |
+| Installer et configurer équipements réseau | S6 à S10 |
+| Mettre en œuvre services d’infrastructure | S9 à S15 |
+| Administrer systèmes serveurs | S11 à S16 |
+| Sécuriser une infrastructure | S12 à S17 |
+| Documenter et formaliser | S16 à S18 |
+| Communiquer en contexte professionnel | S18 à S20 |
 
 ---
