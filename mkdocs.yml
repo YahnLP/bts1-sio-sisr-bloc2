@@ -1,11 +1,11 @@
 # À modifier avec le nom et la description du site
-site_name: "Support et Services - BTS SIO SISR 1ère année"
-site_description: "Cours de Support et Services (Bloc 1) du BTS SIO"
+site_name: "Infratructure, Systemes et réseaux - BTS SIO SISR 1ère année"
+site_description: "Infratructure, Systemes et réseaux (Bloc 2) du BTS SIO"
 
 # Auteur / dépôt / URL (version GitHub Pages)
-site_url: "https://yahnlp.github.io/bts1-sio-sisr-bloc1/"
+site_url: "https://yahnlp.github.io/bts1-sio-sisr-bloc2/"
 site_author: "Yahn Le Prettre"
-repo_url: "https://github.com/YahnLP/bts1-sio-sisr-bloc1"
+repo_url: "https://github.com/YahnLP/bts1-sio-sisr-bloc2"
 edit_uri: "edit/main/docs/"
 
 # À modifier, avec votre nom et la licence choisie
