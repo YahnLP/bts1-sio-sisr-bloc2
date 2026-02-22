@@ -1,38 +1,43 @@
 # 01 – Informations Générales
 
-| **Champ** | **Détail** |
-|-----------|-----------|
-| **Semaine** | S4 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
-| **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — quatrième semaine |
-| **Modalité** | Présentiel — salle TP (accès aux postes, imprimantes, réseau) |
-| **Prérequis** | S3 — ITIL, vocabulaire incident/problème/SLA, niveaux N1/N2/N3 |
+| **Élément** | **Détails** |
+|-------------|-------------|
+| **Semaine** | S4 - Année 1 |
+| **Bloc** | Bloc 2 - Infrastructure, Systèmes & Réseaux |
+| **Durée** | 4 heures (1 séance) |
+| **Phase** | Phase 1 - Découverte de la machine et fondamentaux absolus |
+| **Public** | Apprentis BTS SIO SISR (hétérogène : Bac Pro CIEL + débutants) |
+| **Prérequis** | S2 (connectique RJ45, fibre optique), notions de base Windows |
 
 ---
 
 ## 🎯 Objectifs
 
-À l'issue de cette séance, l'apprenant sera capable de :
+**À l'issue de cette séance, l'apprenant sera capable de :**
 
-- ✅ Appliquer le **cycle complet de gestion d'un incident** : ouverture → prise en charge → diagnostic → résolution → validation → clôture
-- ✅ Utiliser une **méthode de diagnostic** structurée (du général au particulier, de la couche physique à la couche applicative)
-- ✅ Résoudre 3 incidents typiques N1 : **imprimante hors service**, **accès à un dossier refusé**, **poste lent**
-- ✅ Rédiger un ticket complet **pendant** la résolution (pas après)
-- ✅ Documenter la solution en vue d'une entrée dans la **base de connaissances**
-- ✅ Adopter la **posture professionnelle** du technicien N1 : communication claire avec l'utilisateur, MTTR maîtrisé
+1. **Expliquer** le rôle d'un réseau informatique et ses composants de base (PC, switch, routeur)
+2. **Comprendre** le modèle OSI (7 couches) et le modèle TCP/IP (4 couches)
+3. **Identifier** les différents types de réseaux (LAN, MAN, WAN, PAN)
+4. **Lire et interpréter** une adresse IPv4 et son masque de sous-réseau
+5. **Différencier** les classes d'adresses IP (A, B, C) et les adresses privées/publiques
+6. **Calculer** un réseau et une plage d'adresses utilisables (introduction)
+7. **Utiliser** les commandes réseau de diagnostic (ping, ipconfig/ifconfig, tracert)
+8. **Comprendre** le rôle du DNS et de la passerelle par défaut
+
+### Prérequis
+
+- Connectique réseau RJ45 (vue en S2)
+- Notions de base d'adresse IP (vue en Maths S1 : binaire/hexa)
+- Manipulation de base de l'invite de commandes Windows
 
 ---
 
 ## 🧠 Compétences travaillées
 
-| **Code** | **Intitulé de la compétence** | **Niveau visé** |
-|----------|-------------------------------|-----------------|
-| **B1.3** | Mettre en place et exploiter des outils de support et d'assistance | Acquisition |
-| **B1.6** | Assurer le support des utilisateurs | Acquisition |
-| **B2.2** | Installer et configurer des éléments d'infrastructure | Découverte |
-| **B3.3** | Participer à la gestion et au suivi d'un projet | Acquisition |
-
-> 📌 **S4 est la première séance entièrement orientée pratique.** La théorie ITIL de S3 se concrétise : les apprenants traitent de vrais incidents (simulés) de bout en bout — ouverture du ticket, diagnostic, résolution, documentation, clôture. C'est le cycle complet qu'ils répéteront des centaines de fois en entreprise.
+| **Code Compétence** | **Libellé** | **Niveau de Maîtrise** |
+|---------------------|-------------|------------------------|
+| **B2.2** | Installer, tester et déployer une solution d'infrastructure réseau - Comprendre les protocoles | **Initiation** |
+| **B2.3** | Exploiter, dépanner et superviser une solution d'infrastructure réseau - Diagnostic de base | **Initiation** |
+| **B1.1** | Gérer le patrimoine informatique - Identifier les ressources réseau | Application |
 
 ---
