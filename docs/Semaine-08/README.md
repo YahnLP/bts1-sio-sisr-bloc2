@@ -5,34 +5,37 @@
 
 ## Informations Générales
 
-| **Champ** | **Détail** |
-|-----------|-----------|
-| **Semaine** | S8 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
-| **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — huitième semaine |
-| **Modalité** | Présentiel — salle de cours |
-| **Prérequis** | S1 à S7 — tout le Bloc 1 |
+| **Élément** | **Détails** |
+|-------------|-------------|
+| **Semaine** | S8 - Année 1 |
+| **Bloc** | Bloc 2 - Infrastructure, Systèmes & Réseaux |
+| **Durée** | 4 heures (1 séance) |
+| **Phase** | Phase 2 - Services réseau, administration & RGPD |
+| **Public** | Apprentis BTS SIO SISR (hétérogène : Bac Pro CIEL + débutants) |
+| **Prérequis** | S5 (IPv4, masques, calculs réseau) - S6 (CLI Cisco, modes, commandes show) - S7 (VLANs, Linux utilisateurs/permissions) |
 
 ---
 
 ## Compétences RNCP Visées
 
-| **Code** | **Intitulé de la compétence** | **Niveau visé** |
-|----------|-------------------------------|-----------------|
-| **B1.6** | Assurer le support des utilisateurs | Maîtrise |
-| **B3.3** | Participer à la gestion et au suivi d'un projet (communication) | Maîtrise |
-| **B1.1 → B1.5** | Bloc 1 complet — évaluation formative | Consolidation |
-
-> 📌 **S8 est la dernière séance du Bloc 1 avant l'entrée dans le Bloc 2.** Elle remplit deux fonctions complémentaires : (1) combler le seul angle non encore travaillé en profondeur — la **communication humaine** avec l'utilisateur non-technique, compétence décisive en E5 et en entreprise ; (2) conduire la **première évaluation formative notée** du Bloc 1, qui donne à l'enseignant et à l'apprenant une mesure fiable des acquis avant de basculer vers les sujets techniques du Bloc 2.
+| **Code** | **Libellé** | **Niveau** |
+|----------|-------------|------------|
+| **B2.2** | Installer, tester et déployer une solution d'infrastructure réseau – routage statique, DHCP | **Application** |
+| **B2.3** | Exploiter, dépanner et superviser – diagnostic routes, baux DHCP | Application |
+| **B2.1** | Administrer les services d'un système d'exploitation serveur – isc-dhcp-server | Application |
 
 ---
 
 ## Objectifs Pédagogiques
 
-**Communication non-technique :**
-- ✅ Adapter son **registre de langage** à l'interlocuteur (expert / non-expert)
-- ✅ Reformuler un message technique en **termes compréhensibles** par un non-technicien
-- ✅ Gérer un utilisateur **stressé, impatient ou mécontent** avec professionnalisme
-- ✅ Conduire une **prise d'appel N1** complète (accueil, collecte, diagnostic, clôture)
-- ✅ Rédiger un **email de support** clair, professionnel et exploitable
+**À l'issue de cette séance, l'apprenant sera capable de :**
+
+1. **Expliquer** le rôle de la passerelle par défaut et de la table de routage
+2. **Lire** une table de routage Cisco et identifier les types de routes (C, S, S*)
+3. **Configurer** une interface de routeur Cisco (ip address, no shutdown)
+4. **Ajouter** des routes statiques avec `ip route` (réseau distant et route par défaut)
+5. **Tester** la connectivité inter-réseaux avec ping et `show ip route`
+6. **Expliquer** le fonctionnement du DHCP et les 4 étapes DORA
+7. **Installer et configurer** le serveur isc-dhcp-server sous Debian
+8. **Créer** une étendue DHCP avec plage, masque, passerelle, DNS
+9. **Configurer** une réservation DHCP (IP fixe par adresse MAC)

@@ -2,46 +2,41 @@
 
 | **Champ** | **Détail** |
 |-----------|-----------|
-| **Semaine** | S20 — Année 1 (dernière semaine) |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
+| **Semaine** | S20 — Fin Année 1 |
+| **Bloc** | Bloc 2 — clôture + passerelle vers A2 |
 | **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — vingtième semaine |
-| **Modalité** | Examen blanc individuel + bilan collectif |
-| **Prérequis** | Portfolio E4 avec minimum 2-3 situations (S15, S17-S18) |
+| **Public** | Apprentis BTS SIO SISR (Bac Pro CIEL + autres bacs) |
+| **Modalité** | Présentiel — salle de cours (matin : examen blanc, après-midi : bilan/entretiens) |
+| **Prérequis** | Tout le Bloc 2 S11→S19 + dossier Projet 1 SimIO finalisé |
 
 ---
 
 ## 🎯 Objectifs
 
-**Examen blanc E4 :**
-- ✅ Passer l'épreuve E4 en **conditions réelles** (40 minutes complètes)
-- ✅ Mobiliser toutes les **compétences BLOC 1** acquises en Année 1
-- ✅ Gérer le **stress** d'un examen
-- ✅ Recevoir un **feedback détaillé** avec grille officielle
-- ✅ Identifier précisément ses **points forts** et **axes d'amélioration**
+### Examen Blanc E5
 
-**Bilan portfolio :**
-- ✅ Vérifier la **complétude** du portfolio (minimum 2-3 situations)
-- ✅ Contrôler la **qualité** des fiches (structure, contenu, preuves)
-- ✅ S'assurer de la **diversité** des situations (différentes compétences)
-- ✅ Planifier les situations à **ajouter en Année 2**
+- ✅ Vivre les **conditions réelles de l'épreuve E5** (préparation 1h30 + oral 40 min)
+- ✅ Mobiliser les compétences du **Bloc 2 dans leur globalité** sur une situation professionnelle
+- ✅ Structurer et défendre oralement un dossier de projet devant un jury
+- ✅ Répondre à des questions techniques imprévues avec méthode
 
-**Plan Année 2 :**
-- ✅ Faire le bilan de l'**Année 1** (acquis, difficultés, réussites)
-- ✅ Définir les **objectifs** pour l'Année 2
-- ✅ Identifier les compétences à **approfondir**
-- ✅ Préparer le **positionnement** en entreprise pour l'alternance
+### Bilan A1
+
+- ✅ **Se positionner honnêtement** sur chaque compétence du Bloc 2 (acquis / en cours / à consolider)
+- ✅ Identifier ses **points forts** à valoriser en A2 et les **lacunes prioritaires** à combler
+- ✅ Construire son **plan de progression personnalisé** pour l'Année 2
+- ✅ Comprendre les **attendus des épreuves E4, E5, E6** pour les anticiper dès A2
 
 ---
 
 ## 🧠 Compétences travaillées
 
-| **Code** | **Intitulé de la compétence** | **Niveau visé** |
-|----------|-------------------------------|-----------------|
-| **Épreuve E4** | Support et mise à disposition de services informatiques | Évaluation sommative |
-| **Compétences transversales** | Préparation examen, gestion du stress, communication orale | Consolidation |
+| **Code** | **Intitulé** | **Niveau visé** |
+|----------|--------------|-----------------|
+| **B2.1** à **B3.3** | Toutes les compétences Bloc 2 | Évaluation finale |
+| **B3.3** | Participer à la gestion et au suivi d'un projet | Maîtrise — oral E5 |
 
-> 📌 **S20 BLOC 1 marque la FIN DE L'ANNÉE 1.** L'examen blanc E4 en conditions réelles permet d'évaluer le niveau de chaque apprenant et d'identifier les axes de progression pour l'Année 2. Le bilan portfolio assure que chaque apprenant dispose d'un socle solide pour l'épreuve finale en fin d'Année 2.
+> 📌 **S20 est une séance importante du Bloc 2.** Elle reproduit fidèlement les conditions de l'**épreuve E5** du BTS SIO. Chaque apprenant doit vivre S20 comme s'il passait l'examen réel : préparation en autonomie, oral devant un jury, feedback structuré. Le bilan de l'après-midi est tout aussi capital — c'est le moment où l'apprenant se positionne pour construire sa stratégie d'A2.
 
 
 ---

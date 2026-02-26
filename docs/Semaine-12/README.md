@@ -5,43 +5,37 @@
 
 ## Informations Générales
 
-| **Champ** | **Détail** |
-|-----------|-----------|
-| **Semaine** | S12 — Année 1 |
-| **Bloc** | Bloc 2 — Administration des systèmes et des réseaux |
-| **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — douzième semaine |
-| **Modalité** | Présentiel — salle TP (postes physiques ou VMs) |
-| **Prérequis** | S2 (inventaire matériel), S11 (gestion actifs logiciels), notions Windows/Linux |
+| **Élément** | **Détails** |
+|-------------|-------------|
+| **Semaine** | S12 - Année 1 |
+| **Bloc** | Bloc 2 - Infrastructure, Systèmes & Réseaux |
+| **Durée** | 4 heures (1 séance) |
+| **Phase** | Phase 3 - Services d'annuaire, GPO et sécurité |
+| **Public** | Apprentis BTS SIO SISR (hétérogène) |
+| **Prérequis** | S11 (Windows Server installé, domaine `techpro.local` créé, structure OU + utilisateurs en place) |
 
 ---
 
 ## Compétences RNCP Visées
 
-| **Code** | **Intitulé de la compétence** | **Niveau visé** |
-|----------|-------------------------------|-----------------|
-| **B2.1** | Installer et configurer un service réseau pour une TPE ou une PME | Acquisition |
-| **B2.2** | Installer et configurer des éléments d'infrastructure | Maîtrise |
-| **B1.4** | Mettre en place et exploiter des outils de gestion de parc | Maîtrise |
-| **B3.3** | Participer à la gestion et au suivi d'un projet | Acquisition |
-
-> 📌 **S12 est une séance technique charnière** qui marque l'entrée réelle dans l'administration système du Bloc 2. Jusqu'ici, les apprenants ont inventorié, géré, documenté. À partir de S12, ils **construisent** : déployer 50 postes identiques en 2 heures plutôt qu'en 2 semaines est une compétence qui change radicalement la perception du métier SISR.
+| **Code** | **Libellé** | **Niveau** |
+|----------|-------------|------------|
+| **B2.1** | Administrer les services d'un système d'exploitation serveur — GPO, DNS Windows | **Application** |
+| **B2.2** | Installer, tester et déployer — stratégies de sécurité, zones DNS AD-intégrées | Application |
+| **B2.3** | Exploiter, dépanner, superviser — `gpresult`, `gpupdate`, `nslookup`, journal événements | Application |
 
 ---
 
 ## Objectifs Pédagogiques
 
-**Concepts de déploiement :**
-- ✅ Distinguer **installation manuelle** vs **déploiement automatisé** d'un OS
-- ✅ Expliquer le principe du **clonage de disque** (bit-à-bit)
-- ✅ Décrire une **image système** et ses composantes (OS + pilotes + logiciels + config)
-- ✅ Identifier les **cas d'usage** du déploiement d'images (parc homogène, disaster recovery, standardisation)
-- ✅ Expliquer les notions de **Sysprep** et **généralisation** Windows
-- ✅ Comparer les outils de clonage (Clonezilla, WDS/MDT, Fog Project)
+**À l'issue de cette séance, l'apprenant sera capable de :**
 
-**Pratique technique :**
-- ✅ Créer une **machine de référence** (golden image) avec OS + logiciels
-- ✅ Capturer une image système avec **Clonezilla**
-- ✅ Déployer l'image capturée sur un nouveau poste
-- ✅ Vérifier la **post-configuration** (SID, nom machine, activation)
-- ✅ Documenter le processus dans une procédure technique (lien S11)
+1. **Expliquer** le rôle des GPO et leur lien avec Active Directory
+2. **Décrire** l'ordre d'application des GPO (LSDOU) et le mécanisme d'héritage
+3. **Créer** une GPO avec la console GPMC et l'éditeur de stratégie de groupe
+4. **Configurer** une GPO de sécurité (politique de mots de passe, verrouillage de compte)
+5. **Configurer** une GPO d'environnement (fond d'écran imposé, lecteur réseau mappé)
+6. **Lier** une GPO à une OU et tester son application
+7. **Utiliser** `gpupdate /force` et `gpresult /r` pour forcer et diagnostiquer les GPO
+8. **Expliquer** la différence entre zones DNS standard et zones DNS AD-intégrées
+9. **Créer** une zone DNS AD-intégrée et ajouter des enregistrements depuis Windows Server

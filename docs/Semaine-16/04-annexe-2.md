@@ -3,51 +3,43 @@ author: YLP
 title: 📄 ANNEXE 2
 ---
 
-# 📄 ANNEXE 2 — CHEAT SHEET GIT (COMMANDES DE BASE)
+# 📄 ANNEXE 2 — FICHE DE DOCUMENTATION
+## (À compléter et verser au portfolio — Preuve E4/E5)
 
-```
-═══════════════════════════════════════════════════════════════
-                    GIT CHEAT SHEET — BASES
-═══════════════════════════════════════════════════════════════
+*Nom : _________________________ Prénom : _________________________ Date : _________*
 
-INITIALISATION
-──────────────────────────────────────────────────────────────
-git init                    # Créer un nouveau dépôt Git
-git config --global user.name "Nom"     # Configurer nom
-git config --global user.email "email"  # Configurer email
+---
 
+## 1. Script PowerShell AD
 
-COMMANDES ESSENTIELLES
-──────────────────────────────────────────────────────────────
-git status                  # Voir l'état des fichiers
-git add fichier.txt         # Ajouter un fichier au suivi
-git add .                   # Ajouter tous les fichiers modifiés
-git commit -m "Message"     # Enregistrer une version
-git log                     # Voir l'historique des commits
-git log --oneline           # Historique compact
+| **Paramètre** | **Valeur** |
+|---|---|
+| Chemin du script | C:\Scripts\creer_utilisateurs_ad.ps1 |
+| Fichier CSV source | C:\Scripts\nouveaux_employes.csv |
+| Fichier log | C:\Scripts\log_creation_ad.txt |
+| Nombre d'utilisateurs dans le CSV | 10 |
+| Mot de passe temporaire défini | |
+| Politique mot de passe (changement 1ère connexion) | ✅ Oui / ❌ Non |
 
+## 2. Résultat de Création
 
-VOIR LES MODIFICATIONS
-──────────────────────────────────────────────────────────────
-git diff                    # Voir les modifications non ajoutées
-git diff fichier.txt        # Voir modifs d'un fichier précis
-git show <commit-id>        # Voir le contenu d'un commit
+| **Indicateur** | **Valeur** |
+|---|---|
+| Créations réussies | |
+| Doublons ignorés (2e exécution) | |
+| Échecs | |
 
+## 3. Validation IPv6
 
-ANNULER DES MODIFICATIONS
-──────────────────────────────────────────────────────────────
-git checkout fichier.txt    # Annuler les modifs d'un fichier
-git reset HEAD fichier.txt  # Retirer un fichier du staging
-git revert <commit-id>      # Annuler un commit (crée un nouveau)
+*Réponses aux exercices C1 à C4 :*
 
+| **Exercice** | **Réponse** |
+|---|---|
+| C1 — `::1` complète | |
+| C1 — `FE80::1` complète | |
+| C2 — `2001:0DB8:0000...0001` compressée | |
+| C3 — Type de `FE80::1` | |
+| C3 — Type de `2001:db8::1234` | |
+| C4 — Adresse link-local calculée | |
 
-WORKFLOW TYPIQUE
-──────────────────────────────────────────────────────────────
-1. Modifier des fichiers
-2. git status               # Voir ce qui a changé
-3. git add .                # Ajouter les modifications
-4. git commit -m "..."      # Enregistrer la version
-5. git log                  # Vérifier que le commit est là
-
-═══════════════════════════════════════════════════════════════
-```
+---

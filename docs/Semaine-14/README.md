@@ -8,11 +8,11 @@
 | **Champ** | **Détail** |
 |-----------|-----------|
 | **Semaine** | S14 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
+| **Bloc** | Bloc 2 — Administrer les composants d'une infrastructure |
 | **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — quatorzième semaine |
-| **Modalité** | Présentiel — salle TP (serveurs Linux ou VMs) |
-| **Prérequis** | Notions Linux de base, S11 (documentation procédures), S13 (veille techno) |
+| **Public** | Apprentis BTS SIO SISR (Bac Pro CIEL + autres bacs) |
+| **Modalité** | Présentiel — Salle de TP réseau (Cisco Packet Tracer + Linux) |
+| **Prérequis** | VLANs (S10), Adressage IP et sous-réseaux (S4-S5), bases Linux (S8-S9), DHCP S13 |
 
 ---
 
@@ -20,32 +20,28 @@
 
 | **Code** | **Intitulé de la compétence** | **Niveau visé** |
 |----------|-------------------------------|-----------------|
-| **B2.1** | Installer et configurer un service réseau pour une TPE ou une PME | Maîtrise |
-| **B1.5** | Mettre à disposition des utilisateurs un service informatique | Maîtrise |
-| **B3.3** | Participer à la gestion et au suivi d'un projet | Acquisition |
-
-> 📌 **S14 BLOC 1 est une séance charnière** qui fait le pont entre la gestion de services et l'administration système. Elle répond à un besoin métier concret (présence en ligne d'une organisation) par une réalisation technique complète (installation LAMP + WordPress). C'est souvent la **première fois** que les apprenants installent une stack complète de A à Z.
+| **B2.2** | Installer et configurer des éléments d'infrastructure réseau | Maîtrise opérationnelle |
+| **B2.4** | Exploiter un service en mode script | Maîtrise opérationnelle |
+| **B1.3** | Identifier les processus présents dans un système d'exploitation | Application |
+| **B3.3** | Participer à la gestion et au suivi d'un projet (automatisation) | Application |
 
 ---
 
 ## Objectifs Pédagogiques
 
-**Présence en ligne :**
-- ✅ Expliquer pourquoi une organisation **doit** être présente en ligne (5 raisons business)
-- ✅ Identifier les **types de présence** (site vitrine, e-commerce, blog, application web)
-- ✅ Comparer les **coûts** (hébergement, développement, maintenance) et calculer le ROI
-- ✅ Analyser des **exemples de sites** de PME
+À l'issue de cette séance, l'apprenant sera capable de :
 
-**CMS (Content Management Systems) :**
-- ✅ Définir un **CMS** et expliquer ses avantages vs développement sur mesure
-- ✅ Comparer les **principaux CMS** (WordPress, Joomla, Drupal, PrestaShop)
-- ✅ Identifier les **cas d'usage** de chaque CMS
-- ✅ Expliquer l'écosystème WordPress (thèmes, plugins, communauté)
+- ✅ Expliquer pourquoi les VLANs **isolent** le trafic et pourquoi le routage inter-VLAN est nécessaire
+- ✅ Décrire et configurer l'architecture **router-on-a-stick** (routeur avec sous-interfaces)
+- ✅ Configurer les **sous-interfaces** d'un routeur Cisco avec encapsulation 802.1Q
+- ✅ Vérifier la connectivité inter-VLAN avec `ping` et `show ip route`
+- ✅ Écrire un script Bash respectant la **syntaxe de base** (shebang, variables, `echo`, `read`)
+- ✅ Implémenter des **structures conditionnelles** `if/then/elif/else/fi` dans un script Bash
+- ✅ Produire un script complet de **création automatisée d'utilisateurs Linux** avec validation des entrées
 
-**Stack LAMP :**
-- ✅ Décrire l'architecture **LAMP** (Linux, Apache, MySQL, PHP)
-- ✅ Expliquer le **rôle de chaque composant**
-- ✅ Installer et configurer une **stack LAMP complète**
-- ✅ Créer un **VirtualHost Apache** pour un site web
-- ✅ Installer et configurer **WordPress** de A à Z
-- ✅ Documenter la procédure d'installation (lien S11)
+## Prérequis
+
+- Notion de VLAN (création, assignation de port, trunk) — S10
+- Adressage IP, sous-réseaux, masques — S4-S5
+- Navigation dans un terminal Linux, commandes de base (`ls`, `mkdir`, `useradd`, `passwd`) — S8-S9
+- Utilisation de Cisco Packet Tracer (interface, configuration CLI Cisco) — S10-S11

@@ -8,11 +8,11 @@
 | **Champ** | **Détail** |
 |-----------|-----------|
 | **Semaine** | S13 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
+| **Bloc** | Bloc 2 — Administrer les composants d'une infrastructure |
 | **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — treizième semaine |
-| **Modalité** | Présentiel — salle de cours |
-| **Prérequis** | S3 (ITIL fondamentaux), S10 (gestion des configurations), S12 (déploiement) |
+| **Public** | Apprentis BTS SIO SISR (Bac Pro CIEL + autres bacs) |
+| **Modalité** | Présentiel — Salle de TP réseau virtualisé |
+| **Prérequis** | Bases Windows Server (S11), Active Directory (S12), Adressage IP (S4-S5) |
 
 ---
 
@@ -20,28 +20,29 @@
 
 | **Code** | **Intitulé de la compétence** | **Niveau visé** |
 |----------|-------------------------------|-----------------|
-| **B1.2** | Exploiter des référentiels, normes et standards (ITIL) | Maîtrise |
-| **B3.3** | Participer à la gestion et au suivi d'un projet | Maîtrise |
-| **B3.4** | Mettre en œuvre une démarche de veille technologique | Acquisition |
-
-> 📌 **S13 BLOC 1 remplit deux fonctions complémentaires :** (1) clôturer le triptyque ITIL (Incident Management S3-S4, Configuration Management S10, **Change Management S13**) en l'appliquant à la gestion de l'infrastructure ; (2) lancer la **veille technologique** comme pratique professionnelle continue, indispensable pour rester employable dans un secteur qui évolue constamment.
+| **B2.2** | Installer et configurer un service réseau | Maîtrise opérationnelle |
+| **B2.3** | Assurer la sécurité des accès aux ressources | Maîtrise opérationnelle |
+| **B1.2** | Recenser et identifier les ressources et les besoins | Application |
+| **B1.4** | Mettre en place et vérifier les niveaux d'habilitation associés à un service | Application |
 
 ---
 
 ## Objectifs Pédagogiques
 
-**Gestion des changements :**
-- ✅ Définir un **changement** selon ITIL et le distinguer d'un incident ou d'une demande
-- ✅ Expliquer le rôle du **CAB** (Change Advisory Board) et du Change Manager
-- ✅ Décrire le **cycle de vie d'un changement** en 7 étapes
-- ✅ Rédiger une **RFC** (Request For Change) complète et professionnelle
-- ✅ Identifier les **3 types de changements** (standard, normal, urgent)
-- ✅ Appliquer l'**analyse de risque** d'un changement
+À l'issue de cette séance, l'apprenant sera capable de :
 
-**Veille technologique :**
-- ✅ Expliquer pourquoi la veille est **obligatoire** dans les métiers IT
-- ✅ Identifier les **sources fiables** selon le domaine
-- ✅ Configurer un **agrégateur de flux RSS** (Feedly)
-- ✅ Mettre en place des **alertes Google** ciblées
-- ✅ Distinguer information de qualité et clickbait technique
-- ✅ Organiser sa veille en **routine hebdomadaire**
+- ✅ Installer et activer le rôle **DHCP** sous Windows Server
+- ✅ Créer et configurer une **étendue DHCP** (plage, bail, exclusions)
+- ✅ Paramétrer les **options DHCP** (passerelle, DNS, nom de domaine)
+- ✅ Expliquer le rôle et configurer un **agent relais DHCP** (relay agent) pour plusieurs sous-réseaux
+- ✅ Distinguer et combiner correctement **droits NTFS** et **droits de partage**
+- ✅ Appliquer la **règle du plus restrictif** lors du cumul des deux types de droits
+- ✅ Créer une **arborescence de dossiers partagés** structurée par service
+- ✅ Expliquer les bénéfices des **espaces de noms DFS** pour la continuité de service
+
+## Prérequis
+
+- Connaissance du modèle OSI et de l'adressage IP (classes, masques, passerelle)
+- Savoir créer des comptes utilisateurs et des groupes dans Active Directory
+- Savoir naviguer dans Windows Server (Gestionnaire de serveur, MMC)
+- Notion de permissions de base sur un système de fichiers

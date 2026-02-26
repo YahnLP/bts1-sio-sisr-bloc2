@@ -1,153 +1,208 @@
 ---
 author: YLP
-title: 📋 BILAN PORTFOLIO
+title: 📋 POSITIONNEMENT COMPÉTENCES BLOC 2
 ---
 
-# 📋 BILAN PORTFOLIO — CONTRÔLE QUALITÉ
+# 📈 GRILLE DE BILAN A1 — POSITIONNEMENT COMPÉTENCES BLOC 2
 
-*Checklist à remplir individuellement*
+*Document apprenant — À compléter individuellement pendant le bilan de l'après-midi*
 
 ---
 
-## Vérification Complétude
+## Mode d'Emploi
 
+Pour chaque compétence, évaluez-vous **honnêtement** selon 4 niveaux :
+
+| **Niveau** | **Symbole** | **Ce que ça signifie** |
+|---|---|---|
+| Non acquis | ❌ | Je ne sais pas encore faire — j'aurais besoin d'un tutorat |
+| En cours | ⚠️ | Je comprends mais j'ai besoin d'aide pour réaliser |
+| Acquis | ✅ | Je peux faire seul dans un contexte guidé (TP) |
+| Maîtrisé | ⭐ | Je peux faire seul en contexte professionnel, expliquer et adapter |
+
+**Règle d'or : être honnête est plus utile qu'être optimiste.** Un "en cours" identifié est un "acquis" en devenir. Un "maîtrisé" surestimé est une fausse sécurité.
+
+---
+
+## BLOC 2.1 — Conception d'Infrastructure
+
+| **Compétence** | **Indicateur concret** | **Niveau** | **Preuve dans mon portfolio** |
+|---|---|---|---|
+| Analyser un cahier des charges | Je lis un CDC et identifie les contraintes techniques | | |
+| Calculer un plan d'adressage VLSM | Je calcule masques et plages sans aide | | |
+| Concevoir une segmentation VLAN | Je justifie le nombre et les noms de VLANs | | |
+| Schématiser une infrastructure | Je produis un schéma exploitable par un tiers | | |
+| Dimensionner les services (DHCP, DNS) | Je configure les étendues cohérentes avec l'adressage | | |
+
+**Commentaire libre B2.1 :**
 ```
-═══════════════════════════════════════════════════════════════
-            CHECKLIST PORTFOLIO E4 — FIN ANNÉE 1
-═══════════════════════════════════════════════════════════════
-
-CANDIDAT : ____________________  DATE : _____________________
-
-┌─────────────────────────────────────────────────────────────┐
-│ 1. NOMBRE DE SITUATIONS                                     │
-└─────────────────────────────────────────────────────────────┘
-
-☐ 0-1 situation  → INSUFFISANT (rattrapage obligatoire)
-☐ 2 situations   → MINIMUM REQUIS (acceptable)
-☐ 3 situations   → BON (recommandé)
-☐ 4+ situations  → EXCELLENT
-
-
-┌─────────────────────────────────────────────────────────────┐
-│ 2. COMPLÉTUDE DES FICHES                                    │
-└─────────────────────────────────────────────────────────────┘
-
-Pour chaque situation, vérifier :
-
-SITUATION 1 : _________________________________________________
-☐ Identification (titre, date, durée, entreprise)
-☐ Contexte (5-10 lignes)
-☐ Mission et objectifs (3-5 lignes)
-☐ Réalisation détaillée (étapes numérotées)
-☐ Difficultés rencontrées et résolutions
-☐ Résultats obtenus (quantitatifs et qualitatifs)
-☐ Compétences mobilisées (codes référentiel)
-☐ Preuves jointes (minimum 3)
-
-SITUATION 2 : _________________________________________________
-☐ [Même checklist]
-
-SITUATION 3 : _________________________________________________
-☐ [Même checklist]
-
-
-┌─────────────────────────────────────────────────────────────┐
-│ 3. QUALITÉ DES PREUVES                                      │
-└─────────────────────────────────────────────────────────────┘
-
-Nombre total de preuves : _____ (minimum 6 pour 2 situations)
-
-Types de preuves présentes :
-☐ Captures d'écran annotées
-☐ Schémas techniques (architecture, réseau...)
-☐ Extraits de documentation (procédures, wiki...)
-☐ Fichiers de configuration (anonymisés)
-☐ Attestations ou emails de validation
-☐ Photos de matériel / infrastructure
-
-Qualité des preuves :
-☐ 0-2 : Preuves floues, non pertinentes, mal nommées
-☐ 3-4 : Preuves correctes mais perfectibles
-☐ 5   : Preuves professionnelles et de qualité
-
-
-┌─────────────────────────────────────────────────────────────┐
-│ 4. DIVERSITÉ DES COMPÉTENCES                                │
-└─────────────────────────────────────────────────────────────┘
-
-Compétences BLOC 1 mobilisées dans le portfolio :
-
-☐ B1.1 — Recenser et identifier les ressources
-☐ B1.2 — Exploiter des référentiels (ITIL)
-☐ B1.3 — Identifier les processus système
-☐ B1.4 — Outils de gestion de parc (GLPI, OCS)
-☐ B1.5 — Mettre à disposition un service
-☐ B1.6 — Accompagner les utilisateurs
-
-Nombre de compétences différentes : _____ / 6
-
-☐ 1-2 compétences → Diversifier (ajouter situations)
-☐ 3-4 compétences → Correct
-☐ 5-6 compétences → Excellent
-
-
-┌─────────────────────────────────────────────────────────────┐
-│ 5. RÉDACTION ET PRÉSENTATION                                │
-└─────────────────────────────────────────────────────────────┘
-
-☐ Orthographe et grammaire correctes
-☐ Vocabulaire technique approprié
-☐ Mise en page professionnelle
-☐ Numérotation des pages
-☐ Table des matières (si > 10 pages)
-☐ Page de garde
-
-
-═══════════════════════════════════════════════════════════════
-
-DIAGNOSTIC GLOBAL
-───────────────────────────────────────────────────────────────
-
-☐ PORTFOLIO EXCELLENT (4+ situations, preuves de qualité)
-  → Prêt pour l'épreuve officielle
-
-☐ PORTFOLIO CORRECT (2-3 situations, quelques améliorations)
-  → Plan d'amélioration pour Année 2
-
-☐ PORTFOLIO INSUFFISANT (0-1 situation, lacunes importantes)
-  → Rattrapage obligatoire durant l'été
-
-═══════════════════════════════════════════════════════════════
+__________________________________________________________________
 ```
 
 ---
 
-## Plan d'Enrichissement Année 2
+## BLOC 2.2 — Déploiement des Services
 
-**Pour les apprenants ayant un portfolio correct mais perfectible :**
+| **Compétence** | **Indicateur concret** | **Niveau** | **Preuve** |
+|---|---|---|---|
+| Configurer un switch (VLANs, trunk) | Je configure VLAN + trunk en CLI Cisco | | |
+| Configurer un routage inter-VLAN | Je mets en place router-on-a-stick fonctionnel | | |
+| Installer et configurer Apache | Je déploie un site web PHP fonctionnel | | |
+| Installer et configurer MariaDB | Je crée BDD, utilisateur, droits | | |
+| Configurer AD DS, DHCP, DNS Windows | Je déploie les 3 services en autonomie | | |
+| Déployer un serveur FTP/SFTP Linux | vsftpd + chroot SFTP opérationnels | | |
+| Configurer SSH par clés | Connexion sans mot de passe fonctionnelle | | |
 
+**Commentaire libre B2.2 :**
 ```
-SITUATIONS À AJOUTER EN ANNÉE 2
-───────────────────────────────────────────────────────────────
-
-SITUATION N°___ (à ajouter)
-• Compétences ciblées : ________________________________________
-• Contexte envisagé : __________________________________________
-• Période de réalisation : _____________________________________
-
-SITUATION N°___ (à ajouter)
-• Compétences ciblées : ________________________________________
-• Contexte envisagé : __________________________________________
-• Période de réalisation : _____________________________________
-
-AMÉLIORATIONS DES SITUATIONS EXISTANTES
-───────────────────────────────────────────────────────────────
-• Situation 1 : ________________________________________________
-• Situation 2 : ________________________________________________
-
-PREUVES À COLLECTER
-───────────────────────────────────────────────────────────────
-• _______________________________________________________________
-• _______________________________________________________________
+__________________________________________________________________
 ```
 
+---
+
+## BLOC 2.3 — Sécurité des Accès
+
+| **Compétence** | **Indicateur concret** | **Niveau** | **Preuve** |
+|---|---|---|---|
+| Structurer les OUs Active Directory | Hiérarchie logique, droits délégués | | |
+| Créer et lier des GPO | 3 GPO fonctionnelles et justifiées | | |
+| Appliquer les droits NTFS | Permissions cumulatives comprises et appliquées | | |
+| Sécuriser SSH (clés, sshd_config) | Config sécurisée et testée | | |
+| Mettre en place un chroot SFTP | Isolation fonctionnelle et testée | | |
+| Comprendre les protocoles sécurisés | Je distingue HTTP/HTTPS, FTP/SFTP, LDAP/LDAPS | | |
+
+**Commentaire libre B2.3 :**
+```
+__________________________________________________________________
+```
+
+---
+
+## BLOC 2.4 — Scripting
+
+| **Compétence** | **Indicateur concret** | **Niveau** | **Preuve** |
+|---|---|---|---|
+| Écrire un script Bash avec variables | Je déclare et utilise des variables | | |
+| Utiliser les boucles Bash (for/while) | Je traite un fichier CSV en Bash | | |
+| Écrire un script Bash de sauvegarde | Script avec tar, log, rotation autonome | | |
+| Planifier avec cron | Expression cron lue et écrite sans aide | | |
+| Utiliser le pipeline PowerShell | Chaîner 3+ cmdlets avec filtrage | | |
+| Créer des utilisateurs AD via PowerShell | Script Import-Csv → New-ADUser fonctionnel | | |
+| Gérer les erreurs (Try/Catch) | Script robuste qui ne plante pas sur un doublon | | |
+
+**Commentaire libre B2.4 :**
+```
+__________________________________________________________________
+```
+
+---
+
+## BLOC 2.5 — Continuité de Service
+
+| **Compétence** | **Indicateur concret** | **Niveau** | **Preuve** |
+|---|---|---|---|
+| Mettre en place une sauvegarde automatique | Script cron opérationnel avec log | | |
+| Tester la restauration | J'ai vérifié qu'une archive se restaure | | |
+| Documenter un service (procédure) | Procédure exploitable par un collègue | | |
+| Diagnostiquer un service défaillant | Je suis une méthode de diagnostic (log → config → test) | | |
+
+**Commentaire libre B2.5 :**
+```
+__________________________________________________________________
+```
+
+---
+
+## BLOC 3.2 — Sécurité Informatique
+
+| **Compétence** | **Indicateur concret** | **Niveau** | **Preuve** |
+|---|---|---|---|
+| Expliquer les principes de sécurité réseau | Moindre privilège, séparation, chiffrement | | |
+| Appliquer le principe du moindre privilège | Droits limités au strict nécessaire partout | | |
+| Choisir entre FTP, FTPS, SFTP | Je justifie le choix selon le contexte | | |
+| Configurer un pare-feu de base (ufw/iptables) | Règles entrantes/sortantes définies | | |
+
+**Commentaire libre B3.2 :**
+```
+__________________________________________________________________
+```
+
+---
+
+## BLOC 3.3 — Gestion de Projet et Communication
+
+| **Compétence** | **Indicateur concret** | **Niveau** | **Preuve** |
+|---|---|---|---|
+| Rédiger un DAT professionnel | DAT exploitable par un tiers, versionné | | |
+| Présenter une infrastructure à l'oral | Exposé structuré + questions sans panique | | |
+| Utiliser le vocabulaire technique | Termes corrects, pas de paraphrases | | |
+| Répondre à des questions imprévues | Je raisonne à voix haute même sur l'inconnu | | |
+| Construire un plan de tests | 20+ tests documentés avec résultats | | |
+
+**Commentaire libre B3.3 :**
+```
+__________________________________________________________________
+```
+
+---
+
+## Synthèse Visuelle — Radar de Compétences
+
+*Colorier chaque section proportionnellement à votre niveau (❌=0%, ⚠️=40%, ✅=70%, ⭐=100%)*
+
+```
+                        B2.1 — Conception
+                             ★
+                            /|\
+                           / | \
+                          /  |  \
+         B3.3 — Projet ──●   |   ●── B2.2 — Déploiement
+                          \  |  /
+                           \ | /
+                            \|/
+         B3.2 — Sécurité ────●────── B2.3 — Accès
+                            /|\
+                           / | \
+                          /  |  \
+         B2.5 — Continuité─●  |  ●── B2.4 — Scripting
+                              |
+                        [Centre = 0 / Pointe = 100%]
+```
+
+---
+
+## Bilan Synthétique
+
+**Mes 3 points forts du Bloc 2 (compétences les plus solides) :**
+
+| **Compétence** | **Pourquoi c'est un point fort** |
+|---|---|
+| 1. | |
+| 2. | |
+| 3. | |
+
+**Mes 3 priorités de progression pour l'Année 2 :**
+
+| **Compétence à renforcer** | **Action concrète prévue** | **Échéance** |
+|---|---|---|
+| 1. | | S21-S25 |
+| 2. | | S26-S30 |
+| 3. | | S31-S35 |
+
+**En entreprise, je vais chercher à pratiquer :**
+*(Ce que vous allez activement demander à faire ou observer chez votre maître d'apprentissage)*
+
+```
+__________________________________________________________________
+__________________________________________________________________
+```
+
+**Ce que j'aurais fait différemment dans le Projet 1 SimIO :**
+*(Réflexivité professionnelle — réponse libre)*
+
+```
+__________________________________________________________________
+__________________________________________________________________
+```
+
+---

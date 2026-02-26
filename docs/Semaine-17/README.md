@@ -3,49 +3,49 @@
 | **Champ** | **Détail** |
 |-----------|-----------|
 | **Semaine** | S17 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
+| **Bloc** | Bloc 2 — Administrer les composants d'une infrastructure |
 | **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — dix-septième semaine |
-| **Modalité** | Présentiel — salle TP + travail en équipe |
-| **Prérequis** | GLPI/OCS (S5-S6), ITIL (S3-S4), Wiki (S16), Active Directory (S11-S12 BLOC 2) |
+| **Public** | Apprentis BTS SIO SISR (Bac Pro CIEL + autres bacs) |
+| **Modalité** | Présentiel — Salle TP réseau virtualisé (hyperviseur + Cisco Packet Tracer) |
+| **Prérequis** | Tout le Bloc 2 S11→S16 : Windows Server, AD DS, DHCP, DNS, VLANs, routage, droits NTFS, DFS, PowerShell, Linux/Bash, SSH |
 
----
-
-## 🎯 Objectifs
-
-**Projet 1 (vue d'ensemble) :**
-- ✅ Comprendre la structure d'un **projet multi-blocs** (infrastructure + support + sécurité)
-- ✅ Collaborer en équipe sur un projet commun
-- ✅ Documenter son travail dans le wiki d'équipe (S16)
-
-**GLPI et OCS Inventory :**
-- ✅ Installer et configurer **GLPI** (version récente)
-- ✅ Installer et configurer **OCS Inventory Server**
-- ✅ Déployer l'**agent OCS** sur des postes clients
-- ✅ Synchroniser **OCS avec GLPI** (remontée automatique inventaire)
-- ✅ Vérifier la **remontée d'inventaire** matériel et logiciel
-
-**Catalogue de services :**
-- ✅ Créer un **catalogue de services IT** structuré dans GLPI
-- ✅ Définir des **catégories de services** (support, infrastructure, applications)
-- ✅ Rédiger des **fiches de service** (description, SLA, procédure de demande)
-
-**Support et tickets :**
-- ✅ Simuler la **création de tickets** d'incidents réalistes
-- ✅ Appliquer le **cycle de vie d'un ticket** (ouverture → diagnostic → résolution → clôture)
-- ✅ Documenter les **résolutions** dans la base de connaissances GLPI
 ---
 
 ## 🧠 Compétences travaillées
 
 | **Code** | **Intitulé de la compétence** | **Niveau visé** |
 |----------|-------------------------------|-----------------|
-| **B1.4** | Mettre en place et exploiter des outils de gestion de parc | Maîtrise |
-| **B1.5** | Mettre à disposition des utilisateurs un service informatique | Maîtrise |
-| **B1.2** | Exploiter des référentiels, normes et standards (ITIL) | Maîtrise |
-| **B3.3** | Participer à la gestion et au suivi d'un projet | Maîtrise |
-
-> 📌 **S17-S18 BLOC 1 constituent le PROJET 1** — un projet de synthèse multi-blocs étalé sur 2 semaines. S17 BLOC 1 pose les fondations du système de support (GLPI, OCS, catalogue de services) qui seront intégrées à l'infrastructure technique déployée par les autres blocs. C'est la **première expérience projet** des apprenants en Année 1.
+| **B2.1** | Analyser les besoins et concevoir une infrastructure | Maîtrise opérationnelle |
+| **B2.2** | Installer et configurer des éléments d'infrastructure | Maîtrise opérationnelle |
+| **B2.3** | Assurer la sécurité des accès aux ressources | Maîtrise opérationnelle |
+| **B2.4** | Exploiter un service en mode script | Application |
+| **B2.5** | Assurer la maintenance et la continuité des services | Application |
+| **B1.2** | Recenser et identifier les ressources et les besoins | Maîtrise opérationnelle |
+| **B3.2** | Mettre en œuvre et maintenir la sécurité informatique | Application |
 
 
 ---
+
+## 🎯 Objectifs
+
+À l'issue de cette séance (et de la suivante, S18, pour la finalisation), l'apprenant sera capable de :
+
+**Plan d'adressage & réseau :**
+- ✅ Concevoir un **plan d'adressage VLSM** adapté aux besoins d'une PME
+- ✅ Définir et documenter une architecture **VLAN** par service
+- ✅ Schématiser et configurer le **routage inter-VLAN** (router-on-a-stick ou switch L3)
+
+**Déploiement Windows Server :**
+- ✅ Déployer une infrastructure **AD DS** avec OUs hiérarchiques
+- ✅ Créer et lier des **GPO** (stratégies de groupe) adaptées aux besoins métier
+- ✅ Configurer un **serveur DHCP** avec étendues par VLAN et agent relais
+- ✅ Configurer un **serveur DNS** intégré au domaine
+- ✅ Mettre en place des **partages de fichiers** avec droits NTFS et DFS
+
+**Serveur Linux :**
+- ✅ Installer et configurer un **serveur FTP** (vsftpd) sur Debian
+- ✅ Configurer un accès **SFTP** sécurisé via SSH
+- ✅ Appliquer des **droits et restrictions** adaptés (jail, chroot)
+
+---
+

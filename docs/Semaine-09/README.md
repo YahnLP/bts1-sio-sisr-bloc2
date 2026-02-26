@@ -2,41 +2,36 @@
 
 ## Informations Générales
 
-| **Champ** | **Détail** |
-|-----------|-----------|
-| **Semaine** | S9 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
-| **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — neuvième semaine |
-| **Modalité** | Présentiel — salle de cours/TP |
-| **Prérequis** | S1 à S8 — Bloc 1 complet |
+| **Élément** | **Détails** |
+|-------------|-------------|
+| **Semaine** | S9 - Année 1 |
+| **Bloc** | Bloc 2 - Infrastructure, Systèmes & Réseaux |
+| **Durée** | 4 heures (1 séance) |
+| **Phase** | Phase 2 - Services réseau, administration & RGPD |
+| **Public** | Apprentis BTS SIO SISR (hétérogène : Bac Pro CIEL + débutants) |
+| **Prérequis** | S5 (IPv4, ARP, ICMP, ping, Debian) – S6 (CLI Cisco, switch, table MAC) – S8 (routage statique, DHCP, isc-dhcp-server) 
 
 ---
 
 ## Compétences RNCP Visées
 
-| **Code** | **Intitulé de la compétence** | **Niveau visé** |
-|----------|-------------------------------|-----------------|
-| **B1.2** | Exploiter des référentiels, normes et standards | Maîtrise |
-| **B1.5** | Mettre à disposition des utilisateurs un service informatique | Maîtrise |
-| **B3.3** | Participer à la gestion et au suivi d'un projet | Maîtrise |
-| **E5 SPS** | Formaliser une Situation Professionnelle Significative | Acquisition |
-
-> 📌 **S9 joue un rôle stratégique dans le parcours.** Elle clôture véritablement le Bloc 1 sur deux dimensions complémentaires : (1) le **catalogue de services** est l'aboutissement naturel de tout ce qui a été vu — on ne fait plus que gérer des incidents au cas par cas, on formalise une offre IT cohérente et communicable ; (2) la **première SPS guidée** lance concrètement le dossier E5, avant que les sujets du Bloc 2 ne deviennent trop absorbants pour y consacrer du temps.
+| **Code** | **Libellé** | **Niveau** |
+|----------|-------------|------------|
+| **B2.2** | Installer, tester et déployer une solution d'infrastructure – DNS, topologie commutée | **Application** |
+| **B2.3** | Exploiter, dépanner et superviser – résolution DNS, diagnostic STP | Application |
+| **B2.1** | Administrer les services d'un système d'exploitation serveur – Bind9 | Application |
 
 ---
 
 ## Objectifs Pédagogiques
 
-**Catalogue de services :**
-- ✅ Définir ce qu'est un **catalogue de services IT** et sa place dans ITIL 4
-- ✅ Distinguer le **catalogue de services métier** (vue utilisateur) du **catalogue technique** (vue DSI)
-- ✅ Rédiger une **fiche de service** complète (nom, description métier, périmètre, SLA, contact)
-- ✅ Construire le **catalogue de services de SimIO SARL** à partir des séances S2-S8
-- ✅ Expliquer comment le catalogue de services alimente le portail GLPI
+**À l'issue de cette séance, l'apprenant sera capable de :**
 
-**Portfolio E5 — Première SPS :**
-- ✅ Expliquer la structure officielle d'une **SPS (Situation Professionnelle Significative)**
-- ✅ Rédiger la **SPS #1** à partir d'un travail réalisé en S2-S8
-- ✅ Identifier les **preuves** (captures, tickets, fiches) à verser au portfolio
-- ✅ Vérifier la conformité de la SPS avec la **grille d'évaluation E5**
+1. **Expliquer** le rôle du DNS et le processus de résolution de noms (récursif, itératif)
+2. **Distinguer** zone directe (nom → IP) et zone inverse (IP → nom)
+3. **Lire et créer** des enregistrements DNS (A, PTR, CNAME, NS, SOA)
+4. **Installer et configurer** le serveur DNS Bind9 sous Debian
+5. **Tester** la résolution DNS avec `dig`, `nslookup`, `host`
+6. **Expliquer** pourquoi les boucles réseau sont dangereuses et comment STP les évite
+7. **Décrire** l'élection du root bridge (priorité, MAC) et les états STP des ports
+8. **Observer** le comportement STP sur 3 switches dans Packet Tracer

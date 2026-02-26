@@ -4,27 +4,24 @@
 
 ## Informations Générales
 
-| **Champ** | **Détail** |
-|-----------|-----------|
-| **Semaine** | S7 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
-| **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — septième semaine |
-| **Modalité** | Présentiel — salle TP |
-| **Prérequis** | S3 (ITIL, SLA notion), S6 (GLPI opérationnel) |
+| **Élément** | **Détails** |
+|-------------|-------------|
+| **Semaine** | S7 - Année 1 |
+| **Bloc** | Bloc 2 - Infrastructure, Systèmes & Réseaux |
+| **Durée** | 4 heures (1 séance) |
+| **Phase** | Phase 2 - Services réseau, administration & RGPD |
+| **Public** | Apprentis BTS SIO SISR (hétérogène : Bac Pro CIEL + débutants) |
+| **Prérequis** | S6 (commutation, table MAC, CLI Cisco de base, Linux fondamentaux) |
 
 ---
 
 ## Compétences RNCP Visées
 
-| **Code** | **Intitulé de la compétence** | **Niveau visé** |
-|----------|-------------------------------|-----------------|
-| **B1.5** | Mettre à disposition des utilisateurs un service informatique | Acquisition |
-| **B1.2** | Exploiter des référentiels, normes et standards (ITIL) | Maîtrise |
-| **B1.6** | Assurer le support des utilisateurs | Maîtrise |
-| **B3.3** | Participer à la gestion et au suivi d'un projet | Acquisition |
-
-> 📌 **S7 clôture le Bloc 1** avant le virage technique du Bloc 2. Elle ancre deux compétences transversales qui traverseront tout le programme : savoir **mettre à disposition un service** de façon structurée (pas juste "l'installer"), et savoir mesurer et garantir la **qualité de ce service** via le SLA et les indicateurs de disponibilité. Ces deux compétences sont systématiquement évaluées en E5.
+| **Code Compétence** | **Libellé** | **Niveau** |
+|---------------------|-------------|------------|
+| **B2.2** | Installer, tester et déployer - Configurer VLANs et trunk sur switch Cisco | **Application** |
+| **B2.3** | Exploiter, dépanner - Vérifier segmentation réseau, diagnostiquer VLAN | Application |
+| **B2.1** | Administrer un système d'exploitation - Gestion utilisateurs/groupes/permissions Linux | Application |
 
 ---
 
@@ -32,17 +29,13 @@
 
 À l'issue de cette séance, l'apprenant sera capable de :
 
-**Mise à disposition d'un service :**
-- ✅ Décrire les **5 étapes** de mise à disposition d'un service IT (analyse → installation → documentation → communication → validation)
-- ✅ Distinguer "installer un service" de "mettre à disposition" un service
-- ✅ Produire un **document de mise en service** (PV de mise en production)
-- ✅ Rédiger une **communication utilisateur** pour l'annonce d'un nouveau service
-- ✅ Définir les **critères d'acceptation** d'un service avant sa mise en production
-
-**Qualité de service :**
-- ✅ Calculer le **taux de disponibilité** d'un service (uptime/downtime)
-- ✅ Convertir un pourcentage de disponibilité en **temps d'indisponibilité annuel**
-- ✅ Distinguer **disponibilité planifiée** et **indisponibilité non planifiée**
-- ✅ Identifier les composantes d'un **SLA complet**
-- ✅ Expliquer les notions de **RTO** et **RPO** dans le contexte de la continuité de service
+1. **Expliquer** le concept de VLAN et l'intérêt de la segmentation logique
+2. **Différencier** un port Access d'un port Trunk
+3. **Expliquer** le fonctionnement du marquage 802.1Q (tag, VLAN natif)
+4. **Créer** des VLANs sur un switch Cisco et leur attribuer un nom
+5. **Affecter** des ports en mode Access à un VLAN
+6. **Configurer** un trunk entre deux switches
+7. **Vérifier** la configuration avec les commandes `show vlan` et `show interfaces trunk`
+8. **Gérer** les utilisateurs et groupes sous Linux (useradd, groupadd, usermod)
+9. **Lire et modifier** les permissions Linux (rwx, chmod, chown)
 

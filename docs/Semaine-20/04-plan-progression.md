@@ -3,185 +3,70 @@ author: YLP
 title: 🔭 PLAN DE PROGRESSION ANNÉE 2
 ---
 
-# 🔭 PLAN DE PROGRESSION ANNÉE 2
+# 🔭 PERSPECTIVES ANNÉE 2 — PRÉSENTATION AUX APPRENANTS
 
-*Fiche individuelle à compléter*
+## Ce Qui Attend les Apprenants en A2
+
+### Bloc 3 — Cybersécurité (Semestres 3 et 4)
+
+| **Thème** | **Ce que vous allez maîtriser** |
+|---|---|
+| Pare-feu et filtrage | pfSense, iptables, règles ACL avancées |
+| PKI et certificats | Créer sa propre CA, déployer HTTPS sur votre infra |
+| Pentest et vulnérabilités | Kali Linux, Nmap, Metasploit (dans un cadre légal) |
+| SIEM et supervision | Wazuh, Elasticsearch, alertes de sécurité |
+| Active Directory avancé | Tiering model, délégation, Kerberos, attaques AD |
+| Conformité | RGPD, ISO 27001, PCI-DSS |
+
+### ⭐ Projet 2 — Infrastructure Haute Disponibilité
+
+Le Projet 2 (A2) reprend exactement la même structure que le Projet 1 SimIO, mais avec des exigences supplémentaires :
+- **Haute disponibilité** : DC secondaire, failover, clustering
+- **Sécurité renforcée** : pare-feu entre les VLANs, chiffrement des échanges
+- **Supervision** : monitoring des services avec alertes
+- **Conformité** : politique de sécurité documentée, plan de reprise d'activité
+
+### Épreuves à Préparer dès Maintenant
+
+| **Épreuve** | **Quand** | **Ce qu'elle évalue** |
+|---|---|---|
+| **E4** — Conception et maintenance de solutions | Session 2 (fin A2) | Bloc 1 + Bloc 3 |
+| **E5** — Support et mise à disposition | Session 2 | **Bloc 2 (ce que vous venez de faire)** |
+| **E6** — Cybersécurité des services informatiques | Session 2 | Bloc 3 |
+
+> 📌 **L'E5 porte sur le Bloc 2 — ce que vous avez fait en S11-S20.** Votre dossier Projet 1 SimIO est DÉJÀ une SPS complète. Continuez à l'enrichir avec vos missions en entreprise. Un dossier E5 idéal contient 3 à 5 SPS couvrant différentes compétences du Bloc 2.
+
+### Conseils pour Construire un Dossier E5 Solide en A2
+
+1. **Documenter chaque mission en entreprise** qui implique une compétence Bloc 2 — même courte, même partielle
+2. **Conserver toutes les captures** prises pendant les TP (les votre serveur LAMP, votre config DHCP...) — elles constituent des preuves
+3. **Rédiger les SPS en temps réel**, pas deux semaines avant l'examen — le contexte et les détails s'oublient
+4. **Varier les SPS** : une SPS réseau, une SPS système, une SPS sécurité, une SPS scripting — ne pas avoir 4 SPS "installation Windows Server"
+5. **Demander à votre maître d'apprentissage** de valider les SPS qui concernent des missions en entreprise (signature = preuve d'authenticité)
 
 ---
 
+## Le Mot de Fin de Bloc 2
+
 ```
-═══════════════════════════════════════════════════════════════
-                    PLAN DE PROGRESSION ANNÉE 2
-═══════════════════════════════════════════════════════════════
-
-NOM : ____________________  DATE : ___________________________
-
-┌─────────────────────────────────────────────────────────────┐
-│ 1. BILAN ANNÉE 1                                            │
-└─────────────────────────────────────────────────────────────┘
-
-MES RÉUSSITES EN ANNÉE 1 (3 éléments)
-───────────────────────────────────────────────────────────────
-1. _______________________________________________________________
-2. _______________________________________________________________
-3. _______________________________________________________________
-
-MES DIFFICULTÉS EN ANNÉE 1 (3 éléments)
-───────────────────────────────────────────────────────────────
-1. _______________________________________________________________
-2. _______________________________________________________________
-3. _______________________________________________________________
-
-NOTE EXAMEN BLANC E4 : _____ / 20
-Commentaire : ____________________________________________________
-
-
-┌─────────────────────────────────────────────────────────────┐
-│ 2. COMPÉTENCES À CONSOLIDER EN ANNÉE 2                     │
-└─────────────────────────────────────────────────────────────┘
-
-COMPÉTENCES TECHNIQUES (BLOC 1)
-───────────────────────────────────────────────────────────────
-Compétence 1 : ___________________________________________________
-→ Action concrète : ______________________________________________
-
-Compétence 2 : ___________________________________________________
-→ Action concrète : ______________________________________________
-
-COMPÉTENCES TRANSVERSALES
-───────────────────────────────────────────────────────────────
-☐ Communication orale → ________________________________________
-☐ Gestion du stress → __________________________________________
-☐ Organisation / Rigueur → _____________________________________
-☐ Autonomie → ___________________________________________________
-
-
-┌─────────────────────────────────────────────────────────────┐
-│ 3. OBJECTIFS ANNÉE 2                                        │
-└─────────────────────────────────────────────────────────────┘
-
-OBJECTIF 1 — PORTFOLIO
-───────────────────────────────────────────────────────────────
-Avoir ____ situations formalisées de qualité professionnelle
-Échéance : _______________________________________________________
-
-OBJECTIF 2 — CERTIFICATIONS
-───────────────────────────────────────────────────────────────
-☐ CCNA 2 (Commutation et routage avancé)
-☐ Stormshield CSNA (Sécurité réseau)
-☐ Autre : ________________________________________________________
-
-OBJECTIF 3 — COMPÉTENCES TECHNIQUES
-───────────────────────────────────────────────────────────────
-Maîtriser : ______________________________________________________
-Échéance : _______________________________________________________
-
-OBJECTIF 4 — ÉPREUVE E4
-───────────────────────────────────────────────────────────────
-Note cible examen blanc 2 (S18-S19 A2) : _____ / 20
-Note cible épreuve finale : _____ / 20
-
-
-┌─────────────────────────────────────────────────────────────┐
-│ 4. POSITIONNEMENT EN ENTREPRISE                             │
-└─────────────────────────────────────────────────────────────┘
-
-MISSIONS SOUHAITÉES EN ALTERNANCE (Année 2)
-───────────────────────────────────────────────────────────────
-1. _______________________________________________________________
-2. _______________________________________________________________
-3. _______________________________________________________________
-
-DEMANDES À FORMULER AU TUTEUR
-───────────────────────────────────────────────────────────────
-☐ Travailler sur des projets variés (diversifier compétences)
-☐ Obtenir plus d'autonomie sur les missions
-☐ Participer à des projets structurants (pour portfolio)
-☐ Être impliqué dans la documentation technique
-☐ Autre : ________________________________________________________
-
-
-┌─────────────────────────────────────────────────────────────┐
-│ 5. PLAN D'ACTION ÉTÉ (entre A1 et A2)                      │
-└─────────────────────────────────────────────────────────────┘
-
-☐ Finaliser les situations manquantes du portfolio
-☐ Réviser les points faibles identifiés à l'examen blanc
-☐ Préparer les certifications (CCNA, CSNA...)
-☐ Effectuer une veille technologique active
-☐ Pratiquer en autonomie (homelab, VMs...)
-☐ Autre : ________________________________________________________
-
-═══════════════════════════════════════════════════════════════
-
-ENGAGEMENT
-───────────────────────────────────────────────────────────────
-Je m'engage à mettre en œuvre ce plan de progression durant
-l'Année 2 pour atteindre mes objectifs et réussir l'épreuve E4.
-
-Date : _______________  Signature : ___________________________
-
-═══════════════════════════════════════════════════════════════
+╔═════════════════════════════════════════════════════════════════════╗
+║                                                                     ║
+║   Ce que vous avez construit pendant ce Bloc 2 :                   ║
+║                                                                     ║
+║   ✅ Un réseau segmenté par VLANs avec routage inter-VLAN           ║
+║   ✅ Un domaine Active Directory complet avec GPO et sécurité       ║
+║   ✅ Un serveur LAMP pleinement fonctionnel                         ║
+║   ✅ Des scripts Bash et PowerShell d'administration                ║
+║   ✅ Un serveur FTP/SFTP sécurisé avec chroot                       ║
+║   ✅ Une infrastructure de sauvegarde automatisée                   ║
+║   ✅ Un DAT professionnel documentant tout cela                     ║
+║   ✅ Un dossier Projet 1 qui peut déjà servir à l'E5                ║
+║                                                                     ║
+║   Ce n'est pas un exercice de cours.                                ║
+║   C'est ce qu'un technicien SI junior fait en entreprise.           ║
+║   Vous l'avez fait.                                                 ║
+║                                                                     ║
+╚═════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
-
----
-
-## Félicitations !
-
-Vous avez terminé votre **première année de BTS SIO SISR** !
-
-**Ce que vous avez accompli en Année 1 (BLOC 1) :**
-
-✅ **20 semaines de formation** (S1-S20)
-✅ **6 compétences du BLOC 1** travaillées (B1.1 à B1.6)
-✅ **Projet 1** réalisé en équipe (infrastructure SimIO + GLPI/OCS)
-✅ **Portfolio E4** avec 2-3 situations professionnelles formalisées
-✅ **Veille technologique** active (wiki, flux RSS, alertes)
-✅ **Documentation technique** (procédures, guides utilisateurs)
-✅ **Examen blanc E4** passé en conditions réelles
-
-**Compétences acquises :**
-- Installation et configuration d'outils de gestion de parc (GLPI, OCS)
-- Gestion des incidents selon ITIL
-- Mise à disposition de services informatiques
-- Accompagnement et formation des utilisateurs
-- Documentation technique et utilisateur
-- Travail en équipe et gestion de projet
-
----
-
-## Prochaines Étapes
-
-**ÉTÉ (Juillet-Août) :**
-- Finaliser votre portfolio si incomplet
-- Profiter de vos missions en entreprise pour enrichir vos situations
-- Réviser les points faibles identifiés à l'examen blanc
-- Se reposer et revenir en forme !
-
-**ANNÉE 2 (Septembre → Juin) :**
-- Approfondissement des compétences BLOC 1
-- Nouvelles compétences avancées
-- Projet 2 (S11-S13 A2) : Infrastructure multi-sites sécurisée
-- Préparation certifications (CCNA 2, Stormshield CSNA)
-- Préparation intensive E4/E5/E6
-- Examens blancs 2 et 3
-- **Épreuves finales (Mai-Juin)**
-
----
-
-## Bilan
-
-Vous avez progressé énormément depuis septembre. Certains sont arrivés avec peu de bases techniques, d'autres avec déjà de bonnes connaissances. **Tous ont progressé.**
-
-L'examen blanc E4 a révélé vos points forts et vos axes d'amélioration. C'est **normal** de ne pas être encore au niveau de l'épreuve finale — c'est l'objectif de l'Année 2 !
-
-**Conseils pour l'Année 2 :**
-1. **Travaillez votre portfolio régulièrement** (ne pas attendre la dernière minute)
-2. **Documentez toutes vos missions** en entreprise (prenez des notes, des captures)
-3. **Pratiquez l'oral** (présenter devant un miroir, un proche, des camarades)
-4. **Restez curieux** (veille techno, nouveautés, certifications)
-5. **Demandez de l'aide** si vous êtes en difficulté (enseignants, tuteurs, camarades)
-
-**Nous croyons en vous. Bonnes vacances et à la rentrée !** 🎓

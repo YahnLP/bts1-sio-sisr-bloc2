@@ -3,29 +3,11 @@
 | **Champ** | **Détail** |
 |-----------|-----------|
 | **Semaine** | S19 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
+| **Bloc** | Bloc 2 — Administrer les composants d'une infrastructure |
 | **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — dix-neuvième semaine |
-| **Modalité** | Présentiel — salle cours + oral individuel |
-| **Prérequis** | Portfolio E4 avec 3 situations (S15, S17-S18) |
-
----
-
-## 🎯 Objectifs
-
-**Entraînement E4 :**
-- ✅ Maîtriser la **structure** d'une présentation E4 (contexte → mission → réalisation → résultats)
-- ✅ Gérer le **temps** de présentation (20 min présentation + 20 min questions)
-- ✅ Répondre aux **questions du jury** de manière pertinente
-- ✅ Utiliser un **support visuel** efficace (slides, schémas, démo)
-- ✅ Gérer le **stress** de l'oral
-- ✅ Identifier ses **points forts** et **axes d'amélioration**
-
-**Bilan compétences BLOC 1 :**
-- ✅ Auto-évaluer son niveau sur **chaque compétence** du BLOC 1
-- ✅ Identifier les compétences **maîtrisées** et celles à **consolider**
-- ✅ Préparer un **plan de progression** pour l'Année 2
-- ✅ Relier les compétences aux **situations professionnelles** vécues
+| **Public** | Apprentis BTS SIO SISR (Bac Pro CIEL + autres bacs) |
+| **Modalité** | Présentiel — Salle informatique (accès Netacad ou simulateur d'examen) |
+| **Prérequis** | Tout le Bloc 2 S11→S18, révisions CCNA S18 |
 
 ---
 
@@ -33,11 +15,33 @@
 
 | **Code** | **Intitulé de la compétence** | **Niveau visé** |
 |----------|-------------------------------|-----------------|
-| **Épreuve E4** | Support et mise à disposition de services informatiques | Préparation intensive |
-| **B1.1 à B1.6** | Ensemble des compétences du BLOC 1 | Bilan et consolidation |
-| **Compétences transversales** | Communication orale, argumentation, gestion du stress | Entraînement |
+| **B2.2** | Installer et configurer des éléments d'infrastructure | Maîtrise |
+| **B3.1** | Mettre en place et exploiter des solutions de supervision | Application |
+| **B1.2** | Recenser et identifier les ressources et les besoins | Maîtrise |
+| **B3.3** | Participer à la gestion et au suivi d'un projet | Maîtrise |
 
-> 📌 **S19 BLOC 1 est une séance de préparation intensive à l'épreuve E4.** Chaque apprenant passe un oral blanc individuel de 15 minutes, reçoit un feedback détaillé, puis effectue un bilan complet de ses compétences BLOC 1 acquises durant S1-S18. Cette séance marque la **fin de la Phase 4** avant l'examen blanc final en S20.
+> 📌 **S19 est la séance de certification.** L'objectif principal est la **validation CCNA 1** (ou le test blanc équivalent). Les apports théoriques sur les protocoles applicatifs constituent à la fois une révision des acquis Bloc 2 et une préparation à la présentation de l'infrastructure en épreuve E4/E5.
 
 ---
+## 🎯 Objectifs
+
+À l'issue de cette séance, l'apprenant sera capable de :
+
+**Certification CCNA :**
+- ✅ Passer l'examen CCNA 1 (ou le test blanc institutionnel équivalent) dans les conditions réelles
+- ✅ Analyser ses résultats par domaine pour identifier les acquis et les axes de progrès
+
+**Présentation des Réseaux / Communication Professionnelle :**
+- ✅ Présenter oralement une infrastructure réseau en utilisant le vocabulaire technique approprié
+- ✅ Structurer une présentation technique (contexte → architecture → choix → validation → perspectives)
+- ✅ Répondre aux questions d'un jury sur les choix d'architecture du Projet 1
+
+**Protocoles Applicatifs :**
+- ✅ Décrire le fonctionnement de **HTTP/HTTPS** (requêtes, réponses, codes de statut, TLS)
+- ✅ Expliquer les protocoles de **messagerie** : SMTP (envoi), IMAP et POP3 (réception)
+- ✅ Comprendre le fonctionnement de **DNS** en profondeur (résolution récursive vs itérative)
+- ✅ Placer chaque protocole dans le modèle OSI et associer ses ports TCP/UDP
+
+---
+
 

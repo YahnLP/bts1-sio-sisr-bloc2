@@ -3,44 +3,37 @@
 
 ## Informations Générales
 
-| **Champ** | **Détail** |
-|-----------|-----------|
-| **Semaine** | S11 — Année 1 |
-| **Bloc** | Bloc 2 — Administration des systèmes et des réseaux |
-| **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — onzième semaine |
-| **Modalité** | Présentiel — salle de cours/TP |
-| **Prérequis** | S2 (inventaire matériel), S5 (OCS Inventory), S6 (GLPI) |
+| **Élément** | **Détails** |
+|-------------|-------------|
+| **Semaine** | S11 - Année 1 |
+| **Bloc** | Bloc 2 - Infrastructure, Systèmes & Réseaux |
+| **Durée** | 4 heures (1 séance) |
+| **Phase** | Phase 3 - Services d'annuaire, GPO et sécurité |
+| **Public** | Apprentis BTS SIO SISR (hétérogène) |
+| **Prérequis** | S3 (comptes utilisateurs locaux, permissions NTFS) – S5 (IP, DNS) – S10 (infrastructure complète bilan) |
 
 ---
 
 ## Compétences RNCP Visées
 
-| **Code** | **Intitulé de la compétence** | **Niveau visé** |
-|----------|-------------------------------|-----------------|
-| **B1.1** | Recenser et identifier les ressources numériques | Maîtrise |
-| **B1.4** | Mettre en place et exploiter des outils de gestion de parc | Maîtrise |
-| **B1.2** | Exploiter des référentiels, normes et standards | Maîtrise |
-| **B2.1** | Installer et configurer un service réseau pour une TPE ou une PME | Acquisition |
-| **B3.3** | Participer à la gestion et au suivi d'un projet (documentation) | Maîtrise |
-
-> 📌 **Note pédagogique :** S11 constitue une **semaine de transition** entre le Bloc 1 (support) et le Bloc 2 technique (infrastructure). Elle approfondit un angle crucial du Bloc 1 (la gestion des actifs logiciels et licences) tout en introduisant une compétence transversale du Bloc 2 (la rédaction de procédures techniques). Cette double casquette justifie son positionnement en S11 plutôt qu'en fin de Bloc 1.
+| **Code** | **Libellé** | **Niveau** |
+|----------|-------------|------------|
+| **B2.1** | Administrer les services d'un système d'exploitation serveur — installer Windows Server, promouvoir contrôleur de domaine | **Application** |
+| **B2.2** | Installer, tester et déployer une solution d'infrastructure — domaine AD, structure OU | Application |
+| **B2.3** | Exploiter, dépanner, superviser — concepts annuaire, lecture organigramme AD | Compréhension |
 
 ---
 
 ## Objectifs Pédagogiques
 
-**Gestion des actifs logiciels :**
-- ✅ Distinguer les **7 types de licences** logicielles (OEM, Volume, SaaS, Open Source, Freeware, Shareware, Retail)
-- ✅ Expliquer les **risques juridiques** et financiers du non-respect des licences
-- ✅ Réaliser un **audit de conformité** logicielle avec GLPI/OCS
-- ✅ Calculer le **coût total de possession** (TCO) d'un logiciel
-- ✅ Gérer les **dates d'expiration** et renouvellements de licences
-- ✅ Connaître les organismes de contrôle (BSA, SACEM, éditeurs)
+**À l'issue de cette séance, l'apprenant sera capable de :**
 
-**Documentation technique :**
-- ✅ Rédiger une **procédure d'installation** structurée et exploitable
-- ✅ Utiliser un **modèle standardisé** de documentation technique
-- ✅ Distinguer une **procédure** (comment faire) d'un **guide utilisateur** (comment utiliser)
-- ✅ Intégrer les **captures d'écran** de façon professionnelle
-- ✅ Versionner et maintenir à jour la documentation technique
+1. **Identifier** les éditions de Windows Server et choisir la version adaptée à un contexte
+2. **Installer** Windows Server 2019/2022 dans une machine virtuelle
+3. **Configurer** les paramètres de base post-installation (IP fixe, nom d'hôte, MAJ)
+4. **Expliquer** la structure hiérarchique Active Directory (forêt, domaine, arbre, OU)
+5. **Distinguer** les types d'objets AD (utilisateurs, groupes, ordinateurs, GPO)
+6. **Distinguer** les types de groupes AD (Sécurité/Distribution, Globaux/Domaine Local/Universels)
+7. **Créer** un domaine Active Directory depuis le gestionnaire de serveur
+8. **Concevoir** une structure d'OU à partir d'un organigramme d'entreprise
+9. **Créer** des OU, des utilisateurs et des groupes dans Active Directory

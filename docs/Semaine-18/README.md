@@ -3,33 +3,11 @@
 | **Champ** | **Détail** |
 |-----------|-----------|
 | **Semaine** | S18 — Année 1 |
-| **Bloc** | Bloc 1 — Support et mise à disposition de services informatiques |
+| **Bloc** | Bloc 2 — Administrer les composants d'une infrastructure |
 | **Durée totale** | 4 heures |
-| **Public** | Apprentis BTS SIO SISR — dix-huitième semaine |
-| **Modalité** | Présentiel — salle TP + présentation |
-| **Prérequis** | S17 BLOC 1 (GLPI/OCS installés, catalogue services créé) |
-
----
-
-## 🎯 Objectifs
-
-**Documentation utilisateur :**
-- ✅ Distinguer **documentation technique** vs **documentation utilisateur**
-- ✅ Identifier les **besoins des utilisateurs** (questions fréquentes, points de blocage)
-- ✅ Rédiger un **guide utilisateur** structuré et accessible
-- ✅ Créer des **tutoriels pas-à-pas** avec captures d'écran annotées
-- ✅ Produire une **FAQ** (Foire Aux Questions)
-
-**Portfolio E4 #3 :**
-- ✅ Formaliser le **Projet 1** comme situation professionnelle
-- ✅ Structurer la fiche selon la **méthodologie E4** (contexte, mission, réalisation, résultats)
-- ✅ Sélectionner les **preuves pertinentes** (schémas, captures, wiki)
-- ✅ Identifier les **compétences mobilisées** du BLOC 1
-
-**Présentation orale :**
-- ✅ Présenter le projet devant un public (enseignant + classe)
-- ✅ Répondre aux questions techniques
-- ✅ Gérer le temps (15 minutes présentation + 5 minutes questions)
+| **Public** | Apprentis BTS SIO SISR (Bac Pro CIEL + autres bacs) |
+| **Modalité** | Présentiel — Salle de TP + salle de cours (alternance selon les phases) |
+| **Prérequis** | S17 complété : infrastructure SimIO SARL partiellement déployée |
 
 ---
 
@@ -37,11 +15,31 @@
 
 | **Code** | **Intitulé de la compétence** | **Niveau visé** |
 |----------|-------------------------------|-----------------|
-| **B1.5** | Mettre à disposition des utilisateurs un service informatique | Maîtrise |
-| **B1.6** | Accompagner les utilisateurs dans l'appropriation d'un service | Maîtrise |
-| **B3.3** | Participer à la gestion et au suivi d'un projet | Maîtrise |
-| **Épreuve E4** | Formaliser une situation professionnelle pour l'oral | Préparation |
+| **B2.1** | Analyser les besoins et concevoir une infrastructure | Maîtrise |
+| **B2.2** | Installer et configurer des éléments d'infrastructure | Maîtrise |
+| **B2.3** | Assurer la sécurité des accès aux ressources | Maîtrise |
+| **B3.1** | Mettre en place et exploiter des solutions de supervision | Application |
+| **B3.3** | Participer à la gestion et au suivi d'un projet | Maîtrise opérationnelle |
 
-> 📌 **S18 BLOC 1 clôture le PROJET 1** avec la création de la documentation utilisateur finale (guides, tutoriels) et la formalisation de cette expérience projet dans le portfolio E4. C'est aussi l'occasion d'une **restitution orale** qui préfigure l'épreuve E4.
+---
+
+## 🎯 Objectifs
+
+À l'issue de cette séance, l'apprenant sera capable de :
+
+**Finalisation Projet :**
+- ✅ Identifier et corriger les **dysfonctionnements résiduels** d'une infrastructure déployée
+- ✅ Conduire des **tests de bout en bout** structurés selon un plan de test
+- ✅ Valider la conformité de chaque service par rapport au cahier des charges
+
+**Documentation :**
+- ✅ Rédiger un **Dossier d'Architecture Technique (DAT)** professionnel
+- ✅ Distinguer les composantes d'un DAT (contexte, architecture, choix techniques, procédures)
+- ✅ Produire des schémas réseau et système exploitables par un tiers
+
+**Révisions CCNA 1 :**
+- ✅ Consolider les acquis réseau fondamentaux (modèle OSI, adressage, protocoles)
+- ✅ S'entraîner sur des **questions de type CCNA** (QCM, Packet Tracer, cas pratiques)
+- ✅ Identifier ses propres lacunes pour les combler avant la certification
 
 ---

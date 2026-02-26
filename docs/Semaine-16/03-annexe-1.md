@@ -3,62 +3,19 @@ author: YLP
 title: 📄 ANNEXE 1
 ---
 
-# 📄 ANNEXE 1 — MODÈLE STRUCTURE WIKI IT
+# 📄 ANNEXE 1 — FICHIER CSV PRÊT À L'EMPLOI
+## `nouveaux_employes.csv`
 
 ```
-WIKI TECHNIQUE IT — STRUCTURE TYPE
-═══════════════════════════════════════════════════════════════
-
-📁 Accueil
-   └─ Page d'accueil avec navigation principale
-
-📁 Serveurs
-   ├─ Accueil (tableau récapitulatif des serveurs)
-   ├─ Serveur Web
-   ├─ Serveur Base de Données
-   ├─ Serveur Fichiers
-   ├─ Serveur Active Directory
-   └─ Serveur DHCP/DNS
-
-📁 Réseau
-   ├─ Architecture Réseau (schémas, plan d'adressage)
-   ├─ Configuration Switches
-   ├─ Configuration Firewall
-   ├─ VLANs
-   └─ Routage
-
-📁 Procédures
-   ├─ Active Directory
-   │  ├─ Création utilisateur
-   │  ├─ Création groupe
-   │  └─ Gestion des GPO
-   ├─ Serveurs
-   │  ├─ Installation Apache
-   │  ├─ Installation MySQL
-   │  └─ Configuration DHCP
-   └─ Réseau
-      ├─ Configuration VLAN Cisco
-      └─ Configuration VPN
-
-📁 Incidents
-   ├─ Base d'Incidents Connus (tableau)
-   └─ Fiches incidents par catégorie
-
-📁 Inventaire
-   ├─ Serveurs (détails techniques)
-   ├─ Équipements Réseau (switches, routeurs)
-   └─ Postes Clients
-
-📁 Projets
-   ├─ Projet 1
-   │  ├─ Architecture
-   │  ├─ Planning
-   │  ├─ Documentation Technique
-   │  └─ Incidents et Résolutions
-   └─ [Futurs projets]
-
-📁 Veille Technologique
-   ├─ Nouveautés 2024
-   ├─ Articles Intéressants
-   └─ Formations Recommandées
+Prenom,Nom,Service,Login,Email,Titre
+Alice,Martin,RH,a.martin,a.martin@siosarl.local,Chargée RH
+Bob,Dupont,Informatique,b.dupont,b.dupont@siosarl.local,Technicien SI
+Claire,Durand,Direction,c.durand,c.durand@siosarl.local,Directrice
+David,Lemaire,Informatique,d.lemaire,d.lemaire@siosarl.local,Administrateur Réseau
+Emma,Bernard,RH,e.bernard,e.bernard@siosarl.local,Assistante RH
+Francois,Moreau,Comptabilite,f.moreau,f.moreau@siosarl.local,Comptable
+Genevieve,Simon,Direction,g.simon,g.simon@siosarl.local,Assistante Direction
+Hugo,Laurent,Commercial,h.laurent,h.laurent@siosarl.local,Commercial
+Isabelle,Thomas,Comptabilite,i.thomas,i.thomas@siosarl.local,Responsable Compta
+Julien,Robert,Commercial,j.robert,j.robert@siosarl.local,Commercial Senior
 ```

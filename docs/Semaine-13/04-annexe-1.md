@@ -3,90 +3,83 @@ author: YLP
 title: 📄 ANNEXE 1
 ---
 
-# 📄 ANNEXE 1 — MODÈLE RFC VIERGE
+# 📄 ANNEXE 1 — FICHE DE CONFIGURATION DHCP
+## (À compléter et à rendre — Preuve Portfolio E4/E5)
 
-*(Modèle complet fourni en section IV.A du cours)*
-
----
-
-# 📄 ANNEXE 2 — SOURCES FIABLES PAR DOMAINE
+*Nom : _________________________ Prénom : _________________________ Date : _________*
 
 ---
 
-## SYSTÈMES WINDOWS
+## 1. Informations du Serveur DHCP
 
-**Documentation officielle :**
-- https://learn.microsoft.com/windows-server
-- https://learn.microsoft.com/powershell
-
-**Blogs :**
-- https://techcommunity.microsoft.com
-- https://www.petri.com
-
-**Communautés :**
-- r/sysadmin (Reddit)
-- https://community.spiceworks.com
+| **Paramètre** | **Valeur** |
+|---|---|
+| Nom du serveur | |
+| Adresse IP du serveur | |
+| Masque de sous-réseau | |
+| Domaine | |
+| Version Windows Server | |
 
 ---
 
-## SYSTÈMES LINUX
+## 2. Configuration de l'Étendue
 
-**Documentation :**
-- https://www.kernel.org
-- https://wiki.archlinux.org
-- https://ubuntu.com/blog
-
-**Blogs :**
-- https://developers.redhat.com
-- https://www.linux.com
-
-**Communautés :**
-- r/linuxadmin
-- https://unix.stackexchange.com
+| **Paramètre** | **Valeur configurée** |
+|---|---|
+| Nom de l'étendue | |
+| Adresse IP de début | |
+| Adresse IP de fin | |
+| Masque de sous-réseau | |
+| Durée du bail | |
+| Plage(s) d'exclusion | |
 
 ---
 
-## RÉSEAUX
+## 3. Options DHCP Configurées
 
-**Documentation :**
-- https://learningnetwork.cisco.com
-- https://www.juniper.net/documentation
-
-**Blogs :**
-- https://packetpushers.net
-- https://www.networkworld.com
-
-**Communautés :**
-- r/networking
-- https://community.cisco.com
+| **N° Option** | **Nom** | **Valeur configurée** |
+|---|---|---|
+| 003 | Routeur (passerelle) | |
+| 006 | Serveurs DNS | |
+| 015 | Nom de domaine DNS | |
 
 ---
 
-## SÉCURITÉ
+## 4. Réservations
 
-**Alertes officielles :**
-- https://www.cert.ssi.gouv.fr (CERT-FR)
-- https://www.ssi.gouv.fr (ANSSI)
-- https://cve.mitre.org
-
-**Blogs :**
-- https://krebsonsecurity.com
-- https://www.schneier.com
-
-**Communautés :**
-- r/netsec
-- r/cybersecurity
+| **Nom** | **Adresse MAC** | **Adresse IP réservée** | **Commentaire** |
+|---|---|---|---|
+| | | | |
+| | | | |
 
 ---
 
-## CLOUD
+## 5. Baux Actifs Observés (au moment du test)
 
-**Documentation :**
-- https://learn.microsoft.com/azure
-- https://aws.amazon.com/blogs
-- https://cloud.google.com/blog
+| **Nom d'hôte client** | **Adresse IP attribuée** | **Durée du bail** | **Adresse MAC** |
+|---|---|---|---|
+| | | | |
+| | | | |
 
-**Blogs :**
-- https://cloudacademy.com/blog
-- https://acloudguru.com/blog
+---
 
+## 6. Tests de Validation
+
+| **Test réalisé** | **Résultat** | **Capture d'écran N°** |
+|---|---|---|
+| `ipconfig /all` sur VM cliente (IP obtenue dans la plage) | ✅ / ❌ | |
+| Options obtenues (passerelle, DNS) | ✅ / ❌ | |
+| Réservation fonctionnelle (IP fixe obtenue) | ✅ / ❌ | |
+| Bail visible dans la console DHCP serveur | ✅ / ❌ | |
+
+---
+
+## 7. Schéma d'Architecture DHCP
+
+*Réaliser un schéma (à la main ou avec un outil) représentant votre architecture : serveur DHCP, VM cliente, réseau, avec les adresses IP utilisées.*
+
+*(Zone vierge pour le schéma)*
+
+---
+
+---
