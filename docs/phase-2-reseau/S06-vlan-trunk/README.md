@@ -29,6 +29,7 @@
 | [Cours – VLAN, trunk 802.1Q et utilisateurs Linux](01-cours.md) | Cours |
 | [TP – VLAN et trunk entre deux commutateurs](02-tp.md) | TP |
 | [TP – Utilisateurs, groupes et permissions sous Linux](02b-tp-linux.md) | TP (suite) |
+| [Aide-mémoire – VLAN et trunk](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

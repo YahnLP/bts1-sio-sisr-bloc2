@@ -28,6 +28,7 @@
 |---|---|
 | [Cours – PowerShell, Active Directory et IPv6](01-cours.md) | Cours |
 | [TP – PowerShell : utilisateurs AD en masse et IPv6](02-tp.md) | TP |
+| [Aide-mémoire – PowerShell et IPv6](03-aide-memoire.md) | Aide-mémoire |
 | [Annexe – Fiche de documentation](annexe-fiche-documentation.md) | Annexe |
 | [Annexe – Fichier CSV des nouveaux employés](annexe-fichier-csv.md) | Annexe |
 

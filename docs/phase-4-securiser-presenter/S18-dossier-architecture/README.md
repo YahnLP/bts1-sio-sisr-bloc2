@@ -28,6 +28,7 @@
 |---|---|
 | [Cours – Le dossier d'architecture technique (DAT)](01-cours.md) | Cours |
 | [TP – Tests de l'infrastructure et rédaction du DAT](02-tp.md) | TP |
+| [Aide-mémoire – DAT et fiche de réalisation](03-aide-memoire.md) | Aide-mémoire |
 | [Annexe – Modèle de DAT](annexe-modele-dat.md) | Annexe |
 
 ## Déroulé conseillé (4 h)

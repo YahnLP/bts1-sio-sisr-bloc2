@@ -30,6 +30,7 @@
 | [Cours – Architecture matérielle du PC](01-cours.md) | Cours |
 | [Cours – Serveur, connectique et BIOS/UEFI](01b-cours-serveur.md) | Cours (suite) |
 | [TP – Installer Windows en machine virtuelle](02-tp.md) | TP |
+| [Aide-mémoire – Matériel et serveurs](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

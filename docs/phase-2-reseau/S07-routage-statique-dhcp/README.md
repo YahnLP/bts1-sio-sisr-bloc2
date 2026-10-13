@@ -29,6 +29,7 @@
 | [Cours – Routage statique et service DHCP](01-cours.md) | Cours |
 | [TP – Relier deux réseaux par un routeur](02-tp.md) | TP |
 | [TP – Serveur DHCP sous Linux](02b-tp-dhcp-linux.md) | TP (suite) |
+| [Aide-mémoire – Routage statique et DHCP](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

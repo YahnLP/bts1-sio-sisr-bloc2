@@ -28,6 +28,7 @@
 |---|---|
 | [Cours – Commutation, CLI Cisco et commandes Linux](01-cours.md) | Cours |
 | [TP – Configurer un commutateur Cisco](02-tp.md) | TP |
+| [Aide-mémoire – Commutation et CLI Cisco](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

@@ -28,6 +28,7 @@
 |---|---|
 | [Cours – DHCP Windows Server, partages NTFS et DFS](01-cours.md) | Cours |
 | [TP – DHCP, partages et DFS sous Windows Server](02-tp.md) | TP |
+| [Aide-mémoire – DHCP Windows, NTFS et DFS](03-aide-memoire.md) | Aide-mémoire |
 | [Annexe – Fiche de configuration DHCP](annexe-fiche-dhcp.md) | Annexe |
 | [Annexe – Fiche de documentation des droits](annexe-fiche-droits.md) | Annexe |
 

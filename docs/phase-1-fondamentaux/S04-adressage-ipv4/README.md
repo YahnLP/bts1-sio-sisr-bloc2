@@ -29,6 +29,7 @@
 | [Cours – Adressage IPv4, ARP et ICMP](01-cours.md) | Cours |
 | [Cours – Plan d'adressage VLSM](01b-cours-vlsm.md) | Cours (suite) |
 | [TP – Configuration IP sous Windows et sous Linux](02-tp.md) | TP |
+| [Aide-mémoire – Adressage IPv4](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

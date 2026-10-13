@@ -31,6 +31,7 @@
 | [Cours – Transfert de fichiers : FTP et SFTP](01c-cours-ftp-sftp.md) | Cours complémentaire |
 | [Cours – Protocoles applicatifs : HTTP, messagerie, DNS](01d-cours-protocoles.md) | Cours complémentaire |
 | [TP – Un pare-feu à trois zones et un serveur web en DMZ](02-tp.md) | TP |
+| [Aide-mémoire – Pare-feu, NAT et DMZ](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

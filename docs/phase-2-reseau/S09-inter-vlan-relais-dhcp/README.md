@@ -30,6 +30,7 @@
 | [Cours – Routage inter-VLAN (routeur sur un bras)](01b-cours-inter-vlan.md) | Cours (suite) |
 | [TP intégré – Deux VLAN, routage, DHCP et DNS](02-tp.md) | TP |
 | [TP – Routage inter-VLAN avec un routeur Cisco](02b-tp-inter-vlan.md) | TP (suite) |
+| [Aide-mémoire – Inter-VLAN et relais DHCP](03-aide-memoire.md) | Aide-mémoire |
 | [Annexe – Fiche de configuration inter-VLAN](annexe-fiche-inter-vlan.md) | Annexe |
 
 ## Déroulé conseillé (4 h)

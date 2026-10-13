@@ -26,6 +26,7 @@
 | Document | Rôle |
 |---|---|
 | [Projet – Infrastructure de la PME SimIO](02-projet.md) | Projet |
+| [Aide-mémoire – Projet PME](03-aide-memoire.md) | Aide-mémoire |
 | [Annexe – Fiche de documentation technique du projet](annexe-documentation.md) | Annexe |
 
 ## Déroulé conseillé (4 h)

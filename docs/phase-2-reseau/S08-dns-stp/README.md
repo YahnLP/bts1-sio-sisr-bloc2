@@ -29,6 +29,7 @@
 | [Cours – Service DNS et Spanning Tree Protocol](01-cours.md) | Cours |
 | [TP – Serveur DNS Bind9](02-tp.md) | TP |
 | [TP – Observer le STP sur trois commutateurs](02b-tp-stp.md) | TP (suite) |
+| [Aide-mémoire – DNS et STP](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

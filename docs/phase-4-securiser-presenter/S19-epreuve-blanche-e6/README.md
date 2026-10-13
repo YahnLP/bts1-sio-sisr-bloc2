@@ -26,6 +26,8 @@
 | Document | Rôle |
 |---|---|
 | [Cours – Présenter une infrastructure à l'oral](01-cours.md) | Cours |
+| [Sujet – Épreuve blanche E6](02-sujet.md) | Sujet d'épreuve blanche |
+| [Aide-mémoire – Épreuve E6](03-aide-memoire.md) | Aide-mémoire |
 | [Annexe – Bilan de positionnement sur le bloc 2](annexe-bilan-competences.md) | Annexe |
 
 ## Déroulé conseillé (4 h)

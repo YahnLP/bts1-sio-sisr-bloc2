@@ -28,6 +28,7 @@
 |---|---|
 | [Cours – Système d'exploitation, comptes et permissions NTFS](01-cours.md) | Cours |
 | [TP – Comptes locaux et permissions NTFS](02-tp.md) | TP |
+| [Aide-mémoire – Système, comptes et NTFS](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

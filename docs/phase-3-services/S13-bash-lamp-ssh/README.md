@@ -29,6 +29,7 @@
 | [Cours – Scripts Bash : les bases](01b-cours-bash-bases.md) | Cours (suite) |
 | [TP – LAMP, SSH par clés et sauvegarde avec cron](02-tp.md) | TP |
 | [TP – Premiers scripts Bash](02b-tp-bash.md) | TP (suite) |
+| [Aide-mémoire – Bash, LAMP, SSH, cron](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

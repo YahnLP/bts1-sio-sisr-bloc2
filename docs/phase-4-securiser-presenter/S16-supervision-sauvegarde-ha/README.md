@@ -28,6 +28,7 @@
 |---|---|
 | [Cours – Supervision, sauvegarde et haute disponibilité](01-cours.md) | Cours |
 | [TP – Superviser, sauvegarder et rendre un site web tolérant aux pannes](02-tp.md) | TP |
+| [Aide-mémoire – Supervision, sauvegarde, HA](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

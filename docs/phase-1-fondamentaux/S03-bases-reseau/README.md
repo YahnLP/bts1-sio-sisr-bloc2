@@ -28,6 +28,7 @@
 |---|---|
 | [Cours – Les fondamentaux du réseau](01-cours.md) | Cours |
 | [TP – Diagnostiquer un réseau : commandes et analyse de trames](02-tp.md) | TP |
+| [Aide-mémoire – Bases du réseau](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

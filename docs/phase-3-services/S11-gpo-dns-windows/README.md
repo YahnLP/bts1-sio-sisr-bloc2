@@ -28,6 +28,7 @@
 |---|---|
 | [Cours – Stratégies de groupe (GPO) et DNS intégré à AD](01-cours.md) | Cours |
 | [TP – GPO et DNS Windows](02-tp.md) | TP |
+| [Aide-mémoire – GPO et DNS Windows](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 

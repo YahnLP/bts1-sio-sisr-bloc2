@@ -28,6 +28,7 @@
 |---|---|
 | [Cours – Windows Server et Active Directory](01-cours.md) | Cours |
 | [TP – Installer un domaine Active Directory](02-tp.md) | TP |
+| [Aide-mémoire – Active Directory](03-aide-memoire.md) | Aide-mémoire |
 
 ## Déroulé conseillé (4 h)
 
