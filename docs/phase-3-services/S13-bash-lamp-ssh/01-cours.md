@@ -1,6 +1,19 @@
 # Cours – Serveur LAMP, boucles Bash, SSH et cron
 
-*BTS SIO SISR 1re année – Bloc 2 – S13*
+*BTS SIO SISR 1re année – Bloc 2 – S13 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S05, S06 (terminal et utilisateurs Linux).
+> - **Matériel :** VM Debian (serveur) et une seconde VM (client SSH).
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Écrire** un script Bash : variables, saisie, conditions, boucles ;
+- [ ] **Installer** et **vérifier** une pile LAMP (Apache, MariaDB, PHP) et **sécuriser** MariaDB ;
+- [ ] **Configurer** SSH par clés et **désactiver** l'authentification par mot de passe ;
+- [ ] **Écrire** un script de sauvegarde et **le planifier** avec cron.
+
+---
 
 ## PARTIE I — Le Serveur LAMP
 
@@ -406,7 +419,7 @@ sudo systemctl restart ssh
 |---|---|
 | Port par défaut | TCP 3389 |
 | Système concerné | Windows (serveur et poste de travail) |
-| Activation | Panneau de configuration  Système  Bureau à distance |
+| Activation | Panneau de configuration → Système → Bureau à distance |
 | Client Linux | `remmina`, `xrdp` |
 | Client Windows | `mstsc.exe` (Remote Desktop Connection) |
 
@@ -608,7 +621,7 @@ sudo crontab -u alice -e
 
 ---
 
-## Auto-évaluation : Suis-je Prêt ?
+## ✅ Auto-évaluation : Suis-je Prêt ?
 
 - [ ] J'installe les 4 composants LAMP et je vérifie que chacun fonctionne
 - [ ] Je teste mon installation PHP avec `phpinfo()` et je supprime le fichier ensuite

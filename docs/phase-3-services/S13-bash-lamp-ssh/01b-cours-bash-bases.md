@@ -318,7 +318,7 @@ fi
 
 ---
 
-## Auto-évaluation : Suis-je Prêt ?
+## ✅ Auto-évaluation : Suis-je Prêt ?
 
 - [ ] J'explique pourquoi deux VLANs différents ne peuvent pas communiquer sans routeur
 - [ ] Je décris l'architecture router-on-a-stick avec ses composants

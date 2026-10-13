@@ -15,7 +15,7 @@
     Fa0/1   Fa0/1
 ```
 
-Trois switches reliés en **triangle** = 3 liens, donc **1 boucle**  STP doit bloquer 1 port.
+Trois switches reliés en **triangle** = 3 liens, donc **1 boucle** → STP doit bloquer 1 port.
 
 ---
 
@@ -23,9 +23,9 @@ Trois switches reliés en **triangle** = 3 liens, donc **1 boucle**  STP doit bl
 
 1. Placer **3 switches Cisco 2960** (SW1, SW2, SW3)
 2. Câbler :
-   - SW1 Fa0/1  SW2 Fa0/1 (câble droit)
-   - SW1 Fa0/2  SW3 Fa0/1 (câble droit)
-   - SW2 Fa0/2  SW3 Fa0/2 (câble droit)
+   - SW1 Fa0/1 ↔ SW2 Fa0/1 (câble droit)
+   - SW1 Fa0/2 ↔ SW3 Fa0/1 (câble droit)
+   - SW2 Fa0/2 ↔ SW3 Fa0/2 (câble droit)
 3. Attendre la convergence STP (~30-50 secondes)
 4. Observer les voyants : certains doivent être **orange** (Blocking) d'autres **vert** (Forwarding)
 
@@ -51,7 +51,7 @@ OU
 | SW2 | | 32769 | |
 | SW3 | | 32769 | |
 
-**Question :** Comment Packet Tracer a-t-il désigné le root bridge ? (priorité égale  MAC la plus basse)
+**Question :** Comment Packet Tracer a-t-il désigné le root bridge ? (priorité égale → MAC la plus basse)
 
 ---
 
@@ -102,7 +102,7 @@ PC1 → ping 192.168.1.13   ✅ Doit répondre
 
 ### Étape 5 : Observer la Reconvergence (15 min)
 
-**Simuler une panne :** Dans Packet Tracer, débrancher le câble entre SW1 et SW2 (clic sur le câble  supprimer).
+**Simuler une panne :** Dans Packet Tracer, débrancher le câble entre SW1 et SW2 (clic sur le câble → supprimer).
 
 **Observer :**
 1. Les voyants changent (orange = STP en convergence)

@@ -62,7 +62,7 @@
 | **Alimentation** | Arrêt complet du serveur | **2 blocs d'alimentation** (dual PSU) |
 | **Disques durs** | Perte de données | **RAID** (plusieurs disques avec redondance) |
 | **Cartes réseau** | Perte de connexion | **2 cartes réseau** (bonding/teaming) |
-| **Ventilateurs** | Surchauffe  arrêt | **Ventilateurs multiples** + alerte |
+| **Ventilateurs** | Surchauffe → arrêt | **Ventilateurs multiples** + alerte |
 
 ---
 
@@ -76,7 +76,7 @@
 - Ventilateurs
 - Cartes réseau (sur certains modèles haut de gamme)
 
-**Avantage :** Maintenance **sans interruption de service**  continuité d'activité préservée.
+**Avantage :** Maintenance **sans interruption de service** → continuité d'activité préservée.
 
 ---
 
@@ -285,8 +285,8 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 | **Cat 7 / Cat 8** | 40 Gb/s | 30 m | Très haut débit (rare) |
 
 **Types de câbles RJ45 :**
-- **Câble droit** (Straight-through) : PC  Switch, Switch  Routeur
-- **Câble croisé** (Crossover) : PC  PC direct (obsolète grâce à l'Auto-MDIX)
+- **Câble droit** (Straight-through) : PC ↔ Switch, Switch ↔ Routeur
+- **Câble croisé** (Crossover) : PC ↔ PC direct (obsolète grâce à l'Auto-MDIX)
 
 ⚠ **Limitation :** Distance maximale de **100 mètres**. Au-delà, il faut un équipement intermédiaire (switch) ou passer à la fibre.
 
@@ -322,8 +322,8 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 - **Orange / Aqua** : Multimode (MMF)
 
  **À retenir :** 
-- **Cuivre (RJ45)** : bon marché, 1 Gb/s, max 100m  LANs bureaux
-- **Fibre Optique** : cher, très haut débit, longues distances  Datacenters, liaisons inter-sites
+- **Cuivre (RJ45)** : bon marché, 1 Gb/s, max 100m → LANs bureaux
+- **Fibre Optique** : cher, très haut débit, longues distances → Datacenters, liaisons inter-sites
 
 ---
 
@@ -387,11 +387,11 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 
 **Si le PC démarre trop vite pour intercepter la touche :**
 
-1. Windows  **Paramètres** ()
-2. **Mise à jour et sécurité**  **Récupération**
-3. **Démarrage avancé**  **Redémarrer maintenant**
-4. **Dépannage**  **Options avancées**  **Paramètres du microprogramme UEFI**
-5. Clic sur **Redémarrer**  Le PC démarre directement dans l'UEFI
+1. Windows → **Paramètres** ()
+2. **Mise à jour et sécurité** → **Récupération**
+3. **Démarrage avancé** → **Redémarrer maintenant**
+4. **Dépannage** → **Options avancées** → **Paramètres du microprogramme UEFI**
+5. Clic sur **Redémarrer** → Le PC démarre directement dans l'UEFI
 
 ---
 
@@ -413,7 +413,7 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 
 **1. Date et Heure**
 - Impact : Windows et Linux nécessitent une date correcte pour les certificats SSL/TLS
-- Réglage : Menu **Main** ou **Advanced  System Time**
+- Réglage : Menu **Main** ou **Advanced → System Time**
 
 **2. Ordre de Boot (Boot Priority)**
 - Impact : Définit sur quel périphérique le PC cherche l'OS en premier
@@ -425,13 +425,13 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 
 **3. Virtualization Technology (Intel VT-x / AMD-V)**
 - Impact : **Obligatoire** pour utiliser des machines virtuelles (VirtualBox, VMware, Hyper-V)
-- Réglage : Menu **Advanced  CPU Configuration**
+- Réglage : Menu **Advanced → CPU Configuration**
 - ⚠ **À activer systématiquement** en BTS SIO !
 
 **4. Secure Boot**
 - Impact : Empêche le démarrage de logiciels non signés (protection contre rootkits)
 - Problème : Peut **bloquer l'installation de Linux** ou de Windows non officiels
-- Réglage : Menu **Security  Secure Boot**
+- Réglage : Menu **Security → Secure Boot**
 - Conseil : **Désactiver** si problème d'installation d'OS
 
 **5. SATA Mode (IDE / AHCI / RAID)**

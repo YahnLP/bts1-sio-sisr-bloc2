@@ -1,6 +1,20 @@
 # Cours – DHCP Windows Server, partages NTFS et DFS
 
-*BTS SIO SISR 1re année – Bloc 2 – S12*
+*BTS SIO SISR 1re année – Bloc 2 – S12 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S10, S11 ; S07 (DHCP).
+> - **Matériel :** VM Windows Server (domaine), VM cliente.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Installer** le rôle DHCP, **créer** une étendue, des options et une réservation ;
+- [ ] **Configurer** un relais DHCP pour plusieurs sous-réseaux ;
+- [ ] **Combiner** droits NTFS et droits de partage (le plus restrictif l'emporte) ;
+- [ ] **Construire** une arborescence par service avec des groupes de sécurité ;
+- [ ] **Créer** un espace de noms DFS.
+
+---
 
 ## I. Le Service DHCP : Automatiser l'attribution des adresses IP
 
@@ -48,7 +62,7 @@ CLIENT (sans IP)                              SERVEUR DHCP
 | **R**EQUEST | Client | Broadcast | "J'accepte cette offre" |
 | **A**CKNOWLEDGE | Serveur | Unicast | "C'est confirmé, voici ta configuration complète" |
 
- **Moyen mnémotechnique :** **D**iscuter  **O**btenir  **R**épondre  **A**ccuser réception
+ **Moyen mnémotechnique :** **D**iscuter → **O**btenir → **R**épondre → **A**ccuser réception
 
 ---
 
@@ -74,11 +88,11 @@ Une **étendue** est la plage d'adresses IP qu'un serveur DHCP peut distribuer s
 
 | **Paramètre de l'étendue** | **Description** | **Exemple** |
 |---------------------------|-----------------|-------------|
-| **Plage d'adresses** | Premier et dernier IP distribuables | 192.168.1.10  192.168.1.200 |
+| **Plage d'adresses** | Premier et dernier IP distribuables | 192.168.1.10 → 192.168.1.200 |
 | **Masque de sous-réseau** | Masque associé au réseau | 255.255.255.0 (/24) |
 | **Durée du bail** | Temps pendant lequel le client "loue" l'IP | 8 jours |
-| **Exclusions** | Adresses dans la plage NON distribuées | 192.168.1.10  192.168.1.20 (serveurs) |
-| **Réservations** | IP fixe liée à une adresse MAC spécifique | MAC aa:bb:cc  toujours 192.168.1.51 |
+| **Exclusions** | Adresses dans la plage NON distribuées | 192.168.1.10 → 192.168.1.20 (serveurs) |
+| **Réservations** | IP fixe liée à une adresse MAC spécifique | MAC aa:bb:cc → toujours 192.168.1.51 |
 
 ---
 
@@ -355,7 +369,7 @@ Avec DFS, les utilisateurs accèdent aux fichiers via un **espace de noms** (nam
 
 ---
 
-## Auto-évaluation : Suis-je Prêt ?
+## ✅ Auto-évaluation : Suis-je Prêt ?
 
 Après avoir terminé cette séance, je suis capable de :
 

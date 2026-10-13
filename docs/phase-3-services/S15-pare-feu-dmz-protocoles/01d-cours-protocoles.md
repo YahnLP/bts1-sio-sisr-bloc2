@@ -168,8 +168,8 @@ Pour comprendre SMTP, IMAP et POP3, il faut visualiser le **parcours complet d'u
 
 | **Usage** | **Port** | **Chiffrement** | **Qui l'utilise** |
 |---|---|---|---|
-| Client  Serveur (soumission) | **587** (STARTTLS) ou **465** (SSL) | Oui (recommandé) | Outlook, Thunderbird, apps |
-| Serveur  Serveur (relais) | **25** | Optionnel (STARTTLS) | Serveurs MTA entre eux |
+| Client → Serveur (soumission) | **587** (STARTTLS) ou **465** (SSL) | Oui (recommandé) | Outlook, Thunderbird, apps |
+| Serveur → Serveur (relais) | **25** | Optionnel (STARTTLS) | Serveurs MTA entre eux |
 
 **Dialogue SMTP (simplifié) :**
 
@@ -260,12 +260,12 @@ Le DNS (Domain Name System) transforme un **nom de domaine** lisible (`www.siosa
 
 | **Type** | **Signification** | **Exemple** | **Usage** |
 |---|---|---|---|
-| **A** | Address — IPv4 | `srv-ad01.siosarl.local  192.168.0.145` | Résolution nom  IP |
-| **AAAA** | Address IPv6 | `srv-ad01.siosarl.local  FE80::1` | Résolution nom  IPv6 |
-| **CNAME** | Canonical Name — alias | `www  srv-ad01` | Alias d'un enregistrement A |
-| **MX** | Mail Exchanger | `siosarl.local  mail.siosarl.local (10)` | Serveur de messagerie du domaine |
-| **PTR** | Pointer — résolution inverse | `192.168.0.145  srv-ad01.siosarl.local` | IP  nom (zone inverse) |
-| **NS** | Name Server | `siosarl.local  ns1.siosarl.local` | Serveur DNS faisant autorité |
+| **A** | Address — IPv4 | `srv-ad01.siosarl.local → 192.168.0.145` | Résolution nom → IP |
+| **AAAA** | Address IPv6 | `srv-ad01.siosarl.local → FE80::1` | Résolution nom → IPv6 |
+| **CNAME** | Canonical Name — alias | `www → srv-ad01` | Alias d'un enregistrement A |
+| **MX** | Mail Exchanger | `siosarl.local → mail.siosarl.local (10)` | Serveur de messagerie du domaine |
+| **PTR** | Pointer — résolution inverse | `192.168.0.145 → srv-ad01.siosarl.local` | IP → nom (zone inverse) |
+| **NS** | Name Server | `siosarl.local → ns1.siosarl.local` | Serveur DNS faisant autorité |
 | **SOA** | Start Of Authority | — | Informations sur la zone (admin, TTL...) |
 | **TXT** | Texte libre | `v=spf1 mx ~all` | SPF, DKIM, validation de domaine |
 | **SRV** | Service | `_ldap._tcp.siosarl.local` | Localisation des services AD (Kerberos, LDAP) |
@@ -305,7 +305,7 @@ Il existe deux modes de résolution DNS, selon l'acteur qui porte la charge de l
       │◄────────────────── "216.58.213.100" ────────────────│
 ```
 
-*Légende : Les deux modes de résolution DNS. Dans la résolution récursive (en haut), le client délègue entièrement la recherche au résolveur — c'est ce que fait votre navigateur quand vous tapez une URL. Dans la résolution itérative (en bas), le résolveur interroge successivement les serveurs de la hiérarchie DNS (racine  TLD  autorité) en récupérant à chaque fois une référence vers le niveau suivant, jusqu'à obtenir la réponse finale. Dans la pratique, le client utilise la récursion avec son résolveur, et ce résolveur utilise l'itération avec les serveurs d'autorité.*
+*Légende : Les deux modes de résolution DNS. Dans la résolution récursive (en haut), le client délègue entièrement la recherche au résolveur — c'est ce que fait votre navigateur quand vous tapez une URL. Dans la résolution itérative (en bas), le résolveur interroge successivement les serveurs de la hiérarchie DNS (racine → TLD → autorité) en récupérant à chaque fois une référence vers le niveau suivant, jusqu'à obtenir la réponse finale. Dans la pratique, le client utilise la récursion avec son résolveur, et ce résolveur utilise l'itération avec les serveurs d'autorité.*
 
 ---
 

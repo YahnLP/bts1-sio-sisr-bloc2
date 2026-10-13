@@ -1,6 +1,20 @@
 # Cours – Stratégies de groupe (GPO) et DNS intégré à AD
 
-*BTS SIO SISR 1re année – Bloc 2 – S11*
+*BTS SIO SISR 1re année – Bloc 2 – S11 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S10.
+> - **Matériel :** VM Windows Server (domaine S10), VM cliente.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Expliquer** le rôle des GPO et l'ordre d'application (LSDOU) ;
+- [ ] **Créer** et **lier** une GPO avec la console de gestion ;
+- [ ] **Configurer** une GPO de sécurité et une GPO d'environnement ;
+- [ ] **Forcer** et **diagnostiquer** avec `gpupdate /force` et `gpresult /r` ;
+- [ ] **Gérer** une zone DNS intégrée à AD (enregistrements A, CNAME, zone inverse).
+
+---
 
 ## FICHE DE COURS ÉLÈVE
 ### "Stratégies de Groupe (GPO) et DNS Windows AD-Intégré"
@@ -87,7 +101,7 @@ Par défaut, une GPO liée à une OU s'applique à **tous les objets** de cette 
 
 ##### Filtrage par groupe de sécurité
 
-Dans les propriétés de la GPO  onglet **Délégation** / **Sécurité** :
+Dans les propriétés de la GPO → onglet **Délégation** / **Sécurité** :
 - La GPO s'applique par défaut aux objets ayant les droits `Lire` + `Appliquer la stratégie de groupe`
 - Retirer `Appliquer` sur un groupe = les membres de ce groupe ne reçoivent pas la GPO
 - Ajouter un groupe avec `Appliquer` = filtrer la GPO uniquement sur ce groupe
@@ -137,8 +151,8 @@ GPO
 La console centrale pour gérer les GPO dans un domaine.
 
 **Accès :**
-- Gestionnaire de serveur  Outils  Gestion des stratégies de groupe
-- Ou `Win+R`  `gpmc.msc`
+- Gestionnaire de serveur → Outils → Gestion des stratégies de groupe
+- Ou `Win+R` → `gpmc.msc`
 
 **Interface GPMC :**
 ```
@@ -155,9 +169,9 @@ Gestion des stratégies de groupe
 ```
 
 **Création d'une GPO (bonne pratique) :**
-1. Clic droit sur `Objets de stratégie de groupe`  `Nouveau`  nommer la GPO
-2. Modifier la GPO (clic droit  Modifier)  Configurer les paramètres dans l'éditeur
-3. Lier la GPO à une OU (clic droit sur l'OU  `Lier un objet de stratégie de groupe existant`)
+1. Clic droit sur `Objets de stratégie de groupe` → `Nouveau` → nommer la GPO
+2. Modifier la GPO (clic droit → Modifier) → Configurer les paramètres dans l'éditeur
+3. Lier la GPO à une OU (clic droit sur l'OU → `Lier un objet de stratégie de groupe existant`)
 
 **Avantage :** La GPO est créée indépendamment du lien, et peut être liée à plusieurs OU.
 
@@ -199,7 +213,7 @@ RÉSULTATS DE LA STRATÉGIE POUR L'ORDINATEUR
 ```
 
 **Via GPMC — Modélisation :**
-GPMC  clic droit sur `Modélisation de stratégie de groupe`  simuler l'application des GPO sur un utilisateur/PC sans les appliquer réellement (idéal pour tester avant déploiement).
+GPMC → clic droit sur `Modélisation de stratégie de groupe` → simuler l'application des GPO sur un utilisateur/PC sans les appliquer réellement (idéal pour tester avant déploiement).
 
 ---
 
@@ -207,9 +221,9 @@ GPMC  clic droit sur `Modélisation de stratégie de groupe`  simuler l'applicat
 
 #### A. DNS Windows : Rappel et Nouveautés
 
-Nous avons vu le DNS avec **Bind9** sous Linux (S9). Windows Server dispose de son propre serveur DNS intégré au rôle **DNS Server**.
+Nous avons vu le DNS avec **Bind9** sous Linux (S08). Windows Server dispose de son propre serveur DNS intégré au rôle **DNS Server**.
 
-Lors de la **promotion en contrôleur de domaine** (S11), le rôle DNS est installé et configuré automatiquement pour le domaine AD (ex : `techpro.local`).
+Lors de la **promotion en contrôleur de domaine** (S10), le rôle DNS est installé et configuré automatiquement pour le domaine AD (ex : `techpro.local`).
 
 **Différence clé avec Bind9 :**
 - Bind9 : zones stockées dans des **fichiers texte** (`/etc/bind/db.techpro.local`)
@@ -259,8 +273,8 @@ Quand on crée une zone AD-intégrée, on choisit l'étendue de réplication :
 #### E. Gérer le DNS Windows : Console DNS
 
 **Accès :**
-- `Win+R`  `dnsmgmt.msc`
-- Gestionnaire de serveur  Outils  DNS
+- `Win+R` → `dnsmgmt.msc`
+- Gestionnaire de serveur → Outils → DNS
 
 **Structure de la console :**
 ```
@@ -303,7 +317,7 @@ Le DNS Windows peut accepter que les clients enregistrent automatiquement leur I
 - **Sécurisées** : Seuls les ordinateurs membres du domaine peuvent mettre à jour leur propre enregistrement (recommandé)
 - **Aucune** : Pas de mise à jour dynamique (enregistrements manuels uniquement)
 
-**Configuration :** Clic droit sur la zone  `Propriétés`  `Mises à jour dynamiques`  `Sécurisées uniquement`
+**Configuration :** Clic droit sur la zone → `Propriétés` → `Mises à jour dynamiques` → `Sécurisées uniquement`
 
 ---
 
@@ -315,7 +329,7 @@ Le DNS Windows peut accepter que les clients enregistrent automatiquement leur I
 | **GPMC** | Group Policy Management Console – console MMC de gestion des GPO |
 | **gpedit.msc** | Éditeur de stratégie de groupe locale (sans domaine) |
 | **gpmc.msc** | Console GPMC (avec domaine) |
-| **LSDOU** | Ordre d'application des GPO : Local  Site  Domaine  OU |
+| **LSDOU** | Ordre d'application des GPO : Local → Site → Domaine → OU |
 | **Héritage GPO** | Les GPO liées à une OU parent s'appliquent automatiquement aux OU enfants |
 | **Enforced** | Option sur une GPO : force son application même si une OU enfant la contredit |
 | **Block Inheritance** | Option sur une OU : empêche l'héritage des GPO parentes |

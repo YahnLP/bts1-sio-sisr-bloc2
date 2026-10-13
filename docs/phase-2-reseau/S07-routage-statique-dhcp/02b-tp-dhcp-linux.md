@@ -152,7 +152,7 @@ ip addr show eth0
 1. Configurer **2 VM sur le même réseau interne** VirtualBox (Host-Only ou Internal Network)
 2. VM Serveur : IP fixe `192.168.10.1/24` sur cette interface
 3. VM Cliente : Interface configurée en DHCP (`auto eth0` / `iface eth0 inet dhcp`)
-4. Démarrer la VM cliente  elle doit obtenir une IP dans la plage `192.168.10.100-150`
+4. Démarrer la VM cliente → elle doit obtenir une IP dans la plage `192.168.10.100-150`
 
 ---
 

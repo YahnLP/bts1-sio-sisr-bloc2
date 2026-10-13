@@ -29,8 +29,8 @@
 | Fa0/1 | | |
 | Fa0/2 | | |
 | Fa0/3 | | |
-| Gig0/1 | Trunk | Trunk  Routeur |
-| Gig0/2 | Trunk | Trunk  SW-BatB |
+| Gig0/1 | Trunk | Trunk → Routeur |
+| Gig0/2 | Trunk | Trunk → SW-BatB |
 
 ### Routeur — Sous-interfaces
 
@@ -111,7 +111,7 @@ siosarl.local
 
 | **Test** | **Commande / Méthode** | **Résultat** | **Capture** |
 |---|---|---|---|
-| Ping inter-VLAN (PC-RH  PC-Commercial) | `ping` | ✅ / ❌ | P1 |
+| Ping inter-VLAN (PC-RH → PC-Commercial) | `ping` | ✅ / ❌ | P1 |
 | Structure AD visible dans ADUC | Console ADUC | ✅ / ❌ | P2 |
 | GPO créées et liées | `gpmc.msc` | ✅ / ❌ | P3 |
 | Partages accessibles | `\\siosarl.local\data` | ✅ / ❌ | P4 |

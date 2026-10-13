@@ -1,16 +1,30 @@
 # Cours – Commutation, CLI Cisco et commandes Linux
 
-*BTS SIO SISR 1re année – Bloc 2 – S05*
+*BTS SIO SISR 1re année – Bloc 2 – S05 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S04 (adressage, ARP) ; terminal Linux de base.
+> - **Matériel :** Simulateur réseau ou Packet Tracer ; VM Debian.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Expliquer** l'apprentissage de la table MAC, le renvoi et l'inondation ;
+- [ ] **Distinguer** domaine de collision et domaine de diffusion, switch et hub ;
+- [ ] **Naviguer** dans les modes de la ligne de commande Cisco ;
+- [ ] **Configurer** un switch (nom, bannière, mots de passe, sauvegarde) et **vérifier** avec `show` ;
+- [ ] **Utiliser** les commandes Linux de gestion de fichiers.
+
+---
 
 ## I. La Commutation : Fonctionnement d'un Switch
 
-### A. Rôle du Switch (Rappel S4)
+### A. Rôle du Switch (rappel S03)
 
 **Switch (Commutateur)** = Équipement de couche **2** (Liaison de données) du modèle OSI.
 
 **Rôle :** Interconnecter des machines dans un **même réseau local (LAN)** en utilisant les **adresses MAC**.
 
-**Analogie :** Un switch est comme un **central téléphonique intelligent** d'entreprise. Il sait sur quelle ligne se trouve chaque poste (MAC  Port) et établit des connexions directes, sans déranger les autres.
+**Analogie :** Un switch est comme un **central téléphonique intelligent** d'entreprise. Il sait sur quelle ligne se trouve chaque poste (MAC → Port) et établit des connexions directes, sans déranger les autres.
 
 ---
 
@@ -57,7 +71,7 @@ Le switch traite chaque trame en **2 étapes systématiques** :
 1. Le switch reçoit une trame sur le **Port X**
 2. Il lit l'**adresse MAC Source** de la trame
 3. Il enregistre (ou met à jour) dans sa Table MAC :
-    *"MAC Source est joignable via Port X"*
+   → *"MAC Source est joignable via Port X"*
 
 #### **Étape 2 : Décision (Destination MAC)**
 
@@ -100,7 +114,7 @@ Trame reçue sur Port 3
 
 ---
 
-### D. Évolution : Hub  Switch
+### D. Évolution : Hub → Switch
 
 **Hub (Concentrateur) - Obsolète :**
 
@@ -198,7 +212,7 @@ Réseau A: [PC1]─[PC2]─[SW1]─[ROUTEUR]─[SW2]─[PC3]─[PC4]
 #### **Méthode 1 : Câble Console (accès physique - premier accès)**
 
 **Matériel :**
-- **Câble console** : RJ45  USB (ou ancien DB9/RS-232)
+- **Câble console** : RJ45 → USB (ou ancien DB9/RS-232)
 - Logiciel terminal : **PuTTY**, Tera Term, SecureCRT
 
 **Paramètres de connexion PuTTY :**
@@ -214,9 +228,9 @@ Réseau A: [PC1]─[PC2]─[SW1]─[ROUTEUR]─[SW2]─[PC3]─[PC4]
 | Contrôle de flux | Aucun |
 
 **Procédure :**
-1. Brancher câble console PC  Switch
-2. Ouvrir PuTTY  Serial  COM3  9600
-3. Appuyer sur **Entrée**  Prompt du switch apparaît
+1. Brancher câble console PC ↔ Switch
+2. Ouvrir PuTTY → Serial → COM3 → 9600
+3. Appuyer sur **Entrée** → Prompt du switch apparaît
 
 #### **Méthode 2 : Packet Tracer (simulation)**
 
@@ -472,7 +486,7 @@ end
 
  **`enable secret 5 $1$...`** : Le `5` indique chiffrement MD5. Impossible de retrouver le mot de passe à partir de ce hash.
 
- **`password 7 ...`** : Service password-encryption  chiffrement faible (type 7), déchiffrable en ligne, mais dissuasif.
+ **`password 7 ...`** : Service password-encryption → chiffrement faible (type 7), déchiffrable en ligne, mais dissuasif.
 
 ---
 
@@ -501,9 +515,9 @@ Switch# reload                   ! Redémarrer (attention : sans save = config p
 
 ---
 
-## IV. Linux : Commandes de Base (Suite S5)
+## IV. Linux : Commandes de Base (suite de S04)
 
-**Rappel S5 :** Navigation (pwd, ls, cd), création (mkdir, touch), lecture (cat, less), édition (nano), suppression (rm), copie (cp), déplacement (mv).
+**Rappel S04 :** Navigation (pwd, ls, cd), création (mkdir, touch), lecture (cat, less), édition (nano), suppression (rm), copie (cp), déplacement (mv).
 
 Cette séance approfondit et consolide ces commandes avec plus d'options et de cas pratiques.
 
@@ -648,9 +662,9 @@ _
 | `Flèches` | Déplacer le curseur |
 
 **Procédure typique :**
-1. `nano monfichier.txt`  Le fichier s'ouvre
+1. `nano monfichier.txt` → Le fichier s'ouvre
 2. Taper le contenu souhaité
-3. `Ctrl+O`  Appuyer sur `Entrée` pour confirmer le nom
+3. `Ctrl+O` → Appuyer sur `Entrée` pour confirmer le nom
 4. `Ctrl+X` pour quitter
 
 ---
@@ -686,7 +700,7 @@ Créer **entièrement depuis le terminal** la structure suivante :
 1. **Copier** `commandes.txt` dans `/tmp/sauvegarde_commandes.txt`
 2. **Déplacer** `notes.txt` dans `Semaine6/` (et le renommer `notes_s6.txt`)
 3. **Afficher** le contenu de `config_ip.txt` avec numéros de lignes
-4. **Ouvrir** `README.txt` avec nano et ajouter la ligne : "Semaine 6 - Commutation et CLI Cisco"
+4. **Ouvrir** `README.txt` avec nano et ajouter la ligne : "S05 - Commutation et CLI Cisco"
 5. **Lister** le contenu de `BTS_SIO_SISR/` avec les tailles lisibles (`-lh`)
 
 ---
@@ -725,7 +739,7 @@ Taper `ls -la /home/etudiant/` et répondre :
 | **service password-encryption** | Chiffre tous les mots de passe en clair dans la config |
 | **running-config** | Configuration active en RAM (perdue au redémarrage) |
 | **startup-config** | Configuration sauvegardée en Flash (chargée au démarrage) |
-| **copy run start** | Commande Cisco sauvegardant la config RAM  Flash |
+| **copy run start** | Commande Cisco sauvegardant la config RAM → Flash |
 | **exec-timeout** | Délai d'inactivité avant déconnexion automatique |
 | **Chemin absolu** | Chemin depuis la racine `/` (ex: `/home/etudiant/fichier.txt`) |
 | **Chemin relatif** | Chemin depuis le répertoire courant (ex: `../fichier.txt`) |

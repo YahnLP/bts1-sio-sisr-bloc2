@@ -1,6 +1,20 @@
 # Cours – PowerShell, Active Directory et IPv6
 
-*BTS SIO SISR 1re année – Bloc 2 – S14*
+*BTS SIO SISR 1re année – Bloc 2 – S14 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S10 à S12 ; S13 (notion de script).
+> - **Matériel :** VM Windows Server (domaine), VM cliente IPv6.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Utiliser** les cmdlets fondamentales et le pipeline PowerShell ;
+- [ ] **Manipuler** des objets (`Select-Object`, `Where-Object`) ;
+- [ ] **Importer** un CSV et **créer** des utilisateurs AD en masse avec `New-ADUser` ;
+- [ ] **Gérer** les erreurs avec `Try/Catch` ;
+- [ ] **Décrire** une adresse IPv6, ses types (lien local, globale) et SLAAC.
+
+---
 
 ## PARTIE I — PowerShell : Philosophie et Fondamentaux
 
@@ -153,7 +167,7 @@ Get-Process |
 
 PowerShell supporte les mêmes structures de contrôle que Bash, avec une syntaxe différente.
 
-**Tableau de correspondance Bash  PowerShell :**
+**Tableau de correspondance Bash → PowerShell :**
 
 | **Concept** | **Bash** | **PowerShell** |
 |---|---|---|
@@ -367,7 +381,7 @@ Import-Csv "C:\Scripts\employes.csv" | ForEach-Object {
 
 ### III.A. Pourquoi IPv6 ?
 
-IPv4 utilise des adresses de **32 bits**  4,3 milliards d'adresses possibles. En 2011, le pool d'adresses IPv4 publiques de l'IANA était officiellement épuisé. La solution à long terme : **IPv6**, avec des adresses de **128 bits**  340 sextillions d'adresses (3,4 × 10³⁸).
+IPv4 utilise des adresses de **32 bits** → 4,3 milliards d'adresses possibles. En 2011, le pool d'adresses IPv4 publiques de l'IANA était officiellement épuisé. La solution à long terme : **IPv6**, avec des adresses de **128 bits** → 340 sextillions d'adresses (3,4 × 10³⁸).
 
 **Comparaison IPv4 / IPv6 :**
 
@@ -576,7 +590,7 @@ Adresse link-local résultante : FE80::204:61FF:FE9D:F1
 
 ---
 
-## Auto-évaluation : Suis-je Prêt ?
+## ✅ Auto-évaluation : Suis-je Prêt ?
 
 - [ ] Je comprends la différence fondamentale entre le pipeline Bash (texte) et le pipeline PowerShell (objets)
 - [ ] Je construis une cmdlet PowerShell à partir du format Verbe-Nom

@@ -1,6 +1,20 @@
 # Cours – VLAN, trunk 802.1Q et utilisateurs Linux
 
-*BTS SIO SISR 1re année – Bloc 2 – S06*
+*BTS SIO SISR 1re année – Bloc 2 – S06 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S05 (CLI Cisco, table MAC).
+> - **Matériel :** Simulateur réseau ou Packet Tracer ; VM Debian.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Expliquer** l'intérêt des VLAN pour la segmentation et la sécurité ;
+- [ ] **Distinguer** port access et port trunk, **expliquer** le marquage 802.1Q et le VLAN natif ;
+- [ ] **Créer** des VLAN, **affecter** des ports, **configurer** un trunk ;
+- [ ] **Vérifier** avec `show vlan` et `show interfaces trunk` ;
+- [ ] **Gérer** utilisateurs, groupes et permissions sous Linux.
+
+---
 
 ## I. VLANs : Segmentation Logique du Réseau
 
@@ -11,7 +25,7 @@
 **Problème sans VLAN :**
 - Tous les ports d'un switch = 1 domaine de diffusion unique
 - Tout le monde reçoit les broadcasts
-- Pas d'isolation entre services  risque de sécurité, performances dégradées
+- Pas d'isolation entre services → risque de sécurité, performances dégradées
 
 **Solution avec VLANs :**
 ```
@@ -88,7 +102,7 @@ Trame 802.1Q taguée :
                      └─────────────────────┘
 ```
 
-**VID (VLAN Identifier) :** 12 bits  4096 VLANs possibles (0 et 4095 réservés  4094 utilisables).
+**VID (VLAN Identifier) :** 12 bits → 4096 VLANs possibles (0 et 4095 réservés → 4094 utilisables).
 
 ---
 
@@ -362,8 +376,8 @@ sudo userdel -r alice               # Supprime compte + /home/alice + mail spool
 ```
 
 ⚠ **`usermod -aG` vs `usermod -G` :**
-- `-G groupe` seul  **remplace** tous les groupes supplémentaires par `groupe`
-- `-aG groupe`  **ajoute** `groupe` aux groupes existants (append)
+- `-G groupe` seul → **remplace** tous les groupes supplémentaires par `groupe`
+- `-aG groupe` → **ajoute** `groupe` aux groupes existants (append)
 - Toujours utiliser `-aG` pour ne pas accidentellement retirer des accès !
 
 ---
@@ -645,7 +659,7 @@ Trunk : Port 24
 - [ ] Utiliser `show vlan brief` et `show interfaces trunk`
 - [ ] Créer des utilisateurs et groupes Linux (useradd, groupadd, passwd)
 - [ ] Ajouter un utilisateur à un groupe (usermod -aG)
-- [ ] Lire les permissions Linux (rwxr-xr-x  755)
+- [ ] Lire les permissions Linux (rwxr-xr-x → 755)
 - [ ] Calculer la valeur chmod numérique (r=4, w=2, x=1)
 - [ ] Modifier les permissions avec chmod (numérique et symbolique)
 - [ ] Changer le propriétaire d'un fichier avec chown

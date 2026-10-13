@@ -1,4 +1,4 @@
-# Phase 2 – Réseau d'entreprise : VLAN, routage, DHCP, DNS
+# Phase 2 – Réseau
 
 **Séances S06 à S09.** Segmenter un réseau (VLAN), le relier (routage statique, inter-VLAN) et lui faire fournir ses services de base (DHCP, DNS). La phase se termine par un TP intégré qui sert d'évaluation formative.
 

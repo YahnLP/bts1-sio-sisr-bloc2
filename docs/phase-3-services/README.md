@@ -1,4 +1,4 @@
-# Phase 3 – Services Windows et Linux
+# Phase 3 – Services
 
 **Séances S10 à S15.** Déployer l'annuaire Active Directory, les stratégies de groupe, les partages, puis administrer des serveurs Linux et Windows par scripts et à distance.
 

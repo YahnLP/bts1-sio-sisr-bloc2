@@ -10,7 +10,7 @@ Créer une organisation utilisateurs/groupes sur Debian (3 services, 6 utilisate
 
 ## Scénario
 
-> Le cabinet **TechPro SARL** (client S6) demande de préparer son serveur Linux pour 3 services :
+> Le cabinet **TechPro SARL** (client des TP de la phase 2) demande de préparer son serveur Linux pour 3 services :
 > - **Direction** (2 utilisateurs) : répertoire `/data/direction`
 > - **Commercial** (2 utilisateurs) : répertoire `/data/commercial`
 > - **Informatique** (2 utilisateurs) : répertoire `/data/informatique`

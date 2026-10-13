@@ -1,4 +1,4 @@
-# Phase 1 – Fondamentaux : matériel, système, réseau
+# Phase 1 – Fondamentaux
 
 **Séances S01 à S05.** Comprendre la machine (matériel, système d'exploitation, comptes et droits) puis poser les bases du réseau : modèle OSI, adressage IPv4, commutation Cisco.
 

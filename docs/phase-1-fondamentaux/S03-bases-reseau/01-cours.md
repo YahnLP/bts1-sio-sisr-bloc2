@@ -1,6 +1,20 @@
 # Cours – Les fondamentaux du réseau
 
-*BTS SIO SISR 1re année – Bloc 2 – S03*
+*BTS SIO SISR 1re année – Bloc 2 – S03 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S01 (connectique RJ45).
+> - **Matériel :** Postes Windows, simulateur réseau, Wireshark.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Décrire** les composants d'un réseau (carte réseau, switch, routeur) et les **types** de réseaux (PAN, LAN, MAN, WAN) ;
+- [ ] **Expliquer** le modèle OSI (7 couches) et le modèle TCP/IP (4 couches) ;
+- [ ] **Lire** une adresse IPv4 et son masque ;
+- [ ] **Utiliser** `ping`, `ipconfig`, `tracert`, `nslookup` pour diagnostiquer ;
+- [ ] **Capturer** quelques trames avec Wireshark et **repérer** les adresses MAC et IP.
+
+---
 
 ## I. Introduction : Qu'est-ce qu'un Réseau Informatique ?
 
@@ -163,13 +177,13 @@ flowchart TB
 **Rôle :** **Routage** des paquets entre différents réseaux. Adressage logique.
 
 **Adressage :** **Adresse IP** (Internet Protocol)
-- IPv4 : 4 octets  Exemple : `192.168.1.10`
-- IPv6 : 16 octets  Exemple : `2001:0db8:85a3::8a2e:0370:7334`
+- IPv4 : 4 octets → Exemple : `192.168.1.10`
+- IPv6 : 16 octets → Exemple : `2001:0db8:85a3::8a2e:0370:7334`
 
 **Protocoles :**
 - **IP** (Internet Protocol) - Transport des paquets
 - **ICMP** (Internet Control Message Protocol) - Messages d'erreur, ping
-- **ARP** (Address Resolution Protocol) - Correspondance IP  MAC
+- **ARP** (Address Resolution Protocol) - Correspondance IP ↔ MAC
 
 **Équipements :** 
 - **Routeur** - Relie plusieurs réseaux (LAN, WAN, Internet)
@@ -361,7 +375,7 @@ flowchart LR
 
 | **Type** | **Nom Complet** | **Portée** | **Exemples** |
 |----------|-----------------|------------|--------------|
-| **PAN** | Personal Area Network | 1-10 mètres | Bluetooth (casque  smartphone), USB |
+| **PAN** | Personal Area Network | 1-10 mètres | Bluetooth (casque ↔ smartphone), USB |
 | **LAN** | Local Area Network | Bâtiment, campus (100m-1km) | Réseau d'entreprise, école, domicile |
 | **MAN** | Metropolitan Area Network | Ville (10-100 km) | Réseau universitaire multi-sites, réseau municipal |
 | **WAN** | Wide Area Network | Pays, continent, monde | Internet, réseau d'entreprise multi-pays |
@@ -389,7 +403,7 @@ PC1 ──┬── PC2 ──┬── PC3 ──┬── PC4
 
 **Caractéristiques :**
 - ✅ Simple, économique (1 seul câble)
-- ❌ Si câble coupé  tout le réseau tombe
+- ❌ Si câble coupé → tout le réseau tombe
 - ❌ Collisions fréquentes (une seule machine parle à la fois)
 
 **Usage :** Obsolète (années 1980-1990)
@@ -407,10 +421,10 @@ PC2 - SWITCH - PC3
 ```
 
 **Caractéristiques :**
-- ✅ Si un câble casse  seul ce PC est déconnecté
+- ✅ Si un câble casse → seul ce PC est déconnecté
 - ✅ Facilité de dépannage (isolation des pannes)
 - ✅ Ajout/retrait de PC simple
-- ❌ Si le switch tombe  tout le réseau tombe
+- ❌ Si le switch tombe → tout le réseau tombe
 - ❌ Plus de câble nécessaire
 
 **Usage :** **Standard actuel** (99% des réseaux LAN)
@@ -428,7 +442,7 @@ PC4 ── PC3
 **Caractéristiques :**
 - Chaque PC est relié à deux autres (forme un anneau)
 - Les données circulent dans un sens
-- ❌ Si un PC tombe  tout le réseau tombe (sauf anneau double)
+- ❌ Si un PC tombe → tout le réseau tombe (sauf anneau double)
 
 **Usage :** Rare (Token Ring, FDDI - obsolète)
 
@@ -447,7 +461,7 @@ PC3 ─── PC4
 
 **Caractéristiques :**
 - ✅ Redondance maximale (plusieurs chemins possibles)
-- ✅ Si un lien tombe  routage automatique par un autre chemin
+- ✅ Si un lien tombe → routage automatique par un autre chemin
 - ❌ Coût élevé (beaucoup de câbles)
 - ❌ Complexité de configuration
 
@@ -475,7 +489,7 @@ PC3 ─── PC4
 
 **Nombre total d'adresses IPv4 :** 2^32 = **4 294 967 296 adresses** (~4,3 milliards)
 
-⚠ **Problème :** Épuisement des adresses IPv4 (8 milliards d'humains, des milliards d'objets connectés)  Solution : **IPv6** (340 sextillions d'adresses !)
+⚠ **Problème :** Épuisement des adresses IPv4 (8 milliards d'humains, des milliards d'objets connectés) → Solution : **IPv6** (340 sextillions d'adresses !)
 
 ---
 
@@ -501,9 +515,9 @@ Regarder le **premier octet** :
 - Classe E : 240-255
 
 **Exemples :**
-- `10.0.0.1`  Classe A (premier octet = 10)
-- `172.16.0.1`  Classe B (premier octet = 172)
-- `192.168.1.1`  Classe C (premier octet = 192)
+- `10.0.0.1` → Classe A (premier octet = 10)
+- `172.16.0.1` → Classe B (premier octet = 172)
+- `192.168.1.1` → Classe C (premier octet = 192)
 
  **Note :** Aujourd'hui, les classes sont obsolètes. On utilise **CIDR** (Classless Inter-Domain Routing) avec notation `/xx` (ex: `192.168.1.0/24`).
 
@@ -769,10 +783,10 @@ Passerelle par défaut. . . . . . . . . : 192.168.1.1
 **Questions :**
 1. La pile TCP/IP fonctionne-t-elle ? ✅ / ❌
 2. Quel est le problème probable ?
-   -  Problème DNS
-   -  Problème de connexion locale (câble, switch)
-   -  Problème de configuration IP
-   -  Problème Internet (FAI)
+   - ☐ Problème DNS
+   - ☐ Problème de connexion locale (câble, switch)
+   - ☐ Problème de configuration IP
+   - ☐ Problème Internet (FAI)
 3. Quelle serait votre prochaine action de diagnostic ?
 
 ---
@@ -801,7 +815,7 @@ Associer chaque élément à sa couche OSI :
    - *Piste : IP = logique (changeable, routage), MAC = physique (gravée, local)*
 
 2. **Que se passe-t-il si deux machines ont la même adresse IP sur un réseau ?**
-   - *Réponse : Conflit d'adresses IP  les deux machines ont des problèmes de connectivité*
+   - *Réponse : Conflit d'adresses IP → les deux machines ont des problèmes de connectivité*
 
 3. **Pourquoi le modèle OSI a-t-il 7 couches et pas 3 ou 10 ?**
    - *Réponse : Compromis entre modularité (séparation des fonctions) et simplicité*
@@ -810,7 +824,7 @@ Associer chaque élément à sa couche OSI :
    - *Réponse : Vitesse prioritaire. Mieux vaut perdre quelques images que tout bloquer en attendant retransmission*
 
 5. **Comment fonctionne le NAT pour permettre à 10 machines avec IP privée de partager 1 IP publique ?**
-   - *Piste : Table de correspondance IP:Port interne  IP:Port externe*
+   - *Piste : Table de correspondance IP:Port interne ↔ IP:Port externe*
 
 6. **Pourquoi y a-t-il épuisement des adresses IPv4 mais pas IPv6 ?**
    - *Réponse : IPv4 = 2^32 (~4 milliards) vs IPv6 = 2^128 (340 sextillions !)*
@@ -839,7 +853,7 @@ Associer chaque élément à sa couche OSI :
 
 ---
 
-## Auto-évaluation : Suis-je Prêt ?
+## ✅ Auto-évaluation : Suis-je Prêt ?
 
 Après avoir terminé cette séance, je suis capable de :
 

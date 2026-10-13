@@ -1,6 +1,20 @@
 # Cours – Windows Server et Active Directory
 
-*BTS SIO SISR 1re année – Bloc 2 – S10*
+*BTS SIO SISR 1re année – Bloc 2 – S10 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S02 (comptes), S04 (adressage), S08 (DNS).
+> - **Matériel :** VirtualBox, ISO Windows Server 2022, VM cliente Windows 10/11.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Choisir** une édition de Windows Server et **l'installer** en VM ;
+- [ ] **Configurer** nom, adresse IP fixe et mises à jour ;
+- [ ] **Expliquer** la structure d'Active Directory (forêt, domaine, OU) et ses objets ;
+- [ ] **Promouvoir** un contrôleur de domaine et **joindre** un poste ;
+- [ ] **Concevoir** et **créer** une structure d'OU, des utilisateurs et des groupes.
+
+---
 
 ## FICHE DE COURS ÉLÈVE
 ### "Windows Server, Active Directory et Structure d'Annuaire"
@@ -21,7 +35,7 @@ Un **serveur** est un ordinateur (physique ou virtuel) qui fournit des **service
 |-------------|------------------------|--------------|
 | Annuaire réseau | Active Directory Domain Services (AD DS) | Centralise les comptes, authentification |
 | Attribution d'IP | DHCP Server | Distribue les configurations réseau |
-| Résolution de noms | DNS Server | Traduit noms  IP |
+| Résolution de noms | DNS Server | Traduit noms ↔ IP |
 | Partage de fichiers | File and Storage Services | Partages réseau |
 | Impression réseau | Print and Document Services | Imprimantes partagées |
 | Web intranet | IIS (Internet Information Services) | Sites web internes |
@@ -59,7 +73,7 @@ Un **serveur** est un ordinateur (physique ou virtuel) qui fournit des **service
 Après installation, **avant** tout rôle, configurer :
 
 1. **Nom d'hôte** : `SRV-AD-TECHPRO` (descriptif, court, sans espaces)
-   - *Paramètres*  *Système*  *Renommer ce PC*
+   - *Paramètres* → *Système* → *Renommer ce PC*
 
 2. **Adresse IP fixe** : Obligatoire pour un serveur (AD, DNS, DHCP ne fonctionnent pas bien avec DHCP)
    - IPv4 statique, masque, passerelle, **DNS pointant sur lui-même**
@@ -78,7 +92,7 @@ L'interface centrale d'administration de Windows Server. Lancé automatiquement 
 - **Tableau de bord** : Vue d'ensemble de l'état des rôles
 - **Serveur local** : Paramètres du serveur (nom, IP, pare-feu, WER…)
 - **Tous les serveurs** : Gérer plusieurs serveurs depuis une seule console
-- **Gérer  Ajouter des rôles et fonctionnalités** : Installer les rôles
+- **Gérer → Ajouter des rôles et fonctionnalités** : Installer les rôles
 
 ---
 
@@ -229,7 +243,7 @@ Les groupes AD servent à **regrouper des utilisateurs** pour leur attribuer des
 | **Sécurité** | Attribuer des droits/permissions (NTFS, partages, GPO) |
 | **Distribution** | Listes de diffusion email (Exchange/Outlook) uniquement |
 
-** En BTS SIO SISR : presque toujours des groupes de sécurité.**
+**→ En BTS SIO SISR : presque toujours des groupes de sécurité.**
 
 ##### Étendue du Groupe
 
@@ -269,16 +283,16 @@ Une bonne convention de nommage évite les confusions et facilite l'administrati
 La console MMC principale pour administrer AD.
 
 **Accès :**
-- `Démarrer`  `Outils d'administration Windows`  `Utilisateurs et ordinateurs Active Directory`
+- `Démarrer` → `Outils d'administration Windows` → `Utilisateurs et ordinateurs Active Directory`
 - Ou `dsa.msc` dans Exécuter
 
 **Actions principales (clic droit dans ADUC) :**
 
 | **Action** | **Clic droit sur…** | **Menu** |
 |------------|---------------------|----------|
-| Créer une OU | Le domaine ou une OU | Nouveau  Unité d'organisation |
-| Créer un utilisateur | Une OU | Nouveau  Utilisateur |
-| Créer un groupe | Une OU | Nouveau  Groupe |
+| Créer une OU | Le domaine ou une OU | Nouveau → Unité d'organisation |
+| Créer un utilisateur | Une OU | Nouveau → Utilisateur |
+| Créer un groupe | Une OU | Nouveau → Groupe |
 | Déplacer un objet | L'objet | Déplacer… |
 | Réinitialiser MDP | Un utilisateur | Réinitialiser le mot de passe |
 | Désactiver un compte | Un utilisateur | Désactiver le compte |
@@ -292,12 +306,12 @@ La console MMC principale pour administrer AD.
 | **Concept entreprise** | **Objet AD** | **Commande / Console** |
 |------------------------|--------------|------------------------|
 | Entreprise | Domaine | `dcpromo` / Server Manager |
-| Service/Département | OU | ADUC  Nouveau  OU |
-| Employé | Utilisateur | ADUC  Nouveau  Utilisateur |
+| Service/Département | OU | ADUC → Nouveau → OU |
+| Employé | Utilisateur | ADUC → Nouveau → Utilisateur |
 | PC professionnel | Ordinateur | Joint au domaine depuis le PC |
-| Équipe/rôle | Groupe (global, sécurité) | ADUC  Nouveau  Groupe |
-| Règle de sécurité | GPO (Group Policy Object) | GPMC – S12 |
-| Administrateur délégué | Délégation de contrôle | ADUC  Déléguer le contrôle |
+| Équipe/rôle | Groupe (global, sécurité) | ADUC → Nouveau → Groupe |
+| Règle de sécurité | GPO (Group Policy Object) | GPMC – S11 |
+| Administrateur délégué | Délégation de contrôle | ADUC → Déléguer le contrôle |
 
 ---
 
@@ -314,7 +328,7 @@ La console MMC principale pour administrer AD.
 | **Utilisateur (User)** | Objet AD représentant le compte d'une personne |
 | **Ordinateur (Computer)** | Objet AD représentant un PC ou serveur joint au domaine |
 | **Groupe (Group)** | Objet AD regroupant des utilisateurs/ordinateurs pour leur attribuer des droits collectivement |
-| **GPO** | Group Policy Object – stratégie de groupe appliquée à une OU (S12) |
+| **GPO** | Group Policy Object – stratégie de groupe appliquée à une OU (S11) |
 | **SAMAccountName** | Identifiant court de connexion réseau (ex: j.martin) – max 20 caractères |
 | **UPN** | User Principal Name – identifiant format email (j.martin@techpro.local) |
 | **DSRM** | Directory Services Restore Mode – mode de récupération du DC, protégé par un mot de passe spécifique |
@@ -334,13 +348,13 @@ La console MMC principale pour administrer AD.
 
 Pour chaque élément, dire s'il s'agit d'un Utilisateur, Ordinateur, Groupe, OU ou Domaine :
 
-1. `GRP_Comptabilité`  ?
-2. `PC-FIN-08` (machine jointe au domaine)  ?
-3. `Service Financier` (conteneur dans AD)  ?
-4. `marie.dupont` (login réseau)  ?
-5. `finance.entreprise.local`  ?
-6. `DL_Newsletter_Clients`  ?
-7. `SRV-FILE-01` (serveur de fichiers joint)  ?
+1. `GRP_Comptabilité` → ?
+2. `PC-FIN-08` (machine jointe au domaine) → ?
+3. `Service Financier` (conteneur dans AD) → ?
+4. `marie.dupont` (login réseau) → ?
+5. `finance.entreprise.local` → ?
+6. `DL_Newsletter_Clients` → ?
+7. `SRV-FILE-01` (serveur de fichiers joint) → ?
 
 ---
 
@@ -385,7 +399,7 @@ BioMed SARL (50 personnes)
 - [ ] Nommer les 3 éditions principales de Windows Server et leur cible
 - [ ] Expliquer la différence Server Core vs Desktop Experience
 - [ ] Lister les 4 paramètres à configurer après installation (nom, IP, MAJ, région)
-- [ ] Expliquer la hiérarchie Forêt  Arbre  Domaine  OU
+- [ ] Expliquer la hiérarchie Forêt → Arbre → Domaine → OU
 - [ ] Différencier OU et Groupe (rôle de chacun)
 - [ ] Expliquer SAMAccountName vs UPN
 - [ ] Différencier groupe de sécurité vs groupe de distribution

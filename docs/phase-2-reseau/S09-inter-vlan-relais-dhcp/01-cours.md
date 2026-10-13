@@ -1,6 +1,20 @@
 # Cours – Agent relais DHCP
 
-*BTS SIO SISR 1re année – Bloc 2 – S09*
+*BTS SIO SISR 1re année – Bloc 2 – S09 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S06 à S08.
+> - **Matériel :** Simulateur réseau ou Packet Tracer ; VM Debian (DHCP, DNS).
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Expliquer** pourquoi les VLAN isolent le trafic et pourquoi il faut un routage inter-VLAN ;
+- [ ] **Configurer** un routeur sur un bras (sous-interfaces 802.1Q) ;
+- [ ] **Configurer** l'agent relais DHCP (`ip helper-address`) ;
+- [ ] **Déployer** une infrastructure complète : VLAN, routage, DHCP, DNS ;
+- [ ] **Diagnostiquer** méthodiquement une panne multi-services.
+
+---
 
 ## COURS : AGENT RELAIS DHCP
 

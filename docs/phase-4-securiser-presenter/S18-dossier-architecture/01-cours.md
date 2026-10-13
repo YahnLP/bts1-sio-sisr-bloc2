@@ -1,6 +1,20 @@
 # Cours – Le dossier d'architecture technique (DAT)
 
-*BTS SIO SISR 1re année – Bloc 2 – S18*
+*BTS SIO SISR 1re année – Bloc 2 – S18 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S17.
+> - **Matériel :** Projet de S17, modèle de DAT.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Corriger** les dysfonctionnements résiduels d'une infrastructure déployée ;
+- [ ] **Dérouler** un plan de test et **conclure** sur la conformité au cahier des charges ;
+- [ ] **Rédiger** un DAT : contexte, architecture, choix justifiés, procédures ;
+- [ ] **Produire** des schémas exploitables par un tiers ;
+- [ ] **Rédiger** une fiche descriptive de réalisation (modèle E6).
+
+---
 
 ## FICHE DE COURS — LE DOSSIER D'ARCHITECTURE TECHNIQUE (DAT)
 

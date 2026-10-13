@@ -1,6 +1,20 @@
 # Cours – Service DNS et Spanning Tree Protocol
 
-*BTS SIO SISR 1re année – Bloc 2 – S08*
+*BTS SIO SISR 1re année – Bloc 2 – S08 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S04 à S07.
+> - **Matériel :** VM Debian ; simulateur réseau ou Packet Tracer.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Expliquer** la résolution de noms (récursive, itérative) ;
+- [ ] **Distinguer** zone directe et zone inverse, **lire** et **créer** des enregistrements (A, PTR, CNAME, NS, SOA) ;
+- [ ] **Installer** et **configurer** Bind9 ; **tester** avec `dig`, `nslookup`, `host` ;
+- [ ] **Expliquer** le danger des boucles de commutation et le rôle de STP ;
+- [ ] **Décrire** l'élection du root bridge et **observer** STP sur trois switchs.
+
+---
 
 ## FICHE DE COURS ÉLÈVE
 ### "Service DNS, Bind9 et Spanning Tree Protocol"
@@ -30,8 +44,8 @@ Les machines communiquent par **adresses IP** (192.168.10.50). Les humains retie
 | **Domaine** | Espace de noms hiérarchique | `techpro.local`, `google.fr` |
 | **FQDN** | Fully Qualified Domain Name – nom complet avec le point final | `www.techpro.local.` |
 | **Zone** | Portion de l'espace de noms gérée par un serveur DNS | Zone `techpro.local` gérée par `ns1.techpro.local` |
-| **Zone directe** | Traduit noms  adresses IP | `www`  `192.168.10.50` |
-| **Zone inverse** | Traduit adresses IP  noms | `192.168.10.50`  `www.techpro.local.` |
+| **Zone directe** | Traduit noms → adresses IP | `www` → `192.168.10.50` |
+| **Zone inverse** | Traduit adresses IP → noms | `192.168.10.50` → `www.techpro.local.` |
 | **Résolveur** | Client DNS qui interroge les serveurs | Pile réseau du PC, box Internet |
 | **Serveur autoritaire** | Possède les fichiers de zone et fait référence | Le serveur Bind9 qu'on configure |
 | **Cache DNS** | Mémorisation temporaire des réponses (durée = TTL) | Cache de la box, du PC |
@@ -46,9 +60,9 @@ Chaque ligne dans un fichier de zone est un **enregistrement DNS (Resource Recor
 
 | **Type** | **Nom** | **Rôle** | **Exemple** |
 |----------|---------|----------|-------------|
-| **A** | Address | Nom  IPv4 | `www IN A 192.168.10.50` |
-| **AAAA** | Address IPv6 | Nom  IPv6 | `www IN AAAA 2001:db8::1` |
-| **PTR** | Pointer | IPv4  Nom (zone inverse) | `50 IN PTR www.techpro.local.` |
+| **A** | Address | Nom → IPv4 | `www IN A 192.168.10.50` |
+| **AAAA** | Address IPv6 | Nom → IPv6 | `www IN AAAA 2001:db8::1` |
+| **PTR** | Pointer | IPv4 → Nom (zone inverse) | `50 IN PTR www.techpro.local.` |
 | **CNAME** | Canonical Name | Alias pointant vers un autre nom | `web IN CNAME www` |
 | **NS** | Name Server | Serveur de noms autoritaire pour la zone | `@ IN NS ns1.techpro.local.` |
 | **MX** | Mail Exchanger | Serveur de messagerie | `@ IN MX 10 mail.techpro.local.` |
@@ -88,7 +102,7 @@ Le serveur renvoie la **meilleure réponse** qu'il peut donner (pas une réponse
 
 ##### Zone Directe (forward zone)
 
-Traduit des **noms  adresses IP** via des enregistrements **A**.
+Traduit des **noms → adresses IP** via des enregistrements **A**.
 
 **Fichier de zone directe `db.techpro.local` (exemple) :**
 ```
@@ -124,7 +138,7 @@ intranet IN CNAME www
 
 ##### Zone Inverse (reverse zone)
 
-Traduit des **adresses IP  noms** via des enregistrements **PTR**.
+Traduit des **adresses IP → noms** via des enregistrements **PTR**.
 
 Le nom de la zone inverse pour `192.168.10.0/24` est : `10.168.192.in-addr.arpa`
 *(les octets du réseau sont inversés, + `.in-addr.arpa`)*
@@ -149,7 +163,7 @@ $TTL 3600
 ```
 
 **Lecture :**
-- `1 IN PTR ns1.techpro.local.`  l'IP `192.168.10.1` (zone `10.168.192.in-addr.arpa`) correspond à `ns1.techpro.local.`
+- `1 IN PTR ns1.techpro.local.` → l'IP `192.168.10.1` (zone `10.168.192.in-addr.arpa`) correspond à `ns1.techpro.local.`
 - On n'écrit que le **dernier octet** (le reste est dans le nom de la zone)
 - Le nom cible d'un PTR doit **toujours** avoir un point final
 
@@ -202,7 +216,7 @@ PC-A envoie un broadcast :
 
 **Problème 2 : Instabilité de la table MAC**
 
-Un switch reçoit la même trame de plusieurs ports  la MAC Source change de port  la table MAC est mise à jour en boucle  tous les paquets sont floodés.
+Un switch reçoit la même trame de plusieurs ports → la MAC Source change de port → la table MAC est mise à jour en boucle → tous les paquets sont floodés.
 
 **Conséquence :** Sans protection, une boucle réseau rend le réseau totalement inutilisable en quelques secondes.
 
@@ -237,7 +251,7 @@ Tous les switches échangent des messages **BPDU** (Bridge Protocol Data Unit) c
 
 - **Priorité par défaut :** 32768 (sur tous les switches Cisco 2960)
 - **Le switch avec le Bridge ID le plus petit devient Root Bridge**
-- En cas d'égalité de priorité  le switch avec la **MAC la plus faible** gagne
+- En cas d'égalité de priorité → le switch avec la **MAC la plus faible** gagne
 
 **Exemple :**
 
@@ -329,9 +343,9 @@ Fa0/3           Desg  FWD  19     128.3    P2p
 
 | **Terme** | **Définition** |
 |-----------|----------------|
-| **DNS** | Domain Name System – traduit noms de domaine  adresses IP |
-| **Zone directe** | Fichier de zone résolvant noms  IP (enregistrements A) |
-| **Zone inverse** | Fichier de zone résolvant IP  noms (enregistrements PTR) |
+| **DNS** | Domain Name System – traduit noms de domaine ↔ adresses IP |
+| **Zone directe** | Fichier de zone résolvant noms → IP (enregistrements A) |
+| **Zone inverse** | Fichier de zone résolvant IP → noms (enregistrements PTR) |
 | **Enregistrement A** | Associe un nom à une adresse IPv4 |
 | **Enregistrement PTR** | Associe une adresse IP à un nom (zone inverse) |
 | **Enregistrement CNAME** | Alias pointant vers un autre nom canonique |
@@ -371,7 +385,7 @@ Fa0/3           Desg  FWD  19     128.3    P2p
 | Serveur DNS | ns1.cabinet-archi.local | 192.168.50.1 |
 | Serveur web | www.cabinet-archi.local | 192.168.50.100 |
 | Serveur impression | print.cabinet-archi.local | 192.168.50.200 |
-| Alias | web.cabinet-archi.local |  www |
+| Alias | web.cabinet-archi.local | → www |
 
 1. Écrire le fichier de zone directe complet (avec SOA)
 2. Écrire les 4 enregistrements PTR correspondants

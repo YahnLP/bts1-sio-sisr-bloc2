@@ -32,16 +32,16 @@ Créer dans Packet Tracer la topologie suivante :
    - 1 Routeur **Cisco 1941** (ou équivalent)
    - 3 PC (PC-RH, PC-IT, PC-DIR)
 3. Câbler :
-   - PC-RH  SW-CORE Fa0/1 (câble droit)
-   - PC-IT  SW-CORE Fa0/2 (câble droit)
-   - PC-DIR  SW-CORE Fa0/3 (câble droit)
-   - SW-CORE Gig0/1  R-SIOSARL G0/0 (câble droit ou croisé selon les équipements)
+   - PC-RH → SW-CORE Fa0/1 (câble droit)
+   - PC-IT → SW-CORE Fa0/2 (câble droit)
+   - PC-DIR → SW-CORE Fa0/3 (câble droit)
+   - SW-CORE Gig0/1 → R-SIOSARL G0/0 (câble droit ou croisé selon les équipements)
 
 ---
 
 ### A2 — Configurer les Adresses IP des PCs
 
-Configurer les PCs (Desktop  IP Configuration) :
+Configurer les PCs (Desktop → IP Configuration) :
 
 | **PC** | **Adresse IP** | **Masque** | **Passerelle** |
 |---|---|---|---|
@@ -53,7 +53,7 @@ Configurer les PCs (Desktop  IP Configuration) :
 
 ### A3 — Configurer le Switch SW-CORE
 
-Accéder au CLI du switch (clic  CLI) et saisir :
+Accéder au CLI du switch (clic → CLI) et saisir :
 
 ```
 Switch> enable
@@ -148,7 +148,7 @@ R-SIOSARL# show ip route
 
 ### A5 — Tester la Connectivité Inter-VLAN
 
-Depuis **PC-RH** (Desktop  Command Prompt) :
+Depuis **PC-RH** (Desktop → Command Prompt) :
 
 ```
 C:\> ping 192.168.10.1     → Doit répondre (passerelle VLAN 10)

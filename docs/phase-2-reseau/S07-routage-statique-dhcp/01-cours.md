@@ -1,6 +1,20 @@
 # Cours – Routage statique et service DHCP
 
-*BTS SIO SISR 1re année – Bloc 2 – S07*
+*BTS SIO SISR 1re année – Bloc 2 – S07 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S04, S06 (adressage, VLAN) ; terminal Linux.
+> - **Matériel :** Simulateur réseau ou Packet Tracer ; VM Debian.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Lire** une table de routage Cisco et **distinguer** routes connectées et statiques ;
+- [ ] **Configurer** une interface de routeur et des **routes statiques** (dont la route par défaut) ;
+- [ ] **Tester** la connectivité avec `ping` et `show ip route` ;
+- [ ] **Expliquer** les quatre étapes de DHCP (DORA) ;
+- [ ] **Installer** et **configurer** un serveur DHCP sous Debian : étendue, options, réservation.
+
+---
 
 ## I. Routage Statique
 
@@ -51,7 +65,7 @@ S*    0.0.0.0/0 [1/0] via 10.0.0.2
 |----------|-------------------|------------|
 | `C` | Connected – Directement connecté | Automatique (interface active avec IP) |
 | `S` | Static – Route statique | Configurée manuellement par l'admin |
-| `R` | RIP – Route apprise par le protocole RIP | Dynamique (S9+) |
+| `R` | RIP – Route apprise par le protocole RIP | Dynamique (vu en deuxième année) |
 | `O` | OSPF – Route apprise par OSPF | Dynamique (Année 2) |
 | `S*` | Static candidate default | Route par défaut statique |
 
@@ -271,7 +285,7 @@ Plage d'adresses IP que le serveur peut distribuer, associée à un réseau.
 | **Paramètre d'étendue** | **Description** | **Exemple** |
 |-------------------------|-----------------|-------------|
 | **Réseau** | Sous-réseau concerné | `192.168.1.0/24` |
-| **Plage d'attribution** (range) | Adresses distribuables | `192.168.1.100`  `192.168.1.200` |
+| **Plage d'attribution** (range) | Adresses distribuables | `192.168.1.100` → `192.168.1.200` |
 | **Masque** | Masque de sous-réseau | `255.255.255.0` |
 | **Passerelle** (routers) | Passerelle par défaut | `192.168.1.1` |
 | **DNS** | Serveurs de noms | `8.8.8.8`, `8.8.4.4` |
@@ -284,7 +298,7 @@ Plage d'adresses IP que le serveur peut distribuer, associée à un réseau.
 
 **Exemple :** Réseau `192.168.1.0/24`, 50 PC :
 - Adresses fixes réservées : `.1` (routeur), `.2` à `.19` (serveurs)
-- Plage DHCP : `192.168.1.20`  `192.168.1.150`
+- Plage DHCP : `192.168.1.20` → `192.168.1.150`
 
 #### La Réservation (Reservation / Static Mapping)
 

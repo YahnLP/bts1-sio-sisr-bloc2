@@ -15,7 +15,7 @@
 
 ### 1.1 — Calculer le Plan d'Adressage
 
-Compléter le tableau suivant en appliquant la méthode VLSM (grand  petit) :
+Compléter le tableau suivant en appliquant la méthode VLSM (grand → petit) :
 
 | **Priorité** | **VLAN** | **Besoin hôtes** | **Taille bloc (/n)** | **Réseau alloué** | **Masque** | **1ère IP hôte** | **Dernière IP hôte** | **Broadcast** | **Passerelle** |
 |---|---|---|---|---|---|---|---|---|---|
@@ -166,7 +166,7 @@ foreach ($Service in $Services) {
 
 ### 3.3 — Créer les Utilisateurs AD
 
-Utiliser le script PowerShell de S16 (adapté) ou créer manuellement 2 utilisateurs par service.
+Utiliser le script PowerShell de S14 (adapté) ou créer manuellement 2 utilisateurs par service.
 
 ```powershell
 # Exemple pour RH
@@ -241,7 +241,7 @@ Add-DnsServerResourceRecordA -ZoneName "siosarl.local" `
 ### 4.3 — Créer les Partages de Fichiers
 
 ```powershell
-# Créer l'arborescence (comme S13)
+# Créer l'arborescence (comme en S12)
 $Dossiers = @("RH","Informatique","Direction","Comptabilite","Commercial","Commun")
 foreach ($D in $Dossiers) {
     New-Item -Path "C:\Partages\$D" -ItemType Directory -Force | Out-Null
@@ -250,7 +250,7 @@ foreach ($D in $Dossiers) {
 }
 ```
 
->  Configurer les droits NTFS par groupe AD comme en S13 (voir fiche S13).
+>  Configurer les droits NTFS par groupe AD comme en S12 (voir la fiche de droits de S12).
 
 ✅ Capturer les partages créés dans `fsmgmt.msc` : **Capture P4**.
 

@@ -146,7 +146,7 @@ Créer `/home/user/scripts/creer_utilisateur.sh` :
 # Version : 1.0
 # Rôle    : Création interactive et sécurisée d'un utilisateur Linux
 #           pour SimIO SARL
-# Épreuve : Portfolio BTS SIO SISR — Compétence B2.4
+# Usage   : preuve pour une fiche de réalisation (E6) – B2.2, B2.3
 # ═══════════════════════════════════════════════════════════════
 
 # ─── Vérification des droits root ───────────────────────────────

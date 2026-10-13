@@ -1,6 +1,20 @@
 # Cours – Système d'exploitation, comptes et permissions NTFS
 
-*BTS SIO SISR 1re année – Bloc 2 – S02*
+*BTS SIO SISR 1re année – Bloc 2 – S02 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S01 : installer une VM Windows.
+> - **Matériel :** VM Windows 10/11 (S01).
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Expliquer** le rôle d'un système d'exploitation et **comparer** Windows, Linux et macOS en entreprise ;
+- [ ] **Créer** et **gérer** des comptes locaux, **distinguer** administrateur et utilisateur standard ;
+- [ ] **Configurer** les permissions NTFS sur un dossier et **lire** les permissions effectives ;
+- [ ] **Appliquer** le principe du moindre privilège ;
+- [ ] **Différencier** compte local et compte de domaine (introduction à Active Directory).
+
+---
 
 ## I. Le Système d'Exploitation : Chef d'Orchestre de l'Ordinateur
 
@@ -29,7 +43,7 @@ L'OS contrôle tous les composants matériels via des **pilotes (drivers)**.
 - Gérer l'affichage sur l'écran via la carte graphique
 - Détecter les clés USB branchées
 
- **Lien avec S1-S2 :** Rappelez-vous les composants (CPU, RAM, SSD) vus en S1  c'est l'OS qui les pilote !
+ **Lien avec S01 :** rappelez-vous les composants (CPU, RAM, SSD) vus en S01 → c'est l'OS qui les pilote !
 
 ---
 
@@ -39,7 +53,7 @@ L'OS organise les données en **fichiers** et **dossiers** (hiérarchie arboresc
 
 **Concepts clés :**
 - **Système de fichiers** : NTFS (Windows), ext4 (Linux), APFS (macOS)
-- **Arborescence** : Racine C:\  Dossiers  Sous-dossiers  Fichiers
+- **Arborescence** : Racine C:\ → Dossiers → Sous-dossiers → Fichiers
 - **Métadonnées** : Nom, taille, date de création, propriétaire, permissions
 
 **Opérations gérées :**
@@ -49,13 +63,13 @@ L'OS organise les données en **fichiers** et **dossiers** (hiérarchie arboresc
 
 ```mermaid
 flowchart TB
-    C["C:\\"] --> W[Windows]
+    C["Disque C:"] --> W[Windows]
     C --> PF[Program Files]
     C --> U[Users]
     U --> A[alice]
     U --> B[bob]
 ```
-*Arborescence typique de Windows : la racine `C:\`, les dossiers du système et les dossiers personnels sous `Users`.*
+*Arborescence typique de Windows : la racine du disque `C:`, les dossiers du système et les dossiers personnels sous `Users`.*
 ---
 
 #### **3. Gestion des Processus (Process Management)**
@@ -350,12 +364,12 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 - ✅ Idéal pour : PC personnels, petites structures (<5 PC), environnements de test
 
 **Gestion :**
-- Outil : **Gestion de l'ordinateur**  **Utilisateurs et groupes locaux**
+- Outil : **Gestion de l'ordinateur** → **Utilisateurs et groupes locaux**
 - Emplacement base de données : `C:\Windows\System32\config\SAM`
 
 **Limites :**
-- ❌ Si 10 PC  il faut créer 10 fois le même compte (1 par PC) !
-- ❌ Changement de mot de passe  à faire sur chaque machine
+- ❌ Si 10 PC → il faut créer 10 fois le même compte (1 par PC) !
+- ❌ Changement de mot de passe → à faire sur chaque machine
 - ❌ Pas de gestion centralisée
 - ❌ Pas de stratégies de groupe (GPO)
 
@@ -376,23 +390,23 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 - Serveur : **Windows Server** avec rôle **AD DS (Active Directory Domain Services)**
 
 **Avantages pour l'entreprise :**
-- ✅ Employé arrive  1 compte créé  accès immédiat à tous les PC et services
-- ✅ Employé part  compte désactivé en 1 clic  plus aucun accès nulle part
-- ✅ Changement de mot de passe  pris en compte partout instantanément
+- ✅ Employé arrive → 1 compte créé → accès immédiat à tous les PC et services
+- ✅ Employé part → compte désactivé en 1 clic → plus aucun accès nulle part
+- ✅ Changement de mot de passe → pris en compte partout instantanément
 - ✅ Stratégies : forcer écran de veille, fond d'écran entreprise, logiciels installés...
 
 **Exemple professionnel :**
 
 | **Scénario** | **Compte Local** | **Compte Domaine (AD)** |
 |--------------|------------------|-------------------------|
-| Nouvel employé (Jean Dupont) | Créer manuellement "jdupont" sur ses 3 PC de travail | Créer 1 fois "jdupont" dans AD  fonctionne sur les 500 PC de l'entreprise |
-| Jean oublie son mot de passe | Réinitialiser sur chaque PC (3 fois) | Réinitialiser 1 fois dans AD  synchronisé partout |
-| Jean change de service | Modifier les droits sur chaque PC manuellement | Déplacer le compte dans une autre OU (Organizational Unit)  GPO appliquées automatiquement |
-| Jean quitte l'entreprise | Supprimer le compte sur les 3 PC | Désactiver le compte dans AD  bloqué partout en 10 secondes |
+| Nouvel employé (Jean Dupont) | Créer manuellement "jdupont" sur ses 3 PC de travail | Créer 1 fois "jdupont" dans AD → fonctionne sur les 500 PC de l'entreprise |
+| Jean oublie son mot de passe | Réinitialiser sur chaque PC (3 fois) | Réinitialiser 1 fois dans AD → synchronisé partout |
+| Jean change de service | Modifier les droits sur chaque PC manuellement | Déplacer le compte dans une autre OU (Organizational Unit) → GPO appliquées automatiquement |
+| Jean quitte l'entreprise | Supprimer le compte sur les 3 PC | Désactiver le compte dans AD → bloqué partout en 10 secondes |
 
  **En BTS SIO :**
-- **S3-S4** : Manipulation de comptes **locaux** (Windows 10/11)
-- **S5-S10+** : Mise en place d'**Active Directory** et gestion de comptes de domaine
+- **S02** : Manipulation de comptes **locaux** (Windows 10/11)
+- **S10 à S12** : Mise en place d'**Active Directory** et gestion de comptes de domaine
 
 ---
 
@@ -403,7 +417,7 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 **Étapes :**
 
 1. **Ouvrir les Paramètres**
-   - Clic droit sur le bouton Démarrer  **Paramètres** (icône engrenage)
+   - Clic droit sur le bouton Démarrer → **Paramètres** (icône engrenage)
    - Ou touche Windows + I
 
 2. **Accéder aux Comptes**
@@ -411,7 +425,7 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
    - Dans le menu de gauche, clic sur **Famille et autres utilisateurs**
 
 3. **Ajouter un Utilisateur**
-   - Section "Autres utilisateurs"  **Ajouter un autre utilisateur sur ce PC**
+   - Section "Autres utilisateurs" → **Ajouter un autre utilisateur sur ce PC**
 
 4. **Créer un Compte Local** (pas de compte Microsoft)
    - Fenêtre "Comment cette personne va-t-elle se connecter ?"
@@ -430,11 +444,11 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 
 ---
 
-#### **Modifier le Type de Compte (Standard  Administrateur)**
+#### **Modifier le Type de Compte (Standard → Administrateur)**
 
 **Si besoin de promouvoir un compte en Administrateur :**
 
-1. Paramètres  Comptes  Famille et autres utilisateurs
+1. Paramètres → Comptes → Famille et autres utilisateurs
 2. Clic sur le compte `jdupont`
 3. Clic sur **Modifier le type de compte**
 4. Dans le menu déroulant, sélectionner **Administrateur**
@@ -493,12 +507,12 @@ Set-LocalUser -Name "jdupont" -Password (ConvertTo-SecureString "NouveauMDP2024!
 
 **Étapes :**
 
-1. Clic droit sur **Ce PC**  **Gérer**
+1. Clic droit sur **Ce PC** → **Gérer**
    - Ou taper `compmgmt.msc` dans Exécuter (Windows + R)
 
-2. **Outils système**  **Utilisateurs et groupes locaux**  **Utilisateurs**
+2. **Outils système** → **Utilisateurs et groupes locaux** → **Utilisateurs**
 
-3. Clic droit dans la zone vide  **Nouvel utilisateur...**
+3. Clic droit dans la zone vide → **Nouvel utilisateur...**
 
 4. Remplir :
    - **Nom d'utilisateur** : `jdupont`
@@ -513,10 +527,10 @@ Set-LocalUser -Name "jdupont" -Password (ConvertTo-SecureString "NouveauMDP2024!
 
 **Ajouter l'utilisateur à un groupe :**
 
-1. Toujours dans **Utilisateurs et groupes locaux**  **Groupes**
+1. Toujours dans **Utilisateurs et groupes locaux** → **Groupes**
 2. Double-clic sur **Administrateurs** (ou autre groupe)
 3. Clic sur **Ajouter...**
-4. Taper `jdupont`  Clic sur **Vérifier les noms**  OK
+4. Taper `jdupont` → Clic sur **Vérifier les noms** → OK
 5. OK pour valider
 
 ✅ L'utilisateur est maintenant membre du groupe Administrateurs.
@@ -542,16 +556,16 @@ Set-LocalUser -Name "jdupont" -Password (ConvertTo-SecureString "NouveauMDP2024!
 **Exemple :** 10 employés du service Comptabilité doivent avoir accès au dossier `C:\Compta`.
 
 ❌ **Méthode individuelle** : Ajouter les 10 comptes un par un aux permissions du dossier.
-- Si 11ème employé arrive  ajouter manuellement
-- Si employé part  retirer manuellement
+- Si 11ème employé arrive → ajouter manuellement
+- Si employé part → retirer manuellement
 - Risque d'oubli et d'erreur
 
 ✅ **Méthode par groupe** : 
 1. Créer un groupe local "Comptables"
 2. Ajouter les 10 comptes au groupe
 3. Donner les permissions au **groupe** (pas aux comptes individuels)
-- Nouvel employé  l'ajouter au groupe (1 manipulation)  droits automatiques
-- Employé part  le retirer du groupe  droits révoqués partout
+- Nouvel employé → l'ajouter au groupe (1 manipulation) → droits automatiques
+- Employé part → le retirer du groupe → droits révoqués partout
 
  **Gain de temps + sécurité + cohérence**
 
@@ -591,7 +605,7 @@ Chaque fichier ou dossier NTFS possède une **ACL (Access Control List)** : list
 |----------------|-------------|-------------|-----------------------------------|
 | **Lecture** |  R (Read) | Lire le contenu | Ouvrir un fichier, voir le contenu d'un dossier, copier un fichier |
 | **Écriture** |  W (Write) | Modifier le contenu | Modifier un fichier existant, créer de nouveaux fichiers dans un dossier |
-| **Lecture et exécution** |  RX (Read & Execute) | Lire + exécuter | Lancer un .exe, parcourir un dossier, lire un script |
+| **Lecture et exécution** | ▶ RX (Read & Execute) | Lire + exécuter | Lancer un .exe, parcourir un dossier, lire un script |
 | **Modification** |  M (Modify) | Lire + Écrire + Supprimer | Tout faire sauf changer les permissions ou prendre possession |
 | **Contrôle total** |  F (Full Control) | **TOUT** | Modifier, supprimer, changer les permissions, changer le propriétaire |
 | **Permissions spéciales** |  | Combinaisons personnalisées | Paramètres très avancés (rarement utilisés) |
@@ -724,16 +738,16 @@ C:\Data (Permissions : Groupe "Comptables" = Modification)
 Parfois, on veut qu'un sous-dossier ait des permissions **différentes** du parent.
 
 **Exemple :** 
-- `C:\Data\Salaires`  Seuls les RH doivent y accéder (pas tout le groupe "Comptables")
+- `C:\Data\Salaires` → Seuls les RH doivent y accéder (pas tout le groupe "Comptables")
 
 **Procédure :**
-1. Clic droit sur `Salaires`  **Propriétés**  Onglet **Sécurité**
+1. Clic droit sur `Salaires` → **Propriétés** → Onglet **Sécurité**
 2. Clic sur **Avancé**
 3. Clic sur **Désactiver l'héritage**
 4. Choisir :
    - **Convertir les permissions héritées en permissions explicites** (garde les permissions actuelles mais les rend modifiables)
    - **Supprimer toutes les permissions héritées** (repart de zéro)
-5. OK  Le dossier a maintenant ses propres permissions, indépendantes du parent
+5. OK → Le dossier a maintenant ses propres permissions, indépendantes du parent
 
 ⚠ **Attention :** Désactiver l'héritage partout = gestion cauchemar ! À utiliser avec parcimonie, uniquement pour des dossiers vraiment sensibles.
 
@@ -749,8 +763,8 @@ Chaque permission peut être **Autorisée** ou **Refusée**.
 
 **Exemple :**
 - Utilisateur "jdupont" est membre de 2 groupes :
-  - Groupe "Comptables"  **Autorise** Modification sur `C:\Data`
-  - Groupe "Stagiaires"  **Refuse** Écriture sur `C:\Data`
+  - Groupe "Comptables" → **Autorise** Modification sur `C:\Data`
+  - Groupe "Stagiaires" → **Refuse** Écriture sur `C:\Data`
 
  Résultat : "jdupont" a **Lecture seule** (le Refus annule l'autorisation d'écriture).
 
@@ -790,11 +804,11 @@ Chaque permission peut être **Autorisée** ou **Refusée**.
 
 **Outil Windows pour vérifier les permissions effectives :**
 
-1. Clic droit sur le dossier  **Propriétés**  **Sécurité**
+1. Clic droit sur le dossier → **Propriétés** → **Sécurité**
 2. Clic sur **Avancé**
 3. Onglet **Accès effectif**
 4. Clic sur **Sélectionner un utilisateur**
-5. Taper le nom d'utilisateur (ex: `jdupont`)  **OK**
+5. Taper le nom d'utilisateur (ex: `jdupont`) → **OK**
 6. Windows affiche la liste des permissions effectives (cochées ou non)
 
 ---
@@ -808,7 +822,7 @@ Chaque permission peut être **Autorisée** ou **Refusée**.
 1. **Créer le dossier**
    - Exemple : `C:\Data\Comptabilite`
 
-2. **Clic droit** sur le dossier  **Propriétés**
+2. **Clic droit** sur le dossier → **Propriétés**
 
 3. Onglet **Sécurité**
    - Affiche la liste des utilisateurs/groupes ayant des permissions
@@ -831,7 +845,7 @@ Chaque permission peut être **Autorisée** ou **Refusée**.
      - ✅ **Écriture** (rare seule)
    - Ou cocher **Refuser** pour bloquer (rare)
 
-6. **Appliquer**  **OK**
+6. **Appliquer** → **OK**
 
 ✅ Les permissions sont configurées !
 
@@ -847,7 +861,7 @@ Chaque permission peut être **Autorisée** ou **Refusée**.
 
 Pour aller plus loin (désactiver héritage, permissions spéciales...) :
 
-1. Clic droit sur le dossier  **Propriétés**  **Sécurité**
+1. Clic droit sur le dossier → **Propriétés** → **Sécurité**
 2. Clic sur **Avancé**
 3. Fenêtre "Paramètres de sécurité avancés" :
    - Onglet **Permissions** : Liste complète avec héritage visible

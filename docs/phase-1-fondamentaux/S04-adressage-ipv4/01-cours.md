@@ -1,6 +1,20 @@
 # Cours – Adressage IPv4, ARP et ICMP
 
-*BTS SIO SISR 1re année – Bloc 2 – S04*
+*BTS SIO SISR 1re année – Bloc 2 – S04 – à lire avant le [TP](02-tp.md)*
+
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S03 (modèle OSI, adresse IP et masque) ; conversions binaire/décimal (mathématiques).
+> - **Matériel :** VM Windows, VM Debian, Wireshark.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Utiliser** la notation CIDR et **calculer** adresse réseau, plage d'hôtes et diffusion ;
+- [ ] **Découper** un réseau en sous-réseaux de tailles différentes (VLSM) ;
+- [ ] **Expliquer** ARP (adresse MAC ↔ adresse IP) et ICMP (ping, traceroute) ;
+- [ ] **Configurer** une adresse IP sous Windows et sous Linux (`ip addr`, `ip route`) ;
+- [ ] **Installer** Debian en machine virtuelle et se déplacer en ligne de commande.
+
+---
 
 ## I. Adressage IPv4 – Approfondissement
 
@@ -93,7 +107,7 @@ Mais il ne connaît que l'**adresse IP** de la machine.
 
 **Solution :** Le protocole **ARP** (Address Resolution Protocol) résout ce problème.
 
-**ARP = Traduction IP  MAC**
+**ARP = Traduction IP → MAC**
 
 ---
 
@@ -146,7 +160,7 @@ PC1                       SWITCH                      PC2     PC3     PC4
 
 ### C. La Table ARP
 
-La table ARP est une **mémoire cache temporaire** qui stocke les correspondances IP  MAC récemment résolues.
+La table ARP est une **mémoire cache temporaire** qui stocke les correspondances IP ↔ MAC récemment résolues.
 
 **Afficher la table ARP (Windows) :**
 ```cmd
@@ -267,8 +281,8 @@ Durée approximative des boucles en millisecondes :
 
 **Utilisation pratique :**
 - TTL dans un ping peut indiquer le nombre de **sauts traversés** :
-  - TTL reçu = 117  TTL initial 128 (Windows)  128 - 117 = **11 routeurs traversés**
-  - TTL reçu = 53  TTL initial 64 (Linux)  64 - 53 = **11 routeurs traversés**
+  - TTL reçu = 117 → TTL initial 128 (Windows) → 128 - 117 = **11 routeurs traversés**
+  - TTL reçu = 53 → TTL initial 64 (Linux) → 64 - 53 = **11 routeurs traversés**
 
 ---
 
@@ -277,8 +291,8 @@ Durée approximative des boucles en millisecondes :
 **Tracert/Traceroute** exploite les messages ICMP **Time Exceeded** pour découvrir le **chemin** emprunté par les paquets.
 
 **Principe :**
-1. Envoie un paquet avec TTL=1  Premier routeur le rejette et renvoie "Time Exceeded"  on note son IP
-2. Envoie TTL=2  Deuxième routeur  on note son IP
+1. Envoie un paquet avec TTL=1 → Premier routeur le rejette et renvoie "Time Exceeded" → on note son IP
+2. Envoie TTL=2 → Deuxième routeur → on note son IP
 3. Continue jusqu'à atteindre la destination
 
 **Syntaxe :**

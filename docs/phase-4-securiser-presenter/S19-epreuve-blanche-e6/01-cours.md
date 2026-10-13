@@ -2,9 +2,22 @@
 
 *BTS SIO SISR 1re année – Bloc 2 – S19*
 
+> [!NOTE] Ce que tu dois savoir déjà
+> - **Prérequis :** S17, S18.
+> - **Matériel :** Projet et DAT (S17-S18), fiches de réalisation, VM de démonstration.
+
+## À la fin de ce cours, tu sauras
+
+- [ ] **Préparer** une présentation de 1 h 30 à partir d'une réalisation et de son dossier ;
+- [ ] **Présenter** en 40 minutes : contexte, architecture, choix, preuves ;
+- [ ] **Répondre** aux questions du jury avec méthode ;
+- [ ] **Se positionner** sur chaque compétence du bloc 2 et **construire** son plan pour la deuxième année.
+
+---
+
 ## PARTIE V — Présentation Technique d'une Infrastructure
 
-### V.A. Structure d'une Présentation Orale SISR (format E4/E5)
+### V.A. Structure d'une Présentation Orale SISR (format de l'épreuve E6)
 
 Une présentation technique devant un jury suit toujours la même structure professionnelle :
 
@@ -36,7 +49,7 @@ Lors de la présentation du Projet 1 SimIO, ces termes **doivent** apparaître n
 
 | **Question du jury** | **Ce qu'il évalue** | **Éléments de réponse** |
 |---|---|---|
-| "Pourquoi un /27 pour le VLAN RH plutôt qu'un /26 ?" | Maîtrise du VLSM | "25 hôtes  /27 donne 30 hôtes utilisables, avec 5 de marge. Un /26 aurait gaspillé 37 adresses inutilement." |
+| "Pourquoi un /27 pour le VLAN RH plutôt qu'un /26 ?" | Maîtrise du VLSM | "25 hôtes → /27 donne 30 hôtes utilisables, avec 5 de marge. Un /26 aurait gaspillé 37 adresses inutilement." |
 | "Que se passe-t-il si le contrôleur de domaine tombe ?" | Notion de résilience | "Tous les services AD tombent (authentification, GPO, DHCP si colocalisé, DNS). En production, on déploierait un DC secondaire en réplication." |
 | "Quelle est la différence entre les droits NTFS et les droits de partage ?" | Sécurité des fichiers | "Les droits de partage s'appliquent uniquement aux accès réseau. Les droits NTFS s'appliquent toujours, même en accès local. La règle la plus restrictive des deux s'applique." |
 | "Pourquoi avez-vous désactivé l'authentification par mot de passe SSH ?" | Sécurité SSH | "Pour bloquer les attaques par force brute. Sans AuthPassword, même avec un scanner automatique, aucune tentative ne peut aboutir sans la clé privée." |
@@ -62,13 +75,13 @@ Lors de la présentation du Projet 1 SimIO, ces termes **doivent** apparaître n
 | **Résolution itérative** | Chaque serveur DNS renvoie vers le serveur suivant dans la hiérarchie |
 | **Enregistrement A** | Enregistrement DNS associant un nom à une adresse IPv4 |
 | **Enregistrement MX** | Enregistrement DNS indiquant le serveur de messagerie d'un domaine |
-| **Enregistrement PTR** | Enregistrement DNS de résolution inverse (IP  nom) |
+| **Enregistrement PTR** | Enregistrement DNS de résolution inverse (IP → nom) |
 | **TTL DNS** | Time To Live — durée de validité d'un enregistrement DNS en cache |
 | **DNSSEC** | Extension DNS ajoutant des signatures cryptographiques pour prévenir l'empoisonnement |
 
 ---
 
-## Auto-évaluation : Suis-je Prêt ?
+## ✅ Auto-évaluation : Suis-je Prêt ?
 
 - [ ] Je décris le cycle complet d'une requête HTTP (méthode, URL, en-têtes, corps)
 - [ ] Je connais les 5 familles de codes de statut HTTP et 2 exemples par famille

@@ -1,4 +1,4 @@
-# Phase 4 – Exploiter, projet et préparation à l'épreuve E6
+# Phase 4 – Exploiter et présenter
 
 **Séances S16 à S19.** Superviser et sauvegarder l'infrastructure, la rendre tolérante aux pannes, réaliser un projet complet de PME, le documenter (DAT) et s'entraîner à l'épreuve E6.
 
