@@ -2,6 +2,12 @@
 
 *BTS SIO SISR 1re année – Bloc 2 – S08*
 
+> [!NOTE]
+> **But.** Situation : Comment les utilisateurs joignent-ils un serveur par son nom, et pourquoi un câble de secours peut-il faire tomber tout le réseau ?
+>
+> **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le simulateur réseau ou Packet Tracer servent aux manipulations d'équipements réseau.
+
+
 ## IV. TP Cisco – Observer le STP sur 3 Switches
 
 ### Topologie
@@ -167,3 +173,13 @@ Remplis ce bilan **seul**, honnêtement : il sert à décider ce qu'il faut repr
 **Ce que je dois reprendre :** ______________________
 
 **Ma question à poser à l'enseignant :** ______________________
+
+**J'anticipe.** Parmi trois switchs reliés en triangle, lequel devient le *root bridge* si aucune priorité n'est modifiée ? Combien de liens seront bloqués ? ______________________
+
+<details markdown="1">
+<summary>Éléments de réponse</summary>
+
+Celui qui a la **plus petite adresse MAC** (à priorité égale). Dans un triangle, **un seul lien** est bloqué (côté du switch le plus éloigné du root) : un arbre sans boucle relie trois switchs avec deux liens actifs.
+
+</details>
+

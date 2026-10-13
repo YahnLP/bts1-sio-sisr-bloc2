@@ -2,6 +2,12 @@
 
 *BTS SIO SISR 1re année – Bloc 2 – S06*
 
+> [!NOTE]
+> **But.** Situation : Comment séparer les services d'une entreprise (direction, commercial, informatique) sur les mêmes switchs ?
+>
+> **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le simulateur réseau ou Packet Tracer servent aux manipulations d'équipements réseau.
+
+
 ## Objectif
 
 Créer une organisation utilisateurs/groupes sur Debian (3 services, 6 utilisateurs), configurer des répertoires partagés avec les bonnes permissions.
@@ -92,6 +98,16 @@ drwxrwx--- 2 root commercial   4096 nov 15 /data/commercial
 drwxrwx--- 2 root informatique 4096 nov 15 /data/informatique
 ```
 
+**J'anticipe.** Un dossier a les droits `770` (`rwxrwx---`), propriétaire `root`, groupe `direction`. Qui peut y écrire ? Qui peut y entrer ? ______________________
+
+<details markdown="1">
+<summary>Éléments de réponse</summary>
+
+`root` et les membres du groupe `direction` ont tous les droits (lecture, écriture, traversée). **Les autres n'ont aucun accès** : pas de lecture, pas d'écriture, pas même d'entrée.
+
+</details>
+
+
 ---
 
 ## Étape 4 : Donner Accès Multi-Répertoires à l'Informatique
@@ -130,6 +146,16 @@ ls /data/direction    # ✅ Doit fonctionner
 ls /data/commercial   # ✅ Doit fonctionner
 exit
 ```
+
+**Je comprends.** Lorsqu'un utilisateur reçoit « Permission denied » sur un dossier, quelles sont les trois choses à vérifier ? ______________________
+
+<details markdown="1">
+<summary>Éléments de réponse</summary>
+
+1) le **propriétaire et le groupe** du dossier (`ls -ld`) ; 2) les **droits** pour l'utilisateur, le groupe, les autres ; 3) l'**appartenance de l'utilisateur au groupe** (`id utilisateur`) : après un `usermod -aG`, la session doit être rouverte.
+
+</details>
+
 
 ---
 

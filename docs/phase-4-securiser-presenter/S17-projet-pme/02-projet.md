@@ -2,6 +2,12 @@
 
 *BTS SIO SISR 1re année – Bloc 2 – S17*
 
+> [!NOTE]
+> **But.** Situation : Une PME de 6 services vous confie son infrastructure : de l'adressage à l'annuaire, livrez un réseau qui fonctionne et que quelqu'un d'autre saura exploiter.
+>
+> **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le simulateur réseau ou Packet Tracer servent aux manipulations d'équipements réseau.
+
+
 > ##  Rappel du Cahier des Charges
 > Bloc réseau : `192.168.0.0/22` — 6 VLANs — Routage inter-VLAN
 > Services Windows Server : AD DS + GPO + DHCP + DNS + Partages
@@ -46,6 +52,16 @@ Dessiner (ou modéliser dans draw.io) le schéma complet de l'infrastructure inc
 - Le routeur de bord avec ses sous-interfaces (router-on-a-stick) ou switch L3
 - Les serveurs dans le VLAN 99 avec leurs adresses IP
 - Le lien trunk entre switch et routeur
+
+**J'anticipe.** Dans quel ordre attribues-tu les sous-réseaux VLSM (du plus grand au plus petit ou l'inverse) ? Pourquoi ? ______________________
+
+<details markdown="1">
+<summary>Éléments de réponse</summary>
+
+Du **plus grand au plus petit** : on évite que de petits blocs fragmentent l'espace et empêchent de placer un grand sous-réseau aligné. On laisse de la **marge de croissance** à chaque VLAN.
+
+</details>
+
 
 ---
 
@@ -119,6 +135,16 @@ ping [IP d'un PC d'un autre VLAN] → Doit répondre
 ```
 
 ✅ Capturer les `ping` réussis inter-VLAN : **Capture P1**.
+
+**Je comprends.** Avant de passer à Windows Server, quels tests prouvent que la phase réseau est terminée ? ______________________
+
+<details markdown="1">
+<summary>Éléments de réponse</summary>
+
+Un **ping** entre VLAN différents, la **passerelle** de chaque VLAN, la **route par défaut**, le **relais DHCP** qui fonctionne. On teste chaque couche avant de la charger de services.
+
+</details>
+
 
 ---
 

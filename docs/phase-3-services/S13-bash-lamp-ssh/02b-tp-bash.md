@@ -2,6 +2,12 @@
 
 *BTS SIO SISR 1re année – Bloc 2 – S13*
 
+> [!NOTE]
+> **But.** Situation : Comment automatiser la création de 30 comptes, héberger un site web et administrer un serveur sans quitter son bureau ?
+>
+> **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le simulateur réseau ou Packet Tracer servent aux manipulations d'équipements réseau.
+
+
 ## PARTIE B — Exercices Bash Progressifs
 
 ### B1 — Premier Script : Variables et Echo
@@ -107,6 +113,16 @@ else
     echo "❌ L'utilisateur '$LOGIN' n'existe pas sur ce système."
 fi
 ```
+
+**J'anticipe.** Que vaut `$?` après une commande réussie ? et après une commande en échec ? À quoi cela sert-il dans un script ? ______________________
+
+<details markdown="1">
+<summary>Éléments de réponse</summary>
+
+`0` si elle a réussi, une valeur **différente de 0** sinon. Un script s'en sert pour **décider** (continuer, afficher une erreur, quitter avec `exit 1`).
+
+</details>
+
 
 ---
 

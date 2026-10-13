@@ -2,6 +2,12 @@
 
 *BTS SIO SISR 1re année – Bloc 2 – S09*
 
+> [!NOTE]
+> **But.** Situation : Les VLAN sont isolés, mais le service informatique doit joindre tous les postes et un seul serveur DHCP doit servir tous les réseaux : comment ?
+>
+> **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le simulateur réseau ou Packet Tracer servent aux manipulations d'équipements réseau.
+
+
 ## PARTIE A — Routage Inter-VLAN avec Cisco Packet Tracer
 
 ### Topologie à Reproduire
@@ -165,6 +171,16 @@ C:\> ping 192.168.30.10    → Doit répondre (PC-DIR, VLAN 30)
 ### A6 — Compléter la Fiche de Configuration Réseau
 
 Remplir la **Fiche de Configuration Réseau** (voir Annexe 1) avec toutes les informations de votre configuration.
+
+**J'anticipe.** Combien de câbles faut-il entre le switch et le routeur avec la méthode « routeur sur un bras » pour 3 VLAN ? ______________________
+
+<details markdown="1">
+<summary>Éléments de réponse</summary>
+
+**Un seul** : un lien trunk, découpé en 3 sous-interfaces logiques côté routeur. Sans cette méthode, il faudrait un câble et une interface par VLAN.
+
+</details>
+
 
 ---
 

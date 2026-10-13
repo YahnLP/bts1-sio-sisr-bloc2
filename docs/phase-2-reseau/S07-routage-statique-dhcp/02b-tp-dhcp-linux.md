@@ -2,6 +2,12 @@
 
 *BTS SIO SISR 1re année – Bloc 2 – S07*
 
+> [!NOTE]
+> **But.** Situation : Deux réseaux doivent se parler, et les postes doivent recevoir leur adresse automatiquement : que configurer, et où ?
+>
+> **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le simulateur réseau ou Packet Tracer servent aux manipulations d'équipements réseau.
+
+
 ## III. TP Linux : Serveur DHCP avec isc-dhcp-server
 
 ### A. Installation du Service
@@ -195,6 +201,16 @@ ipconfig /all
 ipconfig /release
 ipconfig /renew
 ```
+
+**J'anticipe.** Si l'étendue ne contient pas l'option `routers`, un client obtient-il une adresse ? Pourra-t-il sortir de son réseau ? ______________________
+
+<details markdown="1">
+<summary>Éléments de réponse</summary>
+
+Il obtient bien une adresse (et un masque), mais **sans passerelle** : il joint son réseau local mais pas Internet ni les autres réseaux. Chaque option DHCP (`routers`, `domain-name-servers`) apporte une partie de la configuration.
+
+</details>
+
 
 ---
 
