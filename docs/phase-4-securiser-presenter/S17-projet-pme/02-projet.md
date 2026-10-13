@@ -73,21 +73,31 @@ Du **plus grand au plus petit** : on évite que de petits blocs fragmentent l'es
 
 Dans Packet Tracer, construire la topologie suivante :
 
+```mermaid
+flowchart TB
+    R["ROUTEUR<br/>routage inter-VLAN<br/>(sous-interfaces dot1Q)"]
+    A["SW-BatA"]
+    B["SW-BatB"]
+    R ---|"trunk (Gi0/1)"| A
+    A ---|"trunk Bât.A ↔ Bât.B<br/>VLAN 40 et 50 (Gi0/2)"| B
+    subgraph BatA["Bâtiment A : ports d'accès"]
+      direction LR
+      RH["PC-RH<br/>VLAN 10"]
+      IT["PC-IT<br/>VLAN 20"]
+      DIR["PC-Direction<br/>VLAN 30"]
+      SRV["SRV-AD01, SRV-DHCP, SRV-FTP<br/>VLAN 99"]
+    end
+    subgraph BatB["Bâtiment B : ports d'accès"]
+      direction LR
+      COM["PC-Commercial<br/>VLAN 40"]
+      CPT["PC Comptabilité<br/>VLAN 50"]
+    end
+    A --- BatA
+    B --- BatB
 ```
-  [PC-Commercial]──────────────────────────►
-  [PC-RH]         [SW-BatA]        [SW-BatB]    [Plusieurs PCs]
-  [PC-IT]    ────►          ◄────►          ──►
-  [PC-Direction]                                (VLANs 40, 50)
-  [SRV-AD01]
-  [SRV-DHCP]
-  [SRV-FTP]
-       │                │
-       └── VLANs 10-99  └── Lien trunk inter-switches
-                            (Lien Bât.A ↔ Bât.B)
-                                     │
-                                  [ROUTEUR]
-                               (Routage inter-VLAN)
-```
+
+> [!NOTE]
+> Les numéros de VLAN et le placement des postes sont ceux du plan d'adressage de la phase 1 : **adapte-les** si ton plan diffère. Le schéma montre le principe : deux commutateurs reliés par un trunk limité aux VLAN 40 et 50, et un routeur qui assure le routage entre VLAN.
 
 ### 2.2 — Configurer SW-BatA
 
