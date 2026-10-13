@@ -1,0 +1,200 @@
+# Cours – Routage inter-VLAN (routeur sur un bras)
+
+*BTS SIO SISR 1re année – Bloc 2 – S09*
+
+## PARTIE I — Routage Inter-VLAN
+
+### I.A. Rappel : Le Problème de l'Isolation des VLANs
+
+Un **VLAN** (Virtual Local Area Network) crée une **segmentation logique** du réseau : les machines de deux VLANs différents sont dans des sous-réseaux IP distincts et ne peuvent **pas se communiquer directement**, même si elles sont physiquement sur le même switch.
+
+C'est voulu pour la sécurité, mais cela pose un problème pratique : la comptable du VLAN RH doit pouvoir envoyer un email au directeur dans le VLAN Direction !
+
+**La solution : le routage inter-VLAN** — faire passer le trafic d'un VLAN à l'autre via un équipement de niveau 3 (routeur), qui agit comme un **point de contrôle centralisé**.
+
+ **Lien ITIL — Gestion de la Disponibilité & Sécurité :** La segmentation en VLANs est une bonne pratique de sécurité (confinement des incidents, isolation des données sensibles). Le routage inter-VLAN permet de délivrer la **connectivité nécessaire aux métiers** tout en maintenant cette segmentation. C'est un équilibre entre disponibilité du service et sécurité.
+
+---
+
+### I.B. Les Trois Méthodes de Routage Inter-VLAN
+
+| **Méthode** | **Description** | **Avantages** | **Inconvénients** |
+|-------------|-----------------|--------------|------------------|
+| **Un routeur par VLAN** | 1 interface physique du routeur par VLAN | Simple à comprendre | Très coûteux (N interfaces), peu scalable |
+| **Router-on-a-Stick**  | 1 seule interface physique divisée en sous-interfaces logiques | Économique, simple à configurer | Goulot d'étranglement sur le lien trunk en charge |
+| **Switch L3 (MLS)** | Routage effectué directement par le switch | Très performant, recommandé en production | Plus coûteux qu'un switch L2 |
+
+*Au BTS SIO SISR, on étudie principalement le **Router-on-a-Stick** (méthode 2).*
+
+---
+
+### I.C. Architecture Router-on-a-Stick
+
+#### Principe
+
+Le routeur est connecté au switch par **un seul câble physique** configuré en mode **trunk** (il transporte plusieurs VLANs grâce au standard 802.1Q). Côté routeur, l'interface physique est subdivisée en **sous-interfaces logiques**, une par VLAN.
+
+```
+   PC-RH                   SWITCH                    ROUTEUR
+  (VLAN 10)    Fa0/1       [TRUNK]       G0/0         G0/0.10  → Passerelle VLAN 10
+192.168.10.10  ───────►  [=======]◄────────────────►  G0/0.20  → Passerelle VLAN 20
+                                                       G0/0.30  → Passerelle VLAN 30
+   PC-IT       Fa0/2
+  (VLAN 20)    ───────►  [=======]
+192.168.20.10
+
+   PC-DIR      Fa0/3
+  (VLAN 30)    ───────►  [=======]
+192.168.30.10
+```
+
+*Légende : Schéma d'une architecture router-on-a-stick. Le switch à gauche est connecté au routeur par un seul lien physique trunk (ligne épaisse). Le routeur divise ce lien en 3 sous-interfaces logiques (G0/0.10, G0/0.20, G0/0.30), une par VLAN. Chaque sous-interface devient la passerelle par défaut des machines de son VLAN.*
+
+---
+
+#### Le Standard 802.1Q (Dot1Q)
+
+Lorsqu'un paquet voyage sur un lien trunk, le switch lui ajoute un **tag 802.1Q** — une étiquette de 4 octets insérée dans l'en-tête Ethernet qui indique à quel VLAN appartient ce paquet.
+
+```
+   TRAME ETHERNET STANDARD (sans tag)
+   ┌────────┬────────┬──────┬──────────┬─────┐
+   │  Dest  │  Src   │ Type │  Données │ FCS │
+   └────────┴────────┴──────┴──────────┴─────┘
+
+   TRAME ETHERNET AVEC TAG 802.1Q (sur un trunk)
+   ┌────────┬────────┬──────────┬──────┬──────────┬─────┐
+   │  Dest  │  Src   │ Tag 802.1Q│ Type │  Données │ FCS │
+   │        │        │(VLAN ID) │      │          │     │
+   └────────┴────────┴──────────┴──────┴──────────┴─────┘
+```
+
+*Légende : Comparaison entre une trame Ethernet standard (sans tag, utilisée sur un port d'accès) et une trame Ethernet avec tag 802.1Q (utilisée sur un lien trunk). Le champ Tag 802.1Q de 4 octets contient notamment le VLAN ID (12 bits, permettant de distinguer jusqu'à 4094 VLANs).*
+
+---
+
+### I.D. Cheminement d'un Paquet Inter-VLAN
+
+Traçons le chemin d'un paquet de **PC-RH (VLAN 10)** vers **PC-DIR (VLAN 30)** :
+
+```
+ 1. PC-RH envoie le paquet vers sa passerelle (192.168.10.1 = G0/0.10 du routeur)
+    │
+    ▼
+ 2. Le switch reçoit la trame sur le port Fa0/1 (VLAN 10 access)
+    Il ajoute le TAG 802.1Q (VLAN 10) et envoie vers le trunk
+    │
+    ▼
+ 3. Le routeur reçoit la trame taggée VLAN 10 sur G0/0.10
+    Il "dé-tag" la trame, lit l'adresse IP destination (192.168.30.x)
+    Il consulte sa table de routage → destination dans VLAN 30 → sortie G0/0.30
+    │
+    ▼
+ 4. Le routeur re-tagge la trame avec VLAN 30
+    Il envoie la trame sur le trunk vers le switch
+    │
+    ▼
+ 5. Le switch reçoit la trame taggée VLAN 30
+    Il retire le tag et envoie vers le port Fa0/3 (VLAN 30 access)
+    │
+    ▼
+ 6. PC-DIR reçoit le paquet
+```
+
+*Légende : Diagramme de flux montrant le cheminement étape par étape d'un paquet depuis PC-RH (VLAN 10) jusqu'à PC-DIR (VLAN 30). Chaque étape met en évidence le rôle du tag 802.1Q et l'action du routeur (consultation de la table de routage).*
+
+---
+
+### I.E. Configuration Cisco — Commandes Essentielles
+
+#### Côté Switch : Créer les VLANs et configurer le trunk
+
+```
+Switch> enable
+Switch# configure terminal
+
+! Créer les VLANs
+Switch(config)# vlan 10
+Switch(config-vlan)# name RH
+Switch(config-vlan)# exit
+
+Switch(config)# vlan 20
+Switch(config-vlan)# name Informatique
+Switch(config-vlan)# exit
+
+Switch(config)# vlan 30
+Switch(config-vlan)# name Direction
+Switch(config-vlan)# exit
+
+! Assigner les ports d'accès
+Switch(config)# interface FastEthernet0/1
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 10
+Switch(config-if)# exit
+
+Switch(config)# interface FastEthernet0/2
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 20
+Switch(config-if)# exit
+
+Switch(config)# interface FastEthernet0/3
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 30
+Switch(config-if)# exit
+
+! Configurer le port trunk vers le routeur
+Switch(config)# interface GigabitEthernet0/1
+Switch(config-if)# switchport mode trunk
+Switch(config-if)# switchport trunk encapsulation dot1q    ! (si requis par le modèle)
+Switch(config-if)# exit
+
+Switch(config)# end
+Switch# write memory
+```
+
+#### Côté Routeur : Créer les sous-interfaces
+
+```
+Router> enable
+Router# configure terminal
+
+! Activer l'interface physique (sans IP sur l'interface physique elle-même)
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# no shutdown
+Router(config-if)# exit
+
+! Créer la sous-interface pour VLAN 10
+Router(config)# interface GigabitEthernet0/0.10
+Router(config-subif)# encapsulation dot1Q 10
+Router(config-subif)# ip address 192.168.10.1 255.255.255.0
+Router(config-subif)# exit
+
+! Créer la sous-interface pour VLAN 20
+Router(config)# interface GigabitEthernet0/0.20
+Router(config-subif)# encapsulation dot1Q 20
+Router(config-subif)# ip address 192.168.20.1 255.255.255.0
+Router(config-subif)# exit
+
+! Créer la sous-interface pour VLAN 30
+Router(config)# interface GigabitEthernet0/0.30
+Router(config-subif)# encapsulation dot1Q 30
+Router(config-subif)# ip address 192.168.30.1 255.255.255.0
+Router(config-subif)# exit
+
+Router(config)# end
+Router# write memory
+```
+
+ **Règle importante :** Le numéro de sous-interface (`.10`, `.20`, `.30`) n'est pas obligatoirement identique au numéro de VLAN — mais c'est une **bonne pratique** de les aligner pour la lisibilité et la maintenance.
+
+#### Commandes de Vérification Essentielles
+
+| **Commande** | **Sur** | **Ce qu'elle affiche** |
+|---|---|---|
+| `show vlan brief` | Switch | Liste des VLANs et ports associés |
+| `show interfaces trunk` | Switch | Interfaces en mode trunk et VLANs autorisés |
+| `show ip interface brief` | Routeur | État de toutes les interfaces et sous-interfaces |
+| `show ip route` | Routeur | Table de routage (doit contenir les 3 réseaux) |
+| `ping 192.168.30.1` | PC source | Test de connectivité vers la passerelle du VLAN cible |
+
+---
