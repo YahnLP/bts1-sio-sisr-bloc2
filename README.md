@@ -1,6 +1,6 @@
 # Bloc 2 · SISR – BTS SIO 1re année
 
-Cours, TP et aide-mémoire du **bloc 2 (infrastructure, systèmes et réseaux)** du BTS SIO option SISR, 1re année : **19 séances de 4 h** pour 19 semaines d'alternance réparties sur l'année. Auteur : Yahn LE PRETTRE, Enseignant · Lycée Gustave Eiffel – licence CC BY-NC-SA 4.0.
+Cours, TP et aide-mémoire du **bloc 2 (infrastructure, systèmes et réseaux)** du BTS SIO option SISR, 1re année : **19 séances de 4 h** pour 19 semaines d'alternance réparties sur l'année. Auteur : Yahn LE PRETTRE - Formateur – licence CC BY-NC-SA 4.0.
 
 **Site (GitHub Pages) :** <https://yahnlp.github.io/bts1-sio-sisr-bloc2/>
 

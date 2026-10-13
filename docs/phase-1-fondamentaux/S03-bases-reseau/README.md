@@ -27,7 +27,7 @@
 | Document | Rôle |
 |---|---|
 | [Cours – Les fondamentaux du réseau](01-cours.md) | Cours |
-| [TP – Commandes réseau de diagnostic](02-tp.md) | TP |
+| [TP – Diagnostiquer un réseau : commandes et analyse de trames](02-tp.md) | TP |
 
 ## Déroulé conseillé (4 h)
 

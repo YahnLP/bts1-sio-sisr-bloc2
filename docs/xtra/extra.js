@@ -70,7 +70,7 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
 /* Enregistrer la page en PDF : bouton dans l'en-tête → ouvre la fenêtre d'impression (« Enregistrer au format PDF »).
    Mise en page « manuel » (voir extra.css), bloc d'identité, zones de réponse manuscrites, licences en fin de document. */
 (function () {
-  var AUTHOR = "Yahn LE PRETTRE", ROLE = "Enseignant · Lycée Gustave Eiffel", SITE = "https://yahnlp.github.io/BTS-SIO1-gustave-eiffel/";
+  var AUTHOR = "Yahn LE PRETTRE", ROLE = "Formateur", SITE = "https://yahnlp.github.io/bts1-sio-sisr-bloc2/";
   var CLASSES = { "Semestre 1": "BTS SIO SISR · 1re année · Semestre 1", "Semestre 2": "BTS SIO SISR · 1re année · Semestre 2",
                   "Ressources": "BTS SIO SISR · 1re année · Ressources", "Serveurs": "Parcours complémentaire · Serveurs" };
   var KINDS = { "cours": "Cours", "tp": "Travaux pratiques", "aide-mémoire": "Aide-mémoire", "aide-memoire": "Aide-mémoire", "comparatif": "Fiche" };
@@ -126,7 +126,7 @@ if (window.document$) document$.subscribe(decorate); else document.addEventListe
     var rows = TOOLS.filter(function (t, k) { return k === 0 ? (hasSim || t.re.test(text)) : t.re.test(text); });
     var col = document.createElement("div"); col.id = "print-colophon";
     col.innerHTML = '<h2>Licences et crédits</h2>' +
-      '<p><b>Ce document</b> – © ' + esc(AUTHOR) + ', enseignant au Lycée Gustave Eiffel. Placé sous licence <b>Creative Commons Attribution – Pas d\'utilisation commerciale – Partage dans les mêmes conditions 4.0 (CC BY-NC-SA 4.0)</b> : vous pouvez le partager et l\'adapter à des fins non commerciales, en citant l\'auteur et en conservant la même licence. <small>creativecommons.org/licenses/by-nc-sa/4.0/deed.fr</small></p>' +
+      '<p><b>Ce document</b> – © ' + esc(AUTHOR) + ', formateur. Placé sous licence <b>Creative Commons Attribution – Pas d\'utilisation commerciale – Partage dans les mêmes conditions 4.0 (CC BY-NC-SA 4.0)</b> : vous pouvez le partager et l\'adapter à des fins non commerciales, en citant l\'auteur et en conservant la même licence. <small>creativecommons.org/licenses/by-nc-sa/4.0/deed.fr</small></p>' +
       (rows.length ? '<table><thead><tr><th>Outil cité ou utilisé</th><th>Licence</th><th>Remarque</th></tr></thead><tbody>' +
         rows.map(function (t) { return '<tr><td>' + esc(t.name) + '</td><td>' + esc(t.lic) + '</td><td>' + esc(t.note) + '</td></tr>'; }).join("") + '</tbody></table>' : "") +
       '<p><small>Les marques citées (Cisco, Microsoft, Oracle, Docker, etc.) appartiennent à leurs propriétaires respectifs. Les licences des outils tiers sont indiquées à titre d\'information : se reporter aux textes officiels. Détail : ' + esc(SITE.replace("https://", "")) + 'ressources/licences/</small></p>';

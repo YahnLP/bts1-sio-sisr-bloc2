@@ -26,7 +26,8 @@
 
 | Document | Rôle |
 |---|---|
-
+| [Cours – Supervision, sauvegarde et haute disponibilité](01-cours.md) | Cours |
+| [TP – Superviser, sauvegarder et rendre un site web tolérant aux pannes](02-tp.md) | TP |
 
 ## Déroulé conseillé (4 h)
 

@@ -27,8 +27,10 @@
 
 | Document | Rôle |
 |---|---|
+| [Cours – Pare-feu, NAT et DMZ](01-cours.md) | Cours |
 | [Cours – Transfert de fichiers : FTP et SFTP](01c-cours-ftp-sftp.md) | Cours complémentaire |
 | [Cours – Protocoles applicatifs : HTTP, messagerie, DNS](01d-cours-protocoles.md) | Cours complémentaire |
+| [TP – Un pare-feu à trois zones et un serveur web en DMZ](02-tp.md) | TP |
 
 ## Déroulé conseillé (4 h)
 

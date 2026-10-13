@@ -8,7 +8,7 @@
 
 <p class="hero-sub">Cours, TP et aide-mémoire</p>
 
-<p class="hero-author">Yahn LE PRETTRE, enseignant · Lycée Gustave Eiffel</p>
+<p class="hero-author">Yahn LE PRETTRE - Formateur</p>
 
 <p class="hero-quote">Un administrateur n'apprend pas en lisant :<br><strong>il anticipe, il manipule, il comprend, il vérifie.</strong></p>
 

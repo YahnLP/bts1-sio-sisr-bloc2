@@ -2,7 +2,7 @@
 
 ## Les documents du site
 
-Cours, TP, fiches, aide-mémoire et corrigés sont © **Yahn LE PRETTRE**, enseignant au Lycée Gustave Eiffel, et placés sous licence **Creative Commons Attribution – Pas d'utilisation commerciale – Partage dans les mêmes conditions 4.0 (CC BY-NC-SA 4.0)**.
+Cours, TP, fiches, aide-mémoire et corrigés sont © **Yahn LE PRETTRE**, formateur, et placés sous licence **Creative Commons Attribution – Pas d'utilisation commerciale – Partage dans les mêmes conditions 4.0 (CC BY-NC-SA 4.0)**.
 
 Vous pouvez **partager** et **adapter** ces documents à des fins **non commerciales**, à condition de **citer l'auteur** et de **conserver la même licence**. Texte officiel : [creativecommons.org/licenses/by-nc-sa/4.0/deed.fr](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr).
 
