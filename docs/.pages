@@ -1,1 +1,7 @@
-arrange:
+nav:
+  - Accueil: index.md
+  - phase-1-fondamentaux
+  - phase-2-reseau
+  - phase-3-services
+  - phase-4-securiser-presenter
+  - ressources

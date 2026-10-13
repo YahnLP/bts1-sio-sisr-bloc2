@@ -1,0 +1,7 @@
+title: "Phase 2 – Réseau"
+nav:
+  - README.md
+  - S06-vlan-trunk
+  - S07-routage-statique-dhcp
+  - S08-dns-stp
+  - S09-inter-vlan-relais-dhcp
