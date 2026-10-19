@@ -10,7 +10,7 @@ Critères d'évaluation du plan de tests :
 
 | Critère | Attendu |
 |---|---|
-| Exhaustivité | Un test par service ou flux du cahier des charges (réseau, AD, GPO, DHCP, DNS, partages, FTP, SFTP) |
+| Exhaustivité | Les 22 tests du tableau 1.C exécutés, un par service ou flux du cahier des charges (réseau, DHCP, DNS, annuaire, GPO, partages, FTP, SFTP) |
 | Preuves | Capture numérotée par test |
 | Honnêteté | Échecs conservés, cause identifiée, correction et nouveau test |
 | Cohérence | Résultats cohérents avec les captures P1 à P7 de S17 |
@@ -36,7 +36,8 @@ La procédure EXP-01 du sujet est un modèle : elle doit se retrouver adaptée, 
 
 ## Points d'attention pour l'enseignant
 
-- Le TP renvoie aux sections **1.A, 1.B, 1.C** (checklist, causes probables, tableau de tests) et au « **tableau A2 (22 tests)** » : ces sections n'existent pas dans les fichiers actuels. Soit les créer, soit donner le plan de tests à part. Ce point est signalé dans la PR.
+- Les références **1.A** (checklist), **1.B** (causes probables) et **1.C** (22 tests) sont dans le TP. La colonne « Résultat attendu » du tableau 1.C sert de clé de correction.
+- Les adresses de 1.C sont celles du plan VLSM du [corrigé S17](S17-corrige.md) ; adapter si l'étudiant a un autre plan cohérent.
 - Un DAT qui documente des limites connues vaut mieux qu'un DAT qui les cache.
 
 ## Barème indicatif (20 points)

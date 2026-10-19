@@ -40,7 +40,7 @@
 
 ## Remarques pour l'enseignant
 
-- Le tableau « Pourquoi Linux » du TP contient des pourcentages **sans source** : ne pas les faire apprendre.
+- Le tableau « Pourquoi Linux » est désormais sourcé (W3Techs, Microsoft via Phoronix) : les chiffres évoluent, faire vérifier la date.
 - Les mots de passe `Azerty123!` sont voulus (labo).
 
 ## Barème indicatif (20 points)

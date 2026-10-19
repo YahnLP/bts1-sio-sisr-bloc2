@@ -56,4 +56,3 @@ Les mots de passe sont ceux du TP (labo).
 - Oublier `login` : le mot de passe n'est pas demandé.
 - Oublier `copy running-config startup-config`.
 - Banner mal terminé (caractère `#` manquant).
-- Fichier nommé `S6` alors que la séance est S05 : coquille de l'énoncé, à tolérer.

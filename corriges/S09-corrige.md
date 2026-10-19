@@ -29,10 +29,27 @@
 
 ## Points d'attention pour l'enseignant
 
-- Le service `isc-dhcp-server` n'écoute que sur les interfaces déclarées (`INTERFACESv4` dans `/etc/default/isc-dhcp-server`) : le TP n'en parle pas, c'est la panne la plus courante.
+- Le service `isc-dhcp-server` n'écoute que sur les interfaces déclarées (`INTERFACESv4` dans `/etc/default/isc-dhcp-server`, vu en S07) : c'est la panne la plus courante.
 - Le nom d'interface réseau (`eth0`) varie : vérifier avec `ip a`.
 - Le serveur DHCP est une VM et les clients sont dans Packet Tracer : prévoir la liaison entre les deux (ou un DHCP du simulateur). Sans cela, la partie E ne peut pas aboutir.
 - Le routeur doit être sauvegardé (`copy run start`).
+
+## TP complémentaire : routage inter-VLAN avec un routeur Cisco
+
+*Source : [TP 02b](../docs/phase-2-reseau/S09-inter-vlan-relais-dhcp/02b-tp-inter-vlan.md).*
+
+| Point | Attendu |
+|---|---|
+| Topologie | 1 switch, 1 routeur, 3 PC ; un seul câble switch-routeur (trunk) |
+| Postes | PC-RH `192.168.10.10`, PC-IT `192.168.20.10`, PC-DIR `192.168.30.10`, passerelles `.1` de chaque réseau |
+| Switch | VLAN 10, 20, 30 ; Fa0/1-3 en access ; `Gig0/1` en trunk |
+| Routeur | `Gig0/0` sans adresse, `no shutdown`, sous-interfaces `.10`, `.20`, `.30` avec `encapsulation dot1Q` |
+| Contrôles | Sous-interfaces en **up/up** ; 3 routes `C` dans `show ip route` |
+| Tests | Passerelles et PC des autres VLAN répondent ; le premier ping peut échouer (ARP) |
+
+**J'anticipe** : **un seul** câble (trunk) découpé en sous-interfaces logiques.
+
+Si un ping échoue : trunk absent ou VLAN non autorisé, sous-interface sans `encapsulation dot1Q`, passerelle fausse sur le PC.
 
 ## Barème indicatif (20 points)
 

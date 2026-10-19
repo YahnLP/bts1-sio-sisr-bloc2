@@ -17,7 +17,7 @@
 ## Partie B : scripts
 
 - `verif_lamp.sh` : `apache2` et `mariadb` actifs ; `php8.2-fpm` affiche `[N/A]` puisque PHP est servi par `libapache2-mod-php` ; le script reste correct.
-- `liste_users.sh` : **bogue dans l'énoncé** : `UID` est une variable en lecture seule de bash. `read ... UID ...` affiche `UID: readonly variable`. Faire renommer la variable (`ID_USER`), et idéalement `HOME` et `SHELL` (`REP_HOME`, `SHELL_USER`) pour ne pas écraser des variables d'environnement.
+- `liste_users.sh` : `UID` est une variable en lecture seule de bash (`read ... UID` affiche `UID: readonly variable`). Le TP utilise maintenant `ID_USER`, `REP_HOME` et `SHELL_USER`. Un étudiant qui garde `UID` doit comprendre pourquoi cela échoue.
 
 ## Partie C : SSH
 
@@ -48,6 +48,23 @@
 - `tar` affiche « Removing leading `/` » : normal, ce n'est pas une erreur.
 - Le mot de passe `SioSarl!Web2024` du TP est voulu (labo).
 - Le fichier `test.php` doit bien être supprimé (`phpinfo()` expose la configuration).
+
+## TP complémentaire : premiers scripts Bash
+
+*Source : [TP 02b](../docs/phase-3-services/S13-bash-lamp-ssh/02b-tp-bash.md).*
+
+| Script | Attendu |
+|---|---|
+| `bonjour.sh` | Variables et `echo`, date formatée, `chmod +x` |
+| `test_age.sh` | Catégories mineur / adulte actif / senior ; saisie vide refusée |
+| `check_user.sh` | `id` sert de test d'existence ; la sortie `id` s'affiche si le compte existe |
+| `creer_utilisateur.sh` | Exige root (`$EUID`), refuse champs vides et login existant, crée le groupe manquant, demande confirmation, crée le compte avec `useradd -m`, force le changement de mot de passe (`chage -d 0`), écrit `/var/log/creation_utilisateurs.log` |
+
+Tests de `creer_utilisateur.sh` : création normale (OK) ; login existant (message « existe déjà ») ; champ vide (message « champs obligatoires ») ; réponse `n` (création annulée) ; service inexistant (groupe créé automatiquement).
+
+**J'anticipe** : `$?` vaut `0` après une commande réussie, une autre valeur sinon ; le script s'en sert pour décider.
+
+Points d'attention : `test_age.sh` ne vérifie pas que la saisie est numérique (`abc` provoque « integer expression expected ») : bon prétexte pour demander une amélioration. Ne jamais afficher ni journaliser le mot de passe saisi.
 
 ## Barème indicatif (20 points)
 

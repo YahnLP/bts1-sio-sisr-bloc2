@@ -50,6 +50,25 @@ interface FastEthernet0/24
 **J'anticipe** (avant VLAN) : oui, tous les ports sont dans le VLAN 1. **J'anticipe** (VLAN 10 / VLAN 20) : non, domaines de diffusion séparés ; il faut un routeur ou un switch de niveau 3 pour les relier.
 **Je comprends** : avec un lien *access* VLAN 10, seul ce VLAN passe ; le trunk transporte plusieurs VLAN grâce à l'étiquette 802.1Q.
 
+## TP complémentaire : utilisateurs, groupes et permissions sous Linux
+
+*Source : [TP 02b](../docs/phase-2-reseau/S06-vlan-trunk/02b-tp-linux.md).*
+
+| Étape | Attendu |
+|---|---|
+| Groupes et comptes | 3 groupes (`direction`, `commercial`, `informatique`), 6 comptes ; `id alice` montre le groupe `direction` |
+| Répertoires | `/data/direction`, `/data/commercial`, `/data/informatique` en `drwxrwx---`, propriétaire `root`, groupe du service |
+| Informatique | `eric` et `fiona` ajoutés à `direction` et `commercial` avec `usermod -aG` ; `groups eric` liste les trois groupes |
+| Test `alice` | `ls /data/direction` réussit, `ls /data/commercial` refusé |
+| Test `charlie` | Crée un fichier dans `/data/commercial`, refusé sur `/data/direction` |
+| Test `eric` | Accède à `direction` et `commercial` |
+| Exercices | `600` donne `-rw-------`, `755` donne `-rwxr-xr-x`, `750` donne `drwxr-x---` |
+
+**J'anticipe** (`770`, `root:direction`) : `root` et les membres du groupe ont tous les droits ; les autres n'ont aucun accès, pas même d'entrer.
+**Je comprends** (« Permission denied ») : 1) propriétaire et groupe du dossier (`ls -ld`) ; 2) droits pour propriétaire, groupe, autres ; 3) appartenance de l'utilisateur au groupe (`id`) : après `usermod -aG`, une nouvelle session est nécessaire.
+
+Points d'attention : le message d'erreur dépend de la langue du système (« Permission non accordée » en français). Dans l'exercice 1, le fichier de `/home/alice` appartient à `alice` seulement s'il est créé par `alice` ; créé avec `sudo`, il appartient à `root`. Le TP indique les mots de passe des comptes (labo).
+
 ## Barème indicatif (20 points)
 
 | Critère | Points |
@@ -66,4 +85,3 @@ interface FastEthernet0/24
 - Trunk configuré d'un seul côté ; VLAN absent de la liste `allowed`.
 - Port laissé en mode dynamique (pas de `switchport mode access`).
 - Conclure que l'échec du test 3 prouve l'isolation VLAN : il est aussi dû aux sous-réseaux différents (l'énoncé le signale).
-- Fichier nommé `S7` alors que la séance est S06 : coquille de l'énoncé.
