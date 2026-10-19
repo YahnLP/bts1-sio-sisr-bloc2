@@ -43,7 +43,7 @@
 | **Cartes réseau** | 1 port Gigabit | **2-4 ports Gigabit ou 10 Gbps** (redondance) |
 | **Administration** | Locale (écran+clavier branchés) | **À distance** (SSH, RDP, iLO, iDRAC) |
 | **Système d'exploitation** | Windows 10/11, Linux Desktop | Windows Server, Linux Server (CentOS, Ubuntu Server, Debian...) |
-| **Disponibilité attendue** | 95% (acceptable s'il plante) | **99.9% à 99.999%** (= 8h à 5 min d'indispo par an) |
+| **Disponibilité attendue** | Pas d'engagement : une panne gêne une personne | **99,9 % à 99,999 %** (≈ 8 h 45 min à ≈ 5 min d'indisponibilité par an) |
 | **Garantie** | 1-3 ans | 3-5 ans (support 24/7 possible) |
 | **Prix** | 400 - 2 000 € | 2 000 - 50 000 €+ |
 
@@ -157,7 +157,7 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 - ✅ **Conseiller** les utilisateurs sur le bon câble à utiliser
 - ✅ **Auditer** l'infrastructure existante (inventaire des câblages)
 
- **Anecdote pro :** 30% des pannes en helpdesk sont des problèmes de **câbles** (mal branché, défectueux, mauvais type) !
+ **Retour d'expérience :** devant un « ça ne marche plus », le **câble** (mal branché, défectueux, mauvais type) est l'une des premières choses à contrôler : c'est gratuit et rapide.
 
 ---
 

@@ -132,6 +132,7 @@ Router(config-if)# no shutdown
 Router(config)# interface GigabitEthernet0/0.10
 Router(config-subif)# encapsulation dot1Q 10
 Router(config-subif)# ip address [passerelle VLAN 10] [masque]
+Router(config-subif)# ip helper-address 192.168.0.146    ! relais DHCP vers SRV-DHCP (VLAN clients, pas le VLAN 99)
 
 [Répéter pour chaque VLAN]
 ```
@@ -248,7 +249,8 @@ New-GPLink -Name "GPO_Fond_Ecran_SimIO" -Target $Dom
 
 ```powershell
 Install-WindowsFeature DHCP -IncludeManagementTools
-Add-DhcpServerInDC -DnsName "srv-ad01.siosarl.local" -IPAddress 192.168.0.145
+# À lancer sur SRV-DHCP : le serveur déclare SA PROPRE identité (nom et adresse)
+Add-DhcpServerInDC -DnsName "srv-dhcp.siosarl.local" -IPAddress 192.168.0.146
 
 # Créer une étendue par VLAN (adapter avec votre plan d'adressage)
 # Exemple VLAN 10 RH :
