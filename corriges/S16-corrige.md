@@ -66,7 +66,7 @@ Réponse type attendue :
 
 ## Points d'attention pour l'enseignant
 
-- Le script est lancé par `sudo crontab -e` donc **par root** : la clé SSH doit être celle de root (le TP crée la clé avec l'utilisateur). Sans cela, le `rsync` échoue en cron et réussit à la main.
+- Le script est lancé par `sudo crontab -e` donc **par root** : la clé SSH doit être celle de root (`sudo ssh-keygen`, `sudo ssh-copy-id`), comme le précise maintenant le TP. La restauration utilise `sudo scp` pour la même raison.
 - Mots de passe `MotDePasseTP` : voulus (labo).
 
 ## Barème indicatif (20 points)
@@ -83,5 +83,5 @@ Réponse type attendue :
 - Hostname de l'agent différent du nom de l'hôte dans Zabbix.
 - Pare-feu ou service Zabbix non démarré.
 - Sauvegarde jamais restaurée, donc non comptée.
-- Clé SSH d'un utilisateur alors que cron s'exécute en root.
+- Clé SSH d'un utilisateur ordinaire alors que cron s'exécute en root : le `rsync` réussit à la main et échoue en cron.
 - Archive restaurée directement sur `/` au lieu d'un dossier de test.

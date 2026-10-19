@@ -56,7 +56,7 @@
 
 ## Points d'attention pour l'enseignant
 
-- Le TP écrit `.\C:\Scripts\creer_utilisateurs_ad.ps1` : syntaxe invalide. Attendu : `C:\Scripts\creer_utilisateurs_ad.ps1` ou `& "C:\Scripts\..."`.
+- L'appel du script s'écrit `& "C:\Scripts\creer_utilisateurs_ad.ps1"` (l'ancienne forme `.\C:\...` était invalide et a été corrigée).
 - Enregistrer le CSV en UTF-8 (avec BOM sous Windows PowerShell 5.1) sinon les accents sont altérés.
 - Mot de passe `Nexio!2024` : voulu (labo).
 - Plusieurs OU sont créées à la racine du domaine, contrairement à l'arborescence de S10 : accepter.

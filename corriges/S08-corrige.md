@@ -28,6 +28,25 @@ Flags : `qr` = réponse ; `aa` = le serveur fait autorité ; `rd` = récursion d
 - **J'anticipe** (série non incrémenté) : le secondaire compare les numéros de série ; identiques, il ne recopie pas la modification.
 - **Je comprends** : `dig nom` interroge la zone directe (enregistrement A) ; `dig -x adresse` interroge la zone inverse (enregistrement PTR).
 
+## TP complémentaire : observer le STP sur trois commutateurs
+
+*Source : [TP 02b](../docs/phase-2-reseau/S08-dns-stp/02b-tp-stp.md).*
+
+| Étape | Attendu |
+|---|---|
+| Câblage | SW1 Fa0/1-SW2 Fa0/1, SW1 Fa0/2-SW3 Fa0/1, SW2 Fa0/2-SW3 Fa0/2 (le schéma du TP est cohérent avec cette liste) |
+| Priorité | 32769 sur les trois (32768 + numéro de VLAN 1) |
+| Root bridge | Le switch à la **plus petite adresse MAC** (priorités égales) : tous ses ports sont *Desg / FWD* |
+| Switchs non racines | Un *Root / FWD* vers le root bridge |
+| Lien entre les deux non racines | Un seul port bloqué (*Altn / BLK*), sur le switch de **plus grand** identifiant de pont |
+| Ping | PC1 vers PC2 et PC3 répondent par le chemin actif |
+
+Reconvergence : l'ordre de grandeur est de 30 à 50 s (écoute puis apprentissage). Le port bloqué ne passe en *Root / FWD* que si le lien retiré faisait partie du chemin actif ; sinon rien ne change : faire argumenter l'étudiant à partir de son propre tableau.
+
+Étape 6 : `spanning-tree vlan 1 priority 4096` sur SW3 ; `show spanning-tree` affiche « This bridge is the root ». La priorité est un multiple de 4096 (le reste est occupé par le numéro de VLAN dans l'identifiant de pont).
+
+**J'anticipe** : le switch à la plus petite MAC est le root bridge ; **un seul** lien est bloqué dans un triangle.
+
 ## Barème indicatif (20 points)
 
 | Critère | Points |
@@ -45,7 +64,3 @@ Flags : `qr` = réponse ; `aa` = le serveur fait autorité ; `rd` = récursion d
 - Redémarrer Bind sans avoir validé les zones.
 - Confondre CNAME (alias d'un nom) et A (adresse).
 - `allow-recursion` trop ouvert : un résolveur public peut servir à des attaques.
-
-## Remarque
-
-La séance s'intitule « DNS et STP » mais le TP ne porte que sur le DNS ; la partie STP est traitée dans le cours.

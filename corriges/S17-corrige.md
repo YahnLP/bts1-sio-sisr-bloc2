@@ -43,7 +43,7 @@ Justifications : Comptabilité (15 hôtes + passerelle) dépasse les 14 hôtes d
 
 Remarques :
 - `New-SmbShare -FullAccess "Tout le monde"` : bonne pratique si les droits NTFS sont restrictifs ; vérifier qu'ils le sont.
-- Le sujet autorise le DHCP sur `SRV-DHCP` (`.146`) mais autorise le serveur avec `Add-DhcpServerInDC ... 192.168.0.145` : à corriger si le rôle est sur un autre serveur (nom et adresse du serveur DHCP lui-même).
+- Le DHCP est sur `SRV-DHCP` (`.146`) : l'autorisation se fait avec le nom et l'adresse de **ce** serveur (`srv-dhcp.siosarl.local`, `192.168.0.146`), et le routeur relaie vers `.146` (`ip helper-address`).
 - Les mots de passe du sujet (`Admin!2024`, `Azerty!2024`, `Sftp!2024`) sont ceux du labo.
 
 ## Phase 5 : FTP et SFTP

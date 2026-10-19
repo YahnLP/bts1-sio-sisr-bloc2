@@ -427,7 +427,7 @@ PC2 - SWITCH - PC3
 - ❌ Si le switch tombe → tout le réseau tombe
 - ❌ Plus de câble nécessaire
 
-**Usage :** **Standard actuel** (99% des réseaux LAN)
+**Usage :** **Standard de fait** des réseaux locaux filaires
 
 ---
 

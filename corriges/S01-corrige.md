@@ -21,7 +21,7 @@ L'hyperviseur s'appuie sur des fonctions du processeur. Désactivées dans le mi
 
 | N° | Éléments attendus | Attention |
 |---|---|---|
-| 1 | Composants redondés (alimentations, disques), RAM ECC, processeurs serveur, garantie et support étendus, gestion à distance | Le « 5 à 10 fois » de l'énoncé est un ordre de grandeur non sourcé : ne pas l'exiger, accepter « nettement plus cher » |
+| 1 | Composants redondés (alimentations, disques), RAM ECC, processeurs serveur, garantie et support étendus, gestion à distance | L'énoncé ne donne plus de multiple chiffré (il n'était pas sourcé) : accepter « nettement plus cher » |
 | 2 | Techniquement oui ; pas de redondance, pas de gestion à distance, moins fiable en 24 h/24 | Accepter l'usage en test ou en labo |
 | 3 | Ça fonctionne, à la vitesse USB 2.0 (rétrocompatibilité) | |
 | 4 | Coût, équipements spécialisés, installation plus délicate | Ne pas conclure que le cuivre est « moins bon » : il suffit sur courte distance |

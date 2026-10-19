@@ -18,7 +18,7 @@
   Fa0/1       Fa0/2
      /           \
 [SW2]─────────[SW3]
-    Fa0/1   Fa0/1
+    Fa0/2   Fa0/2
 ```
 
 Trois switches reliés en **triangle** = 3 liens, donc **1 boucle** → STP doit bloquer 1 port.

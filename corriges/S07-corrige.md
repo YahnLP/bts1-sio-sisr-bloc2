@@ -51,6 +51,22 @@ Le côté DCE est identifié par `show controllers serial 0/0/0`. Le câble est 
 | Ping PC → passerelle KO | Mauvaise passerelle ou masque sur le PC |
 | Ping PC local OK, distant KO | Route statique absente d'un des deux routeurs |
 
+## TP complémentaire : serveur DHCP sous Linux
+
+*Source : [TP 02b](../docs/phase-2-reseau/S07-routage-statique-dhcp/02b-tp-dhcp-linux.md).*
+
+| Étape | Attendu |
+|---|---|
+| Installation | `isc-dhcp-server` installé ; le premier `status` affiche `failed` (normal, pas encore configuré) |
+| Interface | `INTERFACESv4="<nom réel>"` dans `/etc/default/isc-dhcp-server` (nom relevé avec `ip a`) |
+| `dhcpd.conf` | `authoritative`, sous-réseau `192.168.10.0/24`, plage `.100` à `.150`, `routers 192.168.10.1`, bail 600 s, réservation `PC-Imprimante` en `192.168.10.10` |
+| Contrôle | `dhcpd -t -cf /etc/dhcp/dhcpd.conf` sans erreur, puis `active (running)` |
+| Client | Adresse entre `.100` et `.150`, passerelle `.1` ; bail visible dans `/var/lib/dhcp/dhcpd.leases` |
+
+**J'anticipe** (pas d'option `routers`) : le client obtient adresse et masque mais **pas de passerelle** : il joint son réseau local, pas les autres.
+
+Pannes fréquentes : `INTERFACESv4` vide ou erroné (le service ne démarre pas) ; serveur sans adresse fixe dans le sous-réseau servi (`192.168.10.1/24`) ; MAC de la réservation non remplacée ; client et serveur sur des réseaux VirtualBox différents.
+
 ## Barème indicatif (20 points)
 
 | Critère | Points |
@@ -66,4 +82,3 @@ Le côté DCE est identifié par `show controllers serial 0/0/0`. Le câble est 
 - Route statique sur un seul routeur.
 - Prochain saut égal à sa propre adresse.
 - Masque `/30` mal posé (`255.255.255.252`).
-- Fichier nommé `S8` alors que la séance est S07 : coquille de l'énoncé.
