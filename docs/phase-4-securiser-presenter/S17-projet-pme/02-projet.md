@@ -73,28 +73,87 @@ Du **plus grand au plus petit** : on évite que de petits blocs fragmentent l'es
 
 Dans Packet Tracer, construire la topologie suivante :
 
-```mermaid
-flowchart TB
-    R["ROUTEUR<br/>routage inter-VLAN<br/>(sous-interfaces dot1Q)"]
-    A["SW-BatA"]
-    B["SW-BatB"]
-    R ---|"trunk (Gi0/1)"| A
-    A ---|"trunk Bât.A ↔ Bât.B<br/>VLAN 40 et 50 (Gi0/2)"| B
-    subgraph BatA["Bâtiment A : ports d'accès"]
-      direction LR
-      RH["PC-RH<br/>VLAN 10"]
-      IT["PC-IT<br/>VLAN 20"]
-      DIR["PC-Direction<br/>VLAN 30"]
-      SRV["SRV-AD01, SRV-DHCP, SRV-FTP<br/>VLAN 99"]
-    end
-    subgraph BatB["Bâtiment B : ports d'accès"]
-      direction LR
-      COM["PC-Commercial<br/>VLAN 40"]
-      CPT["PC Comptabilité<br/>VLAN 50"]
-    end
-    A --- BatA
-    B --- BatB
-```
+<figure class="graphe diagramme">
+<svg viewBox="0.00 0.00 1453.60 459.10" style="max-width:1939px;min-width:900px" role="img" aria-label="Schéma" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" transform="scale(1 1) rotate(0) translate(10.8 448.3)">
+<g class="cluster cl">
+<path fill="transparent" stroke="black" d="M281,-320.5C281,-320.5 1019,-320.5 1019,-320.5 1025,-320.5 1031,-326.5 1031,-332.5 1031,-332.5 1031,-417.5 1031,-417.5 1031,-423.5 1025,-429.5 1019,-429.5 1019,-429.5 281,-429.5 281,-429.5 275,-429.5 269,-423.5 269,-417.5 269,-417.5 269,-332.5 269,-332.5 269,-326.5 275,-320.5 281,-320.5"/>
+<text text-anchor="start" x="277" y="-414.3" font-family="Helvetica,sans-Serif" font-size="14.00">Bâtiment A : ports d&#39;accès</text>
+</g>
+<g class="cluster cl">
+<path fill="transparent" stroke="black" d="M1052,-320.5C1052,-320.5 1412,-320.5 1412,-320.5 1418,-320.5 1424,-326.5 1424,-332.5 1424,-332.5 1424,-417.5 1424,-417.5 1424,-423.5 1418,-429.5 1412,-429.5 1412,-429.5 1052,-429.5 1052,-429.5 1046,-429.5 1040,-423.5 1040,-417.5 1040,-417.5 1040,-332.5 1040,-332.5 1040,-326.5 1046,-320.5 1052,-320.5"/>
+<text text-anchor="start" x="1048" y="-414.3" font-family="Helvetica,sans-Serif" font-size="14.00">Bâtiment B : ports d&#39;accès</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M232.5,-399C232.5,-399 41.5,-399 41.5,-399 35.5,-399 29.5,-393 29.5,-387 29.5,-387 29.5,-340 29.5,-340 29.5,-334 35.5,-328 41.5,-328 41.5,-328 232.5,-328 232.5,-328 238.5,-328 244.5,-334 244.5,-340 244.5,-340 244.5,-387 244.5,-387 244.5,-393 238.5,-399 232.5,-399"/>
+<text text-anchor="start" x="99.5" y="-377" font-family="Helvetica,sans-Serif" font-size="15.00">ROUTEUR</text>
+<text text-anchor="start" x="65" y="-360" font-family="Helvetica,sans-Serif" font-size="15.00">routage inter&#45;VLAN</text>
+<text text-anchor="start" x="48.5" y="-343" font-family="Helvetica,sans-Serif" font-size="15.00">(sous&#45;interfaces dot1Q)</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M177,-256C177,-256 97,-256 97,-256 91,-256 85,-250 85,-244 85,-244 85,-231 85,-231 85,-225 91,-219 97,-219 97,-219 177,-219 177,-219 183,-219 189,-225 189,-231 189,-231 189,-244 189,-244 189,-250 183,-256 177,-256"/>
+<text text-anchor="start" x="104" y="-234" font-family="Helvetica,sans-Serif" font-size="15.00">SW&#45;BatA</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M137,-327.96C137,-304.6 137,-274.72 137,-256.09"/>
+<text text-anchor="start" x="137" y="-288.6" font-family="Helvetica,sans-Serif" font-size="13.00">trunk (Gi0/1)</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M92,-133C92,-133 12,-133 12,-133 6,-133 0,-127 0,-121 0,-121 0,-108 0,-108 0,-102 6,-96 12,-96 12,-96 92,-96 92,-96 98,-96 104,-102 104,-108 104,-108 104,-121 104,-121 104,-127 98,-133 92,-133"/>
+<text text-anchor="start" x="19" y="-111" font-family="Helvetica,sans-Serif" font-size="15.00">SW&#45;BatB</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M84.82,-221.17C70.02,-214.14 55.6,-204.12 47,-190 36.55,-172.84 40.59,-149.15 45.4,-133.12"/>
+<text text-anchor="start" x="53.5" y="-179.6" font-family="Helvetica,sans-Serif" font-size="13.00">trunk Bât.A ↔ Bât.B</text>
+<text text-anchor="start" x="47" y="-165.6" font-family="Helvetica,sans-Serif" font-size="13.00">VLAN 40 et 50 (Gi0/2)</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M248.5,-133C248.5,-133 197.5,-133 197.5,-133 191.5,-133 185.5,-127 185.5,-121 185.5,-121 185.5,-108 185.5,-108 185.5,-102 191.5,-96 197.5,-96 197.5,-96 248.5,-96 248.5,-96 254.5,-96 260.5,-102 260.5,-108 260.5,-108 260.5,-121 260.5,-121 260.5,-127 254.5,-133 248.5,-133"/>
+<text text-anchor="middle" x="223" y="-111" font-family="Helvetica,sans-Serif" font-size="15.00">BatA</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M167.13,-218.91C178.13,-211.23 189.86,-201.37 198,-190 210.31,-172.81 216.88,-149.12 220.15,-133.11"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M77.5,-37C77.5,-37 26.5,-37 26.5,-37 20.5,-37 14.5,-31 14.5,-25 14.5,-25 14.5,-12 14.5,-12 14.5,-6 20.5,0 26.5,0 26.5,0 77.5,0 77.5,0 83.5,0 89.5,-6 89.5,-12 89.5,-12 89.5,-25 89.5,-25 89.5,-31 83.5,-37 77.5,-37"/>
+<text text-anchor="middle" x="52" y="-15" font-family="Helvetica,sans-Serif" font-size="15.00">BatB</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M52,-95.82C52,-79.01 52,-53.88 52,-37.1"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M1003,-390.5C1003,-390.5 923,-390.5 923,-390.5 917,-390.5 911,-384.5 911,-378.5 911,-378.5 911,-348.5 911,-348.5 911,-342.5 917,-336.5 923,-336.5 923,-336.5 1003,-336.5 1003,-336.5 1009,-336.5 1015,-342.5 1015,-348.5 1015,-348.5 1015,-378.5 1015,-378.5 1015,-384.5 1009,-390.5 1003,-390.5"/>
+<text text-anchor="start" x="939.5" y="-368.5" font-family="Helvetica,sans-Serif" font-size="15.00">PC&#45;RH</text>
+<text text-anchor="start" x="930" y="-351.5" font-family="Helvetica,sans-Serif" font-size="15.00">VLAN 10</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M859,-390.5C859,-390.5 779,-390.5 779,-390.5 773,-390.5 767,-384.5 767,-378.5 767,-378.5 767,-348.5 767,-348.5 767,-342.5 773,-336.5 779,-336.5 779,-336.5 859,-336.5 859,-336.5 865,-336.5 871,-342.5 871,-348.5 871,-348.5 871,-378.5 871,-378.5 871,-384.5 865,-390.5 859,-390.5"/>
+<text text-anchor="start" x="799.5" y="-368.5" font-family="Helvetica,sans-Serif" font-size="15.00">PC&#45;IT</text>
+<text text-anchor="start" x="786" y="-351.5" font-family="Helvetica,sans-Serif" font-size="15.00">VLAN 20</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M715,-390.5C715,-390.5 607,-390.5 607,-390.5 601,-390.5 595,-384.5 595,-378.5 595,-378.5 595,-348.5 595,-348.5 595,-342.5 601,-336.5 607,-336.5 607,-336.5 715,-336.5 715,-336.5 721,-336.5 727,-342.5 727,-348.5 727,-348.5 727,-378.5 727,-378.5 727,-384.5 721,-390.5 715,-390.5"/>
+<text text-anchor="start" x="614" y="-368.5" font-family="Helvetica,sans-Serif" font-size="15.00">PC&#45;Direction</text>
+<text text-anchor="start" x="628" y="-351.5" font-family="Helvetica,sans-Serif" font-size="15.00">VLAN 30</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M543,-390.5C543,-390.5 297,-390.5 297,-390.5 291,-390.5 285,-384.5 285,-378.5 285,-378.5 285,-348.5 285,-348.5 285,-342.5 291,-336.5 297,-336.5 297,-336.5 543,-336.5 543,-336.5 549,-336.5 555,-342.5 555,-348.5 555,-348.5 555,-378.5 555,-378.5 555,-384.5 549,-390.5 543,-390.5"/>
+<text text-anchor="start" x="304" y="-368.5" font-family="Helvetica,sans-Serif" font-size="15.00">SRV&#45;AD01, SRV&#45;DHCP, SRV&#45;FTP</text>
+<text text-anchor="start" x="387" y="-351.5" font-family="Helvetica,sans-Serif" font-size="15.00">VLAN 99</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M1395.5,-390.5C1395.5,-390.5 1266.5,-390.5 1266.5,-390.5 1260.5,-390.5 1254.5,-384.5 1254.5,-378.5 1254.5,-378.5 1254.5,-348.5 1254.5,-348.5 1254.5,-342.5 1260.5,-336.5 1266.5,-336.5 1266.5,-336.5 1395.5,-336.5 1395.5,-336.5 1401.5,-336.5 1407.5,-342.5 1407.5,-348.5 1407.5,-348.5 1407.5,-378.5 1407.5,-378.5 1407.5,-384.5 1401.5,-390.5 1395.5,-390.5"/>
+<text text-anchor="start" x="1273.5" y="-368.5" font-family="Helvetica,sans-Serif" font-size="15.00">PC&#45;Commercial</text>
+<text text-anchor="start" x="1298" y="-351.5" font-family="Helvetica,sans-Serif" font-size="15.00">VLAN 40</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M1202.5,-390.5C1202.5,-390.5 1067.5,-390.5 1067.5,-390.5 1061.5,-390.5 1055.5,-384.5 1055.5,-378.5 1055.5,-378.5 1055.5,-348.5 1055.5,-348.5 1055.5,-342.5 1061.5,-336.5 1067.5,-336.5 1067.5,-336.5 1202.5,-336.5 1202.5,-336.5 1208.5,-336.5 1214.5,-342.5 1214.5,-348.5 1214.5,-348.5 1214.5,-378.5 1214.5,-378.5 1214.5,-384.5 1208.5,-390.5 1202.5,-390.5"/>
+<text text-anchor="start" x="1074.5" y="-368.5" font-family="Helvetica,sans-Serif" font-size="15.00">PC Comptabilité</text>
+<text text-anchor="start" x="1102" y="-351.5" font-family="Helvetica,sans-Serif" font-size="15.00">VLAN 50</text>
+</g>
+</g>
+</svg>
+</figure>
 
 > [!NOTE]
 > Les numéros de VLAN et le placement des postes sont ceux du plan d'adressage de la phase 1 : **adapte-les** si ton plan diffère. Le schéma montre le principe : deux commutateurs reliés par un trunk limité aux VLAN 40 et 50, et un routeur qui assure le routage entre VLAN.

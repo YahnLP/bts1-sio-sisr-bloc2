@@ -70,12 +70,43 @@ On regroupe les machines en **zones** selon leur niveau de confiance :
 | **DMZ** (*zone démilitarisée*) | Serveurs **accessibles de l'extérieur** : web, messagerie, relais | Moyenne : exposée, donc surveillée |
 | **Externe (WAN)** | Internet | Aucune |
 
-```mermaid
-flowchart LR
-    NET(("Internet<br/>zone externe")) -- "WAN 203.0.113.1/24" --- FW{{"Pare-feu / routeur"}}
-    FW -- "LAN 192.168.10.1/24" --- PC["Poste interne<br/>192.168.10.10"]
-    FW -- "DMZ 192.168.20.1/24" --- WEB["Serveur web<br/>192.168.20.10"]
-```
+<figure class="graphe diagramme">
+<svg viewBox="0.00 0.00 395.60 356.39" style="max-width:528px" role="img" aria-label="Schéma" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" transform="scale(1 1) rotate(0) translate(10.8 345.59)">
+<g class="node n&#45;ellipse">
+<ellipse fill="none" stroke="black" stroke-width="1.8" cx="170" cy="-296.6" rx="100.32" ry="38.37"/>
+<text text-anchor="start" x="139.5" y="-301.6" font-family="Helvetica,sans-Serif" font-size="15.00">Internet</text>
+<text text-anchor="start" x="121" y="-284.6" font-family="Helvetica,sans-Serif" font-size="15.00">zone externe</text>
+</g>
+<g class="node n&#45;hex">
+<polygon fill="none" stroke="black" stroke-width="1.8" points="308.61,-156.21 239.3,-186.63 100.7,-186.63 31.39,-156.21 100.7,-125.79 239.3,-125.79 308.61,-156.21"/>
+<text text-anchor="start" x="104" y="-152.71" font-family="Helvetica,sans-Serif" font-size="15.00">Pare&#45;feu / routeur</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M170,-258.15C170,-235.74 170,-207.65 170,-186.8"/>
+<text text-anchor="start" x="170" y="-219.02" font-family="Helvetica,sans-Serif" font-size="13.00">WAN 203.0.113.1/24</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M138,-54C138,-54 12,-54 12,-54 6,-54 0,-48 0,-42 0,-42 0,-12 0,-12 0,-6 6,0 12,0 12,0 138,0 138,0 144,0 150,-6 150,-12 150,-12 150,-42 150,-42 150,-48 144,-54 138,-54"/>
+<text text-anchor="start" x="25.5" y="-32" font-family="Helvetica,sans-Serif" font-size="15.00">Poste interne</text>
+<text text-anchor="start" x="19" y="-15" font-family="Helvetica,sans-Serif" font-size="15.00">192.168.10.10</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M101.95,-125.71C91.14,-117.96 81.43,-108.48 75,-97 67.8,-84.14 67.52,-67.71 69.17,-54.11"/>
+<text text-anchor="start" x="75" y="-86.6" font-family="Helvetica,sans-Serif" font-size="13.00">LAN 192.168.10.1/24</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M328,-54C328,-54 202,-54 202,-54 196,-54 190,-48 190,-42 190,-42 190,-12 190,-12 190,-6 196,0 202,0 202,0 328,0 328,0 334,0 340,-6 340,-12 340,-12 340,-42 340,-42 340,-48 334,-54 328,-54"/>
+<text text-anchor="start" x="218" y="-32" font-family="Helvetica,sans-Serif" font-size="15.00">Serveur web</text>
+<text text-anchor="start" x="209" y="-15" font-family="Helvetica,sans-Serif" font-size="15.00">192.168.20.10</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M197.37,-125.73C205.29,-116.74 213.74,-106.67 221,-97 231.23,-83.36 241.54,-67.35 249.6,-54.18"/>
+<text text-anchor="start" x="230" y="-86.6" font-family="Helvetica,sans-Serif" font-size="13.00">DMZ 192.168.20.1/24</text>
+</g>
+</g>
+</svg>
+</figure>
 
 **Le principe de la DMZ :** si le serveur web est piraté, l'attaquant se retrouve dans la DMZ, pas dans le LAN. Le pare-feu **interdit à la DMZ de joindre le LAN** (ou seulement pour un flux précis, vers un seul serveur).
 

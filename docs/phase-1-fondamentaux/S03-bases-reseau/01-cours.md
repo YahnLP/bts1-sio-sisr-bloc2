@@ -42,15 +42,58 @@
 | **Routeur** | Équipement reliant plusieurs réseaux entre eux | Autoroute inter-villes | Box Internet, routeur Cisco |
 | **Point d'accès Wi-Fi** | Permet connexion sans fil | Route sans goudron (radio) | Borne Wi-Fi d'entreprise |
 
-```mermaid
-flowchart LR
-    I((Internet)) --- R[Routeur]
-    R --- S[Switch]
-    S --- P1[PC 1]
-    S --- P2[PC 2]
-    S --- P3[PC 3]
-    S --- P4[PC 4]
-```
+<figure class="graphe diagramme">
+<svg viewBox="0.00 0.00 603.09 289.60" style="max-width:804px" role="img" aria-label="Schéma" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" transform="scale(1 1) rotate(0) translate(10.8 278.8)">
+<g class="node n&#45;ellipse">
+<ellipse fill="none" stroke="black" stroke-width="1.8" cx="74.25" cy="-133.5" rx="74.49" ry="26.33"/>
+<text text-anchor="start" x="43.75" y="-130" font-family="Helvetica,sans-Serif" font-size="15.00">Internet</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M292.49,-152C292.49,-152 218.49,-152 218.49,-152 212.49,-152 206.49,-146 206.49,-140 206.49,-140 206.49,-127 206.49,-127 206.49,-121 212.49,-115 218.49,-115 218.49,-115 292.49,-115 292.49,-115 298.49,-115 304.49,-121 304.49,-127 304.49,-127 304.49,-140 304.49,-140 304.49,-146 298.49,-152 292.49,-152"/>
+<text text-anchor="start" x="225.49" y="-130" font-family="Helvetica,sans-Serif" font-size="15.00">Routeur</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M148.67,-133.5C168.1,-133.5 188.59,-133.5 206.3,-133.5"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M439.49,-152C439.49,-152 374.49,-152 374.49,-152 368.49,-152 362.49,-146 362.49,-140 362.49,-140 362.49,-127 362.49,-127 362.49,-121 368.49,-115 374.49,-115 374.49,-115 439.49,-115 439.49,-115 445.49,-115 451.49,-121 451.49,-127 451.49,-127 451.49,-140 451.49,-140 451.49,-146 445.49,-152 439.49,-152"/>
+<text text-anchor="start" x="381.49" y="-130" font-family="Helvetica,sans-Serif" font-size="15.00">Switch</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M304.62,-133.5C323.06,-133.5 343.98,-133.5 362.01,-133.5"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M569.49,-268C569.49,-268 521.49,-268 521.49,-268 515.49,-268 509.49,-262 509.49,-256 509.49,-256 509.49,-243 509.49,-243 509.49,-237 515.49,-231 521.49,-231 521.49,-231 569.49,-231 569.49,-231 575.49,-231 581.49,-237 581.49,-243 581.49,-243 581.49,-256 581.49,-256 581.49,-262 575.49,-268 569.49,-268"/>
+<text text-anchor="start" x="528.49" y="-246" font-family="Helvetica,sans-Serif" font-size="15.00">PC 1</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M429.92,-152.14C455.4,-173.78 497.17,-209.28 522.62,-230.91"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M569.49,-191C569.49,-191 521.49,-191 521.49,-191 515.49,-191 509.49,-185 509.49,-179 509.49,-179 509.49,-166 509.49,-166 509.49,-160 515.49,-154 521.49,-154 521.49,-154 569.49,-154 569.49,-154 575.49,-154 581.49,-160 581.49,-166 581.49,-166 581.49,-179 581.49,-179 581.49,-185 575.49,-191 569.49,-191"/>
+<text text-anchor="start" x="528.49" y="-169" font-family="Helvetica,sans-Serif" font-size="15.00">PC 2</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M451.56,-145.95C470.13,-151.25 491.51,-157.36 509.09,-162.38"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M569.49,-114C569.49,-114 521.49,-114 521.49,-114 515.49,-114 509.49,-108 509.49,-102 509.49,-102 509.49,-89 509.49,-89 509.49,-83 515.49,-77 521.49,-77 521.49,-77 569.49,-77 569.49,-77 575.49,-77 581.49,-83 581.49,-89 581.49,-89 581.49,-102 581.49,-102 581.49,-108 575.49,-114 569.49,-114"/>
+<text text-anchor="start" x="528.49" y="-92" font-family="Helvetica,sans-Serif" font-size="15.00">PC 3</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M451.56,-121.37C470.13,-116.2 491.51,-110.25 509.09,-105.36"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M569.49,-37C569.49,-37 521.49,-37 521.49,-37 515.49,-37 509.49,-31 509.49,-25 509.49,-25 509.49,-12 509.49,-12 509.49,-6 515.49,0 521.49,0 521.49,0 569.49,0 569.49,0 575.49,0 581.49,-6 581.49,-12 581.49,-12 581.49,-25 581.49,-25 581.49,-31 575.49,-37 569.49,-37"/>
+<text text-anchor="start" x="528.49" y="-15" font-family="Helvetica,sans-Serif" font-size="15.00">PC 4</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M430.23,-114.77C455.61,-93.38 496.89,-58.61 522.27,-37.22"/>
+</g>
+</g>
+</svg>
+</figure>
 *Un réseau local simple : quatre PC reliés à un switch, lui-même connecté à un routeur (accès Internet).*
 ---
 
@@ -116,15 +159,64 @@ Plutôt que d'avoir un seul gros programme gérant tout (impossible à maintenir
 | **2** | **Liaison** | Adressage physique, détection d'erreurs | **Ethernet**, Wi-Fi, PPP | **Trame** (Frame) |
 | **1** | **Physique** | Transmission des bits (signaux électriques/optiques) | Câbles RJ45, fibre, ondes radio | **Bit** |
 
-```mermaid
-flowchart TB
-    A7["7 Application : navigateur, messagerie"] --> A6["6 Présentation : formats, chiffrement"]
-    A6 --> A5["5 Session : ouverture, maintien, fermeture"]
-    A5 --> A4["4 Transport : TCP, UDP, ports"]
-    A4 --> A3["3 Réseau : IP, routage"]
-    A3 --> A2["2 Liaison : Ethernet, adresses MAC"]
-    A2 --> A1["1 Physique : câbles, signaux, bits"]
-```
+<figure class="graphe diagramme">
+<svg viewBox="0.00 0.00 378.60 628.60" style="max-width:505px" role="img" aria-label="Schéma" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" transform="scale(1 1) rotate(0) translate(10.8 617.8)">
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M331,-607C331,-607 26,-607 26,-607 20,-607 14,-601 14,-595 14,-595 14,-582 14,-582 14,-576 20,-570 26,-570 26,-570 331,-570 331,-570 337,-570 343,-576 343,-582 343,-582 343,-595 343,-595 343,-601 337,-607 331,-607"/>
+<text text-anchor="start" x="33" y="-585" font-family="Helvetica,sans-Serif" font-size="15.00">7 Application : navigateur, messagerie</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M324,-512C324,-512 33,-512 33,-512 27,-512 21,-506 21,-500 21,-500 21,-487 21,-487 21,-481 27,-475 33,-475 33,-475 324,-475 324,-475 330,-475 336,-481 336,-487 336,-487 336,-500 336,-500 336,-506 330,-512 324,-512"/>
+<text text-anchor="start" x="40" y="-490" font-family="Helvetica,sans-Serif" font-size="15.00">6 Présentation : formats, chiffrement</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M178.5,-569.57C178.5,-555.84 178.5,-536.7 178.5,-521.18"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="181.65,-521.06 178.5,-512.06 175.35,-521.06 181.65,-521.06"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M345,-417C345,-417 12,-417 12,-417 6,-417 0,-411 0,-405 0,-405 0,-392 0,-392 0,-386 6,-380 12,-380 12,-380 345,-380 345,-380 351,-380 357,-386 357,-392 357,-392 357,-405 357,-405 357,-411 351,-417 345,-417"/>
+<text text-anchor="start" x="19" y="-395" font-family="Helvetica,sans-Serif" font-size="15.00">5 Session : ouverture, maintien, fermeture</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M178.5,-474.57C178.5,-460.84 178.5,-441.7 178.5,-426.18"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="181.65,-426.06 178.5,-417.06 175.35,-426.06 181.65,-426.06"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M292.5,-322C292.5,-322 64.5,-322 64.5,-322 58.5,-322 52.5,-316 52.5,-310 52.5,-310 52.5,-297 52.5,-297 52.5,-291 58.5,-285 64.5,-285 64.5,-285 292.5,-285 292.5,-285 298.5,-285 304.5,-291 304.5,-297 304.5,-297 304.5,-310 304.5,-310 304.5,-316 298.5,-322 292.5,-322"/>
+<text text-anchor="start" x="71.5" y="-300" font-family="Helvetica,sans-Serif" font-size="15.00">4 Transport : TCP, UDP, ports</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M178.5,-379.57C178.5,-365.84 178.5,-346.7 178.5,-331.18"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="181.65,-331.06 178.5,-322.06 175.35,-331.06 181.65,-331.06"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M267.5,-227C267.5,-227 89.5,-227 89.5,-227 83.5,-227 77.5,-221 77.5,-215 77.5,-215 77.5,-202 77.5,-202 77.5,-196 83.5,-190 89.5,-190 89.5,-190 267.5,-190 267.5,-190 273.5,-190 279.5,-196 279.5,-202 279.5,-202 279.5,-215 279.5,-215 279.5,-221 273.5,-227 267.5,-227"/>
+<text text-anchor="start" x="96.5" y="-205" font-family="Helvetica,sans-Serif" font-size="15.00">3 Réseau : IP, routage</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M178.5,-284.57C178.5,-270.84 178.5,-251.7 178.5,-236.18"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="181.65,-236.06 178.5,-227.06 175.35,-236.06 181.65,-236.06"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M315,-132C315,-132 42,-132 42,-132 36,-132 30,-126 30,-120 30,-120 30,-107 30,-107 30,-101 36,-95 42,-95 42,-95 315,-95 315,-95 321,-95 327,-101 327,-107 327,-107 327,-120 327,-120 327,-126 321,-132 315,-132"/>
+<text text-anchor="start" x="49" y="-110" font-family="Helvetica,sans-Serif" font-size="15.00">2 Liaison : Ethernet, adresses MAC</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M178.5,-189.57C178.5,-175.84 178.5,-156.7 178.5,-141.18"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="181.65,-141.06 178.5,-132.06 175.35,-141.06 181.65,-141.06"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M310.5,-37C310.5,-37 46.5,-37 46.5,-37 40.5,-37 34.5,-31 34.5,-25 34.5,-25 34.5,-12 34.5,-12 34.5,-6 40.5,0 46.5,0 46.5,0 310.5,0 310.5,0 316.5,0 322.5,-6 322.5,-12 322.5,-12 322.5,-25 322.5,-25 322.5,-31 316.5,-37 310.5,-37"/>
+<text text-anchor="start" x="53.5" y="-15" font-family="Helvetica,sans-Serif" font-size="15.00">1 Physique : câbles, signaux, bits</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M178.5,-94.57C178.5,-80.84 178.5,-61.7 178.5,-46.18"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="181.65,-46.06 178.5,-37.06 175.35,-46.06 181.65,-46.06"/>
+</g>
+</g>
+</svg>
+</figure>
 *Les 7 couches du modèle OSI, de l'application (en haut) au câble (en bas).*
 ---
 
@@ -333,33 +425,85 @@ Le **modèle TCP/IP** est le modèle **réellement utilisé** sur Internet. Il s
 | **2 - Internet** | 3 (Réseau) | IP, ICMP, ARP |
 | **1 - Accès Réseau** | 1, 2 (Physique, Liaison) | Ethernet, Wi-Fi |
 
-```mermaid
-flowchart LR
-    subgraph OSI
-      direction TB
-      o7[7 Application]
-      o6[6 Présentation]
-      o5[5 Session]
-      o4[4 Transport]
-      o3[3 Réseau]
-      o2[2 Liaison]
-      o1[1 Physique]
-    end
-    subgraph TCPIP["TCP/IP"]
-      direction TB
-      t4[Application]
-      t3[Transport]
-      t2[Internet]
-      t1[Accès réseau]
-    end
-    o7 --- t4
-    o6 --- t4
-    o5 --- t4
-    o4 --- t3
-    o3 --- t2
-    o2 --- t1
-    o1 --- t1
-```
+<figure class="graphe diagramme">
+<svg viewBox="0.00 0.00 410.60 592.60" style="max-width:548px" role="img" aria-label="Schéma" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" transform="scale(1 1) rotate(0) translate(10.8 581.8)">
+<g class="cluster cl">
+<path fill="transparent" stroke="black" d="M20,-8C20,-8 175,-8 175,-8 181,-8 187,-14 187,-20 187,-20 187,-551 187,-551 187,-557 181,-563 175,-563 175,-563 20,-563 20,-563 14,-563 8,-557 8,-551 8,-551 8,-20 8,-20 8,-14 14,-8 20,-8"/>
+<text text-anchor="start" x="16" y="-547.8" font-family="Helvetica,sans-Serif" font-size="14.00">OSI</text>
+</g>
+<g class="cluster cl">
+<path fill="transparent" stroke="black" d="M225,-85C225,-85 369,-85 369,-85 375,-85 381,-91 381,-97 381,-97 381,-397 381,-397 381,-403 375,-409 369,-409 369,-409 225,-409 225,-409 219,-409 213,-403 213,-397 213,-397 213,-97 213,-97 213,-91 219,-85 225,-85"/>
+<text text-anchor="start" x="221" y="-393.8" font-family="Helvetica,sans-Serif" font-size="14.00">TCP/IP</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M154.5,-523.5C154.5,-523.5 40.5,-523.5 40.5,-523.5 34.5,-523.5 28.5,-517.5 28.5,-511.5 28.5,-511.5 28.5,-498.5 28.5,-498.5 28.5,-492.5 34.5,-486.5 40.5,-486.5 40.5,-486.5 154.5,-486.5 154.5,-486.5 160.5,-486.5 166.5,-492.5 166.5,-498.5 166.5,-498.5 166.5,-511.5 166.5,-511.5 166.5,-517.5 160.5,-523.5 154.5,-523.5"/>
+<text text-anchor="start" x="47.5" y="-501.5" font-family="Helvetica,sans-Serif" font-size="15.00">7 Application</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M347,-369.5C347,-369.5 247,-369.5 247,-369.5 241,-369.5 235,-363.5 235,-357.5 235,-357.5 235,-344.5 235,-344.5 235,-338.5 241,-332.5 247,-332.5 247,-332.5 347,-332.5 347,-332.5 353,-332.5 359,-338.5 359,-344.5 359,-344.5 359,-357.5 359,-357.5 359,-363.5 353,-369.5 347,-369.5"/>
+<text text-anchor="start" x="254" y="-347.5" font-family="Helvetica,sans-Serif" font-size="15.00">Application</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M151.4,-486.49C163.61,-481.1 176.18,-474.58 187,-467 226.84,-439.1 263.42,-394.73 282.39,-369.73"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M159,-446.5C159,-446.5 36,-446.5 36,-446.5 30,-446.5 24,-440.5 24,-434.5 24,-434.5 24,-421.5 24,-421.5 24,-415.5 30,-409.5 36,-409.5 36,-409.5 159,-409.5 159,-409.5 165,-409.5 171,-415.5 171,-421.5 171,-421.5 171,-434.5 171,-434.5 171,-440.5 165,-446.5 159,-446.5"/>
+<text text-anchor="start" x="43" y="-424.5" font-family="Helvetica,sans-Serif" font-size="15.00">6 Présentation</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M146.06,-409.46C177.1,-397.35 217.48,-381.61 248.51,-369.51"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M140.5,-369.5C140.5,-369.5 54.5,-369.5 54.5,-369.5 48.5,-369.5 42.5,-363.5 42.5,-357.5 42.5,-357.5 42.5,-344.5 42.5,-344.5 42.5,-338.5 48.5,-332.5 54.5,-332.5 54.5,-332.5 140.5,-332.5 140.5,-332.5 146.5,-332.5 152.5,-338.5 152.5,-344.5 152.5,-344.5 152.5,-357.5 152.5,-357.5 152.5,-363.5 146.5,-369.5 140.5,-369.5"/>
+<text text-anchor="start" x="61.5" y="-347.5" font-family="Helvetica,sans-Serif" font-size="15.00">5 Session</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M152.73,-351C178.19,-351 208.66,-351 234.93,-351"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M147,-292.5C147,-292.5 48,-292.5 48,-292.5 42,-292.5 36,-286.5 36,-280.5 36,-280.5 36,-267.5 36,-267.5 36,-261.5 42,-255.5 48,-255.5 48,-255.5 147,-255.5 147,-255.5 153,-255.5 159,-261.5 159,-267.5 159,-267.5 159,-280.5 159,-280.5 159,-286.5 153,-292.5 147,-292.5"/>
+<text text-anchor="start" x="55" y="-270.5" font-family="Helvetica,sans-Serif" font-size="15.00">4 Transport</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M339,-292.5C339,-292.5 255,-292.5 255,-292.5 249,-292.5 243,-286.5 243,-280.5 243,-280.5 243,-267.5 243,-267.5 243,-261.5 249,-255.5 255,-255.5 255,-255.5 339,-255.5 339,-255.5 345,-255.5 351,-261.5 351,-267.5 351,-267.5 351,-280.5 351,-280.5 351,-286.5 345,-292.5 339,-292.5"/>
+<text text-anchor="start" x="262" y="-270.5" font-family="Helvetica,sans-Serif" font-size="15.00">Transport</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M159.1,-274C185.86,-274 217.04,-274 242.87,-274"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M139,-215.5C139,-215.5 56,-215.5 56,-215.5 50,-215.5 44,-209.5 44,-203.5 44,-203.5 44,-190.5 44,-190.5 44,-184.5 50,-178.5 56,-178.5 56,-178.5 139,-178.5 139,-178.5 145,-178.5 151,-184.5 151,-190.5 151,-190.5 151,-203.5 151,-203.5 151,-209.5 145,-215.5 139,-215.5"/>
+<text text-anchor="start" x="63" y="-193.5" font-family="Helvetica,sans-Serif" font-size="15.00">3 Réseau</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M334.5,-215.5C334.5,-215.5 259.5,-215.5 259.5,-215.5 253.5,-215.5 247.5,-209.5 247.5,-203.5 247.5,-203.5 247.5,-190.5 247.5,-190.5 247.5,-184.5 253.5,-178.5 259.5,-178.5 259.5,-178.5 334.5,-178.5 334.5,-178.5 340.5,-178.5 346.5,-184.5 346.5,-190.5 346.5,-190.5 346.5,-203.5 346.5,-203.5 346.5,-209.5 340.5,-215.5 334.5,-215.5"/>
+<text text-anchor="start" x="266.5" y="-193.5" font-family="Helvetica,sans-Serif" font-size="15.00">Internet</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M151.17,-197C180.99,-197 218.05,-197 247.21,-197"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M138,-138.5C138,-138.5 57,-138.5 57,-138.5 51,-138.5 45,-132.5 45,-126.5 45,-126.5 45,-113.5 45,-113.5 45,-107.5 51,-101.5 57,-101.5 57,-101.5 138,-101.5 138,-101.5 144,-101.5 150,-107.5 150,-113.5 150,-113.5 150,-126.5 150,-126.5 150,-132.5 144,-138.5 138,-138.5"/>
+<text text-anchor="start" x="64" y="-116.5" font-family="Helvetica,sans-Serif" font-size="15.00">2 Liaison</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M353,-138.5C353,-138.5 241,-138.5 241,-138.5 235,-138.5 229,-132.5 229,-126.5 229,-126.5 229,-113.5 229,-113.5 229,-107.5 235,-101.5 241,-101.5 241,-101.5 353,-101.5 353,-101.5 359,-101.5 365,-107.5 365,-113.5 365,-113.5 365,-126.5 365,-126.5 365,-132.5 359,-138.5 353,-138.5"/>
+<text text-anchor="start" x="248" y="-116.5" font-family="Helvetica,sans-Serif" font-size="15.00">Accès réseau</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M150.13,-120C174.13,-120 202.99,-120 228.67,-120"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M146,-61.5C146,-61.5 49,-61.5 49,-61.5 43,-61.5 37,-55.5 37,-49.5 37,-49.5 37,-36.5 37,-36.5 37,-30.5 43,-24.5 49,-24.5 49,-24.5 146,-24.5 146,-24.5 152,-24.5 158,-30.5 158,-36.5 158,-36.5 158,-49.5 158,-49.5 158,-55.5 152,-61.5 146,-61.5"/>
+<text text-anchor="start" x="56" y="-39.5" font-family="Helvetica,sans-Serif" font-size="15.00">1 Physique</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M146.06,-61.54C177.1,-73.65 217.48,-89.39 248.51,-101.49"/>
+</g>
+</g>
+</svg>
+</figure>
 *Correspondance entre le modèle OSI (7 couches) et le modèle TCP/IP (4 couches).*
 **Pourquoi deux modèles ?**
 - **OSI** : Modèle théorique, pédagogique (ISO, 1984)
@@ -380,12 +524,44 @@ flowchart LR
 | **MAN** | Metropolitan Area Network | Ville (10-100 km) | Réseau universitaire multi-sites, réseau municipal |
 | **WAN** | Wide Area Network | Pays, continent, monde | Internet, réseau d'entreprise multi-pays |
 
-```mermaid
-flowchart LR
-    PAN["PAN : quelques mètres<br/>Bluetooth, USB"] --> LAN["LAN : bâtiment, campus<br/>réseau d'entreprise"]
-    LAN --> MAN["MAN : ville<br/>réseau municipal"]
-    MAN --> WAN["WAN : pays, monde<br/>Internet"]
-```
+<figure class="graphe diagramme">
+<svg viewBox="0.00 0.00 240.60 411.60" style="max-width:321px" role="img" aria-label="Schéma" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" transform="scale(1 1) rotate(0) translate(10.8 400.8)">
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M201.5,-390C201.5,-390 17.5,-390 17.5,-390 11.5,-390 5.5,-384 5.5,-378 5.5,-378 5.5,-348 5.5,-348 5.5,-342 11.5,-336 17.5,-336 17.5,-336 201.5,-336 201.5,-336 207.5,-336 213.5,-342 213.5,-348 213.5,-348 213.5,-378 213.5,-378 213.5,-384 207.5,-390 201.5,-390"/>
+<text text-anchor="start" x="24.5" y="-368" font-family="Helvetica,sans-Serif" font-size="15.00">PAN : quelques mètres</text>
+<text text-anchor="start" x="52" y="-351" font-family="Helvetica,sans-Serif" font-size="15.00">Bluetooth, USB</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M207,-278C207,-278 12,-278 12,-278 6,-278 0,-272 0,-266 0,-266 0,-236 0,-236 0,-230 6,-224 12,-224 12,-224 207,-224 207,-224 213,-224 219,-230 219,-236 219,-236 219,-266 219,-266 219,-272 213,-278 207,-278"/>
+<text text-anchor="start" x="19" y="-256" font-family="Helvetica,sans-Serif" font-size="15.00">LAN : bâtiment, campus</text>
+<text text-anchor="start" x="37" y="-239" font-family="Helvetica,sans-Serif" font-size="15.00">réseau d&#39;entreprise</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M109.5,-335.93C109.5,-321.52 109.5,-303.39 109.5,-287.68"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="112.65,-287.26 109.5,-278.26 106.35,-287.26 112.65,-287.26"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M181.5,-166C181.5,-166 37.5,-166 37.5,-166 31.5,-166 25.5,-160 25.5,-154 25.5,-154 25.5,-124 25.5,-124 25.5,-118 31.5,-112 37.5,-112 37.5,-112 181.5,-112 181.5,-112 187.5,-112 193.5,-118 193.5,-124 193.5,-124 193.5,-154 193.5,-154 193.5,-160 187.5,-166 181.5,-166"/>
+<text text-anchor="start" x="69" y="-144" font-family="Helvetica,sans-Serif" font-size="15.00">MAN : ville</text>
+<text text-anchor="start" x="44.5" y="-127" font-family="Helvetica,sans-Serif" font-size="15.00">réseau municipal</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M109.5,-223.93C109.5,-209.52 109.5,-191.39 109.5,-175.68"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="112.65,-175.26 109.5,-166.26 106.35,-175.26 112.65,-175.26"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M190,-54C190,-54 29,-54 29,-54 23,-54 17,-48 17,-42 17,-42 17,-12 17,-12 17,-6 23,0 29,0 29,0 190,0 190,0 196,0 202,-6 202,-12 202,-12 202,-42 202,-42 202,-48 196,-54 190,-54"/>
+<text text-anchor="start" x="36" y="-32" font-family="Helvetica,sans-Serif" font-size="15.00">WAN : pays, monde</text>
+<text text-anchor="start" x="79" y="-15" font-family="Helvetica,sans-Serif" font-size="15.00">Internet</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M109.5,-111.93C109.5,-97.52 109.5,-79.39 109.5,-63.68"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="112.65,-63.26 109.5,-54.26 106.35,-63.26 112.65,-63.26"/>
+</g>
+</g>
+</svg>
+</figure>
 *Les échelles de réseaux, du PAN (le plus petit) au WAN (le plus grand).*
 ---
 
