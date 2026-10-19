@@ -32,12 +32,42 @@ Un technicien systèmes et réseaux doit pouvoir **diagnostiquer une panne maté
 
 Les deux sont indissociables : un logiciel ne fonctionne pas sans matériel, et un matériel sans logiciel ne sert à rien.
 
-```mermaid
-flowchart TB
-    U["Utilisateur"] --> A["Applications : Word, navigateur"]
-    A -->|"demande des services"| O["Système d'exploitation : Windows, Linux"]
-    O -->|"pilote et partage"| M["Matériel : processeur, mémoire, disque"]
-```
+<figure class="graphe diagramme">
+<svg viewBox="0.00 0.00 363.60 372.60" style="max-width:485px" role="img" aria-label="Schéma" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" transform="scale(1 1) rotate(0) translate(10.8 361.8)">
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M217.5,-351C217.5,-351 124.5,-351 124.5,-351 118.5,-351 112.5,-345 112.5,-339 112.5,-339 112.5,-326 112.5,-326 112.5,-320 118.5,-314 124.5,-314 124.5,-314 217.5,-314 217.5,-314 223.5,-314 229.5,-320 229.5,-326 229.5,-326 229.5,-339 229.5,-339 229.5,-345 223.5,-351 217.5,-351"/>
+<text text-anchor="start" x="131.5" y="-329" font-family="Helvetica,sans-Serif" font-size="15.00">Utilisateur</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M297,-255C297,-255 45,-255 45,-255 39,-255 33,-249 33,-243 33,-243 33,-230 33,-230 33,-224 39,-218 45,-218 45,-218 297,-218 297,-218 303,-218 309,-224 309,-230 309,-230 309,-243 309,-243 309,-249 303,-255 297,-255"/>
+<text text-anchor="start" x="52" y="-233" font-family="Helvetica,sans-Serif" font-size="15.00">Applications : Word, navigateur</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M171,-313.82C171,-299.9 171,-280.27 171,-264.41"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="174.15,-264.1 171,-255.1 167.85,-264.1 174.15,-264.1"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M330,-146C330,-146 12,-146 12,-146 6,-146 0,-140 0,-134 0,-134 0,-121 0,-121 0,-115 6,-109 12,-109 12,-109 330,-109 330,-109 336,-109 342,-115 342,-121 342,-121 342,-134 342,-134 342,-140 336,-146 330,-146"/>
+<text text-anchor="start" x="19" y="-124" font-family="Helvetica,sans-Serif" font-size="15.00">Système d&#39;exploitation : Windows, Linux</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M171,-217.83C171,-200.79 171,-174.78 171,-155.22"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="174.15,-155.2 171,-146.2 167.85,-155.2 174.15,-155.2"/>
+<text text-anchor="start" x="171" y="-178.6" font-family="Helvetica,sans-Serif" font-size="13.00">demande des services</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M324,-37C324,-37 18,-37 18,-37 12,-37 6,-31 6,-25 6,-25 6,-12 6,-12 6,-6 12,0 18,0 18,0 324,0 324,0 330,0 336,-6 336,-12 336,-12 336,-25 336,-25 336,-31 330,-37 324,-37"/>
+<text text-anchor="start" x="25" y="-15" font-family="Helvetica,sans-Serif" font-size="15.00">Matériel : processeur, mémoire, disque</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M171,-108.83C171,-91.79 171,-65.78 171,-46.22"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="174.15,-46.2 171,-37.2 167.85,-46.2 174.15,-46.2"/>
+<text text-anchor="start" x="171" y="-69.6" font-family="Helvetica,sans-Serif" font-size="13.00">pilote et partage</text>
+</g>
+</g>
+</svg>
+</figure>
 
 *Chaque couche utilise les services de la couche du dessous.*
 

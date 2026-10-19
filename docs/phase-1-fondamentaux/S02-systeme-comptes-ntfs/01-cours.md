@@ -61,14 +61,56 @@ L'OS organise les données en **fichiers** et **dossiers** (hiérarchie arboresc
 - Rechercher des fichiers
 - Sauvegarder et restaurer des données
 
-```mermaid
-flowchart TB
-    C["Disque C:"] --> W[Windows]
-    C --> PF[Program Files]
-    C --> U[Users]
-    U --> A[alice]
-    U --> B[bob]
-```
+<figure class="graphe diagramme">
+<svg viewBox="0.00 0.00 474.60 248.60" style="max-width:633px" role="img" aria-label="Schéma" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" transform="scale(1 1) rotate(0) translate(10.8 237.8)">
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M258,-227C258,-227 171,-227 171,-227 165,-227 159,-221 159,-215 159,-215 159,-202 159,-202 159,-196 165,-190 171,-190 171,-190 258,-190 258,-190 264,-190 270,-196 270,-202 270,-202 270,-215 270,-215 270,-221 264,-227 258,-227"/>
+<text text-anchor="start" x="178" y="-205" font-family="Helvetica,sans-Serif" font-size="15.00">Disque C:</text>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M93,-132C93,-132 12,-132 12,-132 6,-132 0,-126 0,-120 0,-120 0,-107 0,-107 0,-101 6,-95 12,-95 12,-95 93,-95 93,-95 99,-95 105,-101 105,-107 105,-107 105,-120 105,-120 105,-126 99,-132 93,-132"/>
+<text text-anchor="start" x="19" y="-110" font-family="Helvetica,sans-Serif" font-size="15.00">Windows</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M183.65,-189.79C157.41,-174.73 119.6,-153.02 91.32,-136.78"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="92.61,-133.89 83.24,-132.15 89.47,-139.36 92.61,-133.89"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M272,-132C272,-132 157,-132 157,-132 151,-132 145,-126 145,-120 145,-120 145,-107 145,-107 145,-101 151,-95 157,-95 157,-95 272,-95 272,-95 278,-95 284,-101 284,-107 284,-107 284,-120 284,-120 284,-126 278,-132 272,-132"/>
+<text text-anchor="start" x="164" y="-110" font-family="Helvetica,sans-Serif" font-size="15.00">Program Files</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M214.5,-189.57C214.5,-175.84 214.5,-156.7 214.5,-141.18"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="217.65,-141.06 214.5,-132.06 211.35,-141.06 217.65,-141.06"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M392.5,-132C392.5,-132 336.5,-132 336.5,-132 330.5,-132 324.5,-126 324.5,-120 324.5,-120 324.5,-107 324.5,-107 324.5,-101 330.5,-95 336.5,-95 336.5,-95 392.5,-95 392.5,-95 398.5,-95 404.5,-101 404.5,-107 404.5,-107 404.5,-120 404.5,-120 404.5,-126 398.5,-132 392.5,-132"/>
+<text text-anchor="start" x="343.5" y="-110" font-family="Helvetica,sans-Serif" font-size="15.00">Users</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M243.07,-189.79C267.26,-174.79 302.07,-153.21 328.22,-136.99"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="330.05,-139.57 336.04,-132.15 326.73,-134.21 330.05,-139.57"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M333.5,-37C333.5,-37 283.5,-37 283.5,-37 277.5,-37 271.5,-31 271.5,-25 271.5,-25 271.5,-12 271.5,-12 271.5,-6 277.5,0 283.5,0 283.5,0 333.5,0 333.5,0 339.5,0 345.5,-6 345.5,-12 345.5,-12 345.5,-25 345.5,-25 345.5,-31 339.5,-37 333.5,-37"/>
+<text text-anchor="start" x="290.5" y="-15" font-family="Helvetica,sans-Serif" font-size="15.00">alice</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M353.7,-94.57C345.2,-80.46 333.25,-60.61 323.77,-44.87"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="326.42,-43.15 319.07,-37.06 321.02,-46.4 326.42,-43.15"/>
+</g>
+<g class="node n&#45;rect">
+<path fill="none" stroke="black" stroke-width="1.8" d="M441,-37C441,-37 398,-37 398,-37 392,-37 386,-31 386,-25 386,-25 386,-12 386,-12 386,-6 392,0 398,0 398,0 441,0 441,0 447,0 453,-6 453,-12 453,-12 453,-25 453,-25 453,-31 447,-37 441,-37"/>
+<text text-anchor="start" x="405" y="-15" font-family="Helvetica,sans-Serif" font-size="15.00">bob</text>
+</g>
+<g class="edge">
+<path fill="none" stroke="black" stroke-width="1.8" d="M375.1,-94.57C383.45,-80.46 395.19,-60.61 404.5,-44.87"/>
+<polygon fill="black" stroke="black" stroke-width="1.8" points="407.24,-46.41 409.11,-37.06 401.82,-43.2 407.24,-46.41"/>
+</g>
+</g>
+</svg>
+</figure>
 *Arborescence typique de Windows : la racine du disque `C:`, les dossiers du système et les dossiers personnels sous `Users`.*
 ---
 
