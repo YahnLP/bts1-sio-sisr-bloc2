@@ -6,7 +6,7 @@
 | **Séance** | S17 (séance 17 sur 19) – Phase 4 |
 | **Durée** | 4 heures |
 | **Prérequis** | S04 à S15. |
-| **Matériel** | Simulateur réseau ou Packet Tracer (réseau), VM Windows Server et Debian (services) |
+| **Matériel** | Simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) pour le réseau ; VM Windows Server et Debian (services) |
 | **Compétences travaillées** | B2.1 · B2.2 · B2.3 · B3.3 · B1.4 (mode projet) (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]

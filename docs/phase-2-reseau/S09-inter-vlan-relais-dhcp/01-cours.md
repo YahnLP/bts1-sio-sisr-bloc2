@@ -4,7 +4,7 @@
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** S06 à S08.
-> - **Matériel :** Simulateur réseau ou Packet Tracer ; VM Debian (DHCP, DNS).
+> - **Matériel :** Simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) ; VM Debian (DHCP, DNS).
 
 ## À la fin de ce cours, tu sauras
 

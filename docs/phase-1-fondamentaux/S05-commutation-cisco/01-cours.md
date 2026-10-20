@@ -4,7 +4,7 @@
 
 > [!NOTE] Ce que tu dois savoir déjà
 > - **Prérequis :** S04 (adressage, ARP) ; terminal Linux de base.
-> - **Matériel :** Simulateur réseau ou Packet Tracer ; VM Debian.
+> - **Matériel :** Simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) ; VM Debian.
 
 ## À la fin de ce cours, tu sauras
 

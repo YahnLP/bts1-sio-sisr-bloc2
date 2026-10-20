@@ -8,6 +8,9 @@
 > **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le simulateur réseau ou Packet Tracer servent aux manipulations d'équipements réseau.
 
 
+> [!NOTE]
+> **Matériel réel ou simulation.** Si le matériel est disponible, fais la section « Variante sur matériel réel » en fin de TP ; sinon travaille en simulation (Packet Tracer ou simulateur réseau) : le choix revient à l'enseignant. Voir [Matériel réel ou simulation](../../ressources/materiel-reel.md).
+
 ## IV. TP Cisco – Observer le STP sur 3 Switches
 
 ### Topologie
@@ -148,6 +151,20 @@ SW3# show spanning-tree
 (Réponse : La priorité STP doit être un multiple de 4096)
 
 ---
+
+## Variante sur matériel réel
+
+**Matériel :** 3 commutateurs, 3 PC, 1 câble console, câbles Ethernet.
+
+> [!WARNING]
+> Le triangle de commutateurs forme une **boucle**. Ne relier aucun des trois commutateurs au réseau de l'établissement.
+
+1. Remettre les commutateurs à zéro. Relever les noms réels des ports (`show interfaces status`) et adapter les commandes.
+2. Étape 1 : câbler le triangle. Sur du matériel ancien, relier des commutateurs entre eux avec un câble croisé. Les voyants passent à l'orange le temps de la convergence, puis au vert, sauf pour le port bloqué.
+3. Étapes 2 à 4 : mêmes commandes (`show spanning-tree`). Comparer les adresses MAC des trois commutateurs pour vérifier l'élection du root bridge.
+4. Étape 5 : débrancher réellement le câble entre SW1 et SW2. Lancer avant un `ping` continu entre deux PC et **chronométrer** le temps d'interruption, au lieu de l'estimer d'après les voyants. Avec le STP classique, de l'ordre de la trentaine de secondes ; une valeur très inférieure indique un STP rapide sur ce modèle.
+5. Étape 6 : `spanning-tree vlan 1 priority 4096` sur le commutateur choisi, puis relire `show spanning-tree`.
+6. Remise à zéro en fin de séance.
 
 ## Bilan de la séance
 

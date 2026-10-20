@@ -6,7 +6,7 @@
 | **Séance** | S08 (séance 8 sur 19) – Phase 2 |
 | **Durée** | 4 heures |
 | **Prérequis** | S04 à S07. |
-| **Matériel** | VM Debian ; simulateur réseau ou Packet Tracer |
+| **Matériel** | VM Debian ; simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) |
 | **Compétences travaillées** | B2.2 · B2.3 · B3.4 amorcée (disponibilité) (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]

@@ -6,7 +6,7 @@
 | **Séance** | S07 (séance 7 sur 19) – Phase 2 |
 | **Durée** | 4 heures |
 | **Prérequis** | S04, S06 (adressage, VLAN) ; terminal Linux. |
-| **Matériel** | Simulateur réseau ou Packet Tracer ; VM Debian |
+| **Matériel** | Simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) ; VM Debian |
 | **Compétences travaillées** | B2.2 · B2.3 (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]
