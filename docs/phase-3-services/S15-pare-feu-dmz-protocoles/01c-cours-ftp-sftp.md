@@ -13,21 +13,42 @@
 | **Contrôle** | TCP 21 | Envoi des commandes (login, liste, navigation) |
 | **Données** | TCP 20 (actif) ou aléatoire (passif) | Transfert effectif des fichiers |
 
-```
-   CLIENT FTP                          SERVEUR FTP
-        │                                    │
-        │─── Connexion contrôle (port 21) ──►│
-        │◄─── Authentification demandée ──────│
-        │─── USER alice / PASS secret ───────►│
-        │◄─── 230 Login successful ──────────│
-        │                                    │
-        │─── LIST (lister les fichiers) ─────►│
-        │◄─── Connexion données (port 20) ───│
-        │◄─── Contenu du répertoire ─────────│
-        │                                    │
-        │─── RETR fichier.txt ────────────────►│
-        │◄─── Données du fichier ─────────────│
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 640 376" style="max-width:640px" role="img" aria-label="Session FTP : connexion de contrôle puis connexion de données" xmlns="http://www.w3.org/2000/svg">
+<rect x="70.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="155.0" y="30.0" text-anchor="middle" class="dg-w">Client FTP</text>
+<line x1="155.0" y1="42" x2="155.0" y2="368" class="dg-dash"/>
+<rect x="400.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="485.0" y="30.0" text-anchor="middle" class="dg-w">Serveur FTP</text>
+<line x1="485.0" y1="42" x2="485.0" y2="368" class="dg-dash"/>
+<text x="320.0" y="64" text-anchor="middle" class="dg-t">Connexion de contrôle (port 21)</text>
+<line x1="155.0" y1="72" x2="476.0" y2="72.0" class="dg-line"/>
+<polygon points="485.0,72 476.0,67.0 476.0,77.0" class="dg-ah"/>
+<text x="320.0" y="98" text-anchor="middle" class="dg-t">Authentification demandée</text>
+<line x1="485.0" y1="106" x2="164.0" y2="106.0" class="dg-dash"/>
+<polygon points="155.0,106 164.0,111.0 164.0,101.0" class="dg-ah"/>
+<text x="320.0" y="132" text-anchor="middle" class="dg-t">USER alice / PASS ...</text>
+<line x1="155.0" y1="140" x2="476.0" y2="140.0" class="dg-line"/>
+<polygon points="485.0,140 476.0,135.0 476.0,145.0" class="dg-ah"/>
+<text x="320.0" y="166" text-anchor="middle" class="dg-t">230 Login successful</text>
+<line x1="485.0" y1="174" x2="164.0" y2="174.0" class="dg-dash"/>
+<polygon points="155.0,174 164.0,179.0 164.0,169.0" class="dg-ah"/>
+<text x="320.0" y="200" text-anchor="middle" class="dg-t">LIST (lister les fichiers)</text>
+<line x1="155.0" y1="208" x2="476.0" y2="208.0" class="dg-line"/>
+<polygon points="485.0,208 476.0,203.0 476.0,213.0" class="dg-ah"/>
+<text x="320.0" y="234" text-anchor="middle" class="dg-t">Connexion de données (port 20)</text>
+<line x1="485.0" y1="242" x2="164.0" y2="242.0" class="dg-dash"/>
+<polygon points="155.0,242 164.0,247.0 164.0,237.0" class="dg-ah"/>
+<text x="320.0" y="268" text-anchor="middle" class="dg-t">Contenu du répertoire</text>
+<line x1="485.0" y1="276" x2="164.0" y2="276.0" class="dg-dash"/>
+<polygon points="155.0,276 164.0,281.0 164.0,271.0" class="dg-ah"/>
+<text x="320.0" y="302" text-anchor="middle" class="dg-t">RETR fichier.txt</text>
+<line x1="155.0" y1="310" x2="476.0" y2="310.0" class="dg-line"/>
+<polygon points="485.0,310 476.0,305.0 476.0,315.0" class="dg-ah"/>
+<text x="320.0" y="336" text-anchor="middle" class="dg-t">Données du fichier</text>
+<line x1="485.0" y1="344" x2="164.0" y2="344.0" class="dg-dash"/>
+<polygon points="155.0,344 164.0,349.0 164.0,339.0" class="dg-ah"/>
+</svg>
+</figure>
 
 *Légende : Fonctionnement FTP avec ses deux connexions. La connexion de contrôle (port 21) reste ouverte pendant toute la session et transporte les commandes textuelles. Pour chaque transfert de fichier ou listage, une connexion de données séparée est établie (port 20 en mode actif, ou port aléatoire en mode passif).*
 

@@ -28,13 +28,35 @@
 - Pas d'isolation entre services → risque de sécurité, performances dégradées
 
 **Solution avec VLANs :**
-```
-Switch physique unique                Switches logiques virtuels
-
-Ports 1-4 : Direction   ──────────►  [VLAN 10 - Direction]   ┐
-Ports 5-8 : Commercial  ──────────►  [VLAN 20 - Commercial]  ┤ Isolés entre eux
-Ports 9-12: Informatique ─────────►  [VLAN 30 - Informatique]┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 680 200" style="max-width:680px" role="img" aria-label="Un switch physique découpé en trois switches logiques (VLAN)" xmlns="http://www.w3.org/2000/svg">
+<text x="120" y="22" text-anchor="middle" class="dg-t">Switch physique unique</text>
+<text x="440" y="22" text-anchor="middle" class="dg-t">Switches logiques (VLAN)</text>
+<rect x="20" y="40" width="200" height="40" rx="8" class="dg-soft"/>
+<text x="120.0" y="56.0" text-anchor="middle" class="dg-t">Ports 1 à 4</text>
+<text x="120.0" y="74.0" text-anchor="middle" class="dg-s">Direction</text>
+<line x1="220" y1="60" x2="311.0" y2="60.0" class="dg-line"/>
+<polygon points="320,60 311.0,55.0 311.0,65.0" class="dg-ah"/>
+<rect x="320" y="40" width="240" height="40" rx="8" class="dg-box"/>
+<text x="440.0" y="65.0" text-anchor="middle" class="dg-t">VLAN 10 - Direction</text>
+<rect x="20" y="92" width="200" height="40" rx="8" class="dg-soft"/>
+<text x="120.0" y="108.0" text-anchor="middle" class="dg-t">Ports 5 à 8</text>
+<text x="120.0" y="126.0" text-anchor="middle" class="dg-s">Commercial</text>
+<line x1="220" y1="112" x2="311.0" y2="112.0" class="dg-line"/>
+<polygon points="320,112 311.0,107.0 311.0,117.0" class="dg-ah"/>
+<rect x="320" y="92" width="240" height="40" rx="8" class="dg-ok"/>
+<text x="440.0" y="117.0" text-anchor="middle" class="dg-t">VLAN 20 - Commercial</text>
+<rect x="20" y="144" width="200" height="40" rx="8" class="dg-soft"/>
+<text x="120.0" y="160.0" text-anchor="middle" class="dg-t">Ports 9 à 12</text>
+<text x="120.0" y="178.0" text-anchor="middle" class="dg-s">Informatique</text>
+<line x1="220" y1="164" x2="311.0" y2="164.0" class="dg-line"/>
+<polygon points="320,164 311.0,159.0 311.0,169.0" class="dg-ah"/>
+<rect x="320" y="144" width="240" height="40" rx="8" class="dg-warn"/>
+<text x="440.0" y="169.0" text-anchor="middle" class="dg-t">VLAN 30 - Informatique</text>
+<path d="M572 44 L582 44 L582 184 L572 184" class="dg-line"/>
+<text x="626" y="118" text-anchor="middle" class="dg-t">Isolés</text>
+<text x="626" y="136" text-anchor="middle" class="dg-t">entre eux</text>
+</svg>
+</figure>
 
 ---
 
@@ -72,13 +94,36 @@ PC (Direction)─────[Access VLAN 10]─── Switch
 - Connecte les **switches entre eux** ou un switch à un routeur
 - Chaque trame est **taguée** avec le numéro de VLAN (sauf VLAN natif)
 
-```
-Switch A────[Trunk 802.1Q]────Switch B
-           Trames taguées :
-           [VLAN 10 | données]
-           [VLAN 20 | données]
-           [VLAN 30 | données]
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 720 210" style="max-width:720px" role="img" aria-label="Liaison trunk 802.1Q : les trames portent une étiquette de VLAN, sauf le VLAN natif" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="20" width="90" height="170" rx="8" class="dg-dark"/>
+<text x="55.0" y="110.0" text-anchor="middle" class="dg-w">Switch A</text>
+<rect x="620" y="20" width="90" height="170" rx="8" class="dg-dark"/>
+<text x="665.0" y="110.0" text-anchor="middle" class="dg-w">Switch B</text>
+<rect x="230" y="14" width="260" height="182" rx="10" class="dg-soft"/>
+<text x="360" y="34" text-anchor="middle" class="dg-t">Trunk 802.1Q</text>
+<text x="166" y="63" text-anchor="middle" class="dg-s">Port VLAN 10</text>
+<line x1="102" y1="69" x2="229.0" y2="69.0" class="dg-line"/>
+<polygon points="238,69 229.0,64.0 229.0,74.0" class="dg-ah"/>
+<rect x="238" y="52" width="244" height="34" rx="8" class="dg-box"/>
+<text x="360.0" y="74.0" text-anchor="middle" class="dg-t">[Tag VLAN 10] données</text>
+<line x1="482" y1="69" x2="609.0" y2="69.0" class="dg-line"/>
+<polygon points="618,69 609.0,64.0 609.0,74.0" class="dg-ah"/>
+<text x="166" y="111" text-anchor="middle" class="dg-s">Port VLAN 20</text>
+<line x1="102" y1="117" x2="229.0" y2="117.0" class="dg-line"/>
+<polygon points="238,117 229.0,112.0 229.0,122.0" class="dg-ah"/>
+<rect x="238" y="100" width="244" height="34" rx="8" class="dg-ok"/>
+<text x="360.0" y="122.0" text-anchor="middle" class="dg-t">[Tag VLAN 20] données</text>
+<line x1="482" y1="117" x2="609.0" y2="117.0" class="dg-line"/>
+<polygon points="618,117 609.0,112.0 609.0,122.0" class="dg-ah"/>
+<text x="166" y="159" text-anchor="middle" class="dg-s">Port VLAN 1</text>
+<line x1="102" y1="165" x2="229.0" y2="165.0" class="dg-line"/>
+<polygon points="238,165 229.0,160.0 229.0,170.0" class="dg-ah"/>
+<rect x="238" y="148" width="244" height="34" rx="8" class="dg-warn"/>
+<text x="360.0" y="170.0" text-anchor="middle" class="dg-t">sans tag (VLAN natif)</text>
+<line x1="482" y1="165" x2="609.0" y2="165.0" class="dg-line"/>
+<polygon points="618,165 609.0,160.0 609.0,170.0" class="dg-ah"/>
+</svg>
+</figure>
 
 ---
 

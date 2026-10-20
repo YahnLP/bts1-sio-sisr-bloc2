@@ -14,26 +14,33 @@
 
 **Fonctionnement — Requête/Réponse :**
 
-```
-   CLIENT (navigateur)                       SERVEUR WEB (Apache)
-         │                                          │
-         │── 1. Connexion TCP (SYN/SYN-ACK/ACK) ──►│
-         │                                          │
-         │── 2. Requête HTTP ──────────────────────►│
-         │   GET /index.php HTTP/1.1                │
-         │   Host: www.siosarl.local                │
-         │   Accept: text/html                      │
-         │   User-Agent: Mozilla/5.0                │
-         │                                          │
-         │◄─ 3. Réponse HTTP ─────────────────────── │
-         │   HTTP/1.1 200 OK                        │
-         │   Content-Type: text/html; charset=utf-8 │
-         │   Content-Length: 4823                   │
-         │                                          │
-         │   <html>...</html>          (le corps)   │
-         │                                          │
-         │── 4. Fermeture TCP (FIN) ───────────────►│
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 640 302" style="max-width:640px" role="img" aria-label="Échange HTTP requête-réponse : connexion TCP, requête GET, réponse 200, fermeture" xmlns="http://www.w3.org/2000/svg">
+<rect x="70.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="155.0" y="30.0" text-anchor="middle" class="dg-w">Client (navigateur)</text>
+<line x1="155.0" y1="42" x2="155.0" y2="294" class="dg-dash"/>
+<rect x="400.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="485.0" y="30.0" text-anchor="middle" class="dg-w">Serveur web (Apache)</text>
+<line x1="485.0" y1="42" x2="485.0" y2="294" class="dg-dash"/>
+<text x="320.0" y="64" text-anchor="middle" class="dg-t">1. Connexion TCP</text>
+<line x1="155.0" y1="72" x2="476.0" y2="72.0" class="dg-line"/>
+<polygon points="485.0,72 476.0,67.0 476.0,77.0" class="dg-ah"/>
+<text x="320.0" y="88" text-anchor="middle" class="dg-i">SYN, SYN-ACK, ACK</text>
+<text x="320.0" y="114" text-anchor="middle" class="dg-t">2. Requête HTTP</text>
+<line x1="155.0" y1="122" x2="476.0" y2="122.0" class="dg-line"/>
+<polygon points="485.0,122 476.0,117.0 476.0,127.0" class="dg-ah"/>
+<text x="320.0" y="138" text-anchor="middle" class="dg-i">GET /index.php HTTP/1.1</text>
+<text x="320.0" y="154" text-anchor="middle" class="dg-i">Host: www.siosarl.local</text>
+<text x="320.0" y="180" text-anchor="middle" class="dg-t">3. Réponse HTTP</text>
+<line x1="485.0" y1="188" x2="164.0" y2="188.0" class="dg-dash"/>
+<polygon points="155.0,188 164.0,193.0 164.0,183.0" class="dg-ah"/>
+<text x="320.0" y="204" text-anchor="middle" class="dg-i">HTTP/1.1 200 OK</text>
+<text x="320.0" y="220" text-anchor="middle" class="dg-i">Content-Type: text/html</text>
+<text x="320.0" y="236" text-anchor="middle" class="dg-i">corps : &lt;html&gt;...&lt;/html&gt;</text>
+<text x="320.0" y="262" text-anchor="middle" class="dg-t">4. Fermeture TCP (FIN)</text>
+<line x1="155.0" y1="270" x2="476.0" y2="270.0" class="dg-line"/>
+<polygon points="485.0,270 476.0,265.0 476.0,275.0" class="dg-ah"/>
+</svg>
+</figure>
 
 *Légende : Échange HTTP complet en 4 étapes. La connexion TCP est établie en premier (SYN/SYN-ACK/ACK — le 3-way handshake). La requête HTTP indique la méthode (GET), la ressource (/index.php) et la version du protocole. Le serveur répond avec un code de statut (200 OK) et les en-têtes décrivant la réponse, suivis du corps (le contenu HTML). La connexion TCP est ensuite fermée.*
 
@@ -93,28 +100,34 @@ Les codes de statut HTTP sont regroupés en 5 familles selon leur premier chiffr
 
 **Le TLS Handshake simplifié :**
 
-```
-   CLIENT                                   SERVEUR
-      │                                        │
-      │── 1. Client Hello ──────────────────►  │
-      │   (versions TLS supportées,            │
-      │    algorithmes proposés, aléatoire)    │
-      │                                        │
-      │  ◄─ 2. Server Hello + Certificat ──── │
-      │   (version TLS choisie,                │
-      │    certificat avec clé publique)       │
-      │                                        │
-      │── 3. Vérification du certificat       │
-      │   (chaîne de confiance → CA racine)   │
-      │                                        │
-      │── 4. Échange de clé de session ──────►│
-      │   (chiffré avec la clé publique        │
-      │    du serveur)                         │
-      │                                        │
-      │◄──────────────────────── 5. Tunnel TLS établi ──
-      │         Toutes les données HTTP        │
-      │         sont maintenant chiffrées      │
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 680 324" style="max-width:680px" role="img" aria-label="Poignée de main TLS : Client Hello, certificat, clé de session, tunnel chiffré" xmlns="http://www.w3.org/2000/svg">
+<rect x="70.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="155.0" y="30.0" text-anchor="middle" class="dg-w">Client</text>
+<line x1="155.0" y1="42" x2="155.0" y2="316" class="dg-dash"/>
+<rect x="440.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="525.0" y="30.0" text-anchor="middle" class="dg-w">Serveur</text>
+<line x1="525.0" y1="42" x2="525.0" y2="316" class="dg-dash"/>
+<text x="340.0" y="64" text-anchor="middle" class="dg-t">1. Client Hello</text>
+<line x1="155.0" y1="72" x2="516.0" y2="72.0" class="dg-line"/>
+<polygon points="525.0,72 516.0,67.0 516.0,77.0" class="dg-ah"/>
+<text x="340.0" y="88" text-anchor="middle" class="dg-i">versions TLS, algorithmes proposés, aléatoire</text>
+<text x="340.0" y="114" text-anchor="middle" class="dg-t">2. Server Hello + certificat</text>
+<line x1="525.0" y1="122" x2="164.0" y2="122.0" class="dg-dash"/>
+<polygon points="155.0,122 164.0,127.0 164.0,117.0" class="dg-ah"/>
+<text x="340.0" y="138" text-anchor="middle" class="dg-i">version choisie, certificat avec la clé publique</text>
+<rect x="4.0" y="156" width="338.2" height="42" rx="6" class="dg-soft"/>
+<text x="173.1" y="173" text-anchor="middle" class="dg-s">3. Vérification du certificat</text>
+<text x="173.1" y="189" text-anchor="middle" class="dg-s">(chaîne de confiance jusqu&#x27;à l&#x27;autorité racine)</text>
+<text x="340.0" y="218" text-anchor="middle" class="dg-t">4. Échange de la clé de session</text>
+<line x1="155.0" y1="226" x2="516.0" y2="226.0" class="dg-line"/>
+<polygon points="525.0,226 516.0,221.0 516.0,231.0" class="dg-ah"/>
+<text x="340.0" y="242" text-anchor="middle" class="dg-i">chiffrée avec la clé publique du serveur</text>
+<text x="340.0" y="268" text-anchor="middle" class="dg-t">5. Tunnel TLS établi</text>
+<line x1="525.0" y1="276" x2="164.0" y2="276.0" class="dg-dash"/>
+<polygon points="155.0,276 164.0,281.0 164.0,271.0" class="dg-ah"/>
+<text x="340.0" y="292" text-anchor="middle" class="dg-i">les données HTTP sont désormais chiffrées</text>
+</svg>
+</figure>
 
 *Légende : Le TLS handshake en 5 étapes. Le client annonce ses capacités. Le serveur répond avec son certificat contenant sa clé publique. Le client vérifie que le certificat est signé par une CA de confiance. Le client génère une clé de session et la chiffre avec la clé publique du serveur. À partir de ce moment, toute la communication HTTP est chiffrée de bout en bout — un intercepteur ne voit que des données chiffrées.*
 
@@ -136,27 +149,31 @@ Les codes de statut HTTP sont regroupés en 5 familles selon leur premier chiffr
 
 Pour comprendre SMTP, IMAP et POP3, il faut visualiser le **parcours complet d'un email** de l'expéditeur au destinataire :
 
-```
-   ALICE (alice@siosarl.local)            BOB (bob@nexio.fr)
-   Client de messagerie                   Client de messagerie
-   (Outlook, Thunderbird)                 (Outlook, Gmail)
-          │                                       │
-          │  1. Alice écrit et envoie             │
-          │     SMTP port 587                     │
-          ▼                                       │
-   ┌──────────────┐                               │
-   │  MTA SimIO   │  2. Transmission SMTP         │
-   │ mail.siosarl │──── port 25 ────────────────► │
-   │  .local      │                               ▼
-   └──────────────┘                      ┌──────────────┐
-                                         │  MTA Nexio   │
-                                         │ mail.nexio.fr│
-                                         └──────────────┘
-                                                  │
-                                    3. Bob récupère son mail
-                                       IMAP port 143 (sync)
-                                       POP3 port 110 (télécharg.)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 260" style="max-width:780px" role="img" aria-label="Acheminement d&#x27;un courriel : client, serveur d&#x27;envoi, serveur du destinataire, client" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="20" width="190" height="50" rx="8" class="dg-box"/>
+<text x="105.0" y="41.0" text-anchor="middle" class="dg-t">Alice</text>
+<text x="105.0" y="59.0" text-anchor="middle" class="dg-s">alice@siosarl.local</text>
+<rect x="580" y="20" width="190" height="50" rx="8" class="dg-box"/>
+<text x="675.0" y="41.0" text-anchor="middle" class="dg-t">Bob</text>
+<text x="675.0" y="59.0" text-anchor="middle" class="dg-s">bob@nexio.fr</text>
+<rect x="10" y="150" width="190" height="56" rx="8" class="dg-dark"/>
+<text x="105.0" y="174.0" text-anchor="middle" class="dg-w">MTA SimIO</text>
+<text x="105.0" y="192.0" text-anchor="middle" class="dg-s">mail.siosarl.local</text>
+<rect x="580" y="150" width="190" height="56" rx="8" class="dg-dark"/>
+<text x="675.0" y="174.0" text-anchor="middle" class="dg-w">MTA Nexio</text>
+<text x="675.0" y="192.0" text-anchor="middle" class="dg-s">mail.nexio.fr</text>
+<line x1="105" y1="70" x2="105.0" y2="141.0" class="dg-line"/>
+<polygon points="105,150 110.0,141.0 100.0,141.0" class="dg-ah"/>
+<text x="120" y="116" text-anchor="start" class="dg-s">1. envoi SMTP, port 587</text>
+<line x1="200" y1="178" x2="571.0" y2="178.0" class="dg-line"/>
+<polygon points="580,178 571.0,173.0 571.0,183.0" class="dg-ah"/>
+<text x="390" y="168" text-anchor="middle" class="dg-s">2. transmission SMTP, port 25</text>
+<line x1="675" y1="150" x2="675.0" y2="79.0" class="dg-line"/>
+<polygon points="675,70 670.0,79.0 680.0,79.0" class="dg-ah"/>
+<text x="660" y="116" text-anchor="end" class="dg-s">3. lecture : IMAP 143 (synchronisé)</text>
+<text x="660" y="134" text-anchor="end" class="dg-s">ou POP3 110 (téléchargement)</text>
+</svg>
+</figure>
 
 *Légende : Le parcours d'un email de A à Z. SMTP est utilisé pour deux choses distinctes : le client envoie son email à son serveur de messagerie (MTA) via SMTP port 587 (soumission). Les serveurs MTA se transmettent l'email entre eux via SMTP port 25. Le destinataire récupère ses emails depuis son serveur avec IMAP (synchronisation, mail reste sur le serveur) ou POP3 (téléchargement, mail supprimé du serveur).*
 

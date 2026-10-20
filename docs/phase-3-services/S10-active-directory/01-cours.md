@@ -116,29 +116,26 @@ L'interface centrale d'administration de Windows Server. Lancé automatiquement 
 
 #### B. La Hiérarchie AD : Forêt, Arbre, Domaine
 
-```
-╔══════════════════════════════════════════════════════════╗
-║  FORÊT (Forest)                                          ║
-║  = Ensemble de domaines partageant le même schéma AD     ║
-║  = Périmètre de sécurité ultime                          ║
-║                                                          ║
-║  ┌──────────────────────────────────────────────────┐    ║
-║  │  ARBRE (Tree)                                    │    ║
-║  │  = Ensemble de domaines partageant un espace DNS │    ║
-║  │                                                  │    ║
-║  │  ┌────────────────────┐                          │    ║
-║  │  │  DOMAINE RACINE    │ techpro.local            │    ║
-║  │  │  (Root Domain)     │                          │    ║
-║  │  └─────────┬──────────┘                          │    ║
-║  │            │                                     │    ║
-║  │  ┌─────────┴──────────┐                          │    ║
-║  │  │  DOMAINE ENFANT    │ paris.techpro.local       │    ║
-║  │  └────────────────────┘                          │    ║
-║  └──────────────────────────────────────────────────┘    ║
-║                                                          ║
-║  + Autre arbre : filiale2.com (même forêt, DNS différent)║
-╚══════════════════════════════════════════════════════════╝
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 700 330" style="max-width:700px" role="img" aria-label="Forêt, arbre et domaines Active Directory" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="10" width="680" height="310" rx="12" class="dg-soft"/>
+<text x="30" y="34" text-anchor="start" class="dg-t">FORÊT (Forest)</text>
+<text x="30" y="52" text-anchor="start" class="dg-s">ensemble de domaines partageant le même schéma AD - périmètre de sécurité ultime</text>
+<rect x="30" y="68" width="400" height="236" rx="10" class="dg-box"/>
+<text x="46" y="92" text-anchor="start" class="dg-t">ARBRE (Tree)</text>
+<text x="46" y="110" text-anchor="start" class="dg-s">domaines partageant un espace DNS</text>
+<rect x="110" y="126" width="240" height="50" rx="8" class="dg-ok"/>
+<text x="230.0" y="147.0" text-anchor="middle" class="dg-t">Domaine racine (Root Domain)</text>
+<text x="230.0" y="165.0" text-anchor="middle" class="dg-s">techpro.local</text>
+<rect x="110" y="226" width="240" height="50" rx="8" class="dg-ok"/>
+<text x="230.0" y="247.0" text-anchor="middle" class="dg-t">Domaine enfant</text>
+<text x="230.0" y="265.0" text-anchor="middle" class="dg-s">paris.techpro.local</text>
+<line x1="230" y1="176" x2="230" y2="226" class="dg-line"/>
+<rect x="460" y="126" width="210" height="70" rx="8" class="dg-warn"/>
+<text x="565.0" y="148.0" text-anchor="middle" class="dg-t">Autre arbre</text>
+<text x="565.0" y="166.0" text-anchor="middle" class="dg-s">filiale2.com</text>
+<text x="565.0" y="184.0" text-anchor="middle" class="dg-s">même forêt, espace DNS différent</text>
+</svg>
+</figure>
 
 **Pour 99% des PME : 1 forêt = 1 arbre = 1 domaine.** La complexité multi-domaines concerne les grandes organisations.
 
