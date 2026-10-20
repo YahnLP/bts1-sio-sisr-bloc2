@@ -24,6 +24,18 @@
 | Administration | Sur place | À distance (carte de gestion) |
 | Format | Tour | Rack (hauteur en U) |
 
+## Connectiques vidéo
+
+| Connecteur | Signal | Repère |
+|---|---|---|
+| VGA | Analogique | Obsolète ; image seule, 15 broches bleues |
+| DVI | Numérique (parfois analogique) | En voie de disparition ; image seule |
+| **HDMI** | Numérique, image **et son** | Standard TV et multimédia ; HDMI 2.0 : 4K à 60 Hz, HDMI 2.1 : 8K à 60 Hz ; CEC, eARC ; norme à licence |
+| **DisplayPort** | Numérique, image **et son** | Standard PC et professionnel ; plusieurs écrans chaînés (MST) ; norme ouverte (VESA) ; clip de verrouillage |
+| USB-C (mode alternatif) | Numérique, vidéo + données + alimentation | Portables : sortie DisplayPort ou HDMI par un seul câble |
+
+**Choisir :** HDMI pour un téléviseur ou un vidéoprojecteur, DisplayPort pour un écran de PC (surtout en multi-écrans). Vérifier que **le port, le câble et l'écran** prennent en charge la même version : le maillon le plus faible fixe la résolution et la fréquence. Détail : [cours, partie « Connectiques vidéo »](01b-cours-serveur.md).
+
 ## Démarrage
 
 - **BIOS / UEFI** : micrologiciel qui démarre la machine avant le système ; on y règle l'**ordre de démarrage** et la **virtualisation** (VT-x / AMD-V).
