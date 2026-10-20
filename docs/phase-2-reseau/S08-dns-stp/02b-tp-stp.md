@@ -5,13 +5,22 @@
 > [!NOTE]
 > **But.** Situation : Comment les utilisateurs joignent-ils un serveur par son nom, et pourquoi un câble de secours peut-il faire tomber tout le réseau ?
 >
-> **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le simulateur réseau ou Packet Tracer servent aux manipulations d'équipements réseau.
+> **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le **simulateur réseau** sert aux manipulations d'équipements réseau.
 
 
 > [!NOTE]
-> **Matériel réel ou simulation.** Si le matériel est disponible, fais la section « Variante sur matériel réel » en fin de TP ; sinon travaille en simulation (Packet Tracer ou simulateur réseau) : le choix revient à l'enseignant. Voir [Matériel réel ou simulation](../../ressources/materiel-reel.md).
+> **Matériel réel ou simulation.** Si le matériel est disponible, fais la section « Variante sur matériel réel » en fin de TP ; sinon travaille dans le **simulateur réseau** : le choix revient à l'enseignant. Cisco Packet Tracer reste possible en complément. Voir [Matériel réel ou simulation](../../ressources/materiel-reel.md).
 
 ## IV. TP Cisco – Observer le STP sur 3 Switches
+
+> [!TIP]
+> **Ce TP se fait dans le simulateur réseau** (dans le navigateur, sans installation ni Internet).
+>
+> 1. Télécharge [TP-S08-stp.json](tp/TP-S08-stp.json){ download }.
+> 2. Ouvre le [simulateur](../../simulateur/simulateur-reseau.html), clique sur **Ouvrir** et choisis ce fichier : le triangle, les PC et le sujet s'affichent.
+> 3. Suis les étapes ci-dessous. **Vérifier mon travail** contrôle le résultat ; **Charger la correction** montre une solution.
+>
+> **Complément.** Cisco Packet Tracer reste possible : les commandes sont identiques (encadrés « Complément Packet Tracer »). Mode d'emploi : [Utiliser les TP du simulateur](../../ressources/simulateur.md).
 
 ### Topologie
 
@@ -62,15 +71,20 @@ Trois switches reliés en **triangle** = 3 liens, donc **1 boucle** → STP doit
 
 ---
 
-### Étape 1 : Créer la Topologie dans Packet Tracer (5 min)
+### Étape 1 : Ouvrir la topologie (5 min)
 
-1. Placer **3 switches Cisco 2960** (SW1, SW2, SW3)
-2. Câbler :
-   - SW1 Fa0/1 ↔ SW2 Fa0/1 (câble droit)
-   - SW1 Fa0/2 ↔ SW3 Fa0/1 (câble droit)
-   - SW2 Fa0/2 ↔ SW3 Fa0/2 (câble droit)
-3. Attendre la convergence STP (~30-50 secondes)
-4. Observer les voyants : certains doivent être **orange** (Blocking) d'autres **vert** (Forwarding)
+1. Ouvre le simulateur, clique sur **Ouvrir** et choisis `TP-S08-stp.json`.
+2. Vérifie le câblage : SW1 Fa0/1 ↔ SW2 Fa0/1, SW1 Fa0/2 ↔ SW3 Fa0/1, SW2 Fa0/2 ↔ SW3 Fa0/2, et un PC sur Fa0/3 de chaque switch.
+3. Laisse converger le STP (clique sur **+1 min**) : certains liens passent à l'orange (blocage), les autres au vert.
+
+<details markdown="1">
+<summary>Complément Packet Tracer : créer la topologie</summary>
+
+1. Placer **3 switches Cisco 2960** (SW1, SW2, SW3).
+2. Câbler SW1 Fa0/1 ↔ SW2 Fa0/1, SW1 Fa0/2 ↔ SW3 Fa0/1, SW2 Fa0/2 ↔ SW3 Fa0/2 (câbles droits).
+3. Attendre la convergence STP (~30-50 secondes) : voyants orange (Blocking) et verts (Forwarding).
+
+</details>
 
 ---
 
@@ -94,7 +108,7 @@ OU
 | SW2 | | 32769 | |
 | SW3 | | 32769 | |
 
-**Question :** Comment Packet Tracer a-t-il désigné le root bridge ? (priorité égale → MAC la plus basse)
+**Question :** Comment le root bridge a-t-il été désigné ? (priorité égale → MAC la plus basse)
 
 ---
 
@@ -131,9 +145,14 @@ Fa0/2           Altn  BLK  19     128.2    P2p
 
 ### Étape 4 : Tester la Connectivité (5 min)
 
-Ajouter **1 PC** sur chaque switch :
-- PC1 sur SW1 (Fa0/3), PC2 sur SW2 (Fa0/3), PC3 sur SW3 (Fa0/3)
-- Configurer les IP : `192.168.1.11/24`, `192.168.1.12/24`, `192.168.1.13/24`
+Les PC sont déjà placés et adressés : PC1 sur SW1 (Fa0/3), PC2 sur SW2 (Fa0/3), PC3 sur SW3 (Fa0/3), avec `192.168.1.11/24`, `192.168.1.12/24` et `192.168.1.13/24`. Double-clique sur un PC pour ouvrir son terminal.
+
+<details markdown="1">
+<summary>Complément Packet Tracer : ajouter les PC</summary>
+
+Ajouter 1 PC sur Fa0/3 de chaque switch et configurer les IP ci-dessus (Desktop → IP Configuration).
+
+</details>
 
 **Tests :**
 ```
@@ -145,11 +164,11 @@ PC1 → ping 192.168.1.13   OK : Doit répondre
 
 ### Étape 5 : Observer la Reconvergence (15 min)
 
-**Simuler une panne :** Dans Packet Tracer, débrancher le câble entre SW1 et SW2 (clic sur le câble → supprimer).
+**Simuler une panne :** dans le simulateur, supprimer le câble entre SW1 et SW2 (clic sur le câble, puis **Supprimer** ; sur Packet Tracer, même geste). Ne pas oublier de **le rebrancher** à la fin de l'étape.
 
 **Observer :**
 1. Les voyants changent (orange = STP en convergence)
-2. Attendre ~30-50 secondes
+2. Attendre la reconvergence (**+1 min** dans le simulateur)
 3. Retaper `show spanning-tree` sur SW2 et SW3
 4. Le port précédemment en BLK doit passer en FWD !
 
@@ -167,6 +186,8 @@ SW2# show spanning-tree
 
 ### Étape 6 : Forcer le Root Bridge (10 min)
 
+Avant de commencer, vérifie que le câble SW1 ↔ SW2 est bien rebranché.
+
 Modifier la priorité STP pour forcer **SW3** à devenir root bridge :
 
 ```cisco
@@ -183,6 +204,13 @@ SW3# show spanning-tree
 
  **Question :** Pourquoi utilise-t-on une valeur comme 4096 plutôt qu'une valeur quelconque ?
 (Réponse : La priorité STP doit être un multiple de 4096)
+
+---
+
+### Étape 7 : Vérifier et enregistrer ton travail
+
+1. Clique sur **Vérifier mon travail** : SW3 doit être root avec la priorité 4096 et les PC doivent se joindre.
+2. Clique sur **Enregistrer** et nomme le fichier `NOM_Prenom_S08_TP_STP.json`.
 
 ---
 
