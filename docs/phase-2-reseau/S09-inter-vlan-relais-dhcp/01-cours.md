@@ -35,7 +35,7 @@ Dans une infrastructure avec VLANs :
 │   Le broadcast reste dans VLAN 10                    │
 │   Le serveur DHCP est dans VLAN 30 (192.168.30.0/24) │
 │   Le routeur ne transmet PAS le broadcast vers VLAN30 │
-│   → PC-A n'obtient jamais de réponse DHCP ❌          │
+│   → PC-A n'obtient jamais de réponse DHCP         │
 └──────────────────────────────────────────────────────┘
 ```
 

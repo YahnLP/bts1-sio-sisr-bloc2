@@ -94,10 +94,10 @@
 - **4U** : Serveur puissant avec beaucoup de disques
 
 **Avantages du format rack :**
-- ✅ **Gain de place** : densité maximale
-- ✅ **Gestion des câbles** optimisée
-- ✅ **Climatisation centralisée** de l'armoire
-- ✅ **Sécurité physique** (armoire verrouillable)
+- **Avantage :** **Gain de place** : densité maximale
+- **Avantage :** **Gestion des câbles** optimisée
+- **Avantage :** **Climatisation centralisée** de l'armoire
+- **Avantage :** **Sécurité physique** (armoire verrouillable)
 
 ---
 
@@ -117,11 +117,11 @@
 - Petit ordinateur **indépendant** intégré au serveur
 - Possède sa **propre carte réseau** et son **IP dédiée**
 - Permet de :
-  - ✅ Allumer/éteindre le serveur à distance
-  - ✅ Accéder au BIOS à distance
-  - ✅ Voir l'écran de démarrage (KVM over IP)
-  - ✅ Monter une ISO virtuelle pour installer un OS
-  - ✅ Surveiller la santé du serveur (températures, pannes disques...)
+  - Allumer/éteindre le serveur à distance
+  - Accéder au BIOS à distance
+  - Voir l'écran de démarrage (KVM over IP)
+  - Monter une ISO virtuelle pour installer un OS
+  - Surveiller la santé du serveur (températures, pannes disques...)
 
 ---
 
@@ -129,18 +129,18 @@
 
 **On utilise un serveur quand :**
 
-1. ✅ **Plusieurs utilisateurs** doivent accéder aux **mêmes données** (ex: serveur de fichiers)
-2. ✅ Un **service doit être disponible 24/7** (ex: site web, serveur mail)
-3. ✅ On a besoin de **centraliser la gestion** (ex: Active Directory pour gérer les comptes utilisateurs)
-4. ✅ La **sécurité des données** est critique (sauvegardes, RAID, accès contrôlés)
-5. ✅ La **puissance de calcul** nécessaire dépasse un PC standard (ex: serveur de bases de données, serveur de rendu 3D)
+1. **Plusieurs utilisateurs** doivent accéder aux **mêmes données** (ex: serveur de fichiers)
+2. Un **service doit être disponible 24/7** (ex: site web, serveur mail)
+3. On a besoin de **centraliser la gestion** (ex: Active Directory pour gérer les comptes utilisateurs)
+4. La **sécurité des données** est critique (sauvegardes, RAID, accès contrôlés)
+5. La **puissance de calcul** nécessaire dépasse un PC standard (ex: serveur de bases de données, serveur de rendu 3D)
 
 **On peut utiliser un PC (ou mini-PC) quand :**
 
-1. ✅ Usage très limité (1-5 utilisateurs occasionnels)
-2. ✅ Budget serré (TPE, association, particulier)
-3. ✅ Service non critique (tolérance à l'indisponibilité)
-4. ✅ Apprentissage / maquettage (comme en BTS SIO !)
+1. Usage très limité (1-5 utilisateurs occasionnels)
+2. Budget serré (TPE, association, particulier)
+3. Service non critique (tolérance à l'indisponibilité)
+4. Apprentissage / maquettage (comme en BTS SIO !)
 
  **Note :** Dans un contexte professionnel d'entreprise, on privilégie **toujours un serveur** pour les services critiques.
 
@@ -176,10 +176,10 @@ En 2e année, la séance [Coût, éthique et environnement](https://yahnlp.githu
 
 En tant que **technicien systèmes et réseaux**, vous serez amené à :
 
-- ✅ **Brancher** des équipements (serveurs, switchs, écrans, périphériques...)
-- ✅ **Diagnostiquer** des problèmes de connexion (mauvais câble, port défectueux...)
-- ✅ **Conseiller** les utilisateurs sur le bon câble à utiliser
-- ✅ **Auditer** l'infrastructure existante (inventaire des câblages)
+- **Brancher** des équipements (serveurs, switchs, écrans, périphériques...)
+- **Diagnostiquer** des problèmes de connexion (mauvais câble, port défectueux...)
+- **Conseiller** les utilisateurs sur le bon câble à utiliser
+- **Auditer** l'infrastructure existante (inventaire des câblages)
 
  **Retour d'expérience :** devant un « ça ne marche plus », le **câble** (mal branché, défectueux, mauvais type) est l'une des premières choses à contrôler : c'est gratuit et rapide.
 
@@ -212,17 +212,17 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 | **USB 3.2** | 20 Gb/s | 2017 | Port USB-C (parfois marqué SS20) |
 | **USB4** | 40 Gb/s | 2019 | Port USB-C (compatible Thunderbolt 3) |
 
-⚠ **Rétrocompatibilité :** Un périphérique USB 2.0 fonctionne sur un port USB 3.0 (mais à vitesse USB 2.0). Un câble USB 3.0 est **nécessaire** pour atteindre les vitesses USB 3.0+.
+**Rétrocompatibilité :** Un périphérique USB 2.0 fonctionne sur un port USB 3.0 (mais à vitesse USB 2.0). Un câble USB 3.0 est **nécessaire** pour atteindre les vitesses USB 3.0+.
 
 ---
 
 #### USB Type-C : La Révolution
 
 **Avantages :**
-- ✅ **Réversible** : se branche dans les 2 sens (enfin !)
-- ✅ **Universel** : même connecteur pour smartphones, PC, tablettes, écrans...
-- ✅ **Multifonction** : données + vidéo + alimentation (jusqu'à 100W)
-- ✅ **Rapide** : jusqu'à 40 Gb/s (USB4)
+- **Avantage :** **Réversible** : se branche dans les 2 sens (enfin !)
+- **Avantage :** **Universel** : même connecteur pour smartphones, PC, tablettes, écrans...
+- **Avantage :** **Multifonction** : données + vidéo + alimentation (jusqu'à 100W)
+- **Avantage :** **Rapide** : jusqu'à 40 Gb/s (USB4)
 
 **Attention piège :** Tous les câbles USB-C ne se valent pas !
 - Certains sont **charge uniquement** (pas de données)
@@ -237,11 +237,11 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 
 | **Connecteur** | **Type** | **Résolution Max** | **Audio** | **État** |
 |----------------|----------|-------------------|-----------|----------|
-| **VGA** | Analogique | 1920×1200 | ❌ Non | ⚠ Obsolète |
-| **DVI** | Numérique | 2560×1600 | ❌ Non | ⚠ En voie de disparition |
-| **HDMI** | Numérique | 8K à 60 Hz (v2.1) | ✅ Oui | ✅ Standard TV/multimédia |
-| **DisplayPort** | Numérique | 8K à 60 Hz (v1.4) | ✅ Oui | ✅ Standard PC/professionnel |
-| **USB-C (alt mode)** | Numérique | 8K à 60 Hz | ✅ Oui | ✅ Futur standard |
+| **VGA** | Analogique | 1920×1200 | Non | Obsolète |
+| **DVI** | Numérique | 2560×1600 | Non | En voie de disparition |
+| **HDMI** | Numérique | 8K à 60 Hz (v2.1) | Oui | Standard TV/multimédia |
+| **DisplayPort** | Numérique | 8K à 60 Hz (v1.4) | Oui | Standard PC/professionnel |
+| **USB-C (alt mode)** | Numérique | 8K à 60 Hz | Oui | Futur standard |
 
 ---
 
@@ -302,7 +302,7 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 
 | **Catégorie** | **Débit Max** | **Distance Max** | **Usage** |
 |---------------|---------------|------------------|-----------|
-| **Cat 5** | 100 Mb/s | 100 m | ⚠ Obsolète |
+| **Cat 5** | 100 Mb/s | 100 m | Obsolète |
 | **Cat 5e** | 1 Gb/s | 100 m | Standard actuel maisons/bureaux |
 | **Cat 6** | 10 Gb/s (55 m) | 100 m (1 Gb/s) | Recommandé pour nouvelles installations |
 | **Cat 6a** | 10 Gb/s | 100 m | Datacenters |
@@ -312,7 +312,7 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 - **Câble droit** (Straight-through) : PC ↔ Switch, Switch ↔ Routeur
 - **Câble croisé** (Crossover) : PC ↔ PC direct (obsolète grâce à l'Auto-MDIX)
 
-⚠ **Limitation :** Distance maximale de **100 mètres**. Au-delà, il faut un équipement intermédiaire (switch) ou passer à la fibre.
+**Limitation :** Distance maximale de **100 mètres**. Au-delà, il faut un équipement intermédiaire (switch) ou passer à la fibre.
 
 ---
 
@@ -321,16 +321,16 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 **Principe :** Transmission de données par **lumière** dans un câble en verre ou plastique.
 
 **Avantages par rapport au cuivre (RJ45) :**
-- ✅ **Débits très élevés** : 10 Gb/s, 40 Gb/s, 100 Gb/s, voire plus
-- ✅ **Distances énormes** : jusqu'à **plusieurs kilomètres** sans perte de signal
-- ✅ **Immunité aux interférences électromagnétiques** (EMI)
-- ✅ **Légèreté et finesse** du câble
-- ✅ **Sécurité** : impossible d'écouter la ligne par induction électromagnétique
+- **Avantage :** **Débits très élevés** : 10 Gb/s, 40 Gb/s, 100 Gb/s, voire plus
+- **Avantage :** **Distances énormes** : jusqu'à **plusieurs kilomètres** sans perte de signal
+- **Avantage :** **Immunité aux interférences électromagnétiques** (EMI)
+- **Avantage :** **Légèreté et finesse** du câble
+- **Avantage :** **Sécurité** : impossible d'écouter la ligne par induction électromagnétique
 
 **Inconvénients :**
-- ❌ Plus **coûteuse** que le cuivre
-- ❌ Nécessite des équipements spécialisés (switches fibre, transceivers)
-- ❌ Plus **fragile** (ne pas plier à moins de 3 cm de rayon)
+- **Inconvénient :** Plus **coûteuse** que le cuivre
+- **Inconvénient :** Nécessite des équipements spécialisés (switches fibre, transceivers)
+- **Inconvénient :** Plus **fragile** (ne pas plier à moins de 3 cm de rayon)
 
 ---
 
@@ -403,7 +403,7 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 | **Gigabyte** | DEL | F2 |
 | **Autres** | ESC, F12 (menu de boot) | Consulter manuel |
 
-⚠ **Astuce :** **Marteler la touche dès l'allumage** du PC (ne pas attendre le logo Windows) !
+**Astuce :** **Marteler la touche dès l'allumage** du PC (ne pas attendre le logo Windows) !
 
 ---
 
@@ -450,7 +450,7 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 **3. Virtualization Technology (Intel VT-x / AMD-V)**
 - Impact : **Obligatoire** pour utiliser des machines virtuelles (VirtualBox, VMware, Hyper-V)
 - Réglage : Menu **Advanced → CPU Configuration**
-- ⚠ **À activer systématiquement** en BTS SIO !
+- **À activer systématiquement** en BTS SIO !
 
 **4. Secure Boot**
 - Impact : Empêche le démarrage de logiciels non signés (protection contre rootkits)
@@ -461,7 +461,7 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 **5. SATA Mode (IDE / AHCI / RAID)**
 - Impact : Mode de fonctionnement des disques SATA
 - Réglage recommandé : **AHCI** (Advanced Host Controller Interface) pour performances optimales
-- ⚠ Changer ce paramètre sur un Windows déjà installé peut causer un **écran bleu au démarrage** !
+- **Attention :** Changer ce paramètre sur un Windows déjà installé peut causer un **écran bleu au démarrage** !
 
 ---
 
@@ -532,11 +532,11 @@ Si un problème est détecté durant le POST, le BIOS émet des **bips sonores**
 
 | **Nombre de Bips** | **Signification (Award BIOS)** | **Signification (AMI BIOS)** |
 |--------------------|--------------------------------|------------------------------|
-| **1 bip court** | ✅ POST réussi (normal) | ✅ POST réussi |
+| **1 bip court** | POST réussi (normal) | POST réussi |
 | **1 bip long** | Problème mémoire (RAM) | Problème mémoire |
 | **2 bips courts** | Erreur POST (général) | Erreur RAM |
 | **3 bips courts** | Erreur RAM (64 premiers Ko) | Erreur RAM |
 | **Bips continus** | Problème alimentation ou carte mère | Problème alimentation |
 | **Aucun bip** | Problème haut-parleur, CPU ou carte mère | Problème carte mère ou CPU |
 
-⚠ **Important :** Les codes varient selon le fabricant du BIOS (Award, AMI, Phoenix...). Consulter le manuel de la carte mère !
+**Important :** Les codes varient selon le fabricant du BIOS (Award, AMI, Phoenix...). Consulter le manuel de la carte mère !

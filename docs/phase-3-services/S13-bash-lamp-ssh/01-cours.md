@@ -174,9 +174,9 @@ try {
     $pdo = new PDO("mysql:host=$serveur;dbname=$base;charset=utf8",
                    $utilisateur, $motdepasse);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "<p style='color:green'>✅ Connexion à MariaDB réussie !</p>";
+    echo "<p style='color:green'>Connexion à MariaDB réussie !</p>";
 } catch (PDOException $e) {
-    echo "<p style='color:red'>❌ Erreur : " . $e->getMessage() . "</p>";
+    echo "<p style='color:red'>Erreur : " . $e->getMessage() . "</p>";
 }
 ?>
 ```
@@ -200,9 +200,9 @@ do
     echo "Vérification du service : $SERVICE"
     if systemctl is-active --quiet "$SERVICE"
     then
-        echo "  ✅ $SERVICE est actif."
+        echo "[OK] $SERVICE est actif."
     else
-        echo "  ❌ $SERVICE est INACTIF !"
+        echo "[ERREUR] $SERVICE est INACTIF !"
     fi
 done
 ```
@@ -286,7 +286,7 @@ do
     read -p "Confirmez-vous ? (oui/non) : " REPONSE
     if [ "$REPONSE" != "oui" ] && [ "$REPONSE" != "non" ]
     then
-        echo "⚠️  Réponse invalide. Tapez 'oui' ou 'non'."
+        echo "[ATTENTION] Réponse invalide. Tapez 'oui' ou 'non'."
     fi
 done
 
@@ -354,7 +354,7 @@ echo "Réponse enregistrée : $REPONSE"
                              │
               ┌──────────────┴──────────────┐
               ▼                             ▼
-   🔐 CLÉ PRIVÉE                  🔑 CLÉ PUBLIQUE
+    CLÉ PRIVÉE                   CLÉ PUBLIQUE
    Reste sur le CLIENT            Copiée sur le SERVEUR
    NE JAMAIS PARTAGER             dans ~/.ssh/authorized_keys
    (~/.ssh/id_rsa ou id_ed25519)
@@ -621,7 +621,7 @@ sudo crontab -u alice -e
 
 ---
 
-## ✅ Auto-évaluation : Suis-je Prêt ?
+## Auto-évaluation : Suis-je Prêt ?
 
 - [ ] J'installe les 4 composants LAMP et je vérifie que chacun fonctionne
 - [ ] Je teste mon installation PHP avec `phpinfo()` et je supprime le fichier ensuite

@@ -62,8 +62,8 @@ SimIO SARL est une PME de 80 collaborateurs répartis sur 2 bâtiments. [Complé
 - Fournir un accès FTP anonyme pour les ressources internes et un accès SFTP sécurisé par service
 
 **Périmètre :**
-- ✅ Inclus : réseau local, AD DS, DHCP, DNS, partages SMB, FTP/SFTP
-- ❌ Exclu : accès Internet, messagerie, téléphonie, infrastructure de sauvegarde
+- Inclus : réseau local, AD DS, DHCP, DNS, partages SMB, FTP/SFTP
+- Exclu : accès Internet, messagerie, téléphonie, infrastructure de sauvegarde
 
 ---
 

@@ -375,7 +375,7 @@ sudo userdel alice                  # Supprime le compte (garde /home/alice)
 sudo userdel -r alice               # Supprime compte + /home/alice + mail spool
 ```
 
-⚠ **`usermod -aG` vs `usermod -G` :**
+**`usermod -aG` vs `usermod -G` :**
 - `-G groupe` seul → **remplace** tous les groupes supplémentaires par `groupe`
 - `-aG groupe` → **ajoute** `groupe` aux groupes existants (append)
 - Toujours utiliser `-aG` pour ne pas accidentellement retirer des accès !
@@ -451,7 +451,7 @@ Calculer la valeur pour chaque catégorie (u/g/o) : r=4, w=2, x=1.
 
 | **Notation** | **Permissions** | **Usage typique** |
 |--------------|-----------------|-------------------|
-| `chmod 777` | `rwxrwxrwx` | ⚠ Dangereux - tout le monde peut tout faire |
+| `chmod 777` | `rwxrwxrwx` | Dangereux - tout le monde peut tout faire |
 | `chmod 755` | `rwxr-xr-x` | Script/exécutable : proprio tout, groupe+autres exécutent |
 | `chmod 644` | `rw-r--r--` | Fichier normal : proprio modifie, groupe+autres lisent |
 | `chmod 640` | `rw-r-----` | Fichier sensible : groupe lit, autres rien |

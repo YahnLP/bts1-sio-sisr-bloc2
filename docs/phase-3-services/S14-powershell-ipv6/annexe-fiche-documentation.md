@@ -11,7 +11,7 @@
 | Fichier log | C:\Scripts\log_creation_ad.txt |
 | Nombre d'utilisateurs dans le CSV | 10 |
 | Mot de passe temporaire défini | |
-| Politique mot de passe (changement 1ère connexion) | ✅ Oui / ❌ Non |
+| Politique mot de passe (changement 1ère connexion) | Oui/ Non |
 
 ## 2. Résultat de Création
 

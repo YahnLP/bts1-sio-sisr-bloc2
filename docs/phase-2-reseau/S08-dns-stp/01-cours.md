@@ -259,9 +259,9 @@ Tous les switches échangent des messages **BPDU** (Bridge Protocol Data Unit) c
 |------------|-------------|---------|---------------|--------------|
 | SW1 | 32768 | 00:0A:00:00:00:01 | 32768 + 00:0A... | |
 | SW2 | 32768 | 00:0A:00:00:00:02 | 32768 + 00:0A... | |
-| SW3 | **4096** | 00:0A:00:00:00:03 | 4096 + 00:0A... | ✅ **ROOT BRIDGE** (priorité plus basse) |
+| SW3 | **4096** | 00:0A:00:00:00:03 | 4096 + 00:0A... | **ROOT BRIDGE** (priorité plus basse) |
 
-⚠ **Mémo :** "Priorité la **plus basse** = Root Bridge" (comme à une enchère : on veut la mise la plus basse)
+**Mémo :** "Priorité la **plus basse** = Root Bridge" (comme à une enchère : on veut la mise la plus basse)
 
 ##### Étape 2 : Élection des Root Ports
 
@@ -292,11 +292,11 @@ Tout port qui n'est ni Root Port ni Designated Port devient **Alternate Port** e
 
 | **État** | **Durée** | **Reçoit BPDU ?** | **Envoie BPDU ?** | **Transmet trames ?** | **Apprend MAC ?** |
 |----------|-----------|-------------------|-------------------|----------------------|-------------------|
-| **Blocking** | Permanent (ports redondants) | ✅ | ❌ | ❌ | ❌ |
-| **Listening** | 15 secondes (Forward Delay) | ✅ | ✅ | ❌ | ❌ |
-| **Learning** | 15 secondes (Forward Delay) | ✅ | ✅ | ❌ | ✅ |
-| **Forwarding** | Permanent (ports actifs) | ✅ | ✅ | ✅ | ✅ |
-| **Disabled** | Si admin ou erreur | ❌ | ❌ | ❌ | ❌ |
+| **Blocking** | Permanent (ports redondants) | Oui | Non | Non | Non |
+| **Listening** | 15 secondes (Forward Delay) | Oui | Oui | Non | Non |
+| **Learning** | 15 secondes (Forward Delay) | Oui | Oui | Non | Oui |
+| **Forwarding** | Permanent (ports actifs) | Oui | Oui | Oui | Oui |
+| **Disabled** | Si admin ou erreur | Non | Non | Non | Non |
 
 **Temps de convergence STP classique (802.1d) :**
 - Détection de panne : ~20 secondes (Max Age timer)

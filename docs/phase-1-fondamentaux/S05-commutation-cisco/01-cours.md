@@ -122,26 +122,26 @@ Le hub est un équipement de **couche 1** (physique). Il n'a aucune intelligence
 
 ```
 Hub - PC1 envoie à PC3 :
-Port 1 [PC1] → Signal répété → Port 2 [PC2] ⚠️ (reçoit inutilement)
-                             → Port 3 [PC3] ✅
-                             → Port 4 [PC4] ⚠️ (reçoit inutilement)
+Port 1 [PC1] → Signal répété → Port 2 [PC2] (reçoit inutilement)
+                             → Port 3 [PC3] (OK)
+                             → Port 4 [PC4] (reçoit inutilement)
 ```
 
 **Switch - Moderne :**
 
 ```
 Switch - PC1 envoie à PC3 (MAC connue) :
-Port 1 [PC1] → FORWARDING → Port 3 [PC3] ✅
+Port 1 [PC1] → FORWARDING → Port 3 [PC3] (OK)
                (Port 2 et 4 ne reçoivent rien)
 ```
 
 | **Critère** | **HUB** | **SWITCH** |
 |-------------|---------|------------|
 | Couche OSI | 1 (Physique) | 2 (Liaison) |
-| Intelligence | ❌ Aucune | ✅ Table MAC |
-| Sécurité | ❌ Toutes les trames visibles par tous | ✅ Forwarding ciblé |
-| Performances | ❌ Dégradées avec le trafic | ✅ Débit dédié par port |
-| Usage actuel | ❌ **Obsolète** | ✅ **Standard** |
+| Intelligence | Aucune | Table MAC |
+| Sécurité | Toutes les trames visibles par tous | Forwarding ciblé |
+| Performances | Dégradées avec le trafic | Débit dédié par port |
+| Usage actuel | **Obsolète** | **Standard** |
 
 ---
 
@@ -199,9 +199,9 @@ Réseau A: [PC1]─[PC2]─[SW1]─[ROUTEUR]─[SW2]─[PC3]─[PC4]
 
 | **Équipement** | **Sépare collisions ?** | **Sépare broadcasts ?** |
 |----------------|-------------------------|-------------------------|
-| Hub | ❌ Non | ❌ Non |
-| Switch | ✅ Oui (1 par port) | ❌ Non |
-| Routeur | ✅ Oui | ✅ Oui |
+| Hub | Non | Non |
+| Switch | Oui (1 par port) | Non |
+| Routeur | Oui | Oui |
 
 ---
 
@@ -503,7 +503,7 @@ Mémoire RAM                      Mémoire Flash (NVRAM)
 └─────────────────────┘           └─────────────────────┘
 ```
 
-⚠ **Règle d'or :** Toujours `copy run start` après modification !
+**Règle d'or :** Toujours `copy run start` après modification !
 
 **Autres commandes de sauvegarde :**
 ```cisco
@@ -593,7 +593,7 @@ rm -r MonDossier/                   # Supprimer un dossier et son contenu
 rm -rf MonDossier/                  # Forcer la suppression récursive (DANGEREUX)
 ```
 
-⚠ **AVERTISSEMENT `rm -rf` :**
+**AVERTISSEMENT `rm -rf` :**
 - Il n'y a **pas de corbeille** dans un terminal Linux : la suppression est **définitive**
 - TOUJOURS vérifier le chemin avant `rm -rf`
 - En TP : préférer `rm -ri` (confirmation pour chaque fichier) pour s'entraîner

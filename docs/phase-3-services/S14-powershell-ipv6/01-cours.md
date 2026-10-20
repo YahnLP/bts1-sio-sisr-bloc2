@@ -233,7 +233,7 @@ try {
 }
 catch {
     # Exécuté si une erreur se produit
-    Write-Host "❌ Erreur : $($_.Exception.Message)"
+    Write-Host "[ERREUR] Erreur : $($_.Exception.Message)"
 }
 finally {
     # Toujours exécuté (nettoyage, fermeture de connexions...)
@@ -442,7 +442,7 @@ FE80:0000:0000:0000:0200:F8FF:FE21:67CF
       :: remplace 0000:0000:0000
 ```
 
-> ⚠ `::` ne peut apparaître **qu'une seule fois** dans une adresse. Sinon, il serait impossible de savoir combien de groupes nuls il représente.
+> **Attention :** `::` ne peut apparaître **qu'une seule fois** dans une adresse. Sinon, il serait impossible de savoir combien de groupes nuls il représente.
 
 **Exercices de compression :**
 
@@ -538,7 +538,7 @@ Adresse link-local résultante : FE80::204:61FF:FE9D:F1
          │  4. DAD (Duplicate Address Detection)
          │     "Cette adresse est-elle déjà utilisée ?"
          │     (Multicast vers l'adresse candidate)
-         │     → Si pas de réponse : adresse attribuée ✅
+         │     → Si pas de réponse : adresse attribuée (OK)
 ```
 
 *Légende : Les 4 étapes de SLAAC. L'hôte demande un préfixe réseau au routeur (Router Solicitation). Le routeur répond avec sa publicité (Router Advertisement) contenant le préfixe /64. L'hôte construit l'adresse complète en combinant le préfixe (64 bits) et son identifiant d'interface (64 bits). La détection de doublon (DAD) vérifie que l'adresse n'est pas déjà utilisée.*
@@ -590,7 +590,7 @@ Adresse link-local résultante : FE80::204:61FF:FE9D:F1
 
 ---
 
-## ✅ Auto-évaluation : Suis-je Prêt ?
+## Auto-évaluation : Suis-je Prêt ?
 
 - [ ] Je comprends la différence fondamentale entre le pipeline Bash (texte) et le pipeline PowerShell (objets)
 - [ ] Je construis une cmdlet PowerShell à partir du format Verbe-Nom

@@ -59,10 +59,10 @@
 
 | **Test réalisé** | **Résultat** | **Capture d'écran N°** |
 |---|---|---|
-| `ipconfig /all` sur VM cliente (IP obtenue dans la plage) | ✅ / ❌ | |
-| Options obtenues (passerelle, DNS) | ✅ / ❌ | |
-| Réservation fonctionnelle (IP fixe obtenue) | ✅ / ❌ | |
-| Bail visible dans la console DHCP serveur | ✅ / ❌ | |
+| `ipconfig /all` sur VM cliente (IP obtenue dans la plage) | Oui / Non | |
+| Options obtenues (passerelle, DNS) | Oui / Non | |
+| Réservation fonctionnelle (IP fixe obtenue) | Oui / Non | |
+| Bail visible dans la console DHCP serveur | Oui / Non | |
 
 ---
 

@@ -107,10 +107,10 @@ fi
 
 if id "$LOGIN" > /dev/null 2>&1
 then
-    echo "✅ L'utilisateur '$LOGIN' existe sur ce système."
+    echo "[OK] L'utilisateur '$LOGIN' existe sur ce système."
     echo "   Détails : $(id $LOGIN)"
 else
-    echo "❌ L'utilisateur '$LOGIN' n'existe pas sur ce système."
+    echo "[ERREUR] L'utilisateur '$LOGIN' n'existe pas sur ce système."
 fi
 ```
 
@@ -168,7 +168,7 @@ Créer `/home/user/scripts/creer_utilisateur.sh` :
 # ─── Vérification des droits root ───────────────────────────────
 if [ $EUID -ne 0 ]
 then
-    echo "❌ Erreur : ce script doit être exécuté en tant que root (sudo)."
+    echo "[ERREUR] Erreur : ce script doit être exécuté en tant que root (sudo)."
     exit 1
 fi
 
@@ -189,27 +189,27 @@ echo ""
 # ─── Validation : champs vides ───────────────────────────────────
 if [ -z "$PRENOM" ] || [ -z "$NOM" ] || [ -z "$LOGIN" ] || [ -z "$SERVICE" ] || [ -z "$MDP" ]
 then
-    echo "❌ Erreur : tous les champs sont obligatoires."
+    echo "[ERREUR] Erreur : tous les champs sont obligatoires."
     exit 1
 fi
 
 # ─── Validation : le login ne doit pas déjà exister ──────────────
 if id "$LOGIN" > /dev/null 2>&1
 then
-    echo "❌ Erreur : l'utilisateur '$LOGIN' existe déjà sur ce système."
+    echo "[ERREUR] Erreur : l'utilisateur '$LOGIN' existe déjà sur ce système."
     exit 1
 fi
 
 # ─── Validation : le groupe/service doit exister ─────────────────
 if ! getent group "$SERVICE" > /dev/null 2>&1
 then
-    echo "⚠️  Le groupe '$SERVICE' n'existe pas. Création en cours..."
+    echo "[ATTENTION] Le groupe '$SERVICE' n'existe pas. Création en cours..."
     groupadd "$SERVICE"
     if [ $? -eq 0 ]
     then
-        echo "✅ Groupe '$SERVICE' créé."
+        echo "[OK] Groupe '$SERVICE' créé."
     else
-        echo "❌ Erreur lors de la création du groupe '$SERVICE'."
+        echo "[ERREUR] Erreur lors de la création du groupe '$SERVICE'."
         exit 1
     fi
 fi
@@ -230,7 +230,7 @@ read -p "Confirmer la création ? (o/n) : " CONFIRMATION
 
 if [ "$CONFIRMATION" != "o" ] && [ "$CONFIRMATION" != "O" ]
 then
-    echo "❌ Création annulée."
+    echo "[ERREUR] Création annulée."
     exit 0
 fi
 
@@ -246,7 +246,7 @@ useradd -m \
 
 if [ $? -ne 0 ]
 then
-    echo "❌ Erreur lors de la création de l'utilisateur."
+    echo "[ERREUR] Erreur lors de la création de l'utilisateur."
     exit 1
 fi
 
@@ -255,7 +255,7 @@ echo "$LOGIN:$MDP" | chpasswd
 
 if [ $? -ne 0 ]
 then
-    echo "❌ Erreur lors de la définition du mot de passe."
+    echo "[ERREUR] Erreur lors de la définition du mot de passe."
     exit 1
 fi
 
@@ -264,18 +264,18 @@ chage -d 0 "$LOGIN"
 
 # ─── Confirmation finale ─────────────────────────────────────────
 echo ""
-echo "✅ Utilisateur '$LOGIN' ($PRENOM $NOM) créé avec succès !"
+echo "[OK] Utilisateur '$LOGIN' ($PRENOM $NOM) créé avec succès !"
 echo "   Groupe      : $SERVICE"
 echo "   Répertoire  : /home/$LOGIN"
 echo "   Mot de passe temporaire défini. L'utilisateur devra le changer à la 1ère connexion."
 echo ""
-echo "📋 Vérification :"
+echo " Vérification :"
 id "$LOGIN"
 
 # ─── Journalisation ──────────────────────────────────────────────
 LOG_FILE="/var/log/creation_utilisateurs.log"
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Création : $LOGIN ($PRENOM $NOM) - Service : $SERVICE" >> "$LOG_FILE"
-echo "📄 Événement enregistré dans $LOG_FILE"
+echo " Événement enregistré dans $LOG_FILE"
 ```
 
 ---
@@ -294,11 +294,11 @@ sudo ./creer_utilisateur.sh
 
 | **Test** | **Données de test** | **Résultat attendu** |
 |---|---|---|
-| Test 1 — Création normale | Alice Martin / a.martin / rh | ✅ Création réussie |
-| Test 2 — Login déjà existant | Relancer avec a.martin | ❌ Message d'erreur "existe déjà" |
-| Test 3 — Champ vide | Ne pas saisir le prénom | ❌ Message d'erreur "champs obligatoires" |
-| Test 4 — Annulation | Répondre "n" à la confirmation | ❌ Message "Création annulée" |
-| Test 5 — Groupe inexistant | Saisir un service "marketing" | ⚠ Groupe créé automatiquement |
+| Test 1 — Création normale | Alice Martin / a.martin / rh | Création réussie |
+| Test 2 — Login déjà existant | Relancer avec a.martin | Message d'erreur "existe déjà" |
+| Test 3 — Champ vide | Ne pas saisir le prénom | Message d'erreur "champs obligatoires" |
+| Test 4 — Annulation | Répondre "n" à la confirmation | Message "Création annulée" |
+| Test 5 — Groupe inexistant | Saisir un service "marketing" | Groupe créé automatiquement |
 
 ---
 
