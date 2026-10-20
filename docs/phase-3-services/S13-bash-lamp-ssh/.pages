@@ -1,1 +1,7 @@
 title: "S13 – Scripts Bash, serveur LAMP, administration à distance (SSH) et cron"
+arrange:
+  - 01-cours.md
+  - 02-tp.md
+  - 01b-cours-bash-bases.md
+  - 02b-tp-bash.md
+  - ...
