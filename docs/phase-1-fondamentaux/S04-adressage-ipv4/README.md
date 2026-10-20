@@ -53,7 +53,6 @@ Si ta situation le permet : **observer** comment ton entreprise traite le sujet 
 <summary>Notes pour l'enseignant</summary>
 
 - **Compétences :** codes relus sur le référentiel (page [Référentiel](../../ressources/referentiel.md)) ; le choix des compétences pour cette séance est une proposition à valider.
-- **Corrigé :** dans `corriges/` à la racine du dépôt (hors du site publié).
 - Le calcul de sous-réseaux est enseigné en mathématiques ; ici, on l'applique à un plan d'adressage.
 
 </details>

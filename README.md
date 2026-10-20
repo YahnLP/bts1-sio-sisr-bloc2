@@ -14,7 +14,6 @@ Cours, TP et aide-mémoire du **bloc 2 (infrastructure, systèmes et réseaux)**
 | [`docs/phase-4-securiser-presenter`](docs/phase-4-securiser-presenter/README.md) | S16 à S19 : supervision, sauvegarde, haute disponibilité, projet de PME, DAT, épreuve blanche E6 |
 | [`docs/ressources`](docs/ressources/README.md) | Référentiel, épreuve E6, fiche de réalisation, outils, glossaire, licences |
 | [`docs/simulateur`](docs/simulateur/) | Le simulateur réseau hors ligne (un seul fichier HTML) |
-| [`corriges`](corriges/) | Corrigés **réservés à l'enseignant** (non publiés sur le site, mais visibles dans ce dépôt) |
 | [`tools`](tools/CONVENTIONS.md) | Conventions de rédaction du site |
 
 ## Principe pédagogique
