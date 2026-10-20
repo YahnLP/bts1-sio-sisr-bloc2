@@ -60,12 +60,33 @@ Dans une infrastructure avec VLANs :
 
 **Principe :** Le routeur intercepte les broadcasts DHCP dans chaque VLAN et les **transmet en unicast** vers le serveur DHCP centralisé.
 
-```
-VLAN 10                    ROUTEUR                    VLAN Serveurs
-PC-A ──broadcast──→ [Interface Fa0/0.10] → unicast → [Serveur DHCP Linux]
-                        ip helper-address             192.168.30.10
-                        192.168.30.10
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 190" style="max-width:780px" role="img" aria-label="Relais DHCP : le routeur transforme le broadcast en unicast" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="14" width="150" height="130" rx="10" class="dg-soft"/>
+<text x="85" y="34" text-anchor="middle" class="dg-t">VLAN 10</text>
+<rect x="65" y="66" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="70" y="71" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="82" y="94" width="6" height="6" class="dg-box"/>
+<rect x="73" y="100" width="24" height="4" rx="2" class="dg-box"/>
+<text x="85" y="120" text-anchor="middle" class="dg-s">PC-A</text>
+<rect x="290" y="40" width="210" height="84" rx="8" class="dg-warn"/>
+<text x="395.0" y="69.0" text-anchor="middle" class="dg-t">Routeur</text>
+<text x="395.0" y="87.0" text-anchor="middle" class="dg-s">interface Fa0/0.10</text>
+<text x="395.0" y="105.0" text-anchor="middle" class="dg-s">ip helper-address 192.168.30.10</text>
+<rect x="620" y="14" width="150" height="130" rx="10" class="dg-soft"/>
+<text x="695" y="34" text-anchor="middle" class="dg-t">VLAN Serveurs</text>
+<rect x="635" y="56" width="120" height="60" rx="6" class="dg-ok"/>
+<text x="695.0" y="82.0" text-anchor="middle" class="dg-t">Serveur DHCP</text>
+<text x="695.0" y="100.0" text-anchor="middle" class="dg-s">192.168.30.10</text>
+<line x1="110" y1="82" x2="279.0" y2="82.0" class="dg-line"/>
+<polygon points="288,82 279.0,77.0 279.0,87.0" class="dg-ah"/>
+<text x="200" y="72" text-anchor="middle" class="dg-t">broadcast</text>
+<line x1="502" y1="82" x2="624.0" y2="82.0" class="dg-line"/>
+<polygon points="633,82 624.0,77.0 624.0,87.0" class="dg-ah"/>
+<text x="568" y="72" text-anchor="middle" class="dg-t">unicast</text>
+<text x="390" y="164" text-anchor="middle" class="dg-i">Le routeur intercepte le broadcast DHCP et le transmet en unicast au serveur</text>
+</svg>
+<figcaption>Le routeur relaie les requêtes DHCP du VLAN 10 vers le serveur DHCP centralisé.</figcaption>
+</figure>
 
 **Fonctionnement détaillé :**
 

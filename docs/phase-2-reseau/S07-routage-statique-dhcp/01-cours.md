@@ -26,14 +26,13 @@ Le **routeur** est l'équipement de **couche 3** chargé d'acheminer les paquets
 
 **Règle :** Un PC envoie un paquet à sa **passerelle par défaut** dès que la destination n'est pas dans son propre réseau.
 
-```
-PC-A (192.168.1.10/24) veut joindre PC-B (192.168.2.20/24) :
-  1. PC-A calcule : "192.168.2.20 ∉ mon réseau 192.168.1.0/24"
-  2. PC-A envoie le paquet à sa passerelle : 192.168.1.1 (Fa0/0 du routeur)
-  3. Le routeur lit l'IP destination, consulte sa table de routage
-  4. Trouve la route vers 192.168.2.0/24 → envoie sur Fa0/1
-  5. PC-B reçoit le paquet
-```
+**Exemple : PC-A (192.168.1.10/24) veut joindre PC-B (192.168.2.20/24)**
+
+1. PC-A constate que 192.168.2.20 n'appartient pas à son réseau 192.168.1.0/24.
+2. PC-A envoie le paquet à sa passerelle : 192.168.1.1 (Fa0/0 du routeur).
+3. Le routeur lit l'adresse IP de destination et consulte sa table de routage.
+4. Il trouve la route vers 192.168.2.0/24 et émet le paquet sur Fa0/1.
+5. PC-B reçoit le paquet.
 
 ---
 
@@ -171,17 +170,44 @@ Router(config)# ip route 0.0.0.0 0.0.0.0 10.0.0.2
 
 ### E. Schéma Topologique de Référence
 
-```
-Réseau Paris            Liaison WAN             Réseau Lyon
-192.168.1.0/24          10.0.0.0/30            192.168.2.0/24
-
-PC-A ─────┐         ┌──────────────────┐         ┌───── PC-B
-.10        │         │                  │         │  .20
-           └── Fa0/0─┤     R1_PARIS     ├─Se──────┤
-                .1   │                  │   .1  .2 │  Fa0/0─R2_LYON
-                     └──────────────────┘          │          .1
-                          10.0.0.1     10.0.0.2    └─────────────
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 230" style="max-width:780px" role="img" aria-label="Liaison WAN entre R1_PARIS et R2_LYON" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="14" width="230" height="160" rx="10" class="dg-soft"/>
+<text x="125" y="36" text-anchor="middle" class="dg-t">Réseau Paris</text>
+<text x="125" y="54" text-anchor="middle" class="dg-i">192.168.1.0/24</text>
+<rect x="540" y="14" width="230" height="160" rx="10" class="dg-soft"/>
+<text x="655" y="36" text-anchor="middle" class="dg-t">Réseau Lyon</text>
+<text x="655" y="54" text-anchor="middle" class="dg-i">192.168.2.0/24</text>
+<rect x="40" y="86" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="45" y="91" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="57" y="114" width="6" height="6" class="dg-box"/>
+<rect x="48" y="120" width="24" height="4" rx="2" class="dg-box"/>
+<text x="60" y="140" text-anchor="middle" class="dg-s">PC-A</text>
+<text x="60" y="142" text-anchor="middle" class="dg-i">.10</text>
+<rect x="700" y="86" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="705" y="91" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="717" y="114" width="6" height="6" class="dg-box"/>
+<rect x="708" y="120" width="24" height="4" rx="2" class="dg-box"/>
+<text x="720" y="140" text-anchor="middle" class="dg-s">PC-B</text>
+<text x="720" y="142" text-anchor="middle" class="dg-i">.20</text>
+<rect x="270" y="86" width="100" height="48" rx="8" class="dg-dark"/>
+<text x="320.0" y="115.0" text-anchor="middle" class="dg-w">R1_PARIS</text>
+<rect x="410" y="86" width="100" height="48" rx="8" class="dg-dark"/>
+<text x="460.0" y="115.0" text-anchor="middle" class="dg-w">R2_LYON</text>
+<line x1="82" y1="102" x2="270" y2="106" class="dg-line"/>
+<line x1="698" y1="102" x2="510" y2="106" class="dg-line"/>
+<line x1="370" y1="110" x2="410" y2="110" class="dg-line"/>
+<text x="385" y="76" text-anchor="middle" class="dg-t">Série</text>
+<text x="385" y="156" text-anchor="middle" class="dg-i">10.0.0.0/30</text>
+<text x="170" y="96" text-anchor="middle" class="dg-s">Fa0/0 : .1</text>
+<text x="610" y="96" text-anchor="middle" class="dg-s">Fa0/0 : .1</text>
+<text x="375" y="198" text-anchor="end" class="dg-s">10.0.0.1</text>
+<text x="405" y="198" text-anchor="start" class="dg-s">10.0.0.2</text>
+<line x1="350" y1="134" x2="350" y2="184" class="dg-dash"/>
+<line x1="430" y1="134" x2="430" y2="184" class="dg-dash"/>
+<text x="345" y="198" text-anchor="middle" class="dg-s"></text>
+</svg>
+<figcaption>Deux réseaux locaux reliés par un lien série 10.0.0.0/30.</figcaption>
+</figure>
 
 **Table de routage de R1_PARIS :**
 

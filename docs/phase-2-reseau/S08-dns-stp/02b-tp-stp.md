@@ -15,14 +15,48 @@
 
 ### Topologie
 
-```
-        [SW1]
-       /     \
-  Fa0/1       Fa0/2
-     /           \
-[SW2]─────────[SW3]
-    Fa0/2   Fa0/2
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 520 260" style="max-width:520px" role="img" aria-label="Triangle de trois switches : une boucle" xmlns="http://www.w3.org/2000/svg">
+<rect x="205.0" y="38" width="110" height="24" rx="4" class="dg-dark"/>
+<rect x="213.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="225.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="237.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="249.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="261.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="273.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="285.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="297.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<text x="260" y="80" text-anchor="middle" class="dg-s">SW1</text>
+<rect x="35.0" y="188" width="110" height="24" rx="4" class="dg-dark"/>
+<rect x="43.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="55.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="67.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="79.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="91.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="103.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="115.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="127.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<text x="90" y="230" text-anchor="middle" class="dg-s">SW2</text>
+<rect x="375.0" y="188" width="110" height="24" rx="4" class="dg-dark"/>
+<rect x="383.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="395.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="407.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="419.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="431.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="443.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="455.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="467.0" y="196" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<text x="430" y="230" text-anchor="middle" class="dg-s">SW3</text>
+<line x1="225" y1="60" x2="120" y2="190" class="dg-line"/>
+<line x1="295" y1="60" x2="400" y2="190" class="dg-line"/>
+<line x1="145" y1="200" x2="375" y2="200" class="dg-line"/>
+<text x="165" y="110" text-anchor="end" class="dg-i">Fa0/1</text>
+<text x="355" y="110" text-anchor="start" class="dg-i">Fa0/2</text>
+<text x="150" y="190" text-anchor="start" class="dg-i">Fa0/2</text>
+<text x="370" y="190" text-anchor="end" class="dg-i">Fa0/2</text>
+<text x="260" y="240" text-anchor="middle" class="dg-t">3 liens = 1 boucle : STP bloque 1 port</text>
+</svg>
+<figcaption>Trois liens forment une boucle : le STP doit bloquer un port.</figcaption>
+</figure>
 
 Trois switches reliés en **triangle** = 3 liens, donc **1 boucle** → STP doit bloquer 1 port.
 

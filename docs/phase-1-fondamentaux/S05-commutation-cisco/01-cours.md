@@ -139,20 +139,82 @@ Le switch lit l'**adresse MAC Destination** et prend l'une de 3 décisions :
 
 Le hub est un équipement de **couche 1** (physique). Il n'a aucune intelligence : il **répète le signal électrique sur tous les ports** sans exception, quelles que soient les adresses.
 
-```
-Hub - PC1 envoie à PC3 :
-Port 1 [PC1] → Signal répété → Port 2 [PC2] (reçoit inutilement)
-                             → Port 3 [PC3] (OK)
-                             → Port 4 [PC4] (reçoit inutilement)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 230" style="max-width:760px" role="img" aria-label="Hub : le signal est répété sur tous les ports" xmlns="http://www.w3.org/2000/svg">
+<rect x="300" y="80" width="160" height="60" rx="8" class="dg-warn"/>
+<text x="380.0" y="115.0" text-anchor="middle" class="dg-t">HUB</text>
+<rect x="60" y="16" width="40" height="28" rx="4" class="dg-ok"/>
+<rect x="65" y="21" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="77" y="44" width="6" height="6" class="dg-box"/>
+<rect x="68" y="50" width="24" height="4" rx="2" class="dg-box"/>
+<text x="80" y="10" text-anchor="middle" class="dg-s">PC1</text>
+<line x1="102" y1="32" x2="300" y2="95" class="dg-line"/>
+<rect x="60" y="146" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="65" y="151" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="77" y="174" width="6" height="6" class="dg-box"/>
+<rect x="68" y="180" width="24" height="4" rx="2" class="dg-box"/>
+<text x="80" y="200" text-anchor="middle" class="dg-s">PC2</text>
+<line x1="102" y1="162" x2="300" y2="125" class="dg-line"/>
+<rect x="660" y="16" width="40" height="28" rx="4" class="dg-ok"/>
+<rect x="665" y="21" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="677" y="44" width="6" height="6" class="dg-box"/>
+<rect x="668" y="50" width="24" height="4" rx="2" class="dg-box"/>
+<text x="680" y="10" text-anchor="middle" class="dg-s">PC3</text>
+<line x1="658" y1="32" x2="460" y2="95" class="dg-line"/>
+<rect x="660" y="146" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="665" y="151" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="677" y="174" width="6" height="6" class="dg-box"/>
+<rect x="668" y="180" width="24" height="4" rx="2" class="dg-box"/>
+<text x="680" y="200" text-anchor="middle" class="dg-s">PC4</text>
+<line x1="658" y1="162" x2="460" y2="125" class="dg-line"/>
+<text x="165" y="84" text-anchor="middle" class="dg-i">Port 1</text>
+<text x="165" y="184" text-anchor="middle" class="dg-i">Port 2</text>
+<text x="595" y="84" text-anchor="middle" class="dg-i">Port 3</text>
+<text x="595" y="184" text-anchor="middle" class="dg-i">Port 4</text>
+<text x="380" y="176" text-anchor="middle" class="dg-i">PC2 et PC4 reçoivent inutilement</text>
+<text x="380" y="196" text-anchor="middle" class="dg-i">la trame destinée à PC3</text>
+<text x="380" y="40" text-anchor="middle" class="dg-t">PC1 envoie à PC3</text>
+</svg>
+<figcaption>PC1 envoie à PC3 : le hub répète le signal sur tous les autres ports.</figcaption>
+</figure>
 
 **Switch - Moderne :**
 
-```
-Switch - PC1 envoie à PC3 (MAC connue) :
-Port 1 [PC1] → FORWARDING → Port 3 [PC3] (OK)
-               (Port 2 et 4 ne reçoivent rien)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 230" style="max-width:760px" role="img" aria-label="Switch : la trame est transmise uniquement au port de destination" xmlns="http://www.w3.org/2000/svg">
+<rect x="300" y="80" width="160" height="60" rx="8" class="dg-dark"/>
+<text x="380.0" y="115.0" text-anchor="middle" class="dg-w">SWITCH</text>
+<rect x="60" y="16" width="40" height="28" rx="4" class="dg-ok"/>
+<rect x="65" y="21" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="77" y="44" width="6" height="6" class="dg-box"/>
+<rect x="68" y="50" width="24" height="4" rx="2" class="dg-box"/>
+<text x="80" y="10" text-anchor="middle" class="dg-s">PC1</text>
+<line x1="102" y1="32" x2="300" y2="95" class="dg-line"/>
+<rect x="60" y="146" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="65" y="151" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="77" y="174" width="6" height="6" class="dg-box"/>
+<rect x="68" y="180" width="24" height="4" rx="2" class="dg-box"/>
+<text x="80" y="200" text-anchor="middle" class="dg-s">PC2</text>
+<line x1="102" y1="162" x2="300" y2="125" class="dg-dash"/>
+<rect x="660" y="16" width="40" height="28" rx="4" class="dg-ok"/>
+<rect x="665" y="21" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="677" y="44" width="6" height="6" class="dg-box"/>
+<rect x="668" y="50" width="24" height="4" rx="2" class="dg-box"/>
+<text x="680" y="10" text-anchor="middle" class="dg-s">PC3</text>
+<line x1="658" y1="32" x2="460" y2="95" class="dg-line"/>
+<rect x="660" y="146" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="665" y="151" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="677" y="174" width="6" height="6" class="dg-box"/>
+<rect x="668" y="180" width="24" height="4" rx="2" class="dg-box"/>
+<text x="680" y="200" text-anchor="middle" class="dg-s">PC4</text>
+<line x1="658" y1="162" x2="460" y2="125" class="dg-dash"/>
+<text x="165" y="84" text-anchor="middle" class="dg-i">Port 1</text>
+<text x="165" y="184" text-anchor="middle" class="dg-i">Port 2</text>
+<text x="595" y="84" text-anchor="middle" class="dg-i">Port 3</text>
+<text x="595" y="184" text-anchor="middle" class="dg-i">Port 4</text>
+<text x="380" y="40" text-anchor="middle" class="dg-t">Forwarding ciblé : PC1 vers PC3</text>
+<text x="380" y="176" text-anchor="middle" class="dg-i">PC2 et PC4 ne reçoivent rien</text>
+</svg>
+<figcaption>PC1 envoie à PC3 (adresse MAC connue) : seul le port 3 reçoit la trame.</figcaption>
+</figure>
 
 | **Critère** | **HUB** | **SWITCH** |
 |-------------|---------|------------|
@@ -238,19 +300,82 @@ Port 1 [PC1] → FORWARDING → Port 3 [PC3] (OK)
 **Définition :** Zone où une trame de diffusion (`FF:FF:FF:FF:FF:FF`) est **propagée et reçue par tous**.
 
 **Avec un Switch seul :**
-```
-[PC1]─[PC2]─[SWITCH]─[PC3]─[PC4]
-→ 1 seul domaine de diffusion
-→ Un broadcast de PC1 est reçu par PC2, PC3, PC4
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 190" style="max-width:760px" role="img" aria-label="Un switch seul : un seul domaine de diffusion" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="14" width="740" height="150" rx="12" class="dg-soft"/>
+<text x="380" y="36" text-anchor="middle" class="dg-t">1 seul domaine de diffusion</text>
+<rect x="300" y="76" width="160" height="48" rx="8" class="dg-dark"/>
+<text x="380.0" y="105.0" text-anchor="middle" class="dg-w">SWITCH</text>
+<rect x="50" y="76" width="40" height="28" rx="4" class="dg-warn"/>
+<rect x="55" y="81" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="67" y="104" width="6" height="6" class="dg-box"/>
+<rect x="58" y="110" width="24" height="4" rx="2" class="dg-box"/>
+<text x="70" y="130" text-anchor="middle" class="dg-s">PC1</text>
+<line x1="92" y1="92" x2="300" y2="100" class="dg-line"/>
+<rect x="180" y="76" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="185" y="81" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="197" y="104" width="6" height="6" class="dg-box"/>
+<rect x="188" y="110" width="24" height="4" rx="2" class="dg-box"/>
+<text x="200" y="130" text-anchor="middle" class="dg-s">PC2</text>
+<line x1="222" y1="92" x2="300" y2="100" class="dg-line"/>
+<rect x="540" y="76" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="545" y="81" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="557" y="104" width="6" height="6" class="dg-box"/>
+<rect x="548" y="110" width="24" height="4" rx="2" class="dg-box"/>
+<text x="560" y="130" text-anchor="middle" class="dg-s">PC3</text>
+<line x1="538" y1="92" x2="460" y2="100" class="dg-line"/>
+<rect x="670" y="76" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="675" y="81" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="687" y="104" width="6" height="6" class="dg-box"/>
+<rect x="678" y="110" width="24" height="4" rx="2" class="dg-box"/>
+<text x="690" y="130" text-anchor="middle" class="dg-s">PC4</text>
+<line x1="668" y1="92" x2="460" y2="100" class="dg-line"/>
+<text x="380" y="152" text-anchor="middle" class="dg-i">Le broadcast de PC1 atteint tous les autres postes</text>
+</svg>
+<figcaption>Un broadcast émis par PC1 est reçu par PC2, PC3 et PC4.</figcaption>
+</figure>
 
 **Avec un Routeur :**
-```
-Réseau A: [PC1]─[PC2]─[SW1]─[ROUTEUR]─[SW2]─[PC3]─[PC4]
-→ 2 domaines de diffusion séparés par le routeur
-→ Broadcast de PC1 reste dans Réseau A (PC2 uniquement)
-→ PC3 et PC4 ne reçoivent pas le broadcast
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 220" style="max-width:780px" role="img" aria-label="Un routeur sépare les domaines de diffusion" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="14" width="300" height="150" rx="12" class="dg-soft"/>
+<text x="160" y="34" text-anchor="middle" class="dg-t">Réseau A : domaine 1</text>
+<rect x="470" y="14" width="300" height="150" rx="12" class="dg-ok"/>
+<text x="620" y="34" text-anchor="middle" class="dg-t">Réseau B : domaine 2</text>
+<rect x="150" y="90" width="70" height="40" rx="8" class="dg-dark"/>
+<text x="185.0" y="115.0" text-anchor="middle" class="dg-w">SW1</text>
+<rect x="560" y="90" width="70" height="40" rx="8" class="dg-dark"/>
+<text x="595.0" y="115.0" text-anchor="middle" class="dg-w">SW2</text>
+<rect x="335" y="86" width="110" height="48" rx="8" class="dg-dark"/>
+<text x="390.0" y="115.0" text-anchor="middle" class="dg-w">ROUTEUR</text>
+<rect x="30" y="46" width="40" height="28" rx="4" class="dg-warn"/>
+<rect x="35" y="51" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="47" y="74" width="6" height="6" class="dg-box"/>
+<rect x="38" y="80" width="24" height="4" rx="2" class="dg-box"/>
+<text x="50" y="100" text-anchor="middle" class="dg-s">PC1</text>
+<line x1="72" y1="62" x2="220" y2="110" class="dg-line"/>
+<rect x="30" y="126" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="35" y="131" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="47" y="154" width="6" height="6" class="dg-box"/>
+<rect x="38" y="160" width="24" height="4" rx="2" class="dg-box"/>
+<text x="50" y="180" text-anchor="middle" class="dg-s">PC2</text>
+<line x1="72" y1="142" x2="220" y2="110" class="dg-line"/>
+<rect x="710" y="46" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="715" y="51" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="727" y="74" width="6" height="6" class="dg-box"/>
+<rect x="718" y="80" width="24" height="4" rx="2" class="dg-box"/>
+<text x="730" y="100" text-anchor="middle" class="dg-s">PC3</text>
+<line x1="708" y1="62" x2="560" y2="110" class="dg-line"/>
+<rect x="710" y="126" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="715" y="131" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="727" y="154" width="6" height="6" class="dg-box"/>
+<rect x="718" y="160" width="24" height="4" rx="2" class="dg-box"/>
+<text x="730" y="180" text-anchor="middle" class="dg-s">PC4</text>
+<line x1="708" y1="142" x2="560" y2="110" class="dg-line"/>
+<line x1="220" y1="110" x2="335" y2="110" class="dg-line"/>
+<line x1="445" y1="110" x2="560" y2="110" class="dg-line"/>
+<text x="390" y="196" text-anchor="middle" class="dg-i">Le broadcast de PC1 ne traverse pas le routeur : PC3 et PC4 ne le reçoivent pas</text>
+</svg>
+<figcaption>Le broadcast de PC1 reste dans le réseau A.</figcaption>
+</figure>
 
  **Règle à retenir :**
 - **Switch** : Sépare les domaines de **collision** mais **PAS** les domaines de diffusion
@@ -304,20 +429,36 @@ Réseau A: [PC1]─[PC2]─[SW1]─[ROUTEUR]─[SW2]─[PC3]─[PC4]
 
 La CLI Cisco est organisée en **hiérarchie de modes**. Chaque mode a un **prompt** (invite) distinctif et permet des commandes spécifiques.
 
-```
-Switch>                     ← Mode User EXEC
-    │  enable
-    ▼
-Switch#                     ← Mode Privileged EXEC (Enable Mode)
-    │  configure terminal (ou conf t)
-    ▼
-Switch(config)#             ← Mode Global Configuration
-    │  interface FastEthernet0/1
-    ▼
-Switch(config-if)#          ← Mode Interface Configuration
-    │  exit (revenir d'un niveau)
-    │  end (revenir directement en Privileged)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 420" style="max-width:760px" role="img" aria-label="Hiérarchie des modes de la CLI Cisco IOS" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="14" width="250" height="52" rx="8" class="dg-box"/>
+<text x="145.0" y="36.0" text-anchor="middle" class="dg-t">Switch&gt;</text>
+<text x="145.0" y="54.0" text-anchor="middle" class="dg-s">User EXEC</text>
+<line x1="145" y1="66" x2="145.0" y2="103.0" class="dg-line"/>
+<polygon points="145,112 150.0,103.0 140.0,103.0" class="dg-ah"/>
+<text x="160" y="94" text-anchor="start" class="dg-s">enable</text>
+<rect x="20" y="112" width="250" height="52" rx="8" class="dg-ok"/>
+<text x="145.0" y="134.0" text-anchor="middle" class="dg-t">Switch#</text>
+<text x="145.0" y="152.0" text-anchor="middle" class="dg-s">Privileged EXEC</text>
+<line x1="145" y1="164" x2="145.0" y2="201.0" class="dg-line"/>
+<polygon points="145,210 150.0,201.0 140.0,201.0" class="dg-ah"/>
+<text x="160" y="192" text-anchor="start" class="dg-s">configure terminal  (conf t)</text>
+<rect x="20" y="210" width="250" height="52" rx="8" class="dg-warn"/>
+<text x="145.0" y="232.0" text-anchor="middle" class="dg-t">Switch(config)#</text>
+<text x="145.0" y="250.0" text-anchor="middle" class="dg-s">Global Configuration</text>
+<line x1="145" y1="262" x2="145.0" y2="299.0" class="dg-line"/>
+<polygon points="145,308 150.0,299.0 140.0,299.0" class="dg-ah"/>
+<text x="160" y="290" text-anchor="start" class="dg-s">interface FastEthernet0/1</text>
+<rect x="20" y="308" width="250" height="52" rx="8" class="dg-soft"/>
+<text x="145.0" y="330.0" text-anchor="middle" class="dg-t">Switch(config-if)#</text>
+<text x="145.0" y="348.0" text-anchor="middle" class="dg-s">Interface Configuration</text>
+<rect x="400" y="298" width="330" height="70" rx="8" class="dg-soft"/>
+<text x="565.0" y="318.0" text-anchor="middle" class="dg-t">Retours en arrière</text>
+<text x="415" y="336" text-anchor="start" class="dg-s">exit : revient d&#x27;un niveau</text>
+<text x="415" y="356" text-anchor="start" class="dg-s">end : revient directement en Privileged EXEC</text>
+<line x1="270" y1="320" x2="400" y2="330" class="dg-dash"/>
+</svg>
+<figcaption>Chaque mode a un prompt distinct ; exit remonte d&#x27;un niveau, end revient directement en mode privilégié.</figcaption>
+</figure>
 
 ---
 
@@ -551,16 +692,28 @@ end
 
 ### D. Différence Running-Config vs Startup-Config
 
-```
-Mémoire RAM                      Mémoire Flash (NVRAM)
-┌─────────────────────┐           ┌─────────────────────┐
-│   running-config    │           │   startup-config    │
-│   (config active)   │  copy     │   (config sauvegardée)│
-│   Modifiée en temps │──run───→  │   Chargée au         │
-│   réel              │  start    │   démarrage          │
-│   PERDUE au reboot  │           │   Persistante        │
-└─────────────────────┘           └─────────────────────┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 230" style="max-width:760px" role="img" aria-label="running-config en RAM et startup-config en NVRAM" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="20" width="280" height="150" rx="10" class="dg-warn"/>
+<text x="160.0" y="82.0" text-anchor="middle" class="dg-t">RAM : running-config</text>
+<text x="160.0" y="100.0" text-anchor="middle" class="dg-s">Configuration active</text>
+<text x="160.0" y="118.0" text-anchor="middle" class="dg-s">Modifiée en temps réel</text>
+<text x="160" y="150" text-anchor="middle" class="dg-t">PERDUE au redémarrage</text>
+<rect x="460" y="20" width="280" height="150" rx="10" class="dg-ok"/>
+<text x="600.0" y="82.0" text-anchor="middle" class="dg-t">NVRAM : startup-config</text>
+<text x="600.0" y="100.0" text-anchor="middle" class="dg-s">Configuration sauvegardée</text>
+<text x="600.0" y="118.0" text-anchor="middle" class="dg-s">Chargée au démarrage</text>
+<text x="600" y="150" text-anchor="middle" class="dg-t">Persistante</text>
+<line x1="302" y1="70" x2="449.0" y2="70.0" class="dg-line"/>
+<polygon points="458,70 449.0,65.0 449.0,75.0" class="dg-ah"/>
+<text x="380" y="60" text-anchor="middle" class="dg-s">copy running-config</text>
+<text x="380" y="92" text-anchor="middle" class="dg-s">startup-config</text>
+<line x1="458" y1="120" x2="311.0" y2="120.0" class="dg-dash"/>
+<polygon points="302,120 311.0,125.0 311.0,115.0" class="dg-ah"/>
+<text x="380" y="138" text-anchor="middle" class="dg-i">chargement au boot</text>
+<text x="380" y="208" text-anchor="middle" class="dg-t">Règle d&#x27;or : toujours copy run start après une modification</text>
+</svg>
+<figcaption>La commande copy running-config startup-config sauvegarde la configuration.</figcaption>
+</figure>
 
 **Règle d'or :** Toujours `copy run start` après modification !
 
@@ -607,17 +760,40 @@ cd -                         # Revenir au répertoire précédent
 ```
 
 **Comprendre la sortie de `ls -l` :**
-```
--rw-r--r--  1  etudiant  etudiant  1024  nov  15 10:30  fichier.txt
-│           │  │          │         │     │              │
-│           │  │          │         │     │              └─ Nom du fichier
-│           │  │          │         │     └─ Date dernière modification
-│           │  │          │         └─ Taille en octets
-│           │  │          └─ Groupe propriétaire
-│           │  └─ Utilisateur propriétaire
-│           └─ Nombre de liens physiques
-└─ Permissions (type + rwx propriétaire + rwx groupe + rwx autres)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 250" style="max-width:780px" role="img" aria-label="Lecture de la commande ls -l" xmlns="http://www.w3.org/2000/svg">
+<text x="20" y="26" text-anchor="start" class="dg-i">$ ls -l</text>
+<rect x="20" y="36" width="120" height="34" rx="5" class="dg-warn"/>
+<text x="80.0" y="58.0" text-anchor="middle" class="dg-t">-rw-r--r--</text>
+<line x1="80.0" y1="70" x2="80.0" y2="100" class="dg-dash"/>
+<text x="86.0" y="104" text-anchor="start" class="dg-s">Type + permissions</text>
+<rect x="152" y="36" width="34" height="34" rx="5" class="dg-box"/>
+<text x="169.0" y="58.0" text-anchor="middle" class="dg-t">1</text>
+<line x1="169.0" y1="70" x2="169.0" y2="130" class="dg-dash"/>
+<text x="175.0" y="134" text-anchor="start" class="dg-s">Liens</text>
+<rect x="198" y="36" width="90" height="34" rx="5" class="dg-ok"/>
+<text x="243.0" y="58.0" text-anchor="middle" class="dg-t">etudiant</text>
+<line x1="243.0" y1="70" x2="243.0" y2="160" class="dg-dash"/>
+<text x="249.0" y="164" text-anchor="start" class="dg-s">Utilisateur</text>
+<rect x="300" y="36" width="90" height="34" rx="5" class="dg-ok"/>
+<text x="345.0" y="58.0" text-anchor="middle" class="dg-t">etudiant</text>
+<line x1="345.0" y1="70" x2="345.0" y2="190" class="dg-dash"/>
+<text x="351.0" y="194" text-anchor="start" class="dg-s">Groupe</text>
+<rect x="402" y="36" width="54" height="34" rx="5" class="dg-box"/>
+<text x="429.0" y="58.0" text-anchor="middle" class="dg-t">1024</text>
+<line x1="429.0" y1="70" x2="429.0" y2="100" class="dg-dash"/>
+<text x="435.0" y="104" text-anchor="start" class="dg-s">Taille (octets)</text>
+<rect x="468" y="36" width="110" height="34" rx="5" class="dg-box"/>
+<text x="523.0" y="58.0" text-anchor="middle" class="dg-t">nov 15 10:30</text>
+<line x1="523.0" y1="70" x2="523.0" y2="130" class="dg-dash"/>
+<text x="529.0" y="134" text-anchor="end" class="dg-s">Date de modification</text>
+<rect x="590" y="36" width="110" height="34" rx="5" class="dg-soft"/>
+<text x="645.0" y="58.0" text-anchor="middle" class="dg-t">fichier.txt</text>
+<line x1="645.0" y1="70" x2="645.0" y2="160" class="dg-dash"/>
+<text x="651.0" y="164" text-anchor="end" class="dg-s">Nom</text>
+<text x="20" y="238" text-anchor="start" class="dg-i">Permissions : type (- fichier, d répertoire) puis rwx propriétaire, rwx groupe, rwx autres.</text>
+</svg>
+<figcaption>Chaque colonne de la sortie de ls -l a une signification précise.</figcaption>
+</figure>
 
 ---
 
