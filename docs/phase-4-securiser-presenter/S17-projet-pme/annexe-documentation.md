@@ -111,13 +111,13 @@ siosarl.local
 
 | **Test** | **Commande / Méthode** | **Résultat** | **Capture** |
 |---|---|---|---|
-| Ping inter-VLAN (PC-RH → PC-Commercial) | `ping` | ✅ / ❌ | P1 |
-| Structure AD visible dans ADUC | Console ADUC | ✅ / ❌ | P2 |
-| GPO créées et liées | `gpmc.msc` | ✅ / ❌ | P3 |
-| Partages accessibles | `\\siosarl.local\data` | ✅ / ❌ | P4 |
-| FTP anonyme — lecture OK | `ftp [IP]` + `get` | ✅ / ❌ | P5 |
-| SFTP authentifié — upload OK | `sftp sftp_rh@[IP]` + `put` | ✅ / ❌ | P6 |
-| SSH refusé pour sftpusers | `ssh sftp_rh@[IP]` | ✅ / ❌ | P7 |
+| Ping inter-VLAN (PC-RH → PC-Commercial) | `ping` | Oui / Non | P1 |
+| Structure AD visible dans ADUC | Console ADUC | Oui / Non | P2 |
+| GPO créées et liées | `gpmc.msc` | Oui / Non | P3 |
+| Partages accessibles | `\\siosarl.local\data` | Oui / Non | P4 |
+| FTP anonyme — lecture OK | `ftp [IP]` + `get` | Oui / Non | P5 |
+| SFTP authentifié — upload OK | `sftp sftp_rh@[IP]` + `put` | Oui / Non | P6 |
+| SSH refusé pour sftpusers | `ssh sftp_rh@[IP]` | Oui / Non | P7 |
 
 ---
 

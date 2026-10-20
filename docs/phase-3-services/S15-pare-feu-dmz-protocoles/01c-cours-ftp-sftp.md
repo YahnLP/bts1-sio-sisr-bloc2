@@ -31,7 +31,7 @@
 
 *Légende : Fonctionnement FTP avec ses deux connexions. La connexion de contrôle (port 21) reste ouverte pendant toute la session et transporte les commandes textuelles. Pour chaque transfert de fichier ou listage, une connexion de données séparée est établie (port 20 en mode actif, ou port aléatoire en mode passif).*
 
-> ⚠ **Sécurité FTP :** Le FTP transmet les données **en clair**, y compris l'identifiant et le mot de passe. Il ne doit **jamais** être utilisé pour des données sensibles sur un réseau non maîtrisé. En production, on lui préfère systématiquement SFTP ou FTPS.
+> **Sécurité FTP :** Le FTP transmet les données **en clair**, y compris l'identifiant et le mot de passe. Il ne doit **jamais** être utilisé pour des données sensibles sur un réseau non maîtrisé. En production, on lui préfère systématiquement SFTP ou FTPS.
 
 ---
 
@@ -42,7 +42,7 @@
 | **Critère** | **FTP** | **SFTP** |
 |---|---|---|
 | **Port** | 21 (contrôle) + 20 (données) | 22 (SSH uniquement) |
-| **Chiffrement** | ❌ Aucun (texte clair) | ✅ Intégral (AES, ChaCha20) |
+| **Chiffrement** | Aucun (texte clair) | Intégral (AES, ChaCha20) |
 | **Authentification** | Login/Mot de passe (clair) | Mot de passe chiffré ou **clés SSH** |
 | **Pare-feu** | Difficile (2 ports, passif = ports aléatoires) | Simple (1 seul port TCP 22) |
 | **Intégrité des données** | Non garantie | Garantie (MAC SSH) |
@@ -142,7 +142,7 @@ Match Group sftpusers
         └── partage/
 ```
 
-> ⚠ **Contrainte critique du chroot :** Le répertoire de chroot (racine de l'utilisateur) **doit appartenir à root** et ne pas être accessible en écriture à l'utilisateur lui-même. C'est une exigence de sécurité OpenSSH. L'utilisateur écrit dans un **sous-répertoire** du chroot.
+> **Contrainte critique du chroot :** Le répertoire de chroot (racine de l'utilisateur) **doit appartenir à root** et ne pas être accessible en écriture à l'utilisateur lui-même. C'est une exigence de sécurité OpenSSH. L'utilisateur écrit dans un **sous-répertoire** du chroot.
 
 ---
 

@@ -101,31 +101,31 @@
 
 **Avantages :**
 
-1. ✅ **Partage de ressources**
+1. **Avantage :** **Partage de ressources**
    - Fichiers (serveur de fichiers)
    - Imprimantes (imprimante réseau)
    - Connexion Internet (routeur partagé)
    - Applications (logiciels métier centralisés)
 
-2. ✅ **Communication**
+2. **Avantage :** **Communication**
    - Emails, messagerie instantanée
    - Visioconférence
    - Partage d'informations en temps réel
 
-3. ✅ **Centralisation**
+3. **Avantage :** **Centralisation**
    - Données stockées sur serveurs (sauvegardes facilitées)
    - Administration centralisée (Active Directory vu plus tard)
 
-4. ✅ **Économies**
+4. **Avantage :** **Économies**
    - 1 imprimante pour 10 personnes (vs 10 imprimantes)
    - 1 connexion Internet partagée
 
 **Inconvénients :**
 
-1. ❌ **Complexité** : Plus difficile à configurer et maintenir qu'un PC isolé
-2. ❌ **Sécurité** : Point d'entrée pour les attaques (malwares, intrusions)
-3. ❌ **Dépendance** : Si le réseau tombe, tous les utilisateurs sont bloqués
-4. ❌ **Coût initial** : Équipements réseau (switchs, routeurs, câblage)
+1. **Inconvénient :** **Complexité** : Plus difficile à configurer et maintenir qu'un PC isolé
+2. **Inconvénient :** **Sécurité** : Point d'entrée pour les attaques (malwares, intrusions)
+3. **Inconvénient :** **Dépendance** : Si le réseau tombe, tous les utilisateurs sont bloqués
+4. **Inconvénient :** **Coût initial** : Équipements réseau (switchs, routeurs, câblage)
 
 ---
 
@@ -138,9 +138,9 @@ Pour communiquer, deux machines doivent respecter des **règles communes** (prot
 Plutôt que d'avoir un seul gros programme gérant tout (impossible à maintenir), on découpe en **7 couches indépendantes**.
 
 **Avantages du découpage en couches :**
-- ✅ **Modularité** : Changer une couche sans toucher aux autres (ex: passer d'Ethernet à Wi-Fi)
-- ✅ **Standardisation** : Différents constructeurs peuvent fabriquer des équipements compatibles
-- ✅ **Simplicité** : Chaque couche a un rôle précis et limité
+- **Avantage :** **Modularité** : Changer une couche sans toucher aux autres (ex: passer d'Ethernet à Wi-Fi)
+- **Avantage :** **Standardisation** : Différents constructeurs peuvent fabriquer des équipements compatibles
+- **Avantage :** **Simplicité** : Chaque couche a un rôle précis et limité
 
 ---
 
@@ -292,8 +292,8 @@ Plutôt que d'avoir un seul gros programme gérant tout (impossible à maintenir
 
 | **Protocole** | **Type** | **Fiable ?** | **Usage** |
 |---------------|----------|--------------|-----------|
-| **TCP** | Orienté connexion | ✅ Oui (accusés réception, retransmission) | Email, Web (HTTP), transfert fichiers (FTP) |
-| **UDP** | Sans connexion | ❌ Non (pas de vérification) | Streaming vidéo, VoIP, DNS, jeux en ligne |
+| **TCP** | Orienté connexion | Oui (accusés réception, retransmission) | Email, Web (HTTP), transfert fichiers (FTP) |
+| **UDP** | Sans connexion | Non (pas de vérification) | Streaming vidéo, VoIP, DNS, jeux en ligne |
 
 **TCP (Transmission Control Protocol) :**
 - Établit une connexion (handshake 3 étapes : SYN, SYN-ACK, ACK)
@@ -578,9 +578,9 @@ PC1 ──┬── PC2 ──┬── PC3 ──┬── PC4
 ```
 
 **Caractéristiques :**
-- ✅ Simple, économique (1 seul câble)
-- ❌ Si câble coupé → tout le réseau tombe
-- ❌ Collisions fréquentes (une seule machine parle à la fois)
+- **Avantage :** Simple, économique (1 seul câble)
+- **Inconvénient :** Si câble coupé → tout le réseau tombe
+- **Inconvénient :** Collisions fréquentes (une seule machine parle à la fois)
 
 **Usage :** Obsolète (années 1980-1990)
 
@@ -597,11 +597,11 @@ PC2 - SWITCH - PC3
 ```
 
 **Caractéristiques :**
-- ✅ Si un câble casse → seul ce PC est déconnecté
-- ✅ Facilité de dépannage (isolation des pannes)
-- ✅ Ajout/retrait de PC simple
-- ❌ Si le switch tombe → tout le réseau tombe
-- ❌ Plus de câble nécessaire
+- **Avantage :** Si un câble casse → seul ce PC est déconnecté
+- **Avantage :** Facilité de dépannage (isolation des pannes)
+- **Avantage :** Ajout/retrait de PC simple
+- **Inconvénient :** Si le switch tombe → tout le réseau tombe
+- **Inconvénient :** Plus de câble nécessaire
 
 **Usage :** **Standard de fait** des réseaux locaux filaires
 
@@ -618,7 +618,7 @@ PC4 ── PC3
 **Caractéristiques :**
 - Chaque PC est relié à deux autres (forme un anneau)
 - Les données circulent dans un sens
-- ❌ Si un PC tombe → tout le réseau tombe (sauf anneau double)
+- **Inconvénient :** Si un PC tombe → tout le réseau tombe (sauf anneau double)
 
 **Usage :** Rare (Token Ring, FDDI - obsolète)
 
@@ -636,10 +636,10 @@ PC3 ─── PC4
 ```
 
 **Caractéristiques :**
-- ✅ Redondance maximale (plusieurs chemins possibles)
-- ✅ Si un lien tombe → routage automatique par un autre chemin
-- ❌ Coût élevé (beaucoup de câbles)
-- ❌ Complexité de configuration
+- **Avantage :** Redondance maximale (plusieurs chemins possibles)
+- **Avantage :** Si un lien tombe → routage automatique par un autre chemin
+- **Inconvénient :** Coût élevé (beaucoup de câbles)
+- **Inconvénient :** Complexité de configuration
 
 **Usage :** Réseaux critiques (datacenters, opérateurs télécom), Internet (maillage partiel)
 
@@ -665,7 +665,7 @@ PC3 ─── PC4
 
 **Nombre total d'adresses IPv4 :** 2^32 = **4 294 967 296 adresses** (~4,3 milliards)
 
-⚠ **Problème :** Épuisement des adresses IPv4 (8 milliards d'humains, des milliards d'objets connectés) → Solution : **IPv6** (340 sextillions d'adresses !)
+**Problème :** Épuisement des adresses IPv4 (8 milliards d'humains, des milliards d'objets connectés) → Solution : **IPv6** (340 sextillions d'adresses !)
 
 ---
 
@@ -726,9 +726,9 @@ Regarder le **premier octet** :
 | **C** | 192.168.0.0 à 192.168.255.255 | 255.255.0.0 (/16) | 65 536 |
 
 **Avantages :**
-- ✅ **Gratuites** (pas besoin de payer un FAI)
-- ✅ **Réutilisables** : Chaque entreprise peut utiliser `192.168.1.0/24` dans son LAN
-- ✅ **Sécurité** : Pas d'accès direct depuis Internet (protection naturelle)
+- **Avantage :** **Gratuites** (pas besoin de payer un FAI)
+- **Avantage :** **Réutilisables** : Chaque entreprise peut utiliser `192.168.1.0/24` dans son LAN
+- **Avantage :** **Sécurité** : Pas d'accès direct depuis Internet (protection naturelle)
 
 **Fonctionnement :**
 - Les machines en réseau privé utilisent des adresses comme `192.168.1.10`
@@ -834,7 +834,7 @@ Votre configuration réseau :
 3. Le PC envoie le paquet à la **passerelle** `192.168.1.1`
 4. Le routeur route le paquet vers Internet
 
-⚠ **Sans passerelle configurée :** Impossible d'accéder à Internet (seulement au réseau local).
+**Sans passerelle configurée :** Impossible d'accéder à Internet (seulement au réseau local).
 
 ---
 
@@ -930,8 +930,8 @@ Soit l'adresse IP `192.168.10.45` avec le masque `255.255.255.0`.
 2. Quelle est l'adresse de broadcast ? __________
 3. Combien d'hôtes utilisables dans ce réseau ? __________
 4. Quelle est la plage d'adresses utilisables ? __________ à __________
-5. Cette machine peut-elle communiquer directement (sans routeur) avec `192.168.10.100` ? ✅ / ❌
-6. Cette machine peut-elle communiquer directement avec `192.168.11.10` ? ✅ / ❌
+5. Cette machine peut-elle communiquer directement (sans routeur) avec `192.168.10.100` ? Oui / Non
+6. Cette machine peut-elle communiquer directement avec `192.168.11.10` ? Oui / Non
 
 ---
 
@@ -944,11 +944,11 @@ Vous exécutez les commandes suivantes :
 ```
 C:\> ping 127.0.0.1
 Réponse de 127.0.0.1 : octets=32 temps<1ms TTL=128
-✅ Fonctionne
+Fonctionne
 
 C:\> ping 192.168.1.1  (passerelle)
 Délai d'attente de la demande dépassé.
-❌ Ne fonctionne pas
+Ne fonctionne pas
 
 C:\> ipconfig
 Adresse IPv4. . . . . . . . . . . . . .: 192.168.1.50
@@ -957,7 +957,7 @@ Passerelle par défaut. . . . . . . . . : 192.168.1.1
 ```
 
 **Questions :**
-1. La pile TCP/IP fonctionne-t-elle ? ✅ / ❌
+1. La pile TCP/IP fonctionne-t-elle ? Oui / Non
 2. Quel est le problème probable ?
    - ☐ Problème DNS
    - ☐ Problème de connexion locale (câble, switch)
@@ -1029,7 +1029,7 @@ Associer chaque élément à sa couche OSI :
 
 ---
 
-## ✅ Auto-évaluation : Suis-je Prêt ?
+## Auto-évaluation : Suis-je Prêt ?
 
 Après avoir terminé cette séance, je suis capable de :
 

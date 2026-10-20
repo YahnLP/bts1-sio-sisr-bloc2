@@ -207,7 +207,7 @@ ping [passerelle de son VLAN]    → Doit répondre
 ping [IP d'un PC d'un autre VLAN] → Doit répondre
 ```
 
-✅ Capturer les `ping` réussis inter-VLAN : **Capture P1**.
+Capturer les `ping` réussis inter-VLAN : **Capture P1**.
 
 **Je comprends.** Avant de passer à Windows Server, quels tests prouvent que la phase réseau est terminée ? ______________________
 
@@ -273,7 +273,7 @@ foreach ($Service in $Services) {
 }
 ```
 
-✅ Capturer la structure AD dans la console ADUC : **Capture P2**.
+Capturer la structure AD dans la console ADUC : **Capture P2**.
 
 ### 3.3 — Créer les Utilisateurs AD
 
@@ -311,7 +311,7 @@ New-GPLink -Name "GPO_Fond_Ecran_SimIO" -Target $Dom
 
 >  **Les paramètres fins des GPO** (chemin vers le fond d'écran, paramètre exact de restriction) se configurent dans l'éditeur graphique **Gestion des stratégies de groupe** (`gpmc.msc`). Documenter chaque paramètre modifié dans la fiche de documentation.
 
-✅ Capturer les GPO créées et liées dans `gpmc.msc` : **Capture P3**.
+Capturer les GPO créées et liées dans `gpmc.msc` : **Capture P3**.
 
 ---
 
@@ -364,7 +364,7 @@ foreach ($D in $Dossiers) {
 
 >  Configurer les droits NTFS par groupe AD comme en S12 (voir la fiche de droits de S12).
 
-✅ Capturer les partages créés dans `fsmgmt.msc` : **Capture P4**.
+Capturer les partages créés dans `fsmgmt.msc` : **Capture P4**.
 
 ---
 
@@ -437,7 +437,7 @@ ftp [IP_SERVEUR_FTP]
 # Commande : get bienvenue.txt
 ```
 
-✅ Capturer la session FTP anonyme réussie : **Capture P5**.
+Capturer la session FTP anonyme réussie : **Capture P5**.
 
 ---
 
@@ -465,7 +465,7 @@ do
     sudo chown "sftp_${SERVICE}:sftpusers" "/srv/sftp/sftp_${SERVICE}/upload"
     sudo chmod 755 "/srv/sftp/sftp_${SERVICE}/upload"
 
-    echo "✅ Utilisateur SFTP créé : sftp_${SERVICE}"
+    echo "[OK] Utilisateur SFTP créé : sftp_${SERVICE}"
 done
 ```
 
@@ -517,8 +517,8 @@ ssh sftp_rh@[IP_SERVEUR_FTP]
 # → Doit afficher "This service allows sftp connections only." ou se déconnecter
 ```
 
-✅ Capturer la session SFTP réussie (upload de fichier) : **Capture P6**.
-✅ Capturer le refus de connexion SSH : **Capture P7**.
+**Autorisé :** Capturer la session SFTP réussie (upload de fichier) : **Capture P6**.
+**Autorisé :** Capturer le refus de connexion SSH : **Capture P7**.
 
 ---
 

@@ -50,11 +50,11 @@ Les GPO s'appliquent dans un ordre précis, du **plus général au plus spécifi
 
 ```
 Ordre d'application :
-1. 🔵 LOCAL       → Stratégie locale (gpedit.msc sur le PC, sans domaine)
-2. 🟡 SITE        → Stratégies liées au site AD géographique
-3. 🟠 DOMAINE     → Stratégies liées au domaine (s'appliquent à tous)
-4. 🔴 OU          → Stratégies liées à l'OU contenant l'objet
-         └── 🔴 OU enfant → (plus spécifique = dernier appliqué)
+1.  LOCAL       → Stratégie locale (gpedit.msc sur le PC, sans domaine)
+2.  SITE        → Stratégies liées au site AD géographique
+3.  DOMAINE     → Stratégies liées au domaine (s'appliquent à tous)
+4.  OU          → Stratégies liées à l'OU contenant l'objet
+         └──  OU enfant → (plus spécifique = dernier appliqué)
 
 LSDOU = L ocal → S ite → D omaine → OU
 ```

@@ -105,7 +105,7 @@ SW-CORE(config)# end
 SW-CORE# write memory
 ```
 
-✅ **Vérification :** `show vlan brief` — les VLANs 10, 20, 30 doivent apparaître avec leurs ports respectifs.
+**Vérification :** `show vlan brief` — les VLANs 10, 20, 30 doivent apparaître avec leurs ports respectifs.
 
 ---
 
@@ -143,7 +143,7 @@ R-SIOSARL(config)# end
 R-SIOSARL# write memory
 ```
 
-✅ **Vérifications obligatoires :**
+**Vérifications obligatoires :**
 
 ```
 R-SIOSARL# show ip interface brief
@@ -167,7 +167,7 @@ C:\> ping 192.168.20.10    → Doit répondre (PC-IT, VLAN 20)
 C:\> ping 192.168.30.10    → Doit répondre (PC-DIR, VLAN 30)
 ```
 
-✅ **Point de contrôle :** Capturer les `ping` réussis. Si un `ping` échoue, utiliser `tracert` pour identifier où le paquet est bloqué.
+**Point de contrôle :** Capturer les `ping` réussis. Si un `ping` échoue, utiliser `tracert` pour identifier où le paquet est bloqué.
 
 ---
 

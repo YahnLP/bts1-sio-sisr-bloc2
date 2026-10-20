@@ -30,7 +30,7 @@ Le premier octet d'une adresse IPv4 détermine sa **classe**.
 | **D** | 224 – 239 | 224.0.0.0 à 239.255.255.255 | - | Multicast |
 | **E** | 240 – 255 | 240.0.0.0 à 255.255.255.255 | - | Réservé expérimental |
 
-⚠ **À retenir :** Classe A = 1–126, Classe B = 128–191, Classe C = 192–223
+**À retenir :** Classe A = 1–126, Classe B = 128–191, Classe C = 192–223
 
 ---
 
@@ -153,7 +153,7 @@ PC1                       SWITCH                      PC2     PC3     PC4
  │<── ARP Reply ────────────│                          │       │       │
  │                          │  (PC3 et PC4 ignorent)  │       │       │
  │                                                     │
- ✅ Table ARP PC1 mise à jour : 192.168.1.20 → CC:DD:22
+ Table ARP PC1 mise à jour : 192.168.1.20 → CC:DD:22
 ```
 
 ---
@@ -180,7 +180,7 @@ Interface : 192.168.1.10 --- 0xc
 
 **ARP et les réseaux distants :**
 
-⚠ Quand PC1 veut joindre un PC sur un **autre réseau** (ex: Internet), il n'envoie pas d'ARP vers la machine distante !
+**Attention :** Quand PC1 veut joindre un PC sur un **autre réseau** (ex: Internet), il n'envoie pas d'ARP vers la machine distante !
 
 **Pourquoi ?** ARP est limité au réseau local (broadcast).
 
@@ -200,7 +200,7 @@ Interface : 192.168.1.10 --- 0xc
 - Détection de conflits IP (si quelqu'un répond à son propre ARP, il y a un doublon)
 
 **ARP Spoofing (Usurpation ARP) :**
-- ⚠ Attaque : Un attaquant envoie de fausses réponses ARP pour associer sa MAC à l'IP de la passerelle
+- **Attention :** Attaque : Un attaquant envoie de fausses réponses ARP pour associer sa MAC à l'IP de la passerelle
 - Résultat : Les paquets sont envoyés à l'attaquant (man-in-the-middle)
 - Défense : `arp -s` (ARP statique), détection par logiciel (ARPwatch)
 
@@ -261,11 +261,11 @@ Durée approximative des boucles en millisecondes :
 
 | **Résultat** | **Signification** | **Action** |
 |--------------|-------------------|------------|
-| Réponse reçue, temps < 1ms | Machine locale ou même LAN | ✅ Connexion OK |
-| Réponse reçue, temps 1-50ms | Réseau local ou proche | ✅ Connexion OK |
-| Réponse reçue, temps > 200ms | Connexion lente/saturée | ⚠ Latence élevée |
-| "Délai d'attente dépassé" | Pas de réponse (pare-feu ou machine HS) | ❌ Problème à diagnostiquer |
-| "Hôte de destination inaccessible" | Pas de route vers la machine | ❌ Problème routage/passerelle |
+| Réponse reçue, temps < 1ms | Machine locale ou même LAN | Connexion OK |
+| Réponse reçue, temps 1-50ms | Réseau local ou proche | Connexion OK |
+| Réponse reçue, temps > 200ms | Connexion lente/saturée | Latence élevée |
+| "Délai d'attente dépassé" | Pas de réponse (pare-feu ou machine HS) | Problème à diagnostiquer |
+| "Hôte de destination inaccessible" | Pas de route vers la machine | Problème routage/passerelle |
 | TTL = 64 | Linux ou routeur Cisco (TTL initial = 64) | Info système |
 | TTL = 128 | Windows (TTL initial = 128) | Info système |
 | TTL = 255 | Cisco IOS ou certains Unix | Info système |

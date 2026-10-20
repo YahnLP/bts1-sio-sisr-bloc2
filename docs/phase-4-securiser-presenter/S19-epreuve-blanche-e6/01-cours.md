@@ -81,7 +81,7 @@ Lors de la présentation du Projet 1 SimIO, ces termes **doivent** apparaître n
 
 ---
 
-## ✅ Auto-évaluation : Suis-je Prêt ?
+## Auto-évaluation : Suis-je Prêt ?
 
 - [ ] Je décris le cycle complet d'une requête HTTP (méthode, URL, en-têtes, corps)
 - [ ] Je connais les 5 familles de codes de statut HTTP et 2 exemples par famille

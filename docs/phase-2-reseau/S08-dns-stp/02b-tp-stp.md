@@ -103,8 +103,8 @@ Ajouter **1 PC** sur chaque switch :
 
 **Tests :**
 ```
-PC1 → ping 192.168.1.12   ✅ Doit répondre (via le chemin STP actif)
-PC1 → ping 192.168.1.13   ✅ Doit répondre
+PC1 → ping 192.168.1.12   OK : Doit répondre (via le chemin STP actif)
+PC1 → ping 192.168.1.13   OK : Doit répondre
 ```
 
 ---

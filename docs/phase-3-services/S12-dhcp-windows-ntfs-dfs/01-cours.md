@@ -221,12 +221,12 @@ Les droits NTFS sont plus **granulaires** que les droits de partage. Les permiss
 
 | **Permission NTFS** | **Lire** | **Lister** | **Écrire** | **Modifier** | **Supprimer** | **Changer droits** |
 |--------------------|:--------:|:----------:|:----------:|:------------:|:-------------:|:-----------------:|
-| Lecture | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Lecture et exécution | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Listage du dossier | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ |
-| Écriture | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
-| Modifier | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Contrôle total | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Lecture | Oui | Oui | Non | Non | Non | Non |
+| Lecture et exécution | Oui | Oui | Non | Non | Non | Non |
+| Listage du dossier | Non | Oui | Non | Non | Non | Non |
+| Écriture | Oui | Oui | Oui | Non | Non | Non |
+| Modifier | Oui | Oui | Oui | Oui | Oui | Non |
+| Contrôle total | Oui | Oui | Oui | Oui | Oui | Oui |
 
  **Lien ITIL — Gestion des Accès :** Dans ITIL 4, la pratique de **Gestion des accès** vise à garantir que seules les personnes autorisées peuvent consulter ou modifier une information. Configurer correctement les droits NTFS par groupe d'utilisateurs (et non par utilisateur individuel) est une bonne pratique d'administration qui facilite la gestion des départs/arrivées dans l'entreprise.
 
@@ -369,7 +369,7 @@ Avec DFS, les utilisateurs accèdent aux fichiers via un **espace de noms** (nam
 
 ---
 
-## ✅ Auto-évaluation : Suis-je Prêt ?
+## Auto-évaluation : Suis-je Prêt ?
 
 Après avoir terminé cette séance, je suis capable de :
 

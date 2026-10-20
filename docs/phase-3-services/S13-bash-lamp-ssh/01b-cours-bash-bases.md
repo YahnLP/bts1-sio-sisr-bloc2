@@ -77,7 +77,7 @@ echo "Code retour   : $?"   # 0 = succès, autre = erreur
 
 **Règles des variables :**
 
-| **Règle** | **Correct ✅** | **Incorrect ❌** |
+| **Règle** | **Correct** | **Incorrect** |
 |---|---|---|
 | Pas d'espaces autour de `=` | `NOM="Alice"` | `NOM = "Alice"` |
 | `$` pour utiliser une variable | `echo $NOM` | `echo NOM` |
@@ -157,7 +157,7 @@ else
 fi
 ```
 
-> ⚠ **Attention critique :** Des **espaces** sont **obligatoires** à l'intérieur des crochets `[ ]` : `[ condition ]` fonctionne, `[condition]` génère une erreur.
+> **Attention critique :** Des **espaces** sont **obligatoires** à l'intérieur des crochets `[ ]` : `[ condition ]` fonctionne, `[condition]` génère une erreur.
 
 ---
 
@@ -318,7 +318,7 @@ fi
 
 ---
 
-## ✅ Auto-évaluation : Suis-je Prêt ?
+## Auto-évaluation : Suis-je Prêt ?
 
 - [ ] J'explique pourquoi deux VLANs différents ne peuvent pas communiquer sans routeur
 - [ ] Je décris l'architecture router-on-a-stick avec ses composants

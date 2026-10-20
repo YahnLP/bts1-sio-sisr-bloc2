@@ -137,10 +137,10 @@ Un **processus** = un programme en cours d'exécution.
 L'OS permet de créer des **comptes utilisateurs** avec des **droits différenciés**.
 
 **Pourquoi ?**
-- ✅ **Sécurité** : Empêcher les utilisateurs de modifier les fichiers système
-- ✅ **Confidentialité** : Chacun a son espace personnel (Bureau, Documents...)
-- ✅ **Traçabilité** : Savoir qui a fait quoi (logs, audits)
-- ✅ **Conformité RGPD** : Article 32 impose des mesures de sécurité dont la gestion des droits
+- **Sécurité** : Empêcher les utilisateurs de modifier les fichiers système
+- **Confidentialité** : Chacun a son espace personnel (Bureau, Documents...)
+- **Traçabilité** : Savoir qui a fait quoi (logs, audits)
+- **Conformité RGPD** : Article 32 impose des mesures de sécurité dont la gestion des droits
 
 **Mécanismes :**
 - **Authentification** : Vérifier l'identité (nom d'utilisateur + mot de passe)
@@ -164,14 +164,14 @@ L'OS fournit un moyen d'interagir avec l'ordinateur.
 | **TUI** | Text-based User Interface | Interface texte avancée (menus texte) | Nano (éditeur Linux), BIOS/UEFI |
 
 **Avantages CLI (pour les techniciens) :**
-- ✅ Plus rapide pour les tâches répétitives (scripts)
-- ✅ Administration à distance (SSH)
-- ✅ Automatisation (batch, PowerShell, Bash)
+- **Avantage :** Plus rapide pour les tâches répétitives (scripts)
+- **Avantage :** Administration à distance (SSH)
+- **Avantage :** Automatisation (batch, PowerShell, Bash)
 
 **Avantages GUI (pour les utilisateurs finaux) :**
-- ✅ Intuitif et visuel
-- ✅ Courbe d'apprentissage plus douce
-- ✅ Découverte des fonctionnalités par exploration
+- **Avantage :** Intuitif et visuel
+- **Avantage :** Courbe d'apprentissage plus douce
+- **Avantage :** Découverte des fonctionnalités par exploration
 
  **Bon technicien SISR = maîtrise des deux interfaces !**
 
@@ -198,15 +198,15 @@ L'OS fournit un moyen d'interagir avec l'ordinateur.
 - **Serveur** : Windows Server 2016/2019/2022 (infrastructure)
 
 **Points forts :**
-- ✅ **Compatibilité** : Majorité des logiciels professionnels (Office, ERP, CRM...)
-- ✅ **Active Directory** : Gestion centralisée des utilisateurs et machines
-- ✅ **Support** : Assistance Microsoft, documentation abondante
-- ✅ **Familiarité** : Interface connue par 90% des utilisateurs
+- **Avantage :** **Compatibilité** : Majorité des logiciels professionnels (Office, ERP, CRM...)
+- **Avantage :** **Active Directory** : Gestion centralisée des utilisateurs et machines
+- **Avantage :** **Support** : Assistance Microsoft, documentation abondante
+- **Avantage :** **Familiarité** : Interface connue par 90% des utilisateurs
 
 **Points faibles :**
-- ❌ **Coût** : Licences payantes (Windows + CAL + applications)
-- ❌ **Sécurité** : Cible privilégiée des malwares (vulnérabilités fréquentes)
-- ❌ **Lourdeur** : Consomme plus de ressources que Linux
+- **Inconvénient :** **Coût** : Licences payantes (Windows + CAL + applications)
+- **Inconvénient :** **Sécurité** : Cible privilégiée des malwares (vulnérabilités fréquentes)
+- **Inconvénient :** **Lourdeur** : Consomme plus de ressources que Linux
 
 **Cas d'usage typiques :**
 - Postes de travail bureautiques dans PME/ETI/Grands Comptes
@@ -225,16 +225,16 @@ L'OS fournit un moyen d'interagir avec l'ordinateur.
 - **Arch Linux** : Utilisateurs avancés (personnalisation maximale)
 
 **Points forts :**
-- ✅ **Gratuit** : Pas de licence (économie majeure)
-- ✅ **Stabilité** : Serveurs Linux avec uptimes de plusieurs années
-- ✅ **Sécurité** : Moins de malwares, permissions strictes par défaut
-- ✅ **Légèreté** : Fonctionne sur du matériel ancien
-- ✅ **Flexibilité** : Personnalisable à l'extrême (choix GUI, services...)
+- **Avantage :** **Gratuit** : Pas de licence (économie majeure)
+- **Avantage :** **Stabilité** : Serveurs Linux avec uptimes de plusieurs années
+- **Avantage :** **Sécurité** : Moins de malwares, permissions strictes par défaut
+- **Avantage :** **Légèreté** : Fonctionne sur du matériel ancien
+- **Avantage :** **Flexibilité** : Personnalisable à l'extrême (choix GUI, services...)
 
 **Points faibles :**
-- ❌ **Courbe d'apprentissage** : CLI obligatoire pour administration
-- ❌ **Compatibilité logicielle** : Certains logiciels métier Windows-only
-- ❌ **Fragmentation** : Des dizaines de distributions différentes
+- **Inconvénient :** **Courbe d'apprentissage** : CLI obligatoire pour administration
+- **Inconvénient :** **Compatibilité logicielle** : Certains logiciels métier Windows-only
+- **Inconvénient :** **Fragmentation** : Des dizaines de distributions différentes
 
 **Cas d'usage typiques :**
 - Serveurs web (Apache, Nginx)
@@ -248,15 +248,15 @@ L'OS fournit un moyen d'interagir avec l'ordinateur.
 #### **macOS : Créatif et Développeur**
 
 **Points forts :**
-- ✅ **Écosystème Apple** : Intégration iPhone/iPad/Mac
-- ✅ **Création** : Applications pro (Final Cut, Logic Pro, Xcode)
-- ✅ **Base Unix** : Terminal Bash/Zsh pour développeurs
-- ✅ **Sécurité** : Gatekeeper, XProtect (antimalware intégré)
+- **Avantage :** **Écosystème Apple** : Intégration iPhone/iPad/Mac
+- **Avantage :** **Création** : Applications pro (Final Cut, Logic Pro, Xcode)
+- **Avantage :** **Base Unix** : Terminal Bash/Zsh pour développeurs
+- **Avantage :** **Sécurité** : Gatekeeper, XProtect (antimalware intégré)
 
 **Points faibles :**
-- ❌ **Prix** : Matériel Apple très cher
-- ❌ **Fermeture** : Impossible d'installer sur PC standard (hackintosh = violation licence)
-- ❌ **Peu en entreprise** : Marginal en environnement corporate (sauf créa/dev)
+- **Inconvénient :** **Prix** : Matériel Apple très cher
+- **Inconvénient :** **Fermeture** : Impossible d'installer sur PC standard (hackintosh = violation licence)
+- **Inconvénient :** **Peu en entreprise** : Marginal en environnement corporate (sauf créa/dev)
 
 **Cas d'usage typiques :**
 - Studios de création graphique / vidéo / audio
@@ -313,7 +313,7 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 
 **Scénario sans comptes séparés (ordinateur partagé avec 1 seul compte) :**
 
-❌ **Problèmes :**
+**Problèmes :**
 1. Pas de **confidentialité** : Tout le monde voit les documents de tout le monde
 2. Pas de **personnalisation** : Fond d'écran, favoris, applications... partagés
 3. **Sécurité catastrophique** : Si ce compte unique est Administrateur, n'importe qui peut installer des logiciels malveillants ou supprimer des fichiers système
@@ -321,7 +321,7 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 
 **Scénario avec comptes séparés :**
 
-✅ **Avantages :**
+**Avantage :** **Avantages :**
 1. **Confidentialité** : Chaque utilisateur a son dossier personnel (C:\Users\nomutilisateur\)
 2. **Personnalisation** : Bureau, thème, paramètres propres à chacun
 3. **Sécurité** : Comptes limités ne peuvent pas installer de logiciels ou modifier le système
@@ -335,50 +335,50 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 #### **1. Compte Administrateur (Administrator)**
 
 **Privilèges :**
-- ✅ **Contrôle total** du système
-- ✅ Installer/désinstaller des programmes
-- ✅ Modifier les paramètres système
-- ✅ Créer/supprimer des comptes utilisateurs
-- ✅ Modifier les permissions de fichiers
-- ✅ Accéder aux fichiers de tous les utilisateurs
-- ✅ Installer des pilotes matériels
+- **Autorisé :** **Contrôle total** du système
+- **Autorisé :** Installer/désinstaller des programmes
+- **Autorisé :** Modifier les paramètres système
+- **Autorisé :** Créer/supprimer des comptes utilisateurs
+- **Autorisé :** Modifier les permissions de fichiers
+- **Autorisé :** Accéder aux fichiers de tous les utilisateurs
+- **Autorisé :** Installer des pilotes matériels
 
 **Icône :** Badge jaune/orange sur la photo de profil
 
-**Danger ⚠ :**
+**Danger :**
 - Un malware exécuté avec des droits admin peut **tout infecter**
 - Une fausse manipulation peut **rendre Windows instable**
 - Accès non contrôlé aux **données sensibles**
 
 **Bonnes pratiques :**
-- ❌ **Ne JAMAIS utiliser un compte Administrateur au quotidien**
-- ✅ Créer un compte Utilisateur standard pour l'usage quotidien
-- ✅ Utiliser l'Administrateur uniquement pour les tâches d'administration
-- ✅ Activer **UAC (User Account Control)** pour demander confirmation avant actions sensibles
+- **À éviter :** **Ne JAMAIS utiliser un compte Administrateur au quotidien**
+- **À faire :** Créer un compte Utilisateur standard pour l'usage quotidien
+- **À faire :** Utiliser l'Administrateur uniquement pour les tâches d'administration
+- **À faire :** Activer **UAC (User Account Control)** pour demander confirmation avant actions sensibles
 
 ---
 
 #### **2. Compte Utilisateur Standard (Standard User)**
 
 **Privilèges :**
-- ✅ Utiliser les programmes installés
-- ✅ Modifier ses propres fichiers (dans C:\Users\sonnom\)
-- ✅ Personnaliser son Bureau, thème, favoris
-- ✅ Se connecter à Internet
-- ❌ **Ne PEUT PAS** installer de logiciels
-- ❌ **Ne PEUT PAS** modifier les paramètres système
-- ❌ **Ne PEUT PAS** accéder aux fichiers des autres utilisateurs
+- **Autorisé :** Utiliser les programmes installés
+- **Autorisé :** Modifier ses propres fichiers (dans C:\Users\sonnom\)
+- **Autorisé :** Personnaliser son Bureau, thème, favoris
+- **Autorisé :** Se connecter à Internet
+- **Refusé :** **Ne PEUT PAS** installer de logiciels
+- **Refusé :** **Ne PEUT PAS** modifier les paramètres système
+- **Refusé :** **Ne PEUT PAS** accéder aux fichiers des autres utilisateurs
 
 **Icône :** Pas de badge spécial
 
 **Avantages sécurité :**
-- ✅ Un malware ne peut infecter que l'espace de cet utilisateur (pas tout le système)
-- ✅ Impossible de casser Windows par erreur
-- ✅ Principe du **moindre privilège** respecté
+- **Avantage :** Un malware ne peut infecter que l'espace de cet utilisateur (pas tout le système)
+- **Avantage :** Impossible de casser Windows par erreur
+- **Avantage :** Principe du **moindre privilège** respecté
 
 **Usage recommandé :**
-- ✅ **Tous les employés** d'une entreprise doivent avoir des comptes Standard
-- ✅ Même l'administrateur système doit avoir un compte Standard pour son travail quotidien (et un compte Admin séparé pour l'administration)
+- **Avantage :** **Tous les employés** d'une entreprise doivent avoir des comptes Standard
+- **Avantage :** Même l'administrateur système doit avoir un compte Standard pour son travail quotidien (et un compte Admin séparé pour l'administration)
 
 ---
 
@@ -401,19 +401,19 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 **Définition :** Compte créé sur une **machine spécifique**, stocké dans la **base SAM** (Security Account Manager) locale de cette machine.
 
 **Caractéristiques :**
-- ✅ Fonctionne uniquement sur **cette machine**
-- ✅ Pas besoin de réseau ou de serveur
-- ✅ Idéal pour : PC personnels, petites structures (<5 PC), environnements de test
+- Fonctionne uniquement sur **cette machine**
+- Pas besoin de réseau ou de serveur
+- Idéal pour : PC personnels, petites structures (<5 PC), environnements de test
 
 **Gestion :**
 - Outil : **Gestion de l'ordinateur** → **Utilisateurs et groupes locaux**
 - Emplacement base de données : `C:\Windows\System32\config\SAM`
 
 **Limites :**
-- ❌ Si 10 PC → il faut créer 10 fois le même compte (1 par PC) !
-- ❌ Changement de mot de passe → à faire sur chaque machine
-- ❌ Pas de gestion centralisée
-- ❌ Pas de stratégies de groupe (GPO)
+- **Inconvénient :** Si 10 PC → il faut créer 10 fois le même compte (1 par PC) !
+- **Inconvénient :** Changement de mot de passe → à faire sur chaque machine
+- **Inconvénient :** Pas de gestion centralisée
+- **Inconvénient :** Pas de stratégies de groupe (GPO)
 
 ---
 
@@ -422,20 +422,20 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 **Définition :** Compte créé dans **Active Directory** (annuaire centralisé sur un serveur), valable sur **toutes les machines du domaine**.
 
 **Caractéristiques :**
-- ✅ **1 seul compte** utilisable sur tous les PC de l'entreprise
-- ✅ Gestion **centralisée** (création, modification, suppression depuis le serveur)
-- ✅ **Stratégies de groupe (GPO)** : paramètres appliqués automatiquement
-- ✅ **Authentification unique (SSO)** : 1 mot de passe pour tous les services
+- **Avantage :** **1 seul compte** utilisable sur tous les PC de l'entreprise
+- **Avantage :** Gestion **centralisée** (création, modification, suppression depuis le serveur)
+- **Avantage :** **Stratégies de groupe (GPO)** : paramètres appliqués automatiquement
+- **Avantage :** **Authentification unique (SSO)** : 1 mot de passe pour tous les services
 
 **Gestion :**
 - Outil : **Active Directory Users and Computers (ADUC)** sur le contrôleur de domaine
 - Serveur : **Windows Server** avec rôle **AD DS (Active Directory Domain Services)**
 
 **Avantages pour l'entreprise :**
-- ✅ Employé arrive → 1 compte créé → accès immédiat à tous les PC et services
-- ✅ Employé part → compte désactivé en 1 clic → plus aucun accès nulle part
-- ✅ Changement de mot de passe → pris en compte partout instantanément
-- ✅ Stratégies : forcer écran de veille, fond d'écran entreprise, logiciels installés...
+- **Avantage :** Employé arrive → 1 compte créé → accès immédiat à tous les PC et services
+- **Avantage :** Employé part → compte désactivé en 1 clic → plus aucun accès nulle part
+- **Avantage :** Changement de mot de passe → pris en compte partout instantanément
+- **Avantage :** Stratégies : forcer écran de veille, fond d'écran entreprise, logiciels installés...
 
 **Exemple professionnel :**
 
@@ -482,7 +482,7 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 
 6. **Créer**
    - Clic sur **Suivant**
-   - ✅ Le compte est créé ! (Type : Utilisateur standard par défaut)
+   - Le compte est créé ! (Type : Utilisateur standard par défaut)
 
 ---
 
@@ -496,17 +496,17 @@ Cette séparation empêche une application malveillante de crasher tout le syst�
 4. Dans le menu déroulant, sélectionner **Administrateur**
 5. Clic sur **OK**
 
-⚠ **Attention :** Ne faire cela que si **vraiment nécessaire** (principe du moindre privilège) !
+**Attention :** Ne faire cela que si **vraiment nécessaire** (principe du moindre privilège) !
 
 ---
 
 #### **Méthode Ligne de Commande (PowerShell)**
 
 **Pourquoi utiliser PowerShell ?**
-- ✅ Plus **rapide** pour créer plusieurs comptes
-- ✅ **Automatisation** via scripts
-- ✅ Administration à **distance** (WinRM)
-- ✅ **Traçabilité** (commandes enregistrées dans l'historique)
+- Plus **rapide** pour créer plusieurs comptes
+- **Automatisation** via scripts
+- Administration à **distance** (WinRM)
+- **Traçabilité** (commandes enregistrées dans l'historique)
 
 **Commandes :**
 
@@ -575,7 +575,7 @@ Set-LocalUser -Name "jdupont" -Password (ConvertTo-SecureString "NouveauMDP2024!
 4. Taper `jdupont` → Clic sur **Vérifier les noms** → OK
 5. OK pour valider
 
-✅ L'utilisateur est maintenant membre du groupe Administrateurs.
+L'utilisateur est maintenant membre du groupe Administrateurs.
 
 ---
 
@@ -597,12 +597,12 @@ Set-LocalUser -Name "jdupont" -Password (ConvertTo-SecureString "NouveauMDP2024!
 
 **Exemple :** 10 employés du service Comptabilité doivent avoir accès au dossier `C:\Compta`.
 
-❌ **Méthode individuelle** : Ajouter les 10 comptes un par un aux permissions du dossier.
+**Refusé :** **Méthode individuelle** : Ajouter les 10 comptes un par un aux permissions du dossier.
 - Si 11ème employé arrive → ajouter manuellement
 - Si employé part → retirer manuellement
 - Risque d'oubli et d'erreur
 
-✅ **Méthode par groupe** : 
+**Autorisé :** **Méthode par groupe** : 
 1. Créer un groupe local "Comptables"
 2. Ajouter les 10 comptes au groupe
 3. Donner les permissions au **groupe** (pas aux comptes individuels)
@@ -627,11 +627,11 @@ Set-LocalUser -Name "jdupont" -Password (ConvertTo-SecureString "NouveauMDP2024!
 |--------------------|--------------------|--------------------|
 | **Taille fichier max** | 4 Go | 16 Exaoctets (= illimité en pratique) |
 | **Taille partition max** | 2 To | 256 To |
-| **Permissions fichiers** | ❌ Non (tous les fichiers accessibles par tous) | ✅ Oui (ACL - Access Control Lists) |
-| **Chiffrement** | ❌ Non | ✅ Oui (EFS - Encrypting File System) |
-| **Compression** | ❌ Non | ✅ Oui (transparente) |
-| **Quotas disque** | ❌ Non | ✅ Oui (limiter l'espace par utilisateur) |
-| **Journalisation** | ❌ Non | ✅ Oui (récupération après crash) |
+| **Permissions fichiers** | Non (tous les fichiers accessibles par tous) | Oui (ACL - Access Control Lists) |
+| **Chiffrement** | Non | Oui (EFS - Encrypting File System) |
+| **Compression** | Non | Oui (transparente) |
+| **Quotas disque** | Non | Oui (limiter l'espace par utilisateur) |
+| **Journalisation** | Non | Oui (récupération après crash) |
 
  **À retenir :** NTFS est **obligatoire** pour utiliser les permissions de fichiers Windows. Une clé USB en FAT32 n'a **pas de permissions** (accessible en écriture par tous).
 
@@ -659,14 +659,14 @@ Chaque fichier ou dossier NTFS possède une **ACL (Access Control List)** : list
 #### **1. Lecture (Read)**
 
 **Permet de :**
-- ✅ Ouvrir et **lire** un fichier
-- ✅ Lister le contenu d'un dossier
-- ✅ **Copier** un fichier (la copie = lecture + écriture ailleurs)
+- Ouvrir et **lire** un fichier
+- Lister le contenu d'un dossier
+- **Copier** un fichier (la copie = lecture + écriture ailleurs)
 
 **Ne permet PAS de :**
-- ❌ Modifier le fichier
-- ❌ Supprimer le fichier
-- ❌ Exécuter un programme (.exe, .bat)
+- **Refusé :** Modifier le fichier
+- **Refusé :** Supprimer le fichier
+- **Refusé :** Exécuter un programme (.exe, .bat)
 
 **Cas d'usage :** Consulter des documents en lecture seule (procédures, rapports archivés).
 
@@ -675,14 +675,14 @@ Chaque fichier ou dossier NTFS possède une **ACL (Access Control List)** : list
 #### **2. Écriture (Write)**
 
 **Permet de :**
-- ✅ Modifier le **contenu** d'un fichier existant
-- ✅ Créer de **nouveaux fichiers** dans un dossier
+- Modifier le **contenu** d'un fichier existant
+- Créer de **nouveaux fichiers** dans un dossier
 
 **Ne permet PAS (seule) de :**
-- ❌ Lire le contenu (!)
-- ❌ Supprimer le fichier
+- **Refusé :** Lire le contenu (!)
+- **Refusé :** Supprimer le fichier
 
-⚠ **Bizarrerie :** Avoir uniquement "Écriture" sans "Lecture" est rare et peu utile (on peut modifier sans voir !).
+**Bizarrerie :** Avoir uniquement "Écriture" sans "Lecture" est rare et peu utile (on peut modifier sans voir !).
 
 **Cas d'usage (combinée avec Lecture) :** Modifier des fichiers partagés (dossier collaboratif).
 
@@ -691,9 +691,9 @@ Chaque fichier ou dossier NTFS possède une **ACL (Access Control List)** : list
 #### **3. Lecture et Exécution (Read & Execute)**
 
 **Permet de :**
-- ✅ Tout ce que "Lecture" permet
-- ✅ **Exécuter** des programmes (.exe, .bat, .cmd, .ps1...)
-- ✅ **Parcourir** les sous-dossiers (traverse folders)
+- Tout ce que "Lecture" permet
+- **Exécuter** des programmes (.exe, .bat, .cmd, .ps1...)
+- **Parcourir** les sous-dossiers (traverse folders)
 
 **Cas d'usage :** Dossier d'applications partagées. Les utilisateurs peuvent lancer les programmes mais pas les modifier.
 
@@ -702,14 +702,14 @@ Chaque fichier ou dossier NTFS possède une **ACL (Access Control List)** : list
 #### **4. Modification (Modify)**
 
 **Permet de :**
-- ✅ Lecture
-- ✅ Écriture
-- ✅ Lecture et Exécution
-- ✅ **Supprimer** des fichiers et sous-dossiers
+- Lecture
+- Écriture
+- Lecture et Exécution
+- **Supprimer** des fichiers et sous-dossiers
 
 **Ne permet PAS de :**
-- ❌ Changer les **permissions** du fichier/dossier
-- ❌ Prendre **possession** (changer le propriétaire)
+- **Refusé :** Changer les **permissions** du fichier/dossier
+- **Refusé :** Prendre **possession** (changer le propriétaire)
 
 **Cas d'usage :** Dossier collaboratif où chacun peut créer, modifier, supprimer ses fichiers (mais pas bloquer les autres en changeant les droits).
 
@@ -720,12 +720,12 @@ Chaque fichier ou dossier NTFS possède une **ACL (Access Control List)** : list
 #### **5. Contrôle Total (Full Control)**
 
 **Permet de :**
-- ✅ **TOUT** ce que "Modification" permet
-- ✅ Changer les **permissions** du fichier/dossier (ACL)
-- ✅ Prendre **possession** (devenir propriétaire)
-- ✅ Supprimer le fichier/dossier **même sans permission de suppression sur le contenu** (force delete)
+- **Autorisé :** **TOUT** ce que "Modification" permet
+- **Autorisé :** Changer les **permissions** du fichier/dossier (ACL)
+- **Autorisé :** Prendre **possession** (devenir propriétaire)
+- **Autorisé :** Supprimer le fichier/dossier **même sans permission de suppression sur le contenu** (force delete)
 
-**Danger ⚠ :**
+**Danger :**
 - Un utilisateur avec Contrôle Total peut **bloquer tout le monde** (y compris les admins) en retirant tous les droits
 - Il peut **supprimer** un dossier entier même si d'autres travaillent dessus
 
@@ -771,9 +771,9 @@ C:\Data (Permissions : Groupe "Comptables" = Modification)
  Si je donne "Modification" au groupe "Comptables" sur `C:\Data`, tous les sous-dossiers et fichiers héritent automatiquement de cette permission.
 
 **Avantages :**
-- ✅ **Facilité de gestion** : 1 seule configuration au sommet de l'arborescence
-- ✅ **Cohérence** : Pas de risque d'oublier un sous-dossier
-- ✅ **Maintenance** : Modifier en haut = répercuté partout
+- **Avantage :** **Facilité de gestion** : 1 seule configuration au sommet de l'arborescence
+- **Avantage :** **Cohérence** : Pas de risque d'oublier un sous-dossier
+- **Avantage :** **Maintenance** : Modifier en haut = répercuté partout
 
 **Désactiver l'héritage :**
 
@@ -791,7 +791,7 @@ Parfois, on veut qu'un sous-dossier ait des permissions **différentes** du pare
    - **Supprimer toutes les permissions héritées** (repart de zéro)
 5. OK → Le dossier a maintenant ses propres permissions, indépendantes du parent
 
-⚠ **Attention :** Désactiver l'héritage partout = gestion cauchemar ! À utiliser avec parcimonie, uniquement pour des dossiers vraiment sensibles.
+**Attention :** Désactiver l'héritage partout = gestion cauchemar ! À utiliser avec parcimonie, uniquement pour des dossiers vraiment sensibles.
 
 ---
 
@@ -811,12 +811,12 @@ Chaque permission peut être **Autorisée** ou **Refusée**.
  Résultat : "jdupont" a **Lecture seule** (le Refus annule l'autorisation d'écriture).
 
 **Cas d'usage du Deny :**
-- ✅ Bloquer un utilisateur spécifique sans le retirer d'un groupe
-- ✅ Exceptions dans une politique générale
+- **Autorisé :** Bloquer un utilisateur spécifique sans le retirer d'un groupe
+- **Autorisé :** Exceptions dans une politique générale
 
 **Piège :**
-- ❌ Overuse de Deny = gestion complexe et bugs difficiles à déboguer
-- ✅ **Bonne pratique :** Utiliser principalement Allow, et Deny **très rarement** (cas exceptionnels)
+- **Refusé :** Overuse de Deny = gestion complexe et bugs difficiles à déboguer
+- **Autorisé :** **Bonne pratique :** Utiliser principalement Allow, et Deny **très rarement** (cas exceptionnels)
 
 ---
 
@@ -880,16 +880,16 @@ Chaque permission peut être **Autorisée** ou **Refusée**.
 5. **Définir les permissions**
    - Sélectionner l'utilisateur/groupe dans la liste
    - Cocher les permissions dans la section du bas :
-     - ✅ **Contrôle total** (rarement, admins uniquement)
-     - ✅ **Modification** (usage courant)
-     - ✅ **Lecture et exécution** (consultations)
-     - ✅ **Lecture** (lecture seule)
-     - ✅ **Écriture** (rare seule)
+     - **Autorisé :** **Contrôle total** (rarement, admins uniquement)
+     - **Autorisé :** **Modification** (usage courant)
+     - **Autorisé :** **Lecture et exécution** (consultations)
+     - **Autorisé :** **Lecture** (lecture seule)
+     - **Autorisé :** **Écriture** (rare seule)
    - Ou cocher **Refuser** pour bloquer (rare)
 
 6. **Appliquer** → **OK**
 
-✅ Les permissions sont configurées !
+**Autorisé :** Les permissions sont configurées !
 
 **Test des permissions :**
 - Se déconnecter de Windows
@@ -938,10 +938,10 @@ C:\Data
 
 | **Dossier** | **GRP_Direction** | **GRP_Comptabilite** | **GRP_Commercial** | **GRP_Technique** | **Utilisateurs** |
 |-------------|-------------------|----------------------|--------------------|--------------------|------------------|
-| **Direction** | Modification | ❌ Aucun | ❌ Aucun | ❌ Aucun | Lecture seule (pour organigramme) |
-| **Comptabilite** | Lecture seule | Modification | ❌ Aucun | ❌ Aucun | ❌ Aucun |
-| **Commercial** | Lecture seule | ❌ Aucun | Modification | ❌ Aucun | ❌ Aucun |
-| **Technique** | Lecture seule | ❌ Aucun | ❌ Aucun | Modification | ❌ Aucun |
+| **Direction** | Modification | Aucun | Aucun | Aucun | Lecture seule (pour organigramme) |
+| **Comptabilite** | Lecture seule | Modification | Aucun | Aucun | Aucun |
+| **Commercial** | Lecture seule | Aucun | Modification | Aucun | Aucun |
+| **Technique** | Lecture seule | Aucun | Aucun | Modification | Aucun |
 | **Commun** | Modification | Lecture | Lecture | Lecture | Lecture |
 
 **Objectifs du TP :**

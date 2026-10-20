@@ -130,20 +130,20 @@ groups eric    # eric informatique direction commercial
 ```bash
 # Test 1 : alice (direction) accède à son répertoire
 su - alice
-ls /data/direction    # ✅ Doit fonctionner
-ls /data/commercial   # ❌ Doit afficher "Permission non accordée"
+ls /data/direction    # OK : Doit fonctionner
+ls /data/commercial   # KO : Doit afficher "Permission non accordée"
 exit
 
 # Test 2 : charlie (commercial) accède à son répertoire
 su - charlie
-echo "Fichier commercial" > /data/commercial/test.txt   # ✅ Doit créer le fichier
-ls /data/direction                                       # ❌ Permission refusée
+echo "Fichier commercial" > /data/commercial/test.txt   # [OK] Doit créer le fichier
+ls /data/direction                                       # KO : Permission refusée
 exit
 
 # Test 3 : eric (informatique) accède à tous
 su - eric
-ls /data/direction    # ✅ Doit fonctionner
-ls /data/commercial   # ✅ Doit fonctionner
+ls /data/direction    # OK : Doit fonctionner
+ls /data/commercial   # OK : Doit fonctionner
 exit
 ```
 

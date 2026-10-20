@@ -194,7 +194,7 @@ Client ──► QUIT
 Serveur ◄── 221 Bye
 ```
 
-> ⚠ **Sécurité SMTP :** SMTP sans authentification est exploitable pour le **spam relay** (utiliser votre serveur pour envoyer du spam). En production, toujours configurer `smtpd_recipient_restrictions` (Postfix) ou l'équivalent pour exiger une authentification.
+> **Sécurité SMTP :** SMTP sans authentification est exploitable pour le **spam relay** (utiliser votre serveur pour envoyer du spam). En production, toujours configurer `smtpd_recipient_restrictions` (Postfix) ou l'équivalent pour exiger une authentification.
 
 ---
 
@@ -204,7 +204,7 @@ Serveur ◄── 221 Bye
 |---|---|---|
 | **Port** | 143 (STARTTLS) / 993 (SSL) | 110 (STARTTLS) / 995 (SSL) |
 | **Stockage des emails** | Sur le **serveur** (synchronisation) | Téléchargés et **supprimés du serveur** |
-| **Accès multi-appareils** | ✅ Oui — même boîte sur téléphone + PC + webmail | ❌ Non — les mails disparaissent du serveur après téléchargement |
+| **Accès multi-appareils** | Oui — même boîte sur téléphone + PC + webmail | Non — les mails disparaissent du serveur après téléchargement |
 | **Organisation dossiers** | Synchronisée entre client et serveur | Locale uniquement |
 | **Fonctionnement hors-ligne** | Partiel (cache local) | Total (mails stockés localement) |
 | **Usage recommandé** | Usage professionnel moderne | Archivage local, connexion intermittente |

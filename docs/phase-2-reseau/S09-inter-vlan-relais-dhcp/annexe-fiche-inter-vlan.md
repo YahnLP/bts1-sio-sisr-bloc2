@@ -57,11 +57,11 @@
 
 | **Source** | **Destination** | **Ping** | **Capture N°** |
 |---|---|---|---|
-| PC-RH (192.168.10.10) | Passerelle VLAN 10 (192.168.10.1) | ✅ / ❌ | |
-| PC-RH (192.168.10.10) | Passerelle VLAN 20 (192.168.20.1) | ✅ / ❌ | |
-| PC-RH (192.168.10.10) | Passerelle VLAN 30 (192.168.30.1) | ✅ / ❌ | |
-| PC-RH (192.168.10.10) | PC-IT (192.168.20.10) | ✅ / ❌ | |
-| PC-RH (192.168.10.10) | PC-DIR (192.168.30.10) | ✅ / ❌ | |
+| PC-RH (192.168.10.10) | Passerelle VLAN 10 (192.168.10.1) | Oui / Non | |
+| PC-RH (192.168.10.10) | Passerelle VLAN 20 (192.168.20.1) | Oui / Non | |
+| PC-RH (192.168.10.10) | Passerelle VLAN 30 (192.168.30.1) | Oui / Non | |
+| PC-RH (192.168.10.10) | PC-IT (192.168.20.10) | Oui / Non | |
+| PC-RH (192.168.10.10) | PC-DIR (192.168.30.10) | Oui / Non | |
 
 ---
 

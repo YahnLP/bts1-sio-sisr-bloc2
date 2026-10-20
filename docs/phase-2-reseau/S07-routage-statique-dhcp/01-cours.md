@@ -246,7 +246,7 @@ Client (PC)                          Serveur DHCP
     │     "Confirmé ! L'IP est à toi      │
     │     jusqu'à [heure]."               │
     │                                     │
-    ✅ Le client configure son IP
+    OK : Le client configure son IP
 ```
 
 **Détail des 4 messages :**
