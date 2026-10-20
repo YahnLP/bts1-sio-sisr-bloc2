@@ -1,1 +1,7 @@
 title: "S09 – Routage inter-VLAN, relais DHCP et TP intégré"
+arrange:
+  - 01-cours.md
+  - 02-tp.md
+  - 01b-cours-inter-vlan.md
+  - 02b-tp-inter-vlan.md
+  - ...
