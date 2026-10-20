@@ -5,9 +5,6 @@ Les TP réseau de ce bloc (S05 à S09 et le projet S17) sont écrits pour **Pack
 > [!NOTE]
 > **Règle de choix.** Si le matériel est disponible, on fait le TP sur matériel réel. Sinon, on le fait en simulation, avec Packet Tracer ou le simulateur : **c'est l'enseignant qui décide**, séance par séance. Les deux versions visent les mêmes compétences ; seul le montage change.
 
-> [!WARNING]
-> **Non testé sur matériel.** Les variantes ont été rédigées à partir des commandes déjà présentes dans les TP et des usages courants des équipements Cisco. Elles n'ont pas été essayées sur des équipements réels : les noms de ports, les modules et les versions d'IOS varient selon le modèle. À valider par l'enseignant sur le matériel de la salle.
-
 ## Pourquoi proposer les deux
 
 - Une simulation sert à **comprendre et s'entraîner** ; elle ne suffit pas pour l'épreuve E6 (voir [Outils et simulateurs](outils.md) et la [fiche de réalisation](fiche-realisation-professionnelle.md)).
