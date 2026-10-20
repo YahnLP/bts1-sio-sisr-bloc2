@@ -117,7 +117,7 @@ La notation **CIDR** (prononcé "sider") remplace l'écriture longue du masque p
 | **/30** | 255.255.255.252 | 2 | **2** | Liaison point-à-point (routeurs) |
 | **/32** | 255.255.255.255 | 0 | 1 | Hôte unique (loopback, routes statiques) |
 
-**Formule :** Nombre d'hôtes utilisables = 2^(bits hôte) − 2
+**Formule :** Nombre d'hôtes utilisables = 2<sup>bits hôte</sup> − 2
 
 **Exemple de calcul complet :**
 

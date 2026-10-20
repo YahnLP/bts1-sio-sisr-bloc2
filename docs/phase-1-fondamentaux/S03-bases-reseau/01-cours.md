@@ -655,11 +655,39 @@ Le **modèle TCP/IP** est le modèle **réellement utilisé** sur Internet. Il s
 
 #### **1. Topologie en Bus**
 
-```
-PC1 ──┬── PC2 ──┬── PC3 ──┬── PC4
-      │         │         │
-   (Câble coaxial unique)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 680 230" style="max-width:680px" role="img" aria-label="Topologie en bus : un câble unique relie tous les postes" xmlns="http://www.w3.org/2000/svg">
+<rect x="30" y="100" width="620" height="10" rx="5" class="dg-dark"/>
+<rect x="24" y="92" width="10" height="26" rx="2" class="dg-bad"/>
+<rect x="646" y="92" width="10" height="26" rx="2" class="dg-bad"/>
+<text x="40" y="84" text-anchor="start" class="dg-i">terminateur</text>
+<text x="640" y="84" text-anchor="end" class="dg-i">terminateur</text>
+<line x1="130" y1="110" x2="130" y2="140" class="dg-line"/>
+<rect x="110" y="142" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="115" y="147" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="127" y="170" width="6" height="6" class="dg-box"/>
+<rect x="118" y="176" width="24" height="4" rx="2" class="dg-box"/>
+<text x="130" y="196" text-anchor="middle" class="dg-s">PC1</text>
+<line x1="270" y1="110" x2="270" y2="140" class="dg-line"/>
+<rect x="250" y="142" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="255" y="147" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="267" y="170" width="6" height="6" class="dg-box"/>
+<rect x="258" y="176" width="24" height="4" rx="2" class="dg-box"/>
+<text x="270" y="196" text-anchor="middle" class="dg-s">PC2</text>
+<line x1="410" y1="110" x2="410" y2="140" class="dg-line"/>
+<rect x="390" y="142" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="395" y="147" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="407" y="170" width="6" height="6" class="dg-box"/>
+<rect x="398" y="176" width="24" height="4" rx="2" class="dg-box"/>
+<text x="410" y="196" text-anchor="middle" class="dg-s">PC3</text>
+<line x1="550" y1="110" x2="550" y2="140" class="dg-line"/>
+<rect x="530" y="142" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="535" y="147" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="547" y="170" width="6" height="6" class="dg-box"/>
+<rect x="538" y="176" width="24" height="4" rx="2" class="dg-box"/>
+<text x="550" y="196" text-anchor="middle" class="dg-s">PC4</text>
+<text x="340" y="92" text-anchor="middle" class="dg-t">câble coaxial unique (le « bus »)</text>
+</svg>
+</figure>
 
 **Caractéristiques :**
 - **Avantage :** Simple, économique (1 seul câble)
@@ -672,13 +700,60 @@ PC1 ──┬── PC2 ──┬── PC3 ──┬── PC4
 
 #### **2. Topologie en Étoile**
 
-```
-      PC1
-       |
-PC2 - SWITCH - PC3
-       |
-      PC4
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 680 330" style="max-width:680px" role="img" aria-label="Topologie en étoile : chaque poste est relié à un équipement central" xmlns="http://www.w3.org/2000/svg">
+<rect x="298.0" y="148" width="84" height="24" rx="4" class="dg-dark"/>
+<rect x="306.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="318.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="330.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="342.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="354.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="366.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<line x1="320.1370685858735" y1="142.54146123136834" x2="153.4743734894222" y2="63.178273090201046" class="dg-line"/>
+<line x1="340.0" y1="130.0" x2="340.0" y2="58.0" class="dg-line"/>
+<line x1="359.8629314141265" y1="142.54146123136834" x2="526.5256265105778" y2="63.178273090201046" class="dg-line"/>
+<line x1="319.77880933960273" y1="160.66622456874168" x2="153.8977707804695" y2="231.75809823694163" class="dg-line"/>
+<line x1="340.0" y1="174.0" x2="340.0" y2="236.0" class="dg-line"/>
+<line x1="360.22119066039727" y1="160.66622456874168" x2="526.1022292195305" y2="231.75809823694163" class="dg-line"/>
+<rect x="110" y="36" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="115" y="41" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="127" y="64" width="6" height="6" class="dg-box"/>
+<rect x="118" y="70" width="24" height="4" rx="2" class="dg-box"/>
+<text x="130" y="30" text-anchor="middle" class="dg-s">PC1</text>
+<rect x="320" y="16" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="325" y="21" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="337" y="44" width="6" height="6" class="dg-box"/>
+<rect x="328" y="50" width="24" height="4" rx="2" class="dg-box"/>
+<text x="340" y="10" text-anchor="middle" class="dg-s">PC2</text>
+<rect x="530" y="36" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="535" y="41" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="547" y="64" width="6" height="6" class="dg-box"/>
+<rect x="538" y="70" width="24" height="4" rx="2" class="dg-box"/>
+<text x="550" y="30" text-anchor="middle" class="dg-s">PC3</text>
+<rect x="110" y="226" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="115" y="231" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="127" y="254" width="6" height="6" class="dg-box"/>
+<rect x="118" y="260" width="24" height="4" rx="2" class="dg-box"/>
+<text x="130" y="280" text-anchor="middle" class="dg-s">PC4</text>
+<rect x="320" y="246" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="325" y="251" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="337" y="274" width="6" height="6" class="dg-box"/>
+<rect x="328" y="280" width="24" height="4" rx="2" class="dg-box"/>
+<text x="340" y="300" text-anchor="middle" class="dg-s">PC5</text>
+<rect x="530" y="226" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="535" y="231" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="547" y="254" width="6" height="6" class="dg-box"/>
+<rect x="538" y="260" width="24" height="4" rx="2" class="dg-box"/>
+<text x="550" y="280" text-anchor="middle" class="dg-s">PC6</text>
+<rect x="298.0" y="148" width="84" height="24" rx="4" class="dg-dark"/>
+<rect x="306.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="318.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="330.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="342.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="354.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="366.0" y="156" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<text x="340" y="190" text-anchor="middle" class="dg-s">Switch</text>
+</svg>
+</figure>
 
 **Caractéristiques :**
 - **Avantage :** Si un câble casse → seul ce PC est déconnecté
@@ -693,11 +768,52 @@ PC2 - SWITCH - PC3
 
 #### **3. Topologie en Anneau**
 
-```
-PC1 ── PC2
- |      |
-PC4 ── PC3
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 560 330" style="max-width:560px" role="img" aria-label="Topologie en anneau : chaque poste est relié à deux voisins, les données tournent dans un sens" xmlns="http://www.w3.org/2000/svg">
+<line x1="303.90559321444823" y1="52.22363013148102" x2="384.6991792475409" y2="86.77636986851898" class="dg-line"/>
+<polygon points="350.7,72.3 337.7,72.1 341.7,62.9" class="dg-ah"/>
+<line x1="408.6047724619891" y1="123.0" x2="408.60477246198917" y2="180.99999999999997" class="dg-line"/>
+<polygon points="408.6,159.0 403.6,147.0 413.6,147.0" class="dg-ah"/>
+<line x1="384.69917924754094" y1="217.223630131481" x2="303.90559321444823" y2="251.776369868519" class="dg-line"/>
+<polygon points="337.9,237.3 346.9,227.9 350.9,237.1" class="dg-ah"/>
+<line x1="256.09440678555177" y1="251.776369868519" x2="175.30082075245912" y2="217.22363013148106" class="dg-line"/>
+<polygon points="209.3,231.7 222.3,231.9 218.3,241.1" class="dg-ah"/>
+<line x1="151.3952275380109" y1="181.00000000000003" x2="151.39522753801086" y2="123.0" class="dg-line"/>
+<polygon points="151.4,145.0 156.4,157.0 146.4,157.0" class="dg-ah"/>
+<line x1="175.3008207524591" y1="86.77636986851897" x2="256.09440678555177" y2="52.223630131481016" class="dg-line"/>
+<polygon points="222.1,66.7 213.1,76.1 209.1,66.9" class="dg-ah"/>
+<rect x="260.0" y="26.0" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="265.0" y="31.0" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="277.0" y="54.0" width="6" height="6" class="dg-box"/>
+<rect x="268.0" y="60.0" width="24" height="4" rx="2" class="dg-box"/>
+<text x="280.0" y="20.0" text-anchor="middle" class="dg-s">PC1</text>
+<rect x="388.6047724619891" y="81.0" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="393.6047724619891" y="86.0" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="405.6047724619891" y="109.0" width="6" height="6" class="dg-box"/>
+<rect x="396.6047724619891" y="115.0" width="24" height="4" rx="2" class="dg-box"/>
+<text x="408.6047724619891" y="75.0" text-anchor="middle" class="dg-s">PC2</text>
+<rect x="388.60477246198917" y="190.99999999999997" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="393.60477246198917" y="195.99999999999997" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="405.60477246198917" y="218.99999999999997" width="6" height="6" class="dg-box"/>
+<rect x="396.60477246198917" y="224.99999999999997" width="24" height="4" rx="2" class="dg-box"/>
+<text x="408.60477246198917" y="244.99999999999997" text-anchor="middle" class="dg-s">PC3</text>
+<rect x="260.0" y="246.0" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="265.0" y="251.0" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="277.0" y="274.0" width="6" height="6" class="dg-box"/>
+<rect x="268.0" y="280.0" width="24" height="4" rx="2" class="dg-box"/>
+<text x="280.0" y="300.0" text-anchor="middle" class="dg-s">PC4</text>
+<rect x="131.3952275380109" y="191.00000000000003" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="136.3952275380109" y="196.00000000000003" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="148.3952275380109" y="219.00000000000003" width="6" height="6" class="dg-box"/>
+<rect x="139.3952275380109" y="225.00000000000003" width="24" height="4" rx="2" class="dg-box"/>
+<text x="151.3952275380109" y="245.00000000000003" text-anchor="middle" class="dg-s">PC5</text>
+<rect x="131.39522753801086" y="80.99999999999999" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="136.39522753801086" y="85.99999999999999" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="148.39522753801086" y="108.99999999999999" width="6" height="6" class="dg-box"/>
+<rect x="139.39522753801086" y="114.99999999999999" width="24" height="4" rx="2" class="dg-box"/>
+<text x="151.39522753801086" y="74.99999999999999" text-anchor="middle" class="dg-s">PC6</text>
+<text x="280" y="164" text-anchor="middle" class="dg-i">sens de circulation</text>
+</svg>
+</figure>
 
 **Caractéristiques :**
 - Chaque PC est relié à deux autres (forme un anneau)
@@ -710,14 +826,44 @@ PC4 ── PC3
 
 #### **4. Topologie Maillée (Mesh)**
 
-```
-PC1 ─── PC2
- | \   / |
- |  \ /  |
- |  / \  |
- | /   \ |
-PC3 ─── PC4
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 560 340" style="max-width:560px" role="img" aria-label="Topologie maillée : chaque poste est relié à tous les autres (ici 5 postes, 10 liens)" xmlns="http://www.w3.org/2000/svg">
+<line x1="302.6959956778647" y1="54.68431236568811" x2="405.6688208641793" y2="112.23364830931821" class="dg-line"/>
+<line x1="290.1167972476068" y1="65.95100025992265" x2="361.577702110019" y2="235.1310390650711" class="dg-line"/>
+<line x1="269.8832027523932" y1="65.95100025992265" x2="198.42229788998105" y2="235.13103906507106" class="dg-line"/>
+<line x1="257.3040043221353" y1="54.68431236568811" x2="154.3311791358207" y2="112.23364830931821" class="dg-line"/>
+<line x1="418.24801929443714" y1="148.868960934929" x2="381.81129660523266" y2="235.13103906507106" class="dg-line"/>
+<line x1="405.6688208641793" y1="137.60227304069443" x2="211.00149632023889" y2="246.39772695930563" class="dg-line"/>
+<line x1="402.36481654204397" y1="124.91796067500633" x2="157.63518345795603" y2="124.91796067500633" class="dg-line"/>
+<line x1="345.69449935762583" y1="259.08203932499373" x2="214.30550064237423" y2="259.08203932499373" class="dg-line"/>
+<line x1="348.99850367976114" y1="246.39772695930563" x2="154.3311791358207" y2="137.60227304069443" class="dg-line"/>
+<line x1="178.1887033947674" y1="235.1310390650711" x2="141.75198070556286" y2="148.86896093492896" class="dg-line"/>
+<rect x="260.0" y="26.0" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="265.0" y="31.0" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="277.0" y="54.0" width="6" height="6" class="dg-box"/>
+<rect x="268.0" y="60.0" width="24" height="4" rx="2" class="dg-box"/>
+<text x="280.0" y="20.0" text-anchor="middle" class="dg-s">PC1</text>
+<rect x="408.36481654204397" y="108.91796067500633" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="413.36481654204397" y="113.91796067500633" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="425.36481654204397" y="136.91796067500633" width="6" height="6" class="dg-box"/>
+<rect x="416.36481654204397" y="142.91796067500633" width="24" height="4" rx="2" class="dg-box"/>
+<text x="428.36481654204397" y="162.91796067500633" text-anchor="middle" class="dg-s">PC2</text>
+<rect x="351.69449935762583" y="243.08203932499373" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="356.69449935762583" y="248.08203932499373" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="368.69449935762583" y="271.08203932499373" width="6" height="6" class="dg-box"/>
+<rect x="359.69449935762583" y="277.08203932499373" width="24" height="4" rx="2" class="dg-box"/>
+<text x="371.69449935762583" y="297.08203932499373" text-anchor="middle" class="dg-s">PC3</text>
+<rect x="168.30550064237423" y="243.08203932499373" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="173.30550064237423" y="248.08203932499373" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="185.30550064237423" y="271.08203932499373" width="6" height="6" class="dg-box"/>
+<rect x="176.30550064237423" y="277.08203932499373" width="24" height="4" rx="2" class="dg-box"/>
+<text x="188.30550064237423" y="297.08203932499373" text-anchor="middle" class="dg-s">PC4</text>
+<rect x="111.63518345795603" y="108.91796067500633" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="116.63518345795603" y="113.91796067500633" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="128.63518345795603" y="136.91796067500633" width="6" height="6" class="dg-box"/>
+<rect x="119.63518345795603" y="142.91796067500633" width="24" height="4" rx="2" class="dg-box"/>
+<text x="131.63518345795603" y="162.91796067500633" text-anchor="middle" class="dg-s">PC5</text>
+</svg>
+</figure>
 
 **Caractéristiques :**
 - **Avantage :** Redondance maximale (plusieurs chemins possibles)
@@ -729,27 +875,349 @@ PC3 ─── PC4
 
 ---
 
+#### **5. Topologie en Arbre**
+
+<figure class="graphe diagramme"><svg viewBox="0 0 700 360" style="max-width:700px" role="img" aria-label="Topologie en arbre : des étoiles reliées hiérarchiquement" xmlns="http://www.w3.org/2000/svg">
+<line x1="335.95367083336987" y1="49.66163409088917" x2="144.04632916663016" y2="154.33836590911082" class="dg-line"/>
+<line x1="350.0" y1="58.0" x2="350.0" y2="146.0" class="dg-line"/>
+<line x1="364.04632916663013" y1="49.66163409088917" x2="555.9536708333699" y2="154.33836590911082" class="dg-line"/>
+<rect x="308.0" y="38" width="84" height="24" rx="4" class="dg-dark"/>
+<rect x="316.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="328.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="340.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="352.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="364.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="376.0" y="46" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<line x1="121.12479686039633" y1="175.3128047094055" x2="64.42220510185595" y2="260.3666923472161" class="dg-line"/>
+<line x1="130.0" y1="178.0" x2="130.0" y2="256.0" class="dg-line"/>
+<line x1="138.87520313960366" y1="175.3128047094055" x2="195.57779489814405" y2="260.3666923472161" class="dg-line"/>
+<line x1="341.1247968603963" y1="175.3128047094055" x2="284.422205101856" y2="260.3666923472161" class="dg-line"/>
+<line x1="350.0" y1="178.0" x2="350.0" y2="256.0" class="dg-line"/>
+<line x1="358.8752031396037" y1="175.3128047094055" x2="415.577794898144" y2="260.3666923472161" class="dg-line"/>
+<line x1="561.1247968603964" y1="175.3128047094055" x2="504.422205101856" y2="260.3666923472161" class="dg-line"/>
+<line x1="570.0" y1="178.0" x2="570.0" y2="256.0" class="dg-line"/>
+<line x1="578.8752031396036" y1="175.3128047094055" x2="635.577794898144" y2="260.3666923472161" class="dg-line"/>
+<rect x="88.0" y="158" width="84" height="24" rx="4" class="dg-dark"/>
+<rect x="96.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="108.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="120.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="132.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="144.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="156.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="30" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="35" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="47" y="294" width="6" height="6" class="dg-box"/>
+<rect x="38" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="50" y="320" text-anchor="middle" class="dg-s">PC1</text>
+<rect x="110" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="115" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="127" y="294" width="6" height="6" class="dg-box"/>
+<rect x="118" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="130" y="320" text-anchor="middle" class="dg-s">PC2</text>
+<rect x="190" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="195" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="207" y="294" width="6" height="6" class="dg-box"/>
+<rect x="198" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="210" y="320" text-anchor="middle" class="dg-s">PC3</text>
+<rect x="308.0" y="158" width="84" height="24" rx="4" class="dg-dark"/>
+<rect x="316.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="328.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="340.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="352.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="364.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="376.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="250" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="255" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="267" y="294" width="6" height="6" class="dg-box"/>
+<rect x="258" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="270" y="320" text-anchor="middle" class="dg-s">PC4</text>
+<rect x="330" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="335" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="347" y="294" width="6" height="6" class="dg-box"/>
+<rect x="338" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="350" y="320" text-anchor="middle" class="dg-s">PC5</text>
+<rect x="410" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="415" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="427" y="294" width="6" height="6" class="dg-box"/>
+<rect x="418" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="430" y="320" text-anchor="middle" class="dg-s">PC6</text>
+<rect x="528.0" y="158" width="84" height="24" rx="4" class="dg-dark"/>
+<rect x="536.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="548.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="560.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="572.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="584.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="596.0" y="166" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="470" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="475" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="487" y="294" width="6" height="6" class="dg-box"/>
+<rect x="478" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="490" y="320" text-anchor="middle" class="dg-s">PC7</text>
+<rect x="550" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="555" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="567" y="294" width="6" height="6" class="dg-box"/>
+<rect x="558" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="570" y="320" text-anchor="middle" class="dg-s">PC8</text>
+<rect x="630" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="635" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="647" y="294" width="6" height="6" class="dg-box"/>
+<rect x="638" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="650" y="320" text-anchor="middle" class="dg-s">PC9</text>
+<text x="350" y="28" text-anchor="middle" class="dg-s">Switch cœur (racine)</text>
+<text x="130" y="150" text-anchor="middle" class="dg-s">Switch d&#x27;étage</text>
+<text x="350" y="150" text-anchor="middle" class="dg-s">Switch d&#x27;étage</text>
+<text x="570" y="150" text-anchor="middle" class="dg-s">Switch d&#x27;étage</text>
+</svg>
+</figure>
+
+**Caractéristiques :**
+- Organisation **hiérarchique** : un équipement racine (le cœur), des équipements intermédiaires, puis les postes. C'est une étoile d'étoiles.
+- **Avantage :** réseau facile à étendre : on ajoute un switch et ses postes sur une branche.
+- **Avantage :** on **isole** les pannes et on organise le réseau par étage, bâtiment ou service.
+- **Inconvénient :** les liens entre switchs concentrent le trafic ; si le switch cœur tombe, toutes les branches sont coupées.
+
+**Usage :** le plan de nombreux **réseaux d'entreprise** : cœur, distribution, accès.
+
+---
+
+#### **6. Topologie Hybride**
+
+<figure class="graphe diagramme"><svg viewBox="0 0 740 390" style="max-width:740px" role="img" aria-label="Topologie hybride : des étoiles reliées par un cœur maillé" xmlns="http://www.w3.org/2000/svg">
+<line x1="335.0813201031557" y1="138.77098792091397" x2="254.9186798968443" y2="200.22901207908603" class="dg-line"/>
+<line x1="404.9186798968443" y1="138.77098792091397" x2="485.0813201031557" y2="200.22901207908603" class="dg-line"/>
+<line x1="264.0" y1="227.0" x2="476.0" y2="227.0" class="dg-line"/>
+<line x1="356.4320271359186" y1="103.52001695994912" x2="272.04795590413227" y2="50.77997244008268" class="dg-line"/>
+<rect x="230" y="21" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="235" y="26" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="247" y="49" width="6" height="6" class="dg-box"/>
+<rect x="238" y="55" width="24" height="4" rx="2" class="dg-box"/>
+<text x="250" y="15" text-anchor="middle" class="dg-s">PC1</text>
+<line x1="383.5679728640814" y1="103.52001695994912" x2="467.95204409586773" y2="50.77997244008268" class="dg-line"/>
+<rect x="470" y="21" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="475" y="26" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="487" y="49" width="6" height="6" class="dg-box"/>
+<rect x="478" y="55" width="24" height="4" rx="2" class="dg-box"/>
+<text x="490" y="15" text-anchor="middle" class="dg-s">PC2</text>
+<line x1="205.3191099950412" y1="220.63828099785118" x2="93.85644625805803" y2="172.33779337849182" class="dg-line"/>
+<rect x="50" y="146" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="55" y="151" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="67" y="174" width="6" height="6" class="dg-box"/>
+<rect x="58" y="180" width="24" height="4" rx="2" class="dg-box"/>
+<text x="70" y="200" text-anchor="middle" class="dg-s">PC3</text>
+<line x1="204.97797894581427" y1="232.50807438653476" x2="94.41078421305183" y2="273.049379121881" class="dg-line"/>
+<rect x="50" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="55" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="67" y="294" width="6" height="6" class="dg-box"/>
+<rect x="58" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="70" y="320" text-anchor="middle" class="dg-s">PC4</text>
+<line x1="217.13783298880026" y1="242.7419185615985" x2="204.65102139319956" y2="311.4193823374024" class="dg-line"/>
+<rect x="180" y="321" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="185" y="326" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="197" y="349" width="6" height="6" class="dg-box"/>
+<rect x="188" y="355" width="24" height="4" rx="2" class="dg-box"/>
+<text x="200" y="375" text-anchor="middle" class="dg-s">PC5</text>
+<line x1="534.6808900049588" y1="220.63828099785118" x2="646.143553741942" y2="172.33779337849182" class="dg-line"/>
+<rect x="650" y="146" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="655" y="151" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="667" y="174" width="6" height="6" class="dg-box"/>
+<rect x="658" y="180" width="24" height="4" rx="2" class="dg-box"/>
+<text x="670" y="200" text-anchor="middle" class="dg-s">PC6</text>
+<line x1="535.0220210541858" y1="232.50807438653476" x2="645.5892157869482" y2="273.049379121881" class="dg-line"/>
+<rect x="650" y="266" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="655" y="271" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="667" y="294" width="6" height="6" class="dg-box"/>
+<rect x="658" y="300" width="24" height="4" rx="2" class="dg-box"/>
+<text x="670" y="320" text-anchor="middle" class="dg-s">PC7</text>
+<line x1="522.8621670111997" y1="242.7419185615985" x2="535.3489786068004" y2="311.4193823374024" class="dg-line"/>
+<rect x="520" y="321" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="525" y="326" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="537" y="349" width="6" height="6" class="dg-box"/>
+<rect x="528" y="355" width="24" height="4" rx="2" class="dg-box"/>
+<text x="540" y="375" text-anchor="middle" class="dg-s">PC8</text>
+<rect x="328.0" y="108" width="84" height="24" rx="4" class="dg-dark"/>
+<rect x="336.0" y="116" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="348.0" y="116" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="360.0" y="116" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="372.0" y="116" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="384.0" y="116" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="396.0" y="116" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="178.0" y="223" width="84" height="24" rx="4" class="dg-dark"/>
+<rect x="186.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="198.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="210.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="222.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="234.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="246.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="478.0" y="223" width="84" height="24" rx="4" class="dg-dark"/>
+<rect x="486.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="498.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="510.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="522.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="534.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<rect x="546.0" y="231" width="8" height="8" rx="1" fill="#fff" opacity=".85"/>
+<text x="370" y="214" text-anchor="middle" class="dg-t">cœur maillé</text>
+<text x="370" y="378" text-anchor="middle" class="dg-i">étoiles à l&#x27;accès + maillage au cœur</text>
+</svg>
+</figure>
+
+**Caractéristiques :**
+- **Combinaison** de plusieurs topologies : ici des étoiles (les postes) reliées par un cœur **maillé** (les switchs).
+- **Avantage :** on profite de la simplicité de l'étoile à l'accès et de la **redondance** du maillage là où une panne coûterait cher.
+- **Inconvénient :** plus complexe à concevoir, à documenter et à dépanner.
+
+**Usage :** la **réalité** de presque tous les réseaux d'entreprise.
+
+---
+
+#### **Pour comparer**
+
+| **Topologie** | **Principe** | **Point fort** | **Point faible** | **Usage actuel** |
+|---------------|--------------|----------------|------------------|------------------|
+| **Bus** | Un câble unique | Économique | Une coupure arrête tout | Obsolète |
+| **Étoile** | Un équipement central | Pannes isolées, dépannage simple | Le centre est un point unique de défaillance | Standard des LAN filaires |
+| **Anneau** | Chaque poste relié à deux voisins | Accès régulier au réseau | Une panne peut tout bloquer | Rare (Token Ring, FDDI) |
+| **Maillée** | Tous reliés à tous | Redondance maximale | Coût et complexité | Datacenters, opérateurs |
+| **Arbre** | Étoiles hiérarchisées | Extensible, organisé | Dépend du cœur | Réseaux d'entreprise |
+| **Hybride** | Combinaison | S'adapte aux besoins | Complexe à gérer | Presque tous les réseaux réels |
+
+---
+
 ## V. Adressage IPv4
 
 ### A. Structure d'une Adresse IPv4
 
 **Adresse IPv4** = Identifiant **unique** d'une machine sur un réseau IP.
 
-**Format :** 4 octets séparés par des points (notation décimale pointée)
+**Format :** 4 nombres séparés par des points (notation décimale pointée). Chaque nombre représente un **octet**, c'est-à-dire un groupe de **8 bits** (8 chiffres binaires).
+
+<figure class="graphe diagramme"><svg viewBox="0 0 740 230" style="max-width:740px" role="img" aria-label="Structure d&#x27;une adresse IPv4 : 4 octets de 8 bits" xmlns="http://www.w3.org/2000/svg">
+<text x="88.0" y="22" text-anchor="middle" class="dg-i">Octet 1</text>
+<rect x="54.0" y="32" width="68" height="34" rx="8" class="dg-box"/>
+<text x="88.0" y="54.0" text-anchor="middle" class="dg-t">192</text>
+<line x1="88.0" y1="66" x2="88.0" y2="92" class="dg-dash"/>
+<rect x="8.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="18.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="28.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="38.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="48.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="58.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="68.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="78.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="88.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="98.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="108.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="118.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="128.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="138.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="148.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="158.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<line x1="8.0" y1="138" x2="8.0" y2="146" class="dg-line"/>
+<line x1="168.0" y1="138" x2="168.0" y2="146" class="dg-line"/>
+<line x1="8.0" y1="146" x2="168.0" y2="146" class="dg-line"/>
+<text x="88.0" y="164" text-anchor="middle" class="dg-s">8 bits</text>
+<text x="182.0" y="120" text-anchor="middle" class="dg-t">.</text>
+<text x="276.0" y="22" text-anchor="middle" class="dg-i">Octet 2</text>
+<rect x="242.0" y="32" width="68" height="34" rx="8" class="dg-box"/>
+<text x="276.0" y="54.0" text-anchor="middle" class="dg-t">168</text>
+<line x1="276.0" y1="66" x2="276.0" y2="92" class="dg-dash"/>
+<rect x="196.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="206.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="216.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="226.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="236.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="246.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="256.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="266.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="276.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="286.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="296.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="306.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="316.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="326.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="336.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="346.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<line x1="196.0" y1="138" x2="196.0" y2="146" class="dg-line"/>
+<line x1="356.0" y1="138" x2="356.0" y2="146" class="dg-line"/>
+<line x1="196.0" y1="146" x2="356.0" y2="146" class="dg-line"/>
+<text x="276.0" y="164" text-anchor="middle" class="dg-s">8 bits</text>
+<text x="370.0" y="120" text-anchor="middle" class="dg-t">.</text>
+<text x="464.0" y="22" text-anchor="middle" class="dg-i">Octet 3</text>
+<rect x="430.0" y="32" width="68" height="34" rx="8" class="dg-box"/>
+<text x="464.0" y="54.0" text-anchor="middle" class="dg-t">1</text>
+<line x1="464.0" y1="66" x2="464.0" y2="92" class="dg-dash"/>
+<rect x="384.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="394.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="404.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="414.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="424.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="434.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="444.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="454.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="464.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="474.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="484.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="494.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="504.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="514.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="524.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="534.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<line x1="384.0" y1="138" x2="384.0" y2="146" class="dg-line"/>
+<line x1="544.0" y1="138" x2="544.0" y2="146" class="dg-line"/>
+<line x1="384.0" y1="146" x2="544.0" y2="146" class="dg-line"/>
+<text x="464.0" y="164" text-anchor="middle" class="dg-s">8 bits</text>
+<text x="558.0" y="120" text-anchor="middle" class="dg-t">.</text>
+<text x="652.0" y="22" text-anchor="middle" class="dg-i">Octet 4</text>
+<rect x="618.0" y="32" width="68" height="34" rx="8" class="dg-box"/>
+<text x="652.0" y="54.0" text-anchor="middle" class="dg-t">10</text>
+<line x1="652.0" y1="66" x2="652.0" y2="92" class="dg-dash"/>
+<rect x="572.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="582.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="592.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="602.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="612.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="622.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="632.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="642.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="652.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="662.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="672.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="682.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="692.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="702.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="712.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="722.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<line x1="572.0" y1="138" x2="572.0" y2="146" class="dg-line"/>
+<line x1="732.0" y1="138" x2="732.0" y2="146" class="dg-line"/>
+<line x1="572.0" y1="146" x2="732.0" y2="146" class="dg-line"/>
+<text x="652.0" y="164" text-anchor="middle" class="dg-s">8 bits</text>
+<line x1="8.0" y1="184" x2="732.0" y2="184" class="dg-line"/>
+<line x1="8.0" y1="178" x2="8.0" y2="190" class="dg-line"/>
+<line x1="732.0" y1="178" x2="732.0" y2="190" class="dg-line"/>
+<text x="370" y="212" text-anchor="middle" class="dg-t">4 octets = 32 bits = une adresse IPv4</text>
+</svg>
+</figure>
 
 **Exemple :** `192.168.1.10`
 
-**En binaire :**
-```
-192      .  168      .  1        .  10
-11000000 .  10101000 .  00000001 .  00001010
-```
+| **Octet** | **Décimal** | **Binaire** |
+|:---------:|:-----------:|:-----------:|
+| 1 | 192 | `11000000` |
+| 2 | 168 | `10101000` |
+| 3 | 1 | `00000001` |
+| 4 | 10 | `00001010` |
 
-**Valeurs possibles par octet :** 0 à 255 (= 2^8 = 256 valeurs)
+#### Combien d'adresses possibles ?
 
-**Nombre total d'adresses IPv4 :** 2^32 = **4 294 967 296 adresses** (~4,3 milliards)
+Un bit vaut 0 ou 1 (2 possibilités). Avec *n* bits, on peut former 2^*n*^ combinaisons.
 
-**Problème :** Épuisement des adresses IPv4 (8 milliards d'humains, des milliards d'objets connectés) → Solution : **IPv6** (340 sextillions d'adresses !)
+| **Calcul** | **Résultat** |
+|------------|--------------|
+| Un octet (8 bits) | 2^8^ = **256 valeurs**, de 0 à 255 |
+| Une adresse IPv4 (32 bits) | 2^32^ = **4 294 967 296 adresses** (environ 4,3 milliards) |
+| Une adresse IPv6 (128 bits) | 2^128^ soit environ 3,4 × 10^38^ adresses (340 sextillions) |
+
+!!! warning "Épuisement des adresses IPv4"
+    Avec 8 milliards d'humains et des dizaines de milliards d'objets connectés, les 4,3 milliards d'adresses IPv4 ne suffisent plus. Solutions : le **NAT** (partage d'une adresse publique) à court terme, **IPv6** à long terme.
 
 ---
 
@@ -879,7 +1347,7 @@ Adresse BROADCAST : 192.168.1.255  (tous les bits hôte à 1)
 Plage utilisable :   192.168.1.1 à 192.168.1.254
 ```
 
-**Nombre d'hôtes utilisables :** 2^8 - 2 = **254 machines**
+**Nombre d'hôtes utilisables :** 2^8^ − 2 = 256 − 2 = **254 machines**
 - `-2` car on retire l'adresse réseau (`.0`) et l'adresse broadcast (`.255`)
 
 ---
@@ -1071,23 +1539,61 @@ Associer chaque élément à sa couche OSI :
 
 ## IX. Questions de Réflexion (Pour aller plus loin)
 
-1. **Pourquoi a-t-on besoin de deux adresses (IP et MAC) ?**
-   - *Piste : IP = logique (changeable, routage), MAC = physique (gravée, local)*
+Réfléchissez à chaque question avant d'ouvrir la réponse.
 
-2. **Que se passe-t-il si deux machines ont la même adresse IP sur un réseau ?**
-   - *Réponse : Conflit d'adresses IP → les deux machines ont des problèmes de connectivité*
+**1. Pourquoi a-t-on besoin de deux adresses (IP et MAC) ?**
 
-3. **Pourquoi le modèle OSI a-t-il 7 couches et pas 3 ou 10 ?**
-   - *Réponse : Compromis entre modularité (séparation des fonctions) et simplicité*
+<details markdown="1">
+<summary>Piste</summary>
 
-4. **Pourquoi UDP est-il utilisé pour la visioconférence alors qu'il n'est pas fiable ?**
-   - *Réponse : Vitesse prioritaire. Mieux vaut perdre quelques images que tout bloquer en attendant retransmission*
+IP = logique (changeable, utilisée pour le routage) ; MAC = physique (gravée dans la carte, valable en local).
 
-5. **Comment fonctionne le NAT pour permettre à 10 machines avec IP privée de partager 1 IP publique ?**
-   - *Piste : Table de correspondance IP:Port interne ↔ IP:Port externe*
+</details>
 
-6. **Pourquoi y a-t-il épuisement des adresses IPv4 mais pas IPv6 ?**
-   - *Réponse : IPv4 = 2^32 (~4 milliards) vs IPv6 = 2^128 (340 sextillions !)*
+**2. Que se passe-t-il si deux machines ont la même adresse IP sur un réseau ?**
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Conflit d'adresses IP : les deux machines ont des problèmes de connectivité.
+
+</details>
+
+**3. Pourquoi le modèle OSI a-t-il 7 couches et pas 3 ou 10 ?**
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Compromis entre modularité (séparation des fonctions) et simplicité.
+
+</details>
+
+**4. Pourquoi UDP est-il utilisé pour la visioconférence alors qu'il n'est pas fiable ?**
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+La vitesse est prioritaire : mieux vaut perdre quelques images que tout bloquer en attendant une retransmission.
+
+</details>
+
+**5. Comment fonctionne le NAT pour permettre à 10 machines avec IP privée de partager 1 IP publique ?**
+
+<details markdown="1">
+<summary>Piste</summary>
+
+Table de correspondance IP:port interne ↔ IP:port externe.
+
+</details>
+
+**6. Pourquoi y a-t-il épuisement des adresses IPv4 mais pas IPv6 ?**
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+IPv4 = 2^32^ (environ 4 milliards) contre IPv6 = 2^128^ (340 sextillions).
+
+</details>
 
 ---
 
