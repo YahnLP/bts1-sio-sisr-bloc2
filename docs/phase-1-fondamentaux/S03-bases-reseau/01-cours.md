@@ -1088,21 +1088,136 @@ Le **modèle TCP/IP** est le modèle **réellement utilisé** sur Internet. Il s
 
 **Adresse IPv4** = Identifiant **unique** d'une machine sur un réseau IP.
 
-**Format :** 4 octets séparés par des points (notation décimale pointée)
+**Format :** 4 nombres séparés par des points (notation décimale pointée). Chaque nombre représente un **octet**, c'est-à-dire un groupe de **8 bits** (8 chiffres binaires).
+
+<figure class="graphe diagramme"><svg viewBox="0 0 740 230" style="max-width:740px" role="img" aria-label="Structure d&#x27;une adresse IPv4 : 4 octets de 8 bits" xmlns="http://www.w3.org/2000/svg">
+<text x="88.0" y="22" text-anchor="middle" class="dg-i">Octet 1</text>
+<rect x="54.0" y="32" width="68" height="34" rx="8" class="dg-box"/>
+<text x="88.0" y="54.0" text-anchor="middle" class="dg-t">192</text>
+<line x1="88.0" y1="66" x2="88.0" y2="92" class="dg-dash"/>
+<rect x="8.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="18.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="28.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="38.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="48.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="58.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="68.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="78.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="88.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="98.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="108.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="118.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="128.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="138.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="148.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="158.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<line x1="8.0" y1="138" x2="8.0" y2="146" class="dg-line"/>
+<line x1="168.0" y1="138" x2="168.0" y2="146" class="dg-line"/>
+<line x1="8.0" y1="146" x2="168.0" y2="146" class="dg-line"/>
+<text x="88.0" y="164" text-anchor="middle" class="dg-s">8 bits</text>
+<text x="182.0" y="120" text-anchor="middle" class="dg-t">.</text>
+<text x="276.0" y="22" text-anchor="middle" class="dg-i">Octet 2</text>
+<rect x="242.0" y="32" width="68" height="34" rx="8" class="dg-box"/>
+<text x="276.0" y="54.0" text-anchor="middle" class="dg-t">168</text>
+<line x1="276.0" y1="66" x2="276.0" y2="92" class="dg-dash"/>
+<rect x="196.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="206.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="216.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="226.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="236.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="246.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="256.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="266.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="276.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="286.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="296.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="306.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="316.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="326.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="336.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="346.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<line x1="196.0" y1="138" x2="196.0" y2="146" class="dg-line"/>
+<line x1="356.0" y1="138" x2="356.0" y2="146" class="dg-line"/>
+<line x1="196.0" y1="146" x2="356.0" y2="146" class="dg-line"/>
+<text x="276.0" y="164" text-anchor="middle" class="dg-s">8 bits</text>
+<text x="370.0" y="120" text-anchor="middle" class="dg-t">.</text>
+<text x="464.0" y="22" text-anchor="middle" class="dg-i">Octet 3</text>
+<rect x="430.0" y="32" width="68" height="34" rx="8" class="dg-box"/>
+<text x="464.0" y="54.0" text-anchor="middle" class="dg-t">1</text>
+<line x1="464.0" y1="66" x2="464.0" y2="92" class="dg-dash"/>
+<rect x="384.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="394.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="404.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="414.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="424.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="434.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="444.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="454.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="464.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="474.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="484.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="494.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="504.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="514.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="524.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="534.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<line x1="384.0" y1="138" x2="384.0" y2="146" class="dg-line"/>
+<line x1="544.0" y1="138" x2="544.0" y2="146" class="dg-line"/>
+<line x1="384.0" y1="146" x2="544.0" y2="146" class="dg-line"/>
+<text x="464.0" y="164" text-anchor="middle" class="dg-s">8 bits</text>
+<text x="558.0" y="120" text-anchor="middle" class="dg-t">.</text>
+<text x="652.0" y="22" text-anchor="middle" class="dg-i">Octet 4</text>
+<rect x="618.0" y="32" width="68" height="34" rx="8" class="dg-box"/>
+<text x="652.0" y="54.0" text-anchor="middle" class="dg-t">10</text>
+<line x1="652.0" y1="66" x2="652.0" y2="92" class="dg-dash"/>
+<rect x="572.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="582.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="592.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="602.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="612.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="622.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="632.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="642.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="652.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="662.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="672.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="682.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<rect x="692.0" y="96" width="20" height="30" class="dg-dark"/>
+<text x="702.0" y="116" text-anchor="middle" class="dg-w">1</text>
+<rect x="712.0" y="96" width="20" height="30" class="dg-soft"/>
+<text x="722.0" y="116" text-anchor="middle" class="dg-s">0</text>
+<line x1="572.0" y1="138" x2="572.0" y2="146" class="dg-line"/>
+<line x1="732.0" y1="138" x2="732.0" y2="146" class="dg-line"/>
+<line x1="572.0" y1="146" x2="732.0" y2="146" class="dg-line"/>
+<text x="652.0" y="164" text-anchor="middle" class="dg-s">8 bits</text>
+<line x1="8.0" y1="184" x2="732.0" y2="184" class="dg-line"/>
+<line x1="8.0" y1="178" x2="8.0" y2="190" class="dg-line"/>
+<line x1="732.0" y1="178" x2="732.0" y2="190" class="dg-line"/>
+<text x="370" y="212" text-anchor="middle" class="dg-t">4 octets = 32 bits = une adresse IPv4</text>
+</svg>
+</figure>
 
 **Exemple :** `192.168.1.10`
 
-**En binaire :**
-```
-192      .  168      .  1        .  10
-11000000 .  10101000 .  00000001 .  00001010
-```
+| **Octet** | **Décimal** | **Binaire** |
+|:---------:|:-----------:|:-----------:|
+| 1 | 192 | `11000000` |
+| 2 | 168 | `10101000` |
+| 3 | 1 | `00000001` |
+| 4 | 10 | `00001010` |
 
-**Valeurs possibles par octet :** 0 à 255 (= 2^8 = 256 valeurs)
+#### Combien d'adresses possibles ?
 
-**Nombre total d'adresses IPv4 :** 2^32 = **4 294 967 296 adresses** (~4,3 milliards)
+Un bit vaut 0 ou 1 (2 possibilités). Avec *n* bits, on peut former 2^*n*^ combinaisons.
 
-**Problème :** Épuisement des adresses IPv4 (8 milliards d'humains, des milliards d'objets connectés) → Solution : **IPv6** (340 sextillions d'adresses !)
+| **Calcul** | **Résultat** |
+|------------|--------------|
+| Un octet (8 bits) | 2^8^ = **256 valeurs**, de 0 à 255 |
+| Une adresse IPv4 (32 bits) | 2^32^ = **4 294 967 296 adresses** (environ 4,3 milliards) |
+| Une adresse IPv6 (128 bits) | 2^128^ soit environ 3,4 × 10^38^ adresses (340 sextillions) |
+
+!!! warning "Épuisement des adresses IPv4"
+    Avec 8 milliards d'humains et des dizaines de milliards d'objets connectés, les 4,3 milliards d'adresses IPv4 ne suffisent plus. Solutions : le **NAT** (partage d'une adresse publique) à court terme, **IPv6** à long terme.
 
 ---
 
@@ -1232,7 +1347,7 @@ Adresse BROADCAST : 192.168.1.255  (tous les bits hôte à 1)
 Plage utilisable :   192.168.1.1 à 192.168.1.254
 ```
 
-**Nombre d'hôtes utilisables :** 2^8 - 2 = **254 machines**
+**Nombre d'hôtes utilisables :** 2^8^ − 2 = 256 − 2 = **254 machines**
 - `-2` car on retire l'adresse réseau (`.0`) et l'adresse broadcast (`.255`)
 
 ---
@@ -1424,23 +1539,61 @@ Associer chaque élément à sa couche OSI :
 
 ## IX. Questions de Réflexion (Pour aller plus loin)
 
-1. **Pourquoi a-t-on besoin de deux adresses (IP et MAC) ?**
-   - *Piste : IP = logique (changeable, routage), MAC = physique (gravée, local)*
+Réfléchissez à chaque question avant d'ouvrir la réponse.
 
-2. **Que se passe-t-il si deux machines ont la même adresse IP sur un réseau ?**
-   - *Réponse : Conflit d'adresses IP → les deux machines ont des problèmes de connectivité*
+**1. Pourquoi a-t-on besoin de deux adresses (IP et MAC) ?**
 
-3. **Pourquoi le modèle OSI a-t-il 7 couches et pas 3 ou 10 ?**
-   - *Réponse : Compromis entre modularité (séparation des fonctions) et simplicité*
+<details markdown="1">
+<summary>Piste</summary>
 
-4. **Pourquoi UDP est-il utilisé pour la visioconférence alors qu'il n'est pas fiable ?**
-   - *Réponse : Vitesse prioritaire. Mieux vaut perdre quelques images que tout bloquer en attendant retransmission*
+IP = logique (changeable, utilisée pour le routage) ; MAC = physique (gravée dans la carte, valable en local).
 
-5. **Comment fonctionne le NAT pour permettre à 10 machines avec IP privée de partager 1 IP publique ?**
-   - *Piste : Table de correspondance IP:Port interne ↔ IP:Port externe*
+</details>
 
-6. **Pourquoi y a-t-il épuisement des adresses IPv4 mais pas IPv6 ?**
-   - *Réponse : IPv4 = 2^32 (~4 milliards) vs IPv6 = 2^128 (340 sextillions !)*
+**2. Que se passe-t-il si deux machines ont la même adresse IP sur un réseau ?**
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Conflit d'adresses IP : les deux machines ont des problèmes de connectivité.
+
+</details>
+
+**3. Pourquoi le modèle OSI a-t-il 7 couches et pas 3 ou 10 ?**
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Compromis entre modularité (séparation des fonctions) et simplicité.
+
+</details>
+
+**4. Pourquoi UDP est-il utilisé pour la visioconférence alors qu'il n'est pas fiable ?**
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+La vitesse est prioritaire : mieux vaut perdre quelques images que tout bloquer en attendant une retransmission.
+
+</details>
+
+**5. Comment fonctionne le NAT pour permettre à 10 machines avec IP privée de partager 1 IP publique ?**
+
+<details markdown="1">
+<summary>Piste</summary>
+
+Table de correspondance IP:port interne ↔ IP:port externe.
+
+</details>
+
+**6. Pourquoi y a-t-il épuisement des adresses IPv4 mais pas IPv6 ?**
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+IPv4 = 2^32^ (environ 4 milliards) contre IPv6 = 2^128^ (340 sextillions).
+
+</details>
 
 ---
 
