@@ -8,6 +8,9 @@
 > **Comment ce TP fonctionne.** Avant de manipuler, tu écris ce que tu **anticipes** (« J'anticipe »). Puis tu testes et tu notes ce que tu **constates**. Tu **comprends** ce que fait chaque commande (« Je comprends »). Un **bilan de compétences** clôt la séance. Les parties de services (Linux, Windows Server) se font sur des **machines virtuelles réelles** ; le simulateur réseau ou Packet Tracer servent aux manipulations d'équipements réseau.
 
 
+> [!NOTE]
+> **Matériel réel ou simulation.** Si le matériel est disponible, fais la section « Variante sur matériel réel » en fin de TP ; sinon travaille en simulation (Packet Tracer ou simulateur réseau) : le choix revient à l'enseignant. Voir [Matériel réel ou simulation](../../ressources/materiel-reel.md).
+
 ## PARTIE A — Routage Inter-VLAN avec Cisco Packet Tracer
 
 ### Topologie à Reproduire
@@ -183,6 +186,19 @@ Remplir la **Fiche de Configuration Réseau** (voir Annexe 1) avec toutes les in
 
 
 ---
+
+## Variante sur matériel réel
+
+**Matériel :** 1 commutateur (SW-CORE), 1 routeur, 3 PC, 1 câble console, câbles Ethernet.
+
+1. Remettre commutateur et routeur à zéro (`erase startup-config`, `delete flash:vlan.dat`, `reload`).
+2. Relever les noms réels des ports et des interfaces (`show interfaces status`, `show ip interface brief`) et adapter les commandes (`Gig0/1`, `G0/0`).
+3. Le lien commutateur à routeur est un **trunk**. Sur certains modèles, `switchport trunk encapsulation dot1q` doit précéder `switchport mode trunk`.
+4. Sur le routeur : `no shutdown` sur l'interface physique, puis une sous-interface par VLAN avec `encapsulation dot1Q <numéro>`. Si une sous-interface ne répond pas, vérifier que son numéro de VLAN correspond à celui du commutateur.
+5. Régler les adresses des PC dans le système, avec la passerelle de chaque VLAN, et autoriser l'ICMP sur le pare-feu Windows.
+6. A5 : tester les ping entre VLAN, puis `show ip route` et `show interfaces trunk`.
+7. A6 : remplacer le schéma Packet Tracer par une photo du montage ou un schéma de câblage.
+8. Remise à zéro en fin de séance.
 
 ## Bilan de la séance
 

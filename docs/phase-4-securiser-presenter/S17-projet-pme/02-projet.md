@@ -15,6 +15,9 @@
 
 ---
 
+> [!NOTE]
+> **Matériel réel ou simulation.** Si le matériel est disponible, fais la phase 2 avec la section 2.5 « Variante sur matériel réel » ; sinon travaille en simulation (Packet Tracer ou simulateur réseau) : le choix revient à l'enseignant. Voir [Matériel réel ou simulation](../../ressources/materiel-reel.md).
+
 ## PHASE 1 — Conception du Plan d'Adressage VLSM
 
 *Durée estimée : 30 min — Support : papier ou draw.io*
@@ -217,6 +220,18 @@ Un **ping** entre VLAN différents, la **passerelle** de chaque VLAN, la **route
 
 
 ---
+
+### 2.5 — Variante sur matériel réel
+
+Si le matériel est disponible, la phase 2 peut être réalisée sur des équipements réels plutôt que dans Packet Tracer : c'est le choix de l'enseignant.
+
+**Matériel :** 1 routeur, 2 commutateurs (un par bâtiment), des PC ou des VM reliées par pont aux ports d'accès, 1 câble console, câbles Ethernet.
+
+1. Remettre chaque équipement à zéro (voir [Matériel réel ou simulation](../../ressources/materiel-reel.md)) et relever les noms réels des ports.
+2. Reprendre les commandes des étapes 2.2 et 2.3 en adaptant les noms de ports. Sur certains commutateurs, `switchport trunk encapsulation dot1q` précède `switchport mode trunk`.
+3. Les interfaces du routeur sont désactivées par défaut : `no shutdown` sur l'interface physique.
+4. Isoler le montage du réseau de l'établissement : il contient un serveur DHCP.
+5. Garder des preuves : photo du montage, schéma, `show running-config` de chaque équipement (sans mot de passe réel), tests inter-VLAN réussis. Une réalisation sur matériel réel est plus facile à défendre à l'épreuve E6 qu'une simulation (voir [Outils et simulateurs](../../ressources/outils.md)).
 
 ## PHASE 3 — Déploiement Windows Server : AD DS + OUs + GPO
 

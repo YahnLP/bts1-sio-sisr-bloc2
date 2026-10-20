@@ -6,7 +6,7 @@
 | **Séance** | S09 (séance 9 sur 19) – Phase 2 |
 | **Durée** | 4 heures |
 | **Prérequis** | S06 à S08. |
-| **Matériel** | Simulateur réseau ou Packet Tracer ; VM Debian (DHCP, DNS) |
+| **Matériel** | Simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) ; VM Debian (DHCP, DNS) |
 | **Compétences travaillées** | B2.1 · B2.2 · B2.3 (voir [le référentiel](../../ressources/referentiel.md)) |
 
 > [!NOTE]
