@@ -26,7 +26,7 @@ Les mots de passe sont ceux du TP (labo).
 
 ## Vérification de `show running-config`
 
-| Ligne | Remarque |
+| ​Ligne | Remarque |
 |---|---|
 | `enable secret 5 $1$...` | Haché ; selon la version de Packet Tracer, le type peut différer |
 | `password 7 ...` sur con et vty | Chiffrement réversible faible, d'où l'intérêt de `enable secret` |
@@ -35,15 +35,15 @@ Les mots de passe sont ceux du TP (labo).
 
 ## Questions
 
-- **Modes** : le mode Privileged EXEC offre `configure terminal`, `show running-config`, `copy`, etc. ; le mode User n'a que des commandes de consultation limitées.
+- **Modes** : le mode ​Privileged EXEC offre `configure terminal`, `show running-config`, `copy`, etc. ; le mode User n'a que des commandes de consultation limitées.
 - **`no ip domain-lookup`** : évite l'attente DNS après une faute de frappe.
 - **`enable password` / `enable secret`** : clair (ou faible) contre haché ; utiliser `enable secret`.
-- **Table MAC** : vide au départ, puis 2 entrées après le ping Alice → Bob (apprentissage par adresse source) ; Clara n'a rien émis donc n'apparaît pas ; type **DYNAMIC** ; vieillissement par défaut de **300 s**.
+- **Table MAC** : vide au départ, puis 2 entrées après le ping ​Alice → Bob (apprentissage par adresse source) ; Clara n'a rien émis donc n'apparaît pas ; type **DYNAMIC** ; vieillissement par défaut de **300 s**.
 - **`running-config` / `startup-config`** : mémoire vive contre mémoire non volatile ; sans `copy running-config startup-config`, la configuration est perdue au redémarrage.
 
 ## Barème indicatif (20 points)
 
-| Critère | Points |
+| ​Critère | Points |
 |---|---|
 | Topologie et IP des PC | 3 |
 | Configuration complète (hostname, banner, secrets, lignes) | 8 |
