@@ -32,6 +32,46 @@ Le premier octet d'une adresse IPv4 détermine sa **classe**.
 
 **À retenir :** Classe A = 1–126, Classe B = 128–191, Classe C = 192–223
 
+> [!NOTE]
+> Les classes A, B et C servent à **adresser des machines** (une adresse = un équipement). Les classes D et E ont un rôle à part, expliqué ci-dessous. Précision : le réseau `127.0.0.0/8` (dont `127.0.0.1`, la boucle locale) est réservé aux tests de la machine elle-même ; c'est pourquoi la classe A s'arrête à 126.
+
+#### Classe D : parler à un groupe (le multicast)
+
+Il y a trois façons d'envoyer un message sur un réseau :
+
+| **Mode** | **À qui ?** | **Image** | **Exemple** |
+|----------|-------------|-----------|-------------|
+| **Unicast** | Un seul destinataire | Un appel téléphonique | Votre PC demande une page à un serveur web |
+| **Broadcast** | Tout le monde sur le réseau local | Une annonce au haut-parleur | Un PC qui cherche un serveur DHCP |
+| **Multicast** | Un **groupe** d'abonnés | Une chaîne de radio ou de télévision | Un flux vidéo suivi par 20 postes |
+
+Une adresse de classe D (de `224.0.0.0` à `239.255.255.255`) **n'identifie pas une machine** : elle désigne un **groupe**. Les équipements qui veulent recevoir le message **s'abonnent** à ce groupe ; les autres l'ignorent. L'émetteur n'envoie le flux **qu'une seule fois**, même s'il y a 50 abonnés (en unicast, il l'enverrait 50 fois).
+
+**À quoi ça sert concrètement :**
+
+| **Adresse** | **Utilisation** |
+|-------------|-----------------|
+| `224.0.0.1` | Tous les équipements du réseau local |
+| `224.0.0.2` | Tous les routeurs du réseau local |
+| `224.0.0.5` et `224.0.0.6` | Les routeurs qui échangent leurs routes avec **OSPF** |
+| `224.0.0.9` | Les routeurs qui échangent leurs routes avec **RIP v2** |
+| `224.0.0.251` | Découverte de services sur le réseau local (imprimante, Chromecast, mDNS) |
+| `239.0.0.0` à `239.255.255.255` | Plage **à usage interne** d'une organisation (comme les adresses privées) : télévision sur IP, visioconférence, déploiement d'images système vers plusieurs postes en même temps |
+
+**À retenir :** une adresse de classe D est **toujours une adresse de destination**, jamais l'adresse d'une carte réseau ni l'adresse source d'un paquet. Elle n'a donc ni masque ni notion de « réseau de machines ».
+
+#### Classe E : une réserve jamais utilisée
+
+La classe E (de `240.0.0.0` à `255.255.255.255`) a été **mise de côté pour l'expérimentation** et les besoins futurs lors de la création d'IPv4. En pratique, elle n'a **jamais été attribuée** :
+- elle ne s'utilise pas pour configurer un poste ni un serveur ;
+- les routeurs d'Internet ne la transmettent pas ;
+- une seule adresse de cette plage a un usage courant : `255.255.255.255`, l'adresse de **broadcast limité** (« à tout le réseau local »), que l'on retrouve dans le DHCP Discover.
+
+Quand on a manqué d'adresses IPv4, des propositions ont été faites pour récupérer cette plage, mais de nombreux systèmes la refusent. La solution retenue est **IPv6** (S14).
+
+> [!TIP]
+> Ces « classes » sont l'ancienne façon de découper l'espace d'adresses. Depuis les années 1990, on raisonne en **notation CIDR** (`/24`, `/16`...) : la classe permet surtout de comprendre l'histoire et les masques « par défaut », alors que D et E, elles, existent toujours dans les équipements.
+
 ---
 
 ### B. Adresses Privées (RFC 1918)
