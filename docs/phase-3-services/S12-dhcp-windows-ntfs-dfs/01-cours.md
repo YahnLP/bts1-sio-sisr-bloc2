@@ -36,22 +36,33 @@ Dans une entreprise, chaque équipement réseau (PC, imprimante, téléphone IP�
 
 Quand un client démarrage sans adresse IP, il engage un dialogue en **4 étapes** avec le serveur DHCP. On retient ces étapes avec le mot **DORA** :
 
-```
-CLIENT (sans IP)                              SERVEUR DHCP
-     │                                              │
-     │  1. DISCOVER  ─────────────────────────────► │
-     │  (Broadcast - "Y a-t-il un serveur DHCP ?")  │
-     │                                              │
-     │  ◄──────────────────────────── 2. OFFER      │
-     │  (Unicast - "Je te propose 192.168.1.50")    │
-     │                                              │
-     │  3. REQUEST  ──────────────────────────────► │
-     │  (Broadcast - "J'accepte 192.168.1.50 !")    │
-     │                                              │
-     │  ◄───────────────────────── 4. ACKNOWLEDGE   │
-     │  (Unicast - "C'est confirmé. Bail : 8 jours")│
-     │                                              │
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 640 308" style="max-width:640px" role="img" aria-label="Échange DHCP en quatre messages : Discover, Offer, Request, Acknowledge" xmlns="http://www.w3.org/2000/svg">
+<rect x="70.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="155.0" y="30.0" text-anchor="middle" class="dg-w">Client DHCP (PC)</text>
+<line x1="155.0" y1="42" x2="155.0" y2="300" class="dg-dash"/>
+<rect x="400.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="485.0" y="30.0" text-anchor="middle" class="dg-w">Serveur DHCP</text>
+<line x1="485.0" y1="42" x2="485.0" y2="300" class="dg-dash"/>
+<text x="320.0" y="64" text-anchor="middle" class="dg-t">1. DISCOVER (broadcast)</text>
+<line x1="155.0" y1="72" x2="476.0" y2="72.0" class="dg-line"/>
+<polygon points="485.0,72 476.0,67.0 476.0,77.0" class="dg-ah"/>
+<text x="320.0" y="88" text-anchor="middle" class="dg-i">« Y a-t-il un serveur DHCP sur le réseau ? »</text>
+<text x="320.0" y="114" text-anchor="middle" class="dg-t">2. OFFER</text>
+<line x1="485.0" y1="122" x2="164.0" y2="122.0" class="dg-line"/>
+<polygon points="155.0,122 164.0,127.0 164.0,117.0" class="dg-ah"/>
+<text x="320.0" y="138" text-anchor="middle" class="dg-i">« Je te propose 192.168.1.50 pour 8 heures. »</text>
+<text x="320.0" y="164" text-anchor="middle" class="dg-t">3. REQUEST (broadcast)</text>
+<line x1="155.0" y1="172" x2="476.0" y2="172.0" class="dg-line"/>
+<polygon points="485.0,172 476.0,167.0 476.0,177.0" class="dg-ah"/>
+<text x="320.0" y="188" text-anchor="middle" class="dg-i">« J&#x27;accepte l&#x27;offre de 192.168.1.50. »</text>
+<text x="320.0" y="214" text-anchor="middle" class="dg-t">4. ACK</text>
+<line x1="485.0" y1="222" x2="164.0" y2="222.0" class="dg-line"/>
+<polygon points="155.0,222 164.0,227.0 164.0,217.0" class="dg-ah"/>
+<text x="320.0" y="238" text-anchor="middle" class="dg-i">« Confirmé : l&#x27;adresse est à toi jusqu&#x27;à l&#x27;échéance du bail. »</text>
+<rect x="28.8" y="256" width="252.4" height="26" rx="6" class="dg-soft"/>
+<text x="155.0" y="273" text-anchor="middle" class="dg-s">Le client configure son adresse IP</text>
+</svg>
+</figure>
 
 *Légende : Schéma représentant les 4 échanges du protocole DHCP entre un client (à gauche) et un serveur (à droite). Les flèches pleines représentent des messages Broadcast (envoyés à toute la plage réseau). Les flèches en pointillés représentent des messages Unicast (adressés directement).*
 
@@ -70,19 +81,25 @@ CLIENT (sans IP)                              SERVEUR DHCP
 
 Une **étendue** est la plage d'adresses IP qu'un serveur DHCP peut distribuer sur un réseau donné. C'est le "stock" d'adresses disponibles.
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│              ÉTENDUE DHCP — Réseau 192.168.1.0/24                │
-│                                                                  │
-│  Plage totale : 192.168.1.1 → 192.168.1.254                      │
-│                                                                  │
-│  [EXCLUES] [RÉSERVÉES] [DISPONIBLES POUR DISTRIBUTION]           │
-│  .1 à .9    .50 à .60   .10 à .49  et  .61 à .200               │
-│  (Routeur,  (Serveurs  (Distribuées aux clients à la demande)    │
-│   Serveurs)  par MAC)                                            │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 160" style="max-width:760px" role="img" aria-label="Étendue 192.168.1.0/24 : plage exclue, réservations et plage distribuable" xmlns="http://www.w3.org/2000/svg">
+<text x="380" y="22" text-anchor="middle" class="dg-t">Étendue DHCP - réseau 192.168.1.0/24 (plage .1 à .254)</text>
+<rect x="10" y="40" width="170" height="70" rx="8" class="dg-bad"/>
+<text x="95.0" y="62.0" text-anchor="middle" class="dg-t">Exclues</text>
+<text x="95.0" y="80.0" text-anchor="middle" class="dg-s">.1 à .9</text>
+<text x="95.0" y="98.0" text-anchor="middle" class="dg-s">routeur, serveurs</text>
+<rect x="190" y="40" width="150" height="70" rx="8" class="dg-ok"/>
+<text x="265.0" y="71.0" text-anchor="middle" class="dg-t">Distribuables</text>
+<text x="265.0" y="89.0" text-anchor="middle" class="dg-s">.10 à .49</text>
+<rect x="350" y="40" width="170" height="70" rx="8" class="dg-warn"/>
+<text x="435.0" y="71.0" text-anchor="middle" class="dg-t">Réservées (par MAC)</text>
+<text x="435.0" y="89.0" text-anchor="middle" class="dg-s">.50 à .60</text>
+<rect x="530" y="40" width="220" height="70" rx="8" class="dg-ok"/>
+<text x="640.0" y="62.0" text-anchor="middle" class="dg-t">Distribuables</text>
+<text x="640.0" y="80.0" text-anchor="middle" class="dg-s">.61 à .200</text>
+<text x="640.0" y="98.0" text-anchor="middle" class="dg-s">clients, à la demande</text>
+<text x="380" y="140" text-anchor="middle" class="dg-i">adresses fixes en dehors de la distribution automatique ; réservations liées à l&#x27;adresse MAC</text>
+</svg>
+</figure>
 
 *Légende : Schéma d'une étendue DHCP montrant la répartition entre les adresses exclues (réservées aux équipements fixes : serveurs, routeurs), les réservations (adresses attribuées à des machines spécifiques via leur adresse MAC) et la plage distribuable aux clients.*
 
@@ -136,23 +153,35 @@ L'**agent relais DHCP** (RFC 3046) est un composant configuré sur un routeur ou
 3. **Les transmettre** au serveur DHCP centralisé (dans un autre sous-réseau)
 4. **Relayer** la réponse du serveur au client
 
-```
-   Sous-réseau A (192.168.1.0/24)         Sous-réseau B (192.168.2.0/24)
-   ┌────────────────────────┐              ┌────────────────────────────┐
-   │  Client A              │              │  Client B                  │
-   │  (sans IP)             │              │  (sans IP)                 │
-   │       │                │    ROUTEUR   │      │                     │
-   │  Broadcast DISCOVER ──►│◄────────────►│ Agent Relais ─────────►   │
-   │                        │              │  (Unicast vers DHCP Srv)   │
-   └────────────────────────┘              └────────────────────────────┘
-                                                          │
-                                                          ▼
-                                          ┌──────────────────────────┐
-                                          │   SERVEUR DHCP CENTRALISÉ│
-                                          │   (192.168.1.10)         │
-                                          │   Gère TOUTES les plages │
-                                          └──────────────────────────┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 320" style="max-width:780px" role="img" aria-label="Agent relais : un seul serveur DHCP central sert deux sous-réseaux" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="10" width="270" height="130" rx="10" class="dg-soft"/>
+<text x="145" y="30" text-anchor="middle" class="dg-t">Sous-réseau A - 192.168.1.0/24</text>
+<rect x="60" y="56" width="170" height="50" rx="8" class="dg-box"/>
+<text x="145.0" y="77.0" text-anchor="middle" class="dg-t">Client A</text>
+<text x="145.0" y="95.0" text-anchor="middle" class="dg-s">sans IP</text>
+<rect x="500" y="10" width="270" height="130" rx="10" class="dg-soft"/>
+<text x="635" y="30" text-anchor="middle" class="dg-t">Sous-réseau B - 192.168.2.0/24</text>
+<rect x="550" y="56" width="170" height="50" rx="8" class="dg-box"/>
+<text x="635.0" y="77.0" text-anchor="middle" class="dg-t">Client B</text>
+<text x="635.0" y="95.0" text-anchor="middle" class="dg-s">sans IP</text>
+<rect x="330" y="52" width="120" height="60" rx="8" class="dg-dark"/>
+<text x="390.0" y="78.0" text-anchor="middle" class="dg-w">Routeur</text>
+<text x="390.0" y="96.0" text-anchor="middle" class="dg-s">agent relais</text>
+<line x1="230" y1="81" x2="321.0" y2="81.0" class="dg-line"/>
+<polygon points="330,81 321.0,76.0 321.0,86.0" class="dg-ah"/>
+<text x="280.0" y="75.0" text-anchor="middle" class="dg-s">broadcast</text>
+<line x1="550" y1="81" x2="459.0" y2="81.0" class="dg-line"/>
+<polygon points="450,81 459.0,86.0 459.0,76.0" class="dg-ah"/>
+<text x="500" y="70" text-anchor="middle" class="dg-s">DISCOVER</text>
+<rect x="280" y="220" width="220" height="70" rx="8" class="dg-ok"/>
+<text x="390.0" y="242.0" text-anchor="middle" class="dg-t">Serveur DHCP central</text>
+<text x="390.0" y="260.0" text-anchor="middle" class="dg-s">192.168.1.10</text>
+<text x="390.0" y="278.0" text-anchor="middle" class="dg-s">gère toutes les plages</text>
+<line x1="390" y1="112" x2="390.0" y2="211.0" class="dg-line"/>
+<polygon points="390,220 395.0,211.0 385.0,211.0" class="dg-ah"/>
+<text x="470" y="170" text-anchor="middle" class="dg-i">unicast relayé</text>
+</svg>
+</figure>
 
 *Légende : Schéma montrant comment l'agent relais DHCP permet à un seul serveur DHCP centralisé (en bas) de servir deux sous-réseaux distincts séparés par un routeur. Sans l'agent relais, le broadcast du Client B ne dépasserait jamais la frontière du sous-réseau B.*
 
@@ -169,27 +198,28 @@ Quand un utilisateur accède à un dossier partagé sur un serveur Windows, **de
 1. **Les droits de partage** (Share Permissions) : contrôlent l'accès **via le réseau** uniquement
 2. **Les droits NTFS** : contrôlent l'accès **au niveau du système de fichiers**, que l'on accède au dossier via le réseau ou localement
 
-```
-        UTILISATEUR RÉSEAU
-               │
-               ▼
-   ┌─────────────────────────┐
-   │   DROITS DE PARTAGE     │  ◄── Premier filtre (accès réseau)
-   │  (Contrôle Total /      │
-   │   Modifier / Lecture)   │
-   └────────────┬────────────┘
-                │  Si l'accès est accordé, le 2e filtre s'applique
-                ▼
-   ┌─────────────────────────┐
-   │     DROITS NTFS         │  ◄── Deuxième filtre (système de fichiers)
-   │  (Contrôle Total /      │
-   │   Modifier / Lecture /  │
-   │   Écriture / Exécuter…) │
-   └────────────┬────────────┘
-                │
-                ▼
-      ACCÈS EFFECTIF = Le plus restrictif des deux
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 560 300" style="max-width:560px" role="img" aria-label="Deux filtres successifs : droits de partage puis droits NTFS" xmlns="http://www.w3.org/2000/svg">
+<rect x="160" y="8" width="240" height="40" rx="8" class="dg-dark"/>
+<text x="280.0" y="33.0" text-anchor="middle" class="dg-w">Utilisateur réseau</text>
+<line x1="280" y1="48" x2="280.0" y2="67.0" class="dg-line"/>
+<polygon points="280,76 285.0,67.0 275.0,67.0" class="dg-ah"/>
+<rect x="130" y="76" width="300" height="66" rx="8" class="dg-box"/>
+<text x="280.0" y="96.0" text-anchor="middle" class="dg-t">Droits de partage</text>
+<text x="280.0" y="114.0" text-anchor="middle" class="dg-s">Contrôle total / Modifier / Lecture</text>
+<text x="280.0" y="132.0" text-anchor="middle" class="dg-s">premier filtre : accès réseau</text>
+<line x1="280" y1="142" x2="280.0" y2="161.0" class="dg-line"/>
+<polygon points="280,170 285.0,161.0 275.0,161.0" class="dg-ah"/>
+<text x="300" y="160" text-anchor="start" class="dg-i">si accordé</text>
+<rect x="130" y="170" width="300" height="66" rx="8" class="dg-box"/>
+<text x="280.0" y="190.0" text-anchor="middle" class="dg-t">Droits NTFS</text>
+<text x="280.0" y="208.0" text-anchor="middle" class="dg-s">Contrôle total / Modifier / Lecture / Écriture...</text>
+<text x="280.0" y="226.0" text-anchor="middle" class="dg-s">deuxième filtre : système de fichiers</text>
+<line x1="280" y1="236" x2="280.0" y2="249.0" class="dg-line"/>
+<polygon points="280,258 285.0,249.0 275.0,249.0" class="dg-ah"/>
+<rect x="130" y="258" width="300" height="34" rx="8" class="dg-warn"/>
+<text x="280.0" y="280.0" text-anchor="middle" class="dg-t">Accès effectif : le plus restrictif des deux</text>
+</svg>
+</figure>
 
 *Légende : Schéma illustrant les deux couches de sécurité appliquées lors d'un accès réseau à un dossier partagé Windows. L'accès effectif final est toujours le plus restrictif entre le droit de partage et le droit NTFS accordés.*
 
@@ -277,14 +307,44 @@ Un jour, vous migrez les fichiers vers un nouveau serveur plus performant : `\\S
 
 Avec DFS, les utilisateurs accèdent aux fichiers via un **espace de noms** (namespace) — un chemin "logique" qui ne change jamais — plutôt que directement via le chemin physique du serveur.
 
-```
-   UTILISATEURS                    ESPACE DE NOMS DFS
-                                  (chemin logique stable)
-   \\domaine\partages\RH    ──►   \\domaine\partages\      ──►  \\SERVEUR-FS01\RH
-   \\domaine\partages\Compta ──►  (Serveur DFS = point    ──►  \\SERVEUR-FS01\Compta
-   \\domaine\partages\IT     ──►   d'entrée unique)       ──►  \\SERVEUR-FS02\IT
-                                                          ──►  \\NAS-01\Backups
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 230" style="max-width:780px" role="img" aria-label="Espace de noms DFS : un chemin logique stable pointe vers des dossiers physiques" xmlns="http://www.w3.org/2000/svg">
+<text x="110" y="22" text-anchor="middle" class="dg-t">Utilisateurs</text>
+<text x="390" y="22" text-anchor="middle" class="dg-t">Espace de noms DFS (chemin logique stable)</text>
+<text x="660" y="22" text-anchor="middle" class="dg-t">Dossiers physiques</text>
+<rect x="280" y="40" width="220" height="170" rx="8" class="dg-ok"/>
+<text x="390.0" y="112.0" text-anchor="middle" class="dg-t">\\domaine\partages\</text>
+<text x="390.0" y="130.0" text-anchor="middle" class="dg-s">serveur DFS</text>
+<text x="390.0" y="148.0" text-anchor="middle" class="dg-s">point d&#x27;entrée unique</text>
+<rect x="10" y="44" width="200" height="34" rx="8" class="dg-box"/>
+<text x="110.0" y="66.0" text-anchor="middle" class="dg-t">\\domaine\partages\RH</text>
+<line x1="210" y1="61" x2="271.0" y2="61.0" class="dg-line"/>
+<polygon points="280,61 271.0,56.0 271.0,66.0" class="dg-ah"/>
+<rect x="560" y="44" width="210" height="34" rx="8" class="dg-soft"/>
+<text x="665.0" y="66.0" text-anchor="middle" class="dg-t">\\SERVEUR-FS01\RH</text>
+<line x1="500" y1="61" x2="551.0" y2="61.0" class="dg-line"/>
+<polygon points="560,61 551.0,56.0 551.0,66.0" class="dg-ah"/>
+<rect x="10" y="86" width="200" height="34" rx="8" class="dg-box"/>
+<text x="110.0" y="108.0" text-anchor="middle" class="dg-t">\\domaine\partages\Compta</text>
+<line x1="210" y1="103" x2="271.0" y2="103.0" class="dg-line"/>
+<polygon points="280,103 271.0,98.0 271.0,108.0" class="dg-ah"/>
+<rect x="560" y="86" width="210" height="34" rx="8" class="dg-soft"/>
+<text x="665.0" y="108.0" text-anchor="middle" class="dg-t">\\SERVEUR-FS01\Compta</text>
+<line x1="500" y1="103" x2="551.0" y2="103.0" class="dg-line"/>
+<polygon points="560,103 551.0,98.0 551.0,108.0" class="dg-ah"/>
+<rect x="10" y="128" width="200" height="34" rx="8" class="dg-box"/>
+<text x="110.0" y="150.0" text-anchor="middle" class="dg-t">\\domaine\partages\IT</text>
+<line x1="210" y1="145" x2="271.0" y2="145.0" class="dg-line"/>
+<polygon points="280,145 271.0,140.0 271.0,150.0" class="dg-ah"/>
+<rect x="560" y="128" width="210" height="34" rx="8" class="dg-soft"/>
+<text x="665.0" y="150.0" text-anchor="middle" class="dg-t">\\SERVEUR-FS02\IT</text>
+<line x1="500" y1="145" x2="551.0" y2="145.0" class="dg-line"/>
+<polygon points="560,145 551.0,140.0 551.0,150.0" class="dg-ah"/>
+<rect x="560" y="170" width="210" height="34" rx="8" class="dg-soft"/>
+<text x="665.0" y="192.0" text-anchor="middle" class="dg-t">\\NAS-01\Backups</text>
+<line x1="500" y1="187" x2="551.0" y2="187.0" class="dg-line"/>
+<polygon points="560,187 551.0,182.0 551.0,192.0" class="dg-ah"/>
+</svg>
+</figure>
 
 *Légende : Schéma montrant le fonctionnement de DFS Namespaces. À gauche, les utilisateurs accèdent à un chemin logique unique (l'espace de noms DFS). À droite, ce chemin pointe vers des serveurs et dossiers physiques réels, qui peuvent changer sans que le chemin utilisateur soit impacté.*
 

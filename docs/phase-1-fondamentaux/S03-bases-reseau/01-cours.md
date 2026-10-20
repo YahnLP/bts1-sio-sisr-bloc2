@@ -378,35 +378,56 @@ Plutôt que d'avoir un seul gros programme gérant tout (impossible à maintenir
 
 Quand Alice envoie un message à Bob :
 
-```
-┌─────────────────────────────────────────────────────────┐
-│ Alice (Émetteur)                                        │
-├─────────────────────────────────────────────────────────┤
-│ Couche 7 - Application : "Bonjour Bob"                  │
-│ Couche 6 - Présentation : Chiffrement + Encodage        │
-│ Couche 5 - Session : Ouverture session                  │
-│ Couche 4 - Transport : Découpage en segments TCP        │
-│   → En-tête TCP ajouté (ports source/dest)             │
-│ Couche 3 - Réseau : En-tête IP ajouté (IP src/dest)    │
-│   → Paquet IP créé                                      │
-│ Couche 2 - Liaison : En-tête Ethernet ajouté (MAC)      │
-│   → Trame Ethernet créée                                │
-│ Couche 1 - Physique : Conversion en bits (01010...)     │
-│   → Transmission sur le câble                           │
-└─────────────────────────────────────────────────────────┘
-           ↓ (Câble RJ45 ou Wi-Fi)
-┌─────────────────────────────────────────────────────────┐
-│ Bob (Récepteur) - Désencapsulation                      │
-├─────────────────────────────────────────────────────────┤
-│ Couche 1 - Physique : Réception des bits               │
-│ Couche 2 - Liaison : Lecture MAC, retrait en-tête       │
-│ Couche 3 - Réseau : Lecture IP, retrait en-tête         │
-│ Couche 4 - Transport : Réassemblage segments, ACK       │
-│ Couche 5 - Session : Gestion session                    │
-│ Couche 6 - Présentation : Déchiffrement, décodage       │
-│ Couche 7 - Application : Affichage "Bonjour Bob"        │
-└─────────────────────────────────────────────────────────┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 420" style="max-width:760px" role="img" aria-label="Encapsulation chez Alice et désencapsulation chez Bob selon les sept couches" xmlns="http://www.w3.org/2000/svg">
+<text x="190" y="22" text-anchor="middle" class="dg-t">Alice (émetteur)</text>
+<text x="570" y="22" text-anchor="middle" class="dg-t">Bob (récepteur)</text>
+<rect x="10" y="36" width="340" height="42" rx="8" class="dg-box"/>
+<text x="180.0" y="53.0" text-anchor="middle" class="dg-t">7 Application</text>
+<text x="180.0" y="71.0" text-anchor="middle" class="dg-s">&quot;Bonjour Bob&quot;</text>
+<rect x="410" y="36" width="340" height="42" rx="8" class="dg-box"/>
+<text x="580.0" y="53.0" text-anchor="middle" class="dg-t">7 Application</text>
+<text x="580.0" y="71.0" text-anchor="middle" class="dg-s">affichage &quot;Bonjour Bob&quot;</text>
+<rect x="10" y="86" width="340" height="42" rx="8" class="dg-box"/>
+<text x="180.0" y="103.0" text-anchor="middle" class="dg-t">6 Présentation</text>
+<text x="180.0" y="121.0" text-anchor="middle" class="dg-s">chiffrement, encodage</text>
+<rect x="410" y="86" width="340" height="42" rx="8" class="dg-box"/>
+<text x="580.0" y="103.0" text-anchor="middle" class="dg-t">6 Présentation</text>
+<text x="580.0" y="121.0" text-anchor="middle" class="dg-s">déchiffrement, décodage</text>
+<rect x="10" y="136" width="340" height="42" rx="8" class="dg-box"/>
+<text x="180.0" y="153.0" text-anchor="middle" class="dg-t">5 Session</text>
+<text x="180.0" y="171.0" text-anchor="middle" class="dg-s">ouverture de session</text>
+<rect x="410" y="136" width="340" height="42" rx="8" class="dg-box"/>
+<text x="580.0" y="153.0" text-anchor="middle" class="dg-t">5 Session</text>
+<text x="580.0" y="171.0" text-anchor="middle" class="dg-s">gestion de session</text>
+<rect x="10" y="186" width="340" height="42" rx="8" class="dg-ok"/>
+<text x="180.0" y="203.0" text-anchor="middle" class="dg-t">4 Transport</text>
+<text x="180.0" y="221.0" text-anchor="middle" class="dg-s">segments TCP, en-tête TCP (ports)</text>
+<rect x="410" y="186" width="340" height="42" rx="8" class="dg-ok"/>
+<text x="580.0" y="203.0" text-anchor="middle" class="dg-t">4 Transport</text>
+<text x="580.0" y="221.0" text-anchor="middle" class="dg-s">réassemblage, ACK</text>
+<rect x="10" y="236" width="340" height="42" rx="8" class="dg-ok"/>
+<text x="180.0" y="253.0" text-anchor="middle" class="dg-t">3 Réseau</text>
+<text x="180.0" y="271.0" text-anchor="middle" class="dg-s">paquet IP, en-tête IP (adresses)</text>
+<rect x="410" y="236" width="340" height="42" rx="8" class="dg-ok"/>
+<text x="580.0" y="253.0" text-anchor="middle" class="dg-t">3 Réseau</text>
+<text x="580.0" y="271.0" text-anchor="middle" class="dg-s">lecture IP, retrait en-tête</text>
+<rect x="10" y="286" width="340" height="42" rx="8" class="dg-ok"/>
+<text x="180.0" y="303.0" text-anchor="middle" class="dg-t">2 Liaison</text>
+<text x="180.0" y="321.0" text-anchor="middle" class="dg-s">trame Ethernet, en-tête MAC</text>
+<rect x="410" y="286" width="340" height="42" rx="8" class="dg-ok"/>
+<text x="580.0" y="303.0" text-anchor="middle" class="dg-t">2 Liaison</text>
+<text x="580.0" y="321.0" text-anchor="middle" class="dg-s">lecture MAC, retrait en-tête</text>
+<rect x="10" y="336" width="340" height="42" rx="8" class="dg-warn"/>
+<text x="180.0" y="353.0" text-anchor="middle" class="dg-t">1 Physique</text>
+<text x="180.0" y="371.0" text-anchor="middle" class="dg-s">bits sur le câble ou le Wi-Fi</text>
+<rect x="410" y="336" width="340" height="42" rx="8" class="dg-warn"/>
+<text x="580.0" y="353.0" text-anchor="middle" class="dg-t">1 Physique</text>
+<text x="580.0" y="371.0" text-anchor="middle" class="dg-s">réception des bits</text>
+<text x="380" y="392" text-anchor="middle" class="dg-i">câble RJ45 ou Wi-Fi</text>
+<line x1="350" y1="327" x2="401.0" y2="327.0" class="dg-line"/>
+<polygon points="410,327 401.0,322.0 401.0,332.0" class="dg-ah"/>
+</svg>
+</figure>
 
  **Analogie Poupées Russes :** Chaque couche ajoute une "enveloppe" (en-tête). À l'arrivée, on retire les enveloppes une par une jusqu'au message original.
 

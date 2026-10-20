@@ -140,21 +140,46 @@ PC1 (192.168.1.10 - MAC AA:BB:11) veut envoyer un paquet à PC2 (192.168.1.20)
 
 **Schéma ARP :**
 
-```
-PC1                       SWITCH                      PC2     PC3     PC4
- │                          │                          │       │       │
- │ ARP Request (broadcast)  │                          │       │       │
- │─────────────────────────>│                          │       │       │
- │                          │────────ARP Request──────>│       │       │
- │                          │────────ARP Request──────────────>│       │
- │                          │────────ARP Request──────────────────────>│
- │                          │                          │       │       │
- │                          │<────ARP Reply (unicast)──│       │       │
- │<── ARP Reply ────────────│                          │       │       │
- │                          │  (PC3 et PC4 ignorent)  │       │       │
- │                                                     │
- Table ARP PC1 mise à jour : 192.168.1.20 → CC:DD:22
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 350" style="max-width:780px" role="img" aria-label="Résolution ARP : requête diffusée, réponse unicast de PC2" xmlns="http://www.w3.org/2000/svg">
+<rect x="40.0" y="8" width="100" height="34" rx="8" class="dg-dark"/>
+<text x="90.0" y="30.0" text-anchor="middle" class="dg-w">PC1</text>
+<line x1="90.0" y1="42" x2="90.0" y2="342" class="dg-dash"/>
+<rect x="190.0" y="8" width="100" height="34" rx="8" class="dg-dark"/>
+<text x="240.0" y="30.0" text-anchor="middle" class="dg-w">Switch</text>
+<line x1="240.0" y1="42" x2="240.0" y2="342" class="dg-dash"/>
+<rect x="340.0" y="8" width="100" height="34" rx="8" class="dg-dark"/>
+<text x="390.0" y="30.0" text-anchor="middle" class="dg-w">PC2</text>
+<line x1="390.0" y1="42" x2="390.0" y2="342" class="dg-dash"/>
+<rect x="490.0" y="8" width="100" height="34" rx="8" class="dg-dark"/>
+<text x="540.0" y="30.0" text-anchor="middle" class="dg-w">PC3</text>
+<line x1="540.0" y1="42" x2="540.0" y2="342" class="dg-dash"/>
+<rect x="640.0" y="8" width="100" height="34" rx="8" class="dg-dark"/>
+<text x="690.0" y="30.0" text-anchor="middle" class="dg-w">PC4</text>
+<line x1="690.0" y1="42" x2="690.0" y2="342" class="dg-dash"/>
+<text x="165.0" y="64" text-anchor="middle" class="dg-t">ARP Request (broadcast)</text>
+<line x1="90.0" y1="72" x2="231.0" y2="72.0" class="dg-line"/>
+<polygon points="240.0,72 231.0,67.0 231.0,77.0" class="dg-ah"/>
+<text x="315.0" y="98" text-anchor="middle" class="dg-t">ARP Request</text>
+<line x1="240.0" y1="106" x2="381.0" y2="106.0" class="dg-line"/>
+<polygon points="390.0,106 381.0,101.0 381.0,111.0" class="dg-ah"/>
+<text x="390.0" y="132" text-anchor="middle" class="dg-t">ARP Request</text>
+<line x1="240.0" y1="140" x2="531.0" y2="140.0" class="dg-line"/>
+<polygon points="540.0,140 531.0,135.0 531.0,145.0" class="dg-ah"/>
+<text x="465.0" y="166" text-anchor="middle" class="dg-t">ARP Request</text>
+<line x1="240.0" y1="174" x2="681.0" y2="174.0" class="dg-line"/>
+<polygon points="690.0,174 681.0,169.0 681.0,179.0" class="dg-ah"/>
+<text x="315.0" y="200" text-anchor="middle" class="dg-t">ARP Reply (unicast)</text>
+<line x1="390.0" y1="208" x2="249.0" y2="208.0" class="dg-dash"/>
+<polygon points="240.0,208 249.0,213.0 249.0,203.0" class="dg-ah"/>
+<text x="165.0" y="234" text-anchor="middle" class="dg-t">ARP Reply</text>
+<line x1="240.0" y1="242" x2="99.0" y2="242.0" class="dg-dash"/>
+<polygon points="90.0,242 99.0,247.0 99.0,237.0" class="dg-ah"/>
+<rect x="427.0" y="260" width="226.0" height="26" rx="6" class="dg-soft"/>
+<text x="540.0" y="277" text-anchor="middle" class="dg-s">PC3 et PC4 ignorent la requête</text>
+<rect x="4.0" y="298" width="331.6" height="26" rx="6" class="dg-soft"/>
+<text x="169.79999999999998" y="315" text-anchor="middle" class="dg-s">Table ARP de PC1 : 192.168.1.20 est à CC:DD:22</text>
+</svg>
+</figure>
 
 ---
 

@@ -79,18 +79,45 @@ Il existe deux types de résolution :
 
 Le client pose **une seule question** au résolveur et attend **une seule réponse complète**. Le résolveur fait tout le travail.
 
-```
-Client          Résolveur            Serveur Racine     Serveur Autoritaire
-  │                  │                      │                    │
-  │──"www.google.fr?"│                      │                    │
-  │                  │──"Qui gère .fr ?" ──>│                    │
-  │                  │<─"ns1.nic.fr"────────│                    │
-  │                  │─────"Qui gère google.fr ?" ─────────────>│
-  │                  │<────"ns1.google.com" ───────────────────│
-  │                  │─────"IP de www.google.fr ?" ───────────>│
-  │                  │<────"142.250.185.78" ────────────────────│
-  │<─"142.250.185.78"│                      │                    │
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 342" style="max-width:760px" role="img" aria-label="Résolution DNS : le résolveur interroge la racine puis les serveurs autoritaires" xmlns="http://www.w3.org/2000/svg">
+<rect x="70.0" y="8" width="130" height="34" rx="8" class="dg-dark"/>
+<text x="135.0" y="30.0" text-anchor="middle" class="dg-w">Client</text>
+<line x1="135.0" y1="42" x2="135.0" y2="334" class="dg-dash"/>
+<rect x="233.33333333333337" y="8" width="130" height="34" rx="8" class="dg-dark"/>
+<text x="298.33333333333337" y="30.0" text-anchor="middle" class="dg-w">Résolveur DNS</text>
+<line x1="298.33333333333337" y1="42" x2="298.33333333333337" y2="334" class="dg-dash"/>
+<rect x="396.6666666666667" y="8" width="130" height="34" rx="8" class="dg-dark"/>
+<text x="461.6666666666667" y="30.0" text-anchor="middle" class="dg-w">Serveur racine</text>
+<line x1="461.6666666666667" y1="42" x2="461.6666666666667" y2="334" class="dg-dash"/>
+<rect x="560.0" y="8" width="130" height="34" rx="8" class="dg-dark"/>
+<text x="625.0" y="30.0" text-anchor="middle" class="dg-w">Serveur autoritaire</text>
+<line x1="625.0" y1="42" x2="625.0" y2="334" class="dg-dash"/>
+<text x="216.66666666666669" y="64" text-anchor="middle" class="dg-t">www.google.fr ?</text>
+<line x1="135.0" y1="72" x2="289.3" y2="72.0" class="dg-line"/>
+<polygon points="298.33333333333337,72 289.3,67.0 289.3,77.0" class="dg-ah"/>
+<text x="380.0" y="98" text-anchor="middle" class="dg-t">Qui gère .fr ?</text>
+<line x1="298.33333333333337" y1="106" x2="452.7" y2="106.0" class="dg-line"/>
+<polygon points="461.6666666666667,106 452.7,101.0 452.7,111.0" class="dg-ah"/>
+<text x="380.0" y="132" text-anchor="middle" class="dg-t">ns1.nic.fr</text>
+<line x1="461.6666666666667" y1="140" x2="307.3" y2="140.0" class="dg-dash"/>
+<polygon points="298.33333333333337,140 307.3,145.0 307.3,135.0" class="dg-ah"/>
+<text x="461.6666666666667" y="166" text-anchor="middle" class="dg-t">Qui gère google.fr ?</text>
+<line x1="298.33333333333337" y1="174" x2="616.0" y2="174.0" class="dg-line"/>
+<polygon points="625.0,174 616.0,169.0 616.0,179.0" class="dg-ah"/>
+<text x="461.6666666666667" y="200" text-anchor="middle" class="dg-t">ns1.google.com</text>
+<line x1="625.0" y1="208" x2="307.3" y2="208.0" class="dg-dash"/>
+<polygon points="298.33333333333337,208 307.3,213.0 307.3,203.0" class="dg-ah"/>
+<text x="461.6666666666667" y="234" text-anchor="middle" class="dg-t">IP de www.google.fr ?</text>
+<line x1="298.33333333333337" y1="242" x2="616.0" y2="242.0" class="dg-line"/>
+<polygon points="625.0,242 616.0,237.0 616.0,247.0" class="dg-ah"/>
+<text x="461.6666666666667" y="268" text-anchor="middle" class="dg-t">142.250.185.78</text>
+<line x1="625.0" y1="276" x2="307.3" y2="276.0" class="dg-dash"/>
+<polygon points="298.33333333333337,276 307.3,281.0 307.3,271.0" class="dg-ah"/>
+<text x="216.66666666666669" y="302" text-anchor="middle" class="dg-t">142.250.185.78</text>
+<line x1="298.33333333333337" y1="310" x2="144.0" y2="310.0" class="dg-dash"/>
+<polygon points="135.0,310 144.0,315.0 144.0,305.0" class="dg-ah"/>
+</svg>
+</figure>
 
 ##### Résolution Itérative (vue du résolveur)
 
@@ -202,17 +229,24 @@ En commuté (switches), on peut être tenté de relier plusieurs switches par pl
 
 **Problème 1 : Tempête de broadcast (Broadcast Storm)**
 
-```
-[SW1]────────────────[SW2]
-  │                    │
-  └──────[SW3]─────────┘
+<figure class="graphe diagramme"><svg viewBox="0 0 560 200" style="max-width:560px" role="img" aria-label="Boucle de commutation : un broadcast tourne indéfiniment entre trois switchs" xmlns="http://www.w3.org/2000/svg">
+<rect x="150" y="40" width="70" height="34" rx="8" class="dg-dark"/>
+<text x="185.0" y="62.0" text-anchor="middle" class="dg-w">SW1</text>
+<rect x="320" y="40" width="70" height="34" rx="8" class="dg-dark"/>
+<text x="355.0" y="62.0" text-anchor="middle" class="dg-w">SW2</text>
+<rect x="235" y="130" width="70" height="34" rx="8" class="dg-dark"/>
+<text x="270.0" y="152.0" text-anchor="middle" class="dg-w">SW3</text>
+<line x1="220" y1="57" x2="320" y2="57" class="dg-line"/>
+<line x1="185" y1="74" x2="245" y2="130" class="dg-line"/>
+<line x1="355" y1="74" x2="295" y2="130" class="dg-line"/>
+<text x="280" y="22" text-anchor="middle" class="dg-t">PC-A envoie un broadcast</text>
+<text x="280" y="190" text-anchor="middle" class="dg-i">chaque switch retransmet vers les deux autres, sans fin</text>
+</svg>
+</figure>
 
-PC-A envoie un broadcast :
-1. SW1 reçoit → Flood vers SW2 et SW3
-2. SW2 reçoit de SW1 → Flood vers SW3 (et SW1 !)
-3. SW3 reçoit de SW1 et SW2 → Flood vers SW1 et SW2...
-→ Tempête ! Le broadcast tourne indéfiniment, saturant le réseau à 100%
-```
+- SW1 reçoit le broadcast et le retransmet vers SW2 et SW3.
+- SW2 le reçoit de SW1 et le retransmet vers SW3 (et SW1).
+- SW3 le reçoit de SW1 et de SW2 et le retransmet vers SW1 et SW2, indéfiniment.
 
 **Problème 2 : Instabilité de la table MAC**
 
@@ -231,13 +265,32 @@ Un switch reçoit la même trame de plusieurs ports → la MAC Source change de 
 
 **Principe :** STP construit un **arbre recouvrant** (spanning tree) — une topologie sans boucle — en désactivant logiquement les liens redondants.
 
-```
-Avant STP (boucle) :           Après STP (arbre sans boucle) :
-[SW1]───[SW2]                  [SW1]───[SW2]
-  │       │             →        │
-  └──[SW3]┘                    [SW3]
-                         (lien SW3-SW2 bloqué logiquement)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 210" style="max-width:760px" role="img" aria-label="Avant STP : boucle ; après STP : arbre sans boucle, un lien est bloqué logiquement" xmlns="http://www.w3.org/2000/svg">
+<text x="190" y="22" text-anchor="middle" class="dg-t">Avant STP (boucle)</text>
+<text x="570" y="22" text-anchor="middle" class="dg-t">Après STP (arbre sans boucle)</text>
+<rect x="95" y="50" width="70" height="34" rx="8" class="dg-dark"/>
+<text x="130.0" y="72.0" text-anchor="middle" class="dg-w">SW1</text>
+<rect x="265" y="50" width="70" height="34" rx="8" class="dg-dark"/>
+<text x="300.0" y="72.0" text-anchor="middle" class="dg-w">SW2</text>
+<rect x="180" y="140" width="70" height="34" rx="8" class="dg-dark"/>
+<text x="215.0" y="162.0" text-anchor="middle" class="dg-w">SW3</text>
+<line x1="165" y1="67" x2="265" y2="67" class="dg-line"/>
+<line x1="130" y1="84" x2="190" y2="140" class="dg-line"/>
+<line x1="300" y1="84" x2="240" y2="140" class="dg-line"/>
+<rect x="475" y="50" width="70" height="34" rx="8" class="dg-dark"/>
+<text x="510.0" y="72.0" text-anchor="middle" class="dg-w">SW1</text>
+<rect x="645" y="50" width="70" height="34" rx="8" class="dg-dark"/>
+<text x="680.0" y="72.0" text-anchor="middle" class="dg-w">SW2</text>
+<rect x="560" y="140" width="70" height="34" rx="8" class="dg-dark"/>
+<text x="595.0" y="162.0" text-anchor="middle" class="dg-w">SW3</text>
+<line x1="545" y1="67" x2="645" y2="67" class="dg-line"/>
+<line x1="510" y1="84" x2="570" y2="140" class="dg-line"/>
+<line x1="680" y1="84" x2="620" y2="140" class="dg-dash"/>
+<text x="665" y="132" text-anchor="start" class="dg-i">lien bloqué</text>
+<line x1="380" y1="95" x2="431.0" y2="95.0" class="dg-line"/>
+<polygon points="440,95 431.0,90.0 431.0,100.0" class="dg-ah"/>
+</svg>
+</figure>
 
 ---
 

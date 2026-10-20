@@ -87,30 +87,49 @@ Le switch lit l'**adresse MAC Destination** et prend l'une de 3 décisions :
 
 **Schéma du processus complet :**
 
-```
-Trame reçue sur Port 3
-        │
-        ▼
-┌───────────────────────────────────────────────┐
-│  APPRENTISSAGE                                │
-│  Note MAC Source → Port 3 dans la table       │
-└───────────────────────┬───────────────────────┘
-                        │
-                        ▼
-              MAC Destination =
-              FF:FF:FF:FF:FF:FF ?
-                /         \
-              OUI          NON
-               │             │
-               │      MAC Destination
-               │       connue dans table ?
-               │          /      \
-               │        OUI      NON
-               │         │        │
-               ▼         ▼        ▼
-            FLOOD     FORWARD   FLOOD
-          (tous ports)(1 port) (tous ports)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 640 470" style="max-width:640px" role="img" aria-label="Algorithme de commutation : apprentissage, puis flood ou forward" xmlns="http://www.w3.org/2000/svg">
+<rect x="220" y="8" width="200" height="34" rx="8" class="dg-dark"/>
+<text x="320.0" y="30.0" text-anchor="middle" class="dg-w">Trame reçue sur le port 3</text>
+<line x1="320" y1="42" x2="320.0" y2="55.0" class="dg-line"/>
+<polygon points="320,64 325.0,55.0 315.0,55.0" class="dg-ah"/>
+<rect x="170" y="64" width="300" height="48" rx="8" class="dg-ok"/>
+<text x="320.0" y="84.0" text-anchor="middle" class="dg-t">Apprentissage</text>
+<text x="320.0" y="102.0" text-anchor="middle" class="dg-s">MAC source associée au port 3 dans la table</text>
+<line x1="320" y1="112" x2="320.0" y2="129.0" class="dg-line"/>
+<polygon points="320,138 325.0,129.0 315.0,129.0" class="dg-ah"/>
+<polygon points="320,138 450,182 320,226 190,182" class="dg-warn"/>
+<text x="320" y="178" text-anchor="middle" class="dg-s">MAC destination =</text>
+<text x="320" y="194" text-anchor="middle" class="dg-s">FF:FF:FF:FF:FF:FF ?</text>
+<text x="150" y="172" text-anchor="middle" class="dg-t">OUI</text>
+<line x1="190" y1="182" x2="99.0" y2="182.0" class="dg-line"/>
+<polygon points="90,182 99.0,187.0 99.0,177.0" class="dg-ah"/>
+<line x1="90" y1="182" x2="90.0" y2="361.0" class="dg-line"/>
+<polygon points="90,370 95.0,361.0 85.0,361.0" class="dg-ah"/>
+<line x1="320" y1="226" x2="320.0" y2="253.0" class="dg-line"/>
+<polygon points="320,262 325.0,253.0 315.0,253.0" class="dg-ah"/>
+<text x="334" y="246" text-anchor="start" class="dg-t">NON</text>
+<polygon points="320,262 450,306 320,350 190,306" class="dg-warn"/>
+<text x="320" y="298" text-anchor="middle" class="dg-s">MAC destination</text>
+<text x="320" y="314" text-anchor="middle" class="dg-s">connue dans la table ?</text>
+<text x="470" y="298" text-anchor="start" class="dg-t">OUI</text>
+<line x1="450" y1="306" x2="531.0" y2="306.0" class="dg-line"/>
+<polygon points="540,306 531.0,301.0 531.0,311.0" class="dg-ah"/>
+<line x1="540" y1="306" x2="540.0" y2="361.0" class="dg-line"/>
+<polygon points="540,370 545.0,361.0 535.0,361.0" class="dg-ah"/>
+<text x="334" y="364" text-anchor="start" class="dg-t">NON</text>
+<line x1="320" y1="350" x2="320.0" y2="361.0" class="dg-line"/>
+<polygon points="320,370 325.0,361.0 315.0,361.0" class="dg-ah"/>
+<rect x="10" y="370" width="160" height="50" rx="8" class="dg-bad"/>
+<text x="90.0" y="391.0" text-anchor="middle" class="dg-t">FLOOD</text>
+<text x="90.0" y="409.0" text-anchor="middle" class="dg-s">tous les ports</text>
+<rect x="240" y="370" width="160" height="50" rx="8" class="dg-bad"/>
+<text x="320.0" y="391.0" text-anchor="middle" class="dg-t">FLOOD</text>
+<text x="320.0" y="409.0" text-anchor="middle" class="dg-s">tous les ports</text>
+<rect x="460" y="370" width="160" height="50" rx="8" class="dg-ok"/>
+<text x="540.0" y="391.0" text-anchor="middle" class="dg-t">FORWARD</text>
+<text x="540.0" y="409.0" text-anchor="middle" class="dg-s">un seul port</text>
+</svg>
+</figure>
 
 ---
 
@@ -152,23 +171,63 @@ Port 1 [PC1] → FORWARDING → Port 3 [PC3] (OK)
 **Définition :** Zone où deux transmissions simultanées provoquent une **collision** (corruption des signaux).
 
 **Avec un Hub :**
-```
-[PC1]─┬─[PC2]─┬─[PC3]─┬─[PC4]
-      └───── HUB ───────┘
-→ 1 seul domaine de collision (tous les PC)
-→ Si PC1 et PC2 émettent en même temps : COLLISION
-→ Les deux doivent attendre un délai aléatoire et réémettre (CSMA/CD)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 640 200" style="max-width:640px" role="img" aria-label="Hub : tous les postes partagent un seul domaine de collision" xmlns="http://www.w3.org/2000/svg">
+<rect x="14" y="6" width="612" height="188" rx="12" class="dg-soft"/>
+<rect x="270" y="22" width="100" height="36" rx="8" class="dg-dark"/>
+<text x="320.0" y="45.0" text-anchor="middle" class="dg-w">HUB</text>
+<rect x="40" y="118" width="110" height="40" rx="8" class="dg-box"/>
+<text x="95.0" y="143.0" text-anchor="middle" class="dg-t">PC1</text>
+<line x1="95" y1="118" x2="320" y2="58" class="dg-line"/>
+<rect x="190" y="118" width="110" height="40" rx="8" class="dg-box"/>
+<text x="245.0" y="143.0" text-anchor="middle" class="dg-t">PC2</text>
+<line x1="245" y1="118" x2="320" y2="58" class="dg-line"/>
+<rect x="340" y="118" width="110" height="40" rx="8" class="dg-box"/>
+<text x="395.0" y="143.0" text-anchor="middle" class="dg-t">PC3</text>
+<line x1="395" y1="118" x2="320" y2="58" class="dg-line"/>
+<rect x="490" y="118" width="110" height="40" rx="8" class="dg-box"/>
+<text x="545.0" y="143.0" text-anchor="middle" class="dg-t">PC4</text>
+<line x1="545" y1="118" x2="320" y2="58" class="dg-line"/>
+<text x="320" y="184" text-anchor="middle" class="dg-i">1 seul domaine de collision : tous les postes</text>
+</svg>
+</figure>
+
+- 1 seul domaine de collision (tous les PC).
+- Si PC1 et PC2 émettent en même temps : collision.
+- Les deux attendent un délai aléatoire puis réémettent (CSMA/CD).
 
 **Avec un Switch :**
-```
-[PC1]─Fa0/1─┐
-[PC2]─Fa0/2─┤
-[PC3]─Fa0/3─┤  [SWITCH]
-[PC4]─Fa0/4─┘
-→ 1 domaine de collision PAR PORT (full-duplex)
-→ PC1 et PC2 peuvent émettre simultanément sans collision
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 640 230" style="max-width:640px" role="img" aria-label="Switch : un domaine de collision par port" xmlns="http://www.w3.org/2000/svg">
+<rect x="270" y="12" width="100" height="36" rx="8" class="dg-dark"/>
+<text x="320.0" y="35.0" text-anchor="middle" class="dg-w">Switch</text>
+<rect x="40" y="130" width="110" height="40" rx="8" class="dg-box"/>
+<text x="95.0" y="155.0" text-anchor="middle" class="dg-t">PC1</text>
+<line x1="95" y1="130" x2="320" y2="48" class="dg-line"/>
+<text x="135.5" y="111.24" text-anchor="middle" class="dg-s">Fa0/1</text>
+<rect x="40" y="180" width="110" height="26" rx="6" class="dg-ok"/>
+<text x="95" y="197" text-anchor="middle" class="dg-s">domaine 1</text>
+<rect x="190" y="130" width="110" height="40" rx="8" class="dg-box"/>
+<text x="245.0" y="155.0" text-anchor="middle" class="dg-t">PC2</text>
+<line x1="245" y1="130" x2="320" y2="48" class="dg-line"/>
+<text x="258.5" y="111.24" text-anchor="middle" class="dg-s">Fa0/2</text>
+<rect x="190" y="180" width="110" height="26" rx="6" class="dg-ok"/>
+<text x="245" y="197" text-anchor="middle" class="dg-s">domaine 2</text>
+<rect x="340" y="130" width="110" height="40" rx="8" class="dg-box"/>
+<text x="395.0" y="155.0" text-anchor="middle" class="dg-t">PC3</text>
+<line x1="395" y1="130" x2="320" y2="48" class="dg-line"/>
+<text x="381.5" y="111.24" text-anchor="middle" class="dg-s">Fa0/3</text>
+<rect x="340" y="180" width="110" height="26" rx="6" class="dg-ok"/>
+<text x="395" y="197" text-anchor="middle" class="dg-s">domaine 3</text>
+<rect x="490" y="130" width="110" height="40" rx="8" class="dg-box"/>
+<text x="545.0" y="155.0" text-anchor="middle" class="dg-t">PC4</text>
+<line x1="545" y1="130" x2="320" y2="48" class="dg-line"/>
+<text x="504.5" y="111.24" text-anchor="middle" class="dg-s">Fa0/4</text>
+<rect x="490" y="180" width="110" height="26" rx="6" class="dg-ok"/>
+<text x="545" y="197" text-anchor="middle" class="dg-s">domaine 4</text>
+</svg>
+</figure>
+
+- 1 domaine de collision par port (full-duplex).
+- PC1 et PC2 peuvent émettre simultanément sans collision.
 
  **Résumé :** Un switch avec **N ports** = **N domaines de collision** (1 par port).
 

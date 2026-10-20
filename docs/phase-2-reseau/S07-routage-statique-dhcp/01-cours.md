@@ -133,49 +133,39 @@ Router(config)# ip route 0.0.0.0 0.0.0.0 10.0.0.2
 
 ### D. Configuration Complète d'un Routeur Cisco (Référence)
 
-```cisco
-! ============================================
-! ÉTAPE 1 : Nommer le routeur
-! ============================================
-Router> enable
-Router# configure terminal
-Router(config)# hostname R1_PARIS
-
-! ============================================
-! ÉTAPE 2 : Configurer l'interface LAN
-! ============================================
-R1_PARIS(config)# interface FastEthernet0/0
-R1_PARIS(config-if)# description LAN Paris - 192.168.1.0/24
-R1_PARIS(config-if)# ip address 192.168.1.1 255.255.255.0
-R1_PARIS(config-if)# no shutdown         ! OBLIGATOIRE
-R1_PARIS(config-if)# exit
-
-! ============================================
-! ÉTAPE 3 : Configurer l'interface WAN (liaison vers autre routeur)
-! ============================================
-R1_PARIS(config)# interface Serial0/0/0
-R1_PARIS(config-if)# description WAN vers R2_LYON
-R1_PARIS(config-if)# ip address 10.0.0.1 255.255.255.252
-R1_PARIS(config-if)# clock rate 64000    ! Côté DCE uniquement (Packet Tracer)
-R1_PARIS(config-if)# no shutdown
-R1_PARIS(config-if)# exit
-
-! ============================================
-! ÉTAPE 4 : Ajouter les routes statiques
-! ============================================
-R1_PARIS(config)# ip route 192.168.2.0 255.255.255.0 10.0.0.2
-! Route par défaut vers Internet (si applicable)
-R1_PARIS(config)# ip route 0.0.0.0 0.0.0.0 10.0.0.2
-
-! ============================================
-! ÉTAPE 5 : Vérifier et sauvegarder
-! ============================================
-R1_PARIS(config)# end
-R1_PARIS# show ip route
-R1_PARIS# show ip interface brief
-R1_PARIS# ping 192.168.2.1          ! Tester la connectivité vers R2
-R1_PARIS# copy running-config startup-config
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 250" style="max-width:760px" role="img" aria-label="Deux réseaux locaux reliés par une liaison série entre deux routeurs" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="10" width="200" height="226" rx="10" class="dg-soft"/>
+<rect x="550" y="10" width="200" height="226" rx="10" class="dg-soft"/>
+<text x="110" y="30" text-anchor="middle" class="dg-t">Réseau Paris</text>
+<text x="110" y="48" text-anchor="middle" class="dg-s">192.168.1.0/24</text>
+<text x="650" y="30" text-anchor="middle" class="dg-t">Réseau Lyon</text>
+<text x="650" y="48" text-anchor="middle" class="dg-s">192.168.2.0/24</text>
+<rect x="35" y="90" width="150" height="46" rx="8" class="dg-box"/>
+<text x="110.0" y="109.0" text-anchor="middle" class="dg-t">PC-A</text>
+<text x="110.0" y="127.0" text-anchor="middle" class="dg-s">192.168.1.10</text>
+<rect x="575" y="90" width="150" height="46" rx="8" class="dg-box"/>
+<text x="650.0" y="109.0" text-anchor="middle" class="dg-t">PC-B</text>
+<text x="650.0" y="127.0" text-anchor="middle" class="dg-s">192.168.2.20</text>
+<rect x="240" y="80" width="110" height="66" rx="8" class="dg-dark"/>
+<text x="295.0" y="118.0" text-anchor="middle" class="dg-w">R1_PARIS</text>
+<rect x="410" y="80" width="110" height="66" rx="8" class="dg-dark"/>
+<text x="465.0" y="118.0" text-anchor="middle" class="dg-w">R2_LYON</text>
+<line x1="185" y1="113" x2="240" y2="113" class="dg-line"/>
+<text x="212" y="104" text-anchor="middle" class="dg-s">Fa0/0</text>
+<text x="212" y="130" text-anchor="middle" class="dg-s">.1</text>
+<line x1="520" y1="113" x2="575" y2="113" class="dg-line"/>
+<text x="548" y="104" text-anchor="middle" class="dg-s">Fa0/0</text>
+<text x="548" y="130" text-anchor="middle" class="dg-s">.1</text>
+<line x1="350" y1="113" x2="410" y2="113" class="dg-line"/>
+<text x="380" y="100" text-anchor="middle" class="dg-s">Se</text>
+<text x="364" y="134" text-anchor="middle" class="dg-s">.1</text>
+<text x="396" y="134" text-anchor="middle" class="dg-s">.2</text>
+<rect x="300" y="176" width="160" height="38" rx="8" class="dg-warn"/>
+<text x="380.0" y="191.0" text-anchor="middle" class="dg-t">Liaison WAN</text>
+<text x="380.0" y="209.0" text-anchor="middle" class="dg-s">10.0.0.0/30</text>
+<text x="380" y="164" text-anchor="middle" class="dg-i">10.0.0.1  -  10.0.0.2</text>
+</svg>
+</figure>
 
 ---
 
@@ -227,27 +217,33 @@ PC-A ─────┐         ┌───────────────
 
 DORA est le mnémotechnique des 4 messages échangés entre un client et un serveur DHCP :
 
-```
-Client (PC)                          Serveur DHCP
-    │                                     │
-    │──── 1. DISCOVER ──────────────────>│
-    │     Broadcast : "Y a-t-il un        │
-    │     serveur DHCP sur le réseau ?"   │
-    │                                     │
-    │<─── 2. OFFER ──────────────────────│
-    │     "Oui ! Je te propose            │
-    │     192.168.1.50 pour 8 heures."    │
-    │                                     │
-    │──── 3. REQUEST ───────────────────>│
-    │     "J'accepte l'offre de           │
-    │     192.168.1.50."                  │
-    │                                     │
-    │<─── 4. ACK (Acknowledge) ──────────│
-    │     "Confirmé ! L'IP est à toi      │
-    │     jusqu'à [heure]."               │
-    │                                     │
-    OK : Le client configure son IP
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 640 308" style="max-width:640px" role="img" aria-label="Échange DHCP en quatre messages : Discover, Offer, Request, Acknowledge" xmlns="http://www.w3.org/2000/svg">
+<rect x="70.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="155.0" y="30.0" text-anchor="middle" class="dg-w">Client DHCP (PC)</text>
+<line x1="155.0" y1="42" x2="155.0" y2="300" class="dg-dash"/>
+<rect x="400.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="485.0" y="30.0" text-anchor="middle" class="dg-w">Serveur DHCP</text>
+<line x1="485.0" y1="42" x2="485.0" y2="300" class="dg-dash"/>
+<text x="320.0" y="64" text-anchor="middle" class="dg-t">1. DISCOVER (broadcast)</text>
+<line x1="155.0" y1="72" x2="476.0" y2="72.0" class="dg-line"/>
+<polygon points="485.0,72 476.0,67.0 476.0,77.0" class="dg-ah"/>
+<text x="320.0" y="88" text-anchor="middle" class="dg-i">« Y a-t-il un serveur DHCP sur le réseau ? »</text>
+<text x="320.0" y="114" text-anchor="middle" class="dg-t">2. OFFER</text>
+<line x1="485.0" y1="122" x2="164.0" y2="122.0" class="dg-line"/>
+<polygon points="155.0,122 164.0,127.0 164.0,117.0" class="dg-ah"/>
+<text x="320.0" y="138" text-anchor="middle" class="dg-i">« Je te propose 192.168.1.50 pour 8 heures. »</text>
+<text x="320.0" y="164" text-anchor="middle" class="dg-t">3. REQUEST (broadcast)</text>
+<line x1="155.0" y1="172" x2="476.0" y2="172.0" class="dg-line"/>
+<polygon points="485.0,172 476.0,167.0 476.0,177.0" class="dg-ah"/>
+<text x="320.0" y="188" text-anchor="middle" class="dg-i">« J&#x27;accepte l&#x27;offre de 192.168.1.50. »</text>
+<text x="320.0" y="214" text-anchor="middle" class="dg-t">4. ACK</text>
+<line x1="485.0" y1="222" x2="164.0" y2="222.0" class="dg-line"/>
+<polygon points="155.0,222 164.0,227.0 164.0,217.0" class="dg-ah"/>
+<text x="320.0" y="238" text-anchor="middle" class="dg-i">« Confirmé : l&#x27;adresse est à toi jusqu&#x27;à l&#x27;échéance du bail. »</text>
+<rect x="28.8" y="256" width="252.4" height="26" rx="6" class="dg-soft"/>
+<text x="155.0" y="273" text-anchor="middle" class="dg-s">Le client configure son adresse IP</text>
+</svg>
+</figure>
 
 **Détail des 4 messages :**
 
