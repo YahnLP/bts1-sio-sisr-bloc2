@@ -51,7 +51,6 @@ Si ta situation le permet : **observer** comment ton entreprise traite le sujet 
 <summary>Notes pour l'enseignant</summary>
 
 - **Compétences :** codes relus sur le référentiel (page [Référentiel](../../ressources/referentiel.md)) ; le choix des compétences pour cette séance est une proposition à valider.
-- **Corrigé :** dans `corriges/` à la racine du dépôt (hors du site publié).
 - Pour une classe entière, les oraux se déroulent en rotation : prévoir deux salles et des observateurs, ou répartir sur deux séances.
 - L'épreuve réelle est ponctuelle : 1 h 30 de préparation puis 40 minutes d'oral, sur deux réalisations (fiche descriptive annexe VII-1-A, attestation d'environnement annexe VII-7). À relire sur la circulaire en vigueur.
 

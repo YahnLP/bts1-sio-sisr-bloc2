@@ -55,7 +55,6 @@ Si ta situation le permet : **observer** comment ton entreprise traite le sujet 
 <summary>Notes pour l'enseignant</summary>
 
 - **Compétences :** codes relus sur le référentiel (page [Référentiel](../../ressources/referentiel.md)) ; le choix des compétences pour cette séance est une proposition à valider.
-- **Corrigé :** dans `corriges/` à la racine du dépôt (hors du site publié).
 - Le démontage d'un PC (fiche d'inventaire) suppose du matériel de récupération ; à adapter selon la salle.
 - La séance fusionne les anciennes semaines 1 et 2 : le cours est donc en deux parties.
 

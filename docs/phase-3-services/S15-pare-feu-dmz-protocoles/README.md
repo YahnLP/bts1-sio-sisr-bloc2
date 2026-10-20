@@ -56,7 +56,6 @@ Si ta situation le permet : **observer** comment ton entreprise traite le sujet 
 <summary>Notes pour l'enseignant</summary>
 
 - **Compétences :** codes relus sur le référentiel (page [Référentiel](../../ressources/referentiel.md)) ; le choix des compétences pour cette séance est une proposition à valider.
-- **Corrigé :** dans `corriges/` à la racine du dépôt (hors du site publié).
 - Séance **ajoutée par la refonte** (l'annexe II.E exige plusieurs périmètres de sécurité, un analyseur de trames, une DMZ). Contenu à valider.
 - Les cours FTP/SFTP et protocoles applicatifs (HTTP, messagerie, DNS) sont conservés en cours complémentaires.
 
