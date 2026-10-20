@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S14 (séance 14 sur 19) – Phase 3 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – PowerShell et IPv6 : le projet S17 réutilise les scripts PowerShell (OU, groupes, utilisateurs). Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S10 à S12 ; S13 (notion de script). |
 | **Matériel** | VM Windows Server (domaine), VM cliente IPv6 |
 | **Compétences travaillées** | B2.2 · B2.3 · B3.3 (voir [le référentiel](../../ressources/referentiel.md)) |

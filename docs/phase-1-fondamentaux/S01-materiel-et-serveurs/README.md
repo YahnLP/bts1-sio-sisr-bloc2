@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S01 (séance 1 sur 19) – Phase 1 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Matériel et serveurs, VM Windows : prérequis de S02 et S03. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | Aucun prérequis technique ; savoir utiliser un ordinateur. |
 | **Matériel** | Postes démontables, outils de base, VirtualBox, ISO Windows 10/11 (ou machine virtuelle fournie) |
 | **Compétences travaillées** | B2.1 amorcée · B2.2 · B2.3 amorcée · B1.1 (inventaire) (voir [le référentiel](../../ressources/referentiel.md)) |

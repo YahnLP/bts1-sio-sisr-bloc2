@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S15 (séance 15 sur 19) – Phase 3 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Pare-feu, NAT, DMZ : prérequis de S16 et du projet S17 ; seule séance sur les périmètres de sécurité. Partie allégeable : le cours complémentaire « Protocoles applicatifs » (fichier 01d), voir le parcours. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S07 (routage), S09 (inter-VLAN), S13 (SSH). |
 | **Matériel** | 3 VM : pare-feu/routeur Debian, serveur en DMZ, poste interne ; Wireshark |
 | **Compétences travaillées** | B2.1 · B2.2 · B2.3 · B3.3 · B3.5A (voir [le référentiel](../../ressources/referentiel.md)) |

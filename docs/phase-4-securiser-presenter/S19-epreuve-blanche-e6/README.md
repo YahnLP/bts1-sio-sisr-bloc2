@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S19 (séance 19 sur 19) – Phase 4 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Épreuve blanche E6. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S17, S18. |
 | **Matériel** | Projet et DAT (S17-S18), fiches de réalisation, VM de démonstration |
 | **Compétences travaillées** | B2.1 · B2.2 · B2.3 · B3.3 · B1.4 (voir [le référentiel](../../ressources/referentiel.md)) |

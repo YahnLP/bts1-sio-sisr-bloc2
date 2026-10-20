@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S05 (séance 5 sur 19) – Phase 1 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Commutation et CLI Cisco : prérequis de S06, S13 et S16. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S04 (adressage, ARP) ; terminal Linux de base. |
 | **Matériel** | Simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) ; VM Debian |
 | **Compétences travaillées** | B2.2 · B2.3 (voir [le référentiel](../../ressources/referentiel.md)) |

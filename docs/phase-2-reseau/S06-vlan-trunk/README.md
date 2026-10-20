@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S06 (séance 6 sur 19) – Phase 2 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – VLAN, trunk et utilisateurs Linux : prérequis de S07, S09 et S13. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S05 (CLI Cisco, table MAC). |
 | **Matériel** | Simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) ; VM Debian |
 | **Compétences travaillées** | B2.1 · B2.2 · B2.3 · B3.3 (segmentation) (voir [le référentiel](../../ressources/referentiel.md)) |

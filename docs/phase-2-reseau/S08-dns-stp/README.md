@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S08 (séance 8 sur 19) – Phase 2 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – DNS et STP : le DNS est prérequis de S09 et S10 ; le STP n'est repris nulle part (voir les parties allégeables). Partie allégeable : le TP « Observer le STP » (50 min), voir le parcours. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S04 à S07. |
 | **Matériel** | VM Debian ; simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) |
 | **Compétences travaillées** | B2.2 · B2.3 · B3.4 amorcée (disponibilité) (voir [le référentiel](../../ressources/referentiel.md)) |
