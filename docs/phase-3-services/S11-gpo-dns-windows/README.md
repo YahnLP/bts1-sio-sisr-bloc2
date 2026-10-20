@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S11 (séance 11 sur 19) – Phase 3 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – GPO et DNS Windows : prérequis de S12. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S10. |
 | **Matériel** | VM Windows Server (domaine S10), VM cliente |
 | **Compétences travaillées** | B2.2 · B2.3 · B3.3 (voir [le référentiel](../../ressources/referentiel.md)) |

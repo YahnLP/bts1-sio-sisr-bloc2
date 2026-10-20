@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S10 (séance 10 sur 19) – Phase 3 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Active Directory : prérequis de S11, S12 et S14. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S02 (comptes), S04 (adressage), S08 (DNS). |
 | **Matériel** | VirtualBox, ISO Windows Server 2022, VM cliente Windows 10/11 |
 | **Compétences travaillées** | B2.1 · B2.2 · B2.3 · B3.3 (voir [le référentiel](../../ressources/referentiel.md)) |

@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S13 (séance 13 sur 19) – Phase 3 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Bash, LAMP, SSH : prérequis de S14, S15 et S16. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S05, S06 (terminal et utilisateurs Linux). |
 | **Matériel** | VM Debian (serveur) et une seconde VM (client SSH) |
 | **Compétences travaillées** | B2.2 · B2.3 · B3.3 (administration sécurisée) (voir [le référentiel](../../ressources/referentiel.md)) |

@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S16 (séance 16 sur 19) – Phase 4 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Supervision, sauvegarde et haute disponibilité : seule séance sur ces éléments de l'annexe II.E. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S13 (cron, SSH), S15. |
 | **Matériel** | 3 VM Debian (serveur, serveur de secours, superviseur) |
 | **Compétences travaillées** | B2.3 · B3.4 · B3.5A (voir [le référentiel](../../ressources/referentiel.md)) |

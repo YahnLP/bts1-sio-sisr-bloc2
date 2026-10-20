@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S03 (séance 3 sur 19) – Phase 1 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Bases du réseau : prérequis de S04 ; seule séance sur l'analyseur de trames. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S01 (connectique RJ45). |
 | **Matériel** | Postes Windows, simulateur réseau, Wireshark |
 | **Compétences travaillées** | B2.1 amorcée · B2.3 (voir [le référentiel](../../ressources/referentiel.md)) |

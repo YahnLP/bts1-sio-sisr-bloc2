@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S02 (séance 2 sur 19) – Phase 1 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Système, comptes et NTFS : prérequis de S10. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S01 : installer une VM Windows. |
 | **Matériel** | VM Windows 10/11 (S01) |
 | **Compétences travaillées** | B2.2 · B2.3 · B3.3 (principe de moindre privilège) (voir [le référentiel](../../ressources/referentiel.md)) |

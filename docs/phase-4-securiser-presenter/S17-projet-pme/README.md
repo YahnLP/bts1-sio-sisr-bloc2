@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S17 (séance 17 sur 19) – Phase 4 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Projet PME : assemble S04 à S15 ; prépare l'épreuve E6. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S04 à S15. |
 | **Matériel** | Simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) pour le réseau ; VM Windows Server et Debian (services) |
 | **Compétences travaillées** | B2.1 · B2.2 · B2.3 · B3.3 · B1.4 (mode projet) (voir [le référentiel](../../ressources/referentiel.md)) |

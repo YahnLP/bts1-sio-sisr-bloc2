@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S04 (séance 4 sur 19) – Phase 1 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Adressage IPv4 et VLSM : prérequis de S05, S07, S08, S10 et du projet S17. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S03 (modèle OSI, adresse IP et masque) ; conversions binaire/décimal (mathématiques). |
 | **Matériel** | VM Windows, VM Debian, Wireshark |
 | **Compétences travaillées** | B2.1 · B2.2 · B2.3 (voir [le référentiel](../../ressources/referentiel.md)) |

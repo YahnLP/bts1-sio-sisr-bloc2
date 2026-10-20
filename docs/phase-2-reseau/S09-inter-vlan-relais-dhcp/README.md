@@ -5,6 +5,7 @@
 | **Niveau** | BTS SIO option SISR, 1re année – bloc 2 |
 | **Séance** | S09 (séance 9 sur 19) – Phase 2 |
 | **Durée** | 4 heures |
+| **Parcours** | **Cœur** – Inter-VLAN et relais DHCP : prérequis de S15 ; TP intégré de la phase 2. Partie allégeable : le TP « Routage inter-VLAN » (fichier 02b), voir le parcours. Voir le [parcours cœur et complément](../../ressources/parcours-coeur-complement.md). |
 | **Prérequis** | S06 à S08. |
 | **Matériel** | Simulateur réseau ou Packet Tracer, ou matériel réel (au choix de l'enseignant) ; VM Debian (DHCP, DNS) |
 | **Compétences travaillées** | B2.1 · B2.2 · B2.3 (voir [le référentiel](../../ressources/referentiel.md)) |
