@@ -490,15 +490,32 @@ Exit-PSSession
 
 Chaque ligne d'un fichier crontab définit une tâche planifiée selon la syntaxe :
 
-```
-MIN  HEURE  JOUR_MOIS  MOIS  JOUR_SEMAINE  COMMANDE
- │     │        │        │        │
- │     │        │        │        └─ 0=Dimanche, 1=Lundi ... 6=Samedi
- │     │        │        └───────── 1 à 12
- │     │        └────────────────── 1 à 31
- │     └─────────────────────────── 0 à 23
- └───────────────────────────────── 0 à 59
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 210" style="max-width:760px" role="img" aria-label="Les cinq champs d&#x27;une ligne crontab" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="14" width="90" height="40" rx="6" class="dg-warn"/>
+<text x="65.0" y="39.0" text-anchor="middle" class="dg-t">MIN</text>
+<line x1="65.0" y1="54" x2="65.0" y2="92" class="dg-line"/>
+<text x="65.0" y="110" text-anchor="middle" class="dg-s">0 à 59</text>
+<rect x="120" y="14" width="90" height="40" rx="6" class="dg-warn"/>
+<text x="165.0" y="39.0" text-anchor="middle" class="dg-t">HEURE</text>
+<line x1="165.0" y1="54" x2="165.0" y2="92" class="dg-line"/>
+<text x="165.0" y="110" text-anchor="middle" class="dg-s">0 à 23</text>
+<rect x="220" y="14" width="110" height="40" rx="6" class="dg-warn"/>
+<text x="275.0" y="39.0" text-anchor="middle" class="dg-t">JOUR_MOIS</text>
+<line x1="275.0" y1="54" x2="275.0" y2="92" class="dg-line"/>
+<text x="275.0" y="110" text-anchor="middle" class="dg-s">1 à 31</text>
+<rect x="340" y="14" width="90" height="40" rx="6" class="dg-warn"/>
+<text x="385.0" y="39.0" text-anchor="middle" class="dg-t">MOIS</text>
+<line x1="385.0" y1="54" x2="385.0" y2="92" class="dg-line"/>
+<text x="385.0" y="110" text-anchor="middle" class="dg-s">1 à 12</text>
+<rect x="440" y="14" width="200" height="40" rx="6" class="dg-warn"/>
+<text x="540.0" y="39.0" text-anchor="middle" class="dg-t">JOUR_SEMAINE</text>
+<line x1="540.0" y1="54" x2="540.0" y2="92" class="dg-line"/>
+<text x="540.0" y="110" text-anchor="middle" class="dg-s">0 = dim. ... 6 = sam.</text>
+<rect x="650" y="14" width="120" height="40" rx="6" class="dg-dark"/>
+<text x="710.0" y="39.0" text-anchor="middle" class="dg-w">COMMANDE</text>
+</svg>
+<figcaption>Ordre : minute, heure, jour du mois, mois, jour de la semaine, puis la commande.</figcaption>
+</figure>
 
 **Caractères spéciaux :**
 
@@ -520,19 +537,11 @@ MIN  HEURE  JOUR_MOIS  MOIS  JOUR_SEMAINE  COMMANDE
 | `*/5 * * * *` | Toutes les 5 minutes |
 | `0 2 * * 1-5` | Du lundi au vendredi à 2h00 |
 
-```
-   EXEMPLES VISUELS
-   ─────────────────────────────────────────────
-   0 2 * * *    →   [MIN=0] [H=2] [Tj] [Tous mois] [Tous jours semaine]
-                    = Tous les jours à 02:00
-
-   */15 * * * * →   [MIN=0,15,30,45] [Toutes les H] [Tj] [Tous mois] [...]
-                    = Toutes les 15 minutes
-
-   0 0 1 1 *   →    [MIN=0] [H=0] [J=1] [M=1] [...]
-                    = Le 1er janvier à 00:00
-   ─────────────────────────────────────────────
-```
+| **Ligne crontab** | **Minute** | **Heure** | **Jour** | **Mois** | **Jour sem.** | **Signification** |
+|---|---|---|---|---|---|---|
+| `0 2 * * *` | 0 | 2 | tous | tous | tous | Tous les jours à 02:00 |
+| `*/15 * * * *` | 0, 15, 30, 45 | toutes | tous | tous | tous | Toutes les 15 minutes |
+| `0 0 1 1 *` | 0 | 0 | 1 | 1 | tous | Le 1er janvier à 00:00 |
 
 *Légende : Décomposition visuelle de 3 expressions cron courantes. Chaque champ correspond à une unité de temps (de gauche à droite : minute, heure, jour du mois, mois, jour de la semaine). L'astérisque signifie "toutes les valeurs possibles".*
 
@@ -600,20 +609,62 @@ sudo crontab -u alice -e
 
 ## VI. Questions de Réflexion
 
-1. **Pourquoi ne faut-il jamais laisser le fichier `phpinfo.php` accessible en production ?**
-   - *Piste : Qu'est-ce que cette page révèle sur la configuration du serveur ?*
+Réfléchissez à chaque question avant d'ouvrir la réponse.
 
-2. **Pourquoi créer un utilisateur MariaDB dédié pour l'application web plutôt d'utiliser root ?**
-   - *Piste : Que se passe-t-il si l'application web est compromise et que la connexion BDD utilise root ?*
+**1. Pourquoi ne faut-il jamais laisser le fichier `phpinfo.php` accessible en production ?**
 
-3. **Pourquoi l'authentification SSH par clés est-elle plus sécurisée que l'authentification par mot de passe ?**
-   - *Piste : Qu'est-ce qu'une attaque par force brute ? Peut-elle fonctionner avec des clés ?*
+*Piste : Qu'est-ce que cette page révèle sur la configuration du serveur ?*
 
-4. **Dans quel scénario professionnel préférerait-on WinRM à RDP pour administrer un serveur Windows ?**
-   - *Piste : Pensez à l'automatisation, à la consommation de bande passante, à la gestion de 50 serveurs simultanément...*
+<details markdown="1">
+<summary>Réponse</summary>
 
-5. **Qu'arrive-t-il si un script de sauvegarde planifié via cron produit une erreur mais ne redirige pas ses sorties vers un log ?**
-   - *Piste : Comment sauriez-vous que la sauvegarde a échoué ?*
+La page affiche la **version de PHP**, les modules chargés, les chemins du serveur, les variables d'environnement et la configuration détaillée. Un attaquant s'en sert pour repérer des versions vulnérables et préparer son attaque. On le supprime dès le test terminé.
+
+</details>
+
+**2. Pourquoi créer un utilisateur MariaDB dédié pour l'application web plutôt d'utiliser root ?**
+
+*Piste : Que se passe-t-il si l'application web est compromise et que la connexion BDD utilise root ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Selon le principe du **moindre privilège**, un utilisateur dédié n'a de droits que sur **la base de l'application**. Si l'application est compromise (par exemple par une injection SQL), l'attaquant est cantonné à cette base. Avec `root`, il aurait la main sur **toutes** les bases, pourrait créer des comptes et, selon la configuration, lire ou écrire des fichiers du serveur.
+
+</details>
+
+**3. Pourquoi l'authentification SSH par clés est-elle plus sécurisée que l'authentification par mot de passe ?**
+
+*Piste : Qu'est-ce qu'une attaque par force brute ? Peut-elle fonctionner avec des clés ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Une clé (de 256 bits pour ed25519, 2048 à 4096 bits pour RSA) ne se **devine pas** : une attaque par force brute, qui teste des mots de passe en série, est impossible en pratique. De plus, la clé privée ne circule jamais sur le réseau. Un mot de passe peut être faible, réutilisé, volé par hameçonnage ou deviné. On désactive ensuite l'authentification par mot de passe (`PasswordAuthentication no`) et on protège la clé par une *passphrase*.
+
+</details>
+
+**4. Dans quel scénario professionnel préférerait-on WinRM à RDP pour administrer un serveur Windows ?**
+
+*Piste : Pensez à l'automatisation, à la consommation de bande passante, à la gestion de 50 serveurs simultanément...*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Pour **administrer de nombreux serveurs** et **automatiser** : une commande PowerShell (`Invoke-Command -ComputerName` avec une liste de 50 serveurs) agit sur tous à la fois, par script, avec une faible consommation de bande passante (texte, pas d'interface graphique) et une journalisation. C'est aussi la seule option sur un Server Core sans interface. RDP ouvre une session graphique interactive, serveur par serveur.
+
+</details>
+
+**5. Qu'arrive-t-il si un script de sauvegarde planifié via cron produit une erreur mais ne redirige pas ses sorties vers un log ?**
+
+*Piste : Comment sauriez-vous que la sauvegarde a échoué ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+La sortie d'une tâche `cron` est, par défaut, envoyée par courriel local à l'utilisateur (que personne ne lit) ou perdue : **l'échec passe inaperçu** et on découvre l'absence de sauvegarde le jour où l'on en a besoin. Il faut rediriger les sorties vers un journal (`>> /var/log/sauvegarde.log 2>&1`), tester le code retour (`$?`) et déclencher une alerte en cas d'échec.
+
+</details>
 
 ---
 

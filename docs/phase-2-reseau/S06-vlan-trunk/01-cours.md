@@ -80,11 +80,24 @@
 - Connecte les **équipements terminaux** (PC, imprimante, téléphone IP)
 - La trame qui sort du port Access est **sans tag VLAN** (l'équipement terminal ne sait pas qu'il est dans un VLAN)
 
-```
-PC (Direction)─────[Access VLAN 10]─── Switch
-                    Trame sans tag
-                    Switch sait : ce port = VLAN 10
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 640 150" style="max-width:640px" role="img" aria-label="Port Access VLAN 10 : la trame sort sans tag" xmlns="http://www.w3.org/2000/svg">
+<rect x="50" y="40" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="55" y="45" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="67" y="68" width="6" height="6" class="dg-box"/>
+<rect x="58" y="74" width="24" height="4" rx="2" class="dg-box"/>
+<text x="70" y="94" text-anchor="middle" class="dg-s">PC Direction</text>
+<rect x="460" y="34" width="120" height="56" rx="8" class="dg-dark"/>
+<text x="520.0" y="67.0" text-anchor="middle" class="dg-w">Switch</text>
+<line x1="92" y1="56" x2="460" y2="62" class="dg-line"/>
+<rect x="250" y="22" width="140" height="28" rx="6" class="dg-ok"/>
+<text x="320.0" y="41.0" text-anchor="middle" class="dg-t">Port Access</text>
+<text x="320" y="78" text-anchor="middle" class="dg-t">trame sans tag</text>
+<text x="320" y="96" text-anchor="middle" class="dg-i">le PC ignore l&#x27;existence du VLAN</text>
+<text x="520" y="112" text-anchor="middle" class="dg-i">ce port = VLAN 10</text>
+<text x="520" y="128" text-anchor="middle" class="dg-i">(le switch le sait)</text>
+</svg>
+<figcaption>Un port Access appartient à un seul VLAN ; le tag n&#x27;existe que sur les liens trunk.</figcaption>
+</figure>
 
 ---
 
@@ -132,20 +145,66 @@ PC (Direction)─────[Access VLAN 10]─── Switch
 **Principe :** Quand une trame traverse un trunk, le switch y insère un **tag de 4 octets** (32 bits) entre l'en-tête Ethernet et les données.
 
 **Structure du tag 802.1Q :**
-```
-Trame normale Ethernet :
-[MAC Dest (6o)] [MAC Src (6o)] [EtherType (2o)] [Données] [FCS]
-
-Trame 802.1Q taguée :
-[MAC Dest (6o)] [MAC Src (6o)] [802.1Q Tag (4o)] [EtherType (2o)] [Données] [FCS]
-                                │
-                     ┌──────────┴──────────┐
-                     │  TPID (2o) = 0x8100 │  ← Identifie une trame 802.1Q
-                     │  PCP (3 bits)        │  ← Priorité (QoS)
-                     │  DEI (1 bit)         │  ← Eligible au rejet
-                     │  VID (12 bits)       │  ← Numéro de VLAN (0 à 4094)
-                     └─────────────────────┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 330" style="max-width:760px" role="img" aria-label="Trame Ethernet normale et trame 802.1Q" xmlns="http://www.w3.org/2000/svg">
+<text x="20" y="28" text-anchor="start" class="dg-t">Trame Ethernet normale</text>
+<rect x="20" y="40" width="100" height="40" rx="5" class="dg-box"/>
+<text x="70.0" y="56.0" text-anchor="middle" class="dg-t">MAC dest.</text>
+<text x="70.0" y="74.0" text-anchor="middle" class="dg-s">6 octets</text>
+<rect x="124" y="40" width="100" height="40" rx="5" class="dg-box"/>
+<text x="174.0" y="56.0" text-anchor="middle" class="dg-t">MAC src.</text>
+<text x="174.0" y="74.0" text-anchor="middle" class="dg-s">6 octets</text>
+<rect x="228" y="40" width="90" height="40" rx="5" class="dg-box"/>
+<text x="273.0" y="56.0" text-anchor="middle" class="dg-t">EtherType</text>
+<text x="273.0" y="74.0" text-anchor="middle" class="dg-s">2 octets</text>
+<rect x="322" y="40" width="220" height="40" rx="5" class="dg-soft"/>
+<text x="432.0" y="56.0" text-anchor="middle" class="dg-t">Données</text>
+<text x="432.0" y="74.0" text-anchor="middle" class="dg-s">46 à 1500 octets</text>
+<rect x="546" y="40" width="70" height="40" rx="5" class="dg-box"/>
+<text x="581.0" y="56.0" text-anchor="middle" class="dg-t">FCS</text>
+<text x="581.0" y="74.0" text-anchor="middle" class="dg-s">4 octets</text>
+<text x="20" y="118" text-anchor="start" class="dg-t">Trame 802.1Q (sur un trunk)</text>
+<rect x="20" y="130" width="100" height="40" rx="5" class="dg-box"/>
+<text x="70.0" y="146.0" text-anchor="middle" class="dg-t">MAC dest.</text>
+<text x="70.0" y="164.0" text-anchor="middle" class="dg-s">6 octets</text>
+<rect x="124" y="130" width="100" height="40" rx="5" class="dg-box"/>
+<text x="174.0" y="146.0" text-anchor="middle" class="dg-t">MAC src.</text>
+<text x="174.0" y="164.0" text-anchor="middle" class="dg-s">6 octets</text>
+<rect x="228" y="130" width="110" height="40" rx="5" class="dg-warn"/>
+<text x="283.0" y="146.0" text-anchor="middle" class="dg-t">Tag 802.1Q</text>
+<text x="283.0" y="164.0" text-anchor="middle" class="dg-s">4 octets</text>
+<rect x="342" y="130" width="90" height="40" rx="5" class="dg-box"/>
+<text x="387.0" y="146.0" text-anchor="middle" class="dg-t">EtherType</text>
+<text x="387.0" y="164.0" text-anchor="middle" class="dg-s">2 octets</text>
+<rect x="436" y="130" width="170" height="40" rx="5" class="dg-soft"/>
+<text x="521.0" y="146.0" text-anchor="middle" class="dg-t">Données</text>
+<text x="521.0" y="164.0" text-anchor="middle" class="dg-s">46 à 1500 octets</text>
+<rect x="610" y="130" width="70" height="40" rx="5" class="dg-box"/>
+<text x="645.0" y="146.0" text-anchor="middle" class="dg-t">FCS</text>
+<text x="645.0" y="164.0" text-anchor="middle" class="dg-s">4 octets</text>
+<line x1="224" y1="172" x2="224" y2="196" class="dg-dash"/>
+<line x1="334" y1="172" x2="334" y2="196" class="dg-dash"/>
+<line x1="224" y1="196" x2="150" y2="214" class="dg-dash"/>
+<line x1="334" y1="196" x2="610" y2="214" class="dg-dash"/>
+<rect x="150" y="214" width="130" height="58" rx="5" class="dg-box"/>
+<text x="215.0" y="230.0" text-anchor="middle" class="dg-t">TPID</text>
+<text x="215.0" y="248.0" text-anchor="middle" class="dg-s">0x8100</text>
+<text x="215.0" y="266.0" text-anchor="middle" class="dg-s">identifie le tag</text>
+<rect x="284" y="214" width="100" height="58" rx="5" class="dg-box"/>
+<text x="334.0" y="230.0" text-anchor="middle" class="dg-t">PCP</text>
+<text x="334.0" y="248.0" text-anchor="middle" class="dg-s">3 bits</text>
+<text x="334.0" y="266.0" text-anchor="middle" class="dg-s">priorité (QoS)</text>
+<rect x="388" y="214" width="100" height="58" rx="5" class="dg-box"/>
+<text x="438.0" y="230.0" text-anchor="middle" class="dg-t">DEI</text>
+<text x="438.0" y="248.0" text-anchor="middle" class="dg-s">1 bit</text>
+<text x="438.0" y="266.0" text-anchor="middle" class="dg-s">éligible au rejet</text>
+<rect x="492" y="214" width="130" height="58" rx="5" class="dg-warn"/>
+<text x="557.0" y="230.0" text-anchor="middle" class="dg-t">VID</text>
+<text x="557.0" y="248.0" text-anchor="middle" class="dg-s">12 bits</text>
+<text x="557.0" y="266.0" text-anchor="middle" class="dg-s">n° de VLAN (1 à 4094)</text>
+<text x="380" y="298" text-anchor="middle" class="dg-i">12 bits : 4096 valeurs, 0 et 4095 réservés, donc 4094 VLAN utilisables</text>
+</svg>
+<figcaption>Le tag 802.1Q ajoute 4 octets entre l&#x27;adresse source et l&#x27;EtherType.</figcaption>
+</figure>
 
 **VID (VLAN Identifier) :** 12 bits → 4096 VLANs possibles (0 et 4095 réservés → 4094 utilisables).
 
@@ -161,44 +220,93 @@ Trame 802.1Q taguée :
 
 **Bonne pratique :** Changer le VLAN natif (pas VLAN 1) et n'y mettre aucun utilisateur.
 
-```
-Switch A                    Trunk 802.1Q                   Switch B
-                  ┌─────────────────────────┐
-Port VLAN 10 ──►  │ [Tag VLAN 10] données   │ ──► Port VLAN 10
-Port VLAN 20 ──►  │ [Tag VLAN 20] données   │ ──► Port VLAN 20
-Port VLAN 1  ──►  │ données (sans tag)      │ ──► Port VLAN 1 (natif)
-                  └─────────────────────────┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 240" style="max-width:760px" role="img" aria-label="Trunk 802.1Q entre deux switches : tags par VLAN" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="30" width="90" height="170" rx="8" class="dg-dark"/>
+<text x="55.0" y="120.0" text-anchor="middle" class="dg-w">Switch A</text>
+<rect x="660" y="30" width="90" height="170" rx="8" class="dg-dark"/>
+<text x="705.0" y="120.0" text-anchor="middle" class="dg-w">Switch B</text>
+<rect x="215" y="14" width="330" height="200" rx="10" class="dg-soft"/>
+<text x="380" y="36" text-anchor="middle" class="dg-t">Lien trunk 802.1Q</text>
+<rect x="235" y="56" width="290" height="38" rx="5" class="dg-warn"/>
+<text x="380.0" y="80.0" text-anchor="middle" class="dg-t">Tag VLAN 10 + données</text>
+<line x1="102" y1="75" x2="224.0" y2="75.0" class="dg-line"/>
+<polygon points="233,75 224.0,70.0 224.0,80.0" class="dg-ah"/>
+<line x1="527" y1="75" x2="649.0" y2="75.0" class="dg-line"/>
+<polygon points="658,75 649.0,70.0 649.0,80.0" class="dg-ah"/>
+<text x="110" y="68" text-anchor="start" class="dg-s">Port VLAN 10</text>
+<text x="650" y="68" text-anchor="end" class="dg-s">Port VLAN 10</text>
+<rect x="235" y="108" width="290" height="38" rx="5" class="dg-ok"/>
+<text x="380.0" y="132.0" text-anchor="middle" class="dg-t">Tag VLAN 20 + données</text>
+<line x1="102" y1="127" x2="224.0" y2="127.0" class="dg-line"/>
+<polygon points="233,127 224.0,122.0 224.0,132.0" class="dg-ah"/>
+<line x1="527" y1="127" x2="649.0" y2="127.0" class="dg-line"/>
+<polygon points="658,127 649.0,122.0 649.0,132.0" class="dg-ah"/>
+<text x="110" y="120" text-anchor="start" class="dg-s">Port VLAN 20</text>
+<text x="650" y="120" text-anchor="end" class="dg-s">Port VLAN 20</text>
+<rect x="235" y="160" width="290" height="38" rx="5" class="dg-box"/>
+<text x="380.0" y="184.0" text-anchor="middle" class="dg-t">Données sans tag</text>
+<line x1="102" y1="179" x2="224.0" y2="179.0" class="dg-line"/>
+<polygon points="233,179 224.0,174.0 224.0,184.0" class="dg-ah"/>
+<line x1="527" y1="179" x2="649.0" y2="179.0" class="dg-line"/>
+<polygon points="658,179 649.0,174.0 649.0,184.0" class="dg-ah"/>
+<text x="110" y="172" text-anchor="start" class="dg-s">Port VLAN 1 (natif)</text>
+<text x="650" y="172" text-anchor="end" class="dg-s">Port VLAN 1 (natif)</text>
+</svg>
+<figcaption>Seul le VLAN natif circule sans tag sur le trunk.</figcaption>
+</figure>
 
 ---
 
 ### F. Fonctionnement Complet : Trame VLAN de A à Z
 
 **Topologie :**
-```
-PC1 (VLAN 10)─Access─[SW_A]─Trunk─[SW_B]─Access─PC3 (VLAN 10)
-PC2 (VLAN 20)─Access─[SW_A]                  ─Access─PC4 (VLAN 20)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 230" style="max-width:760px" role="img" aria-label="Deux VLAN sur deux switches reliés par un trunk" xmlns="http://www.w3.org/2000/svg">
+<rect x="200" y="80" width="110" height="50" rx="8" class="dg-dark"/>
+<text x="255.0" y="110.0" text-anchor="middle" class="dg-w">SW_A</text>
+<rect x="450" y="80" width="110" height="50" rx="8" class="dg-dark"/>
+<text x="505.0" y="110.0" text-anchor="middle" class="dg-w">SW_B</text>
+<line x1="310" y1="105" x2="450" y2="105" class="dg-line"/>
+<text x="380" y="95" text-anchor="middle" class="dg-t">Trunk</text>
+<text x="380" y="124" text-anchor="middle" class="dg-i">VLAN 10 et 20</text>
+<rect x="30" y="26" width="40" height="28" rx="4" class="dg-warn"/>
+<rect x="35" y="31" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="47" y="54" width="6" height="6" class="dg-box"/>
+<rect x="38" y="60" width="24" height="4" rx="2" class="dg-box"/>
+<text x="50" y="80" text-anchor="middle" class="dg-s">PC1</text>
+<rect x="30" y="146" width="40" height="28" rx="4" class="dg-ok"/>
+<rect x="35" y="151" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="47" y="174" width="6" height="6" class="dg-box"/>
+<rect x="38" y="180" width="24" height="4" rx="2" class="dg-box"/>
+<text x="50" y="200" text-anchor="middle" class="dg-s">PC2</text>
+<line x1="72" y1="44" x2="200" y2="92" class="dg-line"/>
+<line x1="72" y1="164" x2="200" y2="118" class="dg-line"/>
+<text x="136.0" y="58" text-anchor="middle" class="dg-i">Access 10</text>
+<text x="136.0" y="158" text-anchor="middle" class="dg-i">Access 20</text>
+<rect x="690" y="26" width="40" height="28" rx="4" class="dg-warn"/>
+<rect x="695" y="31" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="707" y="54" width="6" height="6" class="dg-box"/>
+<rect x="698" y="60" width="24" height="4" rx="2" class="dg-box"/>
+<text x="710" y="80" text-anchor="middle" class="dg-s">PC3</text>
+<rect x="690" y="146" width="40" height="28" rx="4" class="dg-ok"/>
+<rect x="695" y="151" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="707" y="174" width="6" height="6" class="dg-box"/>
+<rect x="698" y="180" width="24" height="4" rx="2" class="dg-box"/>
+<text x="710" y="200" text-anchor="middle" class="dg-s">PC4</text>
+<line x1="688" y1="44" x2="560" y2="92" class="dg-line"/>
+<line x1="688" y1="164" x2="560" y2="118" class="dg-line"/>
+<text x="624.0" y="58" text-anchor="middle" class="dg-i">Access 10</text>
+<text x="624.0" y="158" text-anchor="middle" class="dg-i">Access 20</text>
+</svg>
+<figcaption>PC1 et PC3 sont dans le VLAN 10, PC2 et PC4 dans le VLAN 20.</figcaption>
+</figure>
 
 **PC1 envoie une trame à PC3 :**
 
-```
-Étape 1 : PC1 envoie une trame normale (sans tag) sur son port Access
-         → SW_A reçoit sur port Access VLAN 10
-
-Étape 2 : SW_A consulte sa table MAC pour VLAN 10
-         → Si PC3 connu : port Trunk
-         → SW_A ajoute le tag VLAN 10 à la trame
-
-Étape 3 : Trame taguée [VLAN 10] traverse le Trunk
-
-Étape 4 : SW_B reçoit la trame taguée
-         → Lit le tag : VLAN 10
-         → Retire le tag
-         → Envoie la trame (sans tag) sur le port Access VLAN 10 de PC3
-
-Étape 5 : PC3 reçoit la trame normale (ne sait pas qu'elle était taguée)
-```
+1. **PC1** envoie une trame normale (sans tag) sur son port Access ; **SW_A** la reçoit sur un port Access du VLAN 10.
+2. **SW_A** consulte sa table MAC pour le VLAN 10 : si PC3 est connu, la sortie est le port Trunk, et SW_A **ajoute le tag VLAN 10**.
+3. La trame taguée traverse le **trunk**.
+4. **SW_B** lit le tag (VLAN 10), le **retire**, puis envoie la trame sans tag sur le port Access VLAN 10 de PC3.
+5. **PC3** reçoit une trame normale : il ne sait pas qu'elle a été taguée.
 
 **PC2 (VLAN 20) essaie d'envoyer à PC3 (VLAN 10) :**
 - Impossible au niveau L2 — ils sont dans des VLANs différents
@@ -380,16 +488,45 @@ sudo cat /etc/shadow  # Mots de passe hashés (root uniquement)
 ```
 
 **Exemple de ligne `/etc/passwd` :**
-```
-alice:x:1001:1001:Alice Dupont:/home/alice:/bin/bash
-  │   │  │    │    │            │            └─ Shell par défaut
-  │   │  │    │    │            └─ Répertoire home
-  │   │  │    │    └─ Info (GECOS)
-  │   │  │    └─ GID principal
-  │   │  └─ UID
-  │   └─ Mot de passe (x = stocké dans /etc/shadow)
-  └─ Nom de login
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 820 150" style="max-width:820px" role="img" aria-label="Anatomie d&#x27;une ligne de /etc/passwd" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="14" width="90" height="34" rx="5" class="dg-warn"/>
+<text x="65.0" y="36.0" text-anchor="middle" class="dg-t">alice</text>
+<line x1="65.0" y1="48" x2="65.0" y2="70" class="dg-dash"/>
+<text x="65.0" y="82" text-anchor="middle" class="dg-s">Nom de login</text>
+<text x="117" y="36" text-anchor="middle" class="dg-t">:</text>
+<rect x="124" y="14" width="50" height="34" rx="5" class="dg-box"/>
+<text x="149.0" y="36.0" text-anchor="middle" class="dg-t">x</text>
+<line x1="149.0" y1="48" x2="149.0" y2="96" class="dg-dash"/>
+<text x="149.0" y="108" text-anchor="middle" class="dg-s">Mot de passe</text>
+<text x="181" y="36" text-anchor="middle" class="dg-t">:</text>
+<rect x="188" y="14" width="70" height="34" rx="5" class="dg-ok"/>
+<text x="223.0" y="36.0" text-anchor="middle" class="dg-t">1001</text>
+<line x1="223.0" y1="48" x2="223.0" y2="70" class="dg-dash"/>
+<text x="223.0" y="82" text-anchor="middle" class="dg-s">UID</text>
+<text x="265" y="36" text-anchor="middle" class="dg-t">:</text>
+<rect x="272" y="14" width="70" height="34" rx="5" class="dg-box"/>
+<text x="307.0" y="36.0" text-anchor="middle" class="dg-t">1001</text>
+<line x1="307.0" y1="48" x2="307.0" y2="96" class="dg-dash"/>
+<text x="307.0" y="108" text-anchor="middle" class="dg-s">GID principal</text>
+<text x="349" y="36" text-anchor="middle" class="dg-t">:</text>
+<rect x="356" y="14" width="140" height="34" rx="5" class="dg-soft"/>
+<text x="426.0" y="36.0" text-anchor="middle" class="dg-t">Alice Dupont</text>
+<line x1="426.0" y1="48" x2="426.0" y2="70" class="dg-dash"/>
+<text x="426.0" y="82" text-anchor="middle" class="dg-s">Info (GECOS)</text>
+<text x="503" y="36" text-anchor="middle" class="dg-t">:</text>
+<rect x="510" y="14" width="130" height="34" rx="5" class="dg-ok"/>
+<text x="575.0" y="36.0" text-anchor="middle" class="dg-t">/home/alice</text>
+<line x1="575.0" y1="48" x2="575.0" y2="96" class="dg-dash"/>
+<text x="575.0" y="108" text-anchor="middle" class="dg-s">Répertoire home</text>
+<text x="647" y="36" text-anchor="middle" class="dg-t">:</text>
+<rect x="654" y="14" width="120" height="34" rx="5" class="dg-warn"/>
+<text x="714.0" y="36.0" text-anchor="middle" class="dg-t">/bin/bash</text>
+<line x1="714.0" y1="48" x2="714.0" y2="70" class="dg-dash"/>
+<text x="714.0" y="82" text-anchor="middle" class="dg-s">Shell par défaut</text>
+<text x="410" y="142" text-anchor="middle" class="dg-i">x : le hachage du mot de passe est stocké dans /etc/shadow</text>
+</svg>
+<figcaption>Sept champs séparés par deux-points.</figcaption>
+</figure>
 
 ---
 
@@ -452,26 +589,63 @@ cat /etc/group
 
 Chaque fichier/répertoire a **3 niveaux de permissions** pour **3 catégories** :
 
-```
-ls -l fichier.txt
--rw-r--r-- 1 alice direction 1024 nov 15 10:30 fichier.txt
-│││││││││ │ │     │
-│││││││││ │ │     └─ Groupe propriétaire
-│││││││││ │ └─ Utilisateur propriétaire
-│││││││││ └─ Nombre de liens
-│└┴┴┴┴┴┴┴─ Permissions (9 caractères)
-└─ Type : - = fichier, d = répertoire, l = lien symbolique
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 250" style="max-width:780px" role="img" aria-label="Lecture de la commande ls -l" xmlns="http://www.w3.org/2000/svg">
+<text x="20" y="26" text-anchor="start" class="dg-i">$ ls -l fichier.txt</text>
+<rect x="20" y="36" width="150" height="34" rx="5" class="dg-warn"/>
+<text x="95.0" y="58.0" text-anchor="middle" class="dg-t">-rw-r--r--</text>
+<line x1="95.0" y1="70" x2="95.0" y2="100" class="dg-dash"/>
+<text x="101.0" y="104" text-anchor="start" class="dg-s">Type + permissions</text>
+<rect x="180" y="36" width="34" height="34" rx="5" class="dg-box"/>
+<text x="197.0" y="58.0" text-anchor="middle" class="dg-t">1</text>
+<line x1="197.0" y1="70" x2="197.0" y2="132" class="dg-dash"/>
+<text x="203.0" y="136" text-anchor="start" class="dg-s">Liens</text>
+<rect x="224" y="36" width="70" height="34" rx="5" class="dg-ok"/>
+<text x="259.0" y="58.0" text-anchor="middle" class="dg-t">alice</text>
+<line x1="259.0" y1="70" x2="259.0" y2="164" class="dg-dash"/>
+<text x="265.0" y="168" text-anchor="start" class="dg-s">Utilisateur</text>
+<rect x="304" y="36" width="100" height="34" rx="5" class="dg-ok"/>
+<text x="354.0" y="58.0" text-anchor="middle" class="dg-t">direction</text>
+<line x1="354.0" y1="70" x2="354.0" y2="196" class="dg-dash"/>
+<text x="360.0" y="200" text-anchor="start" class="dg-s">Groupe</text>
+<rect x="414" y="36" width="54" height="34" rx="5" class="dg-box"/>
+<text x="441.0" y="58.0" text-anchor="middle" class="dg-t">1024</text>
+<line x1="441.0" y1="70" x2="441.0" y2="100" class="dg-dash"/>
+<text x="447.0" y="104" text-anchor="start" class="dg-s">Taille</text>
+<rect x="478" y="36" width="110" height="34" rx="5" class="dg-box"/>
+<text x="533.0" y="58.0" text-anchor="middle" class="dg-t">nov 15 10:30</text>
+<line x1="533.0" y1="70" x2="533.0" y2="132" class="dg-dash"/>
+<text x="539.0" y="136" text-anchor="start" class="dg-s">Date</text>
+<rect x="598" y="36" width="110" height="34" rx="5" class="dg-soft"/>
+<text x="653.0" y="58.0" text-anchor="middle" class="dg-t">fichier.txt</text>
+<line x1="653.0" y1="70" x2="653.0" y2="164" class="dg-dash"/>
+<text x="659.0" y="168" text-anchor="end" class="dg-s">Nom</text>
+<text x="20" y="238" text-anchor="start" class="dg-i">Type : - fichier, d répertoire, l lien symbolique. Puis 9 caractères de permissions.</text>
+</svg>
+<figcaption>Chaque colonne de la sortie de ls -l a une signification précise.</figcaption>
+</figure>
 
 **Décomposition des 9 caractères de permissions :**
 
-```
-rw-r--r--
-│││││││││
-│││││││└┴─ Autres (others) : r-- = lecture seule
-│││└┴┴─── Groupe : r-- = lecture seule
-└┴┴─────── Propriétaire (user) : rw- = lecture + écriture
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 560 170" style="max-width:560px" role="img" aria-label="Les 9 caractères de permissions : propriétaire, groupe, autres" xmlns="http://www.w3.org/2000/svg">
+<rect x="30" y="14" width="150" height="40" rx="6" class="dg-warn"/>
+<text x="105.0" y="39.0" text-anchor="middle" class="dg-t">rw-</text>
+<line x1="105" y1="54" x2="105" y2="84" class="dg-dash"/>
+<text x="105" y="102" text-anchor="middle" class="dg-t">Propriétaire (user)</text>
+<text x="105" y="122" text-anchor="middle" class="dg-s">lecture + écriture</text>
+<rect x="200" y="14" width="150" height="40" rx="6" class="dg-ok"/>
+<text x="275.0" y="39.0" text-anchor="middle" class="dg-t">r--</text>
+<line x1="275" y1="54" x2="275" y2="84" class="dg-dash"/>
+<text x="275" y="102" text-anchor="middle" class="dg-t">Groupe (group)</text>
+<text x="275" y="122" text-anchor="middle" class="dg-s">lecture seule</text>
+<rect x="370" y="14" width="150" height="40" rx="6" class="dg-box"/>
+<text x="445.0" y="39.0" text-anchor="middle" class="dg-t">r--</text>
+<line x1="445" y1="54" x2="445" y2="84" class="dg-dash"/>
+<text x="445" y="102" text-anchor="middle" class="dg-t">Autres (others)</text>
+<text x="445" y="122" text-anchor="middle" class="dg-s">lecture seule</text>
+<text x="280" y="156" text-anchor="middle" class="dg-i">r = lire (4)   w = écrire (2)   x = exécuter (1)</text>
+</svg>
+<figcaption>Trois triplets rwx pour trois catégories.</figcaption>
+</figure>
 
 **Signification de chaque permission :**
 
@@ -648,6 +822,21 @@ Convertir en notation symbolique (rwx) :
 | `chmod 640` | | | | |
 | `chmod 777` | | | | |
 
+<details markdown="1">
+<summary>Correction : valeur numérique vers symbolique</summary>
+
+Chaque chiffre est la somme de **r = 4**, **w = 2**, **x = 1**.
+
+| **chmod** | **Propriétaire** | **Groupe** | **Autres** | **Notation symbolique** |
+|-----------|:----------------:|:----------:|:----------:|-------------------------|
+| `chmod 755` | 7 = rwx | 5 = r-x | 5 = r-x | `rwxr-xr-x` |
+| `chmod 644` | 6 = rw- | 4 = r-- | 4 = r-- | `rw-r--r--` |
+| `chmod 700` | 7 = rwx | 0 = --- | 0 = --- | `rwx------` |
+| `chmod 640` | 6 = rw- | 4 = r-- | 0 = --- | `rw-r-----` |
+| `chmod 777` | 7 = rwx | 7 = rwx | 7 = rwx | `rwxrwxrwx` |
+
+</details>
+
 Et l'inverse, convertir en valeur numérique :
 
 | **Notation symbolique** | **Valeur numérique** |
@@ -656,6 +845,20 @@ Et l'inverse, convertir en valeur numérique :
 | `rw-r--r--` | |
 | `rwx------` | |
 | `rw-rw-r--` | |
+
+<details markdown="1">
+<summary>Correction : symbolique vers valeur numérique</summary>
+
+On additionne les droits de chaque groupe de trois caractères.
+
+| **Notation symbolique** | **Calcul** | **Valeur numérique** |
+|-------------------------|------------|----------------------|
+| `rwxr-xr-x` | rwx = 4+2+1 = 7 ; r-x = 4+1 = 5 ; r-x = 5 | **755** |
+| `rw-r--r--` | rw- = 4+2 = 6 ; r-- = 4 ; r-- = 4 | **644** |
+| `rwx------` | rwx = 7 ; --- = 0 ; --- = 0 | **700** |
+| `rw-rw-r--` | rw- = 6 ; rw- = 6 ; r-- = 4 | **664** |
+
+</details>
 
 ---
 
@@ -667,10 +870,41 @@ drwxrwx--- 2 root  commercial 4096 nov 15 /data/commercial
 -rwxr-xr-x 1 root  root        512 nov 15 script.sh
 ```
 
-1. Qui peut **lire** `rapport.pdf` ? Qui ne peut pas ?
-2. Qui peut **créer des fichiers** dans `/data/commercial` ?
-3. L'utilisateur `charlie` (groupe `commercial`) peut-il exécuter `script.sh` ?
-4. Donner la commande pour que `bob` (groupe `direction`) puisse lire `rapport.pdf`.
+**1.** Qui peut **lire** `rapport.pdf` ? Qui ne peut pas ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+Le propriétaire `alice` (`rw-`) et les membres du groupe `direction` (`r--`) peuvent le lire. Les **autres** (`---`) ne peuvent pas, y compris les membres du groupe `commercial`. L'administrateur `root` passe outre les permissions.
+
+</details>
+
+**2.** Qui peut **créer des fichiers** dans `/data/commercial` ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+Pour créer un fichier dans un dossier, il faut les droits **w** (écriture) **et x** (traversée) sur ce dossier. Le propriétaire `root` et le groupe `commercial` ont `rwx` : ils peuvent créer des fichiers. Les autres n'ont aucun droit (`---`).
+
+</details>
+
+**3.** L'utilisateur `charlie` (groupe `commercial`) peut-il exécuter `script.sh` ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+**Oui.** `charlie` n'est ni `root` ni dans le groupe `root` : ce sont les droits des **autres** qui s'appliquent, soit `r-x`. Il a donc le droit de lire et d'exécuter le script.
+
+</details>
+
+**4.** Donner la commande pour que `bob` (groupe `direction`) puisse lire `rapport.pdf`.
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+**Aucune commande n'est nécessaire** : le groupe `direction` a déjà le droit de lecture (`r--`), et `bob` en fait partie. Si `bob` n'était pas dans ce groupe : `sudo usermod -aG direction bob` (il doit se reconnecter), ou, pour ne donner l'accès qu'à lui, `setfacl -m u:bob:r rapport.pdf`.
+
+</details>
 
 ---
 
@@ -685,11 +919,51 @@ Trunk : Port 24
 ```
 
 **Questions :**
-1. PC branché en port 2 peut-il communiquer avec PC en port 5 ? Pourquoi ?
-2. PC en port 7 envoie un broadcast. Qui le reçoit ?
-3. Quelle commande affiche les ports affectés à chaque VLAN ?
-4. Que faut-il pour que RH et IT puissent s'envoyer des fichiers ?
-5. Si le port 24 est en trunk, quels VLANs traversent-ils la liaison vers le 2e switch ?
+
+**1.** PC branché en port 2 peut-il communiquer avec PC en port 5 ? Pourquoi ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+**Non.** Le port 2 est dans le VLAN 10 et le port 5 dans le VLAN 20 : deux VLAN sont deux domaines de diffusion séparés, le switch ne fait jamais passer une trame de l'un à l'autre. Il faudrait un routeur.
+
+</details>
+
+**2.** PC en port 7 envoie un broadcast. Qui le reçoit ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+Uniquement les équipements du **VLAN 30** : le PC du port 8, et, par le trunk du port 24 (la trame y est étiquetée VLAN 30), les membres du VLAN 30 du second switch. Les VLAN 10 et 20 ne le reçoivent pas.
+
+</details>
+
+**3.** Quelle commande affiche les ports affectés à chaque VLAN ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+`show vlan brief`.
+
+</details>
+
+**4.** Que faut-il pour que RH et IT puissent s'envoyer des fichiers ?
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+Un équipement de **couche 3** : un routeur (sous-interfaces 802.1Q, « router on a stick ») ou un switch L3. Chaque VLAN a son propre réseau IP avec une passerelle, et les PC sont configurés avec cette passerelle. Le partage de fichiers doit en plus être autorisé par les règles de filtrage éventuelles (ACL, pare-feu).
+
+</details>
+
+**5.** Si le port 24 est en trunk, quels VLANs traversent-ils la liaison vers le 2e switch ?
+
+<details markdown="1">
+<summary>Correction de la question 5</summary>
+
+Par défaut, **tous les VLAN** existants sur le switch (1, 10, 20, 30). On restreint en pratique avec `switchport trunk allowed vlan 10,20,30` pour ne transporter que les VLAN utiles.
+
+</details>
 
 ---
 

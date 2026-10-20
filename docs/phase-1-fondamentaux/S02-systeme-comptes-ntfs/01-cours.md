@@ -766,12 +766,28 @@ Combinaisons personnalisées des 13 permissions atomiques NTFS.
 
 **Exemple :**
 
-```
-C:\Data (Permissions : Groupe "Comptables" = Modification)
-  ├── Factures (Hérite : Groupe "Comptables" = Modification)
-  │   └── Facture_2024.xlsx (Hérite : Groupe "Comptables" = Modification)
-  └── Bilans (Hérite : Groupe "Comptables" = Modification)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 463 144" style="max-width:463px" role="img" aria-label="Héritage des permissions NTFS dans C:\Data" xmlns="http://www.w3.org/2000/svg">
+<line x1="26" y1="34" x2="26" y2="55" class="dg-line"/>
+<line x1="26" y1="55" x2="50" y2="55" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="123" class="dg-line"/>
+<line x1="26" y1="123" x2="50" y2="123" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="89" class="dg-line"/>
+<line x1="64" y1="89" x2="88" y2="89" class="dg-line"/>
+<rect x="12" y="8" width="82" height="26" rx="6" class="dg-dark"/>
+<text x="53.0" y="26" text-anchor="middle" class="dg-w">C:\Data</text>
+<text x="104.0" y="26" text-anchor="start" class="dg-i">permissions : groupe « Comptables » = Modification</text>
+<rect x="50" y="42" width="90" height="26" rx="6" class="dg-box"/>
+<text x="95.0" y="60" text-anchor="middle" class="dg-t">Factures</text>
+<text x="150.0" y="60" text-anchor="start" class="dg-i">hérite : Comptables = Modification</text>
+<rect x="88" y="76" width="138" height="26" rx="6" class="dg-soft"/>
+<text x="157.1" y="94" text-anchor="middle" class="dg-s">Facture_2024.xlsx</text>
+<text x="236.2" y="94" text-anchor="start" class="dg-i">hérite : Comptables = Modification</text>
+<rect x="50" y="110" width="74" height="26" rx="6" class="dg-box"/>
+<text x="87.0" y="128" text-anchor="middle" class="dg-t">Bilans</text>
+<text x="134.0" y="128" text-anchor="start" class="dg-i">hérite : Comptables = Modification</text>
+</svg>
+<figcaption>Les sous-dossiers et fichiers héritent des permissions du dossier parent.</figcaption>
+</figure>
 
  Si je donne "Modification" au groupe "Comptables" sur `C:\Data`, tous les sous-dossiers et fichiers héritent automatiquement de cette permission.
 

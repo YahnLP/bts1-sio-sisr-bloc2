@@ -12,15 +12,14 @@ Le **VLSM** (Variable Length Subnet Masking) permet d'attribuer des sous-réseau
 
 **Règle de calcul :** Pour héberger N hôtes, il faut un sous-réseau avec au moins N+2 adresses (une adresse réseau + une adresse broadcast + N hôtes). On prend la puissance de 2 supérieure ou égale à N+2.
 
-```
-Formule : 2^n ≥ N + 2  →  choisir la plus petite valeur de n satisfaisant la condition
+**Formule :** 2^n^ ≥ N + 2, en choisissant la plus petite valeur de n qui satisfait la condition.
 
-Exemples :
-  25 hôtes → 2^5 = 32 ≥ 27 → /27 (30 hôtes utilisables)
-  40 hôtes → 2^6 = 64 ≥ 42 → /26 (62 hôtes utilisables)
-  10 hôtes → 2^4 = 16 ≥ 12 → /28 (14 hôtes utilisables)
-   5 hôtes → 2^3 =  8 ≥  7 → /29  (6 hôtes utilisables)
-```
+| **Besoin (N hôtes)** | **Calcul** | **Masque** | **Hôtes utilisables** |
+|---|---|---|---|
+| 25 | 2^5^ = 32 ≥ 27 | /27 | 30 |
+| 40 | 2^6^ = 64 ≥ 42 | /26 | 62 |
+| 10 | 2^4^ = 16 ≥ 12 | /28 | 14 |
+| 5 | 2^3^ = 8 ≥ 7 | /29 | 6 |
 
 ### II.B. Tableau de Référence des Masques
 

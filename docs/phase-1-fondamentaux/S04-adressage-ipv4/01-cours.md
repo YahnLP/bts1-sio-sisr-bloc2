@@ -123,17 +123,16 @@ La notation **CIDR** (prononcé "sider") remplace l'écriture longue du masque p
 
 Soit le réseau `192.168.10.0/26` :
 
-```
-Masque /26 → 255.255.255.192
-Bits hôte → 32 - 26 = 6 bits
-Nb adresses → 2^6 = 64
-Hôtes utilisables → 64 - 2 = 62
-
-Adresse réseau   → 192.168.10.0
-Première hôte    → 192.168.10.1
-Dernière hôte    → 192.168.10.62
-Adresse broadcast → 192.168.10.63
-```
+| **Étape** | **Calcul** | **Résultat** |
+|---|---|---|
+| Masque | /26 | 255.255.255.192 |
+| Bits hôte | 32 − 26 | 6 bits |
+| Nombre d'adresses | 2^6^ | 64 |
+| Hôtes utilisables | 64 − 2 | 62 |
+| Adresse réseau | | 192.168.10.0 |
+| Première adresse hôte | | 192.168.10.1 |
+| Dernière adresse hôte | | 192.168.10.62 |
+| Adresse de broadcast | | 192.168.10.63 |
 
 ---
 
@@ -155,28 +154,32 @@ Mais il ne connaît que l'**adresse IP** de la machine.
 
 **Étape par étape :**
 
-```
-PC1 (192.168.1.10 - MAC AA:BB:11) veut envoyer un paquet à PC2 (192.168.1.20)
-
-1. PC1 vérifie sa TABLE ARP locale :
-   - Contient-elle une entrée pour 192.168.1.20 ?
-   - NON → lancer une requête ARP
-
-2. PC1 envoie une trame ARP Request (BROADCAST) :
-   - MAC dest : FF:FF:FF:FF:FF:FF (broadcast = tout le monde reçoit)
-   - Contenu : "Qui a l'IP 192.168.1.20 ? Répondez à AA:BB:11"
-
-3. TOUS les PC du réseau reçoivent la requête ARP.
-
-4. PC2 (192.168.1.20 - MAC CC:DD:22) reconnaît son IP et répond :
-   - ARP Reply (UNICAST) directement à AA:BB:11
-   - Contenu : "C'est moi qui ai 192.168.1.20, ma MAC est CC:DD:22"
-
-5. PC1 reçoit la réponse et met à jour sa TABLE ARP :
-   192.168.1.20 → CC:DD:22
-
-6. PC1 peut maintenant construire la trame Ethernet et envoyer le paquet IP.
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 316" style="max-width:760px" role="img" aria-label="Résolution ARP : PC1 cherche l&#x27;adresse MAC de PC2" xmlns="http://www.w3.org/2000/svg">
+<rect x="20.0" y="8" width="260" height="34" rx="8" class="dg-dark"/>
+<text x="150.0" y="30.0" text-anchor="middle" class="dg-w">PC1 (192.168.1.10 - AA:BB:11)</text>
+<line x1="150.0" y1="42" x2="150.0" y2="308" class="dg-dash"/>
+<rect x="480.0" y="8" width="260" height="34" rx="8" class="dg-dark"/>
+<text x="610.0" y="30.0" text-anchor="middle" class="dg-w">Réseau local et PC2 (192.168.1.20 - CC:DD:22)</text>
+<line x1="610.0" y1="42" x2="610.0" y2="308" class="dg-dash"/>
+<rect x="4.0" y="56" width="404.2" height="26" rx="6" class="dg-soft"/>
+<text x="206.1" y="73" text-anchor="middle" class="dg-s">1. Consulte sa table ARP : pas d&#x27;entrée pour 192.168.1.20</text>
+<text x="380.0" y="102" text-anchor="middle" class="dg-t">2. ARP Request (broadcast FF:FF:FF:FF:FF:FF)</text>
+<line x1="150.0" y1="110" x2="601.0" y2="110.0" class="dg-line"/>
+<polygon points="610.0,110 601.0,105.0 601.0,115.0" class="dg-ah"/>
+<text x="380.0" y="126" text-anchor="middle" class="dg-i">« Qui a l&#x27;IP 192.168.1.20 ? Répondez à AA:BB:11 »</text>
+<rect x="447.5" y="144" width="325.0" height="42" rx="6" class="dg-soft"/>
+<text x="610.0" y="161" text-anchor="middle" class="dg-s">3. Tous les PC du réseau reçoivent la requête</text>
+<text x="610.0" y="177" text-anchor="middle" class="dg-s">Seul PC2 reconnaît son adresse IP</text>
+<text x="380.0" y="206" text-anchor="middle" class="dg-t">4. ARP Reply (unicast vers AA:BB:11)</text>
+<line x1="610.0" y1="214" x2="159.0" y2="214.0" class="dg-dash"/>
+<polygon points="150.0,214 159.0,219.0 159.0,209.0" class="dg-ah"/>
+<text x="380.0" y="230" text-anchor="middle" class="dg-i">« 192.168.1.20 a pour MAC CC:DD:22 »</text>
+<rect x="4.0" y="248" width="377.8" height="42" rx="6" class="dg-soft"/>
+<text x="192.89999999999998" y="265" text-anchor="middle" class="dg-s">5. Met à jour sa table ARP : 192.168.1.20 -&gt; CC:DD:22</text>
+<text x="192.89999999999998" y="281" text-anchor="middle" class="dg-s">6. Construit la trame Ethernet et envoie le paquet IP</text>
+</svg>
+<figcaption>PC1 ne connaît que l&#x27;adresse IP de PC2 : ARP lui fournit l&#x27;adresse MAC.</figcaption>
+</figure>
 
 **Schéma ARP :**
 

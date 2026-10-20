@@ -440,9 +440,60 @@ Fa0/3           Desg  FWD  19     128.3    P2p
 | Serveur impression | print.cabinet-archi.local | 192.168.50.200 |
 | Alias | web.cabinet-archi.local | → www |
 
-1. Écrire le fichier de zone directe complet (avec SOA)
-2. Écrire les 4 enregistrements PTR correspondants
-3. Quel est le nom de la zone inverse pour `192.168.50.0/24` ?
+**1.** Écrire le fichier de zone directe complet (avec SOA)
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+```
+$TTL 3600
+@   IN  SOA ns1.cabinet-archi.local. admin.cabinet-archi.local. (
+            2026102001  ; numéro de série (AAAAMMJJNN), à incrémenter à chaque modification
+            3600        ; refresh
+            900         ; retry
+            604800      ; expire
+            3600 )      ; TTL négatif
+
+@       IN  NS     ns1.cabinet-archi.local.
+
+ns1     IN  A      192.168.50.1
+www     IN  A      192.168.50.100
+print   IN  A      192.168.50.200
+web     IN  CNAME  www
+```
+
+Les noms complets (FQDN) se terminent par un point ; sans point, le serveur ajoute le nom de la zone. L'alias `web` est un **CNAME** vers `www` : il n'a pas d'adresse propre.
+
+</details>
+
+**2.** Écrire les enregistrements PTR correspondants (combien y en a-t-il ?)
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+```
+$TTL 3600
+@   IN  SOA ns1.cabinet-archi.local. admin.cabinet-archi.local. (
+            2026102001 3600 900 604800 3600 )
+@   IN  NS   ns1.cabinet-archi.local.
+
+1    IN  PTR  ns1.cabinet-archi.local.
+100  IN  PTR  www.cabinet-archi.local.
+200  IN  PTR  print.cabinet-archi.local.
+```
+
+Il y a **3** enregistrements PTR, un par adresse IP. Le CNAME `web` n'a pas d'adresse, donc pas de PTR : le PTR de `192.168.50.100` pointe vers le nom canonique `www`. Dans la zone inverse, on n'écrit que le **dernier octet**.
+
+</details>
+
+**3.** Quel est le nom de la zone inverse pour `192.168.50.0/24` ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+**`50.168.192.in-addr.arpa`** : les trois premiers octets du réseau, écrits à l'envers, suivis de `.in-addr.arpa`.
+
+</details>
 
 ---
 
@@ -454,16 +505,58 @@ Trois switches reliés en triangle. Les Bridge IDs sont :
 - SW-B : Priorité 32768, MAC `0010.0000.0002`
 - SW-C : Priorité **4096**, MAC `0010.0000.0003`
 
-1. Quel switch devient Root Bridge ? Pourquoi ?
-2. Sur SW-A : quel est son Root Port (liaison vers SW-B ou vers SW-C) ?
-3. Sur SW-B : quel port sera probablement en état Blocking ?
-4. Si SW-C tombe en panne, que se passe-t-il ?
+**1.** Quel switch devient Root Bridge ? Pourquoi ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+**SW-C.** Le Root Bridge est le switch dont le Bridge ID (priorité puis adresse MAC) est le **plus petit**. La priorité 4096 de SW-C est inférieure à 32768 : sa MAC plus élevée n'intervient pas, elle ne départage que des priorités égales.
+
+</details>
+
+**2.** Sur SW-A : quel est son Root Port (liaison vers SW-B ou vers SW-C) ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+La liaison **vers SW-C** : c'est le chemin le moins coûteux vers le Root Bridge (un seul lien, coût 19 en FastEthernet) contre deux liens via SW-B (19 + 19 = 38).
+
+</details>
+
+**3.** Sur SW-B : quel port sera probablement en état Blocking ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+Le port de SW-B vers **SW-A**. SW-B a son Root Port vers SW-C. Sur le lien A–B, les deux switches ont le même coût vers la racine (19) : le Bridge ID le plus petit gagne, SW-A (même priorité, MAC `…0001` < `…0002`), et son port devient désigné. Le port de SW-B reste donc **bloqué** : c'est ce blocage qui coupe la boucle.
+
+</details>
+
+**4.** Si SW-C tombe en panne, que se passe-t-il ?
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+Les BPDU de la racine cessent : les switches élisent un nouveau Root Bridge, **SW-A** (priorité égale, MAC la plus basse). Le port bloqué de SW-B repasse en Forwarding après les états Listening puis Learning. La convergence de STP classique dure environ 30 à 50 secondes, pendant lesquelles le trafic est interrompu (quelques secondes seulement en RSTP).
+
+</details>
 
 ---
 
 #### Exercice 3 : Diagnostic DNS
 
 Une machine cliente (`192.168.10.30`) n'arrive pas à résoudre `www.techpro.local`. Proposer une procédure de diagnostic de 5 étapes, de la plus simple à la plus complexe.
+
+<details markdown="1">
+<summary>Correction de l'exercice 3</summary>
+
+1. **Configuration du client** : `ipconfig /all` (ou `resolvectl status`) : le serveur DNS configuré est-il le bon (`192.168.10.1`) ? Le client a-t-il une adresse, une passerelle ?
+2. **Connectivité** : `ping 192.168.10.1` vers le serveur DNS. Sans réponse, le problème est réseau, pas DNS.
+3. **Test de résolution** : `nslookup www.techpro.local`, puis `nslookup www.techpro.local 192.168.10.1` pour interroger directement le serveur. Un délai dépassé indique un serveur injoignable ; `NXDOMAIN` indique que le nom n'existe pas dans la zone.
+4. **Service sur le serveur** : `systemctl status bind9`, `ss -tlnup | grep 53` (le service écoute-t-il sur le port 53 ?), pare-feu qui laisse passer le port 53 en UDP et en TCP.
+5. **Contenu de la zone** : `named-checkconf` et `named-checkzone`, enregistrement `www` présent et numéro de série incrémenté, `dig @127.0.0.1 www.techpro.local`, journaux (`journalctl -u bind9`). Penser aussi à vider le cache du client : `ipconfig /flushdns`.
+
+</details>
 
 ---
 

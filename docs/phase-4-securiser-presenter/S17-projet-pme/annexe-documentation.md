@@ -49,18 +49,45 @@
 
 ### Structure des OUs
 
-```
-siosarl.local
-    ├── RH
-    │   ├── Utilisateurs
-    │   └── Ordinateurs
-    ├── Informatique
-    │   ├── Utilisateurs
-    │   └── Ordinateurs
-    ├── Direction / Comptabilite / Commercial
-    │   (même structure)
-    └── [Autres OUs créées]
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 484 314" style="max-width:484px" role="img" aria-label="Arborescence des unités d&#x27;organisation du domaine siosarl.local" xmlns="http://www.w3.org/2000/svg">
+<line x1="26" y1="34" x2="26" y2="55" class="dg-line"/>
+<line x1="26" y1="55" x2="50" y2="55" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="157" class="dg-line"/>
+<line x1="26" y1="157" x2="50" y2="157" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="259" class="dg-line"/>
+<line x1="26" y1="259" x2="50" y2="259" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="293" class="dg-line"/>
+<line x1="26" y1="293" x2="50" y2="293" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="89" class="dg-line"/>
+<line x1="64" y1="89" x2="88" y2="89" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="123" class="dg-line"/>
+<line x1="64" y1="123" x2="88" y2="123" class="dg-line"/>
+<line x1="64" y1="170" x2="64" y2="191" class="dg-line"/>
+<line x1="64" y1="191" x2="88" y2="191" class="dg-line"/>
+<line x1="64" y1="170" x2="64" y2="225" class="dg-line"/>
+<line x1="64" y1="225" x2="88" y2="225" class="dg-line"/>
+<rect x="12" y="8" width="130" height="26" rx="6" class="dg-dark"/>
+<text x="77.0" y="26" text-anchor="middle" class="dg-w">siosarl.local</text>
+<rect x="50" y="42" width="42" height="26" rx="6" class="dg-box"/>
+<text x="71.0" y="60" text-anchor="middle" class="dg-t">RH</text>
+<rect x="88" y="76" width="105" height="26" rx="6" class="dg-soft"/>
+<text x="140.6" y="94" text-anchor="middle" class="dg-s">Utilisateurs</text>
+<rect x="88" y="110" width="99" height="26" rx="6" class="dg-soft"/>
+<text x="137.3" y="128" text-anchor="middle" class="dg-s">Ordinateurs</text>
+<rect x="50" y="144" width="122" height="26" rx="6" class="dg-box"/>
+<text x="111.0" y="162" text-anchor="middle" class="dg-t">Informatique</text>
+<rect x="88" y="178" width="105" height="26" rx="6" class="dg-soft"/>
+<text x="140.6" y="196" text-anchor="middle" class="dg-s">Utilisateurs</text>
+<rect x="88" y="212" width="99" height="26" rx="6" class="dg-soft"/>
+<text x="137.3" y="230" text-anchor="middle" class="dg-s">Ordinateurs</text>
+<rect x="50" y="246" width="322" height="26" rx="6" class="dg-box"/>
+<text x="211.0" y="264" text-anchor="middle" class="dg-t">Direction / Comptabilite / Commercial</text>
+<text x="382.0" y="264" text-anchor="start" class="dg-i">même structure</text>
+<rect x="50" y="280" width="132" height="26" rx="6" class="dg-soft"/>
+<text x="115.8" y="298" text-anchor="middle" class="dg-s">Autres OU créées</text>
+</svg>
+<figcaption>Chaque service possède une OU avec ses utilisateurs et ses ordinateurs.</figcaption>
+</figure>
 
 ### GPO Déployées
 

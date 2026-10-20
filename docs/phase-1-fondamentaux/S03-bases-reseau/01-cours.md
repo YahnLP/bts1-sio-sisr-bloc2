@@ -1318,12 +1318,84 @@ Regarder le **premier octet** :
 **Exemple :** `255.255.255.0`
 
 **En binaire :**
-```
-255      .  255      .  255      .  0
-11111111 .  11111111 .  11111111 .  00000000
-
-Partie réseau (1) ────────────────┘ └── Partie hôte (0)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 200" style="max-width:760px" role="img" aria-label="Masque 255.255.255.0 en binaire : partie réseau et partie hôte" xmlns="http://www.w3.org/2000/svg">
+<text x="103" y="26" text-anchor="middle" class="dg-t">255</text>
+<text x="249" y="26" text-anchor="middle" class="dg-t">255</text>
+<text x="395" y="26" text-anchor="middle" class="dg-t">255</text>
+<text x="541" y="26" text-anchor="middle" class="dg-t">0</text>
+<rect x="36" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="43.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="53" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="60.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="70" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="77.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="87" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="94.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="104" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="111.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="121" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="128.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="138" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="145.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="155" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="162.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="182" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="189.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="199" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="206.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="216" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="223.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="233" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="240.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="250" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="257.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="267" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="274.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="284" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="291.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="301" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="308.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="328" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="335.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="345" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="352.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="362" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="369.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="379" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="386.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="396" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="403.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="413" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="420.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="430" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="437.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="447" y="38" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="454.5" y="55" text-anchor="middle" class="dg-s">1</text>
+<rect x="474" y="38" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="481.5" y="55" text-anchor="middle" class="dg-s">0</text>
+<rect x="491" y="38" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="498.5" y="55" text-anchor="middle" class="dg-s">0</text>
+<rect x="508" y="38" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="515.5" y="55" text-anchor="middle" class="dg-s">0</text>
+<rect x="525" y="38" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="532.5" y="55" text-anchor="middle" class="dg-s">0</text>
+<rect x="542" y="38" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="549.5" y="55" text-anchor="middle" class="dg-s">0</text>
+<rect x="559" y="38" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="566.5" y="55" text-anchor="middle" class="dg-s">0</text>
+<rect x="576" y="38" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="583.5" y="55" text-anchor="middle" class="dg-s">0</text>
+<rect x="593" y="38" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="600.5" y="55" text-anchor="middle" class="dg-s">0</text>
+<line x1="36" y1="74" x2="462" y2="74" class="dg-line"/>
+<line x1="470" y1="74" x2="608" y2="74" class="dg-line"/>
+<text x="250.0" y="96" text-anchor="middle" class="dg-t">Partie RÉSEAU (bits à 1) : 24 bits</text>
+<text x="540.0" y="96" text-anchor="middle" class="dg-t">Partie HÔTE (bits à 0)</text>
+<text x="380" y="140" text-anchor="middle" class="dg-t">Notation CIDR : /24 = 24 bits à 1</text>
+<text x="380" y="166" text-anchor="middle" class="dg-s">Hôtes utilisables : 2⁸ − 2 = 254</text>
+</svg>
+<figcaption>Les bits à 1 du masque désignent la partie réseau, les bits à 0 la partie hôte.</figcaption>
+</figure>
 
 **Règle :** 
 - Les bits à **1** dans le masque = partie **réseau**
@@ -1336,16 +1408,209 @@ Partie réseau (1) ────────────────┘ └──
 **Adresse IP :** `192.168.1.10`
 **Masque :** `255.255.255.0` (ou `/24`)
 
-```
-IP :     192.168.1.10    → 11000000.10101000.00000001.00001010
-Masque : 255.255.255.0   → 11111111.11111111.11111111.00000000
-         ─────────────────   ───────────────────────── ────────
-         Partie RÉSEAU                                Partie HÔTE
-
-Adresse du RÉSEAU :  192.168.1.0   (tous les bits hôte à 0)
-Adresse BROADCAST : 192.168.1.255  (tous les bits hôte à 1)
-Plage utilisable :   192.168.1.1 à 192.168.1.254
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 300" style="max-width:760px" role="img" aria-label="Calcul de l&#x27;adresse réseau : IP ET masque" xmlns="http://www.w3.org/2000/svg">
+<text x="36" y="22" text-anchor="middle" class="dg-s"></text>
+<text x="20" y="40" text-anchor="start" class="dg-t">Adresse IP : 192.168.1.10</text>
+<rect x="36" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="43.5" y="61" text-anchor="middle" class="dg-s">1</text>
+<rect x="53" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="60.5" y="61" text-anchor="middle" class="dg-s">1</text>
+<rect x="70" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="77.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="87" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="94.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="104" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="111.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="121" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="128.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="138" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="145.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="155" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="162.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="182" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="189.5" y="61" text-anchor="middle" class="dg-s">1</text>
+<rect x="199" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="206.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="216" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="223.5" y="61" text-anchor="middle" class="dg-s">1</text>
+<rect x="233" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="240.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="250" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="257.5" y="61" text-anchor="middle" class="dg-s">1</text>
+<rect x="267" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="274.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="284" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="291.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="301" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="308.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="328" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="335.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="345" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="352.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="362" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="369.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="379" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="386.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="396" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="403.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="413" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="420.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="430" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="437.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="447" y="44" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="454.5" y="61" text-anchor="middle" class="dg-s">1</text>
+<rect x="474" y="44" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="481.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="491" y="44" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="498.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="508" y="44" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="515.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="525" y="44" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="532.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="542" y="44" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="549.5" y="61" text-anchor="middle" class="dg-s">1</text>
+<rect x="559" y="44" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="566.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<rect x="576" y="44" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="583.5" y="61" text-anchor="middle" class="dg-s">1</text>
+<rect x="593" y="44" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="600.5" y="61" text-anchor="middle" class="dg-s">0</text>
+<text x="20" y="106" text-anchor="start" class="dg-t">Masque : 255.255.255.0</text>
+<rect x="36" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="43.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="53" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="60.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="70" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="77.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="87" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="94.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="104" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="111.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="121" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="128.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="138" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="145.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="155" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="162.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="182" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="189.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="199" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="206.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="216" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="223.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="233" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="240.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="250" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="257.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="267" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="274.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="284" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="291.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="301" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="308.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="328" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="335.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="345" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="352.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="362" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="369.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="379" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="386.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="396" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="403.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="413" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="420.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="430" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="437.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="447" y="110" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="454.5" y="127" text-anchor="middle" class="dg-s">1</text>
+<rect x="474" y="110" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="481.5" y="127" text-anchor="middle" class="dg-s">0</text>
+<rect x="491" y="110" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="498.5" y="127" text-anchor="middle" class="dg-s">0</text>
+<rect x="508" y="110" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="515.5" y="127" text-anchor="middle" class="dg-s">0</text>
+<rect x="525" y="110" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="532.5" y="127" text-anchor="middle" class="dg-s">0</text>
+<rect x="542" y="110" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="549.5" y="127" text-anchor="middle" class="dg-s">0</text>
+<rect x="559" y="110" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="566.5" y="127" text-anchor="middle" class="dg-s">0</text>
+<rect x="576" y="110" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="583.5" y="127" text-anchor="middle" class="dg-s">0</text>
+<rect x="593" y="110" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="600.5" y="127" text-anchor="middle" class="dg-s">0</text>
+<text x="20" y="172" text-anchor="start" class="dg-t">Adresse réseau (IP ET masque) : 192.168.1.0</text>
+<rect x="36" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="43.5" y="193" text-anchor="middle" class="dg-s">1</text>
+<rect x="53" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="60.5" y="193" text-anchor="middle" class="dg-s">1</text>
+<rect x="70" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="77.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="87" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="94.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="104" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="111.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="121" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="128.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="138" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="145.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="155" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="162.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="182" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="189.5" y="193" text-anchor="middle" class="dg-s">1</text>
+<rect x="199" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="206.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="216" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="223.5" y="193" text-anchor="middle" class="dg-s">1</text>
+<rect x="233" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="240.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="250" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="257.5" y="193" text-anchor="middle" class="dg-s">1</text>
+<rect x="267" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="274.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="284" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="291.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="301" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="308.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="328" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="335.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="345" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="352.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="362" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="369.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="379" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="386.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="396" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="403.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="413" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="420.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="430" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="437.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="447" y="176" width="15" height="24" rx="3" class="dg-warn"/>
+<text x="454.5" y="193" text-anchor="middle" class="dg-s">1</text>
+<rect x="474" y="176" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="481.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="491" y="176" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="498.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="508" y="176" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="515.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="525" y="176" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="532.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="542" y="176" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="549.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="559" y="176" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="566.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="576" y="176" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="583.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<rect x="593" y="176" width="15" height="24" rx="3" class="dg-ok"/>
+<text x="600.5" y="193" text-anchor="middle" class="dg-s">0</text>
+<text x="540.0" y="224" text-anchor="middle" class="dg-i">bits hôte à 0</text>
+<text x="20" y="260" text-anchor="start" class="dg-s">Broadcast : 192.168.1.255 (bits hôte à 1)   |   Plage utilisable : 192.168.1.1 à 192.168.1.254</text>
+<rect x="36" y="40" width="0" height="0"/>
+</svg>
+<figcaption>192.168.1.10/24 : adresse réseau 192.168.1.0, broadcast 192.168.1.255.</figcaption>
+</figure>
 
 **Nombre d'hôtes utilisables :** 2^8^ − 2 = 256 − 2 = **254 machines**
 - `-2` car on retire l'adresse réseau (`.0`) et l'adresse broadcast (`.255`)
@@ -1472,18 +1737,81 @@ Pour chaque adresse IP, indiquer :
 | 172.32.1.1 | | | |
 | 127.0.0.1 | | | |
 
+<details markdown="1">
+<summary>Correction de l'exercice 1</summary>
+
+La classe se lit au **premier octet** : A de 1 à 126, B de 128 à 191, C de 192 à 223.
+
+| **Adresse IP** | **Classe** | **Masque par défaut** | **Privée / Publique** |
+|----------------|:----------:|-----------------------|-----------------------|
+| 10.0.0.1 | A | 255.0.0.0 (/8) | Privée (10.0.0.0/8) |
+| 172.16.5.10 | B | 255.255.0.0 (/16) | Privée (172.16.0.0 à 172.31.255.255) |
+| 192.168.100.50 | C | 255.255.255.0 (/24) | Privée (192.168.0.0/16) |
+| 8.8.8.8 | A | 255.0.0.0 (/8) | Publique (serveur DNS de Google) |
+| 172.32.1.1 | B | 255.255.0.0 (/16) | **Publique** : 172.32 est hors de la plage privée 172.16 à 172.31 |
+| 127.0.0.1 | A (plage réservée) | 255.0.0.0 (/8) | Ni privée ni publique : adresse de **bouclage** (loopback), la machine se parle à elle-même |
+
+</details>
+
 ---
 
 ### Exercice 2 : Calcul de Réseau
 
 Soit l'adresse IP `192.168.10.45` avec le masque `255.255.255.0`.
 
-1. Quelle est l'adresse du réseau ? __________
-2. Quelle est l'adresse de broadcast ? __________
-3. Combien d'hôtes utilisables dans ce réseau ? __________
-4. Quelle est la plage d'adresses utilisables ? __________ à __________
-5. Cette machine peut-elle communiquer directement (sans routeur) avec `192.168.10.100` ? Oui / Non
-6. Cette machine peut-elle communiquer directement avec `192.168.11.10` ? Oui / Non
+**1.** Quelle est l'adresse du réseau ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+`192.168.10.0` : on met à 0 tous les bits de la partie hôte (le dernier octet, avec un masque /24).
+
+</details>
+
+**2.** Quelle est l'adresse de broadcast ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+`192.168.10.255` : tous les bits de la partie hôte à 1.
+
+</details>
+
+**3.** Combien d'hôtes utilisables dans ce réseau ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+2<sup>8</sup> − 2 = 256 − 2 = **254 hôtes** (on retire l'adresse du réseau et celle de broadcast).
+
+</details>
+
+**4.** Quelle est la plage d'adresses utilisables ?
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+De `192.168.10.1` à `192.168.10.254`.
+
+</details>
+
+**5.** Cette machine peut-elle communiquer directement (sans routeur) avec `192.168.10.100` ?
+
+<details markdown="1">
+<summary>Correction de la question 5</summary>
+
+**Oui** : `192.168.10.100` est dans la plage `192.168.10.1` à `192.168.10.254`, donc dans le même réseau.
+
+</details>
+
+**6.** Cette machine peut-elle communiquer directement avec `192.168.11.10` ?
+
+<details markdown="1">
+<summary>Correction de la question 6</summary>
+
+**Non** : `192.168.11.10` appartient à un autre réseau (`192.168.11.0/24`). Il faut passer par un routeur (la passerelle par défaut).
+
+</details>
 
 ---
 
@@ -1509,13 +1837,37 @@ Passerelle par défaut. . . . . . . . . : 192.168.1.1
 ```
 
 **Questions :**
-1. La pile TCP/IP fonctionne-t-elle ? Oui / Non
-2. Quel est le problème probable ?
-   - ☐ Problème DNS
-   - ☐ Problème de connexion locale (câble, switch)
-   - ☐ Problème de configuration IP
-   - ☐ Problème Internet (FAI)
-3. Quelle serait votre prochaine action de diagnostic ?
+
+**1.** La pile TCP/IP fonctionne-t-elle ? Oui / Non
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+**Oui.** Le ping sur `127.0.0.1` réussit : la pile TCP/IP du poste est opérationnelle. Il ne prouve pas pour autant que la carte réseau, le câble ou le switch fonctionnent.
+
+</details>
+
+**2.** Quel est le problème probable ?
+- ☐ Problème DNS
+- ☐ Problème de connexion locale (câble, switch)
+- ☐ Problème de configuration IP
+- ☐ Problème Internet (FAI)
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+**Problème de connexion locale (câble, switch).** La configuration IP est cohérente (`192.168.1.50/24` et passerelle `192.168.1.1` dans le même réseau), donc ce n'est pas la configuration. Ce n'est pas le DNS (on n'a pas encore testé de nom) ni le FAI : la passerelle, première étape vers Internet, ne répond déjà pas. Il reste le chemin local : câble, port du switch, ou passerelle éteinte.
+
+</details>
+
+**3.** Quelle serait votre prochaine action de diagnostic ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+Remonter couche par couche : vérifier le voyant et le câble de la carte réseau, tester `ping 192.168.1.50` (sa propre adresse), puis `ping` d'un autre poste du même réseau pour savoir si le problème est propre à ce poste ou général, consulter `arp -a` (la MAC de la passerelle a-t-elle été apprise ?), changer de câble ou de port du switch, et vérifier que la passerelle est allumée.
+
+</details>
 
 ---
 
@@ -1534,6 +1886,23 @@ Associer chaque élément à sa couche OSI :
 | Routeur | |
 | Switch | |
 | Port 443 (HTTPS) | |
+
+<details markdown="1">
+<summary>Correction de l'exercice 4</summary>
+
+| **Élément** | **Couche OSI** |
+|-------------|----------------|
+| Navigateur Chrome | 7 : Application |
+| Adresse MAC | 2 : Liaison de données |
+| Câble RJ45 | 1 : Physique |
+| Protocole TCP | 4 : Transport |
+| Adresse IP | 3 : Réseau |
+| Chiffrement SSL | 6 : Présentation (en pratique, SSL/TLS se place entre le transport et l'application) |
+| Routeur | 3 : Réseau |
+| Switch | 2 : Liaison de données |
+| Port 443 (HTTPS) | 4 : Transport (le numéro de port identifie le service ; le protocole HTTPS lui-même est en couche 7) |
+
+</details>
 
 ---
 

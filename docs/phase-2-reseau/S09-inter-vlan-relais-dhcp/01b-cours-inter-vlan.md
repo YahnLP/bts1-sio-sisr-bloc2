@@ -71,18 +71,35 @@ Le routeur est connecté au switch par **un seul câble physique** configuré en
 
 Lorsqu'un paquet voyage sur un lien trunk, le switch lui ajoute un **tag 802.1Q** — une étiquette de 4 octets insérée dans l'en-tête Ethernet qui indique à quel VLAN appartient ce paquet.
 
-```
-   TRAME ETHERNET STANDARD (sans tag)
-   ┌────────┬────────┬──────┬──────────┬─────┐
-   │  Dest  │  Src   │ Type │  Données │ FCS │
-   └────────┴────────┴──────┴──────────┴─────┘
-
-   TRAME ETHERNET AVEC TAG 802.1Q (sur un trunk)
-   ┌────────┬────────┬──────────┬──────┬──────────┬─────┐
-   │  Dest  │  Src   │ Tag 802.1Q│ Type │  Données │ FCS │
-   │        │        │(VLAN ID) │      │          │     │
-   └────────┴────────┴──────────┴──────┴──────────┴─────┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 210" style="max-width:760px" role="img" aria-label="Trame Ethernet standard et trame avec tag 802.1Q" xmlns="http://www.w3.org/2000/svg">
+<text x="20" y="26" text-anchor="start" class="dg-t">Trame Ethernet standard (sans tag, port Access)</text>
+<rect x="20" y="36" width="110" height="42" rx="5" class="dg-box"/>
+<text x="75.0" y="62.0" text-anchor="middle" class="dg-t">Dest</text>
+<rect x="134" y="36" width="110" height="42" rx="5" class="dg-box"/>
+<text x="189.0" y="62.0" text-anchor="middle" class="dg-t">Src</text>
+<rect x="248" y="36" width="90" height="42" rx="5" class="dg-box"/>
+<text x="293.0" y="62.0" text-anchor="middle" class="dg-t">Type</text>
+<rect x="342" y="36" width="230" height="42" rx="5" class="dg-soft"/>
+<text x="457.0" y="62.0" text-anchor="middle" class="dg-t">Données</text>
+<rect x="576" y="36" width="70" height="42" rx="5" class="dg-box"/>
+<text x="611.0" y="62.0" text-anchor="middle" class="dg-t">FCS</text>
+<text x="20" y="116" text-anchor="start" class="dg-t">Trame avec tag 802.1Q (lien trunk)</text>
+<rect x="20" y="126" width="100" height="42" rx="5" class="dg-box"/>
+<text x="70.0" y="152.0" text-anchor="middle" class="dg-t">Dest</text>
+<rect x="124" y="126" width="100" height="42" rx="5" class="dg-box"/>
+<text x="174.0" y="152.0" text-anchor="middle" class="dg-t">Src</text>
+<rect x="228" y="126" width="110" height="42" rx="5" class="dg-warn"/>
+<text x="283.0" y="152.0" text-anchor="middle" class="dg-t">Tag 802.1Q</text>
+<rect x="342" y="126" width="80" height="42" rx="5" class="dg-box"/>
+<text x="382.0" y="152.0" text-anchor="middle" class="dg-t">Type</text>
+<rect x="426" y="126" width="190" height="42" rx="5" class="dg-soft"/>
+<text x="521.0" y="152.0" text-anchor="middle" class="dg-t">Données</text>
+<rect x="620" y="126" width="70" height="42" rx="5" class="dg-box"/>
+<text x="655.0" y="152.0" text-anchor="middle" class="dg-t">FCS</text>
+<text x="250" y="198" text-anchor="middle" class="dg-i">Tag : 4 octets, dont le VLAN ID</text>
+</svg>
+<figcaption>Le tag 802.1Q de 4 octets contient notamment le VLAN ID sur 12 bits (4094 VLAN).</figcaption>
+</figure>
 
 *Légende : Comparaison entre une trame Ethernet standard (sans tag, utilisée sur un port d'accès) et une trame Ethernet avec tag 802.1Q (utilisée sur un lien trunk). Le champ Tag 802.1Q de 4 octets contient notamment le VLAN ID (12 bits, permettant de distinguer jusqu'à 4094 VLANs).*
 
@@ -92,29 +109,12 @@ Lorsqu'un paquet voyage sur un lien trunk, le switch lui ajoute un **tag 802.1Q*
 
 Traçons le chemin d'un paquet de **PC-RH (VLAN 10)** vers **PC-DIR (VLAN 30)** :
 
-```
- 1. PC-RH envoie le paquet vers sa passerelle (192.168.10.1 = G0/0.10 du routeur)
-    │
-    ▼
- 2. Le switch reçoit la trame sur le port Fa0/1 (VLAN 10 access)
-    Il ajoute le TAG 802.1Q (VLAN 10) et envoie vers le trunk
-    │
-    ▼
- 3. Le routeur reçoit la trame taggée VLAN 10 sur G0/0.10
-    Il "dé-tag" la trame, lit l'adresse IP destination (192.168.30.x)
-    Il consulte sa table de routage → destination dans VLAN 30 → sortie G0/0.30
-    │
-    ▼
- 4. Le routeur re-tagge la trame avec VLAN 30
-    Il envoie la trame sur le trunk vers le switch
-    │
-    ▼
- 5. Le switch reçoit la trame taggée VLAN 30
-    Il retire le tag et envoie vers le port Fa0/3 (VLAN 30 access)
-    │
-    ▼
- 6. PC-DIR reçoit le paquet
-```
+1. **PC-RH** envoie le paquet vers sa passerelle (192.168.10.1 = G0/0.10 du routeur).
+2. Le **switch** reçoit la trame sur Fa0/1 (VLAN 10 access), ajoute le **tag 802.1Q (VLAN 10)** et l'envoie sur le trunk.
+3. Le **routeur** reçoit la trame taguée VLAN 10 sur G0/0.10, retire le tag, lit l'adresse IP de destination (192.168.30.x) et consulte sa table de routage : sortie par G0/0.30.
+4. Le routeur **re-tague** la trame avec le VLAN 30 et l'envoie sur le trunk vers le switch.
+5. Le switch retire le tag et émet la trame sur Fa0/3 (VLAN 30 access).
+6. **PC-DIR** reçoit le paquet.
 
 *Légende : Diagramme de flux montrant le cheminement étape par étape d'un paquet depuis PC-RH (VLAN 10) jusqu'à PC-DIR (VLAN 30). Chaque étape met en évidence le rôle du tag 802.1Q et l'action du routeur (consultation de la table de routage).*
 

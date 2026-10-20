@@ -507,58 +507,76 @@ C'est une question récurrente. Les deux transportent image et son numériques ;
 
 #### Étapes Détaillées du Démarrage
 
-```
-┌──────────────────────────────────────────────────┐
-│ 1. APPUI SUR LE BOUTON POWER                     │
-└────────────────┬─────────────────────────────────┘
-                 ▼
-┌──────────────────────────────────────────────────┐
-│ 2. ALIMENTATION envoie signal "POWER GOOD"       │
-│    → CPU démarre                                 │
-└────────────────┬─────────────────────────────────┘
-                 ▼
-┌──────────────────────────────────────────────────┐
-│ 3. CPU exécute la première instruction           │
-│    → Chargement du BIOS/UEFI depuis la puce ROM │
-└────────────────┬─────────────────────────────────┘
-                 ▼
-┌──────────────────────────────────────────────────┐
-│ 4. POST (Power-On Self Test)                     │
-│    • Test RAM                                    │
-│    • Test CPU                                    │
-│    • Détection disques durs                      │
-│    • Détection carte graphique                   │
-│    • Test clavier                                │
-│    → Si erreur : BIPs sonores ou message        │
-└────────────────┬─────────────────────────────────┘
-                 ▼
-┌──────────────────────────────────────────────────┐
-│ 5. Initialisation des périphériques              │
-│    (Carte graphique, clavier, souris, etc.)     │
-└────────────────┬─────────────────────────────────┘
-                 ▼
-┌──────────────────────────────────────────────────┐
-│ 6. Recherche du périphérique BOOTABLE            │
-│    selon l'ORDRE DE BOOT défini                  │
-│    (1. SSD → 2. USB → 3. CD/DVD → 4. Réseau)   │
-└────────────────┬─────────────────────────────────┘
-                 ▼
-┌──────────────────────────────────────────────────┐
-│ 7. Lecture du MBR ou GPT du disque               │
-│    → Chargement du BOOTLOADER                    │
-│    (Windows Boot Manager, GRUB pour Linux...)    │
-└────────────────┬─────────────────────────────────┘
-                 ▼
-┌──────────────────────────────────────────────────┐
-│ 8. Le BOOTLOADER charge le noyau de l'OS         │
-│    (ntoskrnl.exe pour Windows, vmlinuz pour Linux│
-└────────────────┬─────────────────────────────────┘
-                 ▼
-┌──────────────────────────────────────────────────┐
-│ 9. Chargement de l'OS complet                    │
-│    → Écran de connexion Windows/Linux           │
-└──────────────────────────────────────────────────┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 692" style="max-width:760px" role="img" aria-label="Séquence de démarrage d&#x27;un PC, du bouton Power à l&#x27;écran de connexion" xmlns="http://www.w3.org/2000/svg">
+<rect x="70" y="10" width="540" height="30" rx="8" class="dg-box"/>
+<circle cx="92" cy="25.0" r="13" class="dg-dark"/>
+<text x="92" y="30.0" text-anchor="middle" class="dg-w">1</text>
+<text x="118" y="31.0" text-anchor="start" class="dg-t">Appui sur le bouton Power</text>
+<line x1="340.0" y1="40" x2="340.0" y2="53.0" class="dg-line"/>
+<polygon points="340.0,62 345.0,53.0 335.0,53.0" class="dg-ah"/>
+<rect x="70" y="62" width="540" height="56" rx="8" class="dg-box"/>
+<circle cx="92" cy="90.0" r="13" class="dg-dark"/>
+<text x="92" y="95.0" text-anchor="middle" class="dg-w">2</text>
+<text x="118" y="87.0" text-anchor="start" class="dg-t">L&#x27;alimentation envoie le signal « POWER GOOD »</text>
+<text x="118" y="107.0" text-anchor="start" class="dg-s">Le CPU démarre</text>
+<line x1="340.0" y1="118" x2="340.0" y2="131.0" class="dg-line"/>
+<polygon points="340.0,140 345.0,131.0 335.0,131.0" class="dg-ah"/>
+<rect x="70" y="140" width="540" height="56" rx="8" class="dg-warn"/>
+<circle cx="92" cy="168.0" r="13" class="dg-dark"/>
+<text x="92" y="173.0" text-anchor="middle" class="dg-w">3</text>
+<text x="118" y="165.0" text-anchor="start" class="dg-t">Le CPU exécute sa première instruction</text>
+<text x="118" y="185.0" text-anchor="start" class="dg-s">Chargement du BIOS/UEFI depuis la puce ROM</text>
+<line x1="340.0" y1="196" x2="340.0" y2="209.0" class="dg-line"/>
+<polygon points="340.0,218 345.0,209.0 335.0,209.0" class="dg-ah"/>
+<rect x="70" y="218" width="540" height="74" rx="8" class="dg-warn"/>
+<circle cx="92" cy="255.0" r="13" class="dg-dark"/>
+<text x="92" y="260.0" text-anchor="middle" class="dg-w">4</text>
+<text x="118" y="243.0" text-anchor="start" class="dg-t">POST (Power-On Self Test)</text>
+<text x="118" y="263.0" text-anchor="start" class="dg-s">Tests RAM, CPU, clavier ; détection des disques et de la carte graphique</text>
+<text x="118" y="281.0" text-anchor="start" class="dg-s">En cas d&#x27;erreur : bips sonores ou message</text>
+<line x1="340.0" y1="292" x2="340.0" y2="305.0" class="dg-line"/>
+<polygon points="340.0,314 345.0,305.0 335.0,305.0" class="dg-ah"/>
+<rect x="70" y="314" width="540" height="56" rx="8" class="dg-warn"/>
+<circle cx="92" cy="342.0" r="13" class="dg-dark"/>
+<text x="92" y="347.0" text-anchor="middle" class="dg-w">5</text>
+<text x="118" y="339.0" text-anchor="start" class="dg-t">Initialisation des périphériques</text>
+<text x="118" y="359.0" text-anchor="start" class="dg-s">Carte graphique, clavier, souris...</text>
+<line x1="340.0" y1="370" x2="340.0" y2="383.0" class="dg-line"/>
+<polygon points="340.0,392 345.0,383.0 335.0,383.0" class="dg-ah"/>
+<rect x="70" y="392" width="540" height="56" rx="8" class="dg-warn"/>
+<circle cx="92" cy="420.0" r="13" class="dg-dark"/>
+<text x="92" y="425.0" text-anchor="middle" class="dg-w">6</text>
+<text x="118" y="417.0" text-anchor="start" class="dg-t">Recherche du périphérique bootable</text>
+<text x="118" y="437.0" text-anchor="start" class="dg-s">Selon l&#x27;ordre de boot : 1. SSD, 2. USB, 3. CD/DVD, 4. Réseau</text>
+<line x1="340.0" y1="448" x2="340.0" y2="461.0" class="dg-line"/>
+<polygon points="340.0,470 345.0,461.0 335.0,461.0" class="dg-ah"/>
+<rect x="70" y="470" width="540" height="56" rx="8" class="dg-ok"/>
+<circle cx="92" cy="498.0" r="13" class="dg-dark"/>
+<text x="92" y="503.0" text-anchor="middle" class="dg-w">7</text>
+<text x="118" y="495.0" text-anchor="start" class="dg-t">Lecture du MBR ou de la GPT du disque</text>
+<text x="118" y="515.0" text-anchor="start" class="dg-s">Chargement du bootloader (Windows Boot Manager, GRUB...)</text>
+<line x1="340.0" y1="526" x2="340.0" y2="539.0" class="dg-line"/>
+<polygon points="340.0,548 345.0,539.0 335.0,539.0" class="dg-ah"/>
+<rect x="70" y="548" width="540" height="56" rx="8" class="dg-ok"/>
+<circle cx="92" cy="576.0" r="13" class="dg-dark"/>
+<text x="92" y="581.0" text-anchor="middle" class="dg-w">8</text>
+<text x="118" y="573.0" text-anchor="start" class="dg-t">Le bootloader charge le noyau de l&#x27;OS</text>
+<text x="118" y="593.0" text-anchor="start" class="dg-s">ntoskrnl.exe (Windows), vmlinuz (Linux)</text>
+<line x1="340.0" y1="604" x2="340.0" y2="617.0" class="dg-line"/>
+<polygon points="340.0,626 345.0,617.0 335.0,617.0" class="dg-ah"/>
+<rect x="70" y="626" width="540" height="56" rx="8" class="dg-ok"/>
+<circle cx="92" cy="654.0" r="13" class="dg-dark"/>
+<text x="92" y="659.0" text-anchor="middle" class="dg-w">9</text>
+<text x="118" y="651.0" text-anchor="start" class="dg-t">Chargement de l&#x27;OS complet</text>
+<text x="118" y="671.0" text-anchor="start" class="dg-s">Écran de connexion Windows / Linux</text>
+<line x1="624" y1="140" x2="624" y2="448" class="dg-line"/>
+<line x1="624" y1="140" x2="616" y2="140" class="dg-line"/>
+<line x1="624" y1="448" x2="616" y2="448" class="dg-line"/>
+<text x="634" y="290.0" text-anchor="start" class="dg-t">BIOS / UEFI</text>
+<text x="634" y="308.0" text-anchor="start" class="dg-i">étapes 3 à 6</text>
+</svg>
+<figcaption>Le BIOS/UEFI intervient dans les étapes 3 à 6 (en orange).</figcaption>
+</figure>
 
 *Légende : Séquence complète de démarrage d'un PC, du bouton Power jusqu'à l'écran de connexion de l'OS. Le BIOS/UEFI intervient dans les étapes 3 à 6.*
 
