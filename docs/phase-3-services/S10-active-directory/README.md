@@ -52,7 +52,7 @@ Si ta situation le permet : **observer** comment ton entreprise traite le sujet 
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Compétences :** codes relus sur le référentiel (page [Référentiel](../../ressources/referentiel.md)) ; le choix des compétences pour cette séance est une proposition à valider.
+- **Compétences :** codes relus sur le référentiel (page [Référentiel](../../ressources/referentiel.md)).
 - Les mots de passe des comptes du TP sont des identifiants de laboratoire communs : choix pédagogique assumé en environnement contrôlé. Ne pas les reprendre dans une réalisation présentée à l'épreuve.
 
 </details>

@@ -54,7 +54,7 @@ Si ta situation le permet : **observer** comment ton entreprise traite le sujet 
 <details markdown="1">
 <summary>Notes pour l'enseignant</summary>
 
-- **Compétences :** codes relus sur le référentiel (page [Référentiel](../../ressources/referentiel.md)) ; le choix des compétences pour cette séance est une proposition à valider.
+- **Compétences :** codes relus sur le référentiel (page [Référentiel](../../ressources/referentiel.md)).
 - Le TP intégré peut être noté (évaluation formative) : la grille est à construire à partir des points de contrôle.
 - Le TP « routage inter-VLAN » est issu de l'ancienne semaine 14 ; le cours sur le relais DHCP de l'ancienne semaine 10.
 

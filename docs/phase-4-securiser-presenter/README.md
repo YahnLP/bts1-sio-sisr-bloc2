@@ -3,7 +3,7 @@
 **Séances S16 à S19.** Superviser et sauvegarder l'infrastructure, la rendre tolérante aux pannes, réaliser un projet complet de PME, le documenter (DAT) et s'entraîner à l'épreuve E6.
 
 > [!NOTE]
-> Chaque séance de 4 h contient une **fiche séance**, un **cours**, un **TP** (avec un bilan de compétences en fin de séance) et, selon les cas, des annexes. Les séances marquées *à valider* ont été ajoutées ou réécrites lors de la refonte : elles attendent la relecture de l'enseignant.
+> Chaque séance de 4 h contient une **fiche séance**, un **cours**, un **TP** (avec un bilan de compétences en fin de séance) et, selon les cas, des annexes.
 
 ## Progression
 

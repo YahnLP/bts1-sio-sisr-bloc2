@@ -3,7 +3,7 @@
 **Séances S01 à S05.** Comprendre la machine (matériel, système d'exploitation, comptes et droits) puis poser les bases du réseau : modèle OSI, adressage IPv4, commutation Cisco.
 
 > [!NOTE]
-> Chaque séance de 4 h contient une **fiche séance**, un **cours**, un **TP** (avec un bilan de compétences en fin de séance) et, selon les cas, des annexes. Les séances marquées *à valider* ont été ajoutées ou réécrites lors de la refonte : elles attendent la relecture de l'enseignant.
+> Chaque séance de 4 h contient une **fiche séance**, un **cours**, un **TP** (avec un bilan de compétences en fin de séance) et, selon les cas, des annexes.
 
 ## Progression
 
