@@ -285,19 +285,24 @@ L'OS fournit un moyen d'interagir avec l'ordinateur.
 
 **Schéma en couches :**
 
-```
-┌────────────────────────────────────────┐
-│     UTILISATEUR & APPLICATIONS         │  ← Couche 4 : Programmes (Word, Chrome...)
-├────────────────────────────────────────┤
-│     INTERFACE SYSTÈME (API)            │  ← Couche 3 : API Windows / POSIX
-├────────────────────────────────────────┤
-│     SERVICES SYSTÈMES                  │  ← Couche 2 : Gestionnaire fichiers, réseau...
-├────────────────────────────────────────┤
-│     NOYAU (KERNEL)                     │  ← Couche 1 : Cœur de l'OS
-├────────────────────────────────────────┤
-│     MATÉRIEL (HARDWARE)                │  ← Couche 0 : CPU, RAM, Disques, Cartes réseau
-└────────────────────────────────────────┘
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 300" style="max-width:760px" role="img" aria-label="Les couches d&#x27;un système d&#x27;exploitation, du matériel aux applications" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="10" width="330" height="48" rx="8" class="dg-box"/>
+<text x="175.0" y="39.0" text-anchor="middle" class="dg-t">Utilisateur et applications</text>
+<text x="360" y="39" text-anchor="start" class="dg-s">Couche 4 : programmes (Word, Chrome...)</text>
+<rect x="10" y="66" width="330" height="48" rx="8" class="dg-box"/>
+<text x="175.0" y="95.0" text-anchor="middle" class="dg-t">Interface système (API)</text>
+<text x="360" y="95" text-anchor="start" class="dg-s">Couche 3 : API Windows / POSIX</text>
+<rect x="10" y="122" width="330" height="48" rx="8" class="dg-box"/>
+<text x="175.0" y="151.0" text-anchor="middle" class="dg-t">Services système</text>
+<text x="360" y="151" text-anchor="start" class="dg-s">Couche 2 : gestionnaire de fichiers, réseau...</text>
+<rect x="10" y="178" width="330" height="48" rx="8" class="dg-ok"/>
+<text x="175.0" y="207.0" text-anchor="middle" class="dg-t">Noyau (kernel)</text>
+<text x="360" y="207" text-anchor="start" class="dg-s">Couche 1 : cœur de l&#x27;OS</text>
+<rect x="10" y="234" width="330" height="48" rx="8" class="dg-warn"/>
+<text x="175.0" y="263.0" text-anchor="middle" class="dg-t">Matériel (hardware)</text>
+<text x="360" y="263" text-anchor="start" class="dg-s">Couche 0 : CPU, RAM, disques, cartes réseau</text>
+</svg>
+</figure>
 
  **Privilèges :**
 - **Mode noyau** (kernel mode) : Accès total au matériel (réservé à l'OS)

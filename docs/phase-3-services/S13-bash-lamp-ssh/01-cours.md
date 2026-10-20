@@ -36,45 +36,37 @@
 
 Voici ce qui se passe quand un utilisateur accède à une page web dynamique hébergée sur un serveur LAMP :
 
-```
-   NAVIGATEUR CLIENT
-   (ex : Chrome)
-         │
-         │  1. Requête HTTP GET /index.php
-         ▼
-   ┌──────────────────────────────────────────────┐
-   │              SERVEUR LINUX                   │
-   │                                              │
-   │  ┌─────────────────────────────────────┐     │
-   │  │          APACHE (port 80/443)        │     │
-   │  │  Reçoit la requête                  │     │
-   │  │  Reconnaît l'extension .php          │     │
-   │  │  Transmet à l'interpréteur PHP  ──► │     │
-   │  └─────────────────────────────────────┘     │
-   │                    │                         │
-   │                    ▼                         │
-   │  ┌─────────────────────────────────────┐     │
-   │  │          PHP (interpréteur)          │     │
-   │  │  Exécute le script PHP              │     │
-   │  │  Si besoin de données ──────────►   │     │
-   │  └─────────────────────────────────────┘     │
-   │                    │                         │
-   │                    ▼                         │
-   │  ┌─────────────────────────────────────┐     │
-   │  │          MARIADB (port 3306)         │     │
-   │  │  Stocke et retourne les données     │     │
-   │  └─────────────────────────────────────┘     │
-   │                    │                         │
-   │                    │  PHP génère la page HTML │
-   │                    ▼                         │
-   │  ┌─────────────────────────────────────┐     │
-   │  │  Apache envoie la réponse HTTP      │     │
-   └──────────────────────────────────────────────┘
-         │
-         │  2. Réponse HTTP 200 — Page HTML générée
-         ▼
-   NAVIGATEUR CLIENT (affiche la page)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 560 470" style="max-width:560px" role="img" aria-label="Pile LAMP : le chemin d&#x27;une requête HTTP jusqu&#x27;à la base de données" xmlns="http://www.w3.org/2000/svg">
+<rect x="160" y="6" width="240" height="40" rx="8" class="dg-dark"/>
+<text x="280.0" y="22.0" text-anchor="middle" class="dg-w">Navigateur client</text>
+<text x="280.0" y="40.0" text-anchor="middle" class="dg-s">ex. Chrome</text>
+<line x1="280" y1="46" x2="280.0" y2="67.0" class="dg-line"/>
+<polygon points="280,76 285.0,67.0 275.0,67.0" class="dg-ah"/>
+<text x="296" y="66" text-anchor="start" class="dg-s">1. Requête HTTP GET /index.php</text>
+<rect x="20" y="76" width="520" height="300" rx="12" class="dg-soft"/>
+<text x="280" y="96" text-anchor="middle" class="dg-t">Serveur Linux</text>
+<rect x="80" y="108" width="400" height="56" rx="8" class="dg-box"/>
+<text x="280.0" y="132.0" text-anchor="middle" class="dg-t">Apache (ports 80 et 443)</text>
+<text x="280.0" y="150.0" text-anchor="middle" class="dg-s">reçoit la requête, reconnaît .php, la transmet à PHP</text>
+<line x1="280" y1="164" x2="280.0" y2="181.0" class="dg-line"/>
+<polygon points="280,190 285.0,181.0 275.0,181.0" class="dg-ah"/>
+<rect x="80" y="190" width="400" height="56" rx="8" class="dg-box"/>
+<text x="280.0" y="214.0" text-anchor="middle" class="dg-t">PHP (interpréteur)</text>
+<text x="280.0" y="232.0" text-anchor="middle" class="dg-s">exécute le script, interroge la base si besoin</text>
+<line x1="280" y1="246" x2="280.0" y2="263.0" class="dg-line"/>
+<polygon points="280,272 285.0,263.0 275.0,263.0" class="dg-ah"/>
+<rect x="80" y="272" width="400" height="56" rx="8" class="dg-ok"/>
+<text x="280.0" y="296.0" text-anchor="middle" class="dg-t">MariaDB (port 3306)</text>
+<text x="280.0" y="314.0" text-anchor="middle" class="dg-s">stocke et renvoie les données</text>
+<text x="280" y="350" text-anchor="middle" class="dg-i">PHP génère la page HTML, Apache envoie la réponse</text>
+<line x1="280" y1="376" x2="280.0" y2="399.0" class="dg-line"/>
+<polygon points="280,408 285.0,399.0 275.0,399.0" class="dg-ah"/>
+<text x="296" y="396" text-anchor="start" class="dg-s">2. Réponse HTTP 200 : page HTML générée</text>
+<rect x="160" y="408" width="240" height="40" rx="8" class="dg-dark"/>
+<text x="280.0" y="424.0" text-anchor="middle" class="dg-w">Navigateur client</text>
+<text x="280.0" y="442.0" text-anchor="middle" class="dg-s">affiche la page</text>
+</svg>
+</figure>
 
 *Légende : Flux de traitement d'une requête sur un serveur LAMP. Le navigateur envoie une requête HTTP à Apache. Apache délègue l'exécution du script PHP à l'interpréteur PHP, qui peut interroger MariaDB pour récupérer des données. PHP génère une page HTML que Apache retourne au navigateur. Le client ne voit jamais le code PHP ni la base de données — il reçoit uniquement du HTML.*
 
@@ -337,34 +329,38 @@ echo "Réponse enregistrée : $REPONSE"
 
 #### Authentification par Mot de Passe vs Clés
 
-```
-   ─── AUTHENTIFICATION PAR MOT DE PASSE (méthode basique) ─────────
-   Client ──[connexion]──► Serveur
-   Serveur ──[demande MDP]──► Client
-   Client ──[envoie MDP chiffré]──► Serveur
-   Serveur vérifie le MDP ──► OK ou Refus
+- Méthode basique : le serveur demande un mot de passe, le client l'envoie (chiffré), le serveur le vérifie.
+- Risques : force brute, hameçonnage, mot de passe faible ou compromis.
 
-   Risques : force brute, phishing, MDP faible ou compromis
-
-   ─── AUTHENTIFICATION PAR CLÉS (méthode recommandée) ─────────────
-                    ┌──────────────────┐
-                    │   PAIRE DE CLÉS  │
-                    │  Générée 1 fois  │
-                    └────────┬─────────┘
-                             │
-              ┌──────────────┴──────────────┐
-              ▼                             ▼
-    CLÉ PRIVÉE                   CLÉ PUBLIQUE
-   Reste sur le CLIENT            Copiée sur le SERVEUR
-   NE JAMAIS PARTAGER             dans ~/.ssh/authorized_keys
-   (~/.ssh/id_rsa ou id_ed25519)
-
-   Connexion :
-   Client ──[je veux me connecter]──► Serveur
-   Serveur ──[défi chiffré avec clé publique]──► Client
-   Client déchiffre avec sa clé privée ──[réponse]──► Serveur
-   Serveur valide ──► Connexion accordée SANS mot de passe
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 372" style="max-width:760px" role="img" aria-label="Authentification SSH par clés : défi chiffré avec la clé publique, réponse avec la clé privée" xmlns="http://www.w3.org/2000/svg">
+<rect x="70.0" y="8" width="200" height="34" rx="8" class="dg-dark"/>
+<text x="170.0" y="30.0" text-anchor="middle" class="dg-w">Client (clé privée)</text>
+<line x1="170.0" y1="42" x2="170.0" y2="364" class="dg-dash"/>
+<rect x="490.0" y="8" width="200" height="34" rx="8" class="dg-dark"/>
+<text x="590.0" y="30.0" text-anchor="middle" class="dg-w">Serveur SSH (clé publique)</text>
+<line x1="590.0" y1="42" x2="590.0" y2="364" class="dg-dash"/>
+<rect x="4.0" y="56" width="338.2" height="42" rx="6" class="dg-soft"/>
+<text x="173.1" y="73" text-anchor="middle" class="dg-s">Paire de clés générée une seule fois</text>
+<text x="173.1" y="89" text-anchor="middle" class="dg-s">privée : ~/.ssh/id_ed25519 (ne jamais partager)</text>
+<rect x="470.0" y="110" width="240.0" height="42" rx="6" class="dg-soft"/>
+<text x="590.0" y="127" text-anchor="middle" class="dg-s">clé publique copiée dans</text>
+<text x="590.0" y="143" text-anchor="middle" class="dg-s">~/.ssh/authorized_keys</text>
+<text x="380.0" y="172" text-anchor="middle" class="dg-t">1. Je veux me connecter</text>
+<line x1="170.0" y1="180" x2="581.0" y2="180.0" class="dg-line"/>
+<polygon points="590.0,180 581.0,175.0 581.0,185.0" class="dg-ah"/>
+<text x="380.0" y="206" text-anchor="middle" class="dg-t">2. Défi chiffré avec la clé publique</text>
+<line x1="590.0" y1="214" x2="179.0" y2="214.0" class="dg-dash"/>
+<polygon points="170.0,214 179.0,219.0 179.0,209.0" class="dg-ah"/>
+<rect x="40.5" y="232" width="259.0" height="26" rx="6" class="dg-soft"/>
+<text x="170.0" y="249" text-anchor="middle" class="dg-s">3. Déchiffrement avec la clé privée</text>
+<text x="380.0" y="278" text-anchor="middle" class="dg-t">4. Réponse au défi</text>
+<line x1="170.0" y1="286" x2="581.0" y2="286.0" class="dg-line"/>
+<polygon points="590.0,286 581.0,281.0 581.0,291.0" class="dg-ah"/>
+<rect x="450.6" y="304" width="278.8" height="42" rx="6" class="dg-soft"/>
+<text x="590.0" y="321" text-anchor="middle" class="dg-s">5. Réponse valide : connexion accordée</text>
+<text x="590.0" y="337" text-anchor="middle" class="dg-s">sans mot de passe</text>
+</svg>
+</figure>
 
 *Légende : Comparaison des deux méthodes d'authentification SSH. À gauche, l'authentification par mot de passe — simple mais vulnérable à la force brute. À droite, l'authentification par clés — la clé privée (cadenas fermé) reste sur le client, la clé publique (cadenas ouvert) est déposée sur le serveur. La connexion repose sur un échange cryptographique sans jamais transmettre la clé privée.*
 
