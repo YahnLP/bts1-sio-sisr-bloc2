@@ -242,6 +242,7 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 | **HDMI** | Numérique | 8K à 60 Hz (v2.1) | Oui | Standard TV/multimédia |
 | **DisplayPort** | Numérique | 8K à 60 Hz (v1.4) | Oui | Standard PC/professionnel |
 | **USB-C (alt mode)** | Numérique | 8K à 60 Hz | Oui | Futur standard |
+| **GPMI** | Numérique | 8K et au-delà (annoncé) | Oui | Émergent (norme chinoise annoncée en 2025) |
 
 ---
 
@@ -286,6 +287,43 @@ En tant que **technicien systèmes et réseaux**, vous serez amené à :
 - Pas de royalties (HDMI est soumis à licence)
 
 **Avantage pro :** Idéal pour setups multi-écrans (trading, design, développement)
+
+#### **HDMI ou DisplayPort : que choisir ?**
+
+C'est une question récurrente. Les deux transportent image et son numériques ; ils n'ont pas été conçus pour le même monde.
+
+| **Critère** | **HDMI** | **DisplayPort** |
+|-------------|----------|-----------------|
+| **Origine** | Consortium de fabricants d'électronique grand public (2002) | VESA, association de l'industrie informatique (2006) |
+| **Usage typique** | Téléviseurs, consoles, lecteurs Blu-ray, vidéoprojecteurs | Cartes graphiques, écrans de PC, postes de travail professionnels |
+| **Licence** | Payante pour les fabricants (HDMI Licensing Administrator) | Norme ouverte de la VESA, sans redevance par port |
+| **Plusieurs écrans sur un câble** | Non : une sortie, un écran | Oui, avec le **MST** (chaînage d'écrans, DisplayPort 1.2 et suivants) |
+| **Commande des appareils** | **CEC** (une télécommande pilote TV et lecteur), **ARC/eARC** (retour du son vers une barre de son) | Pas d'équivalent ; en revanche mode alternatif sur **USB-C** très répandu sur les portables |
+| **Fréquence variable (anti-saccade)** | VRR à partir de HDMI 2.1 | Adaptive-Sync (FreeSync, G-Sync Compatible) depuis longtemps |
+| **Verrouillage du connecteur** | Non, il peut se débrancher | Souvent un **clip de verrouillage**, utile en salle serveur ou sur un poste fixe |
+| **Débit maximal (exemples)** | HDMI 2.1 : 48 Gb/s | DisplayPort 1.4 : 32,4 Gb/s ; DisplayPort 2.1 : jusqu'à 80 Gb/s |
+
+> [!NOTE]
+> Le débit dépend de la **version** et non du nom de la norme : un port HDMI 2.1 peut dépasser un DisplayPort 1.4, et inversement avec DisplayPort 2.1. Pour savoir ce qu'on peut afficher (résolution, fréquence), on lit la version du port **et** celle du câble.
+
+**Règle pratique :**
+- Une **TV** ou une **console** : HDMI.
+- Un **PC** et des **écrans de bureau**, surtout à plusieurs écrans : DisplayPort.
+- Brancher un port DisplayPort sur un écran HDMI est possible avec un **adaptateur** ou un câble DisplayPort vers HDMI (simple et peu coûteux dans ce sens). Le sens inverse (HDMI vers DisplayPort) demande un adaptateur **actif**, plus cher.
+
+---
+
+#### **GPMI (General Purpose Media Interface) : à surveiller**
+
+**GPMI** est une interface annoncée en 2025 par une alliance de plus de 50 entreprises chinoises. Elle vise à remplacer à la fois HDMI et DisplayPort par **un seul câble** qui transporte vidéo, audio, données, **alimentation** et commandes. Deux variantes ont été présentées :
+
+| **Variante** | **Connecteur** | **Débit annoncé** | **Alimentation annoncée** | **Cible** |
+|--------------|----------------|-------------------|---------------------------|-----------|
+| **GPMI Type-C** | Celui de l'**USB-C** | 96 Gb/s | jusqu'à 240 W | Portables, écrans, accessoires |
+| **GPMI Type-B** | Connecteur dédié, plus grand | 192 Gb/s | jusqu'à 480 W | Usages professionnels (production vidéo, imagerie médicale) |
+
+> [!WARNING]
+> Ces valeurs sont celles **annoncées** par ses promoteurs. GPMI est d'abord une norme chinoise : fin 2025, les grands constructeurs mondiaux (PC, consoles, téléphones) ne l'ont pas adoptée. Dans une entreprise, on rencontre aujourd'hui HDMI, DisplayPort et USB-C. À retenir surtout comme tendance : la **convergence vers un câble unique** (comme l'USB-C et le Thunderbolt), et comme exemple de **veille technologique** (voir S14), avec le risque d'une norme concurrente de plus.
 
 ---
 
