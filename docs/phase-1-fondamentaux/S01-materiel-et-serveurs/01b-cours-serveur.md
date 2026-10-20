@@ -144,6 +144,30 @@
 
  **Note :** Dans un contexte professionnel d'entreprise, on privilégie **toujours un serveur** pour les services critiques.
 
+### F. Aperçu : ce que coûte un choix de matériel
+
+Choisir entre un PC et un serveur ne se résume pas au prix d'achat. Le **coût total de possession** (TCO, *total cost of ownership*) additionne ce qu'on paie **pendant toute la vie** du matériel : achat, électricité, maintenance, licences, temps d'administration, remplacement.
+
+**Exemple chiffré (fictif).** Un petit serveur coûte 2 400 € à l'achat, consomme en moyenne 150 W en continu et reste en service 5 ans. Le kWh est facturé 0,20 €.
+
+- Énergie par an : 0,150 kW × 24 h × 365 j = 1 314 kWh, soit 1 314 × 0,20 = **262,80 €** ;
+- Énergie sur 5 ans : 262,80 × 5 = **1 314 €** ;
+- Maintenance supposée : 120 € par an, soit 600 € sur 5 ans ;
+- TCO sur 5 ans : 2 400 + 1 314 + 600 = **4 314 €**, soit environ 863 € par an.
+
+L'électricité dépasse ici la moitié du prix d'achat : un matériel moins cher mais plus gourmand peut revenir plus cher. À l'échelle d'une organisation, la fin de vie compte aussi : le matériel électronique se **recycle** (déchets d'équipements électriques et électroniques, DEEE) et ne se jette pas.
+
+En 2e année, la séance [Coût, éthique et environnement](https://yahnlp.github.io/bts2-sio-sisr-bloc2/phase-1-reprendre-concevoir/S03-cout-ethique-environnement/) reprend la méthode complète. Ici, retiens le réflexe : **comparer des coûts sur la durée**.
+
+**Je vérifie.** Même serveur, mais consommation moyenne de 100 W. Quelle est l'économie d'énergie sur 5 ans ?
+
+<details markdown="1">
+<summary>Éléments de réponse</summary>
+
+0,100 kW × 24 × 365 = 876 kWh par an, soit 175,20 € ; sur 5 ans 876 €. Économie : 1 314 − 876 = **438 €**.
+
+</details>
+
 ---
 
 ## II. Périphériques et Connectique : Le Grand Tour
