@@ -224,7 +224,7 @@ Remplis ce bilan **seul**, honnêtement : il sert à décider ce qu'il faut repr
 | **B2.3** – Exploiter, dépanner et superviser une solution d'infrastructure réseau | | |
 
 > [!NOTE]
-> Les codes sont ceux du [référentiel](../../ressources/referentiel.md) (l'arrêté numérote des activités : les codes « B… » sont un usage courant). Le choix des compétences pour cette séance est une proposition de l'enseignant, **à valider**.
+> Les codes sont ceux du [référentiel](../../ressources/referentiel.md) (l'arrêté numérote des activités : les codes « B… » sont un usage courant).
 
 **Je sais faire, sans aide :**
 

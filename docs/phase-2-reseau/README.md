@@ -3,7 +3,7 @@
 **Séances S06 à S09.** Segmenter un réseau (VLAN), le relier (routage statique, inter-VLAN) et lui faire fournir ses services de base (DHCP, DNS). La phase se termine par un TP intégré qui sert d'évaluation formative.
 
 > [!NOTE]
-> Chaque séance de 4 h contient une **fiche séance**, un **cours**, un **TP** (avec un bilan de compétences en fin de séance) et, selon les cas, des annexes. Les séances marquées *à valider* ont été ajoutées ou réécrites lors de la refonte : elles attendent la relecture de l'enseignant.
+> Chaque séance de 4 h contient une **fiche séance**, un **cours**, un **TP** (avec un bilan de compétences en fin de séance) et, selon les cas, des annexes.
 
 ## Progression
 
