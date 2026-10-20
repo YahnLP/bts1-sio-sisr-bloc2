@@ -8,7 +8,10 @@ Le **simulateur réseau** est un fichier unique, qui fonctionne **sans Internet*
 
 1. Télécharge le fichier `.json` du TP (dans le dossier `tp/` de la séance : clic droit → *Enregistrer le lien sous*).
 2. Dans le simulateur, clique sur **Ouvrir** et choisis le fichier.
-3. Le schéma du TP s'affiche : équipements, câbles, adresses déjà prévues.
+3. Le schéma du TP s'affiche : équipements, câbles, adresses déjà prévues. Le panneau **Sujet de TP** (à droite) donne les objectifs et les étapes.
+4. Quand tu as terminé, clique sur **Vérifier mon travail** : chaque point est contrôlé automatiquement. **Charger la correction** montre une solution (elle remplace ton travail), **Recommencer** repart du plan de départ.
+
+Les fichiers de TP sont aussi des plans : **Enregistrer** garde ton avancement **et** le sujet, tu rouvres le fichier plus tard avec **Ouvrir**.
 
 ## Utiliser les équipements
 
