@@ -12,6 +12,9 @@
 > [!NOTE]
 > **Question qui guide la séance :** *« Un serveur tombe un lundi matin : comment l'avoir su avant les utilisateurs, comment le remettre en route, comment éviter que ça s'arrête ? »*
 
+> [!NOTE]
+> **Recoupement avec d'autres séances.** La sauvegarde et les objectifs de reprise sont aussi vus en [bloc 3 (1re année), S05 – Sauvegarde, supports amovibles et restauration](https://yahnlp.github.io/bts1-sio-sisr-bloc3/phase-1-menaces-postes-acces/S05-sauvegarde-restauration/), puis repris en 2e année en [bloc 2 (2e année), S05 – Continuité et reprise d'activité](https://yahnlp.github.io/bts2-sio-sisr-bloc2/phase-1-reprendre-concevoir/S05-continuite-reprise-activite/). Ici, garder la supervision et la haute disponibilité.
+
 ## Objectifs
 
 À la fin de la séance, l'étudiant est capable de :
