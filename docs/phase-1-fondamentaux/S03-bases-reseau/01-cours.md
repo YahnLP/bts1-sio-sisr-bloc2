@@ -378,56 +378,119 @@ Plutôt que d'avoir un seul gros programme gérant tout (impossible à maintenir
 
 Quand Alice envoie un message à Bob :
 
-<figure class="graphe diagramme"><svg viewBox="0 0 760 420" style="max-width:760px" role="img" aria-label="Encapsulation chez Alice et désencapsulation chez Bob selon les sept couches" xmlns="http://www.w3.org/2000/svg">
-<text x="190" y="22" text-anchor="middle" class="dg-t">Alice (émetteur)</text>
-<text x="570" y="22" text-anchor="middle" class="dg-t">Bob (récepteur)</text>
-<rect x="10" y="36" width="340" height="42" rx="8" class="dg-box"/>
-<text x="180.0" y="53.0" text-anchor="middle" class="dg-t">7 Application</text>
-<text x="180.0" y="71.0" text-anchor="middle" class="dg-s">&quot;Bonjour Bob&quot;</text>
-<rect x="410" y="36" width="340" height="42" rx="8" class="dg-box"/>
-<text x="580.0" y="53.0" text-anchor="middle" class="dg-t">7 Application</text>
-<text x="580.0" y="71.0" text-anchor="middle" class="dg-s">affichage &quot;Bonjour Bob&quot;</text>
-<rect x="10" y="86" width="340" height="42" rx="8" class="dg-box"/>
-<text x="180.0" y="103.0" text-anchor="middle" class="dg-t">6 Présentation</text>
-<text x="180.0" y="121.0" text-anchor="middle" class="dg-s">chiffrement, encodage</text>
-<rect x="410" y="86" width="340" height="42" rx="8" class="dg-box"/>
-<text x="580.0" y="103.0" text-anchor="middle" class="dg-t">6 Présentation</text>
-<text x="580.0" y="121.0" text-anchor="middle" class="dg-s">déchiffrement, décodage</text>
-<rect x="10" y="136" width="340" height="42" rx="8" class="dg-box"/>
-<text x="180.0" y="153.0" text-anchor="middle" class="dg-t">5 Session</text>
-<text x="180.0" y="171.0" text-anchor="middle" class="dg-s">ouverture de session</text>
-<rect x="410" y="136" width="340" height="42" rx="8" class="dg-box"/>
-<text x="580.0" y="153.0" text-anchor="middle" class="dg-t">5 Session</text>
-<text x="580.0" y="171.0" text-anchor="middle" class="dg-s">gestion de session</text>
-<rect x="10" y="186" width="340" height="42" rx="8" class="dg-ok"/>
-<text x="180.0" y="203.0" text-anchor="middle" class="dg-t">4 Transport</text>
-<text x="180.0" y="221.0" text-anchor="middle" class="dg-s">segments TCP, en-tête TCP (ports)</text>
-<rect x="410" y="186" width="340" height="42" rx="8" class="dg-ok"/>
-<text x="580.0" y="203.0" text-anchor="middle" class="dg-t">4 Transport</text>
-<text x="580.0" y="221.0" text-anchor="middle" class="dg-s">réassemblage, ACK</text>
-<rect x="10" y="236" width="340" height="42" rx="8" class="dg-ok"/>
-<text x="180.0" y="253.0" text-anchor="middle" class="dg-t">3 Réseau</text>
-<text x="180.0" y="271.0" text-anchor="middle" class="dg-s">paquet IP, en-tête IP (adresses)</text>
-<rect x="410" y="236" width="340" height="42" rx="8" class="dg-ok"/>
-<text x="580.0" y="253.0" text-anchor="middle" class="dg-t">3 Réseau</text>
-<text x="580.0" y="271.0" text-anchor="middle" class="dg-s">lecture IP, retrait en-tête</text>
-<rect x="10" y="286" width="340" height="42" rx="8" class="dg-ok"/>
-<text x="180.0" y="303.0" text-anchor="middle" class="dg-t">2 Liaison</text>
-<text x="180.0" y="321.0" text-anchor="middle" class="dg-s">trame Ethernet, en-tête MAC</text>
-<rect x="410" y="286" width="340" height="42" rx="8" class="dg-ok"/>
-<text x="580.0" y="303.0" text-anchor="middle" class="dg-t">2 Liaison</text>
-<text x="580.0" y="321.0" text-anchor="middle" class="dg-s">lecture MAC, retrait en-tête</text>
-<rect x="10" y="336" width="340" height="42" rx="8" class="dg-warn"/>
-<text x="180.0" y="353.0" text-anchor="middle" class="dg-t">1 Physique</text>
-<text x="180.0" y="371.0" text-anchor="middle" class="dg-s">bits sur le câble ou le Wi-Fi</text>
-<rect x="410" y="336" width="340" height="42" rx="8" class="dg-warn"/>
-<text x="580.0" y="353.0" text-anchor="middle" class="dg-t">1 Physique</text>
-<text x="580.0" y="371.0" text-anchor="middle" class="dg-s">réception des bits</text>
-<text x="380" y="392" text-anchor="middle" class="dg-i">câble RJ45 ou Wi-Fi</text>
-<line x1="350" y1="327" x2="401.0" y2="327.0" class="dg-line"/>
-<polygon points="410,327 401.0,322.0 401.0,332.0" class="dg-ah"/>
+<figure class="graphe diagramme"><svg viewBox="0 0 900 590" style="max-width:900px" role="img" aria-label="Encapsulation chez Alice puis désencapsulation chez Bob : chaque couche ajoute ou retire son en-tête autour du message" xmlns="http://www.w3.org/2000/svg">
+<text x="180" y="26" text-anchor="middle" class="dg-t">Alice envoie : on ENCAPSULE</text>
+<text x="730" y="26" text-anchor="middle" class="dg-t">Bob reçoit : on DÉSENCAPSULE</text>
+<line x1="340" y1="473.0" x2="560" y2="473.0" class="dg-dash"/>
+<rect x="360" y="44" width="160" height="58" rx="8" class="dg-box"/>
+<text x="440.0" y="60.0" text-anchor="middle" class="dg-t">Couches 7, 6, 5</text>
+<text x="440.0" y="78.0" text-anchor="middle" class="dg-s">Application</text>
+<text x="440.0" y="96.0" text-anchor="middle" class="dg-s">Présentation, Session</text>
+<rect x="360" y="144" width="160" height="58" rx="8" class="dg-ok"/>
+<text x="440.0" y="169.0" text-anchor="middle" class="dg-t">Couche 4</text>
+<text x="440.0" y="187.0" text-anchor="middle" class="dg-s">Transport</text>
+<rect x="360" y="244" width="160" height="58" rx="8" class="dg-warn"/>
+<text x="440.0" y="269.0" text-anchor="middle" class="dg-t">Couche 3</text>
+<text x="440.0" y="287.0" text-anchor="middle" class="dg-s">Réseau</text>
+<rect x="360" y="344" width="160" height="58" rx="8" class="dg-bad"/>
+<text x="440.0" y="369.0" text-anchor="middle" class="dg-t">Couche 2</text>
+<text x="440.0" y="387.0" text-anchor="middle" class="dg-s">Liaison</text>
+<rect x="360" y="444" width="160" height="58" rx="8" class="dg-dark"/>
+<text x="440.0" y="469.0" text-anchor="middle" class="dg-w">Couche 1</text>
+<text x="440.0" y="487.0" text-anchor="middle" class="dg-s">Physique</text>
+<rect x="14" y="50" width="110" height="46" rx="4" class="dg-box"/>
+<text x="69.0" y="78.0" text-anchor="middle" class="dg-t">Message</text>
+<rect x="14" y="150" width="46" height="46" rx="4" class="dg-ok"/>
+<text x="37.0" y="178.0" text-anchor="middle" class="dg-t">TCP</text>
+<rect x="60" y="150" width="110" height="46" rx="4" class="dg-box"/>
+<text x="115.0" y="178.0" text-anchor="middle" class="dg-t">Message</text>
+<rect x="14" y="250" width="40" height="46" rx="4" class="dg-warn"/>
+<text x="34.0" y="278.0" text-anchor="middle" class="dg-t">IP</text>
+<rect x="54" y="250" width="46" height="46" rx="4" class="dg-ok"/>
+<text x="77.0" y="278.0" text-anchor="middle" class="dg-t">TCP</text>
+<rect x="100" y="250" width="110" height="46" rx="4" class="dg-box"/>
+<text x="155.0" y="278.0" text-anchor="middle" class="dg-t">Message</text>
+<rect x="14" y="350" width="46" height="46" rx="4" class="dg-bad"/>
+<text x="37.0" y="378.0" text-anchor="middle" class="dg-t">ETH</text>
+<rect x="60" y="350" width="40" height="46" rx="4" class="dg-warn"/>
+<text x="80.0" y="378.0" text-anchor="middle" class="dg-t">IP</text>
+<rect x="100" y="350" width="46" height="46" rx="4" class="dg-ok"/>
+<text x="123.0" y="378.0" text-anchor="middle" class="dg-t">TCP</text>
+<rect x="146" y="350" width="110" height="46" rx="4" class="dg-box"/>
+<text x="201.0" y="378.0" text-anchor="middle" class="dg-t">Message</text>
+<rect x="256" y="350" width="44" height="46" rx="4" class="dg-bad"/>
+<text x="278.0" y="378.0" text-anchor="middle" class="dg-t">FCS</text>
+<rect x="14" y="450" width="326" height="46" rx="8" class="dg-dark"/>
+<text x="177.0" y="478.0" text-anchor="middle" class="dg-w">0 1 0 1 1 0 0 1 0 1 1 0 …</text>
+<rect x="560" y="50" width="110" height="46" rx="4" class="dg-box"/>
+<text x="615.0" y="78.0" text-anchor="middle" class="dg-t">Message</text>
+<rect x="560" y="150" width="46" height="46" rx="4" class="dg-ok"/>
+<text x="583.0" y="178.0" text-anchor="middle" class="dg-t">TCP</text>
+<rect x="606" y="150" width="110" height="46" rx="4" class="dg-box"/>
+<text x="661.0" y="178.0" text-anchor="middle" class="dg-t">Message</text>
+<rect x="560" y="250" width="40" height="46" rx="4" class="dg-warn"/>
+<text x="580.0" y="278.0" text-anchor="middle" class="dg-t">IP</text>
+<rect x="600" y="250" width="46" height="46" rx="4" class="dg-ok"/>
+<text x="623.0" y="278.0" text-anchor="middle" class="dg-t">TCP</text>
+<rect x="646" y="250" width="110" height="46" rx="4" class="dg-box"/>
+<text x="701.0" y="278.0" text-anchor="middle" class="dg-t">Message</text>
+<rect x="560" y="350" width="46" height="46" rx="4" class="dg-bad"/>
+<text x="583.0" y="378.0" text-anchor="middle" class="dg-t">ETH</text>
+<rect x="606" y="350" width="40" height="46" rx="4" class="dg-warn"/>
+<text x="626.0" y="378.0" text-anchor="middle" class="dg-t">IP</text>
+<rect x="646" y="350" width="46" height="46" rx="4" class="dg-ok"/>
+<text x="669.0" y="378.0" text-anchor="middle" class="dg-t">TCP</text>
+<rect x="692" y="350" width="110" height="46" rx="4" class="dg-box"/>
+<text x="747.0" y="378.0" text-anchor="middle" class="dg-t">Message</text>
+<rect x="802" y="350" width="44" height="46" rx="4" class="dg-bad"/>
+<text x="824.0" y="378.0" text-anchor="middle" class="dg-t">FCS</text>
+<rect x="560" y="450" width="326" height="46" rx="8" class="dg-dark"/>
+<text x="723.0" y="478.0" text-anchor="middle" class="dg-w">0 1 0 1 1 0 0 1 0 1 1 0 …</text>
+<text x="132" y="78.0" text-anchor="start" class="dg-s">Données</text>
+<text x="678" y="78.0" text-anchor="start" class="dg-s">Données</text>
+<text x="178" y="178.0" text-anchor="start" class="dg-s">Segment</text>
+<text x="724" y="178.0" text-anchor="start" class="dg-s">Segment</text>
+<text x="218" y="278.0" text-anchor="start" class="dg-s">Paquet</text>
+<text x="764" y="278.0" text-anchor="start" class="dg-s">Paquet</text>
+<text x="308" y="378.0" text-anchor="start" class="dg-s">Trame</text>
+<text x="854" y="378.0" text-anchor="start" class="dg-s">Trame</text>
+<line x1="60" y1="100" x2="60.0" y2="137.0" class="dg-line"/>
+<polygon points="60,146 65.0,137.0 55.0,137.0" class="dg-ah"/>
+<text x="72" y="128.0" text-anchor="start" class="dg-i">+ en-tête TCP (ports)</text>
+<line x1="60" y1="200" x2="60.0" y2="237.0" class="dg-line"/>
+<polygon points="60,246 65.0,237.0 55.0,237.0" class="dg-ah"/>
+<text x="72" y="228.0" text-anchor="start" class="dg-i">+ en-tête IP (adresses IP)</text>
+<line x1="60" y1="300" x2="60.0" y2="337.0" class="dg-line"/>
+<polygon points="60,346 65.0,337.0 55.0,337.0" class="dg-ah"/>
+<text x="72" y="328.0" text-anchor="start" class="dg-i">+ en-tête et fin de trame (adresses MAC)</text>
+<line x1="606" y1="146" x2="606.0" y2="109.0" class="dg-line"/>
+<polygon points="606,100 601.0,109.0 611.0,109.0" class="dg-ah"/>
+<text x="618" y="128.0" text-anchor="start" class="dg-i">− en-tête TCP</text>
+<line x1="606" y1="246" x2="606.0" y2="209.0" class="dg-line"/>
+<polygon points="606,200 601.0,209.0 611.0,209.0" class="dg-ah"/>
+<text x="618" y="228.0" text-anchor="start" class="dg-i">− en-tête IP</text>
+<line x1="606" y1="346" x2="606.0" y2="309.0" class="dg-line"/>
+<polygon points="606,300 601.0,309.0 611.0,309.0" class="dg-ah"/>
+<text x="618" y="328.0" text-anchor="start" class="dg-i">− en-tête et fin de trame</text>
+<text x="450" y="530" text-anchor="middle" class="dg-i">transmission sur le câble RJ45 ou en Wi-Fi</text>
+<rect x="90" y="552" width="16" height="16" rx="3" class="dg-box"/>
+<text x="112" y="565" text-anchor="start" class="dg-s">Message : données</text>
+<rect x="240" y="552" width="16" height="16" rx="3" class="dg-ok"/>
+<text x="262" y="565" text-anchor="start" class="dg-s">TCP : ports</text>
+<rect x="370" y="552" width="16" height="16" rx="3" class="dg-warn"/>
+<text x="392" y="565" text-anchor="start" class="dg-s">IP : adresses IP</text>
+<rect x="530" y="552" width="16" height="16" rx="3" class="dg-bad"/>
+<text x="552" y="565" text-anchor="start" class="dg-s">ETH / FCS : adresses MAC, contrôle d&#x27;erreur</text>
 </svg>
 </figure>
+
+| **Couche** | **Unité de données (PDU)** | **Ce que la couche ajoute** |
+|------------|----------------------------|-----------------------------|
+| 7, 6, 5 | **Données** | le message lui-même, mis en forme (chiffrement, encodage, session) |
+| 4 - Transport | **Segment** | en-tête **TCP** : ports source et destination |
+| 3 - Réseau | **Paquet** | en-tête **IP** : adresses IP source et destination |
+| 2 - Liaison | **Trame** | en-tête **Ethernet** (adresses MAC) et contrôle d'erreur **FCS** |
+| 1 - Physique | **Bits** | conversion en signaux électriques, lumineux ou radio |
 
  **Analogie Poupées Russes :** Chaque couche ajoute une "enveloppe" (en-tête). À l'arrivée, on retire les enveloppes une par une jusqu'au message original.
 
