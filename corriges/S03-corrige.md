@@ -4,7 +4,7 @@
 
 ## Valeurs propres à chaque poste
 
-Les tableaux des parties A à C dépendent du réseau de la salle : vérifier la **cohérence**, pas des valeurs fixes.
+Les tableaux des parties A à C dépendent du réseau de la salle : ​vérifier la **cohérence**, pas des valeurs fixes.
 
 | Contrôle | Cohérence attendue |
 |---|---|
@@ -18,7 +18,7 @@ Les tableaux des parties A à C dépendent du réseau de la salle : vérifier la
 | Étape | Teste | En cas d'échec |
 |---|---|---|
 | 1 `127.0.0.1` | Pile réseau du poste | Pilote ou système |
-| 2 passerelle | Liaison locale | Câble, switch, adresse |
+| 2 ​passerelle | Liaison locale | Câble, switch, adresse |
 | 3 `8.8.8.8` | Sortie Internet sans DNS | Box ou fournisseur |
 | 4 nom de domaine | Résolution DNS | Si 3 réussit : **DNS** |
 
@@ -27,14 +27,14 @@ Le TTL est un compteur décrémenté à chaque routeur ; le temps est la latence
 ## Partie C
 
 - `* * *` : pas de réponse du routeur, pas forcément une panne.
-- `LISTENING` : un service attend des connexions ; chaque port ouvert est une porte d'entrée.
+- `LISTENING` : un service attend des ​connexions ; chaque port ouvert est une porte d'entrée.
 - Connexion web : port distant 443, port local éphémère (haut numéro).
 
 ## Partie D : Wireshark
 
 | Couche | Champ | Attendu |
 |---|---|---|
-| Ethernet II | MAC destination | **MAC de la passerelle** |
+| ​Ethernet II | MAC destination | **MAC de la passerelle** |
 | IP | IP destination | IP de la cible du ping |
 | ICMP | Type | 8 (requête), 0 (réponse) |
 
@@ -49,7 +49,7 @@ Le TTL est un compteur décrémenté à chaque routeur ; le temps est la latence
 | Parties A à C complètes et cohérentes | 8 |
 | Captures datées requête/réponse ICMP et ARP | 6 |
 | Réponses « J'anticipe » / « Je comprends » | 4 |
-| Respect des consignes (capture limitée, rendu nommé) | 2 |
+| Respect des consignes (capture limitée, ​rendu nommé) | 2 |
 
 ## Erreurs fréquentes
 

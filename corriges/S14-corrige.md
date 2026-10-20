@@ -6,7 +6,7 @@
 
 | Question | Commande attendue |
 |---|---|
-| Services arrêtés | `(Get-Service \| Where-Object Status -eq 'Stopped').Count` ou `... \| Measure-Object` |
+| Services ​arrêtés | `(Get-Service \| Where-Object Status -eq 'Stopped').Count` ou `... \| Measure-Object` |
 | Processus le plus gourmand en RAM | `Get-Process \| Sort-Object WorkingSet -Descending \| Select-Object -First 1` |
 | Comptes AD désactivés | `Get-ADUser -Filter 'Enabled -eq $false'` ou `Search-ADAccount -AccountDisabled -UsersOnly` |
 
@@ -16,14 +16,14 @@
 
 | Point | Attendu |
 |---|---|
-| Module | `ActiveDirectory` disponible, plusieurs dizaines de cmdlets |
+| Module | `ActiveDirectory` disponible, plusieurs ​dizaines de cmdlets |
 | OU | RH, Informatique, Comptabilite, Direction, Commercial |
 | CSV | 10 lignes, accents corrects (`Chargée RH`) |
-| Premier passage | 10 comptes créés dans les bonnes OU, activés, changement de mot de passe obligatoire |
+| Premier passage | 10 comptes ​créés dans les bonnes OU, activés, changement de mot de passe obligatoire |
 | Second passage | 10 comptes **ignorés** (doublons), rapport final cohérent |
 | Journal | `C:\Scripts\log_creation_ad.txt` horodaté |
 
-**Je comprends** : une erreur sur un compte (doublon, mot de passe refusé) ne doit ni arrêter les suivants ni passer inaperçue ; le `catch` la journalise et le script continue.
+**Je comprends** : une erreur sur un compte (doublon, mot de passe refusé) ne doit ni arrêter les ​suivants ni passer inaperçue ; le `catch` la journalise et le script continue.
 
 ## Partie C : IPv6
 
@@ -43,7 +43,7 @@
 | `2001:0DB8:ABCD:0012:0000:0000:0000:0001` | `2001:db8:abcd:12::1` |
 | `FF02:0000:0000:0000:0000:0000:0000:0001` | `ff02::1` |
 
-| Adresse | Type | Routable sur Internet |
+| Adresse | Type | Routable sur ​Internet |
 |---|---|---|
 | `FE80::1` | Lien local (link-local) | Non |
 | `::1` | Bouclage (loopback) | Non |
@@ -56,10 +56,10 @@
 
 ## Points d'attention pour l'enseignant
 
-- L'appel du script s'écrit `& "C:\Scripts\creer_utilisateurs_ad.ps1"` (l'ancienne forme `.\C:\...` était invalide et a été corrigée).
+- L'appel du ​script s'écrit `& "C:\Scripts\creer_utilisateurs_ad.ps1"` (l'ancienne forme `.\C:\...` était invalide et a été corrigée).
 - Enregistrer le CSV en UTF-8 (avec BOM sous Windows PowerShell 5.1) sinon les accents sont altérés.
 - Mot de passe `Nexio!2024` : voulu (labo).
-- Plusieurs OU sont créées à la racine du domaine, contrairement à l'arborescence de S10 : accepter.
+- Plusieurs OU sont créées à la ​racine du domaine, contrairement à l'arborescence de S10 : accepter.
 
 ## Barème indicatif (20 points)
 
@@ -68,7 +68,7 @@
 | Partie A : exploration et pipeline | 4 |
 | Script fonctionnel (création, gestion d'erreurs, journal) | 8 |
 | Test des doublons | 2 |
-| IPv6 (décompression, compression, types, EUI-64) | 5 |
+| IPv6 (décompression, compression, ​types, EUI-64) | 5 |
 | Captures et réponses | 1 |
 
 ## Erreurs fréquentes
@@ -77,4 +77,4 @@
 - Délimiteur du CSV (`;` en configuration française) différent de celui du script.
 - Compression IPv6 : deux `::` dans la même adresse.
 - Oublier le bit U/L en EUI-64.
-- Confondre adresse locale unique (ULA) et lien local.
+- ​Confondre adresse locale unique (ULA) et lien local.
