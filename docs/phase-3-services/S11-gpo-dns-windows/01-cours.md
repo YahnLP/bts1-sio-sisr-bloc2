@@ -365,11 +365,50 @@ Les GPO suivantes sont liées :
 | OU Informatique | GPO_Info | MDP min | 12 caract. |
 | OU Informatique | GPO_Info | Installation logiciels | Autorisée |
 
-1. Quelle valeur finale de MDP minimum s'applique ? Pourquoi ?
-2. L'utilisateur a-t-il le lecteur H: ? Pourquoi ?
-3. L'utilisateur peut-il installer des logiciels ? Pourquoi ?
-4. Quel fond d'écran s'applique ?
-5. Si la GPO_Domaine est marquée "Enforced" sur le paramètre MDP, quelle valeur s'applique ?
+**1.** Quelle valeur finale de MDP minimum s'applique ? Pourquoi ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+**12 caractères.** Les GPO s'appliquent dans l'ordre **L**ocal, **S**ite, **D**omaine, **OU** : la dernière appliquée l'emporte en cas de conflit. Ici `GPO_Domaine` (8), puis `GPO_Users` (10), puis `GPO_Info` (12) : l'OU la plus proche de l'objet gagne. (En pratique, la politique de mot de passe des comptes du domaine se règle au niveau du domaine ; l'exercice illustre ici l'ordre d'application.)
+
+</details>
+
+**2.** L'utilisateur a-t-il le lecteur H: ? Pourquoi ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+**Oui.** `GPO_Users` est liée à `OU_UTILISATEURS` et `OU Informatique` est dans cette OU : la GPO est **héritée** par les OU enfants. Aucune autre GPO ne contredit ce paramètre.
+
+</details>
+
+**3.** L'utilisateur peut-il installer des logiciels ? Pourquoi ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+**Oui.** `GPO_Info` est liée directement à `OU Informatique`, et l'autorise. Personne ne l'interdit à un niveau plus proche.
+
+</details>
+
+**4.** Quel fond d'écran s'applique ?
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+`logo.jpg`, défini par `GPO_Domaine`. Il est hérité jusqu'à l'OU, puisque aucune GPO plus proche ne définit un autre fond d'écran.
+
+</details>
+
+**5.** Si la GPO_Domaine est marquée "Enforced" sur le paramètre MDP, quelle valeur s'applique ?
+
+<details markdown="1">
+<summary>Correction de la question 5</summary>
+
+**8 caractères.** Une GPO *Enforced* (appliquée de force) ne peut plus être écrasée par les GPO des niveaux inférieurs : l'ordre est inversé, la GPO du domaine prime sur celles des OU.
+
+</details>
 
 ---
 
@@ -379,13 +418,53 @@ Un administrateur crée une GPO `GPO_Fond_Ecran` et la lie à `OU Commercial`. A
 
 Proposer **5 causes possibles** et la vérification à faire pour chacune.
 
+<details markdown="1">
+<summary>Correction de l'exercice 2</summary>
+
+Outils de base : `gpresult /r` (GPO appliquées et refusées, avec le motif), `gpresult /h rapport.html`, ou « Résultats de stratégie de groupe » dans GPMC.
+
+| **Cause possible** | **Vérification** |
+|--------------------|------------------|
+| L'utilisateur `s.leroy` n'est **pas dans `OU Commercial`** (ou le compte est ailleurs) | Position du compte dans ADUC |
+| Le lien est **désactivé**, ou la GPO est elle-même désactivée | GPMC : lien activé ? État de la GPO |
+| **Filtrage de sécurité** : l'utilisateur n'a pas les droits *Lecture* et *Appliquer la stratégie de groupe* | Onglet Délégation / Étendue de la GPO |
+| Une autre GPO ou un **blocage d'héritage / Enforced** impose un paramètre contraire (ordre LSDOU) | `gpresult /r` : section « GPO refusées » |
+| Le paramètre est dans la **configuration ordinateur** alors que la GPO ne cible que l'utilisateur (ou l'inverse) | Où le paramètre est défini dans l'éditeur de GPO |
+| Les paramètres **utilisateur** ne s'appliquent qu'à l'ouverture de session : il faut se déconnecter puis se reconnecter | Fermer la session et se reconnecter |
+| Le poste ne joint pas le **contrôleur de domaine** (DNS faux, réseau) | `nslookup` du domaine, `nltest /dsgetdc:` |
+
+</details>
+
 ---
 
 #### Exercice 3 : Zone DNS
 
-1. Quelle est la différence entre une zone DNS AD-intégrée et une zone DNS standard (fichier) ?
-2. Pourquoi Windows crée-t-il automatiquement des enregistrements SRV dans la zone DNS du domaine ?
-3. Un client W10 joint au domaine devrait enregistrer automatiquement son IP dans le DNS. Quel type de mise à jour dynamique activer ? Pourquoi ?
+**1.** Quelle est la différence entre une zone DNS AD-intégrée et une zone DNS standard (fichier) ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+Une zone **AD-intégrée** est stockée dans la base Active Directory et répliquée avec elle entre tous les contrôleurs de domaine (plusieurs serveurs peuvent la modifier, mises à jour dynamiques sécurisées possibles). Une zone **standard** est un fichier `.dns` sur un seul serveur principal, copié vers des secondaires par transfert de zone.
+
+</details>
+
+**2.** Pourquoi Windows crée-t-il automatiquement des enregistrements SRV dans la zone DNS du domaine ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+Les enregistrements **SRV** indiquent aux clients **où se trouvent les services** du domaine (LDAP, Kerberos, catalogue global, contrôleur de domaine le plus proche). C'est grâce à eux qu'un poste trouve un DC pour joindre le domaine et ouvrir une session. Le service Netlogon les enregistre à la promotion et à chaque démarrage.
+
+</details>
+
+**3.** Un client W10 joint au domaine devrait enregistrer automatiquement son IP dans le DNS. Quel type de mise à jour dynamique activer ? Pourquoi ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+**Sécurisée uniquement** (disponible pour les zones AD-intégrées). Seuls les ordinateurs authentifiés du domaine peuvent créer ou modifier leurs enregistrements : un poste non autorisé ne peut pas usurper le nom d'une machine ni polluer la zone.
+
+</details>
 
 ---
 

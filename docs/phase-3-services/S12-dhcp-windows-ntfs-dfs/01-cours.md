@@ -398,20 +398,62 @@ Avec DFS, les utilisateurs accèdent aux fichiers via un **espace de noms** (nam
 
 ## V. Questions de Réflexion (Pour aller plus loin)
 
-1. **Pourquoi un message DISCOVER est-il envoyé en broadcast et pas directement au serveur DHCP ?**
-   - *Piste : À l'instant du DISCOVER, le client ne connaît pas encore l'adresse IP du serveur DHCP...*
+Réfléchissez à chaque question avant d'ouvrir la réponse.
 
-2. **Qu'est-ce qui se passe si la durée du bail DHCP expire et que le client n'a pas pu renouveler son adresse ?**
-   - *Piste : À mi-bail, le client essaie de renouveler. Si le serveur est injoignable à l'expiration complète, que fait le client ?*
+**1. Pourquoi un message DISCOVER est-il envoyé en broadcast et pas directement au serveur DHCP ?**
 
-3. **Dans quel scénario est-il dangereux de mettre "Contrôle total" côté NTFS et "Lecture" côté partage ?**
-   - *Piste : Et si l'utilisateur se connecte localement au serveur ? Les droits de partage s'appliquent-ils ?*
+*Piste : À l'instant du DISCOVER, le client ne connaît pas encore l'adresse IP du serveur DHCP...*
 
-4. **Pourquoi vaut-il mieux gérer les droits via des groupes AD plutôt que directement par utilisateur ?**
-   - *Piste : Pensez à ce qui se passe quand un collaborateur change de service ou quitte l'entreprise.*
+<details markdown="1">
+<summary>Réponse</summary>
 
-5. **En quoi le DFS peut-il être considéré comme une mesure de "continuité de service" au sens ITIL ?**
-   - *Piste : Pensez à la situation où le serveur hébergeant les fichiers tombe en panne. Que se passe-t-il côté utilisateurs ?*
+À l'instant du DISCOVER, le client n'a **aucune adresse IP** et ne connaît pas celle d'un serveur DHCP. Il envoie donc sa demande en **broadcast** (`255.255.255.255`, source `0.0.0.0`) : tous les équipements du réseau local la reçoivent, et tout serveur DHCP présent peut répondre. Il peut d'ailleurs y en avoir plusieurs.
+
+</details>
+
+**2. Qu'est-ce qui se passe si la durée du bail DHCP expire et que le client n'a pas pu renouveler son adresse ?**
+
+*Piste : À mi-bail, le client essaie de renouveler. Si le serveur est injoignable à l'expiration complète, que fait le client ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+À 50 % du bail (T1), le client demande le renouvellement **au serveur** qui lui a attribué l'adresse. Sans réponse, à 87,5 % (T2), il lance la demande en **broadcast** à tout serveur. Si le bail expire sans renouvellement, le client **doit abandonner l'adresse** : il perd la connectivité, puis recommence la procédure DORA ou, sans serveur, se donne une adresse APIPA `169.254.x.x` qui ne permet de joindre que le réseau local.
+
+</details>
+
+**3. Dans quel scénario est-il dangereux de mettre "Contrôle total" côté NTFS et "Lecture" côté partage ?**
+
+*Piste : Et si l'utilisateur se connecte localement au serveur ? Les droits de partage s'appliquent-ils ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Les droits de **partage** ne s'appliquent qu'aux accès **par le réseau**. Un utilisateur qui ouvre une session **localement** (console, bureau à distance) sur le serveur n'est limité que par les droits **NTFS** : avec « Contrôle total » NTFS, il peut tout modifier ou supprimer. Le danger existe aussi si quelqu'un élargit plus tard le partage à « Contrôle total » : NTFS ouvre alors tout. D'où la règle : donner des droits NTFS **précis**, et ne jamais laisser « Contrôle total » à un groupe d'utilisateurs ordinaires.
+
+</details>
+
+**4. Pourquoi vaut-il mieux gérer les droits via des groupes AD plutôt que directement par utilisateur ?**
+
+*Piste : Pensez à ce qui se passe quand un collaborateur change de service ou quitte l'entreprise.*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Quand un collaborateur change de service ou part, on modifie **son appartenance à un groupe** une seule fois, au lieu de rechercher son nom dans les droits de chaque dossier (avec le risque d'en oublier). Les droits restent cohérents, lisibles, auditables, et on évite les entrées orphelines dans les ACL. Cela passe à l'échelle quand l'entreprise grandit.
+
+</details>
+
+**5. En quoi le DFS peut-il être considéré comme une mesure de "continuité de service" au sens ITIL ?**
+
+*Piste : Pensez à la situation où le serveur hébergeant les fichiers tombe en panne. Que se passe-t-il côté utilisateurs ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Avec DFS, les utilisateurs accèdent à un **chemin unique** (l'espace de noms) qui ne dépend pas d'un serveur précis. Avec la **réplication** DFS-R, les mêmes dossiers existent sur plusieurs serveurs : si l'un tombe en panne, l'espace de noms redirige vers l'autre et les utilisateurs continuent de travailler, souvent sans s'en apercevoir. C'est une mesure de **gestion de la disponibilité et de la continuité** : le service reste rendu malgré la panne d'un composant.
+
+</details>
 
 ---
 

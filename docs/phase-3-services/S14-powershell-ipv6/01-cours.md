@@ -579,20 +579,62 @@ Adresse link-local résultante : FE80::204:61FF:FE9D:F1
 
 ## V. Questions de Réflexion
 
-1. **En Bash, `ls /var/log | grep ".log"` fonctionne par filtrage de texte. Quel est l'équivalent PowerShell et en quoi est-il fondamentalement différent ?**
-   - *Piste : `Get-ChildItem /var/log | Where-Object { $_.Extension -eq ".log" }` — quelle propriété est utilisée ? Est-ce du texte ?*
+Réfléchissez à chaque question avant d'ouvrir la réponse.
 
-2. **Pourquoi utilise-t-on `ConvertTo-SecureString` lors de la création d'un utilisateur AD en PowerShell, plutôt que de passer directement le mot de passe en clair ?**
-   - *Piste : Pensez à la journalisation des commandes PowerShell et à ce qui se passerait si le mot de passe apparaissait en clair dans un log.*
+**1. En Bash, `ls /var/log | grep ".log"` fonctionne par filtrage de texte. Quel est l'équivalent PowerShell et en quoi est-il fondamentalement différent ?**
 
-3. **Que se passe-t-il si l'on n'utilise pas `-ErrorAction Stop` dans un script de création d'utilisateurs AD en masse et qu'un utilisateur existe déjà ?**
-   - *Piste : Le script continue-t-il ? Comment sauriez-vous qu'une erreur s'est produite ?*
+*Piste : `Get-ChildItem /var/log | Where-Object { $_.Extension -eq ".log" }` — quelle propriété est utilisée ? Est-ce du texte ?*
 
-4. **Pourquoi l'adresse link-local est-elle indispensable même dans un réseau entièrement configuré avec des adresses Global Unicast ?**
-   - *Piste : Pensez au protocole NDP (équivalent IPv6 d'ARP) et à la découverte de routeurs.*
+<details markdown="1">
+<summary>Réponse</summary>
 
-5. **Pourquoi SLAAC peut-il être préféré à DHCPv6 dans certains environnements, et dans quels cas DHCPv6 reste-t-il nécessaire ?**
-   - *Piste : SLAAC distribue un préfixe mais ne distribue pas le serveur DNS — qui s'en charge alors ?*
+`Get-ChildItem` renvoie des **objets** (fichiers .NET) et non du texte. `Where-Object { $_.Extension -eq ".log" }` teste la **propriété** `Extension` de chaque objet. Avec Bash, `grep` cherche une chaîne dans du texte, ce qui est fragile (un fichier `app.log.bak` ou un nom contenant `.log` en milieu de chaîne correspond aussi). En PowerShell, le pipeline transmet des objets avec leurs propriétés et méthodes : pas d'analyse de texte par colonnes.
+
+</details>
+
+**2. Pourquoi utilise-t-on `ConvertTo-SecureString` lors de la création d'un utilisateur AD en PowerShell, plutôt que de passer directement le mot de passe en clair ?**
+
+*Piste : Pensez à la journalisation des commandes PowerShell et à ce qui se passerait si le mot de passe apparaissait en clair dans un log.*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Un `SecureString` est conservé **chiffré en mémoire** et n'apparaît pas en clair à l'écran, dans l'historique ni dans les journaux PowerShell (transcription, journalisation des blocs de script). Un mot de passe en clair dans une commande peut être lu par quiconque consulte les journaux. Remarque : `-AsPlainText -Force` écrit encore le mot de passe en clair dans le script ; en production, on le saisit avec `Read-Host -AsSecureString` ou on le lit depuis un coffre.
+
+</details>
+
+**3. Que se passe-t-il si l'on n'utilise pas `-ErrorAction Stop` dans un script de création d'utilisateurs AD en masse et qu'un utilisateur existe déjà ?**
+
+*Piste : Le script continue-t-il ? Comment sauriez-vous qu'une erreur s'est produite ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+L'erreur (utilisateur déjà existant) est dite **non bloquante** : PowerShell affiche un message rouge et **le script continue**. Un `Try/Catch` n'intercepte pas cette erreur, et dans une longue boucle on peut ne pas voir qu'un compte n'a pas été créé. Avec `-ErrorAction Stop`, l'erreur devient bloquante, le `Catch` la traite : on la consigne dans un journal et on décide de continuer ou d'arrêter.
+
+</details>
+
+**4. Pourquoi l'adresse link-local est-elle indispensable même dans un réseau entièrement configuré avec des adresses Global Unicast ?**
+
+*Piste : Pensez au protocole NDP (équivalent IPv6 d'ARP) et à la découverte de routeurs.*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+L'adresse `FE80::/10` est créée **automatiquement** sur toute interface IPv6 et fonctionne sans routeur ni DHCP. Le protocole **NDP** (qui remplace ARP et gère la découverte des routeurs) s'en sert : les annonces de routeur sont émises depuis l'adresse link-local du routeur, et les routes pointent vers elle comme prochain saut. Sans link-local, l'interface ne pourrait pas obtenir sa configuration.
+
+</details>
+
+**5. Pourquoi SLAAC peut-il être préféré à DHCPv6 dans certains environnements, et dans quels cas DHCPv6 reste-t-il nécessaire ?**
+
+*Piste : SLAAC distribue un préfixe mais ne distribue pas le serveur DNS — qui s'en charge alors ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+SLAAC est **sans serveur à maintenir** : le routeur annonce le préfixe et chaque machine construit son adresse. C'est simple et léger. **DHCPv6** reste nécessaire pour **contrôler et tracer** les adresses attribuées (inventaire, réservations, journaux) ou pour distribuer des options. Le serveur DNS est transmis soit par l'option **RDNSS** des annonces de routeur, soit par un DHCPv6 *sans état* (qui ne distribue que les options, pas les adresses).
+
+</details>
 
 ---
 

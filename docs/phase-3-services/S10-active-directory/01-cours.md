@@ -345,13 +345,68 @@ La console MMC principale pour administrer AD.
 
 Pour chaque élément, dire s'il s'agit d'un Utilisateur, Ordinateur, Groupe, OU ou Domaine :
 
-1. `GRP_Comptabilité` → ?
-2. `PC-FIN-08` (machine jointe au domaine) → ?
-3. `Service Financier` (conteneur dans AD) → ?
-4. `marie.dupont` (login réseau) → ?
-5. `finance.entreprise.local` → ?
-6. `DL_Newsletter_Clients` → ?
-7. `SRV-FILE-01` (serveur de fichiers joint) → ?
+**1.** `GRP_Comptabilité` → ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+**Groupe** (préfixe `GRP_`) : il sert à regrouper des utilisateurs pour leur attribuer des droits.
+
+</details>
+
+**2.** `PC-FIN-08` (machine jointe au domaine) → ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+**Ordinateur** : une machine jointe au domaine a son propre compte dans l'annuaire.
+
+</details>
+
+**3.** `Service Financier` (conteneur dans AD) → ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+**OU** (unité d'organisation) : un conteneur qui range des objets et reçoit des GPO.
+
+</details>
+
+**4.** `marie.dupont` (login réseau) → ?
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+**Utilisateur** : c'est son identifiant de connexion (SAMAccountName).
+
+</details>
+
+**5.** `finance.entreprise.local` → ?
+
+<details markdown="1">
+<summary>Correction de la question 5</summary>
+
+**Domaine** (ici un sous-domaine de `entreprise.local`).
+
+</details>
+
+**6.** `DL_Newsletter_Clients` → ?
+
+<details markdown="1">
+<summary>Correction de la question 6</summary>
+
+**Groupe de distribution** : selon la convention de nommage du cours, `DL_` désigne un groupe de distribution, c'est-à-dire une liste de diffusion de courriels, sans droits d'accès.
+
+</details>
+
+**7.** `SRV-FILE-01` (serveur de fichiers joint) → ?
+
+<details markdown="1">
+<summary>Correction de la question 7</summary>
+
+**Ordinateur** : un serveur membre du domaine est un compte ordinateur comme un poste de travail.
+
+</details>
 
 ---
 
@@ -374,20 +429,107 @@ BioMed SARL (50 personnes)
     └── Thomas (informaticien)
 ```
 
-1. Proposer la structure OU complète pour ce domaine
-2. Proposer les SAMAccountName pour chaque utilisateur
-3. Proposer 3 groupes pertinents avec leur type et étendue
-4. Quel nom de domaine suggérer ? (justifier)
+**1.** Proposer la structure OU complète pour ce domaine
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+Une OU par service, avec à l'intérieur des sous-OU qui séparent utilisateurs, ordinateurs et groupes (pratique qui facilite l'application des GPO) :
+
+```
+biomed.local
+├── OU_Direction_Medicale   (Utilisateurs, Ordinateurs)
+├── OU_Administration       (Utilisateurs, Ordinateurs)
+├── OU_Infirmerie           (Utilisateurs, Ordinateurs)
+├── OU_Informatique         (Utilisateurs, Ordinateurs)
+└── OU_Groupes              (groupes de sécurité et de distribution)
+```
+
+La structure reprend l'**organisation de l'entreprise** : elle sert à déléguer l'administration et à appliquer des GPO par service. Elle est distincte des groupes, qui servent aux droits d'accès.
+
+</details>
+
+**2.** Proposer les SAMAccountName pour chaque utilisateur
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+Convention courante : `prénom.nom` en minuscules, sans accent ni espace, 20 caractères au maximum. L'énoncé ne donne pas tous les noms de famille : avec les informations disponibles, `lefebvre`, `rousseau`, `claire`, `marc`, `anne`, `pierre`, `thomas`. Avec les noms complets on aurait par exemple `claire.martin`. L'UPN correspondant serait `claire.martin@biomed.local`.
+
+</details>
+
+**3.** Proposer 3 groupes pertinents avec leur type et étendue
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+| **Groupe** | **Type** | **Étendue** | **Rôle** |
+|------------|----------|-------------|----------|
+| `GG_Medical` | Sécurité | Globale | Regroupe les médecins et le personnel infirmier |
+| `DL_Dossiers_Patients_RW` | Sécurité | Domaine local | Porte le droit de modification sur le partage des dossiers patients ; contient `GG_Medical` |
+| `DL_Personnel` | Distribution | Globale | Liste de diffusion des courriels destinés à tout le personnel |
+
+Principe **AGDLP** : les comptes (**A**) vont dans des groupes globaux (**G**), qui vont dans des groupes de domaine local (**DL**), auxquels on donne les droits (**P**) sur la ressource.
+
+</details>
+
+**4.** Quel nom de domaine suggérer ? (justifier)
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+Pour le TP, **`biomed.local`** (nom NetBIOS `BIOMED`) : simple et cohérent avec le reste du cours. En production, on préfère un sous-domaine d'un nom de domaine que l'entreprise possède, par exemple `ad.biomed-sarl.fr` : `.local` est réservé à la résolution multicast (mDNS) et peut provoquer des conflits, alors qu'un nom public évite les collisions et permet d'obtenir des certificats.
+
+</details>
 
 ---
 
 #### Exercice 3 : Questions de Cours
 
-1. Quelle est la différence entre un groupe de sécurité et un groupe de distribution ?
-2. Pourquoi faut-il une IP fixe sur le serveur AVANT la promotion DC ?
-3. Peut-on appliquer une GPO directement sur un groupe de sécurité ? Et sur une OU ?
-4. Quelle est la différence entre SAMAccountName et UPN ?
-5. Qu'est-ce que le mot de passe DSRM et à quoi sert-il ?
+**1.** Quelle est la différence entre un groupe de sécurité et un groupe de distribution ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+Un groupe de **sécurité** peut recevoir des permissions (droits sur des dossiers, filtrage de GPO) et servir de liste de diffusion. Un groupe de **distribution** ne sert qu'à envoyer des courriels : il n'est pas utilisable dans les permissions.
+
+</details>
+
+**2.** Pourquoi faut-il une IP fixe sur le serveur AVANT la promotion DC ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+Le contrôleur de domaine est aussi le **serveur DNS** : les clients le trouvent par son adresse et par les enregistrements SRV qu'il publie. Si son adresse changeait (DHCP), ils ne le joindraient plus. L'assistant de promotion refuse ou avertit d'une configuration en DHCP. Le DC doit aussi utiliser lui-même son DNS.
+
+</details>
+
+**3.** Peut-on appliquer une GPO directement sur un groupe de sécurité ? Et sur une OU ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+Une GPO se **lie** à un site, un domaine ou une **OU**, pas à un groupe. On peut en revanche **filtrer** son application avec un groupe de sécurité (filtrage de sécurité) : seuls les membres du groupe reçoivent la GPO liée à l'OU.
+
+</details>
+
+**4.** Quelle est la différence entre SAMAccountName et UPN ?
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+Le **SAMAccountName** est l'ancien identifiant de connexion (`BIOMED\claire.martin`), limité à 20 caractères et unique dans le domaine. L'**UPN** (User Principal Name) a la forme d'une adresse (`claire.martin@biomed.local`), est unique dans la forêt et peut être différent du nom de domaine, par exemple l'adresse de messagerie.
+
+</details>
+
+**5.** Qu'est-ce que le mot de passe DSRM et à quoi sert-il ?
+
+<details markdown="1">
+<summary>Correction de la question 5</summary>
+
+DSRM (*Directory Services Restore Mode*) est le mot de passe de l'**administrateur local du contrôleur de domaine**, défini lors de la promotion. Il permet de démarrer le DC en mode restauration pour réparer ou restaurer la base Active Directory. Il doit être conservé en lieu sûr.
+
+</details>
 
 ---
 

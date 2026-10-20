@@ -348,11 +348,38 @@ Permet d'attribuer **toujours la même IP** à une machine identifiée par son *
 ### Exercice 1 : Compléter les Tables de Routage
 
 Topologie :
-```
-PC1 (192.168.10.10/24) ─Fa0/0─ R1 ─Se0/0/0─ R2 ─Fa0/0─ PC2 (192.168.20.20/24)
-                      .1      10.0.0.1  10.0.0.2    .1
-```
 
+<figure class="graphe diagramme"><svg viewBox="0 0 780 230" style="max-width:780px" role="img" aria-label="Topologie de l&#x27;exercice 1 : PC1, routeur R1, routeur R2, PC2" xmlns="http://www.w3.org/2000/svg">
+<rect x="40" y="66" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="45" y="71" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="57" y="94" width="6" height="6" class="dg-box"/>
+<rect x="48" y="100" width="24" height="4" rx="2" class="dg-box"/>
+<text x="60" y="120" text-anchor="middle" class="dg-s">PC1</text>
+<rect x="236" y="68" width="68" height="44" rx="8" class="dg-dark"/>
+<text x="270" y="95" text-anchor="middle" class="dg-w">R1</text>
+<rect x="476" y="68" width="68" height="44" rx="8" class="dg-dark"/>
+<text x="510" y="95" text-anchor="middle" class="dg-w">R2</text>
+<rect x="700" y="66" width="40" height="28" rx="4" class="dg-box"/>
+<rect x="705" y="71" width="30" height="18" rx="2" class="dg-soft"/>
+<rect x="717" y="94" width="6" height="6" class="dg-box"/>
+<rect x="708" y="100" width="24" height="4" rx="2" class="dg-box"/>
+<text x="720" y="120" text-anchor="middle" class="dg-s">PC2</text>
+<line x1="82" y1="82" x2="236" y2="82" class="dg-line"/>
+<line x1="304" y1="82" x2="476" y2="82" class="dg-line"/>
+<line x1="544" y1="82" x2="698" y2="82" class="dg-line"/>
+<text x="60" y="138" text-anchor="middle" class="dg-s">192.168.10.10/24</text>
+<text x="720" y="138" text-anchor="middle" class="dg-s">192.168.20.20/24</text>
+<text x="159" y="70" text-anchor="middle" class="dg-i">Fa0/0 (.1)</text>
+<text x="159" y="104" text-anchor="middle" class="dg-i">LAN 192.168.10.0/24</text>
+<text x="312" y="70" text-anchor="start" class="dg-s">Se0/0/0 : 10.0.0.1</text>
+<text x="468" y="104" text-anchor="end" class="dg-s">Se0/0/0 : 10.0.0.2</text>
+<text x="621" y="70" text-anchor="middle" class="dg-i">Fa0/0 (.1)</text>
+<text x="621" y="104" text-anchor="middle" class="dg-i">LAN 192.168.20.0/24</text>
+<rect x="290" y="150" width="200" height="50" rx="8" class="dg-warn"/>
+<text x="390" y="171" text-anchor="middle" class="dg-t">Liaison WAN</text>
+<text x="390" y="189" text-anchor="middle" class="dg-s">10.0.0.0/30</text>
+</svg>
+</figure>
 **a)** Compléter la table de routage de **R1** :
 
 | **Réseau destination** | **Masque** | **Via (next-hop)** | **Interface** | **Type** |
@@ -360,6 +387,17 @@ PC1 (192.168.10.10/24) ─Fa0/0─ R1 ─Se0/0/0─ R2 ─Fa0/0─ PC2 (192.168.
 | 192.168.10.0 | 255.255.255.0 | Directement connecté | Fa0/0 | C |
 | 10.0.0.0 | 255.255.255.252 | Directement connecté | Se0/0/0 | C |
 | 192.168.20.0 | ? | ? | ? | ? |
+
+<details markdown="1">
+<summary>Correction a) : table de R1</summary>
+
+| **Réseau destination** | **Masque** | **Via (next-hop)** | **Interface** | **Type** |
+|------------------------|------------|---------------------|---------------|----------|
+| 192.168.20.0 | 255.255.255.0 | 10.0.0.2 (Se0/0/0 de R2) | Se0/0/0 | **S** (statique) |
+
+Le réseau `192.168.20.0` n'est pas connecté à R1 : il faut lui indiquer par quelle adresse l'atteindre. Le next-hop est l'adresse de R2 **sur le lien commun** : `10.0.0.2`.
+
+</details>
 
 **b)** Compléter la table de routage de **R2** :
 
@@ -369,7 +407,28 @@ PC1 (192.168.10.10/24) ─Fa0/0─ R1 ─Se0/0/0─ R2 ─Fa0/0─ PC2 (192.168.
 | 10.0.0.0 | 255.255.255.252 | Directement connecté | Se0/0/0 | C |
 | 192.168.10.0 | ? | ? | ? | ? |
 
+<details markdown="1">
+<summary>Correction b) : table de R2</summary>
+
+| **Réseau destination** | **Masque** | **Via (next-hop)** | **Interface** | **Type** |
+|------------------------|------------|---------------------|---------------|----------|
+| 192.168.10.0 | 255.255.255.0 | 10.0.0.1 (Se0/0/0 de R1) | Se0/0/0 | **S** (statique) |
+
+</details>
+
 **c)** Écrire les commandes `ip route` pour R1 et R2.
+
+<details markdown="1">
+<summary>Correction c) : commandes</summary>
+
+```cisco
+R1(config)# ip route 192.168.20.0 255.255.255.0 10.0.0.2
+R2(config)# ip route 192.168.10.0 255.255.255.0 10.0.0.1
+```
+
+Il faut une route **dans chaque sens** : sans la route de R2 vers `192.168.10.0`, le ping de PC1 atteint PC2 mais la réponse ne revient jamais. Vérification : `show ip route` (lignes `S`).
+
+</details>
 
 ---
 
@@ -381,6 +440,20 @@ Remettre dans l'ordre ces événements DHCP et indiquer le type de chaque messag
 - Le serveur confirme l'attribution de l'IP et la durée du bail.
 - Le client informe le serveur choisi qu'il accepte l'offre.
 - Le serveur propose une adresse IP disponible au client.
+
+<details markdown="1">
+<summary>Correction de l'exercice 2</summary>
+
+| **Ordre** | **Message** | **Événement** | **Type** |
+|:---------:|-------------|---------------|----------|
+| 1 | **DISCOVER** | Le client envoie un message à tous les serveurs DHCP du réseau | **Broadcast** (le client n'a pas encore d'adresse) |
+| 2 | **OFFER** | Le serveur propose une adresse IP disponible au client | **Unicast** (ou broadcast selon le client) |
+| 3 | **REQUEST** | Le client informe le serveur choisi qu'il accepte l'offre | **Broadcast** (les autres serveurs apprennent qu'ils n'ont pas été retenus) |
+| 4 | **ACK** | Le serveur confirme l'attribution de l'IP et la durée du bail | **Unicast** |
+
+Moyen mnémotechnique : **DORA** (Discover, Offer, Request, Acknowledge).
+
+</details>
 
 ---
 
@@ -396,11 +469,50 @@ subnet 172.16.5.0 netmask 255.255.255.0 {
 }
 ```
 
-1. Quel est le réseau configuré ?
-2. Combien d'adresses IP peuvent être distribuées ?
-3. Quelle est la passerelle envoyée aux clients ?
-4. Un client obtient un bail à 9h00 et ne renouvelle pas. À quelle heure son IP sera-t-elle libérable ?
-5. Peut-on configurer une réservation avec `fixed-address 172.16.5.5` ? Est-ce une bonne pratique (l'IP est-elle dans la plage range) ?
+**1.** Quel est le réseau configuré ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+`172.16.5.0/24` (masque `255.255.255.0`).
+
+</details>
+
+**2.** Combien d'adresses IP peuvent être distribuées ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+De `.50` à `.100` inclus : 100 − 50 + 1 = **51 adresses**.
+
+</details>
+
+**3.** Quelle est la passerelle envoyée aux clients ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+`172.16.5.1` (`option routers`).
+
+</details>
+
+**4.** Un client obtient un bail à 9h00 et ne renouvelle pas. À quelle heure son IP sera-t-elle libérable ?
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+Le bail par défaut est de 3600 s = 1 h : l'adresse redevient libérable à **10h00**. (Le client peut demander une durée plus longue, au plus `max-lease-time` = 86400 s soit 24 h.) Un client normal tente de renouveler à la moitié du bail, soit 9h30.
+
+</details>
+
+**5.** Peut-on configurer une réservation avec `fixed-address 172.16.5.5` ? Est-ce une bonne pratique (l'IP est-elle dans la plage range) ?
+
+<details markdown="1">
+<summary>Correction de la question 5</summary>
+
+**Oui**, avec un bloc `host` qui associe l'adresse MAC du client à `fixed-address 172.16.5.5`. C'est une bonne pratique ici : `172.16.5.5` est **en dehors** de la plage dynamique (`.50` à `.100`), donc aucun autre client ne peut recevoir cette adresse par erreur.
+
+</details>
 
 ---
 
@@ -410,6 +522,20 @@ subnet 172.16.5.0 netmask 255.255.255.0 {
 
 Donner 5 causes possibles et la commande permettant de vérifier/corriger chacune.
 
+<details markdown="1">
+<summary>Correction de l'exercice 4</summary>
+
+Méthode : tester de proche en proche (`ping 127.0.0.1`, sa propre adresse, la passerelle, l'autre côté du routeur, puis PC2).
+
+| **Cause possible** | **Vérification** | **Correction** |
+|--------------------|------------------|----------------|
+| Passerelle par défaut absente ou fausse sur PC1 (ou PC2) | `ipconfig` / `ip route` | Renseigner la bonne passerelle |
+| Interface du routeur éteinte (`shutdown`) ou câble débranché | `show ip interface brief` (état `up/up` ?) | `no shutdown` |
+| Route manquante, dans un sens ou dans l'autre | `show ip route` | `ip route 192.168.2.0 255.255.255.0 <next-hop>` |
+| Mauvaise adresse ou mauvais masque sur une interface ou un PC | `show ip interface brief`, `ipconfig` | Corriger l'adresse ou le masque |
+| Pare-feu ou ACL qui bloque l'ICMP (ex. pare-feu Windows de PC2) | `show access-lists`, règles du pare-feu du poste | Autoriser l'ICMP ou tester avec un autre protocole |
+
+</details>
 ---
 
 ## VI. Auto-évaluation : Suis-je Prêt ?

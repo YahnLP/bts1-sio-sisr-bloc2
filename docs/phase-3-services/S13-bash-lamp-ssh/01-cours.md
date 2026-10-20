@@ -600,20 +600,62 @@ sudo crontab -u alice -e
 
 ## VI. Questions de Réflexion
 
-1. **Pourquoi ne faut-il jamais laisser le fichier `phpinfo.php` accessible en production ?**
-   - *Piste : Qu'est-ce que cette page révèle sur la configuration du serveur ?*
+Réfléchissez à chaque question avant d'ouvrir la réponse.
 
-2. **Pourquoi créer un utilisateur MariaDB dédié pour l'application web plutôt d'utiliser root ?**
-   - *Piste : Que se passe-t-il si l'application web est compromise et que la connexion BDD utilise root ?*
+**1. Pourquoi ne faut-il jamais laisser le fichier `phpinfo.php` accessible en production ?**
 
-3. **Pourquoi l'authentification SSH par clés est-elle plus sécurisée que l'authentification par mot de passe ?**
-   - *Piste : Qu'est-ce qu'une attaque par force brute ? Peut-elle fonctionner avec des clés ?*
+*Piste : Qu'est-ce que cette page révèle sur la configuration du serveur ?*
 
-4. **Dans quel scénario professionnel préférerait-on WinRM à RDP pour administrer un serveur Windows ?**
-   - *Piste : Pensez à l'automatisation, à la consommation de bande passante, à la gestion de 50 serveurs simultanément...*
+<details markdown="1">
+<summary>Réponse</summary>
 
-5. **Qu'arrive-t-il si un script de sauvegarde planifié via cron produit une erreur mais ne redirige pas ses sorties vers un log ?**
-   - *Piste : Comment sauriez-vous que la sauvegarde a échoué ?*
+La page affiche la **version de PHP**, les modules chargés, les chemins du serveur, les variables d'environnement et la configuration détaillée. Un attaquant s'en sert pour repérer des versions vulnérables et préparer son attaque. On le supprime dès le test terminé.
+
+</details>
+
+**2. Pourquoi créer un utilisateur MariaDB dédié pour l'application web plutôt d'utiliser root ?**
+
+*Piste : Que se passe-t-il si l'application web est compromise et que la connexion BDD utilise root ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Selon le principe du **moindre privilège**, un utilisateur dédié n'a de droits que sur **la base de l'application**. Si l'application est compromise (par exemple par une injection SQL), l'attaquant est cantonné à cette base. Avec `root`, il aurait la main sur **toutes** les bases, pourrait créer des comptes et, selon la configuration, lire ou écrire des fichiers du serveur.
+
+</details>
+
+**3. Pourquoi l'authentification SSH par clés est-elle plus sécurisée que l'authentification par mot de passe ?**
+
+*Piste : Qu'est-ce qu'une attaque par force brute ? Peut-elle fonctionner avec des clés ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Une clé (de 256 bits pour ed25519, 2048 à 4096 bits pour RSA) ne se **devine pas** : une attaque par force brute, qui teste des mots de passe en série, est impossible en pratique. De plus, la clé privée ne circule jamais sur le réseau. Un mot de passe peut être faible, réutilisé, volé par hameçonnage ou deviné. On désactive ensuite l'authentification par mot de passe (`PasswordAuthentication no`) et on protège la clé par une *passphrase*.
+
+</details>
+
+**4. Dans quel scénario professionnel préférerait-on WinRM à RDP pour administrer un serveur Windows ?**
+
+*Piste : Pensez à l'automatisation, à la consommation de bande passante, à la gestion de 50 serveurs simultanément...*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Pour **administrer de nombreux serveurs** et **automatiser** : une commande PowerShell (`Invoke-Command -ComputerName` avec une liste de 50 serveurs) agit sur tous à la fois, par script, avec une faible consommation de bande passante (texte, pas d'interface graphique) et une journalisation. C'est aussi la seule option sur un Server Core sans interface. RDP ouvre une session graphique interactive, serveur par serveur.
+
+</details>
+
+**5. Qu'arrive-t-il si un script de sauvegarde planifié via cron produit une erreur mais ne redirige pas ses sorties vers un log ?**
+
+*Piste : Comment sauriez-vous que la sauvegarde a échoué ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+La sortie d'une tâche `cron` est, par défaut, envoyée par courriel local à l'utilisateur (que personne ne lit) ou perdue : **l'échec passe inaperçu** et on découvre l'absence de sauvegarde le jour où l'on en a besoin. Il faut rediriger les sorties vers un journal (`>> /var/log/sauvegarde.log 2>&1`), tester le code retour (`$?`) et déclencher une alerte en cas d'échec.
+
+</details>
 
 ---
 

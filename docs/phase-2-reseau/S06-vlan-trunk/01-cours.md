@@ -648,6 +648,21 @@ Convertir en notation symbolique (rwx) :
 | `chmod 640` | | | | |
 | `chmod 777` | | | | |
 
+<details markdown="1">
+<summary>Correction : valeur numérique vers symbolique</summary>
+
+Chaque chiffre est la somme de **r = 4**, **w = 2**, **x = 1**.
+
+| **chmod** | **Propriétaire** | **Groupe** | **Autres** | **Notation symbolique** |
+|-----------|:----------------:|:----------:|:----------:|-------------------------|
+| `chmod 755` | 7 = rwx | 5 = r-x | 5 = r-x | `rwxr-xr-x` |
+| `chmod 644` | 6 = rw- | 4 = r-- | 4 = r-- | `rw-r--r--` |
+| `chmod 700` | 7 = rwx | 0 = --- | 0 = --- | `rwx------` |
+| `chmod 640` | 6 = rw- | 4 = r-- | 0 = --- | `rw-r-----` |
+| `chmod 777` | 7 = rwx | 7 = rwx | 7 = rwx | `rwxrwxrwx` |
+
+</details>
+
 Et l'inverse, convertir en valeur numérique :
 
 | **Notation symbolique** | **Valeur numérique** |
@@ -656,6 +671,20 @@ Et l'inverse, convertir en valeur numérique :
 | `rw-r--r--` | |
 | `rwx------` | |
 | `rw-rw-r--` | |
+
+<details markdown="1">
+<summary>Correction : symbolique vers valeur numérique</summary>
+
+On additionne les droits de chaque groupe de trois caractères.
+
+| **Notation symbolique** | **Calcul** | **Valeur numérique** |
+|-------------------------|------------|----------------------|
+| `rwxr-xr-x` | rwx = 4+2+1 = 7 ; r-x = 4+1 = 5 ; r-x = 5 | **755** |
+| `rw-r--r--` | rw- = 4+2 = 6 ; r-- = 4 ; r-- = 4 | **644** |
+| `rwx------` | rwx = 7 ; --- = 0 ; --- = 0 | **700** |
+| `rw-rw-r--` | rw- = 6 ; rw- = 6 ; r-- = 4 | **664** |
+
+</details>
 
 ---
 
@@ -667,10 +696,41 @@ drwxrwx--- 2 root  commercial 4096 nov 15 /data/commercial
 -rwxr-xr-x 1 root  root        512 nov 15 script.sh
 ```
 
-1. Qui peut **lire** `rapport.pdf` ? Qui ne peut pas ?
-2. Qui peut **créer des fichiers** dans `/data/commercial` ?
-3. L'utilisateur `charlie` (groupe `commercial`) peut-il exécuter `script.sh` ?
-4. Donner la commande pour que `bob` (groupe `direction`) puisse lire `rapport.pdf`.
+**1.** Qui peut **lire** `rapport.pdf` ? Qui ne peut pas ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+Le propriétaire `alice` (`rw-`) et les membres du groupe `direction` (`r--`) peuvent le lire. Les **autres** (`---`) ne peuvent pas, y compris les membres du groupe `commercial`. L'administrateur `root` passe outre les permissions.
+
+</details>
+
+**2.** Qui peut **créer des fichiers** dans `/data/commercial` ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+Pour créer un fichier dans un dossier, il faut les droits **w** (écriture) **et x** (traversée) sur ce dossier. Le propriétaire `root` et le groupe `commercial` ont `rwx` : ils peuvent créer des fichiers. Les autres n'ont aucun droit (`---`).
+
+</details>
+
+**3.** L'utilisateur `charlie` (groupe `commercial`) peut-il exécuter `script.sh` ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+**Oui.** `charlie` n'est ni `root` ni dans le groupe `root` : ce sont les droits des **autres** qui s'appliquent, soit `r-x`. Il a donc le droit de lire et d'exécuter le script.
+
+</details>
+
+**4.** Donner la commande pour que `bob` (groupe `direction`) puisse lire `rapport.pdf`.
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+**Aucune commande n'est nécessaire** : le groupe `direction` a déjà le droit de lecture (`r--`), et `bob` en fait partie. Si `bob` n'était pas dans ce groupe : `sudo usermod -aG direction bob` (il doit se reconnecter), ou, pour ne donner l'accès qu'à lui, `setfacl -m u:bob:r rapport.pdf`.
+
+</details>
 
 ---
 
@@ -685,11 +745,51 @@ Trunk : Port 24
 ```
 
 **Questions :**
-1. PC branché en port 2 peut-il communiquer avec PC en port 5 ? Pourquoi ?
-2. PC en port 7 envoie un broadcast. Qui le reçoit ?
-3. Quelle commande affiche les ports affectés à chaque VLAN ?
-4. Que faut-il pour que RH et IT puissent s'envoyer des fichiers ?
-5. Si le port 24 est en trunk, quels VLANs traversent-ils la liaison vers le 2e switch ?
+
+**1.** PC branché en port 2 peut-il communiquer avec PC en port 5 ? Pourquoi ?
+
+<details markdown="1">
+<summary>Correction de la question 1</summary>
+
+**Non.** Le port 2 est dans le VLAN 10 et le port 5 dans le VLAN 20 : deux VLAN sont deux domaines de diffusion séparés, le switch ne fait jamais passer une trame de l'un à l'autre. Il faudrait un routeur.
+
+</details>
+
+**2.** PC en port 7 envoie un broadcast. Qui le reçoit ?
+
+<details markdown="1">
+<summary>Correction de la question 2</summary>
+
+Uniquement les équipements du **VLAN 30** : le PC du port 8, et, par le trunk du port 24 (la trame y est étiquetée VLAN 30), les membres du VLAN 30 du second switch. Les VLAN 10 et 20 ne le reçoivent pas.
+
+</details>
+
+**3.** Quelle commande affiche les ports affectés à chaque VLAN ?
+
+<details markdown="1">
+<summary>Correction de la question 3</summary>
+
+`show vlan brief`.
+
+</details>
+
+**4.** Que faut-il pour que RH et IT puissent s'envoyer des fichiers ?
+
+<details markdown="1">
+<summary>Correction de la question 4</summary>
+
+Un équipement de **couche 3** : un routeur (sous-interfaces 802.1Q, « router on a stick ») ou un switch L3. Chaque VLAN a son propre réseau IP avec une passerelle, et les PC sont configurés avec cette passerelle. Le partage de fichiers doit en plus être autorisé par les règles de filtrage éventuelles (ACL, pare-feu).
+
+</details>
+
+**5.** Si le port 24 est en trunk, quels VLANs traversent-ils la liaison vers le 2e switch ?
+
+<details markdown="1">
+<summary>Correction de la question 5</summary>
+
+Par défaut, **tous les VLAN** existants sur le switch (1, 10, 20, 30). On restreint en pratique avec `switchport trunk allowed vlan 10,20,30` pour ne transporter que les VLAN utiles.
+
+</details>
 
 ---
 

@@ -301,20 +301,62 @@ fi
 
 ## IV. Questions de Réflexion
 
-1. **Pourquoi l'interface physique G0/0 du routeur ne doit-elle pas avoir d'adresse IP dans une configuration router-on-a-stick ?**
-   - *Piste : C'est la sous-interface qui porte l'IP. Que se passerait-il si l'interface physique avait aussi une IP ?*
+Réfléchissez à chaque question avant d'ouvrir la réponse.
 
-2. **Quelle est la principale limite du router-on-a-stick en production dans une grande entreprise ?**
-   - *Piste : Pensez à ce qui se passe si 500 machines de 3 VLANs échangent des données simultanément via un seul lien trunk...*
+**1. Pourquoi l'interface physique G0/0 du routeur ne doit-elle pas avoir d'adresse IP dans une configuration router-on-a-stick ?**
 
-3. **Dans un script Bash, pourquoi est-il important de tester si une variable est vide avant de l'utiliser dans une commande `useradd` ?**
-   - *Piste : Que se passe-t-il si on exécute `useradd` avec un login vide ?*
+*Piste : C'est la sous-interface qui porte l'IP. Que se passerait-il si l'interface physique avait aussi une IP ?*
 
-4. **Pourquoi préférer `id $LOGIN > /dev/null 2>&1` plutôt que simplement `id $LOGIN` pour tester si un utilisateur existe ?**
-   - *Piste : Pensez à l'expérience utilisateur et à la lisibilité des sorties du script.*
+<details markdown="1">
+<summary>Réponse</summary>
 
-5. **En quoi un script de création d'utilisateurs automatisé est-il préférable à la création manuelle, du point de vue ITIL ?**
-   - *Piste : Pensez à la traçabilité, la cohérence, la gestion des changements...*
+Elle ne porte **aucun réseau** : chaque VLAN a sa propre sous-interface avec son adresse de passerelle. Une adresse IP sur l'interface physique ferait écouter le routeur sur les trames **non étiquetées** (VLAN natif) en plus des sous-interfaces : on crée un réseau supplémentaire, sans isolation, avec un risque de conflit d'adressage. L'interface physique doit seulement être activée (`no shutdown`).
+
+</details>
+
+**2. Quelle est la principale limite du router-on-a-stick en production dans une grande entreprise ?**
+
+*Piste : Pensez à ce qui se passe si 500 machines de 3 VLANs échangent des données simultanément via un seul lien trunk...*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+**Un seul lien trunk** transporte tout le trafic inter-VLAN, dans les deux sens : c'est un goulot d'étranglement (500 machines de 3 VLAN saturent vite 1 Gbit/s) et un **point de défaillance unique**. Le routeur traite en plus tous les paquets en logiciel. En production on utilise un **commutateur de niveau 3** (interfaces VLAN, SVI) qui route à la vitesse du matériel.
+
+</details>
+
+**3. Dans un script Bash, pourquoi est-il important de tester si une variable est vide avant de l'utiliser dans une commande `useradd` ?**
+
+*Piste : Que se passe-t-il si on exécute `useradd` avec un login vide ?*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Avec une variable vide, `useradd` s'exécute sans identifiant et échoue, ou pire, le script poursuit avec un état incohérent (mauvais dossier, fichier inattendu). Un test `[ -z "$LOGIN" ]` permet de **s'arrêter proprement** avec un message clair avant toute modification du système. Entourer les variables de guillemets évite aussi les mauvaises surprises.
+
+</details>
+
+**4. Pourquoi préférer `id $LOGIN > /dev/null 2>&1` plutôt que simplement `id $LOGIN` pour tester si un utilisateur existe ?**
+
+*Piste : Pensez à l'expérience utilisateur et à la lisibilité des sorties du script.*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+On ne s'intéresse qu'au **code retour** de `id` (0 si l'utilisateur existe), pas à son affichage. Rediriger la sortie standard et les erreurs vers `/dev/null` évite d'encombrer l'écran de messages (`uid=1001(...)` ou `no such user`) qui rendraient le script illisible pour l'utilisateur.
+
+</details>
+
+**5. En quoi un script de création d'utilisateurs automatisé est-il préférable à la création manuelle, du point de vue ITIL ?**
+
+*Piste : Pensez à la traçabilité, la cohérence, la gestion des changements...*
+
+<details markdown="1">
+<summary>Réponse</summary>
+
+Le script est **reproductible** (même résultat à chaque exécution), **rapide**, **moins sujet aux erreurs de saisie** et **traçable** (journal, versionnage) : c'est ce qu'ITIL attend d'une demande de service standard. Les comptes respectent la convention de nommage, et l'opération est documentée, auditable et facile à confier à un autre technicien.
+
+</details>
 
 ---
 
