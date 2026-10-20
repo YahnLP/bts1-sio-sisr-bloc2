@@ -490,15 +490,32 @@ Exit-PSSession
 
 Chaque ligne d'un fichier crontab définit une tâche planifiée selon la syntaxe :
 
-```
-MIN  HEURE  JOUR_MOIS  MOIS  JOUR_SEMAINE  COMMANDE
- │     │        │        │        │
- │     │        │        │        └─ 0=Dimanche, 1=Lundi ... 6=Samedi
- │     │        │        └───────── 1 à 12
- │     │        └────────────────── 1 à 31
- │     └─────────────────────────── 0 à 23
- └───────────────────────────────── 0 à 59
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 210" style="max-width:760px" role="img" aria-label="Les cinq champs d&#x27;une ligne crontab" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="14" width="90" height="40" rx="6" class="dg-warn"/>
+<text x="65.0" y="39.0" text-anchor="middle" class="dg-t">MIN</text>
+<line x1="65.0" y1="54" x2="65.0" y2="92" class="dg-line"/>
+<text x="65.0" y="110" text-anchor="middle" class="dg-s">0 à 59</text>
+<rect x="120" y="14" width="90" height="40" rx="6" class="dg-warn"/>
+<text x="165.0" y="39.0" text-anchor="middle" class="dg-t">HEURE</text>
+<line x1="165.0" y1="54" x2="165.0" y2="92" class="dg-line"/>
+<text x="165.0" y="110" text-anchor="middle" class="dg-s">0 à 23</text>
+<rect x="220" y="14" width="110" height="40" rx="6" class="dg-warn"/>
+<text x="275.0" y="39.0" text-anchor="middle" class="dg-t">JOUR_MOIS</text>
+<line x1="275.0" y1="54" x2="275.0" y2="92" class="dg-line"/>
+<text x="275.0" y="110" text-anchor="middle" class="dg-s">1 à 31</text>
+<rect x="340" y="14" width="90" height="40" rx="6" class="dg-warn"/>
+<text x="385.0" y="39.0" text-anchor="middle" class="dg-t">MOIS</text>
+<line x1="385.0" y1="54" x2="385.0" y2="92" class="dg-line"/>
+<text x="385.0" y="110" text-anchor="middle" class="dg-s">1 à 12</text>
+<rect x="440" y="14" width="200" height="40" rx="6" class="dg-warn"/>
+<text x="540.0" y="39.0" text-anchor="middle" class="dg-t">JOUR_SEMAINE</text>
+<line x1="540.0" y1="54" x2="540.0" y2="92" class="dg-line"/>
+<text x="540.0" y="110" text-anchor="middle" class="dg-s">0 = dim. ... 6 = sam.</text>
+<rect x="650" y="14" width="120" height="40" rx="6" class="dg-dark"/>
+<text x="710.0" y="39.0" text-anchor="middle" class="dg-w">COMMANDE</text>
+</svg>
+<figcaption>Ordre : minute, heure, jour du mois, mois, jour de la semaine, puis la commande.</figcaption>
+</figure>
 
 **Caractères spéciaux :**
 
@@ -520,19 +537,11 @@ MIN  HEURE  JOUR_MOIS  MOIS  JOUR_SEMAINE  COMMANDE
 | `*/5 * * * *` | Toutes les 5 minutes |
 | `0 2 * * 1-5` | Du lundi au vendredi à 2h00 |
 
-```
-   EXEMPLES VISUELS
-   ─────────────────────────────────────────────
-   0 2 * * *    →   [MIN=0] [H=2] [Tj] [Tous mois] [Tous jours semaine]
-                    = Tous les jours à 02:00
-
-   */15 * * * * →   [MIN=0,15,30,45] [Toutes les H] [Tj] [Tous mois] [...]
-                    = Toutes les 15 minutes
-
-   0 0 1 1 *   →    [MIN=0] [H=0] [J=1] [M=1] [...]
-                    = Le 1er janvier à 00:00
-   ─────────────────────────────────────────────
-```
+| **Ligne crontab** | **Minute** | **Heure** | **Jour** | **Mois** | **Jour sem.** | **Signification** |
+|---|---|---|---|---|---|---|
+| `0 2 * * *` | 0 | 2 | tous | tous | tous | Tous les jours à 02:00 |
+| `*/15 * * * *` | 0, 15, 30, 45 | toutes | tous | tous | tous | Toutes les 15 minutes |
+| `0 0 1 1 *` | 0 | 0 | 1 | 1 | tous | Le 1er janvier à 00:00 |
 
 *Légende : Décomposition visuelle de 3 expressions cron courantes. Chaque champ correspond à une unité de temps (de gauche à droite : minute, heure, jour du mois, mois, jour de la semaine). L'astérisque signifie "toutes les valeurs possibles".*
 

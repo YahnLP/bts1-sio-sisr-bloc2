@@ -48,16 +48,36 @@ Une **GPO** (Group Policy Object – Objet de Stratégie de Groupe) est un ensem
 
 Les GPO s'appliquent dans un ordre précis, du **plus général au plus spécifique** :
 
-```
-Ordre d'application :
-1.  LOCAL       → Stratégie locale (gpedit.msc sur le PC, sans domaine)
-2.  SITE        → Stratégies liées au site AD géographique
-3.  DOMAINE     → Stratégies liées au domaine (s'appliquent à tous)
-4.  OU          → Stratégies liées à l'OU contenant l'objet
-         └──  OU enfant → (plus spécifique = dernier appliqué)
-
-LSDOU = L ocal → S ite → D omaine → OU
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 300" style="max-width:760px" role="img" aria-label="Ordre d&#x27;application des GPO : Local, Site, Domaine, OU" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="14" width="700" height="54" rx="8" class="dg-box"/>
+<circle cx="48" cy="41" r="16" class="dg-dark"/>
+<text x="48" y="47" text-anchor="middle" class="dg-w">L</text>
+<text x="76" y="38" text-anchor="start" class="dg-t">Local</text>
+<text x="76" y="56" text-anchor="start" class="dg-s">stratégie locale (gpedit.msc), sans domaine</text>
+<line x1="40" y1="68" x2="40.0" y2="71.0" class="dg-line"/>
+<polygon points="40,80 45.0,71.0 35.0,71.0" class="dg-ah"/>
+<rect x="60" y="80" width="660" height="54" rx="8" class="dg-box"/>
+<circle cx="88" cy="107" r="16" class="dg-dark"/>
+<text x="88" y="113" text-anchor="middle" class="dg-w">S</text>
+<text x="116" y="104" text-anchor="start" class="dg-t">Site</text>
+<text x="116" y="122" text-anchor="start" class="dg-s">stratégies liées au site AD géographique</text>
+<line x1="80" y1="134" x2="80.0" y2="137.0" class="dg-line"/>
+<polygon points="80,146 85.0,137.0 75.0,137.0" class="dg-ah"/>
+<rect x="100" y="146" width="620" height="54" rx="8" class="dg-soft"/>
+<circle cx="128" cy="173" r="16" class="dg-dark"/>
+<text x="128" y="179" text-anchor="middle" class="dg-w">D</text>
+<text x="156" y="170" text-anchor="start" class="dg-t">Domaine</text>
+<text x="156" y="188" text-anchor="start" class="dg-s">stratégies liées au domaine, pour tous</text>
+<line x1="120" y1="200" x2="120.0" y2="203.0" class="dg-line"/>
+<polygon points="120,212 125.0,203.0 115.0,203.0" class="dg-ah"/>
+<rect x="140" y="212" width="580" height="54" rx="8" class="dg-warn"/>
+<circle cx="168" cy="239" r="16" class="dg-dark"/>
+<text x="168" y="245" text-anchor="middle" class="dg-w">O</text>
+<text x="196" y="236" text-anchor="start" class="dg-t">OU</text>
+<text x="196" y="254" text-anchor="start" class="dg-s">stratégies liées à l&#x27;OU de l&#x27;objet (OU enfant appliquée en dernier)</text>
+</svg>
+<figcaption>LSDOU : chaque niveau est appliqué après le précédent ; le plus spécifique l&#x27;emporte.</figcaption>
+</figure>
 
 **Règle de priorité :**
 - En cas de **conflit** entre deux GPO, la **dernière appliquée** gagne
@@ -71,19 +91,40 @@ LSDOU = L ocal → S ite → D omaine → OU
 
 Par défaut, les GPO liées à une OU parent s'appliquent aussi aux OU enfants (**héritage**).
 
-```
-Domaine techpro.local
-  └── GPO_Domaine (fond d'écran entreprise)
-        │
-        ├── OU_UTILISATEURS
-        │     └── GPO_Utilisateurs (MDP 10 caract.)
-        │           │
-        │           └── OU Commercial
-        │                 └── GPO_Commercial (MDP 8 caract.)
-        │
-        └── OU Directeurs
-              └── (Hérite GPO_Domaine + GPO_Utilisateurs)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 521 246" style="max-width:521px" role="img" aria-label="Héritage des GPO dans le domaine techpro.local" xmlns="http://www.w3.org/2000/svg">
+<line x1="26" y1="34" x2="26" y2="55" class="dg-line"/>
+<line x1="26" y1="55" x2="50" y2="55" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="89" class="dg-line"/>
+<line x1="64" y1="89" x2="88" y2="89" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="225" class="dg-line"/>
+<line x1="64" y1="225" x2="88" y2="225" class="dg-line"/>
+<line x1="102" y1="102" x2="102" y2="123" class="dg-line"/>
+<line x1="102" y1="123" x2="126" y2="123" class="dg-line"/>
+<line x1="140" y1="136" x2="140" y2="157" class="dg-line"/>
+<line x1="140" y1="157" x2="164" y2="157" class="dg-line"/>
+<line x1="178" y1="170" x2="178" y2="191" class="dg-line"/>
+<line x1="178" y1="191" x2="202" y2="191" class="dg-line"/>
+<rect x="12" y="8" width="194" height="26" rx="6" class="dg-dark"/>
+<text x="109.0" y="26" text-anchor="middle" class="dg-w">Domaine techpro.local</text>
+<rect x="50" y="42" width="114" height="26" rx="6" class="dg-warn"/>
+<text x="107.0" y="60" text-anchor="middle" class="dg-t">GPO_Domaine</text>
+<text x="174.0" y="60" text-anchor="start" class="dg-i">fond d&#x27;écran entreprise</text>
+<rect x="88" y="76" width="146" height="26" rx="6" class="dg-box"/>
+<text x="161.0" y="94" text-anchor="middle" class="dg-t">OU_UTILISATEURS</text>
+<rect x="126" y="110" width="154" height="26" rx="6" class="dg-warn"/>
+<text x="203.0" y="128" text-anchor="middle" class="dg-t">GPO_Utilisateurs</text>
+<text x="290.0" y="128" text-anchor="start" class="dg-i">mot de passe 10 caractères</text>
+<rect x="164" y="144" width="130" height="26" rx="6" class="dg-box"/>
+<text x="229.0" y="162" text-anchor="middle" class="dg-t">OU Commercial</text>
+<rect x="202" y="178" width="138" height="26" rx="6" class="dg-warn"/>
+<text x="271.0" y="196" text-anchor="middle" class="dg-t">GPO_Commercial</text>
+<text x="350.0" y="196" text-anchor="start" class="dg-i">mot de passe 8 caractères</text>
+<rect x="88" y="212" width="130" height="26" rx="6" class="dg-box"/>
+<text x="153.0" y="230" text-anchor="middle" class="dg-t">OU Directeurs</text>
+<text x="228.0" y="230" text-anchor="start" class="dg-i">hérite de GPO_Domaine et GPO_Utilisateurs</text>
+</svg>
+<figcaption>Une GPO liée à un conteneur s&#x27;applique à tous ses enfants, sauf si une GPO plus proche la remplace.</figcaption>
+</figure>
 
 **Mécanismes pour modifier l'héritage :**
 
@@ -116,33 +157,103 @@ Dans les propriétés de la GPO → onglet **Délégation** / **Sécurité** :
 
 Chaque GPO est divisée en deux parties :
 
-```
-GPO
-├── Configuration Ordinateur
-│   → S'applique à l'objet Ordinateur au démarrage du PC
-│   ├── Paramètres logiciels (déploiement de logiciels MSI)
-│   ├── Paramètres Windows
-│   │   ├── Scripts (démarrage/arrêt)
-│   │   └── Paramètres de sécurité
-│   │       ├── Stratégies de comptes (MDP, verrouillage)
-│   │       ├── Stratégies locales (audit, droits utilisateurs)
-│   │       └── Pare-feu Windows
-│   └── Modèles d'administration
-│       ├── Composants Windows
-│       ├── Bureau
-│       └── Réseau
-│
-└── Configuration Utilisateur
-    → S'applique à l'objet Utilisateur à l'ouverture de session
-    ├── Paramètres logiciels
-    ├── Paramètres Windows
-    │   ├── Scripts (connexion/déconnexion)
-    │   └── Paramètres Internet Explorer
-    └── Modèles d'administration
-        ├── Bureau
-        ├── Panneau de configuration
-        └── Menu Démarrer et barre des tâches
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 612 756" style="max-width:612px" role="img" aria-label="Structure d&#x27;un objet de stratégie de groupe" xmlns="http://www.w3.org/2000/svg">
+<line x1="26" y1="34" x2="26" y2="55" class="dg-line"/>
+<line x1="26" y1="55" x2="50" y2="55" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="463" class="dg-line"/>
+<line x1="26" y1="463" x2="50" y2="463" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="89" class="dg-line"/>
+<line x1="64" y1="89" x2="88" y2="89" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="123" class="dg-line"/>
+<line x1="64" y1="123" x2="88" y2="123" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="327" class="dg-line"/>
+<line x1="64" y1="327" x2="88" y2="327" class="dg-line"/>
+<line x1="102" y1="136" x2="102" y2="157" class="dg-line"/>
+<line x1="102" y1="157" x2="126" y2="157" class="dg-line"/>
+<line x1="102" y1="136" x2="102" y2="191" class="dg-line"/>
+<line x1="102" y1="191" x2="126" y2="191" class="dg-line"/>
+<line x1="140" y1="204" x2="140" y2="225" class="dg-line"/>
+<line x1="140" y1="225" x2="164" y2="225" class="dg-line"/>
+<line x1="140" y1="204" x2="140" y2="259" class="dg-line"/>
+<line x1="140" y1="259" x2="164" y2="259" class="dg-line"/>
+<line x1="140" y1="204" x2="140" y2="293" class="dg-line"/>
+<line x1="140" y1="293" x2="164" y2="293" class="dg-line"/>
+<line x1="102" y1="340" x2="102" y2="361" class="dg-line"/>
+<line x1="102" y1="361" x2="126" y2="361" class="dg-line"/>
+<line x1="102" y1="340" x2="102" y2="395" class="dg-line"/>
+<line x1="102" y1="395" x2="126" y2="395" class="dg-line"/>
+<line x1="102" y1="340" x2="102" y2="429" class="dg-line"/>
+<line x1="102" y1="429" x2="126" y2="429" class="dg-line"/>
+<line x1="64" y1="476" x2="64" y2="497" class="dg-line"/>
+<line x1="64" y1="497" x2="88" y2="497" class="dg-line"/>
+<line x1="64" y1="476" x2="64" y2="531" class="dg-line"/>
+<line x1="64" y1="531" x2="88" y2="531" class="dg-line"/>
+<line x1="64" y1="476" x2="64" y2="633" class="dg-line"/>
+<line x1="64" y1="633" x2="88" y2="633" class="dg-line"/>
+<line x1="102" y1="544" x2="102" y2="565" class="dg-line"/>
+<line x1="102" y1="565" x2="126" y2="565" class="dg-line"/>
+<line x1="102" y1="544" x2="102" y2="599" class="dg-line"/>
+<line x1="102" y1="599" x2="126" y2="599" class="dg-line"/>
+<line x1="102" y1="646" x2="102" y2="667" class="dg-line"/>
+<line x1="102" y1="667" x2="126" y2="667" class="dg-line"/>
+<line x1="102" y1="646" x2="102" y2="701" class="dg-line"/>
+<line x1="102" y1="701" x2="126" y2="701" class="dg-line"/>
+<line x1="102" y1="646" x2="102" y2="735" class="dg-line"/>
+<line x1="102" y1="735" x2="126" y2="735" class="dg-line"/>
+<rect x="12" y="8" width="50" height="26" rx="6" class="dg-dark"/>
+<text x="37.0" y="26" text-anchor="middle" class="dg-w">GPO</text>
+<rect x="50" y="42" width="218" height="26" rx="6" class="dg-warn"/>
+<text x="159.0" y="60" text-anchor="middle" class="dg-t">Configuration Ordinateur</text>
+<text x="278.0" y="60" text-anchor="start" class="dg-i">appliquée à l&#x27;ordinateur au démarrage</text>
+<rect x="88" y="76" width="158" height="26" rx="6" class="dg-soft"/>
+<text x="167.0" y="94" text-anchor="middle" class="dg-s">Paramètres logiciels</text>
+<text x="256.0" y="94" text-anchor="start" class="dg-i">déploiement MSI</text>
+<rect x="88" y="110" width="170" height="26" rx="6" class="dg-box"/>
+<text x="173.0" y="128" text-anchor="middle" class="dg-t">Paramètres Windows</text>
+<rect x="126" y="144" width="72" height="26" rx="6" class="dg-soft"/>
+<text x="162.1" y="162" text-anchor="middle" class="dg-s">Scripts</text>
+<text x="208.2" y="162" text-anchor="start" class="dg-i">démarrage / arrêt</text>
+<rect x="126" y="178" width="202" height="26" rx="6" class="dg-box"/>
+<text x="227.0" y="196" text-anchor="middle" class="dg-t">Paramètres de sécurité</text>
+<rect x="164" y="212" width="165" height="26" rx="6" class="dg-soft"/>
+<text x="246.3" y="230" text-anchor="middle" class="dg-s">Stratégies de comptes</text>
+<text x="338.6" y="230" text-anchor="start" class="dg-i">MDP, verrouillage</text>
+<rect x="164" y="246" width="145" height="26" rx="6" class="dg-soft"/>
+<text x="236.4" y="264" text-anchor="middle" class="dg-s">Stratégies locales</text>
+<text x="318.8" y="264" text-anchor="start" class="dg-i">audit, droits</text>
+<rect x="164" y="280" width="132" height="26" rx="6" class="dg-soft"/>
+<text x="229.8" y="298" text-anchor="middle" class="dg-s">Pare-feu Windows</text>
+<rect x="88" y="314" width="218" height="26" rx="6" class="dg-box"/>
+<text x="197.0" y="332" text-anchor="middle" class="dg-t">Modèles d&#x27;administration</text>
+<rect x="126" y="348" width="145" height="26" rx="6" class="dg-soft"/>
+<text x="198.4" y="366" text-anchor="middle" class="dg-s">Composants Windows</text>
+<rect x="126" y="382" width="66" height="26" rx="6" class="dg-soft"/>
+<text x="158.8" y="400" text-anchor="middle" class="dg-s">Bureau</text>
+<rect x="126" y="416" width="66" height="26" rx="6" class="dg-soft"/>
+<text x="158.8" y="434" text-anchor="middle" class="dg-s">Réseau</text>
+<rect x="50" y="450" width="226" height="26" rx="6" class="dg-ok"/>
+<text x="163.0" y="468" text-anchor="middle" class="dg-t">Configuration Utilisateur</text>
+<text x="286.0" y="468" text-anchor="start" class="dg-i">appliquée à l&#x27;utilisateur à l&#x27;ouverture de session</text>
+<rect x="88" y="484" width="158" height="26" rx="6" class="dg-soft"/>
+<text x="167.0" y="502" text-anchor="middle" class="dg-s">Paramètres logiciels</text>
+<rect x="88" y="518" width="170" height="26" rx="6" class="dg-box"/>
+<text x="173.0" y="536" text-anchor="middle" class="dg-t">Paramètres Windows</text>
+<rect x="126" y="552" width="72" height="26" rx="6" class="dg-soft"/>
+<text x="162.1" y="570" text-anchor="middle" class="dg-s">Scripts</text>
+<text x="208.2" y="570" text-anchor="start" class="dg-i">connexion / déconnexion</text>
+<rect x="126" y="586" width="211" height="26" rx="6" class="dg-soft"/>
+<text x="231.39999999999998" y="604" text-anchor="middle" class="dg-s">Paramètres Internet Explorer</text>
+<rect x="88" y="620" width="218" height="26" rx="6" class="dg-box"/>
+<text x="197.0" y="638" text-anchor="middle" class="dg-t">Modèles d&#x27;administration</text>
+<rect x="126" y="654" width="66" height="26" rx="6" class="dg-soft"/>
+<text x="158.8" y="672" text-anchor="middle" class="dg-s">Bureau</text>
+<rect x="126" y="688" width="184" height="26" rx="6" class="dg-soft"/>
+<text x="218.2" y="706" text-anchor="middle" class="dg-s">Panneau de configuration</text>
+<rect x="126" y="722" width="244" height="26" rx="6" class="dg-soft"/>
+<text x="247.89999999999998" y="740" text-anchor="middle" class="dg-s">Menu Démarrer et barre des tâches</text>
+</svg>
+<figcaption>Une GPO contient une configuration ordinateur et une configuration utilisateur.</figcaption>
+</figure>
 
 ---
 
@@ -155,18 +266,50 @@ La console centrale pour gérer les GPO dans un domaine.
 - Ou `Win+R` → `gpmc.msc`
 
 **Interface GPMC :**
-```
-Gestion des stratégies de groupe
-└── Forêt : techpro.local
-    └── Domaines
-        └── techpro.local
-            ├── Default Domain Policy     ← Ne pas modifier !
-            ├── Default DC Policy         ← Ne pas modifier !
-            ├── OU_UTILISATEURS
-            │   └── [GPO liées à cette OU]
-            └── Objets de stratégie de groupe
-                └── [Toutes les GPO du domaine]
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 477 348" style="max-width:477px" role="img" aria-label="Arborescence de la console GPMC" xmlns="http://www.w3.org/2000/svg">
+<line x1="26" y1="34" x2="26" y2="55" class="dg-line"/>
+<line x1="26" y1="55" x2="50" y2="55" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="89" class="dg-line"/>
+<line x1="64" y1="89" x2="88" y2="89" class="dg-line"/>
+<line x1="102" y1="102" x2="102" y2="123" class="dg-line"/>
+<line x1="102" y1="123" x2="126" y2="123" class="dg-line"/>
+<line x1="140" y1="136" x2="140" y2="157" class="dg-line"/>
+<line x1="140" y1="157" x2="164" y2="157" class="dg-line"/>
+<line x1="140" y1="136" x2="140" y2="191" class="dg-line"/>
+<line x1="140" y1="191" x2="164" y2="191" class="dg-line"/>
+<line x1="140" y1="136" x2="140" y2="225" class="dg-line"/>
+<line x1="140" y1="225" x2="164" y2="225" class="dg-line"/>
+<line x1="140" y1="136" x2="140" y2="293" class="dg-line"/>
+<line x1="140" y1="293" x2="164" y2="293" class="dg-line"/>
+<line x1="178" y1="238" x2="178" y2="259" class="dg-line"/>
+<line x1="178" y1="259" x2="202" y2="259" class="dg-line"/>
+<line x1="178" y1="306" x2="178" y2="327" class="dg-line"/>
+<line x1="178" y1="327" x2="202" y2="327" class="dg-line"/>
+<rect x="12" y="8" width="282" height="26" rx="6" class="dg-dark"/>
+<text x="153.0" y="26" text-anchor="middle" class="dg-w">Gestion des stratégies de groupe</text>
+<rect x="50" y="42" width="194" height="26" rx="6" class="dg-box"/>
+<text x="147.0" y="60" text-anchor="middle" class="dg-t">Forêt : techpro.local</text>
+<rect x="88" y="76" width="90" height="26" rx="6" class="dg-box"/>
+<text x="133.0" y="94" text-anchor="middle" class="dg-t">Domaines</text>
+<rect x="126" y="110" width="130" height="26" rx="6" class="dg-box"/>
+<text x="191.0" y="128" text-anchor="middle" class="dg-t">techpro.local</text>
+<rect x="164" y="144" width="194" height="26" rx="6" class="dg-bad"/>
+<text x="261.0" y="162" text-anchor="middle" class="dg-t">Default Domain Policy</text>
+<text x="368.0" y="162" text-anchor="start" class="dg-i">ne pas modifier</text>
+<rect x="164" y="178" width="162" height="26" rx="6" class="dg-bad"/>
+<text x="245.0" y="196" text-anchor="middle" class="dg-t">Default DC Policy</text>
+<text x="336.0" y="196" text-anchor="start" class="dg-i">ne pas modifier</text>
+<rect x="164" y="212" width="146" height="26" rx="6" class="dg-box"/>
+<text x="237.0" y="230" text-anchor="middle" class="dg-t">OU_UTILISATEURS</text>
+<rect x="202" y="246" width="158" height="26" rx="6" class="dg-soft"/>
+<text x="281.0" y="264" text-anchor="middle" class="dg-s">GPO liées à cette OU</text>
+<rect x="164" y="280" width="258" height="26" rx="6" class="dg-box"/>
+<text x="293.0" y="298" text-anchor="middle" class="dg-t">Objets de stratégie de groupe</text>
+<rect x="202" y="314" width="191" height="26" rx="6" class="dg-soft"/>
+<text x="297.5" y="332" text-anchor="middle" class="dg-s">Toutes les GPO du domaine</text>
+</svg>
+<figcaption>Les GPO par défaut ne se modifient pas : on crée ses propres GPO.</figcaption>
+</figure>
 
 **Création d'une GPO (bonne pratique) :**
 1. Clic droit sur `Objets de stratégie de groupe` → `Nouveau` → nommer la GPO
@@ -277,20 +420,57 @@ Quand on crée une zone AD-intégrée, on choisit l'étendue de réplication :
 - Gestionnaire de serveur → Outils → DNS
 
 **Structure de la console :**
-```
-DNS
-└── SRV-AD-TECHPRO
-    ├── Zones de recherche directe
-    │   ├── techpro.local (zone AD-intégrée)
-    │   │   ├── (Enregistrements SOA, NS)
-    │   │   ├── (Enregistrements A créés automatiquement par AD)
-    │   │   ├── www      → A → 192.168.50.100
-    │   │   └── intranet → CNAME → www
-    │   └── _msdcs.techpro.local (zone interne AD, ne pas toucher)
-    │
-    └── Zones de recherche inversée
-        └── 50.168.192.in-addr.arpa (à créer)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 505 382" style="max-width:505px" role="img" aria-label="Structure de la console DNS de Windows Server" xmlns="http://www.w3.org/2000/svg">
+<line x1="26" y1="34" x2="26" y2="55" class="dg-line"/>
+<line x1="26" y1="55" x2="50" y2="55" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="89" class="dg-line"/>
+<line x1="64" y1="89" x2="88" y2="89" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="327" class="dg-line"/>
+<line x1="64" y1="327" x2="88" y2="327" class="dg-line"/>
+<line x1="102" y1="102" x2="102" y2="123" class="dg-line"/>
+<line x1="102" y1="123" x2="126" y2="123" class="dg-line"/>
+<line x1="102" y1="102" x2="102" y2="293" class="dg-line"/>
+<line x1="102" y1="293" x2="126" y2="293" class="dg-line"/>
+<line x1="140" y1="136" x2="140" y2="157" class="dg-line"/>
+<line x1="140" y1="157" x2="164" y2="157" class="dg-line"/>
+<line x1="140" y1="136" x2="140" y2="191" class="dg-line"/>
+<line x1="140" y1="191" x2="164" y2="191" class="dg-line"/>
+<line x1="140" y1="136" x2="140" y2="225" class="dg-line"/>
+<line x1="140" y1="225" x2="164" y2="225" class="dg-line"/>
+<line x1="140" y1="136" x2="140" y2="259" class="dg-line"/>
+<line x1="140" y1="259" x2="164" y2="259" class="dg-line"/>
+<line x1="102" y1="340" x2="102" y2="361" class="dg-line"/>
+<line x1="102" y1="361" x2="126" y2="361" class="dg-line"/>
+<rect x="12" y="8" width="50" height="26" rx="6" class="dg-dark"/>
+<text x="37.0" y="26" text-anchor="middle" class="dg-w">DNS</text>
+<rect x="50" y="42" width="138" height="26" rx="6" class="dg-box"/>
+<text x="119.0" y="60" text-anchor="middle" class="dg-t">SRV-AD-TECHPRO</text>
+<rect x="88" y="76" width="234" height="26" rx="6" class="dg-box"/>
+<text x="205.0" y="94" text-anchor="middle" class="dg-t">Zones de recherche directe</text>
+<rect x="126" y="110" width="130" height="26" rx="6" class="dg-ok"/>
+<text x="191.0" y="128" text-anchor="middle" class="dg-t">techpro.local</text>
+<text x="266.0" y="128" text-anchor="start" class="dg-i">zone AD-intégrée</text>
+<rect x="164" y="144" width="72" height="26" rx="6" class="dg-soft"/>
+<text x="200.1" y="162" text-anchor="middle" class="dg-s">SOA, NS</text>
+<rect x="164" y="178" width="330" height="26" rx="6" class="dg-soft"/>
+<text x="328.79999999999995" y="196" text-anchor="middle" class="dg-s">Enregistrements A créés automatiquement par AD</text>
+<rect x="164" y="212" width="46" height="26" rx="6" class="dg-soft"/>
+<text x="186.9" y="230" text-anchor="middle" class="dg-s">www</text>
+<text x="219.8" y="230" text-anchor="start" class="dg-i">A : 192.168.50.100</text>
+<rect x="164" y="246" width="79" height="26" rx="6" class="dg-soft"/>
+<text x="203.4" y="264" text-anchor="middle" class="dg-s">intranet</text>
+<text x="252.8" y="264" text-anchor="start" class="dg-i">CNAME : www</text>
+<rect x="126" y="280" width="158" height="26" rx="6" class="dg-soft"/>
+<text x="205.0" y="298" text-anchor="middle" class="dg-s">_msdcs.techpro.local</text>
+<text x="294.0" y="298" text-anchor="start" class="dg-i">zone interne AD, ne pas toucher</text>
+<rect x="88" y="314" width="242" height="26" rx="6" class="dg-box"/>
+<text x="209.0" y="332" text-anchor="middle" class="dg-t">Zones de recherche inversée</text>
+<rect x="126" y="348" width="210" height="26" rx="6" class="dg-warn"/>
+<text x="231.0" y="366" text-anchor="middle" class="dg-t">50.168.192.in-addr.arpa</text>
+<text x="346.0" y="366" text-anchor="start" class="dg-i">à créer</text>
+</svg>
+<figcaption>Zones directes pour nom vers IP, zones inversées pour IP vers nom.</figcaption>
+</figure>
 
 ---
 

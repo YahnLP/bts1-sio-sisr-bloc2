@@ -126,11 +126,17 @@ En plus de l'adresse IP, le serveur DHCP peut transmettre d'autres paramètres d
 
  **Niveaux d'options :** Les options peuvent être définies à 3 niveaux, avec la priorité suivante (du plus général au plus spécifique) :
 
-```
-Niveau SERVEUR (s'applique à toutes les étendues)
-    └─► Niveau ÉTENDUE (s'applique à une étendue spécifique)
-            └─► Niveau RÉSERVATION (s'applique à une machine spécifique)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 250" style="max-width:760px" role="img" aria-label="Niveaux de configuration DHCP : serveur, étendue, réservation" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="10" width="740" height="230" rx="12" class="dg-soft"/>
+<text x="24" y="34" text-anchor="start" class="dg-t">Niveau SERVEUR : s&#x27;applique à toutes les étendues</text>
+<rect x="40" y="52" width="680" height="170" rx="12" class="dg-box"/>
+<text x="54" y="76" text-anchor="start" class="dg-t">Niveau ÉTENDUE : s&#x27;applique à une étendue spécifique</text>
+<rect x="70" y="94" width="620" height="112" rx="12" class="dg-warn"/>
+<text x="84" y="118" text-anchor="start" class="dg-t">Niveau RÉSERVATION : s&#x27;applique à une machine spécifique</text>
+<text x="84" y="150" text-anchor="start" class="dg-s">Priorité : réservation &gt; étendue &gt; serveur</text>
+</svg>
+<figcaption>Une option définie à un niveau plus précis remplace celle du niveau supérieur.</figcaption>
+</figure>
 
 *Légende : Diagramme montrant la hiérarchie des options DHCP. Une option définie au niveau Réservation écrase celle de l'Étendue, qui elle-même écrase celle du Serveur. Cela permet une grande flexibilité : des paramètres globaux avec des exceptions ciblées.*
 
@@ -266,24 +272,87 @@ Les droits NTFS sont plus **granulaires** que les droits de partage. Les permiss
 
 En entreprise, les dossiers partagés sont organisés **par service métier**. Chaque service a son dossier, et les droits sont accordés à des **groupes AD** (pas à des utilisateurs individuels) :
 
-```
-\\SERVEUR\Partages\
-    ├── RH\               ──► Groupe AD : GRP_RH       (Modifier)
-    │                    ──► Groupe AD : GRP_Direction  (Lecture)
-    │                    ──► Groupe AD : GRP_IT         (Contrôle total)
-    │
-    ├── Comptabilite\     ──► Groupe AD : GRP_Compta    (Modifier)
-    │                    ──► Groupe AD : GRP_Direction  (Lecture)
-    │                    ──► Groupe AD : GRP_IT         (Contrôle total)
-    │
-    ├── Informatique\     ──► Groupe AD : GRP_IT        (Contrôle total)
-    │
-    ├── Direction\        ──► Groupe AD : GRP_Direction (Contrôle total)
-    │                    ──► Groupe AD : GRP_IT         (Contrôle total)
-    │
-    └── Commun\           ──► Groupe AD : Utilisateurs  (Modifier)
-                         ──► Groupe AD : GRP_IT         (Contrôle total)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 330 518" style="max-width:330px" role="img" aria-label="Dossiers partagés et groupes AD autorisés" xmlns="http://www.w3.org/2000/svg">
+<line x1="26" y1="34" x2="26" y2="51" class="dg-line"/>
+<line x1="26" y1="51" x2="50" y2="51" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="171" class="dg-line"/>
+<line x1="26" y1="171" x2="50" y2="171" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="291" class="dg-line"/>
+<line x1="26" y1="291" x2="50" y2="291" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="351" class="dg-line"/>
+<line x1="26" y1="351" x2="50" y2="351" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="441" class="dg-line"/>
+<line x1="26" y1="441" x2="50" y2="441" class="dg-line"/>
+<line x1="64" y1="64" x2="64" y2="81" class="dg-line"/>
+<line x1="64" y1="81" x2="88" y2="81" class="dg-line"/>
+<line x1="64" y1="64" x2="64" y2="111" class="dg-line"/>
+<line x1="64" y1="111" x2="88" y2="111" class="dg-line"/>
+<line x1="64" y1="64" x2="64" y2="141" class="dg-line"/>
+<line x1="64" y1="141" x2="88" y2="141" class="dg-line"/>
+<line x1="64" y1="184" x2="64" y2="201" class="dg-line"/>
+<line x1="64" y1="201" x2="88" y2="201" class="dg-line"/>
+<line x1="64" y1="184" x2="64" y2="231" class="dg-line"/>
+<line x1="64" y1="231" x2="88" y2="231" class="dg-line"/>
+<line x1="64" y1="184" x2="64" y2="261" class="dg-line"/>
+<line x1="64" y1="261" x2="88" y2="261" class="dg-line"/>
+<line x1="64" y1="304" x2="64" y2="321" class="dg-line"/>
+<line x1="64" y1="321" x2="88" y2="321" class="dg-line"/>
+<line x1="64" y1="364" x2="64" y2="381" class="dg-line"/>
+<line x1="64" y1="381" x2="88" y2="381" class="dg-line"/>
+<line x1="64" y1="364" x2="64" y2="411" class="dg-line"/>
+<line x1="64" y1="411" x2="88" y2="411" class="dg-line"/>
+<line x1="64" y1="454" x2="64" y2="471" class="dg-line"/>
+<line x1="64" y1="471" x2="88" y2="471" class="dg-line"/>
+<line x1="64" y1="454" x2="64" y2="501" class="dg-line"/>
+<line x1="64" y1="501" x2="88" y2="501" class="dg-line"/>
+<rect x="12" y="8" width="178" height="26" rx="6" class="dg-dark"/>
+<text x="101.0" y="26" text-anchor="middle" class="dg-w">\\SERVEUR\Partages\</text>
+<rect x="50" y="38" width="50" height="26" rx="6" class="dg-box"/>
+<text x="75.0" y="56" text-anchor="middle" class="dg-t">RH\</text>
+<rect x="88" y="68" width="74" height="26" rx="6" class="dg-ok"/>
+<text x="125.0" y="86" text-anchor="middle" class="dg-t">GRP_RH</text>
+<text x="172.0" y="86" text-anchor="start" class="dg-i">Modifier</text>
+<rect x="88" y="98" width="130" height="26" rx="6" class="dg-ok"/>
+<text x="153.0" y="116" text-anchor="middle" class="dg-t">GRP_Direction</text>
+<text x="228.0" y="116" text-anchor="start" class="dg-i">Lecture</text>
+<rect x="88" y="128" width="74" height="26" rx="6" class="dg-ok"/>
+<text x="125.0" y="146" text-anchor="middle" class="dg-t">GRP_IT</text>
+<text x="172.0" y="146" text-anchor="start" class="dg-i">Contrôle total</text>
+<rect x="50" y="158" width="130" height="26" rx="6" class="dg-box"/>
+<text x="115.0" y="176" text-anchor="middle" class="dg-t">Comptabilite\</text>
+<rect x="88" y="188" width="106" height="26" rx="6" class="dg-ok"/>
+<text x="141.0" y="206" text-anchor="middle" class="dg-t">GRP_Compta</text>
+<text x="204.0" y="206" text-anchor="start" class="dg-i">Modifier</text>
+<rect x="88" y="218" width="130" height="26" rx="6" class="dg-ok"/>
+<text x="153.0" y="236" text-anchor="middle" class="dg-t">GRP_Direction</text>
+<text x="228.0" y="236" text-anchor="start" class="dg-i">Lecture</text>
+<rect x="88" y="248" width="74" height="26" rx="6" class="dg-ok"/>
+<text x="125.0" y="266" text-anchor="middle" class="dg-t">GRP_IT</text>
+<text x="172.0" y="266" text-anchor="start" class="dg-i">Contrôle total</text>
+<rect x="50" y="278" width="130" height="26" rx="6" class="dg-box"/>
+<text x="115.0" y="296" text-anchor="middle" class="dg-t">Informatique\</text>
+<rect x="88" y="308" width="74" height="26" rx="6" class="dg-ok"/>
+<text x="125.0" y="326" text-anchor="middle" class="dg-t">GRP_IT</text>
+<text x="172.0" y="326" text-anchor="start" class="dg-i">Contrôle total</text>
+<rect x="50" y="338" width="106" height="26" rx="6" class="dg-box"/>
+<text x="103.0" y="356" text-anchor="middle" class="dg-t">Direction\</text>
+<rect x="88" y="368" width="130" height="26" rx="6" class="dg-ok"/>
+<text x="153.0" y="386" text-anchor="middle" class="dg-t">GRP_Direction</text>
+<text x="228.0" y="386" text-anchor="start" class="dg-i">Contrôle total</text>
+<rect x="88" y="398" width="74" height="26" rx="6" class="dg-ok"/>
+<text x="125.0" y="416" text-anchor="middle" class="dg-t">GRP_IT</text>
+<text x="172.0" y="416" text-anchor="start" class="dg-i">Contrôle total</text>
+<rect x="50" y="428" width="82" height="26" rx="6" class="dg-box"/>
+<text x="91.0" y="446" text-anchor="middle" class="dg-t">Commun\</text>
+<rect x="88" y="458" width="122" height="26" rx="6" class="dg-ok"/>
+<text x="149.0" y="476" text-anchor="middle" class="dg-t">Utilisateurs</text>
+<text x="220.0" y="476" text-anchor="start" class="dg-i">Modifier</text>
+<rect x="88" y="488" width="74" height="26" rx="6" class="dg-ok"/>
+<text x="125.0" y="506" text-anchor="middle" class="dg-t">GRP_IT</text>
+<text x="172.0" y="506" text-anchor="start" class="dg-i">Contrôle total</text>
+</svg>
+<figcaption>Chaque dossier est ouvert à des groupes AD avec un niveau de permission précis.</figcaption>
+</figure>
 
 *Légende : Exemple d'arborescence de dossiers partagés organisée par service dans une entreprise. Chaque dossier est associé à un ou plusieurs groupes Active Directory avec des niveaux de droits différents. Le dossier "Commun" est accessible à tous les utilisateurs authentifiés.*
 

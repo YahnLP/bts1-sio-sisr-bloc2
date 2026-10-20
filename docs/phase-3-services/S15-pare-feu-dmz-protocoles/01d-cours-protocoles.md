@@ -190,26 +190,53 @@ Pour comprendre SMTP, IMAP et POP3, il faut visualiser le **parcours complet d'u
 
 **Dialogue SMTP (simplifié) :**
 
-```
-Client ──► EHLO siosarl.local
-Serveur ◄── 250 mail.nexio.fr Hello
-Client ──► MAIL FROM: <alice@siosarl.local>
-Serveur ◄── 250 OK
-Client ──► RCPT TO: <bob@nexio.fr>
-Serveur ◄── 250 OK
-Client ──► DATA
-Serveur ◄── 354 Start mail input
-Client ──► From: Alice <alice@siosarl.local>
-            To: Bob <bob@nexio.fr>
-            Subject: Réunion vendredi
-            Date: [date]
-            
-            Bonjour Bob, ...
-            .
-Serveur ◄── 250 Message queued
-Client ──► QUIT
-Serveur ◄── 221 Bye
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 494" style="max-width:760px" role="img" aria-label="Dialogue SMTP entre un client et un serveur de messagerie" xmlns="http://www.w3.org/2000/svg">
+<rect x="40.0" y="8" width="220" height="34" rx="8" class="dg-dark"/>
+<text x="150.0" y="30.0" text-anchor="middle" class="dg-w">Client (siosarl.local)</text>
+<line x1="150.0" y1="42" x2="150.0" y2="486" class="dg-dash"/>
+<rect x="500.0" y="8" width="220" height="34" rx="8" class="dg-dark"/>
+<text x="610.0" y="30.0" text-anchor="middle" class="dg-w">Serveur SMTP (nexio.fr)</text>
+<line x1="610.0" y1="42" x2="610.0" y2="486" class="dg-dash"/>
+<text x="380.0" y="64" text-anchor="middle" class="dg-t">EHLO siosarl.local</text>
+<line x1="150.0" y1="72" x2="601.0" y2="72.0" class="dg-line"/>
+<polygon points="610.0,72 601.0,67.0 601.0,77.0" class="dg-ah"/>
+<text x="380.0" y="98" text-anchor="middle" class="dg-t">250 mail.nexio.fr Hello</text>
+<line x1="610.0" y1="106" x2="159.0" y2="106.0" class="dg-dash"/>
+<polygon points="150.0,106 159.0,111.0 159.0,101.0" class="dg-ah"/>
+<text x="380.0" y="132" text-anchor="middle" class="dg-t">MAIL FROM: &lt;alice@siosarl.local&gt;</text>
+<line x1="150.0" y1="140" x2="601.0" y2="140.0" class="dg-line"/>
+<polygon points="610.0,140 601.0,135.0 601.0,145.0" class="dg-ah"/>
+<text x="380.0" y="166" text-anchor="middle" class="dg-t">250 OK</text>
+<line x1="610.0" y1="174" x2="159.0" y2="174.0" class="dg-dash"/>
+<polygon points="150.0,174 159.0,179.0 159.0,169.0" class="dg-ah"/>
+<text x="380.0" y="200" text-anchor="middle" class="dg-t">RCPT TO: &lt;bob@nexio.fr&gt;</text>
+<line x1="150.0" y1="208" x2="601.0" y2="208.0" class="dg-line"/>
+<polygon points="610.0,208 601.0,203.0 601.0,213.0" class="dg-ah"/>
+<text x="380.0" y="234" text-anchor="middle" class="dg-t">250 OK</text>
+<line x1="610.0" y1="242" x2="159.0" y2="242.0" class="dg-dash"/>
+<polygon points="150.0,242 159.0,247.0 159.0,237.0" class="dg-ah"/>
+<text x="380.0" y="268" text-anchor="middle" class="dg-t">DATA</text>
+<line x1="150.0" y1="276" x2="601.0" y2="276.0" class="dg-line"/>
+<polygon points="610.0,276 601.0,271.0 601.0,281.0" class="dg-ah"/>
+<text x="380.0" y="302" text-anchor="middle" class="dg-t">354 Start mail input</text>
+<line x1="610.0" y1="310" x2="159.0" y2="310.0" class="dg-dash"/>
+<polygon points="150.0,310 159.0,315.0 159.0,305.0" class="dg-ah"/>
+<text x="380.0" y="336" text-anchor="middle" class="dg-t">En-têtes et corps du message, terminé par une ligne contenant un point</text>
+<line x1="150.0" y1="344" x2="601.0" y2="344.0" class="dg-line"/>
+<polygon points="610.0,344 601.0,339.0 601.0,349.0" class="dg-ah"/>
+<text x="380.0" y="360" text-anchor="middle" class="dg-i">From: Alice  |  To: Bob  |  Subject: Réunion vendredi  |  « Bonjour Bob, ... »</text>
+<text x="380.0" y="386" text-anchor="middle" class="dg-t">250 Message queued</text>
+<line x1="610.0" y1="394" x2="159.0" y2="394.0" class="dg-dash"/>
+<polygon points="150.0,394 159.0,399.0 159.0,389.0" class="dg-ah"/>
+<text x="380.0" y="420" text-anchor="middle" class="dg-t">QUIT</text>
+<line x1="150.0" y1="428" x2="601.0" y2="428.0" class="dg-line"/>
+<polygon points="610.0,428 601.0,423.0 601.0,433.0" class="dg-ah"/>
+<text x="380.0" y="454" text-anchor="middle" class="dg-t">221 Bye</text>
+<line x1="610.0" y1="462" x2="159.0" y2="462.0" class="dg-dash"/>
+<polygon points="150.0,462 159.0,467.0 159.0,457.0" class="dg-ah"/>
+</svg>
+<figcaption>Les commandes du client sont en trait plein, les réponses du serveur en pointillé.</figcaption>
+</figure>
 
 > **Sécurité SMTP :** SMTP sans authentification est exploitable pour le **spam relay** (utiliser votre serveur pour envoyer du spam). En production, toujours configurer `smtpd_recipient_restrictions` (Postfix) ou l'équivalent pour exiger une authentification.
 
@@ -228,19 +255,51 @@ Serveur ◄── 221 Bye
 
 **Pourquoi IMAP est-il devenu le standard ?**
 
-```
-   AVEC POP3 :                           AVEC IMAP :
-   
-   PC Bureau    →  télécharge mail       PC Bureau    ←──► [SERVEUR]
-                   mail supprimé               ↑              ↑
-   Smartphone   →  mail déjà parti !     Smartphone  ←──►  même
-                                                             boîte
-   Tablet       →  idem                  Tablet      ←──►  sync
-   
-   Résultat : les mails ne sont que      Résultat : cohérence parfaite
-   sur le premier appareil qui a         entre tous les appareils
-   relevé la boîte.
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 300" style="max-width:760px" role="img" aria-label="POP3 et IMAP : comportement avec plusieurs appareils" xmlns="http://www.w3.org/2000/svg">
+<text x="190" y="24" text-anchor="middle" class="dg-t">POP3</text>
+<text x="570" y="24" text-anchor="middle" class="dg-t">IMAP</text>
+<line x1="380" y1="10" x2="380" y2="290" class="dg-dash"/>
+<rect x="20" y="40" width="120" height="34" rx="6" class="dg-dark"/>
+<text x="80.0" y="62.0" text-anchor="middle" class="dg-w">Serveur</text>
+<rect x="20" y="100" width="110" height="34" rx="6" class="dg-ok"/>
+<text x="75.0" y="122.0" text-anchor="middle" class="dg-t">PC Bureau</text>
+<rect x="20" y="150" width="110" height="34" rx="6" class="dg-bad"/>
+<text x="75.0" y="172.0" text-anchor="middle" class="dg-t">Smartphone</text>
+<rect x="20" y="200" width="110" height="34" rx="6" class="dg-bad"/>
+<text x="75.0" y="222.0" text-anchor="middle" class="dg-t">Tablette</text>
+<line x1="132" y1="117" x2="221.0" y2="117.0" class="dg-line"/>
+<polygon points="230,117 221.0,112.0 221.0,122.0" class="dg-ah"/>
+<text x="136" y="110" text-anchor="start" class="dg-s">télécharge puis supprime</text>
+<text x="150" y="167" text-anchor="start" class="dg-s">rien à récupérer</text>
+<text x="150" y="217" text-anchor="start" class="dg-s">rien à récupérer</text>
+<text x="20" y="270" text-anchor="start" class="dg-i">Les mails ne sont que sur le premier appareil.</text>
+<rect x="400" y="40" width="120" height="34" rx="6" class="dg-dark"/>
+<text x="460.0" y="62.0" text-anchor="middle" class="dg-w">Serveur</text>
+<rect x="400" y="100" width="110" height="34" rx="6" class="dg-ok"/>
+<text x="455.0" y="122.0" text-anchor="middle" class="dg-t">PC Bureau</text>
+<line x1="512" y1="117" x2="591.0" y2="117.0" class="dg-line"/>
+<polygon points="600,117 591.0,112.0 591.0,122.0" class="dg-ah"/>
+<line x1="600" y1="117" x2="521.0" y2="117.0" class="dg-line"/>
+<polygon points="512,117 521.0,122.0 521.0,112.0" class="dg-ah"/>
+<text x="620" y="121" text-anchor="start" class="dg-s">synchronisé</text>
+<rect x="400" y="150" width="110" height="34" rx="6" class="dg-ok"/>
+<text x="455.0" y="172.0" text-anchor="middle" class="dg-t">Smartphone</text>
+<line x1="512" y1="167" x2="591.0" y2="167.0" class="dg-line"/>
+<polygon points="600,167 591.0,162.0 591.0,172.0" class="dg-ah"/>
+<line x1="600" y1="167" x2="521.0" y2="167.0" class="dg-line"/>
+<polygon points="512,167 521.0,172.0 521.0,162.0" class="dg-ah"/>
+<text x="620" y="171" text-anchor="start" class="dg-s">synchronisé</text>
+<rect x="400" y="200" width="110" height="34" rx="6" class="dg-ok"/>
+<text x="455.0" y="222.0" text-anchor="middle" class="dg-t">Tablette</text>
+<line x1="512" y1="217" x2="591.0" y2="217.0" class="dg-line"/>
+<polygon points="600,217 591.0,212.0 591.0,222.0" class="dg-ah"/>
+<line x1="600" y1="217" x2="521.0" y2="217.0" class="dg-line"/>
+<polygon points="512,217 521.0,222.0 521.0,212.0" class="dg-ah"/>
+<text x="620" y="221" text-anchor="start" class="dg-s">synchronisé</text>
+<text x="400" y="270" text-anchor="start" class="dg-i">Le serveur est la source de vérité.</text>
+</svg>
+<figcaption>Avec POP3 le premier appareil vide la boîte ; avec IMAP tous les appareils restent synchronisés.</figcaption>
+</figure>
 
 *Légende : Comparaison POP3 (à gauche) et IMAP (à droite). Avec POP3, le premier appareil qui télécharge vide la boîte du serveur — les autres appareils ne voient plus les messages. Avec IMAP, le serveur est la source de vérité et tous les appareils synchronisent leur état avec lui.*
 
@@ -248,17 +307,15 @@ Serveur ◄── 221 Bye
 
 ### II.D. Récapitulatif Messagerie
 
-```
-PROTOCOLE   PORT     USAGE                   CHIFFREMENT
-─────────────────────────────────────────────────────────
-SMTP        25       Serveur ↔ Serveur       STARTTLS (optionnel)
-SMTP        587      Client → Serveur        STARTTLS (obligatoire en prod)
-SMTP        465      Client → Serveur        SSL/TLS (legacy SMTPS)
-IMAP        143      Client récupère (sync)  STARTTLS
-IMAPS       993      Client récupère (sync)  SSL/TLS (direct)
-POP3        110      Client télécharge       STARTTLS
-POP3S       995      Client télécharge       SSL/TLS (direct)
-```
+| **Protocole** | **Port** | **Usage** | **Chiffrement** |
+|---|---|---|---|
+| SMTP | 25 | Serveur vers serveur | STARTTLS (optionnel) |
+| SMTP | 587 | Client vers serveur | STARTTLS (obligatoire en production) |
+| SMTP | 465 | Client vers serveur | SSL/TLS (SMTPS, ancien) |
+| IMAP | 143 | Le client récupère (synchronisation) | STARTTLS |
+| IMAPS | 993 | Le client récupère (synchronisation) | SSL/TLS direct |
+| POP3 | 110 | Le client télécharge | STARTTLS |
+| POP3S | 995 | Le client télécharge | SSL/TLS direct |
 
 ---
 
@@ -295,32 +352,60 @@ Le DNS (Domain Name System) transforme un **nom de domaine** lisible (`www.siosa
 
 Il existe deux modes de résolution DNS, selon l'acteur qui porte la charge de la recherche :
 
-```
-   ─── RÉSOLUTION RÉCURSIVE (client → résolveur) ────────────────────────────
-   Le client demande "Donne-moi l'IP de www.google.com".
-   Le résolveur prend TOUT en charge et retourne la réponse finale.
+<figure class="graphe diagramme"><svg viewBox="0 0 700 192" style="max-width:700px" role="img" aria-label="Résolution DNS récursive : le client délègue tout au résolveur" xmlns="http://www.w3.org/2000/svg">
+<rect x="40.0" y="8" width="200" height="34" rx="8" class="dg-dark"/>
+<text x="140.0" y="30.0" text-anchor="middle" class="dg-w">Client</text>
+<line x1="140.0" y1="42" x2="140.0" y2="184" class="dg-dash"/>
+<rect x="460.0" y="8" width="200" height="34" rx="8" class="dg-dark"/>
+<text x="560.0" y="30.0" text-anchor="middle" class="dg-w">Résolveur (FAI / entreprise)</text>
+<line x1="560.0" y1="42" x2="560.0" y2="184" class="dg-dash"/>
+<text x="350.0" y="64" text-anchor="middle" class="dg-t">www.google.com ?</text>
+<line x1="140.0" y1="72" x2="551.0" y2="72.0" class="dg-line"/>
+<polygon points="560.0,72 551.0,67.0 551.0,77.0" class="dg-ah"/>
+<rect x="437.1" y="90" width="245.8" height="42" rx="6" class="dg-soft"/>
+<text x="560.0" y="107" text-anchor="middle" class="dg-s">Le résolveur fait tout le travail</text>
+<text x="560.0" y="123" text-anchor="middle" class="dg-s">Serveurs racine, .com, DNS Google</text>
+<text x="350.0" y="152" text-anchor="middle" class="dg-t">216.58.213.100</text>
+<line x1="560.0" y1="160" x2="149.0" y2="160.0" class="dg-dash"/>
+<polygon points="140.0,160 149.0,165.0 149.0,155.0" class="dg-ah"/>
+</svg>
+<figcaption>Le client pose une seule question et reçoit la réponse finale.</figcaption>
+</figure>
 
-   CLIENT                    RÉSOLVEUR (ISP/Entreprise)
-      │                              │
-      │── "www.google.com ?" ───────►│
-      │                              │  (fait tout le travail)
-      │                              │  ← → Serveurs racine
-      │                              │  ← → Serveurs .com
-      │                              │  ← → DNS Google
-      │◄── "216.58.213.100" ─────────│
-
-   ─── RÉSOLUTION ITÉRATIVE (résolveur → serveurs d'autorité) ──────────────
-   Le résolveur demande à chaque serveur "Qui sait?" jusqu'à la réponse.
-
-   RÉSOLVEUR         RACINE           .COM NS         GOOGLE NS
-      │                 │                │                │
-      │── "google.com?"──►│                │                │
-      │◄── "Demandez .com"─│               │                │
-      │─────── "google.com?" ────────────►│                │
-      │◄─────── "Demandez Google" ─────────│               │
-      │────────────────── "www.google.com?" ───────────────►│
-      │◄────────────────── "216.58.213.100" ────────────────│
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 760 274" style="max-width:760px" role="img" aria-label="Résolution DNS itérative : le résolveur interroge chaque serveur" xmlns="http://www.w3.org/2000/svg">
+<rect x="20.0" y="8" width="150" height="34" rx="8" class="dg-dark"/>
+<text x="95.0" y="30.0" text-anchor="middle" class="dg-w">Résolveur</text>
+<line x1="95.0" y1="42" x2="95.0" y2="266" class="dg-dash"/>
+<rect x="210.0" y="8" width="150" height="34" rx="8" class="dg-dark"/>
+<text x="285.0" y="30.0" text-anchor="middle" class="dg-w">Serveur racine</text>
+<line x1="285.0" y1="42" x2="285.0" y2="266" class="dg-dash"/>
+<rect x="400.0" y="8" width="150" height="34" rx="8" class="dg-dark"/>
+<text x="475.0" y="30.0" text-anchor="middle" class="dg-w">Serveur .com</text>
+<line x1="475.0" y1="42" x2="475.0" y2="266" class="dg-dash"/>
+<rect x="590.0" y="8" width="150" height="34" rx="8" class="dg-dark"/>
+<text x="665.0" y="30.0" text-anchor="middle" class="dg-w">Serveur de Google</text>
+<line x1="665.0" y1="42" x2="665.0" y2="266" class="dg-dash"/>
+<text x="190.0" y="64" text-anchor="middle" class="dg-t">google.com ?</text>
+<line x1="95.0" y1="72" x2="276.0" y2="72.0" class="dg-line"/>
+<polygon points="285.0,72 276.0,67.0 276.0,77.0" class="dg-ah"/>
+<text x="190.0" y="98" text-anchor="middle" class="dg-t">Demandez au serveur .com</text>
+<line x1="285.0" y1="106" x2="104.0" y2="106.0" class="dg-dash"/>
+<polygon points="95.0,106 104.0,111.0 104.0,101.0" class="dg-ah"/>
+<text x="285.0" y="132" text-anchor="middle" class="dg-t">google.com ?</text>
+<line x1="95.0" y1="140" x2="466.0" y2="140.0" class="dg-line"/>
+<polygon points="475.0,140 466.0,135.0 466.0,145.0" class="dg-ah"/>
+<text x="285.0" y="166" text-anchor="middle" class="dg-t">Demandez au serveur de Google</text>
+<line x1="475.0" y1="174" x2="104.0" y2="174.0" class="dg-dash"/>
+<polygon points="95.0,174 104.0,179.0 104.0,169.0" class="dg-ah"/>
+<text x="380.0" y="200" text-anchor="middle" class="dg-t">www.google.com ?</text>
+<line x1="95.0" y1="208" x2="656.0" y2="208.0" class="dg-line"/>
+<polygon points="665.0,208 656.0,203.0 656.0,213.0" class="dg-ah"/>
+<text x="380.0" y="234" text-anchor="middle" class="dg-t">216.58.213.100</text>
+<line x1="665.0" y1="242" x2="104.0" y2="242.0" class="dg-dash"/>
+<polygon points="95.0,242 104.0,247.0 104.0,237.0" class="dg-ah"/>
+</svg>
+<figcaption>Chaque serveur renvoie une référence vers le niveau suivant jusqu&#x27;à la réponse finale.</figcaption>
+</figure>
 
 *Légende : Les deux modes de résolution DNS. Dans la résolution récursive (en haut), le client délègue entièrement la recherche au résolveur — c'est ce que fait votre navigateur quand vous tapez une URL. Dans la résolution itérative (en bas), le résolveur interroge successivement les serveurs de la hiérarchie DNS (racine → TLD → autorité) en récupérant à chaque fois une référence vers le niveau suivant, jusqu'à obtenir la réponse finale. Dans la pratique, le client utilise la récursion avec son résolveur, et ce résolveur utilise l'itération avec les serveurs d'autorité.*
 
@@ -328,17 +413,48 @@ Il existe deux modes de résolution DNS, selon l'acteur qui porte la charge de l
 
 ### III.D. Hiérarchie DNS
 
-```
-                        . (Racine — 13 serveurs racine)
-                        │
-            ┌──────────┼──────────┐
-           .com       .fr        .local
-            │          │           │
-        google.com  free.fr   siosarl.local
-            │                      │
-       www.google.com          srv-ad01.siosarl.local
-                                srv-ftp.siosarl.local
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 394 348" style="max-width:394px" role="img" aria-label="Hiérarchie du système DNS : racine, TLD, domaines" xmlns="http://www.w3.org/2000/svg">
+<line x1="26" y1="34" x2="26" y2="55" class="dg-line"/>
+<line x1="26" y1="55" x2="50" y2="55" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="157" class="dg-line"/>
+<line x1="26" y1="157" x2="50" y2="157" class="dg-line"/>
+<line x1="26" y1="34" x2="26" y2="225" class="dg-line"/>
+<line x1="26" y1="225" x2="50" y2="225" class="dg-line"/>
+<line x1="64" y1="68" x2="64" y2="89" class="dg-line"/>
+<line x1="64" y1="89" x2="88" y2="89" class="dg-line"/>
+<line x1="102" y1="102" x2="102" y2="123" class="dg-line"/>
+<line x1="102" y1="123" x2="126" y2="123" class="dg-line"/>
+<line x1="64" y1="170" x2="64" y2="191" class="dg-line"/>
+<line x1="64" y1="191" x2="88" y2="191" class="dg-line"/>
+<line x1="64" y1="238" x2="64" y2="259" class="dg-line"/>
+<line x1="64" y1="259" x2="88" y2="259" class="dg-line"/>
+<line x1="102" y1="272" x2="102" y2="293" class="dg-line"/>
+<line x1="102" y1="293" x2="126" y2="293" class="dg-line"/>
+<line x1="102" y1="272" x2="102" y2="327" class="dg-line"/>
+<line x1="102" y1="327" x2="126" y2="327" class="dg-line"/>
+<rect x="12" y="8" width="370" height="26" rx="6" class="dg-dark"/>
+<text x="197.0" y="26" text-anchor="middle" class="dg-w">. (racine : 13 clusters de serveurs racine)</text>
+<rect x="50" y="42" width="58" height="26" rx="6" class="dg-box"/>
+<text x="79.0" y="60" text-anchor="middle" class="dg-t">.com</text>
+<rect x="88" y="76" width="106" height="26" rx="6" class="dg-ok"/>
+<text x="141.0" y="94" text-anchor="middle" class="dg-t">google.com</text>
+<rect x="126" y="110" width="118" height="26" rx="6" class="dg-soft"/>
+<text x="185.2" y="128" text-anchor="middle" class="dg-s">www.google.com</text>
+<rect x="50" y="144" width="50" height="26" rx="6" class="dg-box"/>
+<text x="75.0" y="162" text-anchor="middle" class="dg-t">.fr</text>
+<rect x="88" y="178" width="82" height="26" rx="6" class="dg-ok"/>
+<text x="129.0" y="196" text-anchor="middle" class="dg-t">free.fr</text>
+<rect x="50" y="212" width="74" height="26" rx="6" class="dg-box"/>
+<text x="87.0" y="230" text-anchor="middle" class="dg-t">.local</text>
+<rect x="88" y="246" width="130" height="26" rx="6" class="dg-ok"/>
+<text x="153.0" y="264" text-anchor="middle" class="dg-t">siosarl.local</text>
+<rect x="126" y="280" width="171" height="26" rx="6" class="dg-soft"/>
+<text x="211.6" y="298" text-anchor="middle" class="dg-s">srv-ad01.siosarl.local</text>
+<rect x="126" y="314" width="165" height="26" rx="6" class="dg-soft"/>
+<text x="208.3" y="332" text-anchor="middle" class="dg-s">srv-ftp.siosarl.local</text>
+</svg>
+<figcaption>La racine est au sommet ; chaque domaine délègue ses sous-domaines à ses propres serveurs.</figcaption>
+</figure>
 
 *Légende : Hiérarchie du système DNS. La racine (`.`) est au sommet, gérée par 13 clusters de serveurs racine répartis mondialement (en réalité plusieurs centaines de serveurs via anycast). Les TLD (Top Level Domains) comme `.com`, `.fr` ou `.local` sont en dessous. Chaque domaine délègue ensuite ses sous-domaines à ses propres serveurs DNS.*
 
@@ -357,39 +473,31 @@ Il existe deux modes de résolution DNS, selon l'acteur qui porte la charge de l
 
 ## PARTIE IV — Récapitulatif : Les Protocoles Applicatifs dans le Modèle OSI
 
-```
-COUCHE 7 — APPLICATION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+**Couche 7 - Application**
 
-  PROTOCOLE   PORT(S)   TRANSPORT   RÔLE
-  ─────────────────────────────────────────────────────────────
-  HTTP        80        TCP         Pages web (texte clair)
-  HTTPS       443       TCP         Pages web (chiffré TLS)
-  FTP         21/20     TCP         Transfert fichiers (clair)
-  SFTP        22        TCP         Transfert fichiers (SSH)
-  FTPS        990       TCP         Transfert fichiers (TLS)
-  SMTP        25/587    TCP         Envoi mail
-  IMAP        143/993   TCP         Lecture mail (sync serveur)
-  POP3        110/995   TCP         Lecture mail (télécharg.)
-  DNS         53        UDP+TCP     Résolution de noms
-  DHCP        67/68     UDP         Attribution IP automatique
-  SSH         22        TCP         Shell distant sécurisé
-  Telnet      23        TCP         Shell distant (clair — obsolète)
-  LDAP        389       TCP         Annuaire (Active Directory)
-  LDAPS       636       TCP         Annuaire chiffré (AD)
-  RDP         3389      TCP         Bureau distant Windows
-  SMB/CIFS    445       TCP         Partages fichiers Windows
-  NTP         123       UDP         Synchronisation horaire
-  SNMP        161/162   UDP         Supervision réseau
+| **Protocole** | **Port(s)** | **Transport** | **Rôle** |
+|---|---|---|---|
+| HTTP | 80 | TCP | Pages web (texte clair) |
+| HTTPS | 443 | TCP | Pages web (chiffré TLS) |
+| FTP | 21/20 | TCP | Transfert de fichiers (clair) |
+| SFTP | 22 | TCP | Transfert de fichiers (SSH) |
+| FTPS | 990 | TCP | Transfert de fichiers (TLS) |
+| SMTP | 25/587 | TCP | Envoi de mail |
+| IMAP | 143/993 | TCP | Lecture de mail (synchronisée avec le serveur) |
+| POP3 | 110/995 | TCP | Lecture de mail (téléchargement) |
+| DNS | 53 | UDP + TCP | Résolution de noms |
+| DHCP | 67/68 | UDP | Attribution IP automatique |
+| SSH | 22 | TCP | Shell distant sécurisé |
+| Telnet | 23 | TCP | Shell distant en clair (obsolète) |
+| LDAP | 389 | TCP | Annuaire (Active Directory) |
+| LDAPS | 636 | TCP | Annuaire chiffré (AD) |
+| RDP | 3389 | TCP | Bureau distant Windows |
+| SMB/CIFS | 445 | TCP | Partages de fichiers Windows |
+| NTP | 123 | UDP | Synchronisation horaire |
+| SNMP | 161/162 | UDP | Supervision réseau |
 
-COUCHE 4 — TRANSPORT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TCP : connexion fiable, acquittements, retransmissions
-  UDP : sans connexion, rapide, pas de garantie
+**Couche 4 - Transport** : TCP (connexion fiable, acquittements, retransmissions) ; UDP (sans connexion, rapide, sans garantie).
 
-COUCHE 3 — RÉSEAU
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  IP (IPv4 / IPv6) — ICMP — ARP
-```
+**Couche 3 - Réseau** : IP (IPv4 / IPv6), ICMP, ARP.
 
 ---
