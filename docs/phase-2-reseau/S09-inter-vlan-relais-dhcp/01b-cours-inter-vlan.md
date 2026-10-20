@@ -34,19 +34,34 @@ C'est voulu pour la sécurité, mais cela pose un problème pratique : la compta
 
 Le routeur est connecté au switch par **un seul câble physique** configuré en mode **trunk** (il transporte plusieurs VLANs grâce au standard 802.1Q). Côté routeur, l'interface physique est subdivisée en **sous-interfaces logiques**, une par VLAN.
 
-```
-   PC-RH                   SWITCH                    ROUTEUR
-  (VLAN 10)    Fa0/1       [TRUNK]       G0/0         G0/0.10  → Passerelle VLAN 10
-192.168.10.10  ───────►  [=======]◄────────────────►  G0/0.20  → Passerelle VLAN 20
-                                                       G0/0.30  → Passerelle VLAN 30
-   PC-IT       Fa0/2
-  (VLAN 20)    ───────►  [=======]
-192.168.20.10
-
-   PC-DIR      Fa0/3
-  (VLAN 30)    ───────►  [=======]
-192.168.30.10
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 780 260" style="max-width:780px" role="img" aria-label="Routage inter-VLAN : trois postes sur un switch relié en trunk à un routeur à sous-interfaces" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" y="20" width="170" height="56" rx="8" class="dg-box"/>
+<text x="95.0" y="44.0" text-anchor="middle" class="dg-t">PC-RH</text>
+<text x="95.0" y="62.0" text-anchor="middle" class="dg-s">VLAN 10 - 192.168.10.10</text>
+<line x1="180" y1="48" x2="330" y2="120" class="dg-line"/>
+<text x="215" y="51.64" text-anchor="middle" class="dg-s">Fa0/1</text>
+<rect x="10" y="96" width="170" height="56" rx="8" class="dg-ok"/>
+<text x="95.0" y="120.0" text-anchor="middle" class="dg-t">PC-IT</text>
+<text x="95.0" y="138.0" text-anchor="middle" class="dg-s">VLAN 20 - 192.168.20.10</text>
+<line x1="180" y1="124" x2="330" y2="120" class="dg-line"/>
+<text x="215" y="118.52" text-anchor="middle" class="dg-s">Fa0/2</text>
+<rect x="10" y="172" width="170" height="56" rx="8" class="dg-warn"/>
+<text x="95.0" y="196.0" text-anchor="middle" class="dg-t">PC-DIR</text>
+<text x="95.0" y="214.0" text-anchor="middle" class="dg-s">VLAN 30 - 192.168.30.10</text>
+<line x1="180" y1="200" x2="330" y2="120" class="dg-line"/>
+<text x="215" y="185.4" text-anchor="middle" class="dg-s">Fa0/3</text>
+<rect x="330" y="90" width="110" height="60" rx="8" class="dg-dark"/>
+<text x="385.0" y="116.0" text-anchor="middle" class="dg-w">SWITCH</text>
+<text x="385.0" y="134.0" text-anchor="middle" class="dg-s">[trunk]</text>
+<line x1="440" y1="120" x2="520" y2="120" class="dg-line"/>
+<text x="480" y="110" text-anchor="middle" class="dg-s">Gig0/1</text>
+<rect x="520" y="20" width="250" height="200" rx="8" class="dg-soft"/>
+<text x="645.0" y="98.0" text-anchor="middle" class="dg-t">ROUTEUR</text>
+<text x="645.0" y="116.0" text-anchor="middle" class="dg-s">G0/0.10 : passerelle VLAN 10</text>
+<text x="645.0" y="134.0" text-anchor="middle" class="dg-s">G0/0.20 : passerelle VLAN 20</text>
+<text x="645.0" y="152.0" text-anchor="middle" class="dg-s">G0/0.30 : passerelle VLAN 30</text>
+</svg>
+</figure>
 
 *Légende : Schéma d'une architecture router-on-a-stick. Le switch à gauche est connecté au routeur par un seul lien physique trunk (ligne épaisse). Le routeur divise ce lien en 3 sous-interfaces logiques (G0/0.10, G0/0.20, G0/0.30), une par VLAN. Chaque sous-interface devient la passerelle par défaut des machines de son VLAN.*
 

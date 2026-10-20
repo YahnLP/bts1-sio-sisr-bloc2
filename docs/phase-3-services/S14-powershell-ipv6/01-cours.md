@@ -519,27 +519,33 @@ Adresse link-local résultante : FE80::204:61FF:FE9D:F1
 
 **Mécanisme en 4 étapes :**
 
-```
-   HÔTE (vient de démarrer)           ROUTEUR IPv6
-         │                                  │
-         │  1. Router Solicitation ─────────►│
-         │     (Multicast : "Y a-t-il        │
-         │      un routeur sur ce lien ?")   │
-         │                                  │
-         │  ◄──────────── 2. Router Advertisement
-         │     (Préfixe : 2001:db8:1::/64    │
-         │      Durée de vie, options...)    │
-         │                                  │
-         │  3. L'hôte construit son adresse  │
-         │     Préfixe (64 bits du RA)       │
-         │   + Identifiant d'interface (EUI-64 ou aléatoire)
-         │   = 2001:db8:1::204:61FF:FE9D:F1 │
-         │                                  │
-         │  4. DAD (Duplicate Address Detection)
-         │     "Cette adresse est-elle déjà utilisée ?"
-         │     (Multicast vers l'adresse candidate)
-         │     → Si pas de réponse : adresse attribuée (OK)
-```
+<figure class="graphe diagramme"><svg viewBox="0 0 720 322" style="max-width:720px" role="img" aria-label="Autoconfiguration IPv6 SLAAC : sollicitation, annonce, construction de l&#x27;adresse, détection de doublon" xmlns="http://www.w3.org/2000/svg">
+<rect x="70.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="155.0" y="30.0" text-anchor="middle" class="dg-w">Hôte (vient de démarrer)</text>
+<line x1="155.0" y1="42" x2="155.0" y2="314" class="dg-dash"/>
+<rect x="480.0" y="8" width="170" height="34" rx="8" class="dg-dark"/>
+<text x="565.0" y="30.0" text-anchor="middle" class="dg-w">Routeur IPv6</text>
+<line x1="565.0" y1="42" x2="565.0" y2="314" class="dg-dash"/>
+<text x="360.0" y="64" text-anchor="middle" class="dg-t">1. Router Solicitation (multicast)</text>
+<line x1="155.0" y1="72" x2="556.0" y2="72.0" class="dg-line"/>
+<polygon points="565.0,72 556.0,67.0 556.0,77.0" class="dg-ah"/>
+<text x="360.0" y="88" text-anchor="middle" class="dg-i">« Y a-t-il un routeur sur ce lien ? »</text>
+<text x="360.0" y="114" text-anchor="middle" class="dg-t">2. Router Advertisement</text>
+<line x1="565.0" y1="122" x2="164.0" y2="122.0" class="dg-dash"/>
+<polygon points="155.0,122 164.0,127.0 164.0,117.0" class="dg-ah"/>
+<text x="360.0" y="138" text-anchor="middle" class="dg-i">Préfixe 2001:db8:1::/64, durée de vie, options</text>
+<rect x="4.0" y="156" width="351.4" height="74" rx="6" class="dg-soft"/>
+<text x="179.7" y="173" text-anchor="middle" class="dg-s">3. Construction de l&#x27;adresse :</text>
+<text x="179.7" y="189" text-anchor="middle" class="dg-s">préfixe (64 bits du RA) + identifiant d&#x27;interface</text>
+<text x="179.7" y="205" text-anchor="middle" class="dg-s">(EUI-64 ou aléatoire)</text>
+<text x="179.7" y="221" text-anchor="middle" class="dg-s">= 2001:db8:1::204:61FF:FE9D:F1</text>
+<text x="360.0" y="250" text-anchor="middle" class="dg-t">4. DAD (multicast vers l&#x27;adresse candidate)</text>
+<line x1="155.0" y1="258" x2="556.0" y2="258.0" class="dg-line"/>
+<polygon points="565.0,258 556.0,253.0 556.0,263.0" class="dg-ah"/>
+<text x="360.0" y="274" text-anchor="middle" class="dg-i">« Cette adresse est-elle déjà utilisée ? »</text>
+<text x="360.0" y="290" text-anchor="middle" class="dg-i">Pas de réponse : l&#x27;adresse est attribuée</text>
+</svg>
+</figure>
 
 *Légende : Les 4 étapes de SLAAC. L'hôte demande un préfixe réseau au routeur (Router Solicitation). Le routeur répond avec sa publicité (Router Advertisement) contenant le préfixe /64. L'hôte construit l'adresse complète en combinant le préfixe (64 bits) et son identifiant d'interface (64 bits). La détection de doublon (DAD) vérifie que l'adresse n'est pas déjà utilisée.*
 
